@@ -7,11 +7,12 @@ In this lesson, you will:
 - Explore and use the out-of-the-box PCI grammars.
 - Gain deeper understanding of checksum validation.
 
-This guide assumes you have already completed the introductory Eduction [tutorial](./introduction.md).
+> NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](./introduction.md#eduction-sdk-introduction).
 
 ---
 
 - [Setup](#setup)
+  - [Resources](#resources)
 - [What's in the Box?](#whats-in-the-box)
   - [Available Grammar Files](#available-grammar-files)
   - [Types of Entities](#types-of-entities)
@@ -26,15 +27,12 @@ This guide assumes you have already completed the introductory Eduction [tutoria
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Pre-trained grammar packages are distributed separately from the main Eduction SDK zip.  You already downloaded a copy of them in the [introductory tutorial](./introduction.md#download-eduction-components), *i.e.* the file `EductionGrammars_12.12.0_COMMON.zip`.  Verify that you have unzipped this package on your working machine. The follow guide assumes this is `C:\MicroFocus\EductionGrammars_12.12.0_COMMON` on Windows.
+> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#eduction-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
 
-As of 12.12, the PCI `edk_samples` resources are distributed separately as part of the IDOL OEM tutorials:
-1. Download folders/files for PCI lessons from [here](../resources/eduction/pci).
-2. Install into the `EductionGrammars_12.12.0_COMMON\pci\edk_samples\resources`
+### Resources
 
-> NOTE: The following lesson assumes that the PATH environment variable has been set appropriately for OS and choice of shell as explained [here](./introduction.md#environment-variables).  Alternatively, download `setup_Eduction.bat` file is available with this tutorial [here](../resource/eduction/setup_Eduction.bat) and run in command prompt before running `edktool`.
-
-> NOTE: The following lesson assume `licensekey.dat` is copied into `C:\MicroFocus\EductionSDK_12.12.0`.
+Be sure to download the following resources before you continue:
+- [PCI edk_samples](../../resources/eduction/pci/edk_samples) and install to `C:\MicroFocus\EductionGrammars_12.12.0_COMMON\pci\edk_samples\resources`
 
 ## What's in the Box?
 

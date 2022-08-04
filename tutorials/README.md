@@ -8,9 +8,8 @@ A set of guides to introduce you to IDOL Eduction and KeyView and associated int
 - [Getting started](#getting-started)
   - [IDOL Eduction](#idol-eduction)
   - [KeyView Filter SDK](#keyview-filter-sdk)
+  - [IDOL Media Server](#idol-media-server)
 - [Use the APIs](#use-the-apis)
-  - [Use the KeyView Filter SDK APIs](#use-the-keyview-filter-sdk-apis)
-  - [Use the Eduction SDK APIs](#use-the-eduction-sdk-apis)
 - [Capability showcase examples](#capability-showcase-examples)
   - [Eduction showcase](#eduction-showcase)
     - [Use the PII Eduction grammars](#use-the-pii-eduction-grammars)
@@ -63,19 +62,21 @@ Build a firm foundation with KeyView Filter.  Use the out-of-the-box binaries to
 
 [Get started](./keyview_filter/introduction.md).
 
+### IDOL Media Server
+
+IDOL Media Server performs analytics on images, audio and video.  It's for OEMs, too.
+
+[Get started](https://github.com/microfocus-idol/idol-rich-media-tutorials).
+
 ## Use the APIs
 
-### Use the KeyView Filter SDK APIs
+Use the IDOL, KeyView Filter and Eduction SDK APIs.
 
-> COMING SOON!
-
-### Use the Eduction SDK APIs
-
-> COMING SOON!
+[Get started](./apis/README.md#idol-keyview-and-eduction-apis).
 
 ## Capability showcase examples
 
-> The following assume familiarity with IDOL Eduction and/or KeyView Filter concepts and are best started after completing the respecitive getting started lesson.
+> NOTE: The following assume familiarity with IDOL Eduction and/or KeyView Filter concepts and are best started after completing the respective getting started lesson.
 
 Dip into any of the following showcase lessons to try more features.
 
@@ -151,13 +152,13 @@ Extract sub-files from various formats.
 
 Explore metadata and XrML extraction from [Microsoft Azure RMS](https://docs.microsoft.com/en-us/azure/information-protection/what-is-azure-rms) protected content.
 
-> COMING SOON!
+[Get started](./keyview_filter/rms.md).
 
 #### Optical Character Recognition
 
 Extract text from images.
 
-> COMING SOON!
+[Get started](./keyview_filter/ocr.md).
 
 ### KeyView and Eduction
 

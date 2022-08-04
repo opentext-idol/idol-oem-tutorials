@@ -6,9 +6,12 @@ In this lesson, you will explore:
 - extraction of headers and footers
 - extraction of some flavors of hidden text
 
+> NOTE: This guide assumes you have already completed the introductory KeyView Filter [tutorial](./introduction.md#keyview-filter-sdk-introduction).
+
 ---
 
 - [Setup](#setup)
+  - [Resources](#resources)
 - [Headers / Footers](#headers--footers)
   - [Perform header / footer extraction](#perform-header--footer-extraction)
 - [Hidden Text](#hidden-text)
@@ -24,7 +27,14 @@ In this lesson, you will explore:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Be sure to download the KeyView Filter resources from [here](../../resources/keyview_filter/) and extract them to `C:\MicroFocus\idol-oem-tutorials\resources` before you continue.
+> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](./introduction.md#keyview-filter-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Filter SDK concepts.
+
+### Resources
+
+Be sure to download the following resources before you continue:
+- sample documents from [here](../../resources/keyview_filter/) and install to `C:\MicroFocus\idol-oem-tutorials\resources`
+
+> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../keyview_filter/introduction.md#keyview-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic KeyView Filter SDK concepts.
 
 ## Headers / Footers
 
@@ -35,7 +45,7 @@ Word processing, spreadsheet, presentation and some other file formats optionall
 Let's run text extraction on the same file `2022_calendar_HIDDEN_TEXT.docx` without and with header/footer mode enabled.
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_no_hf.txt
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_hf.txt
 filter: error code returned is KVERR_Success
@@ -60,7 +70,7 @@ Hidden text may be in the form of comments, revision history, slide master conte
 Word processing and some other file formats allow for users to track revision history.  This markup is usually hidden, but can of interest for many user cases of KeyView Filter SDK.
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -rm ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revison_marks.txt
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revison_marks.txt
 filter: error code returned is KVERR_Success
@@ -77,6 +87,7 @@ Try `filter` to extract hidden text with your own test files. Good luck!
 Your use case for KeyView FilterSDK may not benefit from including comments.
 
 ```sh
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -nc ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_no_comments.txt
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_comments.txt
 filter: error code returned is KVERR_Success
@@ -91,6 +102,7 @@ If you compare the output from `text_no_comments.txt` with `text_no_hf.txt`, you
 Presentation formats like PowerPoint have the concept of slide masters where some slide master content is only visible when you're editing the slider masters.
 
 ```sh
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter  ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_no_slidemaster.txt
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_no_slidemaster.txt
 filter: error code returned is KVERR_Success

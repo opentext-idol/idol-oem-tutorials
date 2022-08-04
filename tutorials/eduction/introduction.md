@@ -49,10 +49,12 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 
 ### Useful third-party tools
 
-A (UTF-8 capable) text editor, *e.g.*:
+- A (UTF-8 capable) text editor, *e.g.*:
+  - [VS Code](https://code.visualstudio.com/download), or
+  - [Notepad++](https://notepad-plus-plus.org/download)
 
-- [VS Code](https://code.visualstudio.com/download), or
-- [Notepad++](https://notepad-plus-plus.org/download)
+- A Markdown viewer
+  - Plugins to VS Code, Notepad++ and some web browsers are good options
 
 ### IDOL components
 

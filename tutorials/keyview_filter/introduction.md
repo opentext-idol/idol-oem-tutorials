@@ -50,16 +50,32 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 
 ### Useful third-party tools
 
-A (UTF-8 capable) text editor, *e.g.*:
+- A (UTF-8 capable) text editor, *e.g.*:
 
-- [VS Code](https://code.visualstudio.com/download), or
-- [Notepad++](https://notepad-plus-plus.org/download), or
-- your favorite equivalent.
+  - [VS Code](https://code.visualstudio.com/download), or
+  - [Notepad++](https://notepad-plus-plus.org/download), or
+  - your favorite equivalent.
 
-Other recommended tools include:
+- A Markdown viewer
+  - Plugins to VS Code, Notepad++ and some web browsers are good options
 
-- Adobe Acrobat Reader or similar to view PDF files.
+- PDF viewer
+  - [Adobe Acrobat Reader](https://www.adobe.com/acrobat/pdf-reader.html), or
+  - your favorite equivalent.
 
+- 7z/RAR/Zip/Jar reader
+  - [7-Zip](https://www.7-zip.org/), or
+  - your favorite equivalent
+
+- Microsoft Excel, PowerPoint, Word or other "Office" file capable reader
+  
+- Image Viewer, *e.g*:
+  - [Microsoft Paint](https://apps.microsoft.com/store/detail/paint/9PCFS5B6T72H?hl=en-us&gl=US), or
+  - [ImageMagick](https://imagemagick.org/index.php), or
+  - your favorite equivalent.
+
+> NOTE: the PDF, "zip", "office" and image viewers are helpful tools to have, but not necessarily required.
+ 
 ### KeyView Filter SDK components
 
 The KeyView SDKs consist of the Filter SDK, Export SDK, Viewing SDK and Panopticon.  This lesson is focused on the Filter SDK, which offers the following capabilities:
@@ -95,7 +111,7 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
 
 3. From the list of available files, select and download any available patches for 
   - *e.g.* `KeyviewFilterSDK 12.12 Patch 12.12.1`
-  - 
+ 
   > NOTE: Be sure to click on the `Reference Material` link under the `Description` column to access the link to the patch documentation which includes the release notes.
   
   > NOTE: All platforms are contained in the zip package for Keyview patches.
@@ -131,7 +147,7 @@ The following lesson will explore file format detection and metadata / text / su
 The sample program `filter` is a command line tool that demonstrates Filter API capabilities.  The source code for it ships in the `%KEYVIEW_HOME%\samples\filter` folder.  A pre-built binary is located in `%KEYVIEW_HOME%\<PLATFORM>\bin`.
   
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter
 Usage: filter [options] inputfile outputfile
 options are:
@@ -172,7 +188,7 @@ The KeyView Filter SDK automatically recognizes the file type being filtered. Yo
 
 From the command line, enter the following:
 ```sh
-> cd FilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -d "..\..\Release Notes\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf" out
 The file ..\..\Release Notes\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf
 Class ID:                       1
@@ -207,7 +223,7 @@ Documents can contain different flavors of metadata:
 KeyView refers to this topic as `document summary information`.
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -i "..\..\Release Notes\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf" metadata
 filter: ..\..\Release Notes\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf to metadata
 filter: error code returned is KVERR_Success
@@ -253,7 +269,7 @@ Filter SDK supports the extraction of different types of text, which we'll divid
 Visible text is what you easily see when you edit, view or print a document.
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > .\filter "..\..\Release Notes\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf" text
 filter: ..\..\Release Notes\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf to text
 filter: error code returned is KVERR_Success
@@ -277,7 +293,7 @@ Let's perform sub-file extraction on the Filter SDK Java API KeyView.jar.
 The sample program `tstxtract` is a command line tool that demonstrates Extract API capabilities.  The source code for it ships in the `%KEYVIEW_HOME%\samples\tstxtract` folder.  A pre-built binary is located in `%KEYVIEW_HOME%\<PLATFORM>\bin`.
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > tstxtract
 Usage: [options] <source file> <output directory> <keyview directory - optional>
 Example: tstxtract inputfile outputdir
@@ -310,7 +326,7 @@ and KV_SAMPLE_PROGRAM_LICENSE_KEY are set, their values will be used instead.
 Before we run `tstxtract`, we'll create an output folder `_extract`. Any location and name for the extraction destination directory will suffice where `_extract` and its location was chosen for convenience.
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > mkdir _extract
 > .\tstxtract ..\..\javaapi\KeyView.jar _extract
 File ..\..\javaapi\KeyView.jar has 111 sub-files, charset: 0, format: 999

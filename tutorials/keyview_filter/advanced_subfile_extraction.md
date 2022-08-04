@@ -7,10 +7,13 @@ In this lesson, you will:
 - extract sub file(s) from password protected 7-Zip file
 - extract sub files from E-Mail (MSG) with attachment
 - gain a better understanding of the complexity of sub files
- 
+
+> NOTE: This guide assumes you have already completed the introductory KeyView Filter [tutorial](./introduction.md#keyview-filter-sdk-introduction).
+
 ---
 
 - [Setup](#setup)
+  - [Resources](#resources)
   - [Clean up `tstxtract` destination folder](#clean-up-tstxtract-destination-folder)
 - [Perform Sub File Extraction](#perform-sub-file-extraction)
   - [Perform Sub File Extraction on RAR (v5) file](#perform-sub-file-extraction-on-rar-v5-file)
@@ -25,14 +28,22 @@ In this lesson, you will:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Be sure to download the KeyView Filter resources from [here](../../resources/keyview_filter/) and extract them to `C:\MicroFocus\idol-oem-tutorials\resources` before you continue.
+> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](./introduction.md#keyview-filter-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Filter SDK concepts.
+
+### Resources
+
+Be sure to download the following resources before you continue:
+- sample documents from [here](../../resources/keyview_filter/) and install to `C:\MicroFocus\idol-oem-tutorials\resources`
+
+
+> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../keyview_filter/introduction.md#keyview-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic KeyView Filter SDK concepts.
 
 ### Clean up `tstxtract` destination folder
 
 You may already have the `tstxtract` destination `_extract` from the introduction lesson.  Delete the folder and its contents and re-create the destination folder.
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > rmdir /s _extract
 _extract, Are you sure (Y/N)? y
 > mkdir _extract
@@ -47,7 +58,7 @@ The `KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar` was created with [WinRAR](htt
 > NOTE: Per notes [above](#clean-up-tstxtract-destination-folder), delete the contents of `_extract` folder and recreate before continuing.
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > tstxtract ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar _extract
 File ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar has 1 sub files, charset: 0, format: 485
 tstxtract return code: 0
@@ -68,7 +79,7 @@ The `KeyViewFilterSDK_12.12.0_ReleaseNotes_en_PASSWORD.7z` was created with [7-Z
 > NOTE: Per notes [above](#clean-up-tstxtract-destination-folder), delete the contents of `_extract` folder and recreate before continuing.
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > tstxtract ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en_PASSWORD.7z _extract
 File ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en_PASSWORD.7z, returned code is 8.
 tstxtract return code: 8
@@ -91,7 +102,7 @@ E-mails commonly contain attachments where the attachment will often contain sub
 > NOTE: Per notes [above](#clean-up-tstxtract-destination-folder), delete the contents of `_extract` folder and recreate before continuing.
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > tstxtract "<..\..\..\idol-oem-tutorials\resources\keyview_filter\email with zip attachment.msg" _extract
 File ..\..\..\idol-oem-tutorials\resources\keyview_filter\email with zip attachment.msg has 2 sub files, charset: 51, format: 345
 tstxtract return code: 0

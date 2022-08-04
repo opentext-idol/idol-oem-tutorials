@@ -6,11 +6,12 @@ In this lesson, you will:
 - explore not relying on the file extension 
 - explore password / encryption detection
 
-This guide assumes you have already completed the introductory KeyView Filter [tutorial](./introduction.md).
+> NOTE: This guide assumes you have already completed the introductory KeyView Filter [tutorial](./introduction.md#keyview-filter-sdk-introduction).
 
 ---
 
 - [Setup](#setup)
+  - [Resources](#resources)
 - [Don't rely on the file extension](#dont-rely-on-the-file-extension)
   - [Perform detection on SmartCipher file](#perform-detection-on-smartcipher-file)
 - [Password / Encryption detection](#password--encryption-detection)
@@ -24,7 +25,14 @@ This guide assumes you have already completed the introductory KeyView Filter [t
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Be sure to download the KeyView Filter resources from [here](../../resources/keyview_filter/) and extract them to `C:\MicroFocus\idol-oem-tutorials\resources` before you continue.
+> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](./introduction.md#keyview-filter-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Filter SDK concepts.
+
+### Resources
+
+Be sure to download the following resources before you continue:
+- sample documents from [here](../../resources/keyview_filter/) and install to `C:\MicroFocus\idol-oem-tutorials\resources`
+
+> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../keyview_filter/introduction.md#keyview-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic KeyView Filter SDK concepts.
 
 ## Don't rely on the file extension
 
@@ -33,7 +41,7 @@ The Micro Focus SmartCipher encrypted file `SmartCipher_Fmt.txt` was a text file
 ### Perform detection on SmartCipher file
 
 ```sh
-> cd c:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -d ..\..\..\idol-oem-tutorials\resources\keyview_filter\SmartCipher_Fmt.txt detect
 The file ..\..\..\idol-oem-tutorials\resources\keyview_filter\SmartCipher_Fmt.txt
 Class ID:                       8
@@ -63,7 +71,7 @@ Many file formats allow for their contents to be password protected and/or encry
 In the above example with `SmartCipher_Fmt.txt`, the attribute for `encrypted` file was returned.  This lesson will explore this further with a 7-zip file.
 
 ```sh
-> cd c:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -d ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en_PASSWORD.pdf detect
 The file ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf.7z
 Class ID:                       8
@@ -85,7 +93,7 @@ KWAD: error code returned is KVERR_Success
 
 > NOTE: The `KVERR_Success` error code is a positive result.
 
-The password protect version returned `Attributes: 1` meaning `encrypyted` per `ENdocAttributes` in `%KEYVIEW_HOME%\include\adinfo.h`.
+The password protect version returned `Attributes: 1` meaning `encrypted` per `ENdocAttributes` in `%KEYVIEW_HOME%\include\adinfo.h`.
 
 ## Conclusion
   

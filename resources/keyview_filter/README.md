@@ -52,10 +52,15 @@
 
 - embed 2022_calendar_HIDDEN_TEXT.docx and Simple meal planner1.xlsx
 - has custom text in slide master
-- has comments (BUT COMMENTS ARE NOT EXTRACTED FOR UNKNOWN REASON)
 
 - filter w/o args extracts body text (includes header/footer)
 - filter -sh adds slide master text (e.g. Secret text in the slide master)
+
+### Robin Zupanc Resume_RESTRICTED.docx
+
+- has hyperlinks
+
+- filter -sh extracts link part of hyperlink
 
 ## Advanced Metadata Extraction
 
@@ -92,7 +97,6 @@
 
 - embed 2022_calendar_HIDDEN_TEXT.docx and Simple meal planner1.xlsx
 - has custom text in slide master
-- has comments (BUT COMMENTS ARE NOT EXTRACTED FOR UNKNOWN REASON)
 
 - tstxtract extracts 2 sub files
 - tstxtract -r extracts 2 sub files

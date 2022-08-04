@@ -9,3 +9,7 @@ Contains Eduction configuration file and input text to explore PCI PAN (aka acco
 ### PCI - pci_all
 
 Contains Eduction configuration file and input text with valid matches for all PCI entity categories.
+
+### PII - pii_table_mode
+
+Contains Eduction configuration file and input text to explore table mode with PII entities.

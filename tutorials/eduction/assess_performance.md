@@ -1,10 +1,11 @@
 # Assessing Performance of Eduction
 
-In this lesson, you will:
+IDOL Eduction includes multiple tools to assess the performance of matching.  `edktool` has benchmark, assess and measure to aid in assessing processing speed and match efficacy.
 
+In this lesson, you will:
 - Explore tools to measure processing speed.
 
-This guide assumes you have already completed the introductory Eduction [tutorial](./introduction.md).
+> NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](./introduction.md#eduction-sdk-introduction).
 
 ---
 
@@ -21,11 +22,7 @@ This guide assumes you have already completed the introductory Eduction [tutoria
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-IDOL Eduction includes multiple tools to assess the performance of matching.  `edktool` has benchmark, assess and measure to aid in assessing processing speed and match efficacy.
-
-Pre-trained grammar packages are distributed separately from the main Eduction SDK zip.  You already downloaded a copy of them in the [introductory tutorial](./introduction.md#download-eduction-components), *i.e.* the file `EductionGrammars_12.12.0_COMMON.zip`. Verify that you have unzipped this package on your working machine.  The follow guide assumes this is `C:\MicroFocus\EductionGrammars_12.12.0_COMMON` on Windows.
-
-The following lessons assume that PATH environment variable has been set appropriately for your choce of OS and shell as explained [here](/introduction.md#environment-variables).
+> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#eduction-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
 
 ## Running edktool extract
 

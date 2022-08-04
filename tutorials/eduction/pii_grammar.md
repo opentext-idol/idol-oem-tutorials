@@ -8,7 +8,7 @@ In this lesson, you will:
 - Gain an understanding of "context" vs "nocontext" entity forms.
 - Introduce the concepts of targeted pre-filtering.
 
-This guide assumes you have already completed the introductory Eduction [tutorial](./introduction.md).
+> NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](./introduction.md#eduction-sdk-introduction).
 
 ---
 
@@ -29,11 +29,7 @@ This guide assumes you have already completed the introductory Eduction [tutoria
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Pre-trained grammar packages are distributed separately from the main Eduction SDK `.zip`.  You have already downloaded a copy of them in the [introductory tutorial](./introduction.md#download-eduction-components), *i.e.* the file `EductionGrammars_12.12.0_COMMON.zip`. Verify that you have unzipped this package on your working machine.  The follow guide assumes this is `C:\MicroFocus\EductionGrammars_12.12.0_COMMON` on Windows.
-
-> NOTE: The following lessons assume that PATH environment variable has been set appropriately for OS and choice of shell as explained [here](./introduction.md#environment-variables).  Alternatively, download `setup_Eduction.bat` from [here](../resource/eduction/setup_Eduction.bat) and run in command prompt before running `edktool`.
-
-> NOTE: The following lesson assume `licensekey.dat` is copied into `C:\MicroFocus\EductionSDK_12.12.0`.
+> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#eduction-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
 
 ## What's in the box?
 

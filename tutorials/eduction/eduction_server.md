@@ -155,7 +155,7 @@ The ACI API SDK is currently available for C, Java and .NET.  In this tutorial w
 
 ### Python wrapper
 
-The Python wrapper code is included in this tutorial package under `resources/aciapipy`.
+The Python wrapper code is included in this tutorial package under `resources/apis/aci/aciapipy`.
 
 In the `lib` directory, you find and open the `.env` file to ensure that the `ACI_LIB_PATH` environment variable points to your C SDK directory:
 
@@ -203,7 +203,7 @@ Navigate to this directory and edit the file to set the value of the `encryption
 Now you're ready to run:
 
 ```sh
-> cd resources/aciapipy/scripts
+> cd resources\apis\aci\aciapipy\scripts
 > python get_version_oem.py
 Eduction Server v12.12.0
 ```

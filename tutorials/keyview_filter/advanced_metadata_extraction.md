@@ -6,9 +6,12 @@ In this lesson, you will explore:
 - XMP metadata extraction
 - identification of document restrictions
 
+> NOTE: This guide assumes you have already completed the introductory KeyView Filter [tutorial](./introduction.md#keyview-filter-sdk-introduction).
+
 ---
 
 - [Setup](#setup)
+  - [Resources](#resources)
 - [XMP Metadata](#xmp-metadata)
   - [Perform XMP metadata extraction](#perform-xmp-metadata-extraction)
 - [Document Restrictions](#document-restrictions)
@@ -22,7 +25,14 @@ In this lesson, you will explore:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Be sure to download the KeyView Filter resources from [here](../../resources/keyview_filter/) and extract them to `C:\MicroFocus\idol-oem-tutorials\resources` before you continue.
+> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](./introduction.md#keyview-filter-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Filter SDK concepts.
+
+### Resources
+
+Be sure to download the following resources before you continue:
+- sample documents from [here](../../resources/keyview_filter/) and install to `C:\MicroFocus\idol-oem-tutorials\resources`
+
+> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../keyview_filter/introduction.md#keyview-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic KeyView Filter SDK concepts.
 
 ## XMP Metadata
 
@@ -60,7 +70,7 @@ Reference the Keyview documentation on [Document Restrictions](https://www.micro
 The `filtertest` utility will be used for this lesson.  `filtertest` works similarly to `filter` with a few additional options.
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filtertest -restrictions "..\..\..\idol-oem-tutorials\resources\keyview_filter\Robin Zupanc Resume_RESTRICTED.docx" restrictions`
 filtertest finished with RC: 0
 ```

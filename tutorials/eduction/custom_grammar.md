@@ -8,6 +8,8 @@ In this lesson, you will:
 - compile and verify multiple grammar examples
 - extend an existing grammar
 
+> NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](./introduction.md#eduction-sdk-introduction).
+
 ---
 
 - [Setup](#setup)
@@ -26,13 +28,7 @@ In this lesson, you will:
 
 Before you continue with this lesson, refer to the documentation links [below](#see-also).
 
-Pre-trained grammar packages are distributed separately from the main Eduction SDK `.zip`. You already downloaded a copy of them in the introductory tutorial, *i.e.* the file `EductionGrammars_12.12.0_COMMON.zip`. Verify that you have unzipped this package on your working machine. The follow guide assumes this is `C:\MicroFocus\EductionGrammars_12.12.0_COMMON` on Windows.
-
-> NOTE: As described in the introduction [Useful third-party tools](#../introduction.md#useful-third-party-tools), a UTF-8 capable editor is required in this lesson to enable creation of grammar XML and input file.
-
-> NOTE: The following lesson assumes that the PATH environment variable has been set appropriately for OS and choice of shell as explained here. Alternatively, run `setup_Eduction.bat` (available in the tutorial resource) once in command prompt before running `edktool`.
-
-> NOTE: The following lesson assume licensekey.dat is deployed to `C:\MicroFocus\EductionSDK_12.12.0`.
+> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#eduction-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
 
 ## Compile and Verify
 
@@ -95,7 +91,7 @@ The Eduction User and Programming Guide has excellent sections on this [topic](h
 
 ### `grammar.xml` and `grammar_include.xml`
 
-The [grammar.xml](#https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/Content/UseEduction/Grammars/grammar_xml.htm) and [grammar_include.xml](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/Content/UseEduction/Grammars/grammar_include_xml.htm) example illustrates many interesting Eduction concepts:
+The [grammar.xml](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/Content/UseEduction/Grammars/grammar_xml.htm) and [grammar_include.xml](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/Content/UseEduction/Grammars/grammar_include_xml.htm) example illustrates many interesting Eduction concepts:
 - including another grammar file
 - public and private entity scope
 - headword / synonym and pattern for entity definition
