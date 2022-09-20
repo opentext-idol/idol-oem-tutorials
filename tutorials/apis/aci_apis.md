@@ -73,7 +73,7 @@ Contact Micro Focus to obtain a trial OEM license key.  For this tutorial you wi
 
 ## API Documentation
 
-The [ACI API Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_6/IDOLJavaSDK_12.4_Documentation/Guides/html/English/index.html) is an excellent resource which will be heavily relied upon in this lesson.
+The [ACI API Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_6/IDOLJavaSDK_12.4_Documentation/Guides/html/English/index.html) is an excellent resource, which will be heavily relied upon in this lesson.
 
 The API specific reference documentation is located as below:
 - C - [C-Language Reference](https://www.microfocus.com/documentation/idol/IDOL_12_6/IDOLJavaSDK_12.4_Documentation/Guides/html/English/index.html#C/C_functions.htm)

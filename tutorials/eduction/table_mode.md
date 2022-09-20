@@ -127,7 +127,7 @@ Eduction `table mode` was able to distinguish between the 2 types of dates by ke
 
 You now understand the basics of Eduction `table mode` and how it can reduce false positives for spreadsheet and CSV type data.  You have also explored a PII/PHI use case for `table mode` with a simple, but still useful configuration.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#capability-showcase-examples).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](./README.md) page.
 
 ## See also
 

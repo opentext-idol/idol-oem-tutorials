@@ -85,6 +85,8 @@ Update the `tutorial.h` file with the following information:
 
 Before we can get access to any KeyView functionality, we will first need to link against the kvfilter shared library. The resulting binary needs to be placed in the Filter bin directory (i.e. the directory containing kvfilter.so or kvfilter.dll), although the binary may be run from a different working directory. 
 
+> **Security**: The advanced programming tutorial has some suggestions on security best practices, including how to mitigate against [DLL preloading attacks](programming_c_advanced.md#dll-pre-loading-attacks)
+
 #### Linking using GCC
 
 On Linux, you need to link against kvfilter.so, and also pass in the `–rpath $ORIGIN` option to the linker, e.g. `%KEYVIEW_HOME%/LINUX_X86_64/bin/kvfilter.so -Wl,-rpath,'$ORIGIN'`
@@ -195,7 +197,7 @@ We recommend that all error are handled this way, and will assume this is being 
 
 ### Filtering hidden information
 
-KeyView provides a number of options that control which text is output, and how that text is converted or displayed. One common requirement of KeyView is that it displays as much text as possible, including text that is not normally visible in the document, such as hidden cells or slides, or ancillary text like comments or notes. These can be displayed by enabling the hidden text option, using [fpFilterConfig()](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpFilterConfig.htm).
+KeyView provides a number of options that control what text is output, and how that text is converted or displayed. One common requirement of KeyView is that it displays as much text as possible, including text that is not normally visible in the document, such as hidden cells or slides, or ancillary text like comments or notes. These can be displayed by enabling the hidden text option, using [fpFilterConfig()](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpFilterConfig.htm).
 
 ```c
 if(!filter.fpFilterConfig(context, KVFLT_SHOWHIDDENTEXT, TRUE, NULL))

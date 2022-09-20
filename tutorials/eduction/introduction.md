@@ -598,7 +598,7 @@ For full details on this property, please read the [reference guide](https://www
 
 You should now be confident in the basics of IDOL Eduction.  
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#eduction-showcase).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](./README.md) page.
 
 ## See also
 

@@ -46,11 +46,11 @@ To review which grammar files are included, list the directory `C:\MicroFocus\Ed
 
 The PCI grammar files provide entities of the "context", "nocontext" and "landmark" forms like the PII, PHI and Gov packages do.
 
+For the PCI date entities, like `pci/date/paymentcard/*`, "context", "nocontext" and 'landmark" options are available in order to match the recall and precision goals to the use case.  Consider that the "nocontext" version might over-match significantly (*i.e.*, we are likely to return values that are similar to the entity patterns, such as a date of birth).
+
+The PCI number entities, like `pci/pan/*/pan`, there are also "context", "nocontext" and "landmark" entity forms. However, the "nocontext" form has less risk of false positives due to checksum validation which we will explore below.
+
 For full details of the entities included with the address grammar, please read the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionGrammars_12.12_Documentation/PCI/#PCI/PCI_GrammarReference.htm).
-
-For the PCI date entities, like `pci/date/paymentcard/*` available with both "context" and "nocontext" options, consider that the "nocontext" version might over-match significantly (*i.e.*, we are likely to return values that are similar to the entity patterns, such as a date of birth). However, not relying on context also reduces the number of false negatives (*i.e.*, we miss fewer matches).
-
-The PCI number entities, like `pci/pan/*/pan`, there's also "context", "nocontext" and "landmark" entity forms. However, the "nocontext" form has less risk of false positives due to checksum validation which we will explore below.
 
 > NOTE: You can configure Eduction to use either versions of an entity, in which case matches located with context are given a higher score in the results.
 
@@ -58,7 +58,7 @@ The PCI number entities, like `pci/pan/*/pan`, there's also "context", "nocontex
 
 Let's try this out now to see what information is returned from a PAN match.
 
-In the setup, you deployed PCI edk_samples resources which can be used with the Eduction APIs and `edktool`: `pci\edk_samples\resources\account_nbr\config\account_nbr.cfg`.
+In the setup, you deployed PCI edk_samples resources, which can be used with the Eduction APIs and `edktool`: `pci\edk_samples\resources\account_nbr\config\account_nbr.cfg`.
 
 Run the following commands to see the output:
 
@@ -104,7 +104,7 @@ Then re-run `edktool extract` as above but output to `-o out2.xml` so you can co
 
 ## Run PCI All Example Matching
 
-In the setup, you deployed edk_samples resources.  It contains resources to be used with the Eduction APIs and `edktool`: `pii\edk_samples\resources\pci_all\config\pci_all.cfg`. 
+In the setup, you deployed edk_samples resources.  It contains resources to be used with the Eduction APIs and `edktool`: `pci\edk_samples\resources\pci_all\config\pci_all.cfg`. 
 
 Run the following commands to see the output:
 
@@ -113,13 +113,13 @@ cd C:\MicroFocus\EductionGrammars_12.12.0_COMMON\pci\edk_samples\resources
 edktool extract -l ..\..\..\..\EductionSDK_12.12.0_WINDOWS_X86_64\licensekey.dat -c pci_all\config\pci_all.cfg -i pci_all\input\input.txt -o out.xml
 ```
 
-The `pci_all` configuration and `input.txt` represent all available entity categories in the PCI package, but does intentional select "nocontext" vs "context" for particular entity categories.
+The `pci_all.cfg` configuration and `input.txt` represent all available entity categories in the PCI package, but does intentional select "nocontext" vs "context" for particular entity categories.
 
 ## Conclusion
 
 You now understand how to explore and use the IDOL Eduction's PCI grammars and an example of how the post processing stage of Eduction matching is very valuable. Other entity categories like PII national_id & tin, PHI device UDI & DEA # and GOV Legal Entity Identifier (LEI) do checksum based validation to improve match precision.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#capability-showcase-examples).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](./README.md) page.
 
 ## See also
 

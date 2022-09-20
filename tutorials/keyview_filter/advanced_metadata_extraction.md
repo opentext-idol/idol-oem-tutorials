@@ -88,7 +88,7 @@ Try the `filtertest -restrictions` with other tutorial resource PPT, DOCX, XLSX,
 
 There are multiple types of metadata that a given file format may contain. KeyView Filter SDK strives to extract as much information as is possible from file formats.
 
-Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-sdk-showcase).
+Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [showcase](./README.md) page.
 
 ## See also
 

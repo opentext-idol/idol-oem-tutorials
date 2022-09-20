@@ -101,7 +101,7 @@ Knowing a files is encrypted is the next best thing to be able to decrypt and ex
 
 Relying on a file's extension to determine if and how to further process a given file is dangerous. You may treat gibberish text as plain text processing large amounts of it for no good reason.  Or you may unpack a zip file that is actually one of many other file formats and thus treat the many contained files as something interesting to process when in practice much more intelligence is required to exclude the noise and correctly parse the interesting bits.
 
-Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-sdk-showcase).
+Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [showcase](./README.md) page.
 
 ## See also
 

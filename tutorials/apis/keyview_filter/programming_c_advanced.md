@@ -18,6 +18,11 @@ In this lesson, you will:
   - [Using streams for detection and metadata](#using-streams-for-detection-and-metadata)
   - [Filtering text using streams](#filtering-text-using-streams)
   - [Extracting sub files using streams](#extracting-sub-files-using-streams)
+- [Security](#security)
+  - [DLL pre-loading attacks](#dll-pre-loading-attacks)
+    - [Embedding a manifest on Windows](#embedding-a-manifest-on-windows)
+    - [Loading with absolute paths](#loading-with-absolute-paths)
+  - [Calling KeyView from an application with elevated privileges](#calling-keyview-from-an-application-with-elevated-privileges)
 - [Conclusion](#conclusion)
 - [See also](#see-also)
 
@@ -210,6 +215,38 @@ extract.fpCloseSubFile(substream);
 You can use the [fpGetExtractInfo](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpGetExtractInfo.htm) function to retrieve the KVSubFileExtractInfo structure associated with the subfile, and the [fpGetExtractStatus()](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpGetExtractStatus.htm) function to return more information about any errors encountered when using the sub file stream.
 
 When parsing this stream back into the KeyView Filter interface, it must be on a different context to the one that started the Extract session. Because initializing a new context can incur a performance cost, this should be done once, and then this context can be reused for each sub file.
+
+## Security
+
+This section outlines some security best practices you may wish to consider when using KeyView.
+
+### DLL pre-loading attacks
+
+The examples in the C programming tutorial assume that your application executable will be located in the same directory as `kvfilter.dll` / `kvfilter.so` and the other KeyView binaries.  If kvfilter is not present for some reason, the Operating System will search various other locations for it.  This can be convenient during development but:
+
+* Could lead to DLL pre-loading attacks if an attacker is able to place a malicious binary in one of the locations searched.
+* Could lead to unexpected results if a different version of KeyView is present in one of the locations searched.
+
+#### Embedding a manifest on Windows
+
+On Windows you may wish to consider mitigating against this threat by embedding a manifest in your executable so that Windows will only search for `kvfilter.dll` in its expected location.  For example:
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+    <file name="kvfilter.dll" />
+</assembly>
+```
+
+#### Loading with absolute paths
+
+On Windows, if you have chosen to load kvfilter.dll with `LoadLibrary` instead of using the import library, you may wish to consider using an absolute path to prevent Windows searching for the library in other locations.
+
+On other platforms, if you have chosen to load kvfilter.so with `dlopen` instead of including it in the linker command, you may wish consider using an absolute path to prevent the OS from searching in other locations.
+
+### Calling KeyView from an application with elevated privileges
+
+Following security best practice for any application, we would recommend running KeyView with minimal privileges.  If your application requires root or Administrator privileges then we'd suggest dropping those before calling KeyView.  If for some reason you are unable to do that (for example, the elevated privileges will be required again after the call to KeyView), you may wish to look at [Run KeyView with Reduced Privileges](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/c-programming/index.html#C/filter_api/Run_KeyView_Reduced_Privileges.htm), which explains how KeyView can be configured to process files with minimal privileges even when called from an application with elevated privileges.
 
 ## Conclusion
 

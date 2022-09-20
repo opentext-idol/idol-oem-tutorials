@@ -102,7 +102,7 @@ The `[Eduction]` section of this configuration file should look familiar to you 
 
 Note some important additional sections:
 
-- The Service and Server ports which Eduction Server will listen on to receive requests from an ACI client:
+- The Service and Server ports that Eduction Server will listen on to receive requests from an ACI client:
 
     ```ini
     [Service]
@@ -275,7 +275,7 @@ You now understand how to license and run Eduction Server in an OEM deployment t
 
 > NOTE: these instructions are valid for any ACI server, so you are already more powerful than you thought.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#capability-showcase-examples).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](./README.md) page.
 
 ## See also
 

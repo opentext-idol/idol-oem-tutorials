@@ -122,7 +122,7 @@ For processing speed, here's some things to consider:
 
 You now understand how to assess performance of Eduction.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#capability-showcase-examples).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](./README.md) page.
 
 ## See also
 

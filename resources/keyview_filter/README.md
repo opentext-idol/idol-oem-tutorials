@@ -112,7 +112,7 @@
 
 ### email with zip attachment.msg
 
-- has zip which contains demo_EMBEDDED_DOC.pptx
+- has zip, which contains demo_EMBEDDED_DOC.pptx
 
 - tstxtract extracts 2 sub files (mail & zip)
 - tstxtract -r extracts add'l files as above for demo_HAS_EMBEDDED_DOC.zip

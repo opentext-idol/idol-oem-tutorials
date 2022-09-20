@@ -12,19 +12,7 @@ A set of guides to introduce you to IDOL Eduction and KeyView and associated int
 - [Use the APIs](#use-the-apis)
 - [Capability showcase examples](#capability-showcase-examples)
   - [Eduction showcase](#eduction-showcase)
-    - [Use the PII Eduction grammars](#use-the-pii-eduction-grammars)
-    - [Use the PCI Eduction grammars](#use-the-pci-eduction-grammars)
-    - [Extract Table Oriented Data](#extract-table-oriented-data)
-    - [Assessing Performance of Eduction](#assessing-performance-of-eduction)
-    - [Create a custom Eduction grammar](#create-a-custom-eduction-grammar)
-    - [Use IDOL Eduction Server](#use-idol-eduction-server)
   - [KeyView Filter SDK showcase](#keyview-filter-sdk-showcase)
-    - [Advanced Format Detection](#advanced-format-detection)
-    - [Advanced Metadata Extraction](#advanced-metadata-extraction)
-    - [Advanced Text Extraction](#advanced-text-extraction)
-    - [Advanced Sub File Extraction](#advanced-sub-file-extraction)
-    - [Microsoft RMS Files](#microsoft-rms-files)
-    - [Optical Character Recognition](#optical-character-recognition)
   - [KeyView and Eduction](#keyview-and-eduction)
 - [See also](#see-also)
   - [Links](#links)
@@ -84,81 +72,13 @@ Dip into any of the following showcase lessons to try more features.
 
 Explore more Eduction features.
 
-#### Use the PII Eduction grammars
-
-Explore and use out-of-the-box grammars to match PII entities.
-
-[Get started](./eduction/pii_grammar.md).
-
-#### Use the PCI Eduction grammars
-
-Explore and use out-of-the-box grammars to match PCI entities.
-
-[Get started](./eduction/pci_grammar.md).
-
-#### Extract Table Oriented Data
-
-Extract entities from files with row / column oriented data.
-
-[Get started](./eduction/table_mode.md).
-
-#### Assessing Performance of Eduction
-
-Measure speed of extraction.
-
-[Get started](./eduction/assess_performance.md).
-
-#### Create a custom Eduction grammar
-
-Develop your own rules to match entities.
-
-[Get started](./eduction/custom_grammar.md).
-
-#### Use IDOL Eduction Server
-
-Perform Eduction as a service by calling the IDOL Eduction Server using the ACI API.
-
-[Get started](./eduction/eduction_server.md).
+[Get started](./eduction/README.md).
 
 ### KeyView Filter SDK showcase
 
 Do more with KeyView.
 
-#### Advanced Format Detection
-
-Other examples of automatic format detection.
-
-[Get started](./keyview_filter/advanced_format_detection.md).
-
-#### Advanced Metadata Extraction
-
-Extract additional document metadata like XMP and document restrictions.
-
-[Get started](./keyview_filter/advanced_metadata_extraction.md).
-
-#### Advanced Text Extraction 
-
-Extract other forms of visible text as well as hidden text.
-
-[Get started](./keyview_filter/advanced_text_extraction.md).
-
-#### Advanced Sub File Extraction
-
-Extract sub-files from various formats.
-
-[Get started](./keyview_filter/advanced_subfile_extraction.md).
-
-#### Microsoft RMS Files
-
-Explore metadata and XrML extraction from [Microsoft Azure RMS](https://docs.microsoft.com/en-us/azure/information-protection/what-is-azure-rms) protected content.
-
-[Get started](./keyview_filter/rms.md).
-
-#### Optical Character Recognition
-
-Extract text from images.
-
-[Get started](./keyview_filter/ocr.md).
+[Get started](./keyview_filter/README.md).
 
 ### KeyView and Eduction
 

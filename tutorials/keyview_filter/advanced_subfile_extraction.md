@@ -147,7 +147,7 @@ tstxtract return code: 0
 
 Many more document formats can contain sub files than you may initially imagine.  This lesson covered obvious ones like RAR, 7-Zip, MSG as well as slightly less obvious formats like PPTX, DOCX, XLSX.  Plus there can be different types of embedded objects and/or files contained within a given document
 
-Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-sdk-showcase).
+Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [showcase](./README.md) page.
 
 ## See also
 

@@ -1,0 +1,76 @@
+Bank Account Number: 12345678
+Routing no: 622356789
+SWIFT Code: USBKUS44IMT
+
+123 Main St, Anywhere, IA 12345
+Address: 123 Mill Road
+City: Anywhere
+Postcode: 12345
+Country: US
+
+Age: 99
+
+Birth Certificate: 160-99-123456
+Birth Certificate: 160 98 123456
+Certificate number: MX-123-456/78
+
+DOB: 1/13/1981
+DOB: 01/13
+Died on 04/13/2022
+Died on 04/13
+Admission date: 06/13/2022	// won't match per cfg
+Admission date: 06/13		// won't match per cfg
+
+DEA Registration Number: BE1234563
+
++X999123ABC0/$$31905151234AB/S5678EDFG/16D20151001J
+(01)51022222233336(11)141231(17)150707(10)A213B1(21)1234
++H123PARTNO1234567890120/$$420020216LOT123456789012345/SXYZ456789012345678/16D20130202H
+=/A9999XYZ100T0944=,000025=A99971312345600=>014032=}013032&,1000000000000XYZ123
+614141987658
+
+Plan ID 12345678LMNOP9
+Plan ID: 12345678LMNOP8
+MRN: 3321AC4383LDD33
+
+email: jsmith@mailserver.com
+ip address: 5.5.5.5
+url: https://www.example.org
+
+CLIA No: 01D1234567
+
+Driving license: 012AB3456
+License number: MX-123-456/78
+
+Houston, TX
+city of Houston
+
+John Smith
+Smith, John
+JANE DOE
+DOE, JANE
+
+SSN: 534-33-4394
+SSN: 534 33 4393
+SSN: 534334392
+SSN: xxx-xx-3333
+
+abdominal hernia
+9 panel urine test
+1, 25 dihydroxyvitamin D
+abdominal liposuction
+allergy and immunology
+Abelcet
+Abacavir
+Altoprev
+adrenal glands carcinoma
+1p36 deletion syndrome
+smoking
+
+Telephone: (201)-243-9955
+Telephone:(202)-243-9956
+972-333-4123
++1-201-222-4344
+
+License Plate Number: ABC 123
+VIN: LJCPCBLCX11000237

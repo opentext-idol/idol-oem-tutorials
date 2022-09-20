@@ -219,7 +219,7 @@ For more details on pre-filtering, please read the [Eduction User and Programmin
 
 You now understand how to explore, use and optimize IDOL Eduction's PII grammar package.  Other grammars and entities within the PII package will look and behave similarly to `address.ecr`.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#capability-showcase-examples).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](./README.md) page.
 
 ## See also
 

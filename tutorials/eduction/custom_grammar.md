@@ -237,7 +237,7 @@ Before you continue with this part of the lesson, refer to these documentation l
 
 You now understand the mechanics of compiling a grammar, verifying available entities and creating a new grammar either from scratch or extending existing one.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#capability-showcase-examples).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](./README.md) page.
 
 ## See also
 

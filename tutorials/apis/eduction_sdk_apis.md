@@ -9,7 +9,7 @@ In this lesson, you will:
 - use the Eduction SDK APIs to perform extraction using a configuration file
 - use the Eduction SDK APIs to compile a grammar XML into an ECR
 
-The [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/Content/EductionSDK/APIReference/apiReference.htm) has excellent sections on this topic which will be heavily relied upon in this lesson.
+The [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/Content/EductionSDK/APIReference/apiReference.htm) has excellent sections on this topic, which will be heavily relied upon in this lesson.
 
 > NOTE: This lesson only covers the Eduction SDK APIs and does not cover Eduction Server. See [here](../tutorials/README.md#use-idol-eduction-server) for a lesson on Eduction Server.
 

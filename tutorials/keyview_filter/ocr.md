@@ -80,7 +80,7 @@ Read up on the `languages orientation detectAlphabet` tuning options in the [Opt
 
 With KeyView Filter SDK supporting the OCR of images, more content is available for downstream processing.
 
-Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-sdk-showcase).
+Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [showcase](./README.md) page.
 
 ## See also
 
