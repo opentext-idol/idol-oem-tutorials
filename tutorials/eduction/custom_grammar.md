@@ -37,12 +37,12 @@ Before you continue with this lesson, refer to the documentation links [below](#
 Let's start with the mechanics of compiling grammar XML source into an ECR.
 
 ```sh
-> cd C:\MicroFocus\EductionSDK_12.12.0_WINDOWS_X86_65\samples\compile\resources\test
-> edktool compile -l ..\..\..\..\licensekey.dat -i source\test.xml -o test.ecr
+> cd C:\MicroFocus\EductionSDK_12.12.0_WINDOWS_X86_64\samples\compile\resources\test
+> edktool compile -l ..\..\..\..\licensekey.dat -i grammar\test.xml -o test.ecr
 
 Eduction EDKTool Utility v12.12.0
 Compiling:
-  source\test.xml
+  grammar\test.xml
 into:
   test.ecr
 using the license:
@@ -104,7 +104,7 @@ As extra credit, copy and paste from the documentation into your own grammar.xml
 
 ## Extending an existing grammar
 
-Grammars and entities contained within are kind of programming objects in that they can be inherited and extended. This allows for you to make net-new entities more quickly leveraging say `EductionGrammars_12.12.0\general\grammars\date_spa.ecr` to make your own `datetime_advanced_spa.ecr` or improve the behavior of existing grammars by say adding to `PII pii/name/surname/nocontext/CC` to improve matching / scoring of PII name.
+Grammars and entities contained within are kind of programming objects in that they can be inherited and extended. This allows for you to make net-new entities more quickly leveraging say `EductionGrammars_12.12.0_COMMON\general\grammars\date_spa.ecr` to make your own `datetime_advanced_spa.ecr` or improve the behavior of existing grammars by say adding to `PII pii/name/surname/nocontext/CC` to improve matching / scoring of PII name.
 
 Before you continue with this part of the lesson, refer to these documentation links:
 
@@ -120,7 +120,7 @@ Before you continue with this part of the lesson, refer to these documentation l
 1. You will likely need to change `path` attribute of `<include ...>` like the following:
     ```diff
     - <include path="name.ecr"/>
-    + <include path="C:\MicroFocus\EductioGrammars_12.12.0\PII\name.ecr"/>
+    + <include path="C:\MicroFocus\EductionGrammars_12.12.0_COMMON\PII\name.ecr"/>
     ```
 
 1. Run `edktool compile` on `name_extend.xml`
@@ -142,14 +142,14 @@ Before you continue with this part of the lesson, refer to these documentation l
 
 1. Using UTF-8 editor, create an `input.txt` with `Fobo Jones` `Jane Fobo` and for fun `Fobo Jobo`, plus `Fobo@@Jobo` to verify the new custom separator `@@`.
    
-1. Create name_extended.cfg from `EductionGrammars_12.12.0\pii\config\edktool.cfg`
+1. Create name_extended.cfg from `EductionGrammars_12.12.0_COMMON\pii\config\edktool.cfg`
     ```diff
     -ResourceFiles = combined_address.ecr,combined_banking.ecr,combined_date.ecr,combined_driving.ecr,combined_health.ecr,combined_medical_terms.ecr,combined_name.ecr,combined_national_id.ecr,combined_nationality.ecr,combined_passport.ecr,combined_postcode.ecr,combined_tin.ecr,combined_travel.ecr
     +ResourceFiles=name_extended.ecr
     - Entity0 = pii/address/all,pii/banking/context/all,pii/banking/iban/context/all,pii/banking/swiftcode/context/all,pii/date/dob/context/all,pii/driving/context/all,pii/health/ehic/context/all,pii/health/id/context/all,pii/medical_terms/all,pii/name/all,pii/id/context/all,pii/nationality/any/context/all,pii/passport/context/all,pii/postcode/context/all,pii/tin/context/all,pii/tin/vatin/context/all,pii/travel/context/all
     +Entity0 = pii/name/gb
     -Script = scripts/pii_postprocessing.lua
-    +Script = C:\MicroFocus\EductionGrammars_12.12.0\pii\scripts\pii_postprocessing.lua
+    +Script = C:\MicroFocus\EductionGrammars_12.12.0_COMMON\pii\scripts\pii_postprocessing.lua
     ```
     
 1.  Run `edktool extract`:
