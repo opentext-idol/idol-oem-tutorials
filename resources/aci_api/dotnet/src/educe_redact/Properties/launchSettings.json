@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "educeRedact": {
+      "commandName": "Project",
+      "commandLineArgs": "e localhost 7000 REPLACE_WITH_ENTITIES_CSV REPLACE_WITH_TEXT",
+      "environmentVariables": {
+        "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY": "REPLACE_WITH_MY_LONG_KEY_STRING"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+
+1- sensitive data
+Name	SSN	Date of Birth	Admission Date	
+John Smith	341-34-1593	1/1/1955	1/1/2020	
+Jane Doe	454-23-7653	10/1/1976	11/11/2019	
+223-11-4853	6/22/1974	10/22/2021	
+Sally Smith	3/14/1975	6/30/2022	
+
+2- extra column
+Name	Extra Column	SSN	Date of Birth	Admission Date	
+John Smith	xx	341-34-1594	1/1/1951	1/1/2020	
+Jane Doe	454-23-7654	10/1/1971	11/11/2019	
+xx	223-11-4854	6/22/1971	10/22/2021	
+Sally Smith	xx	3/14/1971	6/30/2022	
+
+3- extra header
+Last Updated:  11/2/2022	
+Name	SSN	Date of Birth	Admission Date	
+J Smith	341-34-1592	1/1/1954	1/1/2020	
+J Doe	454-23-7652	10/1/1975	11/11/2019	
+223-11-4852	6/22/1973	10/22/2021	
+S Smith	3/14/1974	6/30/2022	

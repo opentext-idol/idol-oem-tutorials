@@ -38,12 +38,12 @@ Be sure to download the following resources before you continue:
 
 XMP stands for [Extensible Metadata Platform](https://en.wikipedia.org/wiki/Extensible_Metadata_Platform). PDF, image, audio and video files are the typical format categories that may contain XMP metadata.
 
-Refer to the [Keyview Filter SDK Programming Guide](#https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpGetXmpInfo.htm) for more details about KeyView's support for XMP metadata.
+Refer to the [Keyview Filter SDK Programming Guide](#https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpGetXmpInfo.htm) for more details about KeyView's support for XMP metadata.
 
 ### Perform XMP metadata extraction
 
 ```sh
-> cd KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd KeyviewFilterSDK_12.13.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -xmp ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_HAS_XMP.png xmp`
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_HAS_XMP.png to xmp
 filter: error code returned is KVERR_Success
@@ -65,12 +65,12 @@ Some applications, and corresponding file formats, allow users to restrict the w
 
 The document `Robin Zupanc Resume_RESTRICTED.docx` included in this tutorial's resources was created using this [Microsoft.com knowledge article](https://support.microsoft.com/en-us/office/make-a-document-read-only-5c25909c-46d9-4eb0-9d1f-d072a560e340) as guidance. 
 
-Reference the Keyview documentation on [Document Restrictions](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/c-programming/index.html#filter_shared/DocumentRestrictions.htm) for more details like supported formats.
+Reference the Keyview documentation on [Document Restrictions](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#filter_shared/DocumentRestrictions.htm) for more details like supported formats.
 
 The `filtertest` utility will be used for this lesson.  `filtertest` works similarly to `filter` with a few additional options.
 
 ```sh
-> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.13.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filtertest -restrictions "..\..\..\idol-oem-tutorials\resources\keyview_filter\Robin Zupanc Resume_RESTRICTED.docx" restrictions`
 filtertest finished with RC: 0
 ```
@@ -88,11 +88,11 @@ Try the `filtertest -restrictions` with other tutorial resource PPT, DOCX, XLSX,
 
 There are multiple types of metadata that a given file format may contain. KeyView Filter SDK strives to extract as much information as is possible from file formats.
 
-Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [showcase](./README.md) page.
+Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-sdk-showcase).
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/dotnet-programming/index.html)

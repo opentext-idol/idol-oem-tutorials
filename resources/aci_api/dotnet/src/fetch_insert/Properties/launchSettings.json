@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "fetchInsert": {
+      "commandName": "Project",
+      "commandLineArgs": "localhost 7000 MyTask ..\\..\\..\\resources\\insertXML.xml",
+	  "environmentVariables": {
+        "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY": "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY"
+      }	  
+    }
+  }
+}

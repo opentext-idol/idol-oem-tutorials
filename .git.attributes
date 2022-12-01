@@ -1,0 +1,41 @@
+# scripts
+.bat        text eol=crlf
+.cmd        text eol=crlf
+.ps1        text eol=crlf
+.sh         text eol=lf
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+*.exe       binary
+*.dll       binary
+*.jar       binary
+
+# Graphics
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.tif       binary
+*.tiff      binary
+*.ico       binary
+*.svg       binary
+*.webp      binary
+
+# Other binary files - maybe there should be one on resources\keyview_filter
+*.docx      binary
+*.pptx      binary
+*.zip       binary
+*.7z        binary
+*.msg       binary
+*.rar       binary
+*.xlsx      binary
+*.pdf       binary
+
+# Serialisation
+*.json     text
+*.xml      text
+
+# C#
+*.sln      text eol=crlf
+*.csproj   text eol=crlf
+

@@ -1,6 +1,6 @@
 # Advanced Format Detection
 
-As we saw in the introduction lesson for KeyView Filter SDK, the format type (and class) and other attributes can be automatically detected for files.  KeyView relies on a format signature to uniquely identify the format code (with 1700 supported as of the 12.12 release).  Relying on a file extension is dangerous and can result in mis-processing with extra downstream processing costs.  Encryption & password protection often limits the visibility inside files.  KeyView does its best to uniquely identify protected files and also set a separate flag indicating encryption status.
+As we saw in the introduction lesson for KeyView Filter SDK, the format type (and class) and other attributes can be automatically detected for files.  KeyView relies on a format signature to uniquely identify the format code (with >1750 supported as of the 12.13 release).  Relying on a file extension is dangerous and can result in mis-processing with extra downstream processing costs.  Encryption & password protection often limits the visibility inside files.  KeyView does its best to uniquely identify protected files and also set a separate flag indicating encryption status.
 
 In this lesson, you will:
 - explore not relying on the file extension 
@@ -41,7 +41,7 @@ The Micro Focus SmartCipher encrypted file `SmartCipher_Fmt.txt` was a text file
 ### Perform detection on SmartCipher file
 
 ```sh
-> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.13.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -d ..\..\..\idol-oem-tutorials\resources\keyview_filter\SmartCipher_Fmt.txt detect
 The file ..\..\..\idol-oem-tutorials\resources\keyview_filter\SmartCipher_Fmt.txt
 Class ID:                       8
@@ -71,9 +71,9 @@ Many file formats allow for their contents to be password protected and/or encry
 In the above example with `SmartCipher_Fmt.txt`, the attribute for `encrypted` file was returned.  This lesson will explore this further with a 7-zip file.
 
 ```sh
-> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -d ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en_PASSWORD.pdf detect
 The file ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf.7z
+> cd C:\MicroFocus\KeyviewFilterSDK_12.13.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 Class ID:                       8
 Format ID:                      387
 Major Version:                  400
@@ -101,11 +101,11 @@ Knowing a files is encrypted is the next best thing to be able to decrypt and ex
 
 Relying on a file's extension to determine if and how to further process a given file is dangerous. You may treat gibberish text as plain text processing large amounts of it for no good reason.  Or you may unpack a zip file that is actually one of many other file formats and thus treat the many contained files as something interesting to process when in practice much more intelligence is required to exclude the noise and correctly parse the interesting bits.
 
-Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [showcase](./README.md) page.
+Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-sdk-showcase).
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/dotnet-programming/index.html)

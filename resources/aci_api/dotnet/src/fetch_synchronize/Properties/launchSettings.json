@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "fetchSynchronize": {
+      "commandName": "Project",
+      "commandLineArgs": "localhost 7000 MyTask"
+    }
+  }
+}

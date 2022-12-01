@@ -8,7 +8,7 @@ You can obtain software and licenses from the [Software Licensing and Downloads]
 
     ![get-license](./figs/get-license.png)
  
-1. On the "License Activation" screen, at the bottom, select the check box, choose your preferred version (the latest is 12.12), then fill in the quantity to activate:
+1. On the "License Activation" screen, at the bottom, select the check box, choose your preferred version (the latest is 12.13), then fill in the quantity to activate:
 
    ![eSoftware-selectLicense](./figs/eSoftware-selectLicense.png)
 

@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "queueInfo_getStatus": {
+      "commandName": "Project",
+      "commandLineArgs": "localhost 7000 ingest MTkyLjE2OC4xODIuMTI4OjcwMDA6SU5HRVNUOjE2NjA4MzMxNTQwMDM3MS0xMTA4Mjk3MDI1",
+      "sqlDebugging": true
+    }
+  }
+}

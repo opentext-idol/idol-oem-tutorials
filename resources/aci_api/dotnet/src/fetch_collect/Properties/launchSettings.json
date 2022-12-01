@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "fetchCollect": {
+      "commandName": "Project",
+      "commandLineArgs": "localhost 7000 REPLACE_WITH_IDENTIFIERS_CSV .\\collect",
+      "environmentVariables": {
+        "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY": "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY"
+      }
+    }
+  }
+}

@@ -31,7 +31,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PHI edk_samples](../../resources/eduction/phi/edk_samples) and install to `C:\MicroFocus\EductionGrammars_12.12.0_COMMON\phi\edk_samples\resources`
+- [PHI edk_samples](../../resources/eduction/phi/edk_samples) and install to `C:\MicroFocus\EductionGrammars_12.13.0_COMMON\phi\edk_samples\resources`
 
 ## What's in the Box?
 
@@ -39,7 +39,7 @@ The IDOL PHI Package includes IDOL Eduction Grammar files, postprocessing script
 
 ### Available Grammar Files
 
-To review which grammar files are included, list the directory `C:\MicroFocus\EductionGrammars_12.12.0_COMMON\phi`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements.
+To review which grammar files are included, list the directory `C:\MicroFocus\EductionGrammars_12.13.0_COMMON\phi`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements.
 
 There is some apparent overlap with some of the grammars & entities in the PII Package.  The primary difference excluding the net new grammars and entities available in the PHI Package is that the PHI grammars are focused on the United States.
 
@@ -49,7 +49,7 @@ The PHI grammar files provide entities of the "context", "nocontext" and "landma
 
 For the PHI date entities, like `phi/date/dob/*`, "context", "nocontext" and "landmark" options are available in order to match the recall and precision goals to the use case. Consider that the "nocontext" version might over-match significantly (*i.e.*, we are likely to return values that are similar to the entity patterns, such as a last updated date).
 
-For full details of the entities included with the address grammar, please read the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionGrammars_12.12_Documentation/PHI/Content/PHI/PHI_GrammarReference.htm).
+For full details of the entities included with the address grammar, please read the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionGrammars_12.13_Documentation/PHI/Content/PHI/PHI_GrammarReference.htm).
 
 > NOTE: You can configure Eduction to use either versions of an entity, in which case matches located with context are given a higher score in the results.
 
@@ -60,13 +60,13 @@ In the setup, you deployed edk_samples resources.  It contains resources to be u
 Run the following commands to see the output:
 
 ```sh
-cd C:\MicroFocus\EductionGrammars_12.12.0_COMMON\phi\edk_samples\resources
-edktool extract -l ..\..\..\..\EductionSDK_12.12.0_WINDOWS_X86_64\licensekey.dat -c phi_all\config\phi_all.cfg -i phi_all\input\input.txt -o out.xml
+cd C:\MicroFocus\EductionGrammars_12.13.0_COMMON\phi\edk_samples\resources
+edktool extract -l ..\..\..\..\EductionSDK_12.13.0_WINDOWS_X86_64\licensekey.dat -c phi_all\config\phi_all.cfg -i phi_all\input\input.txt -o out.xml
 ```
 
 The `phi_all.cfg` configuration and `input.txt` represent all available entity categories in the `PHI Package`, but does intentional select "nocontext" vs "context" for particular entity categories.  In some cases both entity forms are enabled - *e.g.* `Entity21 = phi/inet/ip/*context` using a simple wildcard expression `*`.
 
-The `phi_all.cfg` also enables [AllowOverlaps](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionServer_12.12_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm). This allows for multiple entities to match part of (or the entirety of) the same input text.  An example of this in the `phi_all\input\input.txt` is:
+The `phi_all.cfg` also enables [AllowOverlaps](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionServer_12.13_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm). This allows for multiple entities to match part of (or the entirety of) the same input text.  An example of this in the `phi_all\input\input.txt` is:
 ```
 email: jsmith@mailserver.com
 ```
@@ -104,34 +104,34 @@ For extra credit change the `phi_all\config\phi_all.cfg` to set `AllowOverlaps =
 Another noteworthy example with `AllowOverlaps=True` occurs with `phi/id/*context/us`: 
 
 ```xml
-    <MATCH EntityName="phi/id/context/us" Offset="1068" OffsetLength="1068" Score="1" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="16" OriginalTextLength="16">
-      <ORIGINAL_TEXT>SSN: 534-33-4394</ORIGINAL_TEXT>
-      <NORMALIZED_TEXT>534-33-4394</NORMALIZED_TEXT>
-      <COMPONENTS>
-        <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
-      </COMPONENTS>
-    </MATCH>
-    <MATCH EntityName="phi/id/nocontext/us" Offset="1073" OffsetLength="1073" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
-      <ORIGINAL_TEXT>534-33-4394</ORIGINAL_TEXT>
-      <NORMALIZED_TEXT>534-33-4394</NORMALIZED_TEXT>
-    </MATCH>
-    <MATCH EntityName="phi/id/context/us" Offset="1085" OffsetLength="1085" Score="0.9" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="16" OriginalTextLength="16">
-      <ORIGINAL_TEXT>SSN: 534 33 4393</ORIGINAL_TEXT>
-      <NORMALIZED_TEXT>534 33 4393</NORMALIZED_TEXT>
-      <COMPONENTS>
-        <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
-      </COMPONENTS>
-    </MATCH>
-    <MATCH EntityName="phi/id/context/us" Offset="1102" OffsetLength="1102" Score="0.8" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="14" OriginalTextLength="14">
-      <ORIGINAL_TEXT>SSN: 534334392</ORIGINAL_TEXT>
-      <NORMALIZED_TEXT>534334392</NORMALIZED_TEXT>
-      <COMPONENTS>
-        <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
-      </COMPONENTS>
-    </MATCH>
-    ```
+<MATCH EntityName="phi/id/context/us" Offset="1068" OffsetLength="1068" Score="1" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="16" OriginalTextLength="16">
+  <ORIGINAL_TEXT>SSN: 534-33-4394</ORIGINAL_TEXT>
+  <NORMALIZED_TEXT>534-33-4394</NORMALIZED_TEXT>
+  <COMPONENTS>
+    <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+  </COMPONENTS>
+</MATCH>
+<MATCH EntityName="phi/id/nocontext/us" Offset="1073" OffsetLength="1073" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+  <ORIGINAL_TEXT>534-33-4394</ORIGINAL_TEXT>
+  <NORMALIZED_TEXT>534-33-4394</NORMALIZED_TEXT>
+</MATCH>
+<MATCH EntityName="phi/id/context/us" Offset="1085" OffsetLength="1085" Score="0.9" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="16" OriginalTextLength="16">
+  <ORIGINAL_TEXT>SSN: 534 33 4393</ORIGINAL_TEXT>
+  <NORMALIZED_TEXT>534 33 4393</NORMALIZED_TEXT>
+  <COMPONENTS>
+    <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+  </COMPONENTS>
+</MATCH>
+<MATCH EntityName="phi/id/context/us" Offset="1102" OffsetLength="1102" Score="0.8" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="14" OriginalTextLength="14">
+  <ORIGINAL_TEXT>SSN: 534334392</ORIGINAL_TEXT>
+  <NORMALIZED_TEXT>534334392</NORMALIZED_TEXT>
+  <COMPONENTS>
+    <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+  </COMPONENTS>
+</MATCH>
+```
 
- For `phi/id/nocontext/us`, only the match `534-33-4394` is produced due to the `PostProcessThreshold = 0.5`.
+For `phi/id/nocontext/us`, only the match `534-33-4394` is produced due to the `PostProcessThreshold = 0.5`.
 
 ## Conclusion
 
@@ -141,5 +141,5 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [IDOL PHI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionGrammars_12.12_Documentation/PHI/)
-- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html)
+- [IDOL PHI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionGrammars_12.13_Documentation/PHI/)
+- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html)

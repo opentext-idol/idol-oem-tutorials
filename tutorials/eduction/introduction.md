@@ -68,23 +68,23 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
 
 1. Under the *Downloads* tab, select your product, product name and version from the dropdowns:
 
-    ![get-software](./figs/get-software.png)
+    ![get-software](../../figs/get-software.png)
 
 1. From the list of available files, select and download the following (depending on your platform):
-   -  `EductionSDK_12.12.0_{PLATFORM}`, *e.g.* `EductionSDK_12.12.0_WINDOWS_X86_64.zip`, and
-   -  `EductionGrammars_12.12.0_COMMON.zip`.
+   -  `EductionSDK_12.13.0_{PLATFORM}`, *e.g.* `EductionSDK_12.13.0_WINDOWS_X86_64.zip`, and
+   -  `EductionGrammars_12.13.0_COMMON.zip`.
 
 #### Install Eduction SDK & Grammars
 
 1. Copy your downloaded files into a new working folder.  The follow guide assumes this is `C:\MicroFocus` on Windows.
 2. Extract both `.zip` files to give you:
-   - `C:\MicroFocus\EductionSDK_12.12.0_WINDOWS_X86_64`, and
-   - `C:\MicroFocus\EductionGrammars_12.12.0_COMMON`
-3. Copy your license key `.dat` file into `C:\MicroFocus\EductionSDK_12.12.0_WINDOWS_X86_64` and rename it to `licensekey.dat`
+   - `C:\MicroFocus\EductionSDK_12.13.0_WINDOWS_X86_64`, and
+   - `C:\MicroFocus\EductionGrammars_12.13.0_COMMON`
+3. Copy your license key `.dat` file into `C:\MicroFocus\EductionSDK_12.13.0_WINDOWS_X86_64` and rename it to `licensekey.dat`
 4. On Windows, you may need to install the included Visual C++ Redistributable package.  In the the same EductionSDK folder, right-click on `vcredist_2017.exe` then select 'Run as administrator'.
     > HINT: If you see a version conflict error here, you may need to first uninstall any existing version.
 
-See the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/#GettingStarted/Install/Install.htm) for more details.
+See the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/#GettingStarted/Install/Install.htm) for more details.
 
 #### Environment variables
 
@@ -93,7 +93,7 @@ For ease of use, update your environment variables to reference your new Eductio
 For Windows, open a command prompt window and enter:
 
 ```sh
-set PATH=C:\MicroFocus\EductionSDK_12.12.0_WINDOWS_X86_64\bin;%PATH%
+set PATH=C:\MicroFocus\EductionSDK_12.13.0_WINDOWS_X86_64\bin;%PATH%
 ```
 A batch file or shell script can be created to make this easier.
 
@@ -105,7 +105,7 @@ Or, from System Properties, add this path to your "Path" System variable:
 
 ## Introduction to Eduction
 
-To get oriented with key concepts please read the "Getting Started" section of the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/#part_intro.htm) before continuing.
+To get oriented with key concepts please read the "Getting Started" section of the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/#part_intro.htm) before continuing.
 
 The following lesson will show you to perform entity extraction.
 
@@ -116,10 +116,10 @@ As our first step, let's run the included binary file `edktool`, then learn how 
 Run the `edktool` command line program to yield usage instructions:
 
 ```sh
-> cd C:\MicroFocus\EductionSDK_12.12.0_WINDOWS_X86_64\bin
-> edktool 
+> cd C:\MicroFocus\EductionSDK_12.13.0_WINDOWS_X86_64\bin
+> edktool
 
-Eduction EDKTool Utility v12.12.0
+Eduction EDKTool Utility v12.13.0
 (c) Copyright 2006-2018 Micro Focus International PLC
 
 Usage: edktool  {
@@ -144,9 +144,96 @@ Usage: edktool  {
                  -e <combinedentity>=<entity>,<entity>,... [-e ...]
                  [-l <licensefile>] |
      help        [<option>] }
+
+Options:
+  generate or g          Generates an uncompiled XML (source) file
+     -i inputfile        The plaintext file containing one match per line
+     -o outputfile       The destination for the output XML file
+     -e entityname       The name for the single entity in the XML output
+
+  compile or c           Compiles a grammar file
+     -i inputfile        Input grammar file
+     -e entities         Entities to be included in the grammar
+     -l licensefile      The file containing the license key
+     -o outputfile       Output grammar file
+     -p                  Treat the input file as plaintext rather than XML
+     -c                  Path to a JSON compilation configuration file
+
+  list or l              Lists the available entities in a grammar file
+        grammarfile      The grammar file
+     -a                  Show additional info - such as license requirements
+     -q                  "Quiet Mode" suppresses all descriptive messages
+
+  extract or e           Extract entities from a file
+     -l licensefile      The file containing the license key
+     -i inputfile        The file on which entity extraction will be performed
+     -c configfile       A configuration file controlling the extraction
+     -g grammarfiles     Grammar files to use, if "-c" is not used
+     -e entities         The entities to extract, if "-c" is not used
+     -o outputfile       The file containing the results of the extraction
+     -m                  Produce match results for IDOL input files
+     -f                  Returns the first match only
+     -q                  "Quiet Mode" suppresses all descriptive messages
+     -r redactionfile    A copy of the input file, with all matches redacted
+     -p                  Treat the resource file as plaintext rather than XML
+     -b                  Treat the contents of the input file as binary, rather than text
+
+  measure or m           Measures precision and recall between extraction runs
+     -e expectedfile     The expected results file from "edktool extract"
+     -a actualfile       The actual results file from a separate extraction run
+     -o resultsfile      The results: precision, recall and differences
+     -q                  "Quiet Mode" suppresses all descriptive messages
+
+  assess or a            Measures precision and recall, using user-defined data
+     -l licensefile      The file containing the license key
+     -a                  Show all results, including true matches
+     -c configfile       A configuration file controlling the assessment
+     -g grammarfiles     Grammar files to use, if "-c" is not used
+     -e entities         The entities to extract, if "-c" is not used
+     -x                  Sets comparison mode to "exact", if "-c" is not used
+     -m "match entities" Entities to check results against, if "-c" is not used
+     -v "valid input"    The file containing valid input, if "-c" is not used
+     -w "invalid input"  The file containing invalid input, if "-c" is not used
+     -o resultsfile      The results: false matches, precision and recall
+     -q                  "Quiet Mode" suppresses all descriptive messages
+
+  permissions or p       Displays all licensed grammar files in a directory
+     -d directory        A directory containing some eduction grammar files
+     -l licensefile      The file containing the license key
+     -a                  Show additional information
+     -q                  "Quiet Mode" suppresses all descriptive messages
+
+  benchmark or b         Runs N extraction sessions concurrently M times to test grammar efficiency
+     -l licensefile      The file containing the license key
+     -i inputfile        The file on which entity extraction will be performed (plaintext only)
+     -c configfile       A configuration file controlling the extraction
+     -g grammarfiles     Grammar files to use, if "-c" is not used
+     -e entities         The entities to extract, if "-c" is not used
+     -s sessions         The number of extraction sessions to run concurrently
+     -n iterations       The number of iterations to use
+     -f                  Returns the first match only
+     -d                  Outputs eduction match info. Incompatible with -C
+     -b                  Treat the contents of the input file as binary, rather than text
+     -C                  Only count the matches instead of gathering them. Incompatible with -d
+
+  unify or u             Creates a grammar file with combined entities
+     -g grammarfiles     Grammar files containing source entities
+     -e entitydefinition Form "combined-name=source-name1,source-name2,..."
+     -l licensefile      The file containing the license key
+     -o outputfile       Output grammar file
+
+  validate or v          Validates a config file
+     -c configfile       Configuration file to validate
+     -l licensefile      The file containing the license key
+     -o outputfile       (Optional) Output errors file (if any)
+     -i                  Initialise an extraction session to verify entities can be loaded from config
+
+  help or h              Displays edktool help
+        option           More detailed help on the edktool option
+
 ```
 
-See the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/#Reference/edktool/edktoolOptions_intro.htm) for more details.
+See the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/#Reference/edktool/edktoolOptions_intro.htm) for more details.
 
 ### Explore contents of grammar ECR file
 
@@ -157,10 +244,10 @@ Let's use `edktool`'s `list` function to look at one of these samples.
 From the command line, enter the following:
 
 ```sh
-> cd C:\MicroFocus\EductionSDK_12.12.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\grammar
+> cd C:\MicroFocus\EductionSDK_12.13.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\grammar
 > edktool list test.ecr
 
-Eduction EDKTool Utility v12.12.0
+Eduction EDKTool Utility v12.13.0
 Loading resource file:
 test.ecr
 
@@ -196,24 +283,24 @@ Listing all necessary requirements for license:
     (none)
 ```
 
-This gives more details of the construction of the entities as well as specific licensing requirements for their use.  
+This gives more details of the construction of the entities, as well as specific licensing requirements for their use.  
 
 `test.ecr` and the entity `test/two_words` is intentionally generic - matching any combination of two words.
 
 To see an example of a real grammar file, explore the Eduction Grammars package, *e.g.*
 
 ```sh
-> cd C:\MicroFocus\EductionGrammars_12.12.0_COMMON\pii
+> cd C:\MicroFocus\EductionGrammars_12.13.0_COMMON\pii
 > edktool list address.ecr          
 
-Eduction EDKTool Utility v12.12.0
+Eduction EDKTool Utility v12.13.0
 Loading resource file:
 address.ecr
 
 
 Grammar version:        4.0
 
-Compiled using Edktool: 12.12.0
+Compiled using Edktool: 12.13.0
 
 Listing entities:
 gdpr/address/at
@@ -236,10 +323,10 @@ Many of these grammar files contain hundreds of entities, which are typically se
 From the command line, enter the following:
 
 ```
-> cd C:\MicroFocus\EductionSDK_12.12.0_WINDOWS_X86_64\samples\eduction_from_config\resources
+> cd C:\MicroFocus\EductionSDK_12.13.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 > edktool extract -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt
 
-Eduction EDKTool Utility v12.12.0
+Eduction EDKTool Utility v12.13.0
 Extracting entities from:
   test\input\input.txt
 using the config file:
@@ -370,17 +457,14 @@ Locale = ENG
 LanguageDirectory = langfiles
 ```
 
-For full details on these and other options, see the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/#Reference/EductionParameters.htm).
+For full details on these and other options, see the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/#Reference/EductionParameters.htm).
 
 Lastly, an optional post-processing task is configured by referencing a `.lua` script:
 
 ```ini
-[PostProcessingTasks]
-NumTasks = 1
-Task0 = pptask
+PostProcessingTask0=pptask
 
 [pptask]
-Type = lua
 Script = ../resources/test/scripts/postprocessing.lua
 Entities = *
 ```
@@ -401,9 +485,9 @@ function processmatch (edkmatch)
 end
 ```
 
-This example Lua post-processing function receives an object of class [`edkMatch`](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/#Reference/LuaMethods/edkmatch.htm). This class provides useful getter and setter methods for access and manipulation of the Educed match (see below).
+This example Lua post-processing function receives an object of class [`edkMatch`](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/#Reference/LuaMethods/edkmatch.htm). This class provides useful getter and setter methods for access and manipulation of the Educed match (see below).
 
-For more details on Lua post-processing, please read the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/#UseEduction/PostProcessing/LuaPostProcessing.htm).
+For more details on Lua post-processing, please read the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/#UseEduction/PostProcessing/LuaPostProcessing.htm).
 
 #### The match section
 
@@ -488,9 +572,9 @@ Many of grammars in the `EductionGrammars_<VERSION>` make use of components, to 
 
 Reference the following for more details:
 
-- [Create and Modify Eduction Grammars](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/Content/UseEduction/Grammars/GrammarFormat.htm) 
-- [Grammar Format Reference](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/Content/Reference/GrammarReference/grammarReference.htm) 
-- [Eduction Concepts - Components](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/Content/GettingStarted/Introduction/Components2.htm?Highlight=components)
+- [Create and Modify Eduction Grammars](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/Content/UseEduction/Grammars/GrammarFormat.htm) 
+- [Grammar Format Reference](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/Content/Reference/GrammarReference/grammarReference.htm) 
+- [Eduction Concepts - Components](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/Content/GettingStarted/Introduction/Components2.htm?Highlight=components)
 
 And see the [Create a custom Eduction grammar](../README.md#create-a-custom-eduction-grammar) lesson for a more in-depth discussion on creating grammars.
 
@@ -592,19 +676,19 @@ To change this behavior to include overlapping matches and return all five possi
 
 Now re-run the above command to see all five matches in your output.
 
-For full details on this property, please read the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/#Configuration/Eduction/_EDU_AllowOverlaps.htm).
+For full details on this property, please read the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/#Configuration/Eduction/_EDU_AllowOverlaps.htm).
 
 ## Conclusion
 
 You should now be confident in the basics of IDOL Eduction.  
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](./README.md) page.
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#eduction-showcase).
 
 ## See also
 
-- [IDOL Eduction (Server) User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionServer_12.12_Documentation/Guides/html/)
-- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html)
-- [PCI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionGrammars_12.12_Documentation/PCI/)
-- [PII Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionGrammars_12.12_Documentation/PII/)
-- [PHI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionGrammars_12.12_Documentation/PHI/)
-- [Government Eduction Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionGrammars_12.12_Documentation/GOV/)
+- [IDOL Eduction (Server) User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionServer_12.13_Documentation/Guides/html/)
+- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html)
+- [PCI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionGrammars_12.13_Documentation/PCI/)
+- [PII Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionGrammars_12.13_Documentation/PII/)
+- [PHI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionGrammars_12.13_Documentation/PHI/)
+- [Government Eduction Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionGrammars_12.13_Documentation/GOV/)

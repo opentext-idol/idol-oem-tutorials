@@ -45,7 +45,7 @@ Word processing, spreadsheet, presentation and some other file formats optionall
 Let's run text extraction on the same file `2022_calendar_HIDDEN_TEXT.docx` without and with header/footer mode enabled.
 
 ```sh
-> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.13.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_no_hf.txt
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_hf.txt
 filter: error code returned is KVERR_Success
@@ -70,7 +70,7 @@ Hidden text may be in the form of comments, revision history, slide master conte
 Word processing and some other file formats allow for users to track revision history.  This markup is usually hidden, but can of interest for many user cases of KeyView Filter SDK.
 
 ```sh
-> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.13.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -rm ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revison_marks.txt
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revison_marks.txt
 filter: error code returned is KVERR_Success
@@ -87,7 +87,7 @@ Try `filter` to extract hidden text with your own test files. Good luck!
 Your use case for KeyView FilterSDK may not benefit from including comments.
 
 ```sh
-> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.13.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -nc ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_no_comments.txt
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_comments.txt
 filter: error code returned is KVERR_Success
@@ -102,7 +102,7 @@ If you compare the output from `text_no_comments.txt` with `text_no_hf.txt`, you
 Presentation formats like PowerPoint have the concept of slide masters where some slide master content is only visible when you're editing the slider masters.
 
 ```sh
-> cd C:\MicroFocus\KeyviewFilterSDK_12.12.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\MicroFocus\KeyviewFilterSDK_12.13.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter  ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_no_slidemaster.txt
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_no_slidemaster.txt
 filter: error code returned is KVERR_Success
@@ -120,11 +120,11 @@ A lot of additional output is included in `text_slidemaster.txt`.  It's the text
 
 There are multiple types of text that a given file format may contain. KeyView Filter SDK strives to extract as much information as is possible from file formats.
 
-Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [showcase](./README.md) page.
+Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-sdk-showcase).
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/KeyviewFilterSDK_12.12_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/dotnet-programming/index.html)

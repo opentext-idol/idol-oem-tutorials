@@ -10,7 +10,7 @@ In this lesson, you will:
 ---
 
 - [Setup](#setup)
-- [Running edktool extract](#running-edktool-extract)
+- [Running `edktool` extract](#running-edktool-extract)
 - [Running edktool benchmark](#running-edktool-benchmark)
 - [Optimizations](#optimizations)
 - [Conclusion](#conclusion)
@@ -22,14 +22,14 @@ In this lesson, you will:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#eduction-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
+> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](./introduction.md#eduction-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
 
-## Running edktool extract
+## Running `edktool` extract
 
 Run the following commands to see the output:
 
 ```sh
-cd C:\MicroFocus\EductionSDK_12.12.0\samples\eduction_from_config\resources
+cd C:\MicroFocus\EductionSDK_12.13.0\samples\eduction_from_config\resources
 edktool extract -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt -o out.xml
 ```
 
@@ -56,14 +56,14 @@ For real world applications, it is a best practice to persist the EDKEngine acro
 
 > NOTE: The EDKSession or entity search time is influenced by the EDKEngine settings (e.g. resource files (ECRs), entities enabled, other configuration settings), the size of the input file and the number of matches. 
 
-> NOTE: As of 12.12.0 `edktool` reads the entire file and submits that as text rather than using the EDK streaming input APIs. The edk_samples\eduction_from_config can be instrumented to measure processing speed that reflects use of the streaming input APIs.
+> NOTE: As of 12.13.0 `edktool` reads the entire file and submits that as text rather than using the EDK streaming input APIs. The edk_samples\eduction_from_config can be instrumented to measure processing speed that reflects use of the streaming input APIs.
 
 ## Running edktool benchmark
 
 Run the following commands to see the output:
 
 ```
-cd C:\MicroFocus\EductionSDK_12.12.0\samples\eduction_from_config\resources
+cd C:\MicroFocus\EductionSDK_12.13.0\samples\eduction_from_config\resources
 edktool benchmark -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt -s 3 -n 5
 ```
 
@@ -114,16 +114,16 @@ Session timing summary:
 Besides simplifying your configuration or getting a faster computer, there some settings that can impact performance. 
 
 For processing speed, here's some things to consider:
-- use a pre-filter.  See [here](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/#UseEduction/PreFiltering/PreFiltering.htm) for more details.
-- set EntityMatchLimitN - See [here](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html/#Configuration/Eduction/_EDU_EntityMatchLimitN.htm) for more details.  In some applications, the existence of enough matches per each configured entity can be sufficient to take action based on the detected matches.
+- use a pre-filter.  See [here](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/#UseEduction/PreFiltering/PreFiltering.htm) for more details.
+- set EntityMatchLimitN - See [here](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/#Configuration/Eduction/_EDU_EntityMatchLimitN.htm) for more details.  In some applications, the existence of enough matches per each configured entity can be sufficient to take action based on the detected matches.
 - For the PII, PHI, PCI grammars disable output normalization.  The name, address and date entities have output normalization enabled by default. See `scripts\names_stoplist.lua`, `scripts\address_stoplist.lua` and `scripts\normalize_date.lua` for details on how to configure.  Over enough matches (e.g tens vs thousands) the extra time to produce normalized output adds up.  Only some applications (e.g. searching on matches across a set of indexed documents) benefit normalized output.
 
 ## Conclusion
 
 You now understand how to assess performance of Eduction.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](./README.md) page.
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#capability-showcase-examples).
 
 ## See also
 
-- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_12/EductionSDK_12.12_Documentation/Guides/html)
+- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html)

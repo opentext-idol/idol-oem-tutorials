@@ -30,7 +30,7 @@ Get a local copy of this tutorial to give you all the configuration files and sa
 
 Throughout the tutorial, we will assume these materials are stored under `C:\MicroFocus`.  File paths and other resources are currently documented for Windows, but other supported platforms (e.g. Linux, MacOS, etc) will work with appropriate modifications.
 
-You can stay on GitHub to follow the steps in this and further linked README files in your browser or, if you prefer to work with the downloaded files, see [these steps](./tutorials/appendix/markdown_reader.md) for some convenient offline reading options.
+You can stay on GitHub to follow the steps in this and further linked README files in your browser or, if you prefer to work with the downloaded files, see [these steps](./appendix/markdown_reader.md) for some convenient offline reading options.
 
 ## Get started
 
@@ -38,6 +38,6 @@ The tutorials start [here](tutorials/README.md)!
 
 ## License
 
-Copyright 2022 Micro Focus International plc.
+Copyright (c) 2022 Micro Focus International plc.
 
 Licensed under the MIT License (the "License"); you may not use this project except in compliance with the License.
