@@ -17,6 +17,7 @@ fromstring
 fseek
 ftell
 IDOLCSDK
+javadoc
 keyview
 keyview_filter
 KVCS_UTF8

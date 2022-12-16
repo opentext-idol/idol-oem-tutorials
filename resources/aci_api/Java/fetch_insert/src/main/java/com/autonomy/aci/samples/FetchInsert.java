@@ -149,8 +149,10 @@ public class FetchInsert {
 
 				aciServerDetails.setEncryptionCodec(encryptionCodec);				
 			}
-		
-			aciService = new AciServiceImpl(new AciHttpClientImpl(HttpClientBuilder.create().build()), aciServerDetails);			
+
+			AciHttpClientImpl aciHttpClientImpl = new AciHttpClientImpl(HttpClientBuilder.create().build());
+			aciHttpClientImpl.setUsePostMethod(true);
+			aciService = new AciServiceImpl(aciHttpClientImpl, aciServerDetails);			
 		} catch(Exception e) {
 			LOG.severe("Unable to set up AciService.\n");
 			throw e;
@@ -165,7 +167,7 @@ public class FetchInsert {
 			//parameters = new ActionParameters("INGEST");
 			parameters.add("fetchAction", "insert");
 			parameters.add("configSection", parsedArgs.taskName);
-			parameters.add("destination", insertXML);
+			parameters.add("insertXML", insertXML);
 			parameters.add("responseFormat", "xml");
 		} catch(Exception e) {
 			LOG.severe("Unable to set up ActionParameters.\n");

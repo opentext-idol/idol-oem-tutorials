@@ -585,7 +585,7 @@ MTAuMTUuNzUuMjM5OjcwMzA6RkVUQ0g6MTY2NzgxNDE5MDI1NS0xMzk5MjYxNjcx
 
 The response contains a token for this asynchronous task, as with the previous action.
 
-To monitor the status, as before you can either run the the script `python get_fetch_task_status.py token.txt` or monitor the log files, in this case `delete.log`.
+To monitor the status, as before you can either run the the script `python get_fetch_task_status.py token.txt` or monitor the log files, in this case `insert.log`.
 
 Open your Dropbox (or run the "Identifiers" task again) to confirm insertion:
 

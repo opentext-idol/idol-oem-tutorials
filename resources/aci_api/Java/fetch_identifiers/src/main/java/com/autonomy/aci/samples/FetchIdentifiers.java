@@ -141,6 +141,7 @@ public class FetchIdentifiers {
 			parameters.add("fetchAction", "identifiers");
 			parameters.add("configSection", parsedArgs.taskName);
 			parameters.add("parentIdentifiers", "ROOT");
+			parameters.add("maxDepth", "2");
 			parameters.add("responseFormat", "xml");
 		} catch(Exception e) {
 			LOG.severe("Unable to set up ActionParameters.\n");

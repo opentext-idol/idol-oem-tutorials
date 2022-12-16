@@ -91,7 +91,7 @@ int main(int argc, char** argv)
 	// Set action parameters
 	aciObjectParamSetString(pCommand, "fetchAction", "insert");
 	aciObjectParamSetString(pCommand, "configSection", argv[3]);
-	aciObjectParamSetString(pCommand, "destination", insertXML);
+	aciObjectParamSetString(pCommand, "insertXML", insertXML);
 	aciObjectParamSetString(pCommand, "responseFormat", "xml");
 
 	aciObjectToString(pCommand);

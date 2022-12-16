@@ -1,6 +1,5 @@
 #!/bin/sh
 
-ACI_API_HOME=/opt/MicroFocus/ACI_API/IDOLJavaSDK_12.10.0
 #JAVA_HOME=/opt/Java/jdk1.8.0_321
 
 #PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH

@@ -1,6 +1,6 @@
 <insertXML>
 	<insert>
-		<property name="PATH" value="/REPLACE_ME_WITH_DESTINATION_PATH">	
+		<property name="PATH" value="/REPLACE_ME_WITH_DESTINATION_PATH"/>	
 		<file>
 			<type>file</file>
 			<content>REPLACE_ME_WITH_SOURCE_PATH</content>

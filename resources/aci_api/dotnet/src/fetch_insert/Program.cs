@@ -82,7 +82,7 @@ namespace fetchInsert
             //Command fetch = new Command("INGEST");
             fetch.Set("fetchAction", "insert");
             fetch.Set("configSection", args[2]);
-            fetch.Set("destination", insertXML);
+            fetch.Set("insertXML", insertXML);
             fetch.Set("responseFormat", "xml");
 
             Console.WriteLine("\nExecuting action...");

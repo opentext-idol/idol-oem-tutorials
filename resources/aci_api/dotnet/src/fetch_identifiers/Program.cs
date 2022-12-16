@@ -78,6 +78,8 @@ namespace fetchIdentifiers
             //Command fetch = new Command("INGEST");
             fetch.Set("fetchAction", "identifiers");
             fetch.Set("configSection", args[2]);
+            fetch.Set("parentIdentifiers", "ROOT");
+			fetch.Set("maxDepth", "2");
             fetch.Set("responseFormat", "xml");
 
             Console.WriteLine("\nExecuting action...");

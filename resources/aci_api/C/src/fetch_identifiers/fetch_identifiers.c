@@ -85,6 +85,7 @@ int main(int argc, char** argv)
 	aciObjectParamSetString(pCommand, "fetchAction", "identifiers");
 	aciObjectParamSetString(pCommand, "configSection", argv[3]);
 	aciObjectParamSetString(pCommand, "parentIdentifiers", "ROOT");
+	aciObjectParamSetString(pCommand, "maxDepth", "2");
 	aciObjectParamSetString(pCommand, "responseFormat", "xml");
 
 	aciObjectToString(pCommand);

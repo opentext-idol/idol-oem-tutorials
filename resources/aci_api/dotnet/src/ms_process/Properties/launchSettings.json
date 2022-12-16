@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "ms_process": {
+      "commandName": "Project",
+      "commandLineArgs": "localhost 14000 REPLACE_WITH_CONFIG_NAME REPLACE_WITH_SOURCE_FILE_PATH",
+	  "environmentVariables": {
+        "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY": "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY"
+      }	  
+    }
+  }
+}

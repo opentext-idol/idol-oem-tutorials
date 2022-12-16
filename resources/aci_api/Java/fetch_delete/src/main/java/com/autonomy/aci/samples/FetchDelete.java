@@ -138,7 +138,7 @@ public class FetchDelete {
 			// Set action parameters
 			parameters = new ActionParameters("FETCH");
 			//parameters = new ActionParameters("INGEST");
-			parameters.add("fetchAction", "deletet");
+			parameters.add("fetchAction", "delete");
 			parameters.add("identifiers", parsedArgs.identifiers);
 			parameters.add("responseFormat", "xml");
 		} catch(Exception e) {
