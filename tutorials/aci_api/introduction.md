@@ -181,7 +181,7 @@ You are familiar with how to communicate with an ACI server by service port and 
 
 You have run your own client applications in C, Java, .NET and/or Python to interact with the ACI Server.
 
-Next, why not try some more advanced use-cases with the ACI API from the [showcase page](./showcase.md).
+Next, why not try some more advanced use-cases with the ACI API from the [showcase page](./README.md#capability-showcase).
 
 ## See also
 
