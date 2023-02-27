@@ -2,8 +2,10 @@
   "profiles": {
     "queueInfo_getStatus": {
       "commandName": "Project",
-      "commandLineArgs": "localhost 7000 ingest MTkyLjE2OC4xODIuMTI4OjcwMDA6SU5HRVNUOjE2NjA4MzMxNTQwMDM3MS0xMTA4Mjk3MDI1",
-      "sqlDebugging": true
-    }
+      "commandLineArgs": "localhost 7010 ingest MTkyLjE2OC4xODIuMTI4OjcwMDA6SU5HRVNUOjE2NjA4MzMxNTQwMDM3MS0xMTA4Mjk3MDI1",
+      "environmentVariables": {
+        "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY": "REPLACE_WITH_MY_LONG_KEY_STRING"
+      }
+    }	  
   }
 }

@@ -4,7 +4,7 @@
       "commandName": "Project",
       "commandLineArgs": "localhost 14000 REPLACE_WITH_CONFIG_NAME REPLACE_WITH_SOURCE_FILE_PATH",
 	  "environmentVariables": {
-        "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY": "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY"
+        "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY": "REPLACE_WITH_MY_LONG_KEY_STRING"
       }	  
     }
   }

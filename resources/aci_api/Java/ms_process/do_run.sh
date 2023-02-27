@@ -1,8 +1,10 @@
 #!/bin/sh
 
-#JAVA_HOME=/opt/Java/jdk1.8.0_321
+JAVA_HOME=/opt/OpenLogic/openlogic-openjdk-11.0.17+8-linux-x64
 
-#PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH
+PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH
+export JAVA_HOME
+export PATH
 
 PROGRAM=MSProcess
 ACI_HOST=localhost

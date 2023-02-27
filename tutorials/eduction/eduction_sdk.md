@@ -68,15 +68,26 @@ Example programs (with resources) ship with the `EductionSDK_<VERSION>_<PLATFORM
 - compiling an XML grammar into an ECR file
 - performing different types of extraction / redaction.
  
-Refer to the [Example Programs](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/Content/EductionSDK/APIReference/Example_Programs.htm) section of the documentation for details on the EductionSDK_<VERSION>_<PLATFORM>.zip` samples.  
+Refer to the [Example Programs](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/Content/EductionSDK/APIReference/Example_Programs.htm) section of the documentation for details on the `EductionSDK_<VERSION>_<PLATFORM>\samples`.
 
 The `EductionGrammars_<VERSION>_COMMON.zip` has PII specific samples, as well as C++ API examples.
 
 ### Perform extraction
 
-To get started with the Eduction SDK APIs, it is recommended to start with `eduction_from_config`.  The C, Java and .NET versions of `eduction_from_config` each accepts a configuration file as you've been using in the other Eduction lessons, an UTF-8 text file, a path to the output JSON file and some optional arguments to override the configuration.
+To get started with the Eduction SDK APIs, it is recommended to start with the code per the table below:
+|API Language|Sample Code|Resources|Documentation Reference|
+|-----|--------|-----|-----|
+|C|table_extraction|eduction_from_config|[Standalone API Usage](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/Content/EductionSDK/APIReference/StandaloneAPIUsageC.htm)|
+|Java |eduction_from_config|eduction_from_config|[Standalone API Usage](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/Content/EductionSDK/APIReference/StandaloneAPIUsageC.htm)|
+|.Net |eduction_from_config|eduction_from_config|[Standalone API Usage](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/Content/EductionSDK/APIReference/DotNet_StandaloneAPIUsage.htm)|
 
-Go ahead and build and run `eduction_from_config` for you preferred API language / platform. Again refer to `C:\MicroFocus\EductionSDK_12.13.0_WINDOWS_X86_64\samples\README.md` for guidance. 
+> NOTE: 'table_extraction' is recommended for C API use because it uses EdkGetNextMatch() rather than EdkFillMatches().  Peak memory utilization is reduced when using EdkGetNextMatch().
+
+> NOTE: The `eduction_from_config` resources or for that matter any EDKEngine configuration and input are compatible with the `table_extraction` samples when the optional, command line argument `<structured>` is  set to 0 (disabled).
+
+The C, Java and .NET versions of `eduction_from_config` and `table_extraction` each accepts a configuration file as you've been using in the other Eduction lessons, an UTF-8 text file, a path to the output JSON file and some optional arguments to override the configuration.
+
+Go ahead and build and run `eduction_from_config` or `table_extraction` for you preferred API language / platform. Again refer to `C:\MicroFocus\EductionSDK_12.13.0_WINDOWS_X86_64\samples\README.md` for guidance. 
 
 ### Compile grammar
 

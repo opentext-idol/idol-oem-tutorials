@@ -27,6 +27,8 @@ import org.xml.sax.SAXException;
 import java.util.logging.Logger;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FetchInsert {
 
@@ -105,6 +107,34 @@ public class FetchInsert {
 		return writer.toString();
 	}
 
+	private BteaEncryptionCodec get_encryptionCodec(String key)
+	{
+		BteaEncryptionCodec encryptionCodec = null;
+		
+		try {
+			LOG.info("OEM encryption key(s): " + key);
+			Pattern pattern = Pattern.compile("(\\d*),(\\d*),(\\d*),(\\d*)", Pattern.CASE_INSENSITIVE);
+			Matcher matcher = pattern.matcher(key);
+			if (matcher.find())
+			{
+				long[] keys = new long[4];
+				keys[0] = Long.parseLong(matcher.group(1));
+				keys[1] = Long.parseLong(matcher.group(2));
+				keys[2] = Long.parseLong(matcher.group(3));
+				keys[3] = Long.parseLong(matcher.group(4));
+		
+				encryptionCodec = new BteaEncryptionCodec(keys);
+			} else {
+				encryptionCodec = new BteaEncryptionCodec(key);
+			}
+		} catch(Exception e) {
+			LOG.severe("Unable to set up API encryption.\n");
+			throw e;
+		} finally {
+			return encryptionCodec;
+		}
+	}
+	
     private void fetch_insert(String[] args) throws Exception
 	{
 		Args parsedArgs;
@@ -132,27 +162,27 @@ public class FetchInsert {
 				{
 					LOG.info("Using OEM encryption key from environment variable: " + IDOL_OEM_ENCRYPTION_KEY_ENV_VAR);
 					if (key.equals(IDOL_OEM_ENCRYPTION_KEY_STUB_VALUE)) {
-						LOG.info("Don't forget to correctly set " + IDOL_OEM_ENCRYPTION_KEY_ENV_VAR);
+						LOG.warning("Don't forget to correctly set " + IDOL_OEM_ENCRYPTION_KEY_ENV_VAR);
 						throw new Exception("Invalid OEM encryption key");
 					} else {
-						encryptionCodec = new BteaEncryptionCodec(key);
+						encryptionCodec = get_encryptionCodec(key);
 					}
 				} else {
 					LOG.info("Using OEM encryption key from constant IDOL_OEM_ENCRYPTION_KEY");
 					if (IDOL_OEM_ENCRYPTION_KEY.equals(IDOL_OEM_ENCRYPTION_KEY_STUB_VALUE)) {
-						LOG.info("Don't forget to correctly set constant: IDOL_OEM_ENCRYPTION_KEY");
+						LOG.warning("Don't forget to correctly set constant: IDOL_OEM_ENCRYPTION_KEY");
 						throw new Exception("Invalid OEM encryption key");
 					} else {
-						encryptionCodec = new BteaEncryptionCodec(IDOL_OEM_ENCRYPTION_KEY);
+						encryptionCodec = get_encryptionCodec(IDOL_OEM_ENCRYPTION_KEY);
 					}
 				}
 
 				aciServerDetails.setEncryptionCodec(encryptionCodec);				
 			}
-
-			AciHttpClientImpl aciHttpClientImpl = new AciHttpClientImpl(HttpClientBuilder.create().build());
-			aciHttpClientImpl.setUsePostMethod(true);
-			aciService = new AciServiceImpl(aciHttpClientImpl, aciServerDetails);			
+			
+			AciHttpClientImpl aciHttpClient = new AciHttpClientImpl(HttpClientBuilder.create().build());
+			aciHttpClient.setUsePostMethod(true);
+			aciService = new AciServiceImpl(aciHttpClient, aciServerDetails);			
 		} catch(Exception e) {
 			LOG.severe("Unable to set up AciService.\n");
 			throw e;

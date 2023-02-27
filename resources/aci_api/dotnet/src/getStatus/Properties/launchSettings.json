@@ -2,7 +2,7 @@
   "profiles": {
     "getStatus": {
       "commandName": "Project",
-      "commandLineArgs": "localhost 7000",
+      "commandLineArgs": "localhost 7010",
       "environmentVariables": {
         "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY": "REPLACE_WITH_MY_LONG_KEY_STRING"
       }

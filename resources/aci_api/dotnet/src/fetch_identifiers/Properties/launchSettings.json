@@ -4,7 +4,7 @@
       "commandName": "Project",
       "commandLineArgs": "localhost 7000 MyTask",
       "environmentVariables": {
-        "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY": "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY"
+        "ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY": "REPLACE_WITH_MY_LONG_KEY_STRING"
       }
     }
   }

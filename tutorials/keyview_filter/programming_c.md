@@ -1,6 +1,6 @@
 # KeyView Filter SDK C API
 
-The KeyView Filter SDK is designed to be embedded into other services.
+The KeyView Filter SDK allows you to embed KeyView functionality into other services.
 
 To facilitate embedding, the KeyView Filter SDK has APIs for C, C++, Java and .NET.  In addition, the KeyView Filter SDK runs natively on the following platforms: Windows (x86_32, x86_64), Linux (x86_32, x86_64 and ARM_64), MacOS (x86_64 and Apple M*). 
 
@@ -49,61 +49,61 @@ In this lesson, you will:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../../keyview_filter/introduction.md#keyview-filter-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic KeyView Filter concepts.
+> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../../keyview_filter/introduction.md#keyview-filter-sdk-introduction) lesson covering essential setup steps (for example, required downloads and installation steps) and basic KeyView Filter concepts.
 
 ### Resources
 
-Be sure to download the following resources before you continue:
+You must download the following resources before you continue:
 - source code for this tutorial: [tutorial_file.c](../../../resources/apis/keyview_filter/tutorial_file.c)
--  optional sample files for detection and various extraction options located [here](../../../resources/keyview_filter/)
+- optional sample files for detection and various extraction options located [here](../../../resources/keyview_filter/)
 
 ### Environment and compilers
 
 #### Compilers
 
-In order to create a program that uses KeyView, you will need to install a [supported compiler](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#Shared/_KV_Platform_Compilers.htm), and use it to build and link your program.
+To create a program that uses KeyView, you need to install a [supported compiler](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#Shared/_KV_Platform_Compilers.htm), and use it to build and link your program.
 
-> NOTE: When building with the Visual Studio compiler, you will need to ensure you have opened the correct command prompt for the installed version – for example, ensuring you are using "x64 Native Tools Command Prompt" if you have installed the WINDOWS_X86_64 version of KeyView.
+> NOTE: When building with the Visual Studio compiler, you must ensure you have opened the correct command prompt for the installed version. For example, if you have installed the WINDOWS_X86_64 version of KeyView, ensure you are using "x64 Native Tools Command Prompt".
 
 ### License key
 
-A KeyView license key is required to proceed with this lesson.  If you skipped the introduction setup step to acquire a license key, see [here](../../keyview_filter/introduction.md#activate-a-license-key).
+You need a KeyView license key to proceed with this lesson.  If you skipped the introduction setup step to acquire a license key, see [here](../../keyview_filter/introduction.md#activate-a-license-key).
 
 ## API Setup
 
 ### Building the sample program
 
-In this tutorial, we will be gradually building a working tutorial program, which aims to replicate a common use case of the KeyView Filter SDK. Sample code for this program is provided, but the fpInitWithLicenseData call needs to be changed in order to compile.
+In this tutorial, you will gradually build a working tutorial program, which aims to replicate a common use case of the KeyView Filter SDK. Sample code for this program is provided, but you must modify the fpInitWithLicenseData call for the sample to compile.
 
 Update the `tutorial.h` file with the following information:
-- The values of YOUR_LICENSE_ORGANIZATION and YOUR_LICENSE_KEY will need to be replaced with the organization name and key from your license. 
-- The YOUR_BIN_DIR variable needs to be changed to the location of the KeyView bin directory.
+- Replace the values of YOUR_LICENSE_ORGANIZATION and YOUR_LICENSE_KEY with the organization name and key from your license. 
+- Change the YOUR_BIN_DIR variable to the location of the KeyView bin directory.
 
 > NOTE: Refer to the `tutorial_file.c` source code for compilation tips.
 
 ### Linking against KeyView Filter SDK
 
-Before we can get access to any KeyView functionality, we will first need to link against the kvfilter shared library. The resulting binary needs to be placed in the Filter bin directory (i.e. the directory containing kvfilter.so or kvfilter.dll), although the binary may be run from a different working directory. 
+To get access to KeyView functionality, you must first link against the kvfilter shared library. You must place the resulting binary in the Filter bin directory (that is, the directory containing kvfilter.so or kvfilter.dll), although you can run the binary from a different working directory. 
 
 > **Security**: The advanced programming tutorial has some suggestions on security best practices, including how to mitigate against [DLL preloading attacks](programming_c_advanced.md#dll-pre-loading-attacks)
 
 #### Linking using GCC
 
-On Linux, you need to link against kvfilter.so, and also pass in the `–rpath $ORIGIN` option to the linker, e.g. `%KEYVIEW_HOME%/LINUX_X86_64/bin/kvfilter.so -Wl,-rpath,'$ORIGIN'`
+On Linux, you must link against kvfilter.so, and also pass in the `–rpath $ORIGIN` option to the linker. For example, `%KEYVIEW_HOME%/LINUX_X86_64/bin/kvfilter.so -Wl,-rpath,'$ORIGIN'`
 
-> When called from within a makefile, $ORIGIN may need to be escaped to $$ORIGIN
+> When you call it from inside a makefile, you might need to escape $ORIGIN to $$ORIGIN
 
 #### Linking using Clang
 
-On MacOS, you need to link against kvfilter.so, and also pass in the `–rpath @loader_path` option to the linker, e.g. `%KEYVIEW_HOME%/MACOS_X86_64/bin/kvfilter.so -Wl,-rpath,@loader_path`
+On MacOS, you must link against kvfilter.so, and also pass in the `–rpath @loader_path` option to the linker. For example, `%KEYVIEW_HOME%/MACOS_X86_64/bin/kvfilter.so -Wl,-rpath,@loader_path`
 
 #### Linking using Visual Studio
 
-On Windows, you need to link against the import library for kvfilter.dll. This is provided as part of the KeyView Filter SDK, under {platform}/lib/kvfilter.lib.
+On Windows, you must link against the import library for kvfilter.dll. This library is provided as part of the KeyView Filter SDK, under {platform}/lib/kvfilter.lib.
 
 ### Loading the Filter interface
 
-Now we can access KeyView functionality, we will need to include the required headers and load the interface functions from the kvfilter library, using [KV_GetFilterInterfaceEx()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/KV_GetFilterInterfaceEx.htm)
+Now you can access KeyView functionality, you must include the required headers and load the interface functions from the kvfilter library, using [KV_GetFilterInterfaceEx()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/KV_GetFilterInterfaceEx.htm)
 
 ```c
 #include "kvtypes.h"
@@ -122,11 +122,11 @@ if(error != KVERR_Success)
 
 This call fills out the interface structure, which contains the function pointers for the rest of Filter's functionality. 
 
-Now that the interface has been successfully loaded, we are ready to use the KeyView Filter SDK.
+Now that the interface has been successfully loaded, you are ready to use the KeyView Filter SDK.
 
 ### Creating a Filter context
 
-All KeyView functionality requires a context pointer, which must be initialized at the start of processing, and shutdown at the end of processing.
+All KeyView functionality requires a context pointer, which you must initialize at the start of processing, and shut down at the end of processing.
 
 ```c
 void* context = NULL;
@@ -146,23 +146,23 @@ if(!context)
 filter.fpShutdown(context);
 ```
 
-Initialization is done with the function [fpInitWithLicenseData()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpInitWithLicenseData.htm), which needs to be provided with the path to the KeyView bin folder, along with the company name and license string in your license.
+You initialize by using the function [fpInitWithLicenseData()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpInitWithLicenseData.htm), which you must provide with the path to the KeyView bin folder, along with the company name and license string in your license.
 
-> **Performance:** Multiple files can be processed in a single session, which may improve performance by reducing costs associated with start-up and shutdown.
+> **Performance:** You can process multiple files in a single session, which might improve performance by reducing costs associated with start-up and shutdown.
 
-> **Multi-threading:** To maximize throughput when processing multiple files, you may choose to call KeyView from multiple threads. All KeyView functions will be thread-safe when called in this manner, but each thread using KeyView must create its own context by call fpInitWithLicenseData. Filter contexts must not be shared between threads.
+> **Multi-threading:** To maximize throughput when processing multiple files, you can call KeyView from multiple threads. All KeyView functions are thread-safe when called in this manner, but each thread using KeyView must create its own context by calling fpInitWithLicenseData. You must not share filter contexts between threads.
 
-> **Security:** By default, KeyView will perform most of its operations out-of-process, creating a separate process to parse file data. This protects your main application from the effects of rare problems like memory leaks or crashes. Additional protection can be added by [running KeyView with reduced privileges](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filter_api/Run_KeyView_Reduced_Privileges.htm).
+> **Security:** By default, KeyView performs most of its operations out-of-process, creating a separate process to parse file data. This protects your main application from the effects of rare problems like memory leaks or crashes. You can include additional protection by [running KeyView with reduced privileges](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filter_api/Run_KeyView_Reduced_Privileges.htm).
 
-Now that API setup is complete, we are able to perform KeyView Filter functionality on documents.
+Now that you have set up the API, you can perform KeyView Filter functionality on documents.
 
 ## Filter a file
 
-A main aspect of KeyView is to filter text from documents and in this section we will learn how to get text from a file stored on disk.
+One of the most important features of Keyview is filtering text from documents. This section shows you how to get text from a file stored on disk.
 
 ### Filtering text
 
-This can be done using the [fpFilterFile()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpFilterFile.htm) function.
+You can filter text by using the [fpFilterFile()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpFilterFile.htm) function.
 
 ```c
 error = filter.fpFilterFile(context, pathToInputFile, pathToOutputFile, NULL);
@@ -173,13 +173,13 @@ if(error != KVERR_Success)
 }
 ```
 
-As with most KeyView functions, the first argument is the context we created earlier. We also need to provide the path to the input and output files.
+As with most KeyView functions, the first argument is the context you created earlier. You must also provide the path to the input and output files.
 
-> **Mail Files:** Mail files, such as EML or MSG, are considered a form of container, and cannot be filtered directly. We will learn more about how to filter mail files in [Extracting sub files](#extracting-sub-files).
+> **Mail Files:** Mail files, such as EML or MSG, are considered a form of container, and you cannot filter them directly. You will learn more about how to filter mail files in [Extracting sub files](#extracting-sub-files).
 
 ### Handling extended errors
 
-Until now we've only had to deal with basic errors, but we can receive additional error information by looking at extended errors. When the error returned is KVERR_General (or for some functions, FALSE) we should call the function [fpGetKvErrorCodeEx()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpGetKvErrorCodeEx.htm) to receive an additional error code with more information.
+Until now you have only had to deal with basic errors, but you can receive additional error information by looking at extended errors. When the error returned is KVERR_General (or for some functions, FALSE), you can call the function [fpGetKvErrorCodeEx()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpGetKvErrorCodeEx.htm) to receive an additional error code with more information.
 
 ```c
 if(error != KVERR_Success)
@@ -193,11 +193,11 @@ if(error != KVERR_Success)
 }
 ```
 
-We recommend that all error are handled this way, and will assume this is being done for the rest of this tutorial.
+We recommend that you handle all errors this way. The rest of this tutorial assumes you use extended error handling.
 
 ### Filtering hidden information
 
-KeyView provides a number of options that control what text is output, and how that text is converted or displayed. One common requirement of KeyView is that it displays as much text as possible, including text that is not normally visible in the document, such as hidden cells or slides, or ancillary text like comments or notes. These can be displayed by enabling the hidden text option, using [fpFilterConfig()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpFilterConfig.htm).
+KeyView provides a number of options that control what text to output, and how to convert or display that text. A common requirement of KeyView is to display as much text as possible, including text that is not normally visible in the document, such as hidden cells or slides, or ancillary text like comments or notes. You can display this text by enabling the hidden text option in [fpFilterConfig()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpFilterConfig.htm).
 
 ```c
 if(!filter.fpFilterConfig(context, KVFLT_SHOWHIDDENTEXT, TRUE, NULL))
@@ -210,13 +210,13 @@ if(!filter.fpFilterConfig(context, KVFLT_SHOWHIDDENTEXT, TRUE, NULL))
 
 ## Changing functionality based on format
 
-In many workflows, it may be necessary to change what operations are performed on a file based on its format. For example, you may only want KeyView to perform [OCR](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#filter_shared/OCR.htm) on PDF files, or need to provide security credentials for encrypted file. Alternatively, your own application may need to perform certain activities, like generating a user report, for certain file types. 
+In many workflows, you might need to change what operations to perform on a file based on its format. For example, you might want KeyView to perform [OCR](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#filter_shared/OCR.htm) only on PDF files, or you might need to provide security credentials for encrypted files. Alternatively, your own application might need to perform certain activities, like generating a user report, for certain file types. 
 
-KeyView provides the ability to reliably determine the file format of a huge range of documents. This is done by analyzing the internal structure and content of file, rather than relying on file names or extensions. Detection prioritizes both accuracy and speed, only processing as much of the file as necessary to rule out false positives.
+KeyView enables you to reliably determine the file format of a huge range of documents. It does this by analyzing the internal structure and content of the file, rather than relying on file names or extensions. Detection prioritizes both accuracy and speed, only processing as much of the file as necessary to rule out false positives.
 
 ### Detecting the file format
 
-This functionality is exposed through the API function [fpGetDocInfoFile()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpGetDocInfoFile.htm). This function returns FALSE on failure, rather than an error code, but more error information can still be obtained through the extended errors. Additionally, the [eClass of the structure](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_structures/ADDOCINFO.htm) will report if detection was unable to determine the format of the file.
+File format detection functionality is exposed through the API function [fpGetDocInfoFile()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpGetDocInfoFile.htm). This function returns FALSE on failure, rather than an error code, but you can still obtain more error information through the extended errors. Additionally, the [eClass of the structure](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_structures/ADDOCINFO.htm) reports if detection was unable to determine the format of the file.
 
 ```c
 ADDOCINFO adInfo;
@@ -237,11 +237,11 @@ if(!filter.fpGetDocInfoFile(context, pathToInputFile, &adInfo))
 }
 ```
 
-> **Source Code Detection:** KeyView can also provide detection of source code, attempting to identify the programming language that it is written in. You can learn more in [Source Code Identification](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#Shared/_KV_Code_Identification.htm).
+> **Source Code Detection:** KeyView can also detect source code, attempting to identify the programming language that it is written in. You can learn more in [Source Code Identification](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#Shared/_KV_Code_Identification.htm).
 
 ### Using file format information
 
-The [ADDOCINFO class](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_structures/ADDOCINFO.htm) contains the information KeyView was able to determine about the file: its format and version, the class of document it belongs to, and additional attributes such as encryption. This information can be used by your application to call handle files differently. For example:
+The [ADDOCINFO class](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_structures/ADDOCINFO.htm) contains the information KeyView was able to determine about the file: its format and version, the class of document it belongs to, and additional attributes such as encryption. Your application can use this information to handle files differently. For example:
 
 ```c
 //Only enable OCR for PDFs
@@ -269,13 +269,13 @@ if(adInfo.ulAttributes & kEncrypted)
 
 ### Checking if a file is supported
 
-KeyView provides a convenient function, [fpCanFilterFile()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpCanFilterFile.htm) for performing detection, and determining if the file can be passed to fpFilterFile().
+KeyView provides a convenient function, [fpCanFilterFile()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpCanFilterFile.htm) to perform detection, and to determine if you can pass the file to fpFilterFile().
 
 ```c
 error = filter.fpCanFilterFile(context, pathToInputFile);
 ```
 
-If this does not return success, the error returned will explain why the format cannot be filtered – for example, because KeyView could not determine the format, because the file doesn't exist, or because the format isn't supported for filtering.
+If this function does not return success, the error returned explains why KeyView cannot filter the format – for example, because KeyView could not determine the format, because the file doesn't exist, or because the format isn't supported for filtering.
 
 While this step isn't strictly necessary, it can simplify many workflows.
 
@@ -289,7 +289,7 @@ KeyView Filter SDK allows access to sub files of a document, from both pure cont
 
 ### Loading the Extract interface
 
-We can load the Extract interface by including the `kvxtract.h` header, and calling the [KVGetExtractInterface()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_KVGetExtractInterface.htm) function within the kvfilter shared library.
+You can load the Extract interface by including the `kvxtract.h` header, and calling the [KVGetExtractInterface()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_KVGetExtractInterface.htm) function in the kvfilter shared library.
 
 ```c
 #include "kvxtract.h"
@@ -306,13 +306,13 @@ if(error != KVERR_Success)
 }
 ```
 
-The interface function takes the filter context we created earlier, as well as the interface to be filled out.
+The interface function takes the filter context you created earlier, as well as the interface to fill out.
 
-This code gives us our first introduction to the `KVStructInit()` macro. This ensures that a struct is correctly set up for use with the KeyView interface, including versioning information for backwards compatibility. Any KeyView struct containing a [KVStructHead](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_structures/KVStructHead.htm) member must be initialized with the `KVStructInit()` macro.
+This code gives you a first introduction to the `KVStructInit()` macro. This macro ensures that a struct is correctly set up for use with the KeyView interface, including versioning information for backwards compatibility. Any KeyView struct that contains a [KVStructHead](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_structures/KVStructHead.htm) member must be initialized with the `KVStructInit()` macro.
 
 ### Opening a container
 
-Before we can access the sub files within a container, we first need to open the container. This is done using the [fpOpenFile()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpOpenFile.htm) function. This function creates a file-specific context pointer that we will use with the other functions in the extract interface. This context must be closed after use.
+You must open a container file before you can access the sub files. You open the container by using the [fpOpenFile()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpOpenFile.htm) function. This function creates a file-specific context pointer that you can use with the other functions in the extract interface. You must close this context after use.
 
 ```c
 void* fileContext = NULL;
@@ -332,7 +332,7 @@ if(error != KVERR_Success)
 extract.fpCloseFile(fileContext);
 ```
 
-KeyView can then get information about the container itself using the function [fpGetMainFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpGetMainFileInfo.htm). Most importantly, this will tell us the number of sub files. This struct must also be freed after use.
+You can then get information about the container itself by using the function [fpGetMainFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpGetMainFileInfo.htm). Most importantly, this tells you the number of sub files. You must free this structure after use.
 
 ```c
 KVMainFileInfo          fileInfo = NULL;
@@ -351,7 +351,7 @@ Extract.fpFreeStruct(fileContext, fileInfo);
 
 ### Extracting sub files
 
-Before we extract the sub file itself, we first need to get some information about the sub file. This is done by calling the [fpGetSubFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpGetSubFileInfo.htm) function, using the index to identify the sub file. This structure must also be freed after use.
+Before you extract the sub file itself, you must first get some information about the sub file. You get this information by calling the [fpGetSubFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpGetSubFileInfo.htm) function, using the index to identify the sub file. You must free this structure after use.
 
 ```c
 for(int ii = 0; ii < fileInfo->numSubFiles; ++ii)
@@ -370,7 +370,7 @@ for(int ii = 0; ii < fileInfo->numSubFiles; ++ii)
 }
 ```
 
-Once we have this sub file info, we can use it to construct the necessary arguments for extraction.
+After you have this sub file info, you can use it to construct the necessary arguments for extraction.
 
 ```c
 KVSubFileExtractInfo extractInfo = NULL;
@@ -399,11 +399,11 @@ if(error)
 extract.fpFreeStruct(fileContext, extractInfo);
 ```
 
-The [fpExtractSubFile()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpExtractSubFile.htm) function fills out the KVSubFileExtractInfo pointer, which tells us more information about what the function actually did – for example, the actual location it extracted the file to.
+The [fpExtractSubFile()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpExtractSubFile.htm) function fills out the KVSubFileExtractInfo pointer, which tells you more about what the function actually did – for example, the location it extracted the file to.
 
-> **Mail Files:** In KeyView, mail files are treated as containers, where the first sub file is the contents of the mail file, and subsequent sub files are the attachments. 
+> **Mail Files:** KeyView treats mail files as containers, where the first sub file is the contents of the mail file, and subsequent sub files are the attachments. 
 
-By default, images are not extracted when extracting sub files. These can be enabled with the [fpFilterConfig()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpFilterConfig.htm) function we used earlier. As before, this is set globally for the session, so can be outside of the loop used to process files.
+By default, KeyView does not extract images when extracting sub files. You can enable image extraction by using the [fpFilterConfig()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpFilterConfig.htm) function we used earlier. This option is set globally for the session, so you can set it outside of the loop that you use to process files.
 
 ```c
 if(!filter.fpFilterConfig(context, KVFLT_EXTRACTIMAGES, TRUE, NULL))
@@ -416,7 +416,7 @@ if(!filter.fpFilterConfig(context, KVFLT_EXTRACTIMAGES, TRUE, NULL))
 
 ### Retrieving mail metadata
 
-KeyView can retrieve mail metadata for a particular sub file using the function [fpGetSubFileMetaData()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpGetSubFileMetaData.htm). This function has a number of options for retrieving different subsets of the mail metadata. We will use the option to retrieve all metadata, by passing -1 to the metaNameCount.
+You can retrieve mail metadata for a particular sub file using the function [fpGetSubFileMetaData()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpGetSubFileMetaData.htm). This function has a number of options for retrieving different subsets of the mail metadata. This example uses the option to retrieve all metadata, by passing -1 to the metaNameCount.
 
 ```c
 KVSubFileMetaData metadata = NULL;
@@ -434,7 +434,7 @@ if(error)
 }
 ```
 
-KeyView can then output the metadata in a similar way to Summary Information.
+You can then output the metadata in a similar way to Summary Information.
 
 ```c
 for(int ii=0; ii < metadata->nElem; ++ii)
@@ -496,9 +496,9 @@ for(int ii=0; ii < metadata->nElem; ++ii)
 
 ## Conclusion
 
-You should now have built a basic sample program, processing documents using file mode. To learn about more advanced features, such as processing files in stream mode, take a look at the [Advanced Tutorial](./programming_c_advanced.md#keyview-filter-sdk-c-api-advanced-topics)
+You have now built a basic sample program, processing documents using file mode. To learn about more advanced features, such as processing files in stream mode, take a look at the [Advanced Tutorial](./programming_c_advanced.md#keyview-filter-sdk-c-api-advanced-topics)
 
-And if you haven't already done so, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../../README.md#keyview-filter-sdk-showcase).
+And if you haven't already, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../../README.md#keyview-filter-sdk-showcase)?
 
 ## See also
 

@@ -80,7 +80,7 @@ int main(int argc, char** argv)
 	aciObjectParamSetString(pCommand, ACI_COM_COMMAND, "FETCH");
 	
 	// Set http method
-	aciObjectParamSetBool(pCommand, ACI_COM_USE_POST, FALSE);
+	aciObjectParamSetBool(pCommand, ACI_COM_USE_POST, TRUE);
 
 	// get insertXML data
 	// errors handled in get_insertXML_file(). all are fatal and exit();

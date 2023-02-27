@@ -138,21 +138,28 @@ int filterText(KVFltInterfaceEx* filter, void* context, void* streamContext, voi
         return errorCode(filter, context, error);
     }
     
-    KVFilterOutput output = {0};
-    
-    do
+    while(1)
     {
+        KVFilterOutput output = {0};
+            
         error = filter->fpFilterStream(context, streamContext, &output, NULL);
         
         if(error != KVERR_Success)
         {
             return errorCode(filter, context, error);
         }
+        
+        if(output.cbText == 0)
+        {
+            //An empty KVFilterOutput indicates the end of the stream,
+            //and does not need to be freed.
+            break;
+        }
 
         fprintf(fOut, "%.*s", output.cbText, output.pcText);
 
         filter->fpFreeFilterOutput(context, &output);
-    } while(output.cbText != 0);
+    }
     
     fprintf(fOut, "\n");
 

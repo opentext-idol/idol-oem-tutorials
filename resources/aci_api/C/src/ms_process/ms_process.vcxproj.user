@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommandArguments>localhost 14000 SESSION_CONFIG_NAME FILE_PATH_TO_PROCESS</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_12.13.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerCommandArguments>localhost 7000 SESSION_CONFIG_NAME FILE_PATH_TO_PROCESS</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_12.13.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+</Project>

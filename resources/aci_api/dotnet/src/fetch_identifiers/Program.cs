@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
 using Autonomy.Aci;
 
@@ -40,6 +41,32 @@ namespace fetchIdentifiers
             return stringBuilder.ToString();
         }
 
+		static IConnection get_aciclient(String host, Int32 port, String key)
+        {
+            IConnection bteaConnection;
+
+            Console.WriteLine("OEM encryption key(s): " + key);
+            string pattern = @"(\d*),(\d*),(\d*),(\d*)";
+            Regex matcher = new Regex(pattern);
+            Match matches = matcher.Match(key);
+            if (matches.Success)
+            {
+                uint[] keys = new uint[4];
+                for (int count = 1; count < matches.Groups.Count; count++)
+                {
+                    //Console.WriteLine(matches.Groups[count].Value + "\n");
+                    keys[count-1] = Convert.ToUInt32(matches.Groups[count].Value);
+                }
+                bteaConnection = AciClient.CreateBteaConnection(host, port, keys);
+            }
+            else
+            {
+                bteaConnection = AciClient.CreateBteaConnection(host, port, key);
+            }
+
+            return bteaConnection;
+        }
+		
         static void FetchIdentifiers(String[] args)
         {
             IConnection connection;
@@ -67,7 +94,7 @@ namespace fetchIdentifiers
                         throw new Exception("Invalid OEM encryption key");
                     }
                 }
-                connection = AciClient.CreateBteaConnection(args[0], Int32.Parse(args[1]), key);
+                connection = get_aciclient(args[0], Int32.Parse(args[1]), key);
             }
             else
             {

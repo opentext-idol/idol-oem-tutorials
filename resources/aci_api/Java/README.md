@@ -1,10 +1,10 @@
 # Java ACI API Sample Code
 
-The Java ACI API sample code resources build upon the information in the [ACI API Programming Guide - Java Language Interface](https://www.microfocus.com/documentation/idol/IDOL_12_6/IDOLJavaSDK_12.4_Documentation/Guides/html/English/index.html#Java/java_part.htm) providing working examples to interact with IDOL ACI services. 
+The Java ACI API sample code resources build upon the information in the [ACI API Programming Guide - Java Language Interface](https://www.microfocus.com/documentation/idol/IDOL_12_13/IDOLJavaSDK_12.13_Documentation/Guides/html/Content/Java/java_part.htm) providing working examples to interact with IDOL ACI services. 
 
 The various examples contain source code and build scripts for Windows and Linux.
 
-The `/<example>/target` folder is built with [OpenJDK](https://openjdk.org/) 1.8.  This means you can run the sample programs without building them.  However, since the provided exes are built with `USE_IDOL_OEM_ENCRYPTION = true`, the `do_run.*` scripts need to be updated with your issued OEM style license key.
+The `/<example>/target` folder is built with [OpenJDK 11](https://openjdk.org/).  This means you can run the sample programs without building them.  However, since the provided exes are built with `USE_IDOL_OEM_ENCRYPTION = true`, the `do_run.*` scripts need to be updated with your issued OEM style license key.
 
 The `/<example>/src` folder contains the source code and build tools.
 
@@ -15,12 +15,14 @@ The `/<example>/src` folder contains the source code and build tools.
   - [Setup - Run](#setup---run)
   - [Required third-party tools](#required-third-party-tools)
 - [getStatus](#getstatus)
-- [fetch_synchronize](#fetch_synchronize)
-- [fetch_identifiers](#fetch_identifiers)
-- [fetch_collect](#fetch_collect)
-- [fetch_delete](#fetch_delete)
-- [fetch_insert](#fetch_insert)
-- [queueInfo_getStatus](#queueinfo_getstatus)
+- [fetch\_synchronize](#fetch_synchronize)
+- [fetch\_identifiers](#fetch_identifiers)
+- [fetch\_collect](#fetch_collect)
+- [fetch\_delete](#fetch_delete)
+- [fetch\_insert](#fetch_insert)
+- [fetch\_update](#fetch_update)
+- [queueInfo\_getStatus](#queueinfo_getstatus)
+- [ms\_process](#ms_process)
 - [See also](#see-also)
   
 ---
@@ -29,7 +31,7 @@ The `/<example>/src` folder contains the source code and build tools.
 
 Relative paths are used in the provided `do_*` scripts and Maven build files. They assume the following installation paths:
 - `C:\MicroFocus\idol_oem_tutorials\resources\apis\aci\java`
-- `C:\MicroFocus\IDOLJavaSDK_12.10.0\idol-aci-client-12.10.0-bin`
+- `C:\MicroFocus\IDOLJavaSDK_12.13.0\idol-aci-client-12.13.0-bin`
 
 ### Setup - Build
 
@@ -45,7 +47,7 @@ To use the pre-built `/target` classes, the `do_run.*` scripts (`ACI_API_TUTORIA
 
 ### Required third-party tools
 
-- Java JDK 1.8 or higher, *e.g.*
+- Java JDK 1.11 or higher, *e.g.*
   - [OpenJDK](https://openjdk.org)
 
 - [Apache Maven](https://maven.apache.org/)
@@ -65,46 +67,62 @@ This sample code is for use with all IDOL services, since `action=getStatus` is 
 
 This sample code is for use with IDOL Connectors issuing the basic settings for `action=fetch` and implementing `fetchAction=synchronize`. It can also serve as the foundation for implementing other fetch actions.
 
-> NOTE: The `do_run_fetch_synchronize.*` script may need to be updated with your configured fetch task name in `TASK_NAME`.
+> NOTE: The `do_run.*` script may need to be updated with your configured fetch task name in `TASK_NAME`.
 
 ## fetch_identifiers
 
 This sample code is for use with IDOL Connectors issuing the basic settings for `action=fetch` and implementing `fetchAction=identifiers`. It can also serve as the foundation for implementing other fetch actions.
 
-> NOTE: The `do_run_fetch_identifiers.*` script may need to be updated with your configured fetch task name in `TASK_NAME`.
+> NOTE: The `do_run.*` script may need to be updated with your configured fetch task name in `TASK_NAME`.
 
 ## fetch_collect
 
 This sample code is for use with IDOL Connectors issuing the basic settings for `action=fetch` and implementing `fetchAction=collect`. It can also serve as the foundation for implementing other fetch actions.
 
-> NOTE: The `do_run_fetch_collect.*` script will need to be updated with the `IDENTIFIERS_CSV` for the data to collect.
+> NOTE: The `do_run.*` script will need to be updated with the `IDENTIFIERS_CSV` for the data to collect.
 
-> NOTE: The `do_run_fetch_collect.*` script may need to updated with the `DESTINATION_FOLDER`.
+> NOTE: The `do_run.*` script may need to updated with the `DESTINATION_FOLDER`.
 
 ## fetch_delete
 
 This sample code is for use with IDOL Connectors issuing the basic settings for `action=fetch` and implementing `fetchAction=delete`. It can also serve as the foundation for implementing other fetch actions.
 
-> NOTE: The `do_run_fetch_delete.*` script will need to be updated with the `IDENTIFIERS_CSV` for the data to collect.
+> NOTE: The `do_run.*` script will need to be updated with the `IDENTIFIERS_CSV` for the data to collect.
 
 ## fetch_insert
 
 This sample code is for use with IDOL Connectors issuing the basic settings for `action=fetch` and implementing `fetchAction=insert`. It can also serve as the foundation for implementing other fetch actions.
 
-> NOTE: The `do_run_fetch_synchronize.*` script may need to be updated with your configured fetch task name in `TASK_NAME`.
+> NOTE: The `do_run.*` script may need to be updated with your configured fetch task name in `TASK_NAME`.
 
 > NOTE: A `insertXML.xml` will need to be updated containing properly formatted `<insertXML>` syntax for the connector being used.  For more details, refer to the documentation for the connector being used.
 
-> NOTE: The `do_run_fetch_insert.*` script may need to be updated with the `INSERT_XML_FILE` path containing the data to insert.
-> 
+> NOTE: The `do_run.*` script may need to be updated with the `INSERT_XML_FILE` path containing the data to insert.
+
+## fetch_update
+
+This sample code is for use with IDOL Connectors issuing the basic settings for `action=fetch` and implementing `fetchAction=update`. It can also serve as the foundation for implementing other fetch actions.
+
+> NOTE: A `identifiersXML.xml` will need to be updated containing properly formatted `<identifiersXML>` syntax for the connector being used.  For more details, refer to the documentation for the connector being used.
+
+> NOTE: The `do_run.*` script may need to be updated with the `IDENTIFIERS_XML_FILE` path containing the data to update.
+
 ## queueInfo_getStatus
 
 This sample code is applicable to all IDOL services (*e.g.* Connectors, CFS, MediaServer and Content) that support asynchronous actions.  `action=queueInfo&queueAction=getStatus` is to get the status.
 
-> NOTE: The `do_run_queueInfo_getstatus.*bat*` script may need to be updated with the `QUEUE_NAME` appropriate for the IDOL service type in use.  Asynchronous actions are supported by connectors, CFS, MediaServer and other IDOL service types.
+> NOTE: The `do_run.*` may need to be updated with the `QUEUE_NAME` appropriate for the IDOL service type in use.  Asynchronous actions are supported by connectors, CFS, MediaServer and other IDOL service types.
 
-> NOTE: The `do_run_queueInfo_getstatus.` script will need to be updated with the token returned by asynchronous actions like `action=fetch` to check the status of a particular token.  If the TOKEN variable is set to empty string then recent tokens status will be returned.
+> NOTE: The `do_run.*` script will need to be updated with the token returned by asynchronous actions like `action=fetch` to check the status of a particular token.  If the TOKEN variable is set to empty string then recent tokens status will be returned.
+
+## ms_process
+This sample code is for use with IDOL Media Server issuing the basic settings for `action=process`.
+
+> NOTE: The `do_run.*` script will need to be updated with the `CONFIG_NAME` appropriate for the intended Media Server processing.  
+
+> NOTE: The `do_run.*` script will need to be updated with the `SOURCE_FILE_PATH` of the rich media file to process.
 
 ## See also
 
-[ACI API Programming Guide] (https://www.microfocus.com/documentation/idol/IDOL_12_6/IDOLJavaSDK_12.4_Documentation/Guides/html/English/index.html)
+[ACI API Programming Guide] (https://www.microfocus.com/documentation/idol/IDOL_12_13/IDOLJavaSDK_12.13_Documentation/Guides/html/)
+

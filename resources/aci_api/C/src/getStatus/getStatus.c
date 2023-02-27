@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 //Prints program usage information to standard output
 void displayusageinfo()

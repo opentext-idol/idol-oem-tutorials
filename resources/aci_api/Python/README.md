@@ -30,7 +30,7 @@ pip install python-dotenv
 In the `lib` sub-directory, please find and open the `.env` file to ensure that the `ACI_LIB_PATH` environment variable points to your C SDK directory, *e.g.*:
 
 ```ini
-ACI_LIB_PATH="C:\\MicroFocus\\IDOLCSDK_12.4.0_WINDOWS_X86_64"
+ACI_LIB_PATH="C:\\MicroFocus\\IDOLCSDK_12.13.0_WINDOWS_X86_64"
 ```
 
 > NOTE: this directory must contain the two files `client.h` and `aciclient.dll`.
@@ -126,4 +126,4 @@ Next, why not explore some of the other methods for interacting with ACI Servers
 
 ## See also
 
-- ACI API Programming Guide [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_12_6/IDOLJavaSDK_12.4_Documentation/Guides/html/English/index.html#C/c_part.htm).
+- ACI API Programming Guide [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_12_13/IDOLCSDK_12.13_Documentation/Guides/html/Content/C/c_part.htm).

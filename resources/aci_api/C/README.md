@@ -1,6 +1,6 @@
 # C ACI API Sample Code
 
-The C ACI API sample code resources build upon the information in the [ACI API Programming Guide - C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_12_6/IDOLJavaSDK_12.4_Documentation/Guides/html/English/index.html#C/c_part.htm) providing working examples to interact with IDOL ACI services. 
+The C ACI API sample code resources build upon the information in the [ACI API Programming Guide - C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_12_13/IDOLCSDK_12.13_Documentation/Guides/html/Content/C/c_part.htm) providing working examples to interact with IDOL ACI services. 
 
 The various examples contain source code and build scripts for Windows and Linux.
 
@@ -20,7 +20,9 @@ The `/src/<example>` folders contains the source code and build tools.
 - [fetch\_collect](#fetch_collect)
 - [fetch\_delete](#fetch_delete)
 - [fetch\_insert](#fetch_insert)
+- [fetch\_update](#fetch_update)
 - [queueInfo\_getStatus](#queueinfo_getstatus)
+- [ms\_process](#ms_process)
 - [See also](#see-also)
   
 ---
@@ -29,7 +31,7 @@ The `/src/<example>` folders contains the source code and build tools.
 
 Relative paths are used in the provided `do_*` scripts and the Visual Studio project files. They assume the following installation paths:
 - `C:\MicroFocus\idol_oem_tutorials\resources\apis\aci\c`
-- `C:\MicroFocus\IDOLCSDK_12.4.0_WINDOWS_X86_64`
+- `C:\MicroFocus\IDOLCSDK_12.13.0_WINDOWS_X86_64`
 
 ### Setup - Build
 
@@ -94,6 +96,14 @@ This sample code is for use with IDOL Connectors issuing the basic settings for 
 
 > NOTE: The `do_run_fetch_insert.*` script may need to be updated with the `INSERT_XML_FILE` path containing the data to insert.
 
+## fetch_update
+
+This sample code is for use with IDOL Connectors issuing the basic settings for `action=fetch` and implementing `fetchAction=update`. It can also serve as the foundation for implementing other fetch actions.
+
+> NOTE: A `identifiersXML.xml` will need to be updated containing properly formatted `<identifiersXML>` syntax for the connector being used.  For more details, refer to the documentation for the connector being used.
+
+> NOTE: The `do_run_fetch_update.*` script may need to be updated with the `IDENTIFIERS_XML_FILE` path containing the data to update.
+
 ## queueInfo_getStatus
 
 This sample code is applicable to all IDOL services (*e.g.* Connectors, CFS, MediaServer and Content) that support asynchronous actions.  `action=queueInfo&queueAction=getStatus` is to get the status.
@@ -102,6 +112,13 @@ This sample code is applicable to all IDOL services (*e.g.* Connectors, CFS, Med
 
 > NOTE: The `do_run_queueInfo_getstatus.` script will need to be updated with the token returned by asynchronous actions like `action=fetch` to check the status of a particular token.  If the TOKEN variable is set to empty string then recent tokens status will be returned.
 
+## ms_process
+This sample code is for use with IDOL Media Server issuing the basic settings for `action=process`.
+
+> NOTE: The `do_run_ms_process.*` script will need to be updated with the `CONFIG_NAME` appropriate for the intended Media Server processing.  
+
+> NOTE: The `do_run_ms_process.*` script will need to be updated with the `SOURCE_FILE_PATH` of the rich media file to process.
+
 ## See also
 
-[ACI API Programming Guide] (https://www.microfocus.com/documentation/idol/IDOL_12_6/IDOLJavaSDK_12.4_Documentation/Guides/html/English/index.html)
+[ACI API Programming Guide] (https://www.microfocus.com/documentation/idol/IDOL_12_13/IDOLCSDK_12.13_Documentation/Guides/html/Content/C/c_part.htm)

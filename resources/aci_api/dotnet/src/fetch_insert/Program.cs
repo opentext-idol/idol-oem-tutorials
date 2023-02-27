@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
 using Autonomy.Aci;
 
@@ -41,10 +42,38 @@ namespace fetchInsert
             return stringBuilder.ToString();
         }
 
+		static IConnection get_aciclient(String host, Int32 port, String key, HttpSettings httpSettings)
+        {
+            IConnection bteaConnection;
+
+            Console.WriteLine("OEM encryption key(s): " + key);
+            string pattern = @"(\d*),(\d*),(\d*),(\d*)";
+            Regex matcher = new Regex(pattern);
+            Match matches = matcher.Match(key);
+            if (matches.Success)
+            {
+                uint[] keys = new uint[4];
+                for (int count = 1; count < matches.Groups.Count; count++)
+                {
+                    //Console.WriteLine(matches.Groups[count].Value + "\n");
+                    keys[count-1] = Convert.ToUInt32(matches.Groups[count].Value);
+                }
+                bteaConnection = AciClient.CreateBteaConnection(host, port, keys, httpSettings);
+            }
+            else
+            {
+                bteaConnection = AciClient.CreateBteaConnection(host, port, key, httpSettings);
+            }
+
+            return bteaConnection;
+        }
+
         static void FetchInsert(String[] args)
         {
             IConnection connection;
             Response response;
+            HttpSettings httpSettings = new HttpSettings();
+            httpSettings.Method = HttpSettings.HttpMethod.POST;
 
             if (USE_IDOL_OEM_ENCRYPTION)
             {
@@ -68,18 +97,17 @@ namespace fetchInsert
                         throw new Exception("Invalid OEM encryption key");
                     }
                 }
-                connection = AciClient.CreateBteaConnection(args[0], Int32.Parse(args[1]), key);
+                connection = get_aciclient(args[0], Int32.Parse(args[1]), key, httpSettings);
             }
             else
             {
-                connection = AciClient.CreateUnsecuredConnection(args[0], Int32.Parse(args[1]));
+                connection = AciClient.CreateUnsecuredConnection(args[0], Int32.Parse(args[1]), httpSettings);
             }
 			
 			// get insertXML data
 			String insertXML = System.IO.File.ReadAllText(args[3]);
 
             Command fetch = new Command("FETCH");
-            //Command fetch = new Command("INGEST");
             fetch.Set("fetchAction", "insert");
             fetch.Set("configSection", args[2]);
             fetch.Set("insertXML", insertXML);

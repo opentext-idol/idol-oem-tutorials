@@ -1,9 +1,9 @@
-set ACI_API_HOME=..\..\..\..\..\..\IDOLCSDK_12.4.0_WINDOWS_X86_64
+set ACI_API_HOME=..\..\..\..\..\..\IDOLCSDK_12.13.0_WINDOWS_X86_64
 set PATH=%ACI_API_HOME%;%PATH%
 
 rem Replace the values for the following 3 parameters for your environment
 set ACI_HOST=localhost
-set ACI_PORT=7000
+set ACI_PORT=7010
 set IDENTIFIERS_CSV=CSV_OF_IDENTIFIERS
 
 set ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY=REPLACE_WITH_MY_LONG_KEY_STRING

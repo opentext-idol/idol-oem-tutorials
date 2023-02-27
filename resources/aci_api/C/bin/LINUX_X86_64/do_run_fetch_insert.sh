@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ACI_API_HOME=../../../../../../IDOLCSDK_12.4.0_LINUX_X86_64
+ACI_API_HOME=../../../../../../IDOLCSDK_12.13.0_LINUX_X86_64
 ACI_API_LIB=$ACI_API_HOME
 
 LD_LIBRARY_PATH=$ACI_API_HOME
@@ -8,7 +8,7 @@ export LD_LIBRARY_PATH
 
 # Replace the values for the following parameters for your environment
 ACI_HOSTNAME=localhost
-ACI_PORT=7000
+ACI_PORT=7010
 TASK_NAME=MyTask
 INSERT_XML_FILE=../../../resources/insertXML.xml
 
