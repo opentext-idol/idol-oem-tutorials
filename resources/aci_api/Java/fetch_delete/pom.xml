@@ -15,7 +15,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.autonomy.aci</groupId>
-			<artifactId>aci</artifactId>
+			<artifactId>aci-api-release</artifactId>
 			<version>12.13.0</version>
 		</dependency>
 		<dependency>
@@ -53,12 +53,6 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>1.7.9</version>
 		</dependency>
-<dependency>
-    <groupId>stax</groupId>
-    <artifactId>stax-api</artifactId>
-    <version>1.0.1</version>
-</dependency>
-		
 	</dependencies>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -67,7 +61,7 @@
 	</properties>
 	<build>
 		<resources>
-    </resources>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -84,6 +78,26 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
 					<execution>
@@ -94,9 +108,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>
-                            com.autonomy.aci.samples.FetchDelete
-                        </mainClass>
+									<mainClass>com.autonomy.aci.samples.FetchDelete</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
@@ -105,6 +117,14 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<configuration>
+					<mainClass>com.autonomy.aci.samples.FetchDelete</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

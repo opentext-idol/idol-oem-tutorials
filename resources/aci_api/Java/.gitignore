@@ -1,0 +1,7 @@
+**/target/archive-tmp*
+**/target/classes*
+**/target/generated-sources*
+**/target/maven-archiver*
+**/target/maven-status*
+**/target/lib/*
+**/target/*-SNAPSHOT-jar-with-dependencies.jar
