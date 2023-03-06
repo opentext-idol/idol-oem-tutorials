@@ -13,7 +13,7 @@ In this lesson, you will:
   - [Useful third-party tools](#useful-third-party-tools)
   - [IDOL components](#idol-components)
     - [Download Eduction components](#download-eduction-components)
-    - [Install Eduction SDK & Grammars](#install-eduction-sdk--grammars)
+    - [Install Eduction SDK \& Grammars](#install-eduction-sdk--grammars)
     - [Environment variables](#environment-variables)
 - [Introduction to Eduction](#introduction-to-eduction)
   - [Run `edktool`](#run-edktool)
@@ -118,10 +118,7 @@ Run the `edktool` command line program to yield usage instructions:
 ```sh
 > cd C:\MicroFocus\EductionSDK_12.13.0_WINDOWS_X86_64\bin
 > edktool
-
-Eduction EDKTool Utility v12.13.0
-(c) Copyright 2006-2018 Micro Focus International PLC
-
+...
 Usage: edktool  {
      generate    -i <inputfile> [-o <outputfile>] [-e <entityname>] |
      compile     [-i] <inputfile> [-e <entity>[,<entity>...]]
