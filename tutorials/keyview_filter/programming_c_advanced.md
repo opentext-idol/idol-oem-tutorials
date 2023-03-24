@@ -6,7 +6,7 @@ In this lesson, you will:
 - familiarize yourself with more advanced Filter SDK functionality.
 - adapt the previous sample program to work on streams, rather than files.
 
-> NOTE: This guide assumes you have already completed the introductory KeyView Filter SDK [tutorial](../../keyview_filter/introduction.md#keyview-filter-sdk-introduction).
+> NOTE: This guide assumes you have already completed the introductory KeyView Filter SDK [tutorial](./introduction.md#keyview-filter-sdk-introduction).
 
 > NOTE: This lesson assumes you have also already completed the KeyView Filter SDK C API [tutorial](./programming_c.md).
 
