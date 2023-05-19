@@ -1,6 +1,6 @@
 # .NET ACI API Sample Code
 
-The .NET ACI API sample code resources build upon the information in the [ACI API Programming Guide - .NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_12_13/IDOLDotNetSDK_12.13_Documentation/Guides/html/Content/NET/NET_part.htm) providing working examples to interact with IDOL ACI services. 
+The .NET ACI API sample code resources build upon the information in the [ACI API Programming Guide - .NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/NET/NET_part.htm) providing working examples to interact with IDOL ACI services. 
 
 The various examples contain source code and build configuration for Visual Studio on Windows_x86_64.
 
@@ -26,8 +26,8 @@ The various examples contain source code and build configuration for Visual Stud
 ## Setup
 
 Relative paths are used in the provided `do_*` scripts and the Visual Studio project files. They assume the following installation paths:
-- `C:\MicroFocus\idol_oem_tutorials\resources\apis\aci\dotnet`
-- `C:\MicroFocus\IDOLDotNetSDK_12.13.0_WINDOWS_X86_64`
+- `C:\OpenText\idol_oem_tutorials\resources\apis\aci\dotnet`
+- `C:\OpenText\IDOLDotNetSDK_23.2.0_WINDOWS_X86_64`
 
 ### Setup - Build
 
@@ -116,4 +116,5 @@ This sample code is for use with IDOL Media Server issuing the basic settings fo
 
 ## See also
 
-[ACI API Programming Guide] (https://www.microfocus.com/documentation/idol/IDOL_12_13/IDOLJavaSDK_12.13_Documentation/Guides/html/)
+- ACI API Programming Guide: [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/NET/NET_part.htm)
+- IDOL Release Notes: [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/SDKs/IDOL-NET.htm)

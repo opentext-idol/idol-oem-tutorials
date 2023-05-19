@@ -18,7 +18,7 @@ response = aci.client.call(
   aci_params = {
     "FetchAction": "Collect",
     "Identifiers": ",".join(file_ids),
-    "Destination": "C:\MicroFocus\collected",
+    "Destination": "C:\OpenText\collected",
     "ResponseFormat": "simplejson"
   }
 )

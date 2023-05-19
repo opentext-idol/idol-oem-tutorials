@@ -14,7 +14,6 @@ void displayusageinfo()
 	printf("Parameters:\n");
 	printf("    <HOSTNAME/IP>		Hostname / IP address of ACI service.\n");
 	printf("    <ACI_PORT_#>		ACI port number of ACI service.\n");
-	printf("    <TASK_NAME>		Fetch task name.\n");
 	printf("    <IDENTIFIERS_XML_FILE>	Update identifiers XML file.\n");
 }
 

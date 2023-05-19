@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32630.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "queueInfo_getStatus", "queueInfo_getStatus.csproj", "{DC240A0B-E5F3-4E92-B442-79AD3913A49F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "queueInfo_getStatus", "queueInfo_getStatus.csproj", "{DC240A0B-E5F3-4E92-B442-79AD3913A49F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

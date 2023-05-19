@@ -22,6 +22,8 @@ Admission date: 06/13/2022	// won't match per cfg
 Admission date: 06/13		// won't match per cfg
 
 DEA Registration Number: BE1234563
+NDC: 66467-2220-1
+NDC: 123456-789-01
 
 +X999123ABC0/$$31905151234AB/S5678EDFG/16D20151001J
 (01)51022222233336(11)141231(17)150707(10)A213B1(21)1234
@@ -32,6 +34,11 @@ DEA Registration Number: BE1234563
 Plan ID 12345678LMNOP9
 Plan ID: 12345678LMNOP8
 MRN: 3321AC4383LDD33
+NPI: 3728482340
+MBI: 1EG4-TE5-MK73
+HICN: 123-45-6789-A
+CPT Code 3006F
+Healthcare Common Procedure Code: C1300
 
 email: jsmith@mailserver.com
 ip address: 5.5.5.5

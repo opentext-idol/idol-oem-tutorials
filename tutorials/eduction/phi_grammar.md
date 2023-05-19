@@ -28,10 +28,16 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 
 > NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#eduction-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
 
+In the `EductionGrammars_23.2_COMMON.zip`, the `phi\scripts\validation_scripts.lua` needs a correction as noted below:
+```diff
+-ndc_us={processs="validate_ndc"},
++ndc_us={process="validate_ndc"},
+```
+
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PHI edk_samples](../../resources/eduction/phi/edk_samples) and install to `C:\MicroFocus\EductionGrammars_12.13.0_COMMON\phi\edk_samples\resources`
+- [PHI edk_samples](../../resources/eduction/phi/edk_samples) and install to `C:\OpenText\EductionGrammars_23.2.0_COMMON\phi\edk_samples\resources`
 
 ## What's in the Box?
 
@@ -39,9 +45,9 @@ The IDOL PHI Package includes IDOL Eduction Grammar files, postprocessing script
 
 ### Available Grammar Files
 
-To review which grammar files are included, list the directory `C:\MicroFocus\EductionGrammars_12.13.0_COMMON\phi`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements.
+To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_23.2.0_COMMON\phi`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `phi_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
 
-There is some apparent overlap with some of the grammars & entities in the PII Package.  The primary difference excluding the net new grammars and entities available in the PHI Package is that the PHI grammars are focused on the United States.
+There is some apparent overlap with some of the grammars & entities in the PII Package.  The primary difference excluding the net new grammars (e.g. `age.ecr, dea.ecr, device.ecr` and others) and entities available in the PHI Package is that the PHI grammars are focused on the United States.
 
 ### Types of Entities
 
@@ -49,7 +55,7 @@ The PHI grammar files provide entities of the "context", "nocontext" and "landma
 
 For the PHI date entities, like `phi/date/dob/*`, "context", "nocontext" and "landmark" options are available in order to match the recall and precision goals to the use case. Consider that the "nocontext" version might over-match significantly (*i.e.*, we are likely to return values that are similar to the entity patterns, such as a last updated date).
 
-For full details of the entities included with the address grammar, please read the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionGrammars_12.13_Documentation/PHI/Content/PHI/PHI_GrammarReference.htm).
+For full details of the entities included in the PHI Grammar Package, please reference the [PHI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionGrammars_23.2_Documentation/PHI/Content/PHI/PHI_GrammarReference.htm).
 
 > NOTE: You can configure Eduction to use either versions of an entity, in which case matches located with context are given a higher score in the results.
 
@@ -60,42 +66,42 @@ In the setup, you deployed edk_samples resources.  It contains resources to be u
 Run the following commands to see the output:
 
 ```sh
-cd C:\MicroFocus\EductionGrammars_12.13.0_COMMON\phi\edk_samples\resources
-edktool extract -l ..\..\..\..\EductionSDK_12.13.0_WINDOWS_X86_64\licensekey.dat -c phi_all\config\phi_all.cfg -i phi_all\input\input.txt -o out.xml
+cd C:\OpenText\EductionGrammars_23.2.0_COMMON\phi\edk_samples\resources
+edktool extract -l ..\..\..\..\EductionSDK_23.2.0_WINDOWS_X86_64\licensekey.dat -c phi_all\config\phi_all.cfg -i phi_all\input\input.txt -o out.xml
 ```
 
 The `phi_all.cfg` configuration and `input.txt` represent all available entity categories in the `PHI Package`, but does intentional select "nocontext" vs "context" for particular entity categories.  In some cases both entity forms are enabled - *e.g.* `Entity21 = phi/inet/ip/*context` using a simple wildcard expression `*`.
 
-The `phi_all.cfg` also enables [AllowOverlaps](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionServer_12.13_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm). This allows for multiple entities to match part of (or the entirety of) the same input text.  An example of this in the `phi_all\input\input.txt` is:
+The `phi_all.cfg` also enables [AllowOverlaps](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionServer_23.2_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm). This allows for multiple entities to match part of (or the entirety of) the same input text.  An example of this in the `phi_all\input\input.txt` is:
 ```
 email: jsmith@mailserver.com
 ```
 which matches 3 distinct entities as the following with `AllowOverlaps = True`:
 
 ```xml
-    <MATCH EntityName="phi/inet/email/context" Offset="838" OffsetLength="838" Score="1" NormalizedTextSize="21" NormalizedTextLength="21" OriginalTextSize="28" OriginalTextLength="28">
-      <ORIGINAL_TEXT>email: jsmith@mailserver.com</ORIGINAL_TEXT>
-      <NORMALIZED_TEXT>jsmith@mailserver.com</NORMALIZED_TEXT>
-      <COMPONENTS>
-        <COMPONENT Name="LOCAL" Text="jsmith" Offset="0" OffsetLength="0" TextSize="6" TextLength="6"/>
-        <COMPONENT Name="DOMAIN" Text="mailserver.com" Offset="7" OffsetLength="7" TextSize="14" TextLength="14"/>
-      </COMPONENTS>
-    </MATCH>
-    <MATCH EntityName="phi/inet/email/nocontext" Offset="845" OffsetLength="845" Score="1" NormalizedTextSize="21" NormalizedTextLength="21" OriginalTextSize="21" OriginalTextLength="21">
-      <ORIGINAL_TEXT>jsmith@mailserver.com</ORIGINAL_TEXT>
-      <NORMALIZED_TEXT>jsmith@mailserver.com</NORMALIZED_TEXT>
-      <COMPONENTS>
-        <COMPONENT Name="LOCAL" Text="jsmith" Offset="0" OffsetLength="0" TextSize="6" TextLength="6"/>
-        <COMPONENT Name="DOMAIN" Text="mailserver.com" Offset="7" OffsetLength="7" TextSize="14" TextLength="14"/>
-      </COMPONENTS>
-    </MATCH>
-    <MATCH EntityName="phi/inet/url/nocontext" Offset="852" OffsetLength="852" Score="1" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
-      <ORIGINAL_TEXT>mailserver.com</ORIGINAL_TEXT>
-      <NORMALIZED_TEXT>mailserver.com</NORMALIZED_TEXT>
-      <COMPONENTS>
-        <COMPONENT Name="HOST" Text="mailserver.com" Offset="0" OffsetLength="0" TextSize="14" TextLength="14"/>
-      </COMPONENTS>
-    </MATCH>
+<MATCH EntityName="phi/inet/email/context" Offset="985" OffsetLength="985" Score="1" NormalizedTextSize="21" NormalizedTextLength="21" OriginalTextSize="28" OriginalTextLength="28">
+  <ORIGINAL_TEXT>email: jsmith@mailserver.com</ORIGINAL_TEXT>
+  <NORMALIZED_TEXT>jsmith@mailserver.com</NORMALIZED_TEXT>
+  <COMPONENTS>
+    <COMPONENT Name="LOCAL" Text="jsmith" Offset="0" OffsetLength="0" TextSize="6" TextLength="6"/>
+    <COMPONENT Name="DOMAIN" Text="mailserver.com" Offset="7" OffsetLength="7" TextSize="14" TextLength="14"/>
+  </COMPONENTS>
+</MATCH>
+<MATCH EntityName="phi/inet/email/nocontext" Offset="992" OffsetLength="992" Score="1" NormalizedTextSize="21" NormalizedTextLength="21" OriginalTextSize="21" OriginalTextLength="21">
+  <ORIGINAL_TEXT>jsmith@mailserver.com</ORIGINAL_TEXT>
+  <NORMALIZED_TEXT>jsmith@mailserver.com</NORMALIZED_TEXT>
+  <COMPONENTS>
+    <COMPONENT Name="LOCAL" Text="jsmith" Offset="0" OffsetLength="0" TextSize="6" TextLength="6"/>
+    <COMPONENT Name="DOMAIN" Text="mailserver.com" Offset="7" OffsetLength="7" TextSize="14" TextLength="14"/>
+  </COMPONENTS>
+</MATCH>
+<MATCH EntityName="phi/inet/url/nocontext" Offset="999" OffsetLength="999" Score="1" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
+  <ORIGINAL_TEXT>mailserver.com</ORIGINAL_TEXT>
+  <NORMALIZED_TEXT>mailserver.com</NORMALIZED_TEXT>
+  <COMPONENTS>
+    <COMPONENT Name="HOST" Text="mailserver.com" Offset="0" OffsetLength="0" TextSize="14" TextLength="14"/>
+  </COMPONENTS>
+</MATCH>
 ```
 
 For extra credit change the `phi_all\config\phi_all.cfg` to set `AllowOverlaps = False` and re-run `edktool` but output to `out2.xml` so you can easily compare the output.
@@ -104,25 +110,25 @@ For extra credit change the `phi_all\config\phi_all.cfg` to set `AllowOverlaps =
 Another noteworthy example with `AllowOverlaps=True` occurs with `phi/id/*context/us`: 
 
 ```xml
-<MATCH EntityName="phi/id/context/us" Offset="1068" OffsetLength="1068" Score="1" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="16" OriginalTextLength="16">
+<MATCH EntityName="phi/id/context/us" Offset="1215" OffsetLength="1215" Score="1" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="16" OriginalTextLength="16">
   <ORIGINAL_TEXT>SSN: 534-33-4394</ORIGINAL_TEXT>
   <NORMALIZED_TEXT>534-33-4394</NORMALIZED_TEXT>
   <COMPONENTS>
     <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
   </COMPONENTS>
 </MATCH>
-<MATCH EntityName="phi/id/nocontext/us" Offset="1073" OffsetLength="1073" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+<MATCH EntityName="phi/id/nocontext/us" Offset="1220" OffsetLength="1220" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
   <ORIGINAL_TEXT>534-33-4394</ORIGINAL_TEXT>
   <NORMALIZED_TEXT>534-33-4394</NORMALIZED_TEXT>
 </MATCH>
-<MATCH EntityName="phi/id/context/us" Offset="1085" OffsetLength="1085" Score="0.9" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="16" OriginalTextLength="16">
+<MATCH EntityName="phi/id/context/us" Offset="1232" OffsetLength="1232" Score="0.9" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="16" OriginalTextLength="16">
   <ORIGINAL_TEXT>SSN: 534 33 4393</ORIGINAL_TEXT>
   <NORMALIZED_TEXT>534 33 4393</NORMALIZED_TEXT>
   <COMPONENTS>
     <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
   </COMPONENTS>
 </MATCH>
-<MATCH EntityName="phi/id/context/us" Offset="1102" OffsetLength="1102" Score="0.8" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="14" OriginalTextLength="14">
+<MATCH EntityName="phi/id/context/us" Offset="1249" OffsetLength="1249" Score="0.8" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="14" OriginalTextLength="14">
   <ORIGINAL_TEXT>SSN: 534334392</ORIGINAL_TEXT>
   <NORMALIZED_TEXT>534334392</NORMALIZED_TEXT>
   <COMPONENTS>
@@ -137,9 +143,9 @@ For `phi/id/nocontext/us`, only the match `534-33-4394` is produced due to the `
 
 You now understand how to explore and use the IDOL Eduction's PHI grammars, how wildcard expressions can be used in the Eduction engine configuration and also the impact of the `AllowOverlaps` setting.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](./README.md) page.
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#idol-eduction-showcase).
 
 ## See also
 
-- [IDOL PHI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionGrammars_12.13_Documentation/PHI/)
-- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html)
+- [IDOL PHI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionGrammars_23.2_Documentation/PHI/)
+- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html)

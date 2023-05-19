@@ -2,7 +2,7 @@
 
 In other Eduction lessons the OOTB `*_postprocessing.lua` scripts are used as is required with these grammars. Various functions are performed within these scripts like checksum and other value validation, score normalization and output normalization.  But there are other valuable use cases for Eduction post-processing.
 
-Refer to the IDOL Eduction User and Programming Guide [Post-Processing](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm) section for more information on this topic.
+Refer to the [Eduction User and Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm) section for more information on this topic.
 
 In this lesson, other uses for post processing will be explored:
 - custom redaction of credit card numbers
@@ -34,8 +34,8 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PCI redact_account_nbr sample](../../resources/eduction/pci/edk_samples/resources/redact_account_nbr) and install to `C:\MicroFocus\EductionGrammars_12.13.0_COMMON\pci\edk_samples\resources\redact_account_nbr`
-- [PII custom post-process threshold](../../resources/eduction/pii/edk_samples/resources/custom_pp_threshold) and install to `C:\MicroFocus\EductionGrammars_12.13.0_COMMON\pii\edk_samples\resources\custom_pp_threshold`
+- [PCI redact_account_nbr sample](../../resources/eduction/pci/edk_samples/resources/redact_account_nbr) and install to `C:\OpenText\EductionGrammars_23.2.0_COMMON\pci\edk_samples\resources\redact_account_nbr`
+- [PII custom post-process threshold](../../resources/eduction/pii/edk_samples/resources/custom_pp_threshold) and install to `C:\OpenText\EductionGrammars_23.2.0_COMMON\pii\edk_samples\resources\custom_pp_threshold`
 
 ## Custom redaction of credit card numbers
 
@@ -66,26 +66,17 @@ function processmatch (edkmatch)
 end
 ```
 
-> NOTE: The standard IDOL Lua functions - [regex_match()](https://www.microfocus.com/documentation/idol/IDOL_12_13/NiFiIngest_12.13_Documentation/Help/Content/Lua/General/_LUA_regex_match.htm) and  [regex_replace_all()](https://www.microfocus.com/documentation/idol/IDOL_12_13/NiFiIngest_12.13_Documentation/Help/Content/Lua/General/_LUA_regex_replace_all.htm) are the keys to implementing the custom redaction. 
+> NOTE: The standard IDOL Lua functions - [regex_match()](https://www.microfocus.com/documentation/idol/IDOL_23_2/NiFiIngest_23.2_Documentation/Help/Content/Lua/General/_LUA_regex_match.htm) and  [regex_replace_all()](https://www.microfocus.com/documentation/idol/IDOL_23_2/NiFiIngest_23.2_Documentation/Help/Content/Lua/General/_LUA_regex_replace_all.htm) are the keys to implementing the custom redaction. 
 
 
-To run the provided example
+Run the provided example
 ```sh
-> cd C:\MicroFocus\EductionGrammars_12.13.0\pci\edk_samples\resources
-> edktool extract -l ..\..\..\..\EductionSDK_12.13.0_WINDOWS_X86_64\licensekey.dat -c redact_account_nbr\config\redact_account_nbr.cfg -i redact_account_nbr\input\input.txt
+> cd C:\OpenText\EductionGrammars_23.2.0\pci\edk_samples\resources
+> edktool extract -l ..\..\..\..\EductionSDK_23.2.0_WINDOWS_X86_64\licensekey.dat -c redact_account_nbr\config\redact_account_nbr.cfg -i redact_account_nbr\input\input.txt
+```
 
-Eduction EDKTool Utility v12.13.0
-Extracting entities from:
-  redact_account_nbr\input\input.txt
-using the config file:
-  redact_account_nbr\config\redact_account_nbr.cfg
-to the output:
-  (Console)
-using the license:
-  ..\..\..\..\EductionSDK_12.13.0_WINDOWS_X86_64\licensekey.dat
-
-Successfully configured 2 post-processing tasks.
-Beginning engine initialization (T+0.127 seconds)
+Two matches are produced:
+```xml
 ...
 <?xml version="1.0" encoding="UTF-8"?>
 <MATCHLIST>
@@ -109,7 +100,7 @@ Notice that the `<NORMALIZED_TEXT> has the redacted representation of the matchi
 
 ## Entity specific post-process score threshold
 
-While EductionSDK supports entity specific scoring via `EntityMinScore#`, this score is applied after the ECR/EJR processing and before the post-processing stage. The `PostProcessThreshold` applies to all entities. Refer to [PostProcessThreshold](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_PostProcessThreshold.htm) section of the Eduction User and Programming Guide for more information on this topic.  
+While EductionSDK supports entity specific scoring via `EntityMinScore#`, this score is applied after the ECR/EJR processing and before the post-processing stage. The `PostProcessThreshold` applies to all entities. Refer to [Eduction User and Programming Guide - PostProcessThreshold](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_PostProcessThreshold.htm) section of the Eduction User and Programming Guide for more information on this topic.  
 
 This part of the lesson will illustrate how to use a post-processing Lua script to implement an entity specific PostProcessThreshold.
 
@@ -118,21 +109,12 @@ Different `PostProcessThreshold` values per entity allows for use cases like dif
 Run the following commands to see the output:
 
 ```sh
-> cd C:\MicroFocus\EductionGrammars_12.13.0\pii\edk_samples\resources
-> edktool extract -l ..\..\..\..\EductionSDK_12.13.0_WINDOWS_X86_64\licensekey.dat -c custom_pp_threshold\config\redact_account_nbr.cfg -i custom_pp_threshold\input\input.txt
+> cd C:\OpenText\EductionGrammars_23.2.0\pii\edk_samples\resources
+> edktool extract -l ..\..\..\..\EductionSDK_23.2.0_WINDOWS_X86_64\licensekey.dat -c custom_pp_threshold\config\custom_pp_threshold.cfg -i custom_pp_threshold\input\input.txt -o out_custom_pp_threshold.xml
+```
 
-Eduction EDKTool Utility v12.13.0
-Extracting entities from:
-  custom_pp_threshold\input\input.txt
-using the config file:
-  custom_pp_threshold\config\custom_pp_threshold.cfg
-to the output:
-  (Console)
-using the license:
-  ..\..\..\..\EductionSDK_12.13.0_WINDOWS_X86_64\licensekey.dat
-
-Successfully configured 2 post-processing tasks.
-Beginning engine initialization (T+0.127 seconds)
+The following matches are produced
+```xml
 ...
 <?xml version="1.0" encoding="UTF-8"?>
 <MATCHLIST>
@@ -174,7 +156,7 @@ Edit the `custom_pp_threshold/config/custom_pp_threshold.cfg` to remove the seco
 ```diff
 -PostProcessingTask1 = custom_pp_threshold
 ```
-and re-run the same edktool command as above. You will get different (more) matches - with `PostProcessThreshold=0.4` and by the disabling the custom_pp_threshold task.
+and re-run the same edktool command as above, but with `-o out_no_custom_pp_threshold.xml`. You will get different (more) matches - with `PostProcessThreshold=0.4` when the custom_pp_threshold task is disabled.
 
 The `custom_pp_threshold/scripts/custom_pp_threshold.lua` provides the framework for this solution and allows for it to be easily extended for use with other grammars and entities.
 
@@ -182,10 +164,10 @@ The `custom_pp_threshold/scripts/custom_pp_threshold.lua` provides the framework
 
 You are now familiar with more use cases for Eduction post processing: custom match redaction and custom score threshold.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#capability-showcase-examples).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#idol-eduction-showcase).
 
 ## See also
 
-- [IDOL PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionGrammars_12.13_Documentation/PCI/)
-- [IDOL PII Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionGrammars_12.13_Documentation/PII/)
-- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html)
+- [IDOL PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionGrammars_23.2_Documentation/PCI/)
+- [IDOL PII Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionGrammars_23.2_Documentation/PII/)
+- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html/)

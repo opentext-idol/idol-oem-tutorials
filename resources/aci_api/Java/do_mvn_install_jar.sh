@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=12.13.0
+VERSION=23.2.0
 
 ACI_API_HOME=../../../../IDOLJavaSDK_$VERSION
 MAVEN_HOME=/opt/Apache/maven/apache-maven-3.8.3
@@ -13,4 +13,4 @@ export PATH
 
 env
 
-mvn install:install-file -Dfile=$ACI_API_HOME/idol-aci-client-$VERSION-bin/aci-api-release-$VERSION.jar -DgroupId=com.autonomy.aci -DartifactId=aci-api-release -Dversion=$VERSION -Dpackaging=jar -DgeneratePom=true
+mvn install:install-file -Dfile=$ACI_API_HOME/aci-api-release-$VERSION.jar -DgroupId=com.autonomy.aci -DartifactId=aci-api-release -Dversion=$VERSION -Dpackaging=jar -DgeneratePom=true

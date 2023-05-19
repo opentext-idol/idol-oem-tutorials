@@ -1,6 +1,6 @@
 # C ACI API Sample Code
 
-The C ACI API sample code resources build upon the information in the [ACI API Programming Guide - C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_12_13/IDOLCSDK_12.13_Documentation/Guides/html/Content/C/c_part.htm) providing working examples to interact with IDOL ACI services. 
+The C ACI API sample code resources build upon the information in the [ACI API Programming Guide - C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/C/c_part.htm) providing working examples to interact with IDOL ACI services. 
 
 The various examples contain source code and build scripts for Windows and Linux.
 
@@ -30,8 +30,8 @@ The `/src/<example>` folders contains the source code and build tools.
 ## Setup
 
 Relative paths are used in the provided `do_*` scripts and the Visual Studio project files. They assume the following installation paths:
-- `C:\MicroFocus\idol_oem_tutorials\resources\apis\aci\c`
-- `C:\MicroFocus\IDOLCSDK_12.13.0_WINDOWS_X86_64`
+- `C:\OpenText\idol_oem_tutorials\resources\apis\aci\c`
+- `C:\OpenText\IDOLCSDK_23.2.0_WINDOWS_X86_64`
 
 ### Setup - Build
 
@@ -121,4 +121,5 @@ This sample code is for use with IDOL Media Server issuing the basic settings fo
 
 ## See also
 
-[ACI API Programming Guide] (https://www.microfocus.com/documentation/idol/IDOL_12_13/IDOLCSDK_12.13_Documentation/Guides/html/Content/C/c_part.htm)
+- ACI API Programming Guide: [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/C/c_part.htm)
+- IDOL Release Notes: [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/SDKs/IDOL-C.htm)

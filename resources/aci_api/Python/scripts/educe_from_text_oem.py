@@ -13,7 +13,7 @@ response = aci.client.call(
   port=13000, 
   aci_action="EduceFromText",
   aci_params = {
-    "Text": "Simon received email from christopher.blanks@microfocus.com and chris.blanks@microfocus.com today.",
+    "Text": "Simon received email from christopher.blanks@opentext.com and chris.blanks@opentext.com today.",
     "Entities": "internet/addr_email"
   }
 )

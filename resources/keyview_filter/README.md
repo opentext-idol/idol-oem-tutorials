@@ -4,12 +4,12 @@
 
 ### SmartCipher_Fmt.txt
 
-- Micro Focus SmartCipher encrypted text file
+- OpenText SmartCipher encrypted text file
 
 - filter -d detects as 1255 and identifies it's encrypted
 
 ### SmartCipher_Fmt.txt.BOGUS_EXTENSION
-- Micro Focus SmartCipher encrypted text file, but with a bogus file extension
+- OpenText SmartCipher encrypted text file, but with a bogus file extension
 
 - filter -d detects as 1255 and identifies it's encrypted
 
@@ -61,6 +61,10 @@
 - has hyperlinks
 
 - filter -sh extracts link part of hyperlink
+
+### AmeliorationFertiliteDesSols.pptx
+- Download from [http://www.doc-developpement-durable.org/](https://www.doc-developpement-durable.org/file/Culture/Fertilisation-des-Terres-et-des-Sols/AmeliorationFertiliteDesSols.pptx)
+- Slide 1 has text that showcases 
 
 ## Advanced Metadata Extraction
 

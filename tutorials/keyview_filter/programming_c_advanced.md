@@ -6,7 +6,7 @@ In this lesson, you will:
 - familiarize yourself with more advanced Filter SDK functionality.
 - adapt the previous sample program to work on streams, rather than files.
 
-> NOTE: This guide assumes you have already completed the introductory KeyView Filter SDK [tutorial](./introduction.md#keyview-filter-sdk-introduction).
+> NOTE: This guide assumes you have already completed the introductory KeyView Filter SDK [tutorial](introduction.md#keyview-filter-sdk-introduction).
 
 > NOTE: This lesson assumes you have also already completed the KeyView Filter SDK C API [tutorial](./programming_c.md).
 
@@ -15,14 +15,9 @@ In this lesson, you will:
   - [Resources](#resources)
 - [Using a custom stream](#using-a-custom-stream)
   - [Defining a custom stream](#defining-a-custom-stream)
-  - [Using streams for detection and metadata](#using-streams-for-detection-and-metadata)
-  - [Filtering text using streams](#filtering-text-using-streams)
-  - [Extracting sub files using streams](#extracting-sub-files-using-streams)
-- [Security](#security)
-  - [DLL pre-loading attacks](#dll-pre-loading-attacks)
-    - [Embedding a manifest on Windows](#embedding-a-manifest-on-windows)
-    - [Loading with absolute paths](#loading-with-absolute-paths)
-  - [Calling KeyView from an application with elevated privileges](#calling-keyview-from-an-application-with-elevated-privileges)
+  - [Opening a document from a stream](#opening-a-document-from-a-stream)
+  - [Extracting subfiles using streams](#extracting-subfiles-using-streams)
+- [Partial filtering](#partial-filtering)
 - [Conclusion](#conclusion)
 - [See also](#see-also)
 
@@ -30,15 +25,11 @@ In this lesson, you will:
 
 ## Setup
 
-Before you continue with this lesson, refer to the [documentation links](#see-also) below.
-
-> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../../keyview_filter/introduction.md#keyview-filter-sdk-introduction) lesson covering essential setup steps (for example, required downloads and installation steps) and basic KeyView Filter concepts.
-
 ### Resources
 
 Download the following resources before you continue:
-- source code for this tutorial: [tutorial_stream.c](../../../resources/apis/keyview_filter/tutorial_stream.c)
-- optional sample files for detection and various extraction options located [here](../../../resources/keyview_filter/)
+- source code for this tutorial: [tutorial_stream.c](../../resources/keyview_filter/sdk/tutorial_stream.c)
+- optional sample files for detection and various extraction options located [here](../../resources/keyview_filter/)
 
 
 ## Using a custom stream
@@ -47,76 +38,95 @@ Until now, you have been operating exclusively on files on disk. However, there 
 
 ### Defining a custom stream
 
-You can implement a custom stream by filling out a [KVInputStream](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_structures/KVInputStream.htm) structure with functions that perform the appropriate actions. Each of these are equivalent to the ANSI counterparts (fopen, fread, and so on), except several functions return a BOOL rather than an error code.
+You can implement a custom stream by filling out a [KVInputStream](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filtering_structures/KVInputStream.htm) structure with functions that perform the appropriate actions. Each of these are equivalent to the ANSI counterparts (fopen, fread, and so on), except several functions return a BOOL rather than an error code.
 
 To illustrate how to use a custom stream, the following example defines a very simple stream that forwards to the file-based operations.
 
 ```c
 typedef struct
 {
-    char* filename;
+    const char* filename;
     FILE* fp;
+    int openCount;
 } StreamInfo;
 
 BOOL pascal streamOpen(KVInputStream* stream)
 {
-    if(!stream || !stream.pInputStreamPrivateData)
+    if(!stream || !stream->pInputStreamPrivateData)
     {
         return FALSE;
     }
+    StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
     
-    StreamInfo* info = (StreamInfo*)stream.pInputStreamPrivateData;
-    
-    info.fp = fopen(info.filename);
-    return info.fp != NULL;
+    //Open may be called more than once, and the subsequent calls should be a no-op
+    if (info->fp == NULL)
+    {
+        info->fp = fopen(info->filename, "rb");
+    }
+
+    if (info->fp)
+    {
+        fseek(info->fp, 0, SEEK_SET);
+        info->openCount++;
+    }
+
+    return info->fp != NULL;
 }
 
 UINT pascal streamRead(KVInputStream* stream, BYTE * buffer, UINT size)
 {
-    if(!stream || !stream.pInputStreamPrivateData)
+    if(!stream || !stream->pInputStreamPrivateData)
     { 
         return 0;
     }
-    StreamInfo* info = (StreamInfo*)stream.pInputStreamPrivateData;
-    return fread(buffer, 1, size, info.fp);
+    StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
+    return fread(buffer, 1, size, info->fp);
 }
 
 BOOL pascal streamSeek (KVInputStream* stream, long offset, int whence)
 {
-    if(!stream || !stream.pInputStreamPrivateData)
+    if(!stream || !stream->pInputStreamPrivateData)
     { 
         return FALSE;
     }
-    
-    StreamInfo* info = (StreamInfo*)stream.pInputStreamPrivateData;
+    StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
 
-    return fseek(info.fp, offset, whence);
+    return fseek(info->fp, offset, whence) == 0;
 }
 
 long pascal streamTell(KVInputStream* stream)
 {
-    if(!stream || !stream.pInputStreamPrivateData)
+    if(!stream || !stream->pInputStreamPrivateData)
     { 
         return FALSE;
     }
-    
-    StreamInfo* info = (StreamInfo*)stream.pInputStreamPrivateData;
+    StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
 
-    return ftell(info.fp); 
+    return ftell(info->fp);
 }
 
-BOOL pascal fpClose(struct tag_InputStream *)
+BOOL pascal streamClose(KVInputStream* stream)
 {
-    if(!stream || !stream.pInputStreamPrivateData)
+    if(!stream || !stream->pInputStreamPrivateData)
     { 
         return FALSE;
     }
-    
-    StreamInfo* info = (StreamInfo*)stream.pInputStreamPrivateData;
+    StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
+    int retval = 0;
 
-    return f
-    close(info.fp) == 0;
+    if (info->openCount > 0)
+    {
+        --info->openCount;
+    }
+
+    if (info->openCount == 0)
+    {
+        retval = fclose(info->fp);
+        info->fp = NULL;
+    }
+    return retval == 0;
 }
+
 
 StreamInfo info = {pathToInputFile, NULL};
 stream.pInputStreamPrivateData = &info;
@@ -130,85 +140,29 @@ stream.fpClose = streamClose;
 
 If you already know the size of the document when you create the stream, you can use this information to fill out the lcbFilesize member. This option can reduce the number of seeks required, because KeyView does not need to seek to the end of the file to determine the size.
 
-If you do not know the size, you **must** set this member to zero. Failure to set this member will result in undefined behavior.
+If you do not know the size, you **must** set this member to zero. Failure to set this member results in undefined behavior.
 
-> **Files As Streams:** The above code has been written as an illustration, but there might be situations where you do actually want to operate on files on disk, but using the stream API. Rather than needing to redefine the code above, you can use the interface function [fpFileToInputStreamCreate()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpFiletoInputStreamCreate.htm).
+### Opening a document from a stream
 
-### Using streams for detection and metadata
-
-After you define a stream, you can adapt your existing code to use streams fairly easily. Several KeyView operations have equivalent functions for taking a stream, and work in the same way as the file-based counterparts.
+After you define a stream, you can create a KVDocument using the stream by calling [fpOpenDocumentFromStream](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpOpenDocumentFromStream.htm). This functions in the same way as a document created using fpOpenDocumentFromFile. You must not open a second document from a stream until the first document has been closed.
 
 ```c
-success = filter.fpGetDocInfoStream(context, &stream, &adInfo);
-error = filter.fpGetOLESummaryInfo(context, &stream, &summaryInfo);
-error = filter.fpGetXmpInfo(context, &stream, &xmpInfo, 1);
+KVDocument document = NULL;
+
+error = filter.fpOpenDocumentFromStream(session, &stream, &document);
+
+//Pass document to KeyView functions
+
+filter.fpCloseDocument(document);
 ```
 
-Filtering text and extracting sub files, on the other hand, have a slightly different interface, which offers more flexibility and can improve performance.
+Filtering text and extracting subfiles, on the other hand, have a slightly different interface, which offers more flexibility and can improve performance.
 
-### Filtering text using streams
+### Extracting subfiles using streams
 
-Before you filter a stream, you must first open the stream. You must also close it after use.
+KeyView also lets you access the subfiles as streams, rather than needing to extract them to disk. Because some KeyView operations do not need to read the entire file, you might get a performance benefit by avoiding the need to extract all the data from the file.
 
-```c
-void* streamContext = NULL;
-streamContext = filter.fpOpenStream(context, &stream);
-if(!streamContext)
-{
-    //handle error
-}
-
-//Use stream
-
-filter.fpCloseStream(context, streamContext);
-```
-
-You can then pass this context to [fpCanFilterStream](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpCanFilterStream.htm), the equivalent of fpCanFilterFile.
-
-```c
-error = filter.fpCanFilterStream(context, streamContext);
-```
-
-Filtering text occurs slightly differently. Rather than filtering all the text in one go, KeyView outputs the text in chunks, by filling out a [KVFilterOutput](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_structures/KVFilterOutput.htm) structure. You must also free this structure.
-
-The end of the stream is indicated by an empty KVFilterOutput structure. You do not need to free the empty structure.
-
-```c
-while(1)
-{
-    KVFilterOutput output = {0};
-        
-    error = filter->fpFilterStream(context, streamContext, &output, NULL);
-    
-    if(error != KVERR_Success)
-    {
-        return errorCode(filter, context, error);
-    }
-    
-    if(output.cbText == 0)
-    {
-        break;
-    }
-
-    //Use filter output
-
-    filter->fpFreeFilterOutput(context, &output);
-}
-```
-
-> **Partial Filtering:** Because KeyView returns the filter stream output in chunks, you might find you have received all the information you need before you have filtered the entire file. In this case, you might be able to increase throughput by stopping filtering early. This is safe to do, as long as you still call [fpFreeFilterOutput()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpFreeFilterOutput.htm) and [fpCloseStream()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpCloseStream.htm).
-
-### Extracting sub files using streams
-
-You can open the main file in a stream rather than a file, by filling out the stream member of [KVOpenFileArgRec](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_structures/_KV_XTRACT_struct_KVOpenFileArg.htm), rather than the filePath member.
-
-```c
-openArg.stream = &stream;
-```
-
-KeyView also lets you access the sub files as streams, rather than needing to extract them to disk. Because some KeyView operations do not need to read the entire file, you might get a performance benefit by avoiding the need to extract all the data from the file.
-
-To access a sub file as a stream, use the [fpOpenSubFile()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpOpenSubFile.htm) function, rather than using `fpExtractSubFile()`. The [KVExtractSubFileArgRec](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_structures/_KV_XTRACT_struct_KVExtractSubFileArg.htm) is the same as before.
+To access a subfile as a stream, use the [fpOpenSubFile()](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpOpenSubFile.htm) function, rather than using `fpExtractSubFile()`. The [KVExtractSubFileArgRec](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/kv_xtract_structures/_KV_XTRACT_struct_KVExtractSubFileArg.htm) is the same as before.
 
 ```c
 KVInputStream substream = NULL;
@@ -219,51 +173,57 @@ error = extract.fpOpenSubFile(fileContext, &extractArg, &substream);
 extract.fpCloseSubFile(substream);
 ```
 
-You can use the [fpGetExtractInfo](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpGetExtractInfo.htm) function to retrieve the KVSubFileExtractInfo structure associated with the subfile, and the [fpGetExtractStatus()](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#kv_xtract_functions/_KV_XTRACT_funct_fpGetExtractStatus.htm) function to return more information about any errors encountered when using the sub file stream.
+You can use the [fpGetExtractInfo](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetExtractInfo.htm) function to retrieve the KVSubFileExtractInfo structure associated with the subfile, and the [fpGetExtractStatus()](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetExtractStatus.htm) function to return more information about any errors encountered when using the subfile stream.
 
-When you parse this stream back into the KeyView Filter interface, it must be on a different context to the one that started the Extract session. Because initializing a new context can incur a performance cost, we recommend that you do this once, and then reuse this context for each sub file.
+When you parse this stream back into the KeyView Filter interface, it must be on a different session to the one that started the Extract session. Because initializing a new session can incur a performance cost, we recommend that you do this once, and then reuse this session for each sub file.
 
-## Security
+## Partial filtering
 
-This section outlines some security best practices to consider when using KeyView.
+For some use cases, you may not need all of the text from the file, or want to analyze the text in small pieces. The [fpFilter()](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFilter.htm) function outputs the text in chunks, by filling out a [KVFilterOutput](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filtering_structures/KVFilterOutput.htm) structure. You must also free this structure using [fpFreeFilterOutput](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFreeFilterOutput.htm).
 
-### DLL pre-loading attacks
+The end of the stream is indicated by an empty KVFilterOutput structure. You do not need to free the empty structure.
 
-The examples in the C programming tutorial assume that your application executable is located in the same directory as `kvfilter.dll` / `kvfilter.so` and the other KeyView binaries. If kvfilter is not present for some reason, the Operating System searches various other locations for it. This can be convenient during development but:
+If you want to keep track of how many bytes have been output, you can accumulate the cbText field of KVFilterOutput.
 
-* it can lead to DLL pre-loading attacks if an attacker is able to place a malicious binary in one of the locations searched.
-* it can lead to unexpected results if a different version of KeyView is present in one of the locations searched.
+```c
+uint64_t totalSize = 0;
 
-#### Embedding a manifest on Windows
+while(1)
+{
+    KVFilterOutput output = {0};
+        
+    error = filter->fpFilter(document, &output);
+    
+    if(error != KVError_Success)
+    {
+        return error;
+    }
+    
+    if(output.cbText == 0)
+    {
+        break;
+    }
+    
+    totalSize += output.cbText;
 
-On Windows you can mitigate against this threat by embedding a manifest in your executable so that Windows will only search for `kvfilter.dll` in its expected location.  For example:
+    //Use filter output
 
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
-    <file name="kvfilter.dll" />
-</assembly>
+    filter->fpFreeFilterOutput(session, &output);
+}
 ```
 
-#### Loading with absolute paths
-
-On Windows, if you load kvfilter.dll with `LoadLibrary` instead of using the import library, consider using an absolute path to prevent Windows searching for the library in other locations.
-
-On other platforms, if you load kvfilter.so with `dlopen` instead of including it in the linker command, consider using an absolute path to prevent the OS from searching in other locations.
-
-### Calling KeyView from an application with elevated privileges
-
-Following security best practice for any application, we recommend that you run KeyView with minimal privileges. If your application requires root or Administrator privileges then we suggest that you drop those before calling KeyView. If for some reason you are unable to do that (for example, if the elevated privileges are required again after the call to KeyView), we recommend that you look at [Run KeyView with Reduced Privileges](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filter_api/Run_KeyView_Reduced_Privileges.htm), which explains how to configure KeyView to process files with minimal privileges, even when called from an application with elevated privileges.
+You might find you want to stop processing before you have filtered the entire file - for example, because you have already found a search term, or because you have hit a resource threshhold. You can safely stop processing, as long as you still call [fpFreeFilterOutput()](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFreeFilterOutput.htm) and [fpCloseDocument()](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpCloseDocument.htm).
 
 ## Conclusion
 
-You should now have a good understanding of the KeyView Filter SDK API, allowing youto automatically detect the file format and extract metadata, text and sub files.
+You should now have a good understanding of the KeyView Filter SDK API, allowing you to automatically detect the file format and extract metadata, text and sub files.
 
-If you haven't already done so, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../../README.md#keyview-filter-sdk-showcase).
+If you haven't already done so, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../../README.md#keyview-filter-sdk-showcase)?
 
 ## See also
 
-- KeyView Filter SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html)
-- KeyView Filter SDK [C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/cpp-programming/index.html)
-- KeyView Filter SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/java-programming/index.html)
-- KeyView Filter SDK [.NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/dotnet-programming/index.html)
+- KeyView Filter SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/_FT_SideNav_Startup.htm)
+- KeyView Filter SDK [C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/cpp-programming/Content/_FT_SideNav_Startup.htm)
+- KeyView Filter SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/java-programming/Content/_FT_SideNav_Startup.htm)
+- KeyView Filter SDK [.NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/dotnet-programming/Content/_FT_SideNav_Startup.htm)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/_KeyView.htm)

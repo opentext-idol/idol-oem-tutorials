@@ -1,0 +1,12 @@
+John Smith lives at 742 Evergreen Terrace, Cambridge CB4 0WZ, United Kingdom.
+His nationality is British.
+His telephone number is +44 01223 123456.
+His driving license is SMITH701013J99XZ.
+His passport number is 123456789.
+His date of birth is 01/01/1973.
+His national insurance number is AB 12 34 56 A.
+His NHS number is 943 476 5919.
+His postcode is CB4 0WZ.
+His taxpayer identification number is 12345 12345K.
+He holds a US passport card, number C5551122.
+His bank account number is 394137 12345678.

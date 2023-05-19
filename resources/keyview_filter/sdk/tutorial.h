@@ -10,6 +10,6 @@ The string YOUR_BIN_DIR needs to be changed to the location of the KeyView bin d
 
 */
 
-#define YOUR_LICENSE_ORGANIZATION "CompanyName"
-#define YOUR_LICENSE_KEY "24QD22D-2M6FV66-2KPF23S-2G8M59B"
-#define YOUR_BIN_DIR "C:\\MicroFocus\\KeyviewFilterSDK-12.13.0"
+#define YOUR_LICENSE_KEY "Your License Here"
+
+#define YOUR_BIN_DIR "C:\\OpenText\\KeyviewFilterSDK-23.2.0"

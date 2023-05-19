@@ -37,7 +37,8 @@ To follow this tutorial you will need:
 - A Windows PC
 - A text editor
 - The following installation media:
-  - `dropboxconnector_12.13.0_WINDOWS_X86_64.zip`
+  - `dropboxconnector_23.2.0_WINDOWS_X86_64.zip`
+  - `Versionkey_23.2.0_COMMON.zip`
 - A web browser with access to the internet
 - Python3 installed
 
@@ -45,7 +46,7 @@ To follow this tutorial you will need:
 
 Create a standard (free) Dropbox account on [dropbox.com](https://www.dropbox.com).
 
-> NOTE: Mapped Security is only available for Dropbox for Business accounts and is out of scope for this tutorial.  Please read the [admin guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/DropboxConnector_12.13_Documentation/Help/Content/Dropbox_MappedSecurity.htm) for details.
+> NOTE: Mapped Security is only available for Dropbox for Business accounts and is out of scope for this tutorial.  Please read the [admin guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/DropboxConnector_23.2_Documentation/Help/Content/Dropbox_MappedSecurity.htm) for details.
 
 ### Create a Dropbox application
 
@@ -62,7 +63,7 @@ Create an app to represent this connector on the [Dropbox developer's page](http
 1. Under your app's "Settings" tab, add the default Redirect URL `http://localhost:7878/`, then click the "Add" button:
     ![dropbox-redirect](./figs/dropbox-redirect.png) 
 
-1. Under your app's "Permissions" tab, enable the items as directed in point 6 of the [admin guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/DropboxConnector_12.13_Documentation/Help/Content/ConfigureOAuth.htm) for a standard Dropbox account:
+1. Under your app's "Permissions" tab, enable the items as directed in point 6 of the [admin guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/DropboxConnector_23.2_Documentation/Help/Content/ConfigureOAuth.htm) for a standard Dropbox account:
     ![dropbox-permissions](./figs/dropbox-permissions.png)
 
 1. Click the "Submit" button.
@@ -83,11 +84,17 @@ Place them, for example, in a new sub-directory called "Documents":
 
 ### IDOL Dropbox Connector installation
 
-1. Unzip the IDOL Dropbox Connector `dropboxconnector_12.13.0_WINDOWS_X86_64.zip` to give the directory `C:\MicroFocus\dropboxconnector_12.13.0_WINDOWS_X86_64`.
+1. Unzip the IDOL Dropbox Connector `dropboxconnector_23.2.0_WINDOWS_X86_64.zip` to give the directory `C:\OpenText\dropboxconnector_23.2.0_WINDOWS_X86_64`.
 
-2. Copy your OEM license key `.dat` file into `C:\MicroFocus\dropboxconnector_12.13.0_WINDOWS_X86_64\` and rename it to `licensekey.dat`.
+1. Copy your OEM license key `.dat` file into `C:\OpenText\dropboxconnector_23.2.0_WINDOWS_X86_64\` and rename it to `licensekey.dat`.
    
     > HINT: this key will typically have been named `licensekeyInternal.dat` when you received it.
+
+1. Extract the file `versionkey.dat` from `Versionkey_23.2.0_COMMON.zip`, then copy that file into `C:\OpenText\EductionServer_23.2.0_WINDOWS_X86_64` as described in the [upgrade guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/Upgrade/Licenses.htm).
+
+1. On Windows, you may need to install the included Visual C++ Redistributable package.  In the same Dropbox Connector folder, right-click on `vcredist_2017.exe` then select 'Run as administrator'.
+   
+    > HINT: If you see a version conflict error here, you may need to first uninstall any existing version.
 
 __*DO NOT START THE CONNECTOR YET!*__
 
@@ -147,7 +154,7 @@ Save your configuration file.
 From the command line, run the following commands:
 
 ```sh
-> cd dropboxconnector_12.13.0_WINDOWS_X86_64
+> cd dropboxconnector_23.2.0_WINDOWS_X86_64
 > oauth_tool.exe oauth_tool.cfg OAuthTool
 Waiting for code...
 ```
@@ -177,7 +184,7 @@ Later on, we will reference this `oauth.cfg` file in our tasks in enable interac
 
 Now, for the simplest start-up, double-click the `dropboxconnector.exe`.
 
-> NOTE: Please read the [documentation](https://www.microfocus.com/documentation/idol/IDOL_12_13/IDOLServer_12.13_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_WindowsServices.htm) for instructions to run IDOL Dropbox Connector (or any other IDOL ACI server) as a service on Windows.
+> NOTE: Please read the [documentation](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLServer_23.2_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_WindowsServices.htm) for instructions to run IDOL Dropbox Connector (or any other IDOL ACI server) as a service on Windows.
 
 Open the primary log file `logs/application.log` to see, among other messages, the following line confirming that that connector has started and successfully picked up your OEM license key:
 
@@ -230,7 +237,7 @@ GETSTATUS: SUCCESS
 
 ### List file identifiers
 
-The "Identifiers" fetch action is by default an asynchronous action and is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_12_13/DropboxConnector_12.13_Documentation/Help/Content/Actions/Fetch/Identifiers.htm).
+The "Identifiers" fetch action is by default an asynchronous action and is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_23_2/DropboxConnector_23.2_Documentation/Help/Content/Actions/Fetch/Identifiers.htm).
 
 When running any asynchronous action, an ACI server responds with a token, *e.g.* as seen in a JSON response:
 
@@ -387,7 +394,7 @@ As well as restricting the depth to crawl, you can also specify the starting poi
 
 ### Collect a file
 
-The "Collect" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_12_13/DropboxConnector_12.13_Documentation/Help/Content/Actions/Fetch/_CN_Collect.htm).
+The "Collect" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_23_2/DropboxConnector_23.2_Documentation/Help/Content/Actions/Fetch/_CN_Collect.htm).
 
 From the Python `scripts\dropbox` directory, open the file called `collect_files.py`.  This script includes the following API call:
 
@@ -400,7 +407,7 @@ response = aci.client.call(
   aci_params = {
     "FetchAction": "Collect",
     "Identifiers": ",".join(file_ids),
-    "Destination": "C:\MicroFocus\collected",
+    "Destination": "C:\OpenText\collected",
     "ResponseFormat": "simplejson"
   }
 )
@@ -476,7 +483,7 @@ Alternatively you can monitor the file `logs\collect.log`:
 
 ```
 04/11/2022 10:23:40 [22] 00-Always: Starting COLLECT for task 'MYTASK1' [MTAuMTUuNzUuMjM5OjcwMzA6RkVUQ0g6MTY2NzU1NzQxODM2My0xNjgyNTA3MTgy]
-04/11/2022 10:23:40 [22] 30-Normal: MYTASK1: Collecting 2 documents to destination 'C:\MicroFocus\collected'
+04/11/2022 10:23:40 [22] 30-Normal: MYTASK1: Collecting 2 documents to destination 'C:\OpenText\collected'
 04/11/2022 10:23:43 [22] 00-Always: Finished COLLECT for task 'MYTASK1' [MTAuMTUuNzUuMjM5OjcwMzA6RkVUQ0g6MTY2NzU1NzQxODM2My0xNjgyNTA3MTgy]
 ```
 
@@ -490,7 +497,7 @@ In that directory, you should see four files.  Two are the `.pdfs` you uploaded,
 #DREREFERENCE dbid:AAA63bycDrHy4mDEJBHJhjVrkF13LN4EB_w:/documents/dropboxconnector_12.13.0_releasenotes_en.pdf
 #DREFIELD AUTN_COLLECTTIME="1667553752"
 #DREFIELD AUTN_IDENTIFIER="PGlkIHQ9IkZ...IvPjwvaWQ+"
-#DREFIELD COLLECTDESTINATIONFILENAME="C:\MicroFocus\collected\1667553752g2t73ekw_dropboxconnector_12.13.0_releasenotes_en.pdf"
+#DREFIELD COLLECTDESTINATIONFILENAME="C:\OpenText\collected\1667553752g2t73ekw_dropboxconnector_12.13.0_releasenotes_en.pdf"
 #DREFIELD DOCUMENT_METADATA_STANDARDIZED="1"
 #DREFIELD DROPBOX_CLIENTMODIFIED="2022-11-03T19:19:18Z"
 #DREFIELD DROPBOX_ISDIR="0"
@@ -503,7 +510,7 @@ In that directory, you should see four files.  Two are the `.pdfs` you uploaded,
 
 ### Delete a file
 
-The "Delete" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_12_13/DropboxConnector_12.13_Documentation/Help/Content/Actions/Fetch/_CN_DeleteRemove.htm).
+The "Delete" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_23_2/DropboxConnector_23.2_Documentation/Help/Content/Actions/Fetch/_CN_DeleteRemove.htm).
 
 From the Python `scripts\dropbox` directory, open the file called `delete_files.py`.  This script includes the following API call:
 
@@ -532,7 +539,7 @@ Run this command to see a summary of the response:
 
 The response contains a token for this asynchronous task, as with the previous action.
 
-To monitor the status, as before you can either run the the script `python get_fetch_task_status.py token.txt` or monitor the log files, in this case `delete.log`.
+To monitor the status, as before you can either run the script `python get_fetch_task_status.py token.txt` or monitor the log files, in this case `delete.log`.
 
 Open your Dropbox (or run the "Identifiers" task again) to confirm deletion:
 
@@ -540,7 +547,7 @@ Open your Dropbox (or run the "Identifiers" task again) to confirm deletion:
 
 ### Insert a file
 
-The "Insert" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_12_13/DropboxConnector_12.13_Documentation/Help/Content/Insert_Action.htm).
+The "Insert" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_23_2/DropboxConnector_23.2_Documentation/Help/Content/Insert_Action.htm).
 
 From the Python `scripts\dropbox` directory, open the file called `insert_file.py`.  This script includes the following API call:
 
@@ -585,7 +592,7 @@ MTAuMTUuNzUuMjM5OjcwMzA6RkVUQ0g6MTY2NzgxNDE5MDI1NS0xMzk5MjYxNjcx
 
 The response contains a token for this asynchronous task, as with the previous action.
 
-To monitor the status, as before you can either run the the script `python get_fetch_task_status.py token.txt` or monitor the log files, in this case `insert.log`.
+To monitor the status, as before you can either run the script `python get_fetch_task_status.py token.txt` or monitor the log files, in this case `insert.log`.
 
 Open your Dropbox (or run the "Identifiers" task again) to confirm insertion:
 

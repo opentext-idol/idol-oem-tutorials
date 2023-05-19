@@ -29,7 +29,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 Run the following commands to see the output:
 
 ```sh
-cd C:\MicroFocus\EductionSDK_12.13.0\samples\eduction_from_config\resources
+cd C:\OpenText\EductionSDK_23.2.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 edktool extract -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt -o out.xml
 ```
 
@@ -56,14 +56,14 @@ For real world applications, it is a best practice to persist the EDKEngine acro
 
 > NOTE: The EDKSession or entity search time is influenced by the EDKEngine settings (e.g. resource files (ECRs), entities enabled, other configuration settings), the size of the input file and the number of matches. 
 
-> NOTE: As of 12.13.0 `edktool` reads the entire file and submits that as text rather than using the EDK streaming input APIs. The edk_samples\eduction_from_config can be instrumented to measure processing speed that reflects use of the streaming input APIs.
+> NOTE: As of 23.2.0 `edktool` reads the entire file and submits that as text rather than using the EDK streaming input APIs. The edk_samples\eduction_from_config can be instrumented to measure processing speed that reflects use of the streaming input APIs.
 
 ## Running edktool benchmark
 
 Run the following commands to see the output:
 
 ```
-cd C:\MicroFocus\EductionSDK_12.13.0\samples\eduction_from_config\resources
+cd C:\OpenText\EductionSDK_23.2.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 edktool benchmark -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt -s 3 -n 5
 ```
 
@@ -71,41 +71,41 @@ The key setting `-s 1` means one EDKSession (or thread) is run. The other key se
 
 ```
 Iteration 0 produced the following results:
-        Process 0 produced 2 matches in 0 seconds.
-        Process 1 produced 2 matches in 0 seconds.
-        Process 2 produced 2 matches in 0 seconds.
-Iteration 0 took 0 seconds to complete.
+        Process 0 produced 2 matches in 0.003 seconds.
+        Process 1 produced 2 matches in 0.003 seconds.
+        Process 2 produced 2 matches in 0.003 seconds.
+Iteration 0 took 0.006 seconds to complete.
 Iteration 1 produced the following results:
-        Process 0 produced 2 matches in 0.015 seconds.
-        Process 1 produced 2 matches in 0.015 seconds.
-        Process 2 produced 2 matches in 0.015 seconds.
-Iteration 1 took 0.015 seconds to complete.
+        Process 0 produced 2 matches in 0.003 seconds.
+        Process 1 produced 2 matches in 0.003 seconds.
+        Process 2 produced 2 matches in 0.003 seconds.
+Iteration 1 took 0.005 seconds to complete.
 Iteration 2 produced the following results:
-        Process 0 produced 2 matches in 0 seconds.
-        Process 1 produced 2 matches in 0 seconds.
-        Process 2 produced 2 matches in 0 seconds.
-Iteration 2 took 0 seconds to complete.
+        Process 0 produced 2 matches in 0.003 seconds.
+        Process 1 produced 2 matches in 0.003 seconds.
+        Process 2 produced 2 matches in 0.003 seconds.
+Iteration 2 took 0.008 seconds to complete.
 Iteration 3 produced the following results:
-        Process 0 produced 2 matches in 0.015 seconds.
-        Process 1 produced 2 matches in 0.015 seconds.
-        Process 2 produced 2 matches in 0.015 seconds.
-Iteration 3 took 0.015 seconds to complete.
+        Process 0 produced 2 matches in 0.002 seconds.
+        Process 1 produced 2 matches in 0.002 seconds.
+        Process 2 produced 2 matches in 0.002 seconds.
+Iteration 3 took 0.005 seconds to complete.
 Iteration 4 produced the following results:
-        Process 0 produced 2 matches in 0 seconds.
-        Process 1 produced 2 matches in 0 seconds.
-        Process 2 produced 2 matches in 0 seconds.
-Iteration 4 took 0 seconds to complete.
+        Process 0 produced 2 matches in 0.003 seconds.
+        Process 1 produced 2 matches in 0.003 seconds.
+        Process 2 produced 2 matches in 0.003 seconds.
+Iteration 4 took 0.006 seconds to complete.
 Session timing summary:
         Observations: 15
-        Mean: 0.006s
-        Min: 0s
-        Max: 0.015s
-        Standard deviation: 0.00734847s
+        Mean: 0.0028s
+        Min: 0.002s
+        Max: 0.003s
+        Standard deviation: 0.0004s
 
-0.062 seconds elapsed
+0.064 seconds elapsed
 ```
 
-> NOTE: The input file and EDK configuration are simple in this example, resulting in iterations to sometimes complete in effectively zero time.
+> NOTE: The input file and EDK configuration are simple in this example, resulting in iterations that sometimes complete in effectively zero time.
 
 > NOTE: In `edktool benchmark` the match output as you've experienced with `edktool extract` is disabled by default. Adding `-d` will output simple match information.
 
@@ -114,8 +114,8 @@ Session timing summary:
 Besides simplifying your configuration or getting a faster computer, there some settings that can impact performance. 
 
 For processing speed, here's some things to consider:
-- use a pre-filter.  See [here](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/#UseEduction/PreFiltering/PreFiltering.htm) for more details.
-- set EntityMatchLimitN - See [here](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html/#Configuration/Eduction/_EDU_EntityMatchLimitN.htm) for more details.  In some applications, the existence of enough matches per each configured entity can be sufficient to take action based on the detected matches.
+- use a pre-filter.  See [here](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html/Content/UseEduction/PreFiltering/PreFiltering.htm) for more details.
+- set EntityMatchLimitN - See [here](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_EntityMatchLimitN.htm) for more details.  In some applications, the existence of enough matches per each configured entity can be sufficient to take action based on the detected matches.
 - For the PII, PHI, PCI grammars disable output normalization.  The name, address and date entities have output normalization enabled by default. See `scripts\names_stoplist.lua`, `scripts\address_stoplist.lua` and `scripts\normalize_date.lua` for details on how to configure.  Over enough matches (e.g tens vs thousands) the extra time to produce normalized output adds up.  Only some applications (e.g. searching on matches across a set of indexed documents) benefit normalized output.
 
 ## Conclusion
@@ -126,4 +126,5 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/EductionSDK_12.13_Documentation/Guides/html)
+- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html/)
+- [IDOL Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/SDKs/Eduction.htm)

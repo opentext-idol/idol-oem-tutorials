@@ -30,7 +30,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- sample documents from [here](../../resources/keyview_filter/) and install to `C:\MicroFocus\idol-oem-tutorials\resources`
+- sample documents from [here](../../resources/keyview_filter/) and install to `C:\OpenText\idol-oem-tutorials\resources`
 
 > NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../keyview_filter/introduction.md#keyview-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic KeyView Filter SDK concepts.
 
@@ -38,24 +38,23 @@ Be sure to download the following resources before you continue:
 
 XMP stands for [Extensible Metadata Platform](https://en.wikipedia.org/wiki/Extensible_Metadata_Platform). PDF, image, audio and video files are the typical format categories that may contain XMP metadata.
 
-Refer to the [Keyview Filter SDK Programming Guide](#https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#C/filtering_functions/fpGetXmpInfo.htm) for more details about KeyView's support for XMP metadata.
+Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetMetadataList.htm) for more details about KeyView's support for XMP metadata.
 
 ### Perform XMP metadata extraction
 
 ```sh
-> cd KeyviewFilterSDK_12.13.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filter -xmp ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_HAS_XMP.png xmp`
+> cd KeyviewFilterSDK_23.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filter -m "..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_HAS_XMP.png" xmp
+WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_HAS_XMP.png to xmp
 filter: error code returned is KVERR_Success
 ```
 
 > NOTE: The `KVERR_Success` error code is a positive result where the destination `xmp` file contains the output. Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
 
-Both the raw XMP packet and key elements parsed into a KeyView data structure are returned. The parsed elements contain the XPath to the element and the element value.
+`filter -m` extracts standard, custom and XMP metadata.
 
-> NOTE: `filter -xmpr` is also available if only the raw XMP packet is preferred.
-
-Try `filter -i / -xmp` with your own test files. Good luck!
+Try `filter -m` with your own test files. Good luck!
 
 ## Document Restrictions
 
@@ -65,13 +64,14 @@ Some applications, and corresponding file formats, allow users to restrict the w
 
 The document `Robin Zupanc Resume_RESTRICTED.docx` included in this tutorial's resources was created using this [Microsoft.com knowledge article](https://support.microsoft.com/en-us/office/make-a-document-read-only-5c25909c-46d9-4eb0-9d1f-d072a560e340) as guidance. 
 
-Reference the Keyview documentation on [Document Restrictions](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html#filter_shared/DocumentRestrictions.htm) for more details like supported formats.
+Reference the Keyview documentation on [Document Restrictions](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/filter_shared/DocumentRestrictions.htm) for more details like supported formats.
 
 The `filtertest` utility will be used for this lesson.  `filtertest` works similarly to `filter` with a few additional options.
 
 ```sh
-> cd C:\MicroFocus\KeyviewFilterSDK_12.13.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filtertest -restrictions "..\..\..\idol-oem-tutorials\resources\keyview_filter\Robin Zupanc Resume_RESTRICTED.docx" restrictions`
+> cd C:\OpenText\KeyviewFilterSDK_23.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filtertest -restrictions "..\..\..\idol-oem-tutorials\resources\keyview_filter\Robin Zupanc Resume_RESTRICTED.docx" restrictions
+WARNING: filtertest is a sample program only and is not for production use
 filtertest finished with RC: 0
 ```
 
@@ -92,7 +92,8 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_12_13/KeyviewFilterSDK_12.13_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/_KeyView.htm)
