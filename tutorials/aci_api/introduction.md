@@ -191,3 +191,4 @@ Next, why not try some more advanced use-cases with the ACI API from the [showca
 - [IDOL Getting Started Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLServer_23.2_Documentation/Guides/html/gettingstarted/index.html)
 - [IDOL Expert](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLServer_23.2_Documentation/Guides/html/expert/index.html)
 - [IDOL Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/_SDKs.htm)
+

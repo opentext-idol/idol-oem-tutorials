@@ -29,7 +29,6 @@ In this lesson, you will:
 - [Opening a document](#opening-a-document)
 - [Filter a file](#filter-a-file)
   - [Filtering text](#filtering-text)
-  - [Handling extended errors](#handling-extended-errors)
   - [Filtering hidden information](#filtering-hidden-information)
 - [Changing functionality based on format](#changing-functionality-based-on-format)
   - [Detecting the file format](#detecting-the-file-format)
@@ -81,7 +80,7 @@ You need a KeyView license key to proceed with this lesson.  If you skipped the 
 In this tutorial, you will gradually build a working tutorial program, which aims to replicate a common use case of the KeyView Filter SDK. Sample code for this program is provided, but you must modify the fpInit call for the sample to compile.
 
 Update the `tutorial.h` file with the following information:
-- Replace the values of YOUR_LICENSE_ORGANIZATION and YOUR_LICENSE_KEY with the organization name and key from your license. 
+- Replace the values of YOUR_LICENSE_KEY with your license. 
 - Change the YOUR_BIN_DIR variable to the location of the KeyView bin directory.
 
 > NOTE: Refer to the `tutorial_file.c` source code for compilation tips.
@@ -167,7 +166,7 @@ This function also takes a pointer to a KVFilterInitOptions structure, which you
 >
 > _Privilege Reduction:_ By default, KeyView performs most of its operations out-of-process, creating a separate process to parse file data. This protects your main application from the effects of rare problems like memory leaks or crashes. You can include additional protection by [running KeyView with reduced privileges](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filter_api/Run_KeyView_Reduced_Privileges.htm).
 >
-> _Temp Directory:_ While processing, KeyView might place sensitive data in the temporary directory. You might want to consider [protecting the temporary directory](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/index.html#C/filter_api/Run_KeyView_Reduced_Privileges.htm)
+> _Temp Directory:_ While processing, KeyView might place sensitive data in the temporary directory. You might want to consider [protecting the temporary directory](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/kv_security/_KV_ProtectTempDir.htm)
 
 Now that you have set up the API, you can perform KeyView Filter functionality on documents.
 
@@ -203,7 +202,6 @@ error = filter.fpFilterToFile(document, pathToOutputFile);
 
 > **Mail Files:** Mail files, such as EML or MSG, are considered a form of container, and you cannot filter them directly. You will learn more about how to filter mail files in [Extracting sub files](#extracting-sub-files).
 
-### Handling extended errors
 
 ### Filtering hidden information
 
@@ -275,7 +273,7 @@ File formats can contains a variety of different metadata, and KeyView makes it 
 
 ### Getting the metadata list
 
-You can retrieve metadata elements by using fpGetMetadataFile(). This function fills out the KVMetadataList structure, which you must free by using its fpFree function.
+You can retrieve metadata elements by using [fpGetMetadataList()](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetMetadataList.htm). This function fills out the [KVMetadataList](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_KVMetadataList.htm) structure, which you must free by using its fpFree function.
 
 ```c
 const KVMetadataList* metadataList = NULL;
@@ -288,7 +286,7 @@ metadataList->fpFree(metadataList);
 
 ### Iterating through the list
 
-You can retrieve individual metadata elements by iterating through the metadata list using KVMetadataList's fpGetNext() function, which fills out the KVMetadataElement structure. The information that this structure returns is valid only while the session is still alive, and becomes invalid after you call fpFree(). The end of the list is indicated by the retrieved element being NULL.
+You can retrieve individual metadata elements by iterating through the metadata list using KVMetadataList's fpGetNext() function, which fills out the [KVMetadataElement](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_KVMetadataElement.htm) structure. The information that this structure returns is valid only while the session is still alive, and becomes invalid after you call fpFree(). The end of the list is indicated by the retrieved element being NULL.
 
 ```c
 while(1)
@@ -312,7 +310,7 @@ while(1)
 
 ### Interpreting a metadata element
 
-Each metadata element is conceptually represented as a key-value pair, where pKey is the name of the metadata key, and pValue is the value of that piece of metadata. To know the type of the metadata object the pValue points to, you must first consult the eType member. Strings are output in the character set that you requested in the call to [fpInit()](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpInit.htm)
+Each metadata element is conceptually represented as a key-value pair, where pKey is the name of the metadata key, and pValue is the value of that piece of metadata. To know the type of the metadata object the pValue points to, you must first consult the eType member. Strings are output in the character set that you requested in the call to [fpInit()](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpInit.htm).
 
 ```c
 fprintf(fpOut, "%s: ", element->pName);
@@ -368,7 +366,7 @@ default:
 
 ### Standardized metadata elements
 
-Different file formats can store the same piece of information in different ways. For example, one file format might call the width of the image "width", another "image_width", and another "x_size". This behavior is often unhelpful, because you then need to maintain a list of fields that correspond to a particular piece of information. KeyView solves this problem by standardizing certain metadata fields. 
+Different file formats can store the same piece of information in different ways. For example, one file format might call the width of the image "width", another "image_width", and another "x_size". This behavior is often unhelpful, because you then need to maintain a list of fields that correspond to a particular piece of information. KeyView solves this problem by [standardizing certain metadata fields](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_What_Is_Metadata.htm). 
 
 ## Extracting sub files
 
@@ -477,15 +475,10 @@ error = filter.fpSetConfig(session, KVFLT_EXTRACTIMAGES, TRUE, NULL);
 
 ### Retrieving mail metadata
 
-You can retrieve mail metadata for a particular sub file using the function fpGetSubFileMetaDataList(). This function fills out the same KVMetadataList structure that you used in [Retrieving metadata], and can be handled in the same way. You must initialize KVGetSubfileMetadataListArgRec using KVStructInit().
+You can retrieve mail metadata for a particular sub file using the function [fpGetSubFileMetaDataList()](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetSubFileMetadataList.htm). This function fills out the same KVMetadataList structure that you used in [Retrieving metadata](#retrieving-metadata), and can be handled in the same way. You must initialize [KVGetSubfileMetadataListArgRec](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/kv_xtract_structures/_KV_XTRACT_struct_KVGetSubFileMetadataListArg.htm) using KVStructInit().
 
 ```c
-KVSubFileMetaData metadata = NULL;
-KVGetSubFileMetaArgRec metaArg;
-KVStructInit(&metaArg);
-metaArg.index = ii;
-metaArg.trgCharset = KVCS_UTF8;
-metaArg.metaNameCount = -1;
+const KVMetadataList* metadataList = NULL;
 
 KVGetSubfileMetadataListArgRec metaArgs;
 KVStructInit(&metaArgs);
@@ -494,64 +487,9 @@ metaArgs.trgCharset = KVCS_UTF8;
 
 error = extract.fpGetSubfileMetadataList(fileContext, &metaArg, &metadataList);
 
-You can then output the metadata in a similar way to Summary Information.
+//Process metadata using metadataList->fpGetNext()
 
-```c
-for(int ii=0; ii < metadata->nElem; ++ii)
-{
-    KVMetadataElem* element = metadata->ppElem[ii];
-    
-    if(element == NULL || !element->isDataValid)
-    {
-        continue;
-    }
-    fprintf(fpOut, "%s (0x%8X): ", element->strType, element->dataID);
-
-    switch(element->type)
-    {
-    case KVMetadata_Int4:
-        //data contains an actual int, not a pointer
-        fprintf(fpOut, "%d", (int)element->data); 
-        break;
-    case KVMetadata_Bool:
-        //NULL pointer is false, true otherwise
-        fprintf(fpOut, "%s", element->data ? "true" : "false");
-        break;
-    case KVMetadata_Double:
-        //Pointer to double
-        fprintf(fpOut, "%lf", *(double*)element->data);
-        break;
-    case KVMetadata_Float:
-        //Pointer to float
-        fprintf(fpOut, "%lf", *(float*)element->data);
-        break;
-    case KVMetadata_DateTime:
-    {
-        //Pointer to Windows file time
-        //That is, 64-bit value representing 100-nanosecond intervals since 1601-01-01T00:00 UTC
-        const long long intervalsPerSecond = 10000000LL;
-        const long long windowsToUnixSeconds = 11644473600LL;
-        time_t unixTime = (*(long long*)element->data / intervalsPerSecond) - windowsToUnixSeconds;
-        fprintf(fpOut, "%s", asctime(localtime(&unixTime)));
-        break;
-    }
-    case KVMetadata_String:
-        //Null-terminated C-string
-        fprintf(fpOut, "%s", (char*)element->data);
-        break;
-    case KVMetadata_Unicode:
-        //Null-terminated wide C-string
-        fprintf(fpOut, "%ls", (unsigned short*)element->data);
-        break;
-    case KV_Binary:
-        //Byte array
-        fprintf(fpOut, "%.*s", (unsigned char*)element->data);
-        break;
-    default:
-        fprintf(fpOut, "Value could not be interpreted");
-        break;
-    }
-}
+metadataList->fpFree(metadataList);
 ```
 
 ## Conclusion

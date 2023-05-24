@@ -87,7 +87,7 @@ KVErrorCode filterText(KVFltInterfaceEx* filter, KVDocument document, const char
     
     if(error != KVError_Success)
     {
-        return errorCode(filter, context, error);
+        return error;
     }
     
     // § Filtering a file
@@ -327,7 +327,7 @@ KVErrorCode filterSubfileAsFile(KVFltInterfaceEx* filter, KVExtractInterfaceRec*
 
     if(error != KVError_Success)
     {
-        return errorCode(filter, context, error);
+        return error;
     }
     
     //Work out the output file name for the subfile
@@ -356,24 +356,23 @@ KVErrorCode filterSubfileAsFile(KVFltInterfaceEx* filter, KVExtractInterfaceRec*
 // § Extracting sub files
 KVErrorCode filterSubfile(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, KVFilterSession session, void* fileSession, const char* const extractDir, int index)
 {
-    int returnValue = 0;
     KVSubFileInfo subFileInfo = NULL;
     KVErrorCode error = extract->fpGetSubFileInfo(fileSession, index, &subFileInfo);
 
     if(error != KVError_Success)
     {
-        return errorCode(filter, context, error);
+        return error;
     }
 
-    //Folder don't contain any text, so no point processing them.
-    if(subFileInfo->subFileType != KVSubFileType_Folder)
+    //Folders and external links don't contain any text, so no point processing them.
+    if(subFileInfo->subFileType != KVSubFileType_Folder && !(subFileInfo->infoFlag & KVSubFileInfoFlag_External))
     {
         error = filterSubfileAsFile(filter, extract, session, fileSession, extractDir, index, subFileInfo);
     }
     
     extract->fpFreeStruct(fileSession, subFileInfo);
     
-    return returnValue;
+    return error;
 }
 
 // § Opening a container
@@ -384,7 +383,7 @@ KVErrorCode filterOpenedContainer(KVFltInterfaceEx* filter, KVExtractInterfaceRe
 
     if(error != KVError_Success)
     {
-        return errorCode(filter, context, error);
+        return error;
     }
 
     for(int ii = 0; ii < fileInfo->numSubFiles; ++ii)
@@ -393,7 +392,7 @@ KVErrorCode filterOpenedContainer(KVFltInterfaceEx* filter, KVExtractInterfaceRe
         
         if(error != KVError_Success)
         {
-            printf("Subfile %d failed with error %d\n", ii, returnValue);
+            printf("Subfile %d failed with error %d\n", ii, error);
         }
     }
     
@@ -424,7 +423,7 @@ KVErrorCode filterContainerSubfiles(KVFltInterfaceEx* filter, KVExtractInterface
 
     if(error != KVError_Success)
     {
-        return errorCode(filter, context, error);
+        return error;
     }
     
     //Extract each subfile and filter it.
@@ -432,7 +431,7 @@ KVErrorCode filterContainerSubfiles(KVFltInterfaceEx* filter, KVExtractInterface
     
     extract->fpCloseFile(fileSession);
 
-    return returnValue;
+    return error;
 }
 
 
@@ -496,7 +495,7 @@ KVErrorCode setupFilterSession(KVFltInterfaceEx* filter, KVExtractInterfaceRec* 
         
     if(error != KVError_Success)
     {
-         return KVERR_General; 
+         return error; 
     }
     
     // § Loading the Extract interface
@@ -505,7 +504,7 @@ KVErrorCode setupFilterSession(KVFltInterfaceEx* filter, KVExtractInterfaceRec* 
 
     if(error != KVError_Success)
     {
-        return errorCode(filter, *context, error);
+        return error;
     }
     
     // § Filtering hidden information
@@ -546,7 +545,7 @@ KVErrorCode filterTutorial(const char* const pathToInputFile, const char* const 
         filter.fpShutdown(session);
     }
     
-    return returnValue;
+    return error;
 }
 
 
