@@ -11,6 +11,8 @@ The various scripts in the `scripts` directory, provide examples, some of which 
 ---
 
 - [Setup](#setup)
+  - [IDOL](#idol)
+  - [Python](#python)
 - [Writing a client](#writing-a-client)
 - [Run your client program](#run-your-client-program)
 - [Response formats](#response-formats)
@@ -21,19 +23,30 @@ The various scripts in the `scripts` directory, provide examples, some of which 
 
 ## Setup
 
+### IDOL
+
+Follow the setup steps in the [ACI API introduction lesson](../../../tutorials/aci_api/introduction.md#install-idol-components) to:
+
+- Extract the C SDK package (`IDOLCSDK_23.2.0_WINDOWS_X86_64.zip`), and
+- Install an IDOL ACI Server (for us to communicate with) and run it in OEM mode. 
+
+    > NOTE: Below, we assume you have Eduction Server running.
+
+### Python
+
 To run the Python ACI wrapper, install Python 3.X and the following required package:
 
 ```sh
 pip install python-dotenv
 ```
 
-In the `lib` sub-directory, please find and open the `.env` file to ensure that the `ACI_LIB_PATH` environment variable points to your C SDK directory, *e.g.*:
+In the `lib` sub-directory of this Python package, please find and open the `.env` file and ensure that the `ACI_LIB_PATH` environment variable points to your C SDK directory, *e.g.*:
 
 ```ini
 ACI_LIB_PATH="C:\\OpenText\\IDOLCSDK_23.2.0_WINDOWS_X86_64"
 ```
 
-> NOTE: this directory must contain the two files `client.h` and `aciclient.dll`.
+> NOTE: this directory contains the two required files: `client.h` and `aciclient.dll`.
 
 ## Writing a client
 
