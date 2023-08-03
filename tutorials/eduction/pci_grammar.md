@@ -32,7 +32,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PCI edk_samples](../../resources/eduction/pci/edk_samples) and install to `C:\OpenText\EductionGrammars_23.2.0_COMMON\pci\edk_samples\resources`
+- [PCI edk_samples](../../resources/eduction/pci/edk_samples) and install to `C:\OpenText\EductionGrammars_23.3.0_COMMON\pci\edk_samples\resources`
 
 ## What's in the Box?
 
@@ -40,7 +40,7 @@ The IDOL PCI Package includes IDOL Eduction Grammar files, postprocessing script
 
 ### Available Grammar Files
 
-To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_23.2.0_COMMON\pci`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pci_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
+To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_23.3.0_COMMON\pci`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pci_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
 
 The PCI Grammar Package covers name (for many countries), date and account number variations specific to the PCI use case.
 
@@ -52,7 +52,7 @@ For the PCI date entities, like `pci/date/paymentcard/*`, "context", "nocontext"
 
 The PCI number entities, like `pci/pan/*/pan`, there are also "context", "nocontext" and "landmark" entity forms. However, the "nocontext" form has less risk of false positives due to checksum validation which we will explore below.
 
-For full details of the entities included in the PCI Grammar Package, please reference the [PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionGrammars_23.2_Documentation/PCI/#PCI/PCI_GrammarReference.htm).
+For full details of the entities included in the PCI Grammar Package, please reference the [PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionGrammars_23.3_Documentation/PCI/#PCI/PCI_GrammarReference.htm).
 
 > NOTE: You can configure Eduction to use either versions of an entity, in which case matches located with context are given a higher score in the results.
 
@@ -65,11 +65,11 @@ In the setup, you deployed PCI edk_samples resources, which can be used with the
 Run the following commands to see the output:
 
 ```sh
-cd C:\OpenText\EductionGrammars_23.2.0_COMMON\pci\edk_samples\resources
-edktool extract -l ..\..\..\..\EductionSDK_23.2.0_WINDOWS_X86_64\licensekey.dat -c account_nbr\config\account_nbr.cfg -i account_nbr\input\input.txt -o out.xml
+cd C:\OpenText\EductionGrammars_23.3.0_COMMON\pci\edk_samples\resources
+edktool extract -l ..\..\..\..\EductionSDK_23.3.0_WINDOWS_X86_64\licensekey.dat -c account_nbr\config\account_nbr.cfg -i account_nbr\input\input.txt -o out.xml
 ```
 
-15 matches are found representing a landmark plus 14 personal account numbers out of 16 potential credit card numbers.
+31 matches are found representing a landmark plus 30 personal account numbers out of 31 potential credit card numbers.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MATCHLIST>
@@ -91,9 +91,8 @@ edktool extract -l ..\..\..\..\EductionSDK_23.2.0_WINDOWS_X86_64\licensekey.dat 
 </MATCHLIST>
 ```
 
-You might ask why only 14 out of 16?  For the samples data in `account_nbr\input\input.txt`, there are two reasons:
-1. the 13 digit Visa number is of an old form that is currently excluded in order to achieve the right balance of precision, recall and speed.
-2. the last example in `input.txt` matches the American Express regex (leading digits and length).  However, it is blocked at the post-processing validation stage, which performs a checksum validation using the Luhn algorithm.  While the PAN does have limiting regex patterns (by length and digit combinations), it is possible to encounter numbers that look like a PAN, but are not. By doing a checksum validation on the matching string of digits, false positive matches are reduced.
+You might ask why only 30 out of 31?  Per the sample data in `account_nbr\input\input.txt`, the reason is simple:
+1. the last example in `input.txt` matches the American Express regex (leading digits and length).  However, it is blocked at the post-processing validation stage, which performs a checksum validation using the Luhn algorithm.  While the PAN does have limiting regex patterns (by length and digit combinations), it is possible to encounter numbers that look like a PAN, but are not. By doing a checksum validation on the matching string of digits, false positive matches are reduced.
 
 As an extra credit exercise, you can edit `account_nbr\config\account_nbr.cfg` commenting out the pci_postprocessing task:
 ```diff
@@ -102,7 +101,7 @@ As an extra credit exercise, you can edit `account_nbr\config\account_nbr.cfg` c
 + //PostProcessingTask0 = pci_postprocessing
 ```
 
-Then re-run `edktool extract` as above but output to `-o out2.xml` so you can compare the results. There will be 16 matches this time: 1 landmark and 15 PANs.
+Then re-run `edktool extract` as above but output to `-o out2.xml` so you can compare the results. There will be 32 matches this time: 1 landmark and 31 PANs.
 
 ## Run PCI All Example Matching
 
@@ -111,11 +110,11 @@ In the setup, you deployed edk_samples resources.  It contains resources to be u
 Run the following commands to see the output:
 
 ```sh
-cd C:\OpenText\EductionGrammars_23.2.0_COMMON\pci\edk_samples\resources
-edktool extract -l ..\..\..\..\EductionSDK_23.2.0_WINDOWS_X86_64\licensekey.dat -c pci_all\config\pci_all.cfg -i pci_all\input\input.txt -o out.xml
+cd C:\OpenText\EductionGrammars_23.3.0_COMMON\pci\edk_samples\resources
+edktool extract -l ..\..\..\..\EductionSDK_23.3.0_WINDOWS_X86_64\licensekey.dat -c pci_all\config\pci_all.cfg -i pci_all\input\input.txt -o out.xml
 ```
 
-The `pci_all.cfg` configuration and `input.txt` represent all available entity categories in the PCI package, but does intentional select "nocontext" vs "context" for particular entity categories.
+The `pci_all.cfg` configuration and `input.txt` represent all available entity categories in the PCI package, but does intentionally select "nocontext" vs "context" for particular entity categories.
 
 ## Conclusion
 
@@ -125,5 +124,6 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [IDOL PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionGrammars_23.2_Documentation/PCI/)
-- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html)
+- [IDOL PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionGrammars_23.3_Documentation/PCI/)
+- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionSDK_23.3_Documentation/Guides/html)
+- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/oem/Content/SDKs/Eduction.htm)

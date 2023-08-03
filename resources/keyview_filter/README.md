@@ -19,7 +19,9 @@
 
 ### Coffee Chain.twbx
 - Download from [Tableau.com](https://community.tableau.com/s/question/0D54T00000C5bBjSAJ/where-can-i-download-the-sample-data-sets)
-- Scroll down in forums post to the link to `Coffee Chain.twbx.zip`. The downloaded file is a zip containing the .twbx file.  Extract it from the zip to use.
+- Scroll down in forums post to the link to `Coffee Chain.twbx.zip`. 
+
+> NOTE: The downloaded file is a zip containing the .twbx file.  Extract it from the zip to use.
 
 ## Advanced Text Extraction
 

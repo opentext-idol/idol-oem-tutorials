@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="pii/address/gb" Offset="20" OffsetLength="20" Score="1" NormalizedTextSize="40" NormalizedTextLength="40" OriginalTextSize="56" OriginalTextLength="56">
+      <ORIGINAL_TEXT>742 Evergreen Terrace, Cambridge CB4 0WZ, United Kingdom</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>742 EVERGREEN TERRACE, CAMBRIDGE, CB40WZ</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="NUMBER" Text="742" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+        <COMPONENT Name="STREET" Text="EVERGREEN TERRACE" Offset="4" OffsetLength="4" TextSize="17" TextLength="17"/>
+        <COMPONENT Name="CITY" Text="CAMBRIDGE" Offset="23" OffsetLength="23" TextSize="9" TextLength="9"/>
+        <COMPONENT Name="POSTCODE" Text="CB40WZ" Offset="33" OffsetLength="33" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="COUNTRY" Text="UNITED KINGDOM" Offset="42" OffsetLength="42" TextSize="14" TextLength="14"/>
+      </COMPONENTS>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>

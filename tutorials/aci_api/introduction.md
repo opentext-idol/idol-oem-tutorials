@@ -43,11 +43,11 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
     ![get-software](../../figs/get-software.png)
 
 1. From the list of available files, select and download the following (depending on your platform and preferred language):
-   - C: `IDOLCSDK_23.2.0_{PLATFORM}.zip` , `IDOLCSDK_23.2.0_WINDOWS_X86_64.zip`
-   - Java: `idol-aci-client-23.2.0-bin.zip` or `idol-aci-client-23.2.0-bin.tar.gz`
-   - .NET: `IDOLDotNetSDK_23.2.0_WINDOWS_X86_64.zip`,
-   -  `EductionServer_23.2.0_{PLATFORM}`, *e.g.* `EductionServer_23.2.0_WINDOWS_X86_64.zip`, and
-   -  `Versionkey_23.2.0_COMMON.zip`
+   - C: `IDOLCSDK_23.3.0_{PLATFORM}.zip` , `IDOLCSDK_23.3.0_WINDOWS_X86_64.zip`
+   - Java: `idol-aci-client-23.3.0-bin.zip` or `idol-aci-client-23.3.0-bin.tar.gz`
+   - .NET: `IDOLDotNetSDK_23.3.0_WINDOWS_X86_64.zip`,
+   -  `EductionServer_23.3.0_{PLATFORM}`, *e.g.* `EductionServer_23.3.0_WINDOWS_X86_64.zip`, and
+   -  `Versionkey_23.3.0_COMMON.zip`
 
     > NOTE: the most recent versions of each ACI SDK are correct as above.
 
@@ -62,16 +62,16 @@ Contact OpenText to obtain a trial OEM license key.  For this tutorial you will 
 1. Copy your downloaded files into a new working folder.  The follow guide assumes this is `C:\OpenText` on Windows.
 
 1. Extract the `.zip` files to give you:
-   - `C:\OpenText\ACI_API\IDOLCSDK_23.2.0_WINDOWS_X86_64`, or
-   - `C:\OpenText\ACI_API\IDOLJavaSDK_23.2.0\idol-aci-client-23.2.0-bin`, or
-   - `C:\OpenText\ACI_API\IDOLDotNetSDK_23.2.0_WINDOWS_X86_64`, and
-   - `C:\OpenText\EductionServer_23.2.0_WINDOWS_X86_64` (or the IDOL ACI server of your choice)
+   - `C:\OpenText\ACI_API\IDOLCSDK_23.3.0_WINDOWS_X86_64`, or
+   - `C:\OpenText\ACI_API\IDOLJavaSDK_23.3.0\idol-aci-client-23.3.0-bin`, or
+   - `C:\OpenText\ACI_API\IDOLDotNetSDK_23.3.0_WINDOWS_X86_64`, and
+   - `C:\OpenText\EductionServer_23.3.0_WINDOWS_X86_64` (or the IDOL ACI server of your choice)
   
-1. Copy your OEM license key `.dat` file into `C:\OpenText\EductionServer_23.2.0_WINDOWS_X86_64` (or the IDOL ACI server of your choice) and rename it to `licensekey.dat`.
+1. Copy your OEM license key `.dat` file into `C:\OpenText\EductionServer_23.3.0_WINDOWS_X86_64` (or the IDOL ACI server of your choice) and rename it to `licensekey.dat`.
    
     > HINT: this key will typically have been named `licensekeyInternal.dat` when you received it.
 
-1. Extract the file `versionkey.dat` from `Versionkey_23.2.0_COMMON.zip`, then copy that file into `C:\OpenText\EductionServer_23.2.0_WINDOWS_X86_64` as described in the [upgrade guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/Upgrade/Licenses.htm).
+1. Extract the file `versionkey.dat` from `Versionkey_23.3.0_COMMON.zip`, then copy that file into `C:\OpenText\EductionServer_23.3.0_WINDOWS_X86_64` as described in the [upgrade guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/idol/Content/Upgrade/Licenses.htm).
 
 1. On Windows, you may need to install the included Visual C++ Redistributable package.  In the same IDOL Eduction Server folder, right-click on `vcredist_2017.exe` then select 'Run as administrator'.
    
@@ -79,11 +79,11 @@ Contact OpenText to obtain a trial OEM license key.  For this tutorial you will 
 
 ## IDOL ACI Servers
 
-All IDOL ACI servers include, *e.g.* under the directory: `C:\OpenText\EductionServer_23.2.0_WINDOWS_X86_64`:
+All IDOL ACI servers include, *e.g.* under the directory: `C:\OpenText\EductionServer_23.3.0_WINDOWS_X86_64`:
 - an executable, in this case `eductionserver.exe`, and
 - a primary configuration file with the same name, *e.g.* `eductionserver.cfg`.
 
-An ACI server can be launched by running that executable or by configuring a service on [Windows](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLServer_23.2_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_WindowsServices.htm) or on [Linux](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLServer_23.2_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_LinuxStartup.htm).
+An ACI server can be launched by running that executable or by configuring a service on [Windows](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLServer_23.3_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_WindowsServices.htm) or on [Linux](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLServer_23.3_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_LinuxStartup.htm).
 
 Where you have an OEM license key, the ACI server looks on startup for a `licensekey.dat` file in the same directory as the executable.
 
@@ -109,7 +109,7 @@ IDOL ACI servers have at least two ports available to interact with: service por
 
 The ACI port listens for ACI actions, which we have already read must be made via the ACI Client API, when the serer is OEM-licensed.  Service port actions however, can be made with plain HTTP requests, *i.e.* using your web browser of choice. We will try this now.
 
-The service port actions are common to all ACI services.  Refer to [Service Actions](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionServer_23.2_Documentation/Help/Content/Service/ServiceActions/_ACI_ServiceActions_Reference.htm) help for more details.
+The service port actions are common to all ACI services.  Refer to [Service Actions](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionServer_23.3_Documentation/Help/Content/Service/ServiceActions/_ACI_ServiceActions_Reference.htm) help for more details.
 
 Let's first try out a service action on our running IDOL Eduction Server.  Click the following link to execute the action in your default browser:
 http://localhost:13001/action=GetStatus
@@ -139,18 +139,18 @@ http://localhost:13000/action=GetStatus
 </autnresponse>
 ```
 
-Refer to [OEM Encryption](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/OEMEncryption/app_OEM.htm) for more details on OEM licensing.
+Refer to [OEM Encryption](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLJavaSDK_23.3_Documentation/Guides/html/Content/OEMEncryption/app_OEM.htm) for more details on OEM licensing.
 
 To make ACI action calls, we need to start working with the ACI API.
 
 ## ACI API Documentation
 
-The [ACI API Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/Intro/intro_part.htm) is an excellent resource, which has been heavily relied upon for this lesson.
+The [ACI API Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLJavaSDK_23.3_Documentation/Guides/html/Content/Intro/intro_part.htm) is an excellent resource, which has been heavily relied upon for this lesson.
 
 The API-specific reference documentation is located as below:
-- [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/Appendix/apppart.htm)
-- [Java Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/Java/java_part.htm)
-- [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/NET/NET_part.htm)
+- [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLJavaSDK_23.3_Documentation/Guides/html/Content/Appendix/apppart.htm)
+- [Java Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLJavaSDK_23.3_Documentation/Guides/html/Content/Java/java_part.htm)
+- [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLJavaSDK_23.3_Documentation/Guides/html/Content/NET/NET_part.htm)
 
 ## Example ACI Client programs
 
@@ -158,7 +158,7 @@ See examples below in each of the supported languages for the SDK.
 
 ### C
 
-The C ACI API sample code [resources](../../resources/aci_api/c/README.md) build upon the information in the ACI API Programming Guide [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/Appendix/apppart.htm) providing working examples to interact with IDOL ACI services.
+The C ACI API sample code [resources](../../resources/aci_api/c/README.md) build upon the information in the ACI API Programming Guide [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLJavaSDK_23.3_Documentation/Guides/html/Content/Appendix/apppart.htm) providing working examples to interact with IDOL ACI services.
 
 ### Python
 
@@ -166,11 +166,11 @@ A Python wrapper for the C ACI API is included with these tutorials in the [reso
 
 ### Java
 
-The Java ACI API sample code [resources](../../resources/aci_api/java/README.md) build upon the information in the ACI API Programming Guide [Java Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/Java/java_part.htm) providing working examples to interact with IDOL ACI services.
+The Java ACI API sample code [resources](../../resources/aci_api/java/README.md) build upon the information in the ACI API Programming Guide [Java Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLJavaSDK_23.3_Documentation/Guides/html/Content/Java/java_part.htm) providing working examples to interact with IDOL ACI services.
 
 ### .NET
 
-The .NET ACI API sample code [resources](../../resources/aci_api/dotnet/README.md) build upon the information in the ACI API Programming Guide [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/NET/NET_part.htm) providing working examples, written in C#, to interact with IDOL ACI services.
+The .NET ACI API sample code [resources](../../resources/aci_api/dotnet/README.md) build upon the information in the ACI API Programming Guide [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLJavaSDK_23.3_Documentation/Guides/html/Content/NET/NET_part.htm) providing working examples, written in C#, to interact with IDOL ACI services.
 
 ## Conclusion
 
@@ -186,9 +186,9 @@ Next, why not try some more advanced use-cases with the ACI API from the [showca
 
 ## See also
 
-- [ACI API Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/Intro/intro.htm)
-- [IDOL OEM Licensing Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLServer_23.2_Documentation/Guides/pdf/IDOL_23.2_OEMLicensing.pdf)
-- [IDOL Getting Started Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLServer_23.2_Documentation/Guides/html/gettingstarted/index.html)
-- [IDOL Expert](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLServer_23.2_Documentation/Guides/html/expert/index.html)
-- [IDOL Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/_SDKs.htm)
+- [ACI API Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLJavaSDK_23.3_Documentation/Guides/html/Content/Intro/intro.htm)
+- [IDOL OEM Licensing Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLServer_23.3_Documentation/Guides/pdf/IDOL_23.3_OEMLicensing.pdf)
+- [IDOL Getting Started Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLServer_23.3_Documentation/Guides/html/gettingstarted/index.html)
+- [IDOL Expert](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLServer_23.3_Documentation/Guides/html/expert/index.html)
+- [IDOL Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/oem/Content/_SDKs.htm)
 

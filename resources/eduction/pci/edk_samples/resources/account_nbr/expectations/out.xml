@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="pci/pan/landmark/pan" Offset="61" OffsetLength="61" Score="1" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>Card Number</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>card number</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="144" OffsetLength="144" Score="1" NormalizedTextSize="15" NormalizedTextLength="15" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>378282246310005</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>378282246310005</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="180" OffsetLength="180" Score="1" NormalizedTextSize="15" NormalizedTextLength="15" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>371449635398431</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>371449635398431</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="225" OffsetLength="225" Score="1" NormalizedTextSize="15" NormalizedTextLength="15" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>378734493671000</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>378734493671000</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="265" OffsetLength="265" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>5610591081018250</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5610591081018250</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="296" OffsetLength="296" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>2205238479827383</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>2205238479827383</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="332" OffsetLength="332" Score="1" NormalizedTextSize="19" NormalizedTextLength="19" OriginalTextSize="19" OriginalTextLength="19">
+      <ORIGINAL_TEXT>3138922093929320898</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>3138922093929320898</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="408" OffsetLength="408" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>5019717010103742</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5019717010103742</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="440" OffsetLength="440" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>6011111111111117</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>6011111111111117</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="471" OffsetLength="471" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>6011000990139424</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>6011000990139424</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="500" OffsetLength="500" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>9860327840103939</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>9860327840103939</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="535" OffsetLength="535" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>6393519709142682</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>6393519709142682</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="569" OffsetLength="569" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>6363287498237230</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>6363287498237230</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="598" OffsetLength="598" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>3530111333300000</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>3530111333300000</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="626" OffsetLength="626" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>3566002020360505</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>3566002020360505</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="658" OffsetLength="658" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>3571117236428731</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>3571117236428731</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="688" OffsetLength="688" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>6709682431878947</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>6709682431878947</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="722" OffsetLength="722" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>5555555555554444</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5555555555554444</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="755" OffsetLength="755" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>5105105105105100</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5105105105105100</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="787" OffsetLength="787" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>5018452935461261</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5018452935461261</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="816" OffsetLength="816" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>2202263487236370</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>2202263487236370</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="855" OffsetLength="855" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>6054740234233891</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>6054740234233891</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="885" OffsetLength="885" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>5081273872817824</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5081273872817824</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="929" OffsetLength="929" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>6331101999990016</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>6331101999990016</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="958" OffsetLength="958" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>9792237482368926</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>9792237482368926</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="987" OffsetLength="987" Score="1" NormalizedTextSize="15" NormalizedTextLength="15" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>139248729302397</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>139248729302397</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="1018" OffsetLength="1018" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>6040010037281738</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>6040010037281738</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="1049" OffsetLength="1049" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>8600234892749881</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>8600234892749881</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="1079" OffsetLength="1079" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>5060993428473286</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5060993428473286</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="1108" OffsetLength="1108" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>4111111111111111</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4111111111111111</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="1136" OffsetLength="1136" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>4012888888881881</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4012888888881881</NORMALIZED_TEXT>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>

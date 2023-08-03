@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="phi/account/bank/account_number/context/us" Offset="0" OffsetLength="0" Score="0.5" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="29" OriginalTextLength="29">
+      <ORIGINAL_TEXT>Bank Account Number: 12345678</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>12345678</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/account/bank/account_number/context/us" Offset="5" OffsetLength="5" Score="0.5" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="24" OriginalTextLength="24">
+      <ORIGINAL_TEXT>Account Number: 12345678</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>12345678</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/account/bank/routing_number/context/us" Offset="30" OffsetLength="30" Score="1" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="21" OriginalTextLength="21">
+      <ORIGINAL_TEXT>Routing no: 622356789</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>622356789</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MICR_CODE" Text="622356789" Offset="0" OffsetLength="0" TextSize="9" TextLength="9"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/account/swiftcode/context" Offset="52" OffsetLength="52" Score="1" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="23" OriginalTextLength="23">
+      <ORIGINAL_TEXT>SWIFT Code: USBKUS44IMT</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>USBKUS44IMT</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="COUNTRY_CODE" Text="US" Offset="4" OffsetLength="4" TextSize="2" TextLength="2"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/address/us" Offset="77" OffsetLength="77" Score="0.618" NormalizedTextSize="33" NormalizedTextLength="33" OriginalTextSize="31" OriginalTextLength="31">
+      <ORIGINAL_TEXT>123 Main St, Anywhere, IA 12345</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>123 MAIN ST, ANYWHERE, IOWA 12345</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="NUMBER" Text="123" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+        <COMPONENT Name="STREET" Text="MAIN ST" Offset="4" OffsetLength="4" TextSize="7" TextLength="7"/>
+        <COMPONENT Name="CITY" Text="ANYWHERE" Offset="13" OffsetLength="13" TextSize="8" TextLength="8"/>
+        <COMPONENT Name="STATE" Text="IOWA" Offset="23" OffsetLength="23" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="POSTCODE" Text="12345" Offset="28" OffsetLength="28" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/address/streetlocation/context/us" Offset="109" OffsetLength="109" Score="1" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="22" OriginalTextLength="22">
+      <ORIGINAL_TEXT>Address: 123 Mill Road</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>123 MILL ROAD</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="NUMBER" Text="123" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+        <COMPONENT Name="STREET" Text="MILL ROAD" Offset="4" OffsetLength="4" TextSize="9" TextLength="9"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/address/city/context/us" Offset="132" OffsetLength="132" Score="0.6" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>City: Anywhere</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ANYWHERE</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CITY" Text="ANYWHERE" Offset="0" OffsetLength="0" TextSize="8" TextLength="8"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/address/postcode/context/us" Offset="147" OffsetLength="147" Score="1" NormalizedTextSize="5" NormalizedTextLength="5" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>Postcode: 12345</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>12345</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="POSTCODE" Text="12345" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/address/country/context/us" Offset="163" OffsetLength="163" Score="1" NormalizedTextSize="2" NormalizedTextLength="2" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>Country: US</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>US</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="COUNTRY" Text="US" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/age/over89/context/us" Offset="176" OffsetLength="176" Score="1" NormalizedTextSize="2" NormalizedTextLength="2" OriginalTextSize="7" OriginalTextLength="7">
+      <ORIGINAL_TEXT>Age: 99</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>99</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/certificate/birth/context/us" Offset="185" OffsetLength="185" Score="1" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="32" OriginalTextLength="32">
+      <ORIGINAL_TEXT>Birth Certificate: 160-99-123456</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>160-99-123456</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="160-99-123456" Offset="19" OffsetLength="19" TextSize="13" TextLength="13"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/certificate/generic/context/us" Offset="191" OffsetLength="191" Score="0.792" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="26" OriginalTextLength="26">
+      <ORIGINAL_TEXT>Certificate: 160-99-123456</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>160-99-123456</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="160-99-123456" Offset="13" OffsetLength="13" TextSize="13" TextLength="13"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/certificate/birth/context/us" Offset="218" OffsetLength="218" Score="1" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="32" OriginalTextLength="32">
+      <ORIGINAL_TEXT>Birth Certificate: 160 98 123456</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>160 98 123456</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="160 98 123456" Offset="19" OffsetLength="19" TextSize="13" TextLength="13"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/certificate/generic/context/us" Offset="251" OffsetLength="251" Score="0.792" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="33" OriginalTextLength="33">
+      <ORIGINAL_TEXT>Certificate number: MX-123-456/78</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>MX-123-456/78</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="MX-123-456/78" Offset="20" OffsetLength="20" TextSize="13" TextLength="13"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/date/dob/context/eng" Offset="286" OffsetLength="286" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>DOB: 1/13/1981</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>1981-01-13</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="1" Offset="0" OffsetLength="0" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="DAY" Text="13" Offset="2" OffsetLength="2" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="1981" Offset="5" OffsetLength="5" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/date/dob/noyear/context/eng" Offset="301" OffsetLength="301" Score="0.98" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>DOB: 01/14</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>--01-14</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="01" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="DAY" Text="14" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/date/dod/noyear/context/eng" Offset="312" OffsetLength="312" Score="0.98" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="13" OriginalTextLength="13">
+      <ORIGINAL_TEXT>Died on 04/13</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>--04-13</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="04" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="DAY" Text="13" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/date/dod/context/eng" Offset="312" OffsetLength="312" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="18" OriginalTextLength="18">
+      <ORIGINAL_TEXT>Died on 04/13/2022</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>2022-04-13</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="04" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="DAY" Text="13" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="2022" Offset="6" OffsetLength="6" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/date/dod/noyear/context/eng" Offset="331" OffsetLength="331" Score="0.98" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="13" OriginalTextLength="13">
+      <ORIGINAL_TEXT>Died on 04/14</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>--04-14</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="04" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="DAY" Text="14" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/dea/context/us" Offset="442" OffsetLength="442" Score="1" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="34" OriginalTextLength="34">
+      <ORIGINAL_TEXT>DEA Registration Number: BE1234563</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>BE1234563</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="NUMBERS" Text="123456" Offset="2" OffsetLength="2" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="CHECKSUM" Text="3" Offset="8" OffsetLength="8" TextSize="1" TextLength="1"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/dea/ndc/context/us" Offset="477" OffsetLength="477" Score="1" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="17" OriginalTextLength="17">
+      <ORIGINAL_TEXT>NDC: 66467-2220-1</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>66467-2220-1</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="66467-2220-1" Offset="0" OffsetLength="0" TextSize="12" TextLength="12"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/telephone/nocontext/us" Offset="482" OffsetLength="482" Score="0.54" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="12" OriginalTextLength="12">
+      <ORIGINAL_TEXT>66467-2220-1</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>+16646722201</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/dea/ndc_billing/context/us" Offset="495" OffsetLength="495" Score="1" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="18" OriginalTextLength="18">
+      <ORIGINAL_TEXT>NDC: 123456-789-01</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>123456-789-01</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="123456-789-01" Offset="0" OffsetLength="0" TextSize="13" TextLength="13"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/dea/ndc/context/us" Offset="495" OffsetLength="495" Score="1" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="18" OriginalTextLength="18">
+      <ORIGINAL_TEXT>NDC: 123456-789-01</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>123456-789-01</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="123456-789-01" Offset="0" OffsetLength="0" TextSize="13" TextLength="13"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/telephone/nocontext/us" Offset="500" OffsetLength="500" Score="0.6" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="13" OriginalTextLength="13">
+      <ORIGINAL_TEXT>123456-789-01</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>+12345678901</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="ISD_CODE" Text="1" Offset="0" OffsetLength="0" TextSize="1" TextLength="1"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/device/udi/nocontext" Offset="515" OffsetLength="515" Score="1" NormalizedTextSize="51" NormalizedTextLength="51" OriginalTextSize="51" OriginalTextLength="51">
+      <ORIGINAL_TEXT>+X999123ABC0/$$31905151234AB/S5678EDFG/16D20151001J</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>+X999123ABC0/$$31905151234AB/S5678EDFG/16D20151001J</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DEVICEID" Text="X999123ABC0" Offset="1" OffsetLength="1" TextSize="11" TextLength="11"/>
+        <COMPONENT Name="EXPRDATE_YYMMDD" Text="190515" Offset="16" OffsetLength="16" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="LOT" Text="1234AB" Offset="22" OffsetLength="22" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="SERIAL" Text="5678EDFG" Offset="30" OffsetLength="30" TextSize="8" TextLength="8"/>
+        <COMPONENT Name="PRODDATE_YYYYMMDD" Text="20151001" Offset="42" OffsetLength="42" TextSize="8" TextLength="8"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/device/udi/nocontext" Offset="567" OffsetLength="567" Score="1" NormalizedTextSize="56" NormalizedTextLength="56" OriginalTextSize="56" OriginalTextLength="56">
+      <ORIGINAL_TEXT>(01)51022222233336(11)141231(17)150707(10)A213B1(21)1234</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>(01)51022222233336(11)141231(17)150707(10)A213B1(21)1234</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DEVICEID" Text="51022222233336" Offset="4" OffsetLength="4" TextSize="14" TextLength="14"/>
+        <COMPONENT Name="PRODDATE_YYMMDD" Text="141231" Offset="22" OffsetLength="22" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="EXPRDATE_YYMMDD" Text="150707" Offset="32" OffsetLength="32" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="LOT" Text="A213B1" Offset="42" OffsetLength="42" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="SERIAL" Text="1234" Offset="52" OffsetLength="52" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/device/udi/nocontext" Offset="624" OffsetLength="624" Score="1" NormalizedTextSize="87" NormalizedTextLength="87" OriginalTextSize="87" OriginalTextLength="87">
+      <ORIGINAL_TEXT>+H123PARTNO1234567890120/$$420020216LOT123456789012345/SXYZ456789012345678/16D20130202H</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>+H123PARTNO1234567890120/$$420020216LOT123456789012345/SXYZ456789012345678/16D20130202H</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DEVICEID" Text="H123PARTNO1234567890120" Offset="1" OffsetLength="1" TextSize="23" TextLength="23"/>
+        <COMPONENT Name="EXPRDATE_YYMMDDHH" Text="20020216" Offset="28" OffsetLength="28" TextSize="8" TextLength="8"/>
+        <COMPONENT Name="LOT" Text="LOT123456789012345" Offset="36" OffsetLength="36" TextSize="18" TextLength="18"/>
+        <COMPONENT Name="SERIAL" Text="XYZ456789012345678" Offset="56" OffsetLength="56" TextSize="18" TextLength="18"/>
+        <COMPONENT Name="PRODDATE_YYYYMMDD" Text="20130202" Offset="78" OffsetLength="78" TextSize="8" TextLength="8"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/device/udi/nocontext" Offset="712" OffsetLength="712" Score="1" NormalizedTextSize="79" NormalizedTextLength="79" OriginalTextSize="79" OriginalTextLength="79">
+      <ORIGINAL_TEXT>=/A9999XYZ100T0944=,000025=A99971312345600=&gt;014032=}013032&amp;,1000000000000XYZ123</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>=/A9999XYZ100T0944=,000025=A99971312345600=&gt;014032=}013032&amp;,1000000000000XYZ123</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DEVICEID" Text="A9999XYZ100T0944" Offset="2" OffsetLength="2" TextSize="16" TextLength="16"/>
+        <COMPONENT Name="SERIAL" Text="000025" Offset="20" OffsetLength="20" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="DIN" Text="A99971312345600" Offset="27" OffsetLength="27" TextSize="15" TextLength="15"/>
+        <COMPONENT Name="EXPRDATE_YYYJJJ" Text="014032" Offset="44" OffsetLength="44" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="PRODDATE_YYYJJJ" Text="013032" Offset="52" OffsetLength="52" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="LOT" Text="000000000000XYZ123" Offset="61" OffsetLength="61" TextSize="18" TextLength="18"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/healthplan/context/us" Offset="793" OffsetLength="793" Score="1" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="22" OriginalTextLength="22">
+      <ORIGINAL_TEXT>Plan ID 12345678LMNOP9</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>12345678LMNOP9</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="12345678LMNOP9" Offset="0" OffsetLength="0" TextSize="14" TextLength="14"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/healthplan/context/us" Offset="816" OffsetLength="816" Score="1" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="23" OriginalTextLength="23">
+      <ORIGINAL_TEXT>Plan ID: 12345678LMNOP8</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>12345678LMNOP8</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="12345678LMNOP8" Offset="0" OffsetLength="0" TextSize="14" TextLength="14"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/mrn/context/us" Offset="840" OffsetLength="840" Score="1" NormalizedTextSize="15" NormalizedTextLength="15" OriginalTextSize="20" OriginalTextLength="20">
+      <ORIGINAL_TEXT>MRN: 3321AC4383LDD33</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>3321AC4383LDD33</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="3321AC4383LDD33" Offset="0" OffsetLength="0" TextSize="15" TextLength="15"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/healthplan/npi/context/us" Offset="861" OffsetLength="861" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>NPI: 3728482340</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>3728482340</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="3728482340" Offset="0" OffsetLength="0" TextSize="10" TextLength="10"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/healthplan/mbi/context/us" Offset="877" OffsetLength="877" Score="1" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="18" OriginalTextLength="18">
+      <ORIGINAL_TEXT>MBI: 1EG4-TE5-MK73</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>1EG4-TE5-MK73</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="1EG4-TE5-MK73" Offset="0" OffsetLength="0" TextSize="13" TextLength="13"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/healthplan/hicn/context/us" Offset="896" OffsetLength="896" Score="1" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="19" OriginalTextLength="19">
+      <ORIGINAL_TEXT>HICN: 123-45-6789-A</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>123-45-6789-A</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="123-45-6789-A" Offset="0" OffsetLength="0" TextSize="13" TextLength="13"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/healthplan/hcpcs_i/context/us" Offset="916" OffsetLength="916" Score="1" NormalizedTextSize="5" NormalizedTextLength="5" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>CPT Code 3006F</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>3006F</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="3006F" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/healthplan/hcpcs_ii/context/us" Offset="931" OffsetLength="931" Score="1" NormalizedTextSize="5" NormalizedTextLength="5" OriginalTextSize="39" OriginalTextLength="39">
+      <ORIGINAL_TEXT>Healthcare Common Procedure Code: C1300</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>C1300</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="C1300" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/inet/email/context" Offset="972" OffsetLength="972" Score="1" NormalizedTextSize="21" NormalizedTextLength="21" OriginalTextSize="28" OriginalTextLength="28">
+      <ORIGINAL_TEXT>email: jsmith@mailserver.com</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>jsmith@mailserver.com</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="LOCAL" Text="jsmith" Offset="0" OffsetLength="0" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="DOMAIN" Text="mailserver.com" Offset="7" OffsetLength="7" TextSize="14" TextLength="14"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/inet/email/nocontext" Offset="979" OffsetLength="979" Score="1" NormalizedTextSize="21" NormalizedTextLength="21" OriginalTextSize="21" OriginalTextLength="21">
+      <ORIGINAL_TEXT>jsmith@mailserver.com</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>jsmith@mailserver.com</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="LOCAL" Text="jsmith" Offset="0" OffsetLength="0" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="DOMAIN" Text="mailserver.com" Offset="7" OffsetLength="7" TextSize="14" TextLength="14"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/inet/url/nocontext" Offset="986" OffsetLength="986" Score="1" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>mailserver.com</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>mailserver.com</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="HOST" Text="mailserver.com" Offset="0" OffsetLength="0" TextSize="14" TextLength="14"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/inet/ip/context" Offset="1001" OffsetLength="1001" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="19" OriginalTextLength="19">
+      <ORIGINAL_TEXT>ip address: 5.5.5.5</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5.5.5.5</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/inet/url/nocontext" Offset="1013" OffsetLength="1013" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="7" OriginalTextLength="7">
+      <ORIGINAL_TEXT>5.5.5.5</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5.5.5.5</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="HOST" Text="5.5.5.5" Offset="0" OffsetLength="0" TextSize="7" TextLength="7"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/inet/ip/nocontext" Offset="1013" OffsetLength="1013" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="7" OriginalTextLength="7">
+      <ORIGINAL_TEXT>5.5.5.5</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5.5.5.5</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/inet/url/nocontext" Offset="1026" OffsetLength="1026" Score="1" NormalizedTextSize="23" NormalizedTextLength="23" OriginalTextSize="23" OriginalTextLength="23">
+      <ORIGINAL_TEXT>https://www.example.org</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>https://www.example.org</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="HOST" Text="www.example.org" Offset="8" OffsetLength="8" TextSize="15" TextLength="15"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/inet/url/context" Offset="1026" OffsetLength="1026" Score="1" NormalizedTextSize="23" NormalizedTextLength="23" OriginalTextSize="23" OriginalTextLength="23">
+      <ORIGINAL_TEXT>https://www.example.org</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>https://www.example.org</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="HOST" Text="www.example.org" Offset="8" OffsetLength="8" TextSize="15" TextLength="15"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/inet/url/nocontext" Offset="1034" OffsetLength="1034" Score="1" NormalizedTextSize="15" NormalizedTextLength="15" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>www.example.org</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>www.example.org</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="HOST" Text="www.example.org" Offset="0" OffsetLength="0" TextSize="15" TextLength="15"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/inet/url/nocontext" Offset="1038" OffsetLength="1038" Score="1" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>example.org</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>example.org</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="HOST" Text="example.org" Offset="0" OffsetLength="0" TextSize="11" TextLength="11"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/laboratory/context/us" Offset="1051" OffsetLength="1051" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="19" OriginalTextLength="19">
+      <ORIGINAL_TEXT>CLIA No: 01D1234567</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>01D1234567</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="01D1234567" Offset="0" OffsetLength="0" TextSize="10" TextLength="10"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/license/driving/context/us" Offset="1072" OffsetLength="1072" Score="1" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="26" OriginalTextLength="26">
+      <ORIGINAL_TEXT>Driving license: 012AB3456</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>012AB3456</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DRIVING_LANDMARK" Text="Driving license" Offset="0" OffsetLength="0" TextSize="15" TextLength="15"/>
+        <COMPONENT Name="TARGET" Text="012AB3456" Offset="15" OffsetLength="15" TextSize="9" TextLength="9"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/license/generic/context/us" Offset="1080" OffsetLength="1080" Score="0.792" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="18" OriginalTextLength="18">
+      <ORIGINAL_TEXT>license: 012AB3456</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>012AB3456</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="012AB3456" Offset="9" OffsetLength="9" TextSize="9" TextLength="9"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/license/generic/context/us" Offset="1099" OffsetLength="1099" Score="0.792" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="29" OriginalTextLength="29">
+      <ORIGINAL_TEXT>License number: MX-123-456/78</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>MX-123-456/78</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TARGET" Text="MX-123-456/78" Offset="16" OffsetLength="16" TextSize="13" TextLength="13"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/location/us" Offset="1130" OffsetLength="1130" Score="1" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>Houston, TX</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>HOUSTON, TEXAS</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CITY" Text="HOUSTON" Offset="0" OffsetLength="0" TextSize="7" TextLength="7"/>
+        <COMPONENT Name="STATE" Text="TEXAS" Offset="9" OffsetLength="9" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/location/us" Offset="1142" OffsetLength="1142" Score="0.88" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>city of Houston</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>HOUSTON</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CITY" Text="HOUSTON" Offset="0" OffsetLength="0" TextSize="7" TextLength="7"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/address/city/context/us" Offset="1142" OffsetLength="1142" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>city of Houston</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>HOUSTON</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CITY" Text="HOUSTON" Offset="0" OffsetLength="0" TextSize="7" TextLength="7"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/name/us" Offset="1159" OffsetLength="1159" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>John Smith</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/name/us" Offset="1170" OffsetLength="1170" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="12" OriginalTextLength="12">
+      <ORIGINAL_TEXT>Smith, John
+</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="7" OffsetLength="7" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/name/us" Offset="1182" OffsetLength="1182" Score="0.65" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="8" OriginalTextLength="8">
+      <ORIGINAL_TEXT>JANE DOE</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JANE DOE</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JANE" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="DOE" Offset="5" OffsetLength="5" TextSize="3" TextLength="3"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/name/us" Offset="1191" OffsetLength="1191" Score="0.65" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>DOE, JANE
+</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JANE DOE</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="SURNAME" Text="DOE" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+        <COMPONENT Name="FORENAME" Text="JANE" Offset="5" OffsetLength="5" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/id/context/us" Offset="1202" OffsetLength="1202" Score="1" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>SSN: 534-33-4394</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>534-33-4394</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/id/nocontext/us" Offset="1207" OffsetLength="1207" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>534-33-4394</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>534-33-4394</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/id/context/us" Offset="1219" OffsetLength="1219" Score="0.9" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>SSN: 534 33 4393</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>534 33 4393</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/id/context/us" Offset="1236" OffsetLength="1236" Score="0.8" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>SSN: 534334392</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>534334392</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/id/redacted/context/us" Offset="1251" OffsetLength="1251" Score="1" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>SSN: xxx-xx-3333</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>xxx-xx-3333</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="ID_LANDMARK" Text="SSN" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/disease_condition/eng" Offset="1269" OffsetLength="1269" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>abdominal hernia</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ABDOMINAL HERNIA</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/eng" Offset="1269" OffsetLength="1269" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>abdominal hernia</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ABDOMINAL HERNIA</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/disease_condition/eng" Offset="1279" OffsetLength="1279" Score="1" NormalizedTextSize="6" NormalizedTextLength="6" OriginalTextSize="6" OriginalTextLength="6">
+      <ORIGINAL_TEXT>hernia</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>HERNIA</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/eng" Offset="1279" OffsetLength="1279" Score="1" NormalizedTextSize="6" NormalizedTextLength="6" OriginalTextSize="6" OriginalTextLength="6">
+      <ORIGINAL_TEXT>hernia</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>HERNIA</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/blood_test/eng" Offset="1286" OffsetLength="1286" Score="1" NormalizedTextSize="18" NormalizedTextLength="18" OriginalTextSize="18" OriginalTextLength="18">
+      <ORIGINAL_TEXT>9 panel urine test</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>9 PANEL URINE TEST</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/lab_test/eng" Offset="1294" OffsetLength="1294" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>urine test</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>URINE TEST</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/lab_test/eng" Offset="1305" OffsetLength="1305" Score="1" NormalizedTextSize="24" NormalizedTextLength="24" OriginalTextSize="24" OriginalTextLength="24">
+      <ORIGINAL_TEXT>1, 25 dihydroxyvitamin D</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>1, 25 DIHYDROXYVITAMIN D</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/surgical_procedure/eng" Offset="1330" OffsetLength="1330" Score="1" NormalizedTextSize="21" NormalizedTextLength="21" OriginalTextSize="21" OriginalTextLength="21">
+      <ORIGINAL_TEXT>abdominal liposuction</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ABDOMINAL LIPOSUCTION</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/surgical_procedure/eng" Offset="1340" OffsetLength="1340" Score="1" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>liposuction</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>LIPOSUCTION</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/disease_condition/eng" Offset="1352" OffsetLength="1352" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="7" OriginalTextLength="7">
+      <ORIGINAL_TEXT>allergy</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ALLERGY</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/specialty/eng" Offset="1352" OffsetLength="1352" Score="1" NormalizedTextSize="22" NormalizedTextLength="22" OriginalTextSize="22" OriginalTextLength="22">
+      <ORIGINAL_TEXT>allergy and immunology</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ALLERGY AND IMMUNOLOGY</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/eng" Offset="1352" OffsetLength="1352" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="7" OriginalTextLength="7">
+      <ORIGINAL_TEXT>allergy</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ALLERGY</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/medication/eng" Offset="1375" OffsetLength="1375" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="7" OriginalTextLength="7">
+      <ORIGINAL_TEXT>Abelcet</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ABELCET</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/drug_brand/eng" Offset="1375" OffsetLength="1375" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="7" OriginalTextLength="7">
+      <ORIGINAL_TEXT>Abelcet</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ABELCET</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/drug_generic/eng" Offset="1383" OffsetLength="1383" Score="1" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="8" OriginalTextLength="8">
+      <ORIGINAL_TEXT>Abacavir</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ABACAVIR</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/medication/eng" Offset="1392" OffsetLength="1392" Score="1" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="8" OriginalTextLength="8">
+      <ORIGINAL_TEXT>Altoprev</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ALTOPREV</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/drug_brand/eng" Offset="1392" OffsetLength="1392" Score="1" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="8" OriginalTextLength="8">
+      <ORIGINAL_TEXT>Altoprev</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ALTOPREV</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/disability/social_security/engus" Offset="1401" OffsetLength="1401" Score="1" NormalizedTextSize="24" NormalizedTextLength="24" OriginalTextSize="24" OriginalTextLength="24">
+      <ORIGINAL_TEXT>adrenal glands carcinoma</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ADRENAL GLANDS CARCINOMA</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/disease_condition/eng" Offset="1416" OffsetLength="1416" Score="1" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>carcinoma</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>CARCINOMA</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/eng" Offset="1416" OffsetLength="1416" Score="1" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>carcinoma</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>CARCINOMA</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/disease_condition/eng" Offset="1426" OffsetLength="1426" Score="1" NormalizedTextSize="33" NormalizedTextLength="33" OriginalTextSize="22" OriginalTextLength="22">
+      <ORIGINAL_TEXT>1p36 deletion syndrome</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>CHROMOSOME 1P36 DELETION SYNDROME</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/eng" Offset="1426" OffsetLength="1426" Score="1" NormalizedTextSize="33" NormalizedTextLength="33" OriginalTextSize="22" OriginalTextLength="22">
+      <ORIGINAL_TEXT>1p36 deletion syndrome</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>CHROMOSOME 1P36 DELETION SYNDROME</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/medical_terms/lifestyle/eng" Offset="1449" OffsetLength="1449" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="7" OriginalTextLength="7">
+      <ORIGINAL_TEXT>smoking</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>SMOKING</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/telephone/context/us" Offset="1478" OffsetLength="1478" Score="0.9" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="25" OriginalTextLength="25">
+      <ORIGINAL_TEXT>Telephone: (201)-243-9955</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>+12012439955</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/telephone/nocontext/us" Offset="1489" OffsetLength="1489" Score="0.54" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>(201)-243-9955</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>+12012439955</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/telephone/context/us" Offset="1504" OffsetLength="1504" Score="0.9" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="24" OriginalTextLength="24">
+      <ORIGINAL_TEXT>Telephone:(202)-243-9956</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>+12022439956</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/telephone/nocontext/us" Offset="1514" OffsetLength="1514" Score="0.54" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>(202)-243-9956</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>+12022439956</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/telephone/nocontext/us" Offset="1529" OffsetLength="1529" Score="0.54" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="12" OriginalTextLength="12">
+      <ORIGINAL_TEXT>972-333-4123</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>+19723334123</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/telephone/nocontext/us" Offset="1542" OffsetLength="1542" Score="0.6" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>+1-201-222-4344</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>+12012224344</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="ISD_CODE" Text="1" Offset="1" OffsetLength="1" TextSize="1" TextLength="1"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="phi/vehicle/licenseplate/context/us" Offset="1559" OffsetLength="1559" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="29" OriginalTextLength="29">
+      <ORIGINAL_TEXT>License Plate Number: ABC 123</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ABC 123</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/vehicle/vin/context" Offset="1589" OffsetLength="1589" Score="1" NormalizedTextSize="17" NormalizedTextLength="17" OriginalTextSize="22" OriginalTextLength="22">
+      <ORIGINAL_TEXT>VIN: LJCPCBLCX11000237</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>LJCPCBLCX11000237</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="phi/vehicle/vin/nocontext" Offset="1594" OffsetLength="1594" Score="0.99" NormalizedTextSize="17" NormalizedTextLength="17" OriginalTextSize="17" OriginalTextLength="17">
+      <ORIGINAL_TEXT>LJCPCBLCX11000237</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>LJCPCBLCX11000237</NORMALIZED_TEXT>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>

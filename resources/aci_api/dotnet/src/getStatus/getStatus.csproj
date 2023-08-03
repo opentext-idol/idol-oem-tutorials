@@ -8,10 +8,10 @@
 
   <ItemGroup>
     <Reference Include="acinet">
-      <HintPath>..\..\..\..\..\..\..\IDOLDotNetSDK_23.2.0_WINDOWS_X86_64\acinet.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\IDOLDotNetSDK_23.3.0_WINDOWS_X86_64\acinet.dll</HintPath>
     </Reference>
     <Reference Include="Autonomy">
-      <HintPath>..\..\..\..\..\..\..\IDOLDotNetSDK_23.2.0_WINDOWS_X86_64\Autonomy.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\IDOLDotNetSDK_23.3.0_WINDOWS_X86_64\Autonomy.dll</HintPath>
     </Reference>
   </ItemGroup>
 

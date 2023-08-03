@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="pci/date/paymentcard/context/eng" Offset="0" OffsetLength="0" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="18" OriginalTextLength="18">
+      <ORIGINAL_TEXT>Expires end: 01/20</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>2020-01</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="01" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="20" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/tw" Offset="20" OffsetLength="20" Score="0.9" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/jp" Offset="20" OffsetLength="20" Score="0.65" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/cn" Offset="20" OffsetLength="20" Score="0.6" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/hu" Offset="20" OffsetLength="20" Score="0.65" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/za" Offset="20" OffsetLength="20" Score="0.9" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/us" Offset="20" OffsetLength="20" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/ua" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/tr" Offset="20" OffsetLength="20" Score="0.6" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/sk" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/si" Offset="20" OffsetLength="20" Score="0.6" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/se" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/ru" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/ro" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/pt" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/pl" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/nz" Offset="20" OffsetLength="20" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/no" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/nl" Offset="20" OffsetLength="20" Score="0.9" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/mt" Offset="20" OffsetLength="20" Score="0.6" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/lv" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/lu" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/lt" Offset="20" OffsetLength="20" Score="0.6" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/li" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/it" Offset="20" OffsetLength="20" Score="0.65" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/is" Offset="20" OffsetLength="20" Score="0.65" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/in" Offset="20" OffsetLength="20" Score="0.9" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/ie" Offset="20" OffsetLength="20" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/hr" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/gr" Offset="20" OffsetLength="20" Score="0.9" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/gb" Offset="20" OffsetLength="20" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/fr" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/fi" Offset="20" OffsetLength="20" Score="0.65" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/es" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/ee" Offset="20" OffsetLength="20" Score="0.65" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/dk" Offset="20" OffsetLength="20" Score="0.9" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/de" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/cz" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/cy" Offset="20" OffsetLength="20" Score="0.9" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/ch" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/ca" Offset="20" OffsetLength="20" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/br" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/bg" Offset="20" OffsetLength="20" Score="0.65" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/be" Offset="20" OffsetLength="20" Score="0.65" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/au" Offset="20" OffsetLength="20" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/at" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/jp" Offset="31" OffsetLength="31" Score="1" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>KEIKO NAKAMURA</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>KEIKO NAKAMURA</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="KEIKO" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="SURNAME" Text="NAKAMURA" Offset="6" OffsetLength="6" TextSize="8" TextLength="8"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/us" Offset="31" OffsetLength="31" Score="0.6" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>KEIKO NAKAMURA</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>KEIKO NAKAMURA</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="KEIKO" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="SURNAME" Text="NAKAMURA" Offset="6" OffsetLength="6" TextSize="8" TextLength="8"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/nz" Offset="31" OffsetLength="31" Score="0.6" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>KEIKO NAKAMURA</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>KEIKO NAKAMURA</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="KEIKO" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="SURNAME" Text="NAKAMURA" Offset="6" OffsetLength="6" TextSize="8" TextLength="8"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/ie" Offset="31" OffsetLength="31" Score="0.6" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>KEIKO NAKAMURA</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>KEIKO NAKAMURA</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="KEIKO" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="SURNAME" Text="NAKAMURA" Offset="6" OffsetLength="6" TextSize="8" TextLength="8"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/gb" Offset="31" OffsetLength="31" Score="0.6" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>KEIKO NAKAMURA</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>KEIKO NAKAMURA</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="KEIKO" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="SURNAME" Text="NAKAMURA" Offset="6" OffsetLength="6" TextSize="8" TextLength="8"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/ca" Offset="31" OffsetLength="31" Score="0.6" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>KEIKO NAKAMURA</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>KEIKO NAKAMURA</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="KEIKO" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="SURNAME" Text="NAKAMURA" Offset="6" OffsetLength="6" TextSize="8" TextLength="8"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/br" Offset="31" OffsetLength="31" Score="0.65" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>KEIKO NAKAMURA</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>KEIKO NAKAMURA</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="KEIKO" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="SURNAME" Text="NAKAMURA" Offset="6" OffsetLength="6" TextSize="8" TextLength="8"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/au" Offset="31" OffsetLength="31" Score="0.6" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>KEIKO NAKAMURA</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>KEIKO NAKAMURA</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="KEIKO" Offset="0" OffsetLength="0" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="SURNAME" Text="NAKAMURA" Offset="6" OffsetLength="6" TextSize="8" TextLength="8"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/magstripe/nocontext/magstripe" Offset="58" OffsetLength="58" Score="1" NormalizedTextSize="79" NormalizedTextLength="79" OriginalTextSize="79" OriginalTextLength="79">
+      <ORIGINAL_TEXT>%B5641821234567890122^SMITH/JOHN A.             ^2011126000000000000000000000?c</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>%B5641821234567890122^SMITH/JOHN A.             ^2011126000000000000000000000?c</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="PAN" Text="5641821234567890122" Offset="2" OffsetLength="2" TextSize="19" TextLength="19"/>
+        <COMPONENT Name="HOLDER_NAME" Text="SMITH/JOHN A.             " Offset="22" OffsetLength="22" TextSize="26" TextLength="26"/>
+        <COMPONENT Name="EXPIRATION_DATE" Text="2011" Offset="49" OffsetLength="49" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="143" OffsetLength="143" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>4485221211756505</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4485221211756505</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pin/context" Offset="160" OffsetLength="160" Score="1" NormalizedTextSize="4" NormalizedTextLength="4" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>PIN: 1234</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>1234</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pin_block/context" Offset="170" OffsetLength="170" Score="1" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="23" OriginalTextLength="23">
+      <ORIGINAL_TEXT>PIN block: BABCDEFGHIJ=</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>BABCDEFGHIJ=</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/printed_security_code/context/cav2" Offset="194" OffsetLength="194" Score="1" NormalizedTextSize="3" NormalizedTextLength="3" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>CAV2: 123</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>123</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/printed_security_code/context/cid" Offset="204" OffsetLength="204" Score="1" NormalizedTextSize="4" NormalizedTextLength="4" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>CID: 1234</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>1234</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/printed_security_code/context/cvc2" Offset="214" OffsetLength="214" Score="1" NormalizedTextSize="3" NormalizedTextLength="3" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>CVC2: 123</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>123</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/printed_security_code/context/cvv2" Offset="224" OffsetLength="224" Score="1" NormalizedTextSize="3" NormalizedTextLength="3" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>CVV2: 123</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>123</NORMALIZED_TEXT>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>

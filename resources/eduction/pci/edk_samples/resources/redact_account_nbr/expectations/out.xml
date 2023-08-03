@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="1" OffsetLength="1" Score="1" NormalizedTextSize="19" NormalizedTextLength="19" OriginalTextSize="19" OriginalTextLength="19">
+      <ORIGINAL_TEXT>4012 8888 8888 1881</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4012 xxxx xxxx 1881</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="22" OffsetLength="22" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>4012888888881881</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4012xxxxxxxx1881</NORMALIZED_TEXT>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>

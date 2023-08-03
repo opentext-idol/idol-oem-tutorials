@@ -1,8 +1,8 @@
 # KeyView Filter
 
-This track of the IDOL OEM tutorials is focussed on KeyView Filter.  
+This track of the IDOL OEM tutorials is focused on the KeyView Filter SDK.  
 
-Below are links to lessons, which will take you through an introduction to KeyView Filter, exploration of advanced features, as well as ways to use KeyView Filter in your environment.
+Below are links to lessons, which will take you through an introduction to the KeyView Filter SDK, exploration of advanced features, as well as ways to use he KeyView Filter SDK in your environment.
 
 ---
 
@@ -15,20 +15,23 @@ Below are links to lessons, which will take you through an introduction to KeyVi
   - [Microsoft RMS Files](#microsoft-rms-files)
   - [Optical Character Recognition](#optical-character-recognition)
 - [Use the KeyView Filter SDK](#use-the-keyview-filter-sdk)
+  - [C API](#c-api)
+  - [Python API](#python-api)
+- [See also](#see-also)
 
 ---
 
 ## Introduction
 
-Build a firm foundation with KeyView Filter.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for extracting (filtering) text, metadata and sub-files from files.
+Build a firm foundation with the KeyView Filter SDK.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for extracting (filtering) text, metadata and sub-files from files.
 
 [Get started](./introduction.md).
 
 ## Capability showcase
 
-Do more with KeyView Filter.
+Do more with the KeyView Filter SDK.
 
-> NOTE: This guide assumes you have already completed the introductory KeyView Filter lesson above.
+> NOTE: This guide assumes you have already completed the introductory KeyView Filter SDK lesson above.
 
 ### Advanced Format Detection
 
@@ -70,10 +73,26 @@ Extract text from images.
 
 KeyView Filter is designed to be embedded into other services via an SDK.
 
+### C API
+
+The KeyView Filter SDK is designed to be embedded into other services.
+
 [Get started](./programming_c.md).
 
 [Advanced topics](./programming_c_advanced.md).
 
+###  Python API
+
+[Get started](./programming_python.md).
+
 ---
 
 Next, why not try more tutorials to explore some of the other features available in IDOL, linked from the [main](../README.md#capability-showcase-examples) page.
+
+## See also
+
+- KeyView Filter SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/c-programming/index.html)
+- KeyView Filter SDK [C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/cpp-programming/index.html)
+- KeyView Filter SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/java-programming/index.html)
+- KeyView Filter SDK [.NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/idol/Content/_KeyView.htm)

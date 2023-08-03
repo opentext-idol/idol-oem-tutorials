@@ -6,13 +6,13 @@ Edit tutorial.h to modify YOUR_LICENSE_KEY and YOUR_BIN_DIR.
 
 § Linking against KeyView Filter SDK
 
-Example compilation commands. Be sure you set KEYVIEW_HOME environment variable with the installation location (e.g. C:\OpenText\KeyviewFilterSDK-23.2.0):
+Example compilation commands. Be sure you set KEYVIEW_HOME environment variable with the installation location (e.g. C:\OpenText\KeyviewFilterSDK_23.3.0_WINDOWS_X86_64):
 
-    gcc -I$KEYVIEW_HOME/include -o tutorial_file tutorial_file.c -ldl $KEYVIEW_HOME/LINUX_X86_64/bin/kvfilter.so -Wl,-rpath,'$ORIGIN'
+    gcc -I$KEYVIEW_HOME/include -o tutorial_stream tutorial_stream.c -ldl $KEYVIEW_HOME/LINUX_X86_64/bin/kvfilter.so -Wl,-rpath,'$ORIGIN'
     
-    clang -I$KEYVIEW_HOME/include -o tutorial_file tutorial_file.c -ldl $KEYVIEW_HOME/MACOS_X86_64/bin/kvfilter.so -Wl,-rpath,@loader_path
+    clang -I$KEYVIEW_HOME/include -o tutorial_stream tutorial_stream.c -ldl $KEYVIEW_HOME/MACOS_X86_64/bin/kvfilter.so -Wl,-rpath,@loader_path
     
-    cl.exe /I%KEYVIEW_HOME%/include tutorial_file.c %KEYVIEW_HOME%/WINDOWS_X86_64/lib/kvfilter.lib
+    cl.exe /I%KEYVIEW_HOME%/include tutorial_stream.c %KEYVIEW_HOME%/WINDOWS_X86_64/lib/kvfilter.lib
 
 */
 
@@ -30,41 +30,7 @@ Example compilation commands. Be sure you set KEYVIEW_HOME environment variable 
 #include <sys/stat.h>
 #endif
 
-KVErrorCode recursivelyFilterFile(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, KVFilterSession session, const char* const pathToInputFile, const char* const pathToOutputFile);
-
-BOOL createSubdirForFile(const char* const pathToOutputFile, char* extractDir, int extractDirLen)
-{
-    if(strlen(pathToOutputFile) + 4 >= extractDirLen)
-    {
-        return FALSE;
-    }
-    
-    memset(extractDir, 0, extractDirLen);
-    strcat(extractDir, pathToOutputFile);
-    strcat(extractDir, ".dir");
-#ifdef WIN32
-    CreateDirectory(extractDir, NULL);
-#else
-    mkdir(extractDir, 0777);
-#endif
-
-    return TRUE;
-}
-
-BOOL createPathForFile(const char* extractDir, const char* fileName, char* outputFile, int outnameLen)
-{
-    if(strlen(extractDir) + strlen(fileName) + 5 >= outnameLen)
-    {
-        return FALSE;
-    }
-    memset(outputFile, 0, outnameLen);
-    strcat(outputFile, extractDir);
-    strcat(outputFile, "/");
-    strcat(outputFile, fileName);
-    strcat(outputFile, ".txt");
-    
-    return TRUE;
-}
+KVErrorCode recursivelyFilterStream(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, KVFilterSession session, KVInputStream* stream, void* fOut);
 
 struct tm* winFileTimeToUnixTime(int64_t winFileTime)
 {
@@ -79,19 +45,138 @@ struct tm* winFileTimeToUnixTime(int64_t winFileTime)
     return gmtime(&unixTime);
 }
 
-// § Filter a file
-KVErrorCode filterText(KVFltInterfaceEx* filter, KVDocument document, const char* const pathToOutputFile)
+// § Defining A Custom Stream 
+typedef struct
+{
+    const char* filename;
+    FILE* fp;
+    int openCount;
+} StreamInfo;
+
+BOOL pascal streamOpen(KVInputStream* stream)
+{
+    if(!stream || !stream->pInputStreamPrivateData)
+    { 
+        return FALSE;
+    }
+    StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
+    
+    //Open may be called more than once, and the subsequent calls should be a no-op
+    if (info->fp == NULL)
+    {
+        info->fp = fopen(info->filename, "rb");
+    }
+
+    if (info->fp)
+    {
+        fseek(info->fp, 0, SEEK_SET);
+        info->openCount++;
+    }
+
+    return info->fp != NULL;
+}
+
+UINT pascal streamRead(KVInputStream* stream, BYTE * buffer, UINT size)
+{
+    if(!stream || !stream->pInputStreamPrivateData)
+    { 
+        return 0;
+    }
+    StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
+    return fread(buffer, 1, size, info->fp);
+}
+
+BOOL pascal streamSeek (KVInputStream* stream, long offset, int whence)
+{
+    if(!stream || !stream->pInputStreamPrivateData)
+    { 
+        return FALSE;
+    }
+    StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
+
+    return fseek(info->fp, offset, whence) == 0;
+}
+
+long pascal streamTell(KVInputStream* stream)
+{
+    if(!stream || !stream->pInputStreamPrivateData)
+    { 
+        return FALSE;
+    }
+    StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
+
+    return ftell(info->fp);
+}
+
+BOOL pascal streamClose(KVInputStream* stream)
+{
+    if(!stream || !stream->pInputStreamPrivateData)
+    { 
+        return FALSE;
+    }
+    StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
+    int retval = 0;
+
+    if (info->openCount > 0)
+    {
+        --info->openCount;
+    }
+
+    if (info->openCount == 0)
+    {
+        retval = fclose(info->fp);
+        info->fp = NULL;
+    }
+    return retval == 0;
+}
+
+
+KVErrorCode filterText(KVFltInterfaceEx* filter, KVFilterSession session, KVDocument document, void* fOut)
 {
     // § Checking if a file is supported
     KVErrorCode error = filter->fpCanFilter(document);
     
-    if(error != KVError_Success)
+    if(error != KVERR_Success)
     {
         return error;
     }
     
-    // § Filtering a file
-    return filter->fpFilterToFile(document, pathToOutputFile);
+    // § Partial filtering
+    
+    uint64_t totalSize = 0;
+    
+    while(1)
+    {
+        KVFilterOutput output = {0};
+            
+        error = filter->fpFilter(document, &output);
+        
+        if(error != KVERR_Success)
+        {
+            return error;
+        }
+        
+        if(output.cbText == 0)
+        {
+            //An empty KVFilterOutput indicates the end of the stream,
+            //and does not need to be freed.
+            break;
+        }
+        
+        //In this tutorial, we don't use the size for anything.
+        //But this could be checked to stop processing after a certain limit, for example.
+        totalSize += output.cbText;
+
+        //In this tutorial, we're outputting to UTF-8, so we don't expect any embedded null bytes in strings.
+        //Other character sets may need different handling.
+        fprintf(fOut, "%.*s", output.cbText, output.pcText);
+
+        filter->fpFreeFilterOutput(session, &output);
+    }
+    
+    fprintf(fOut, "\n");
+
+    return KVERR_Success;
 }
 
 // § Interpretting a metadata element
@@ -164,7 +249,7 @@ void printMetadatum(void* fOut, const KVMetadataElement* element)
         {
             fprintf(fOut, "Invalid binary value");
         }
-        //In this tutorial, we convert to char* in case the binary data contains human-readable portions.
+        //Convert to char* in case the binary data contains human-readable portions.
         //Binary data may contain embedded null bytes, so use fwrite instead of fprintf.
         fprintf(fOut, "(Binary) \"");
         fwrite((char*)value.pucData, 1, value.cbSize, fOut);
@@ -201,7 +286,7 @@ void printMetadatum(void* fOut, const KVMetadataElement* element)
             }
             else
             {
-                //gmtime can't handle as large a range as WinFileTime,
+                //gmtime can't handle as big a range as WinFileTime,
                 //so fallback to printing the raw value
                 fprintf(fOut, ", SetDate=%lld00ns", *value.setDate);
             }
@@ -225,13 +310,13 @@ void printMetadatum(void* fOut, const KVMetadataElement* element)
 KVErrorCode iterateMetadata(const KVMetadataList* metadataList, void* fOut, const char* const title)
 {
     fprintf(fOut, "\n%s:\n", title);
-    int error = KVError_Success;
+    int error = KVERR_Success;
     while(1)
     {
         const KVMetadataElement* element = NULL;
         error = metadataList->fpGetNext(metadataList, &element);
 
-        if(error != KVError_Success)
+        if(error != KVERR_Success)
         {
             return error;
         }
@@ -250,34 +335,18 @@ KVErrorCode iterateMetadata(const KVMetadataList* metadataList, void* fOut, cons
     return error;
 }
 
-KVErrorCode outputMetadata(const KVMetadataList* metadataList, const char* const pathToOutputFile, const char* const title)
-{
-    void* fOut = fopen(pathToOutputFile, "a");
-
-    if(!fOut)
-    {
-        return KVError_ErrorWritingToOutputFile;
-    }
-
-    KVErrorCode error = iterateMetadata(metadataList, fOut, title);
-
-    fclose(fOut);
-
-    return error;
-}
-
 // § Getting the metadata list
-KVErrorCode retreiveMetadata(KVFltInterfaceEx* filter, KVDocument document, const char* const pathToOutputFile)
+KVErrorCode retreiveMetadata(KVFltInterfaceEx* filter, KVDocument document, void* fOut)
 {
     const KVMetadataList* metadataList = NULL;
     KVErrorCode error = filter->fpGetMetadataList(document, &metadataList);
 
-    if(error != KVError_Success)
+    if(error != KVERR_Success)
     {
         return error;
     }
 
-    error = outputMetadata(metadataList, pathToOutputFile, "Metadata");
+    error = iterateMetadata(metadataList, fOut, "Metadata");
 
     metadataList->fpFree(metadataList);
 
@@ -285,7 +354,7 @@ KVErrorCode retreiveMetadata(KVFltInterfaceEx* filter, KVDocument document, cons
 }
 
 // § Retrieving mail metadata
-KVErrorCode retreiveSubfileMetadata(KVExtractInterfaceRec* extract, void* fileSession, int index, const char* const outputFile)
+KVErrorCode retreiveSubfileMetadata(KVExtractInterfaceRec* extract, void* fileSession, int index, void* fOut)
 {
     const KVMetadataList* metadataList = NULL;
 
@@ -301,7 +370,7 @@ KVErrorCode retreiveSubfileMetadata(KVExtractInterfaceRec* extract, void* fileSe
         return error;
     }
 
-    error = outputMetadata(metadataList, outputFile, "Subfile metadata");
+    error = iterateMetadata(metadataList, fOut, "Subfile metadata");
 
     metadataList->fpFree(metadataList);
     
@@ -309,57 +378,48 @@ KVErrorCode retreiveSubfileMetadata(KVExtractInterfaceRec* extract, void* fileSe
 }
 
 // § Extracting sub files
-KVErrorCode filterSubfileAsFile(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, KVFilterSession session, void* fileSession, const char* const extractDir, int index, KVSubFileInfo subFileInfo)
+KVErrorCode filterSubfileAsStream(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, void* fileContext, KVFilterSession subSession, int index, void* fOut)
 {
-    //Extract the subfile to disk
+    // § Extracting sub files using streams
+    KVInputStream* substream = NULL;
+    
     KVExtractSubFileArgRec extractArg;
     KVStructInit(&extractArg);
     extractArg.index = index;
-    extractArg.filePath = subFileInfo->subFileName;
     extractArg.extractionFlag = 
         KVExtractionFlag_CreateDir | 
         KVExtractionFlag_Overwrite | 
         KVExtractionFlag_GetFormattedBody | 
         KVExtractionFlag_SanitizeAbsolutePaths;
-
-    KVSubFileExtractInfo extractInfo = NULL;
-    KVErrorCode error = extract->fpExtractSubFile(fileSession, &extractArg, &extractInfo);
-
-    if(error != KVError_Success)
+        
+    KVErrorCode error = extract->fpOpenSubFile(fileContext, &extractArg, &substream);
+    
+    if(error != KVERR_Success)
     {
         return error;
     }
     
-    //Work out the output file name for the subfile
-    char outputFile[1024];
-    if(createPathForFile(extractDir, extractInfo->fileName, outputFile, 1024))
-    {
-        //Send the subfile back to our top-level processing function.
-        //(Recursion is used here for simplicity. You may wish to consider using a queue structure in your actual application)
-        error = recursivelyFilterFile(filter, extract, session, extractInfo->filePath, outputFile);
-    }
-    else
-    {
-        error = KVError_CreateOutputFileFailed;
-    }
-
-    extract->fpFreeStruct(fileSession, extractInfo);
+    //Send the subfile back to our top-level processing function.
+    //(Recursion is used here for simplicity. You may wish to consider using a queue structure in your actual application)
+    error = recursivelyFilterStream(filter, extract, subSession, substream, fOut);
     
-    if(error != KVError_Success)
+    extract->fpCloseSubFile(substream);
+    
+    if(error != KVERR_Success)
     {
         return error;
     }
     
-    return retreiveSubfileMetadata(extract, fileSession, index, outputFile);
+    return retreiveSubfileMetadata(extract, fileContext, index, fOut);
 }
 
 // § Extracting sub files
-KVErrorCode filterSubfile(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, KVFilterSession session, void* fileSession, const char* const extractDir, int index)
+KVErrorCode filterSubfile(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, void* fileContext, KVFilterSession subSession, int index, void* fOut)
 {
     KVSubFileInfo subFileInfo = NULL;
-    KVErrorCode error = extract->fpGetSubFileInfo(fileSession, index, &subFileInfo);
+    KVErrorCode error = extract->fpGetSubFileInfo(fileContext, index, &subFileInfo);
 
-    if(error != KVError_Success)
+    if(error != KVERR_Success)
     {
         return error;
     }
@@ -367,97 +427,103 @@ KVErrorCode filterSubfile(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extra
     //Folders and external links don't contain any text, so no point processing them.
     if(subFileInfo->subFileType != KVSubFileType_Folder && !(subFileInfo->infoFlag & KVSubFileInfoFlag_External))
     {
-        error = filterSubfileAsFile(filter, extract, session, fileSession, extractDir, index, subFileInfo);
+        error = filterSubfileAsStream(filter, extract, fileContext, subSession, index, fOut);
     }
     
-    extract->fpFreeStruct(fileSession, subFileInfo);
+    extract->fpFreeStruct(fileContext, subFileInfo);
     
     return error;
 }
 
 // § Opening a container
-KVErrorCode filterOpenedContainer(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, KVFilterSession session, void* fileSession, const char* const extractDir)
+KVErrorCode filterOpenedContainer(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, void* fileContext, KVFilterSession subSession, void* fOut)
 {
     KVMainFileInfo fileInfo = NULL;
-    KVErrorCode error = extract->fpGetMainFileInfo(fileSession, &fileInfo);
+    KVErrorCode error = extract->fpGetMainFileInfo(fileContext, &fileInfo);
 
-    if(error != KVError_Success)
+    if(error != KVERR_Success)
     {
         return error;
     }
 
     for(int ii = 0; ii < fileInfo->numSubFiles; ++ii)
     {
-        error = filterSubfile(filter, extract, session, fileSession, extractDir, ii);
+        error = filterSubfile(filter, extract, fileContext, subSession, ii, fOut);
         
-        if(error != KVError_Success)
+        if(error != KVERR_Success)
         {
             printf("Subfile %d failed with error %d\n", ii, error);
         }
     }
     
-    extract->fpFreeStruct(fileSession, fileInfo);
+    extract->fpFreeStruct(fileContext, fileInfo);
     
-    return KVError_Success;
+    return KVERR_Success;
 }
-
 // § Extracting sub files
-KVErrorCode filterContainerSubfiles(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, KVFilterSession session, KVDocument document, const char* const pathToOutputFile)
+KVErrorCode filterContainerSubfiles(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, 
+KVFilterSession session, KVDocument document, void* fOut)
 {
-    char extractDir[1024];
+    // § Extracting sub files using streams
     
-    if(!createSubdirForFile(pathToOutputFile, extractDir, 1024))
+    //Subfiles as streams must be opened with a different session to the main file,
+    //but it can be shared between subfiles, so create one here that all the subfiles will use.
+    KVFilterSession subSession = NULL;
+    
+    KVFilterInitOptions options;
+    KVStructInit(&options);
+    options.outputCharSet = KVCS_UTF8;
+    
+    KVErrorCode error = filter->fpInit(
+        YOUR_BIN_DIR,
+        YOUR_LICENSE_KEY,
+        &options,
+        &subSession);
+        
+    if(error != KVERR_Success)
     {
-        printf("Could not create extract dir\n");
-        return KVError_CreateOutputFileFailed;
+         return error; 
     }
     
-    // § Opening a container
-    KVOpenFileArgRec openArg;
+    KVOpenFileArgRec        openArg;
     KVStructInit(&openArg);
-    openArg.extractDir = extractDir;
     openArg.document = document;
 
-    void* fileSession = NULL;
-    KVErrorCode error = extract->fpOpenFileFromFilterSession(session, &openArg, &fileSession);
-
-    if(error != KVError_Success)
+    void* fileContext = NULL;
+    error = extract->fpOpenFile(session, &openArg, &fileContext);
+    
+    if(error == KVERR_Success)
     {
-        return error;
+        //Recursively filter subfiles
+        error = filterOpenedContainer(filter, extract, fileContext, subSession, fOut);
+        extract->fpCloseFile(fileContext);
     }
-    
-    //Extract each subfile and filter it.
-    error = filterOpenedContainer(filter, extract, session, fileSession, extractDir);
-    
-    extract->fpCloseFile(fileSession);
+
+    filter->fpShutdown(subSession);
 
     return error;
 }
 
-
-KVErrorCode recursivelyFilterFile(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, KVFilterSession session, const char* const pathToInputFile, const char* const pathToOutputFile)
+KVErrorCode recursivelyFilterStream(KVFltInterfaceEx* filter, KVExtractInterfaceRec* extract, KVFilterSession session, KVInputStream* stream, void* fOut)
 {
-    // § Opening a document
     KVDocument document = NULL;
+    KVErrorCode error = filter->fpOpenDocumentFromStream(session, stream, &document);
     
-    KVErrorCode error = filter->fpOpenDocumentFromFile(session, pathToInputFile, &document);
-    
-    if(error != KVError_Success)
+    if(error != KVERR_Success)
     {
         return error;
     }
     
     //Filter the text from the current file
-    KVErrorCode filterError = filterText(filter, document, pathToOutputFile);
+    KVErrorCode filterError = filterText(filter, session, document, fOut);
     
     //Output metadata from the current file
-    KVErrorCode metadataError = retreiveMetadata(filter, document, pathToOutputFile);
+    KVErrorCode metadataError = retreiveMetadata(filter, document, fOut);
     
     //Extract each subfiles, and recursively process each one.
-    KVErrorCode extractError = filterContainerSubfiles(filter, extract, session, document, pathToOutputFile);
+    KVErrorCode extractError = filterContainerSubfiles(filter, extract, session, document, fOut);
     
     filter->fpCloseDocument(document);
-    
     
     //For simplicity in the tutorial, we return success if any KeyView functionality succeeded.
     //You may wish to handle errors differently in your application.
@@ -477,12 +543,12 @@ KVErrorCode setupFilterSession(KVFltInterfaceEx* filter, KVExtractInterfaceRec* 
     // § Loading the Filter interface
     KVErrorCode error = KV_GetFilterInterfaceEx(filter, KVFLTINTERFACE_REVISION);
 
-    if(error != KVError_Success)
+    if(error != KVERR_Success)
     {
         return error;
     }
 
-    // § Creating a Filter session
+    // § Creating a Filter context
     KVFilterInitOptions options;
     KVStructInit(&options);
     options.outputCharSet = KVCS_UTF8;
@@ -493,16 +559,16 @@ KVErrorCode setupFilterSession(KVFltInterfaceEx* filter, KVExtractInterfaceRec* 
         &options,
         pSession);
         
-    if(error != KVError_Success)
+    if(error != KVERR_Success)
     {
          return error; 
     }
     
     // § Loading the Extract interface
     KVStructInit(extract);
-    error = filter->fpGetExtractInterface(*pSession, extract);
+    error = KVGetExtractInterface(*pSession, extract);
 
-    if(error != KVError_Success)
+    if(error != KVERR_Success)
     {
         return error;
     }
@@ -510,7 +576,7 @@ KVErrorCode setupFilterSession(KVFltInterfaceEx* filter, KVExtractInterfaceRec* 
     // § Filtering hidden information
     error = filter->fpSetConfig(*pSession, KVFLT_SHOWHIDDENTEXT, TRUE, NULL);
     
-    if(error != KVError_Success)
+    if(error != KVERR_Success)
     {
         return error;
     }
@@ -518,26 +584,44 @@ KVErrorCode setupFilterSession(KVFltInterfaceEx* filter, KVExtractInterfaceRec* 
     // § Extracting sub files
     error = filter->fpSetConfig(*pSession, KVFLT_EXTRACTIMAGES, TRUE, NULL);
     
-    if(error != KVError_Success)
+    if(error != KVERR_Success)
     {
         return error;
     }
     
-    return KVError_Success;
+    return KVERR_Success;
 }
 
 // § API Setup
 KVErrorCode filterTutorial(const char* const pathToInputFile, const char* const pathToOutputFile)
 {
+    // § Defining a custom stream
+    StreamInfo info = {pathToInputFile, NULL, 0};
+    KVInputStream stream;
+    stream.pInputStreamPrivateData = &info;
+    stream.lcbFilesize = 0;
+    stream.fpOpen = streamOpen;
+    stream.fpRead = streamRead;
+    stream.fpSeek = streamSeek;
+    stream.fpTell = streamTell;
+    stream.fpClose = streamClose;
+    
+    void* fOut = fopen(pathToOutputFile, "w");
+    
+    if(!fOut)
+    {
+        return KVERR_ErrorWritingToOutputFile;
+    }
+    
     KVFltInterfaceEx filter = {0};
     KVExtractInterfaceRec extract = {0};
     KVFilterSession session = NULL;
 
     KVErrorCode error = setupFilterSession(&filter, &extract, &session);
     
-    if(error == KVError_Success)
+    if(error == KVERR_Success)
     {
-        error = recursivelyFilterFile(&filter, &extract, session, pathToInputFile, pathToOutputFile);
+        error = recursivelyFilterStream(&filter, &extract, session, &stream, fOut);
     }
 
     if(filter.fpShutdown)
@@ -553,20 +637,20 @@ int main (int argc, char *argv[])
 {
     if(argc != 3 || !argv[1] || !argv[2])
     {
-        printf("Usage: tutorial_file pathToInput pathToOutput\n");
+        printf("Usage: tutorial_stream pathToInput pathToOutput\n");
         printf("Must be run from the KeyView Filter bin directory\n");
-        return KVError_General;
+        return KVERR_General;
     }
     
     const char* const pathToInputFile = argv[1];
     const char* const pathToOutputFile = argv[2];
     
-    printf("tutorial_file: sample program - not for production use\n\n");
+    printf("tutorial_stream: sample program - not for production use\n\n");
     printf("Filtering %s to %s\n", pathToInputFile, pathToOutputFile);
     
-    int returnValue = filterTutorial(pathToInputFile, pathToOutputFile);
+    KVErrorCode error = filterTutorial(pathToInputFile, pathToOutputFile);
 
-    printf("Return code %d\n", returnValue);
+    printf("Return code %d\n", error);
     
-    return returnValue;
+    return error;
 }

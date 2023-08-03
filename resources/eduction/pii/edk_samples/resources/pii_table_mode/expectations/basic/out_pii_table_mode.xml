@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="pii/id/landmark/us" TableNumber="0" TableRow="0" TableColumn="1" Offset="8" OffsetLength="8" Score="1" NormalizedTextSize="3" NormalizedTextLength="3" OriginalTextSize="3" OriginalTextLength="3">
+      <ORIGINAL_TEXT>SSN</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>SSN</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/date/dob/landmark/eng" TableNumber="0" TableRow="0" TableColumn="2" Offset="14" OffsetLength="14" Score="1" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="13" OriginalTextLength="13">
+      <ORIGINAL_TEXT>Date of Birth</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>Date of Birth</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="0" TableRow="1" TableColumn="1" Offset="60" OffsetLength="60" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>341-34-1593</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>341-34-1593</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="1" TableColumn="2" Offset="74" OffsetLength="74" Score="0.44" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>01/01/1955</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>01/01/1955</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DAY" Text="01" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="MONTH" Text="01" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="1955" Offset="6" OffsetLength="6" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="0" TableRow="2" TableColumn="1" Offset="111" OffsetLength="111" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>454-23-7653</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>454-23-7653</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="2" TableColumn="2" Offset="125" OffsetLength="125" Score="0.44" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>10/01/1976</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>10/01/1976</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DAY" Text="10" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="MONTH" Text="01" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="1976" Offset="6" OffsetLength="6" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="pii/id/landmark/us" TableNumber="0" TableRow="0" TableColumn="1" Offset="24" OffsetLength="24" Score="1" NormalizedTextSize="3" NormalizedTextLength="3" OriginalTextSize="3" OriginalTextLength="3">
+      <ORIGINAL_TEXT>SSN</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>SSN</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/date/dob/landmark/eng" TableNumber="0" TableRow="0" TableColumn="2" Offset="28" OffsetLength="28" Score="1" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="13" OriginalTextLength="13">
+      <ORIGINAL_TEXT>Date of Birth</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>Date of Birth</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="0" TableRow="1" TableColumn="1" Offset="69" OffsetLength="69" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>341-34-1593</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>341-34-1593</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="1" TableColumn="2" Offset="81" OffsetLength="81" Score="0.44" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="8" OriginalTextLength="8">
+      <ORIGINAL_TEXT>1/1/1955</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>1/1/1955</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DAY" Text="1" Offset="0" OffsetLength="0" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="MONTH" Text="1" Offset="2" OffsetLength="2" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="YEAR" Text="1955" Offset="4" OffsetLength="4" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="0" TableRow="2" TableColumn="1" Offset="109" OffsetLength="109" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>454-23-7653</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>454-23-7653</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="2" TableColumn="2" Offset="121" OffsetLength="121" Score="0.44" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>10/1/1976</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>10/1/1976</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DAY" Text="10" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="MONTH" Text="1" Offset="3" OffsetLength="3" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="YEAR" Text="1976" Offset="5" OffsetLength="5" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="3" TableColumn="2" Offset="165" OffsetLength="165" Score="0.428" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>10/22/2021</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>10/22/2021</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="10" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="DAY" Text="22" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="2021" Offset="6" OffsetLength="6" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="4" TableColumn="2" Offset="199" OffsetLength="199" Score="0.428" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>6/30/2022</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>6/30/2022</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="6" Offset="0" OffsetLength="0" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="DAY" Text="30" Offset="2" OffsetLength="2" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="2022" Offset="5" OffsetLength="5" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="0" TableRow="8" TableColumn="1" Offset="333" OffsetLength="333" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>454-23-7654</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>454-23-7654</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="8" TableColumn="2" Offset="345" OffsetLength="345" Score="0.44" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>10/1/1971</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>10/1/1971</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DAY" Text="10" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="MONTH" Text="1" Offset="3" OffsetLength="3" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="YEAR" Text="1971" Offset="5" OffsetLength="5" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="0" TableRow="9" TableColumn="1" Offset="370" OffsetLength="370" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>223-11-4854</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>223-11-4854</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="9" TableColumn="2" Offset="382" OffsetLength="382" Score="0.428" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>6/22/1971</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>6/22/1971</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="6" Offset="0" OffsetLength="0" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="DAY" Text="22" Offset="2" OffsetLength="2" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="1971" Offset="5" OffsetLength="5" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="10" TableColumn="2" Offset="419" OffsetLength="419" Score="0.428" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>3/14/1971</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>3/14/1971</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="3" Offset="0" OffsetLength="0" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="DAY" Text="14" Offset="2" OffsetLength="2" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="1971" Offset="5" OffsetLength="5" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="0" TableRow="14" TableColumn="1" Offset="530" OffsetLength="530" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>341-34-1592</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>341-34-1592</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="14" TableColumn="2" Offset="542" OffsetLength="542" Score="0.44" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="8" OriginalTextLength="8">
+      <ORIGINAL_TEXT>1/1/1954</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>1/1/1954</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DAY" Text="1" Offset="0" OffsetLength="0" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="MONTH" Text="1" Offset="2" OffsetLength="2" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="YEAR" Text="1954" Offset="4" OffsetLength="4" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="0" TableRow="15" TableColumn="1" Offset="567" OffsetLength="567" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>454-23-7652</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>454-23-7652</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="15" TableColumn="2" Offset="579" OffsetLength="579" Score="0.44" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>10/1/1975</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>10/1/1975</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DAY" Text="10" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="MONTH" Text="1" Offset="3" OffsetLength="3" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="YEAR" Text="1975" Offset="5" OffsetLength="5" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="16" TableColumn="2" Offset="623" OffsetLength="623" Score="0.428" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>10/22/2021</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>10/22/2021</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="10" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="DAY" Text="22" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="2021" Offset="6" OffsetLength="6" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" TableNumber="0" TableRow="17" TableColumn="2" Offset="653" OffsetLength="653" Score="0.428" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>6/30/2022</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>6/30/2022</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MONTH" Text="6" Offset="0" OffsetLength="0" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="DAY" Text="30" Offset="2" OffsetLength="2" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="2022" Offset="5" OffsetLength="5" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>

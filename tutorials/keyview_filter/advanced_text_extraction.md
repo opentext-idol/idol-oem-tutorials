@@ -48,7 +48,7 @@ Word processing, spreadsheet, presentation and some other file formats optionall
 Let's run text extraction on the same file `2022_calendar_HIDDEN_TEXT.docx` without and with header/footer mode enabled.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_23.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter "..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx" text_no_hf.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_hf.txt
@@ -75,7 +75,7 @@ Hidden text may be in the form of comments, revision history, slide master conte
 Word processing and some other file formats allow for users to track revision history.  This markup is usually hidden, but can of interest for many user cases of KeyView Filter SDK.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_23.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -rm "..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx" text_revison_marks.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revison_marks.txt
@@ -93,7 +93,7 @@ Try `filter` to extract hidden text with your own test files. Good luck!
 Your use case for KeyView FilterSDK may not benefit from including comments.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_23.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -nc "..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx" text_no_comments.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_comments.txt
@@ -109,7 +109,7 @@ Compare `text_no_comments.txt` and `text_no_hf.txt`.  You will see that the comm
 Presentation formats like PowerPoint have the concept of slide masters where some slide master content is only visible when you're editing the slider masters.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_23.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter  "..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx" text_no_slidemaster.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_no_slidemaster.txt
@@ -129,7 +129,7 @@ A lot of additional output is included in `text_slidemaster.txt`.  It's the text
 
 With some file formats, for example Microsoft PowerPoint presentations, the order of the text inside the file has no relation to the layout of the text on the page or screen. Recently modified text might appear at the end of a file, even though that text belongs at the beginning of the document.
 
-Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/Content/filter_shared/Presentation_LogicalOrder.htm) for more details about KeyView's support for preserving logical reading order.
+Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/c-programming/Content/filter_shared/Presentation_LogicalOrder.htm) for more details about KeyView's support for preserving logical reading order.
 
 ### Perform logical order preservation
 
@@ -182,12 +182,12 @@ Leverage `filter` as you've explored in this lesson to extract text from these a
 
 There are multiple types of text that a given file format may contain. KeyView Filter SDK strives to extract as much information as is possible from file formats.
 
-Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-sdk-showcase).
+Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-showcase).
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/KeyviewFilterSDK_23.2_Documentation/Guides/html/dotnet-programming/index.html)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/_KeyView.htm)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/c-programming/)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/cpp-programming/)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/java-programming/)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/dotnet-programming/)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/oem/Content/_KeyView.htm)

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="pii/date/nocontext/eng" Offset="74" OffsetLength="74" Score="0.44" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>01/01/1955</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>1955-01-01</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DAY" Text="01" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="MONTH" Text="01" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="1955" Offset="6" OffsetLength="6" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" Offset="87" OffsetLength="87" Score="0.44" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>01/01/2020</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>2020-01-01</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DAY" Text="01" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="MONTH" Text="01" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="2020" Offset="6" OffsetLength="6" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" Offset="125" OffsetLength="125" Score="0.44" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>10/01/1976</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>1976-01-10</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DAY" Text="10" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="MONTH" Text="01" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="1976" Offset="6" OffsetLength="6" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/date/nocontext/eng" Offset="138" OffsetLength="138" Score="0.44" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>11/11/2019</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>2019-11-11</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DAY" Text="11" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="MONTH" Text="11" Offset="3" OffsetLength="3" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="YEAR" Text="2019" Offset="6" OffsetLength="6" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>

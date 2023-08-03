@@ -27,7 +27,7 @@ The various scripts in the `scripts` directory, provide examples, some of which 
 
 Follow the setup steps in the [ACI API introduction lesson](../../../tutorials/aci_api/introduction.md#install-idol-components) to:
 
-- Extract the C SDK package (`IDOLCSDK_23.2.0_WINDOWS_X86_64.zip`), and
+- Extract the C SDK package (`IDOLCSDK_23.3.0_WINDOWS_X86_64.zip`), and
 - Install an IDOL ACI Server (for us to communicate with) and run it in OEM mode. 
 
     > NOTE: Below, we assume you have Eduction Server running.
@@ -43,7 +43,7 @@ pip install python-dotenv
 In the `lib` sub-directory of this Python package, please find and open the `.env` file and ensure that the `ACI_LIB_PATH` environment variable points to your C SDK directory, *e.g.*:
 
 ```ini
-ACI_LIB_PATH="C:\\OpenText\\IDOLCSDK_23.2.0_WINDOWS_X86_64"
+ACI_LIB_PATH="C:\\OpenText\\IDOLCSDK_23.3.0_WINDOWS_X86_64"
 ```
 
 > NOTE: this directory contains the two required files: `client.h` and `aciclient.dll`.
@@ -93,7 +93,7 @@ Now, you're ready to run your client:
 ```sh
 > cd resources\aci_api\Python\scripts
 > python get_version_oem.py
-Eduction Server v23.2.0
+Eduction Server v23.3.0
 ```
 
 ## Response formats
@@ -107,7 +107,7 @@ If you uncomment line 14 (as follows) and re-run the script you will see the res
 
 As an extra exercise, why not modify the Python code to capture other properties from the response XML?
 
-You can optionally configure a response in alternative formats including JSON.  See the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionServer_23.2_Documentation/Help/Content/Actions/SharedParameters/_ACI_ResponseFormat.htm) for more details.
+You can optionally configure a response in alternative formats including JSON.  See the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionServer_23.3_Documentation/Help/Content/Actions/SharedParameters/_ACI_ResponseFormat.htm) for more details.
 
 Next, let's run the included `get_version_oem_json.py` script, which adds an additional option to specify the response format:
 
@@ -121,7 +121,7 @@ Run this command to see the same output as before:
 
 ```sh
 > python get_version_oem_json.py
-Eduction Server v23.2.0
+Eduction Server v23.3.0
 ```
 
 Notice that this second script is obtaining these values now from response JSON, as follows:
@@ -139,5 +139,5 @@ Next, why not explore some of the other methods for interacting with ACI Servers
 
 ## See also
 
-- ACI API Programming Guide: [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLJavaSDK_23.2_Documentation/Guides/html/Content/C/c_part.htm)
-- IDOL Release Notes: [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/SDKs/IDOL-C.htm)
+- ACI API Programming Guide: [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLJavaSDK_23.3_Documentation/Guides/html/Content/C/c_part.htm)
+- IDOL Release Notes: [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/idol/Content/SDKs/IDOL-C.htm)

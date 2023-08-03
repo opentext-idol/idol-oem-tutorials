@@ -40,10 +40,10 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
     ![get-software](../../figs/get-software.png)
 
 1. From the list of available files, select and download the following (depending on your platform):
-   -  `IDOLCSDK_23.2.0_{PLATFORM}`, *e.g.* `IDOLCSDK_23.2.0_WINDOWS_X86_64.zip`,
-   -  `EductionServer_23.2.0_{PLATFORM}`, *e.g.* `EductionServer_23.2.0_WINDOWS_X86_64.zip`,
-   -  `EductionGrammars_23.2.0_COMMON.zip` (if you don't already have a copy from the introductory tutorial), and
-   -  `Versionkey_23.2.0_COMMON.zip`.
+   -  `IDOLCSDK_23.3.0_{PLATFORM}`, *e.g.* `IDOLCSDK_23.3.0_WINDOWS_X86_64.zip`,
+   -  `EductionServer_23.3.0_{PLATFORM}`, *e.g.* `EductionServer_23.3.0_WINDOWS_X86_64.zip`,
+   -  `EductionGrammars_23.3.0_COMMON.zip` (if you don't already have a copy from the introductory tutorial), and
+   -  `Versionkey_23.3.0_COMMON.zip`.
 
     > NOTE: you should have already downloaded the C API package while following the ACI API introductory [tutorial](../aci_api/introduction.md#download-idol-components).
 
@@ -51,15 +51,15 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
 
 1. Copy your downloaded files into a new working folder.  The follow guide assumes this is `C:\OpenText` on Windows.
 1. Extract the `.zip` files to give you:
-   - `C:\OpenText\IDOLCSDK_23.2.0_WINDOWS_X86_64`,
-   - `C:\OpenText\EductionServer_23.2.0_WINDOWS_X86_64`, and
-   - `C:\OpenText\EductionGrammars_23.2.0_COMMON`
+   - `C:\OpenText\IDOLCSDK_23.3.0_WINDOWS_X86_64`,
+   - `C:\OpenText\EductionServer_23.3.0_WINDOWS_X86_64`, and
+   - `C:\OpenText\EductionGrammars_23.3.0_COMMON`
   
-1. Copy your OEM license key `.dat` file into `C:\OpenText\EductionServer_23.2.0_WINDOWS_X86_64` and rename it to `licensekey.dat`.
+1. Copy your OEM license key `.dat` file into `C:\OpenText\EductionServer_23.3.0_WINDOWS_X86_64` and rename it to `licensekey.dat`.
    
     > NOTE: obtain this key as described in ACI API introductory [tutorial](../aci_api/introduction.md#obtain-an-oem-license-key).
 
-1. Extract the file `versionkey.dat` from `Versionkey_23.2.0_COMMON.zip`, then copy that file into `C:\OpenText\EductionServer_23.2.0_WINDOWS_X86_64` as described in the [IDOL Release Notes - Licensing](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLReleaseNotes_23.2_Documentation/idol/Content/Upgrade/Licenses.htm).
+1. Extract the file `versionkey.dat` from `Versionkey_23.3.0_COMMON.zip`, then copy that file into `C:\OpenText\EductionServer_23.3.0_WINDOWS_X86_64` as described in the [IDOL Release Notes - Licensing](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/idol/Content/Upgrade/Licenses.htm).
 
 1. On Windows, you may need to install the included Visual C++ Redistributable package.  In the same Eduction Server folder, right-click on `vcredist_2017.exe` then select 'Run as administrator'.
    
@@ -67,11 +67,11 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
 
 ## IDOL ACI Servers
 
-All IDOL ACI servers include, *e.g.* under the directory: `C:\OpenText\EductionServer_23.2.0_WINDOWS_X86_64`:
+All IDOL ACI servers include, *e.g.* under the directory: `C:\OpenText\EductionServer_23.3.0_WINDOWS_X86_64`:
 - an executable, *e.g.* `eductionserver.exe`, and
 - a primary configuration file, *e.g.* `eductionserver.cfg`.
 
-An ACI server can be launched by running the executable or by configuring a service on [Windows](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLServer_23.2_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_WindowsServices.htm) or on [Linux](https://www.microfocus.com/documentation/idol/IDOL_23_2/IDOLServer_23.2_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_LinuxStartup.htm).
+An ACI server can be launched by running the executable or by configuring a service on [Windows](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLServer_23.3_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_WindowsServices.htm) or on [Linux](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLServer_23.3_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_LinuxStartup.htm).
 
 Where you have an OEM license key, the ACI server looks on startup for a `licensekey.dat` file in the same directory as the executable.
 
@@ -79,7 +79,7 @@ Where you have an OEM license key, the ACI server looks on startup for a `licens
 
 ## Configuring Eduction Grammars
 
-As will now be familiar, Eduction grammars are supplied separately in the `EductionGrammars_23.2.0_COMMON.zip` container. 
+As will now be familiar, Eduction grammars are supplied separately in the `EductionGrammars_23.3.0_COMMON.zip` container. 
 
 Edit the `eductionserver.cfg` as follows:
 ```diff
@@ -171,15 +171,16 @@ offset,match,score
 64,chris.blanks@opentext.com,1.0
 ```
 
-For more details on running the "EduceFromText" action and its optional parameters, please read the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionServer_23.2_Documentation/Help/Content/Actions/Eduction/EduceFromText.htm).
+For more details on running the "EduceFromText" action and its optional parameters, please read the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionServer_23.3_Documentation/Help/Content/Actions/Eduction/EduceFromText.htm).
 
 ## Conclusion
 
 You now understand how to license and run Eduction Server in an OEM deployment to receive ACI-encrypted requests from an ACI client to perform Eduction from sample text.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](./README.md) page.
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](../README.md#idol-eduction-showcase) page.
 
 ## See also
 
-- [IDOL Eduction (Server) User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionServer_23.2_Documentation/Guides/html/)
-- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html)
+- [IDOL Eduction (Server) User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionServer_23.3_Documentation/Help/Content/_ACI_Welcome.htm)
+- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionSDK_23.3_Documentation/Guides/html)
+- [IDOL Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/idol/Content/SDKs/Eduction.htm)

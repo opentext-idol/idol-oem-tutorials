@@ -35,7 +35,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PII address sample](../../resources/eduction/pii/edk_samples/resources/pii_address) and install to `C:\OpenText\EductionGrammars_23.2.0_COMMON\pii\edk_samples\resources\pii_address`
+- [PII address sample](../../resources/eduction/pii/edk_samples/resources/pii_address) and install to `C:\OpenText\EductionGrammars_23.3.0_COMMON\pii\edk_samples\resources\pii_address`
   
 ## What's in the box?
 
@@ -43,9 +43,9 @@ The IDOL PII Package includes IDOL Eduction Grammar files, pre-filters, postproc
 
 ### Available grammar files
 
-To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_23.2.0_COMMON\pii`.  The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pii_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
+To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_23.3.0_COMMON\pii`.  The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pii_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
 
-As of 23.2.0 release, address detection is supported for 48 countries:
+As of 23.3.0 release, address detection is supported for 46 countries:
 
 ![address_grammars](./figs/address_grammars.png)
 
@@ -66,12 +66,12 @@ In the above screenshots, note the multiple rows defining address entity support
 
 The naming structure can be explained with a few examples:
 
-1. `pii/address/*` (where `*` can be replaced by an [ISO 3166-1 alpha-2 country code](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionGrammars_23.2_Documentation/PII/#CountryLanguage.htm)) - match full and/or partial postal addresses.
+1. `pii/address/*` (where `*` can be replaced by an [ISO 3166-1 alpha-2 country code](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionGrammars_23.3_Documentation/PII/#CountryLanguage.htm)) - match full and/or partial postal addresses.
 2. `pii/address/postcode/context/*` - match only a postal code (ZIP code) with context, *e.g.* to find a UK postcode in the text "Postcode: CB4 0WZ".
 3. `pii/address/postcode/nocontext/*` - match a postal code without context, *e.g.* to find an Irish postcode in the text "W1B 5TG".
 4. `pii/address/postcode/landmark/*` - match term or terms used to give context for a postal code, *e.g.* the word "Postcode" itself.
 
-For full details of the entities included in the PII Grammar Package, please reference the [PII Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionGrammars_23.2_Documentation/PII/#PII/PII_GrammarReference.htm).
+For full details of the entities included in the PII Grammar Package, please reference the [PII Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionGrammars_23.3_Documentation/PII/#PII/PII_GrammarReference.htm).
 
 > NOTE: The IDOL PII Package is backwards-compatible with the IDOL GDPR package. You can continue to use, *e.g.* the entity named `gdpr/address/at` in existing configurations, which is similar to the latest `pii/address/at` entity.
 
@@ -86,8 +86,8 @@ Let's try this out now to see what information is returned from a match postal a
 Run the following commands to see the output:
 
 ```sh
-cd C:\OpenText\EductionGrammars_23.2.0_COMMON\pii\edk_samples\resources
-edktool extract -l ..\..\..\..\EductionSDK_23.2.0_WINDOWS_X86_64\licensekey.dat -c pii_address\config\address.cfg -i pii_address\input\input.txt
+cd C:\OpenText\EductionGrammars_23.3.0_COMMON\pii\edk_samples\resources
+edktool extract -l ..\..\..\..\EductionSDK_23.3.0_WINDOWS_X86_64\licensekey.dat -c pii_address\config\address.cfg -i pii_address\input\input.txt
 ```
 
 The resulting match is found in the line "John Smith lives at 742 Evergreen Terrace, Cambridge CB4 0WZ, United Kingdom.":
@@ -112,6 +112,8 @@ The resulting match is found in the line "John Smith lives at 742 Evergreen Terr
 ```
 
 > NOTE: This match is found with a score of `1` (on a scale of `0` to `1`) due to the presence of all expected parts of an address in the United Kingdom. The match also includes sub-fields detailing each component of the address and normalized output.
+
+> NOTE: The overall processing time includes both the Eduction engine initialization time and input file processing time.  It's recommended and typical to persist the Eduction engine across documents so as incur engine initialization time once.
 
 We could also choose to look only for a post code, as discussed above.  To do so, make the following edit to `pii\edk_samples\resources\test\config\address.cfg`, then re-run.
 
@@ -142,8 +144,8 @@ Finally, we can also look for the post code without context.  To do so, make the
 
 ```diff
 [Eduction]
-- Entity0 = pii/address/postcode/context/all
-+ Entity0 = pii/address/postcode/nocontext/all
+- Entity0 = pii/address/postcode/context/gb
++ Entity0 = pii/address/postcode/nocontext/gb
 ```
 
 The results now show two matches from both lines quoted above where a post code is given:
@@ -183,7 +185,7 @@ You should already be familiar with how to run post-processing tasks with Lua sc
 
 Sticking to our current example of postal addresses, take a look at the included `address_stoplist.lua` script, which includes country-specific logic to update scores and address components.  For reference, `address_stoplist.lua` (and the many other helper PII scripts) are automatically invoked by `pii_postprocessing.lua`.
 
-For more details on Lua post-processing, please reference [Eduction User & Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html/#UseEduction/PostProcessing/LuaPostProcessing.htm).
+For more details on Lua post-processing, please reference [Eduction User & Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionSDK_23.3_Documentation/Guides/html/#UseEduction/PostProcessing/LuaPostProcessing.htm).
 
 ### Speed optimizations
 
@@ -217,7 +219,7 @@ For addresses, the PII package includes much more sophisticated pre-filtering sc
 - `address_cjkvt_prefilter.cfg`, and
 - `address_fast_prefilter.cfg`.
 
-For more details on pre-filtering, please reference [Eduction User and Programming Guide - Pre-Filter Tasks](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html/#UseEduction/PreFiltering/Introduction.htm).
+For more details on pre-filtering, please reference [Eduction User and Programming Guide - Pre-Filter Tasks](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionSDK_23.3_Documentation/Guides/html/#UseEduction/PreFiltering/Introduction.htm).
 
 ## Conclusion
 
@@ -227,5 +229,6 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [IDOL PII Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionGrammars_23.2_Documentation/PII/)
-- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_2/EductionSDK_23.2_Documentation/Guides/html)
+- [IDOL PII Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionGrammars_23.3_Documentation/PII/)
+- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/EductionSDK_23.3_Documentation/Guides/html)
+- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/oem/Content/SDKs/Eduction.htm)

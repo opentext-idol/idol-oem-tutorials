@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="pii/address/postcode/nocontext/gb" Offset="53" OffsetLength="53" Score="1" NormalizedTextSize="6" NormalizedTextLength="6" OriginalTextSize="7" OriginalTextLength="7">
+      <ORIGINAL_TEXT>CB4 0WZ</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>CB40WZ</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="POSTCODE" Text="CB40WZ" Offset="0" OffsetLength="0" TextSize="6" TextLength="6"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pii/address/postcode/nocontext/gb" Offset="352" OffsetLength="352" Score="1" NormalizedTextSize="6" NormalizedTextLength="6" OriginalTextSize="7" OriginalTextLength="7">
+      <ORIGINAL_TEXT>CB4 0WZ</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>CB40WZ</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="POSTCODE" Text="CB40WZ" Offset="0" OffsetLength="0" TextSize="6" TextLength="6"/>
+      </COMPONENTS>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>
