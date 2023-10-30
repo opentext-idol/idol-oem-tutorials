@@ -2,7 +2,7 @@
 
 This track of the IDOL OEM tutorials is focussed on IDOL's ACI API.  
 
-Below are links to lessons, which will take you through an introduction to the ACI API, exploration of advanced features, as well as ways to use IDOL Eduction in your environment.
+Below are links to lessons, which will take you through an introduction to the ACI API, exploration of advanced features, as well as example usage of the API to control various IDOL services.
 
 ---
 
@@ -15,7 +15,7 @@ Below are links to lessons, which will take you through an introduction to the A
 
 ## Introduction
 
-The IDOL (Intelligent Data Operating Layer) platform includes a suite of components (services), which can be used in combination or alone to perform hundreds of useful functions, including the Eduction and KeyView filtering that you have become familiar with in previous lessons.
+The IDOL (Intelligent Data Operating Layer) platform includes a suite of components (services), which can be used in combination or alone to perform hundreds of useful functions, including the Eduction and KeyView filtering that you have become familiar with across previous lessons.
 
 Each IDOL service supports a REST-style API, called the ACI (Autonomy Content Infrastructure) Client API, which allows client applications to perform the following, but not limited to, types of functions:
 

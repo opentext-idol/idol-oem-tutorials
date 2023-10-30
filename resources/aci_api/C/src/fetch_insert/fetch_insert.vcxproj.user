@@ -3,11 +3,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LocalDebuggerCommandArguments>localhost 7000 MyTask ..\..\..\resources\insertXML.xml</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_23.3.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_23.4.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LocalDebuggerCommandArguments>localhost 7000 MyTask ..\..\..\resources\insertXML.xml</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_23.3.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_23.4.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>

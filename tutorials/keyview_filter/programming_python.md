@@ -66,7 +66,7 @@ Both of the sample programs provided in this tutorial's resources require you to
 
 ### Configure paths
 
-The `keyview.FilterSession()` method requires knowledge of the KeyView bin folder (e.g. `C:\OpenText\KeyViewFilterSDK_23.3.0\WINDOWS_X86_64\bin`).  The sample programs default to the `WINDOWS_X86_64` platform, but you can easily switch the platform and paths.  The `platform` and `filterSDK_home` variables are the key ones to set appropriately for your environment.  The `exportSDK_home` is optional in that it's used as an additional source of sample input documents.
+The `keyview.FilterSession()` method requires knowledge of the KeyView bin folder (e.g. `C:\OpenText\KeyViewFilterSDK_23.4.0\WINDOWS_X86_64\bin`).  The sample programs default to the `WINDOWS_X86_64` platform, but you can easily switch the platform and paths.  The `platform` and `filterSDK_home` variables are the key ones to set appropriately for your environment.  The `exportSDK_home` is optional in that it's used as an additional source of sample input documents.
 
 Be sure to also set `input_filepath` variable to your test document(s).
 
@@ -116,19 +116,19 @@ SanitizeAbsoluteExtractPaths=False
 +LogicalOrder=1
 ```
 
-Reference the [Use the Filter API](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/cpp-programming/Content/Chapter_UseFilterAPI.htm) section of the KeyView Filter SDK Programming Guide.
+Reference the [Use the Filter API](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/cpp-programming/Content/Chapter_UseFilterAPI.htm) section of the KeyView Filter SDK Programming Guide.
 
 Go ahead and run `extract_metadata_text.py`.  Don't forget to set the paths for KeyView and your input files to match your environment.
 ```sh
-> cd C:\OpenText\KeyViewFilterSDK_23.3.0\pythonapi\my_samples
+> cd C:\OpenText\KeyViewFilterSDK_23.4.0\pythonapi\my_samples
 > python3 extract_metadata_text.py
 
-Processing input document: C:\OpenText\KeyViewExportSDK_23.3.0/testdocs/freezer2.ppt
+Processing input document: ../../../idol-oem-tutorials/resources/keyview_filter/2022_calendar_HIDDEN_TEXT.docx
 
-DocInfo(doc_class=<DocClass.PRESENTATION: 6>, doc_format=<DocFormat.POWERPOINT_97: 120>, version=8000, encrypted=False, mac_binary_encoded=False, apple_double_encoded=False, wang_gdl_encoded=False, window_rms_encrypted=False)
+DocInfo(doc_class=<DocClass.adWORDPROCESSOR: 1>, doc_format=<DocFormat.MS_Word_2007_Fmt: 360>, version=16000, encrypted=False, mac_binary_encoded=False, apple_double_encoded=False, wang_gdl_encoded=False, window_rms_encrypted=False)
 
-Extracting metadata to: C:\OpenText\KeyViewExportSDK_23.3.0_WINDOWS_X86_64/testdocs/freezer2.ppt_KV_METADATA.TXT
-Extracting text to: C:\OpenText\KeyViewExportSDK_23.3.0_WINDOWS_X86_64/testdocs/freezer2.ppt_KV_TEXT.TXT
+Extracting metadata to: ../../../idol-oem-tutorials/resources/keyview_filter/2022_calendar_HIDDEN_TEXT.docx_KV_METADATA.TXT
+Extracting text to: ../../../idol-oem-tutorials/resources/keyview_filter/2022_calendar_HIDDEN_TEXT.docx_KV_TEXT.TXT
 ```
 
 ## Format detection and extracting sub-files
@@ -137,35 +137,59 @@ The sample program `extract_metadata_text.py` processes input documents and outp
 
 Go ahead and run `extract_sub_files.py`.  Don't forget to set the paths for KeyView and your input files to match your environment.
 ```sh
-> cd C:\OpenText\KeyViewFilterSDK_23.3.0\pythonapi\my_samples
+> cd C:\OpenText\KeyViewFilterSDK_23.4.0\pythonapi\my_samples
 > python3 extract_sub_files.py
 
-Processing input document: C:\OpenText\KeyViewExportSDK_23.3.0/testdocs/SquaresTemplate.zip
+Processing /data//OpenText/KeyviewFilterSDK_23.4.0_LINUX_X86_64/javaapi/KeyView.jar
 
-DocInfo(doc_class=<DocClass.ENCAPSULATION: 8>, doc_format=<DocFormat.PKZIP: 157>, version=2000, encrypted=False, mac_binary_encoded=False, apple_double_encoded=False, wang_gdl_encoded=False, window_rms_encrypted=False) 
+DocInfo(doc_class=<DocClass.adENCAPSULATION: 8>, doc_format=<DocFormat.Executable_JAR_Fmt: 999>, version=0, encrypted=False, mac_binary_encoded=False, apple_double_
+encoded=False, wang_gdl_encoded=False, window_rms_encrypted=False)
 
-Found other SubFileTypes to extract. Extracting to C:\OpenText\KeyViewFilterSDK\KeyViewFilterSDK_23.3.0\pythonapi\my_samples\_extract\Container\LetterHeadTemplate.docx
-Extracting Container/LetterHeadTemplate.docx
-        Type: Main
+Found a folder: META-INF/
         Index: 0
-        Parent: -1
-        Size (bytes): 24020
-        Time: 2022-08-08 16:22:42+00:00
-Found other SubFileTypes to extract. Extracting to C:\OpenText\KeyViewFilterSDK\KeyViewFilterSDK_23.3.0\pythonapi\my_samples\_extract\Container\PresentationTemplate.pptx
-Extracting Container/PresentationTemplate.pptx
+        Children: [1]
+Found other SubFileTypes to extract. Extracting to /data/OpenText/KeyviewFilterSDK_23.4.0_LINUX_X86_64/pythonapi/my_samples/_extract/META-INF/MANIFEST.MF
+
+Extracting META-INF/MANIFEST.MF
         Type: Main
         Index: 1
-        Parent: -1
-        Size (bytes): 60652
-        Time: 2022-08-10 21:08:48+00:00
-Found other SubFileTypes to extract. Extracting to C:\OpenText\KeyViewFilterSDK\KeyViewFilterSDK_23.3.0\pythonapi\my_samples\_extract\Container\Squares-Logo.png
-Extracting Container/Squares-Logo.png
-        Type: Main
+        Parent: 0
+        Size (bytes): 101
+        Time: 2023-09-07 12:40:36+00:00
+Found a folder: com/
         Index: 2
-        Parent: -1
-        Size (bytes): 2033
-        Time: 2022-08-05 23:57:30+00:00
+        Children: [3]
+Found a folder: com/verity/
+        Index: 3
+        Children: [4]
+Found a folder: com/verity/api/
+        Index: 4
+        Children: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+Found a folder: com/verity/api/export/
+        Index: 5
+        Children: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 5
+6, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78]
+Found a folder: com/verity/api/filter/
+        Index: 6
+        Children: [79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103]
+Found a folder: com/verity/api/internal/
+        Index: 7
+        Children: [104, 105, 106]
+Found a folder: com/verity/api/metadata/
+        Index: 8
+        Children: [107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119]
+Found other SubFileTypes to extract. Extracting to /data/OpenText/KeyviewFilterSDK_23.4.0_LINUX_X86_64/pythonapi/my_samples/_extract/com/verity/api/Charset.class
+
+Extracting com/verity/api/Charset.class
+        Type: Main
+        Index: 9
+        Parent: 4
+        Size (bytes): 7208
+        Time: 2023-09-07 12:40:36+00:00
+Found other SubFileTypes to extract. Extracting to /data/OpenText/KeyviewFilterSDK_23.4.0_LINUX_X86_64/pythonapi/my_samples/_extract/com/verity/api/DocClass.class
 ```
+
+There are two additional resources available that can perform the same types of detection, text, metadata and sub-file extractions: `extract_metadata_text_folder.py` and `extract_sub_files_folder.py`.
 
 ## Conclusion
 
@@ -175,8 +199,10 @@ And if you haven't already, why not try more tutorials to explore some of the ot
 
 ## See also
 
-- KeyView Filter SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/c-programming/)
-- KeyView Filter SDK [C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/cpp-programming/)
-- KeyView Filter SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/java-programming/)
-- KeyView Filter SDK [.NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/dotnet-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/idol/Content/_KeyView.htm)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/python-programming/)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_4/IDOLReleaseNotes_23.4_Documentation/oem/Content/_KeyView.htm)
+

@@ -1,0 +1,54 @@
+Australia Email Markings
+------------------------
+CAVEAT=SH:NATIONAL-CABINET
+SEC=PROTECTED
+For Official Use Only
+DOWNTO=OFFICIAL:Sensitive
+EXPIRES=2019-01-07
+VER=2018.4, NS=gov.au, SEC=TOP SECRET, CAVEAT=RI:REL AUS/USA/FRA, ORIGIN=jane.doe@example.gov.au
+ACCESS=Legal-Privilege
+NS=gov.au
+NOTE=a useful comment
+ORIGIN=jane.doe@example.gov.au
+(PROTECTED)
+[SEC=OFFICIAL, CAVEAT=SH:DELICATE SOURCE, ACCESS=Personal-Privacy, ACCESS=Legal-Privilege]
+VER=2016.4
+
+Legal Entity Identifier
+-----------------------
+LEI: 4469000001AVO26P9X86" or "RECHTSTRÄGER-KENNUNG: EVK05KS7XY1DEII3R011
+
+U.S. DOD Markings
+-----------------
+TOP SECRET//SI/TK//RELIDO
+(S//REL TO USA, GBR/DISPLAY ONLY AFG)
+Declassify On: 25X 20320109
+Downgrade To: CONFIDENTIAL on 20121231
+Reason: 1.4(a)(b)(c)
+Classified By:
+Derived From:
+
+U.S. Controlled Unclassified Information Markings
+-------------------------------------------------
+CONTROLLED//TSCA//NOFORN
+CUI//SP-INTEL/SP-CTI/IFNC/AG//FEDCON/REL TO USA, GBR
+Dissemination List: Office of Intelligence and Analysis, Department of Homeland Security Counterterrorism Division, Federal Bureau of Investigation.
+Controlled by: Department of Good Works, Security and Inspection Division, 2025554567.
+
+U.S Export Controls Markings
+----------------------------
+ECCN: 5A002.a.1
+CCL: Annex to Cat 1 List of Explosives 45
+License Exception: 740.17(b)(2)
+CCAT: G144401
+Harmonized Tariff (US): 8542.31.0000
+U.S. Schedule B: 8542.31.0000
+
+U.S. Regulation Reference Markings
+----------------------------------
+18 C.F.R. pt. 157 (2020)
+Fed. R. Civ. P. 23 (C)(4)(A)-(B)
+71 Fed. Reg. 42,928 (July 28, 2006)
+Docket Nos. RP19-1523-000, RP19-78
+166 FERC ¶ 61,032 at P 1 (2019)
+15 USC 78k(a)(1)-(2) (1970)

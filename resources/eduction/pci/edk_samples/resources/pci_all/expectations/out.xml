@@ -17,6 +17,14 @@
         <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
       </COMPONENTS>
     </MATCH>
+    <MATCH EntityName="pci/name/sg" Offset="20" OffsetLength="20" Score="0.6" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
     <MATCH EntityName="pci/name/jp" Offset="20" OffsetLength="20" Score="0.65" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
       <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>

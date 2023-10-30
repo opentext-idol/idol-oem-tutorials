@@ -2,7 +2,7 @@
 
 Not all documents already contain machine usable text. These types of documents may be scans, screenshots or pictures.
 
-When processing raster image files, KeyView can perform Optical Character Recognition (OCR) to attempt to filter text that might be visible in the image. As of the 23.3.0 release, 46 languages covering Latin, Arabic, Chinese, Cyrillic and a few other alphabets.  See the [OCR Supported Languages](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/c-programming/Content/Shared/_KV_OCR_Supported_Languages.htm) appendix for more details.
+When processing raster image files, KeyView can perform Optical Character Recognition (OCR) to attempt to filter text that might be visible in the image. As of the 23.4.0 release, 46 languages covering Latin, Arabic, Chinese, Cyrillic and a few other alphabets.  See the [OCR Supported Languages](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/c-programming/Content/Shared/_KV_OCR_Supported_Languages.htm) appendix for more details.
 
 In this lesson, you will:
 - perform OCR on a PNG image file
@@ -38,8 +38,8 @@ Be sure to download the following resources before you continue:
 ### Perform OCR with `filter`
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filter "..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_TO_OCR.png" ocr.txt
+> cd C:\OpenText\KeyviewFilterSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_TO_OCR.png ocr.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_TO_OCR.png to ocr.txt
 filter: error code returned is KVERR_Success
@@ -62,8 +62,8 @@ Try `filter` performing OCR with your own image files.  Remember you may need to
 ```
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filtertest -nocr "..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_TO_OCR.png" ocr.txt
+> cd C:\OpenText\KeyviewFilterSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filtertest -nocr ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_TO_OCR.png ocr.txt
 WARNING: filtertest is a sample program only and is not for production use
 filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_TO_OCR.png to ocr.txt
 filtertest: Target CharSet is 53
@@ -76,7 +76,7 @@ filtertest finished with RC: 0
 
 The `ocr.txt` output file will contain no text since the `-nocr` flag was added.
 
-Read up on the `languages orientation detectAlphabet` tuning options in the [Optical Character Recognition](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/c-programming/Content/filter_shared/OCR.htm) section of the programming guide.
+Read up on the `languages orientation detectAlphabet` tuning options in the [Optical Character Recognition](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/c-programming/Content/filter_shared/OCR.htm) section of the programming guide.
 
 ## Conclusion
 
@@ -86,8 +86,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/c-programming/)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/cpp-programming/)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/java-programming/)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/dotnet-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/oem/Content/_KeyView.htm)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/python-programming/)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_4/IDOLReleaseNotes_23.4_Documentation/oem/Content/_KeyView.htm)

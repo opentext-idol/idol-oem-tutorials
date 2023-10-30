@@ -48,13 +48,13 @@ Word processing, spreadsheet, presentation and some other file formats optionall
 Let's run text extraction on the same file `2022_calendar_HIDDEN_TEXT.docx` without and with header/footer mode enabled.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filter "..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx" text_no_hf.txt
+> cd C:\OpenText\KeyviewFilterSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_no_hf.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_hf.txt
 filter: error code returned is KVERR_Success
 
-> filter -h "..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx" text_hf.txt
+> filter -h ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_hf.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_hf.txt
 filter: error code returned is KVERR_Success
@@ -75,8 +75,8 @@ Hidden text may be in the form of comments, revision history, slide master conte
 Word processing and some other file formats allow for users to track revision history.  This markup is usually hidden, but can of interest for many user cases of KeyView Filter SDK.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filter -rm "..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx" text_revison_marks.txt
+> cd C:\OpenText\KeyviewFilterSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filter -rm ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revison_marks.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revison_marks.txt
 filter: error code returned is KVERR_Success
@@ -93,8 +93,8 @@ Try `filter` to extract hidden text with your own test files. Good luck!
 Your use case for KeyView FilterSDK may not benefit from including comments.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filter -nc "..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx" text_no_comments.txt
+> cd C:\OpenText\KeyviewFilterSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filter -nc ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_no_comments.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_comments.txt
 filter: error code returned is KVERR_Success
@@ -109,13 +109,13 @@ Compare `text_no_comments.txt` and `text_no_hf.txt`.  You will see that the comm
 Presentation formats like PowerPoint have the concept of slide masters where some slide master content is only visible when you're editing the slider masters.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filter  "..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx" text_no_slidemaster.txt
+> cd C:\OpenText\KeyviewFilterSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_no_slidemaster.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_no_slidemaster.txt
 filter: error code returned is KVERR_Success
 
-> filter -sh "..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx" text_slidemaster.txt
+> filter -sh ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_slidemaster.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_slidemaster.txt
 filter: error code returned is KVERR_Success
@@ -129,9 +129,20 @@ A lot of additional output is included in `text_slidemaster.txt`.  It's the text
 
 With some file formats, for example Microsoft PowerPoint presentations, the order of the text inside the file has no relation to the layout of the text on the page or screen. Recently modified text might appear at the end of a file, even though that text belongs at the beginning of the document.
 
-Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/c-programming/Content/filter_shared/Presentation_LogicalOrder.htm) for more details about KeyView's support for preserving logical reading order.
+Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/c-programming/Content/filter_shared/Presentation_LogicalOrder.htm) for more details about KeyView's support for preserving logical reading order.
 
 ### Perform logical order preservation
+
+The KeyView resources README.md references a file [AmeliorationFertiliteDesSols.pptx](../../resources/keyview_filter/README.md#AmeliorationFertiliteDesSolspptx) that exhibits this behavior.  Please download it place it in the `idol-oem-tutorials\resources\keyview_filter` folder.
+
+Use `filter` to extract text with `LogicalOrder` disabled.
+```sh
+> cd C:\OpenText\KeyviewFilterSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=F.txt`
+WARNING: filter is a sample program only and is not for production use
+filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=F.txt
+filter: error code returned is KVERR_Success
+```
 
 Preservation of logical reading order is disabled by default.  Modify `formats.ini` as shown below to enable it.
 ```diff
@@ -139,7 +150,14 @@ Preservation of logical reading order is disabled by default.  Modify `formats.i
 +LogicalOrder=1
 ```
 
-The KeyView resources README.md references a file [AmeliorationFertiliteDesSols.pptx](../../resources/keyview_filter/README.md#AmeliorationFertiliteDesSolspptx) that exhibits this behavior.  Use `filter` to extract text with and without `LogicalOrder` enabled.
+ Use `filter` to extract text with `LogicalOrder` enabled.
+```sh
+> cd C:\OpenText\KeyviewFilterSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=T.txt`
+WARNING: filter is a sample program only and is not for production use
+filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=T.txt
+filter: error code returned is KVERR_Success
+```
 
 The following is the text from slide 1 with `LogicalOrder=0`:
 ```
@@ -186,8 +204,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/c-programming/)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/cpp-programming/)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/java-programming/)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewFilterSDK_23.3_Documentation/Guides/html/dotnet-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/oem/Content/_KeyView.htm)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/python-programming/)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_4/IDOLReleaseNotes_23.4_Documentation/oem/Content/_KeyView.htm)

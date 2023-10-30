@@ -33,7 +33,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 
 - 1 core, 1 GB RAM, 5GB free disk space
 - Windows x86_64, Windows x86_32, Windows_ARM64, Linux_x86_64, Linux_ARM, MacOS_x86_64, MacOS_M1, ....
-- KeyView license (optional, until using APIs or not using v12.12 or greater)
+- KeyView license (optional, not required until using Export SDK APIs)
 - useful third party tools noted below.
 
 > NOTE: Disk space includes room for installer zipped and unzipped and generous working space.
@@ -98,7 +98,7 @@ The KeyView SDKs require a license key, which is unique to your project.
 
 To obtain an KeyView license key, follow these [steps](../setup/license_key_keyview.md), then return here to continue.
 
-![get-software](../../figs/get-software.png)
+![get-software](../../figs/get-software-keyview.png)
 
 > NOTE: For the lessons that use `filter` and `tstxtract`, a built-in (but expiring) license key is embedded in these executables. This means you can activate a license key later.
 
@@ -109,13 +109,13 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
 1. Under the *Downloads* tab, select your product, product name and version from the dropdowns:
 
 2. From the list of available files, select and download the following (depending on your platform):
-   - `KeyviewExportSDK_23.3.0_{PLATFORM}`, *e.g.* `KeyviewExportSDK_23.3.0_WINDOWS_X86_64.zip` or `KeyviewExportSDK_23.3.0_LINUX_X86_64.exe` or similar for other supported platforms
-   - `KeyviewExportSDK_23.3.0_Documentation.zip`
+   - `KeyviewExportSDK_23.4.0_{PLATFORM}`, *e.g.* `KeyviewExportSDK_23.4.0_WINDOWS_X86_64.zip` or `KeyviewExportSDK_23.4.0_LINUX_X86_64.exe` or similar for other supported platforms
+   - `KeyviewExportSDK_23.4.0_Documentation.zip`
 
   > NOTE: The installer `.exe` is only available for some available platforms: Linux_x86_32, Linux_x86_64, Windows_x86_32 and Windows_x86_64. This lesson will use the `.zip` package installation method.
 
 3. From the list of available files, select and download any available patches for 
-  - *e.g.* `KeyviewExportSDK 23.3 Patch 23.3.x`
+  - *e.g.* `KeyviewExportSDK 23.4 Patch 23.4.x`
  
   > NOTE: Be sure to click on the `Reference Material` link under the `Description` column to access the link to the patch documentation which includes the release notes.
   
@@ -125,34 +125,34 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
 
 1. Copy your downloaded files into a new working folder.  The follow guide assumes this is `C:\OpenText` on Windows.
 2. Extract `KeyviewExportSDK_<VERSION>_<PLATFORM>.zip` file to:
-   - `C:\OpenText\KeyviewExportSDK_23.3.0_WINDOWS_X86_64`
+   - `C:\OpenText\KeyviewExportSDK_23.4.0_WINDOWS_X86_64`
 3. On Windows, you may need to install the included Visual C++ Redistributable packages. In the same FilterSDK's `vcredist` folder, right-click on `vcredist_2019.exe` then select 'Run as administrator'.
 
   > HINT: If you see a version conflict error here, you may need to first uninstall any existing version.
 
-4. This lesson will refer to `C:\OpenText\KeyviewExportSDK_23.3.0_WINDOWS_X86_64` as `%KEYVIEW_HOME%`.
-5. If a patch is available for version being used, then extract *e.g.* `KeyviewExportSDK_23.3.x.yyyy.zip` to:
-   - `C:\OpenText\KeyviewExportSDK_23.3.x.yyyy`
+4. This lesson will refer to `C:\OpenText\KeyviewExportSDK_23.4.0_WINDOWS_X86_64` as `%KEYVIEW_HOME%`.
+5. If a patch is available for version being used, then extract *e.g.* `KeyviewExportSDK_23.4.x.yyyy.zip` to:
+   - `C:\OpenText\KeyviewExportSDK_23.4.x.yyyy`
 6. Backup existing files and copy new ones from appropriate `KeyviewFilterSDK_<VERSION>\<PLATFORM>` folder. It is most likely that patch files will be updates to those in `%KEYVIEW_HOME%\<PLATFORM>\bin` folder and sub-folders:
-   - `C:\OpenText\KeyviewExportSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin`
+   - `C:\OpenText\KeyviewExportSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin`
 
 > NOTE: Do NOT mix & match patch updates across versions. *Only apply a patch update to its intended version*.
 
 See the [KeyView HTML Export SDK Programming Guide - Introducing Export SDK](
-https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewExportSDK_23.3_Documentation/Guides/html/html-export-c/Content/ExportShared/Introduction/Introduction.htm) for more details.
+https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/html-export-c/Content/ExportShared/Introduction/Introduction.htm) for more details on installation.
 
 ## Introduction to KeyView Export SDK
 
-To get oriented with key concepts please read the [Introducing Export SDK - Features](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewExportSDK_23.3_Documentation/Guides/html/html-export-c/Content/ExportShared/Introduction/Features.htm) of the KeyView HTML/XML/PDF Export SDK * Programming Guides before continuing.
+To get oriented with key concepts please read the [Introducing Export SDK - Features](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/html-export-c/Content/ExportShared/Introduction/Features.htm) of the KeyView HTML/XML/PDF Export SDK * Programming Guides before continuing.
   
-The following lesson will explore converting a document to HTML, XML and PDF using the sample programs: `kvhtmlexport`, 'cnv2pdf` and `cnv2pdf`.  
+The following lesson will explore converting a document to HTML, XML and PDF using the sample programs: `kvhtmlexport`, `cnv2pdf` and `cnv2pdf`.  
   
 ### Run `kvhtmlexport`
 
 The sample program `kvhtmlexport` is a command line tool that demonstrates some of the HTML Export API capabilities.  The source code for it ships in the `%KEYVIEW_HOME%\htmlexport\libkvhtmlexport` folder.  A pre-built binary is located in `%KEYVIEW_HOME%\<PLATFORM>\bin`.
   
 ```sh
-> cd C:\OpenText\KeyviewExportSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewExportSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > kvhtmlexport
 WARNING: kvhtmlexport is a sample program only and is not for production use
 Note that this program must run from the KeyView Export SDK bin directory
@@ -173,11 +173,11 @@ be passed as a license to KeyView. This mechanism exists only to allow this prog
 in testing after the expiry of its trial license, and should not be done in production code.
 ```
 
-See the [KeyView HTML Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewExportSDK_23.3_Documentation/Guides/html/html-export-c/Content/C/SamplePrograms/kvhtmlexport.htm) for more details about `kvhtmlexport`.
+See the [KeyView HTML Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/html-export-c/Content/C/SamplePrograms/kvhtmlexport.htm) for more details about `kvhtmlexport`.
 
 To perform a conversion to HTML provide an input filepath and output filepath as shown below:
 ```sh
-> cd C:\OpenText\KeyviewExportSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewExportSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > mkdir ..\..\testdocs\_HTMLExport
 > kvhtmlexport ..\..\testdocs\Investment_Portfolio.xlsx ..\..\testdocs\_HTMLExport\export.html
 WARNING: kvhtmlexport is a sample program only and is not for production use
@@ -193,7 +193,7 @@ Try the `kvhtmlexport` with the other Export SDK `testdocs` and your own documen
 The sample program `cnv2xml` is a command line tool that demonstrates some of the XML Export API capabilities.  The source code for it ships in the `%KEYVIEW_HOME%\xmlexport\programs\cnv2xml` folder.  A pre-built binary is located in `%KEYVIEW_HOME%\<PLATFORM>\bin`.
   
 ```sh
-> cd C:\OpenText\KeyviewExportSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewExportSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > cnv2xml
 WARNING: cnv2xml is a sample program only and is not for production use
 Usage: cnv2xml [options] inputfile outputfile
@@ -218,11 +218,11 @@ be passed as a license to KeyView. This mechanism exists only to allow this prog
 in testing after the expiry of its trial license, and should not be done in production code.
 ```
 
-See the [KeyView XML Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewExportSDK_23.3_Documentation/Guides/html/xml-export-c/Content/C/SamplePrograms/cnv2xml.htm) for more details about `cnv2xml`.
+See the [KeyView XML Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/xml-export-c/Content/C/SamplePrograms/cnv2xml.htm) for more details about `cnv2xml`.
 
 To perform a conversion to XML provide an input filepath and output filepath as shown below:
 ```sh
-> cd C:\OpenText\KeyviewExportSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewExportSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > mkdir ..\..\testdocs\_XMLExport
 > cnv2xml ..\..\testdocs\Annual_Report.docx ..\..\testdocs\_XMLExport\export.xml
 WARNING: cnv2xml is a sample program only and is not for production use
@@ -238,7 +238,7 @@ Try the `cnv2xml` with the other Export SDK `testdocs` and your own documents.
 The sample program `cnv2xml` is a command line tool that demonstrates some of the XML Export API capabilities.  The source code for it ships in the `%KEYVIEW_HOME%\pdfexport\cnv2pdf` folder.  A pre-built binary is located in `%KEYVIEW_HOME%\<PLATFORM>\bin`.
   
 ```sh
-> cd C:\OpenText\KeyviewExportSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewExportSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > cnv2pdf
 WARNING: cnv2pdf is a sample program only and is not for production use
 Usage: cnv2pdf.exe inputfile outputfile
@@ -254,12 +254,13 @@ be passed as a license to KeyView. This mechanism exists only to allow this prog
 in testing after the expiry of its trial license, and should not be done in production code.
 ```
 
-See the [KeyView PDF Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewExportSDK_23.3_Documentation/Guides/html/pdf-export-c/Content/C/SamplePrograms/cnv2pdf.htm) for more details about `cnv2pdf`.
+See the [KeyView PDF Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/pdf-export-c/Content/C/SamplePrograms/cnv2pdf.htm) for more details about `cnv2pdf`.
 
 To perform a conversion to PDF provide an input filepath and output filepath as shown below:
 ```sh
-> cd C:\OpenText\KeyviewExportSDK_23.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> cnv2xml ..\..\testdocs\Annual_Report.docx ..\..\testdocs\Annual_Report.docx.KVExport.PDF
+> cd C:\OpenText\KeyviewExportSDK_23.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> mkdir ..\..\testdocs\_PDFExport
+> cnv2pdf ..\..\testdocs\Annual_Report.docx ..\..\testdocs\_PDFExport\Annual_Report.docx.KVExport.PDF
 WARNING: cnv2pdf is a sample program only and is not for production use
 cnv2pdf: loading kvpdf
 cnv2pdf: loading kvpdf interface
@@ -269,7 +270,7 @@ cnv2pdf: shutting down kvpdf
 cnv2pdf: unloading kvpdf
 ```
 
-Open `..\..\testdocs\Annual_Report.docx.KVExport.PDF` in your favorite PDF Viewer (most modern web browsers render PDF or use Adobe Acrobat).  Compare the PDF rendition to the original file (`..\..\testdocs\Annual_Report.docx`) as viewed in Microsoft Word.
+Open `..\..\testdocs\_PDFExport\Annual_Report.docx.KVExport.PDF` in your favorite PDF Viewer (most modern web browsers render PDF or use Adobe Acrobat).  Compare the PDF rendition to the original file (`..\..\testdocs\Annual_Report.docx`) as viewed in Microsoft Word.
 
 Try the `cnv2pdf` with the other Export SDK `testdocs` and your own documents.
 
@@ -285,9 +286,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [KeyView HTML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewExportSDK_23.3_Documentation/Guides/html/html-export-c/)
-- [KeyView HTML SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewExportSDK_23.3_Documentation/Guides/html/html-export-java/)
-- [KeyView XML Export C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewExportSDK_23.3_Documentation/Guides/html/xml-export-c/)
-- [KeyView XML Export Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewExportSDK_23.3_Documentation/Guides/html/xml-export-java/)
-- [KeyView PDF Export C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_3/KeyviewExportSDK_23.3_Documentation/Guides/html/pdf-export-c/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_3/IDOLReleaseNotes_23.3_Documentation/oem/Content/_KeyView.htm)
+- [KeyView HTML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/html-export-c/index.html)
+- [KeyView HTML SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/html-export-java/index.html)
+- [KeyView XML Export C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/xml-export-c/index.html)
+- [KeyView XML Export Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/xml-export-java/)
+- [KeyView PDF Export C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/pdf-export-c/index.html)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_4/IDOLReleaseNotes_23.4_Documentation/oem/Content/_KeyView.htm)

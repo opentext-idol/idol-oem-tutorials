@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="gov/document_markings/au_email/caveat/context/au" Offset="50" OffsetLength="50" Score="1" NormalizedTextSize="26" NormalizedTextLength="26" OriginalTextSize="26" OriginalTextLength="26">
+      <ORIGINAL_TEXT>CAVEAT=SH:NATIONAL-CABINET</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>CAVEAT=SH:NATIONAL-CABINET</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CAVEAT" Text="SH:NATIONAL-CABINET" Offset="7" OffsetLength="7" TextSize="19" TextLength="19"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/classification_level/context/au" Offset="77" OffsetLength="77" Score="1" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="13" OriginalTextLength="13">
+      <ORIGINAL_TEXT>SEC=PROTECTED</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>SEC=PROTECTED</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CLASSIFICATION_LEVEL" Text="PROTECTED" Offset="4" OffsetLength="4" TextSize="9" TextLength="9"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/dissemination_limiting_marker/nocontext/au" Offset="91" OffsetLength="91" Score="0.9" NormalizedTextSize="21" NormalizedTextLength="21" OriginalTextSize="21" OriginalTextLength="21">
+      <ORIGINAL_TEXT>For Official Use Only</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>For Official Use Only</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DISSEMINATION_LIMITING_MARKER" Text="For Official Use Only" Offset="0" OffsetLength="0" TextSize="21" TextLength="21"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/downto_level/context/au" Offset="113" OffsetLength="113" Score="1" NormalizedTextSize="25" NormalizedTextLength="25" OriginalTextSize="25" OriginalTextLength="25">
+      <ORIGINAL_TEXT>DOWNTO=OFFICIAL:Sensitive</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>DOWNTO=OFFICIAL:Sensitive</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DOWNTO_CLASSIFICATION_LEVEL" Text="OFFICIAL:Sensitive" Offset="7" OffsetLength="7" TextSize="18" TextLength="18"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/expires/context/au" Offset="139" OffsetLength="139" Score="1" NormalizedTextSize="18" NormalizedTextLength="18" OriginalTextSize="18" OriginalTextLength="18">
+      <ORIGINAL_TEXT>EXPIRES=2019-01-07</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>EXPIRES=2019-01-07</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="EXPIRY_DATE" Text="2019-01-07" Offset="8" OffsetLength="8" TextSize="10" TextLength="10"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/header_marking/context/au" Offset="158" OffsetLength="158" Score="1" NormalizedTextSize="96" NormalizedTextLength="96" OriginalTextSize="96" OriginalTextLength="96">
+      <ORIGINAL_TEXT>VER=2018.4, NS=gov.au, SEC=TOP SECRET, CAVEAT=RI:REL AUS/USA/FRA, ORIGIN=jane.doe@example.gov.au</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>VER=2018.4, NS=gov.au, SEC=TOP SECRET, CAVEAT=RI:REL AUS/USA/FRA, ORIGIN=jane.doe@example.gov.au</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="VERSION" Text="2018.4" Offset="4" OffsetLength="4" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="NAMESPACE" Text="gov.au" Offset="15" OffsetLength="15" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="CLASSIFICATION_LEVEL" Text="TOP SECRET" Offset="27" OffsetLength="27" TextSize="10" TextLength="10"/>
+        <COMPONENT Name="CAVEAT" Text="RI:REL AUS/USA/FRA" Offset="46" OffsetLength="46" TextSize="18" TextLength="18"/>
+        <COMPONENT Name="ORIGIN" Text="jane.doe@example.gov.au" Offset="73" OffsetLength="73" TextSize="23" TextLength="23"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/version/context/au" Offset="158" OffsetLength="158" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>VER=2018.4</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>VER=2018.4</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="VERSION" Text="2018.4" Offset="4" OffsetLength="4" TextSize="6" TextLength="6"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/information_management_marker/context/au" Offset="255" OffsetLength="255" Score="1" NormalizedTextSize="22" NormalizedTextLength="22" OriginalTextSize="22" OriginalTextLength="22">
+      <ORIGINAL_TEXT>ACCESS=Legal-Privilege</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ACCESS=Legal-Privilege</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="INFORMATION_MANAGEMENT_MARKER" Text="Legal-Privilege" Offset="7" OffsetLength="7" TextSize="15" TextLength="15"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/namespace/context/au" Offset="278" OffsetLength="278" Score="1" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>NS=gov.au</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>NS=gov.au</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="NAMESPACE" Text="gov.au" Offset="3" OffsetLength="3" TextSize="6" TextLength="6"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/note/context/au" Offset="288" OffsetLength="288" Score="1" NormalizedTextSize="21" NormalizedTextLength="21" OriginalTextSize="21" OriginalTextLength="21">
+      <ORIGINAL_TEXT>NOTE=a useful comment</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>NOTE=a useful comment</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="NOTE" Text="a useful comment" Offset="5" OffsetLength="5" TextSize="16" TextLength="16"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/origin/context/au" Offset="310" OffsetLength="310" Score="1" NormalizedTextSize="30" NormalizedTextLength="30" OriginalTextSize="30" OriginalTextLength="30">
+      <ORIGINAL_TEXT>ORIGIN=jane.doe@example.gov.au</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>ORIGIN=jane.doe@example.gov.au</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="ORIGIN" Text="jane.doe@example.gov.au" Offset="7" OffsetLength="7" TextSize="23" TextLength="23"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/portion_marking/nocontext/au" Offset="341" OffsetLength="341" Score="0.9" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
+      <ORIGINAL_TEXT>(PROTECTED)</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>(PROTECTED)</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/subject_field_marking/context/au" Offset="353" OffsetLength="353" Score="1" NormalizedTextSize="90" NormalizedTextLength="90" OriginalTextSize="90" OriginalTextLength="90">
+      <ORIGINAL_TEXT>[SEC=OFFICIAL, CAVEAT=SH:DELICATE SOURCE, ACCESS=Personal-Privacy, ACCESS=Legal-Privilege]</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>[SEC=OFFICIAL, CAVEAT=SH:DELICATE SOURCE, ACCESS=Personal-Privacy, ACCESS=Legal-Privilege]</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CLASSIFICATION_LEVEL" Text="OFFICIAL" Offset="5" OffsetLength="5" TextSize="8" TextLength="8"/>
+        <COMPONENT Name="CAVEAT" Text="SH:DELICATE SOURCE" Offset="22" OffsetLength="22" TextSize="18" TextLength="18"/>
+        <COMPONENT Name="INFORMATION_MANAGEMENT_MARKER" Text="Personal-Privacy" Offset="49" OffsetLength="49" TextSize="16" TextLength="16"/>
+        <COMPONENT Name="INFORMATION_MANAGEMENT_MARKER" Text="Legal-Privilege" Offset="74" OffsetLength="74" TextSize="15" TextLength="15"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/au_email/version/context/au" Offset="444" OffsetLength="444" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>VER=2016.4</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>VER=2016.4</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="VERSION" Text="2016.4" Offset="4" OffsetLength="4" TextSize="6" TextLength="6"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/entity_identifiers/lei/context" Offset="504" OffsetLength="504" Score="1" NormalizedTextSize="20" NormalizedTextLength="20" OriginalTextSize="25" OriginalTextLength="25">
+      <ORIGINAL_TEXT>LEI: 4469000001AVO26P9X86</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4469000001AVO26P9X86</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="LOU_PREFIX" Text="4469" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="RESERVED" Text="00" Offset="4" OffsetLength="4" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="ENTITY_ID" Text="0001AVO26P9X" Offset="6" OffsetLength="6" TextSize="12" TextLength="12"/>
+        <COMPONENT Name="CHECKSUM" Text="86" Offset="18" OffsetLength="18" TextSize="2" TextLength="2"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/entity_identifiers/lei/context" Offset="535" OffsetLength="535" Score="1" NormalizedTextSize="20" NormalizedTextLength="20" OriginalTextSize="43" OriginalTextLength="42">
+      <ORIGINAL_TEXT>RECHTSTRÄGER-KENNUNG: EVK05KS7XY1DEII3R011</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>EVK05KS7XY1DEII3R011</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="LOU_PREFIX" Text="EVK0" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="RESERVED" Text="5K" Offset="4" OffsetLength="4" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="ENTITY_ID" Text="S7XY1DEII3R0" Offset="6" OffsetLength="6" TextSize="12" TextLength="12"/>
+        <COMPONENT Name="CHECKSUM" Text="11" Offset="18" OffsetLength="18" TextSize="2" TextLength="2"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/us_dod/banner_line/nocontext/us" Offset="616" OffsetLength="615" Score="1" NormalizedTextSize="25" NormalizedTextLength="25" OriginalTextSize="25" OriginalTextLength="25">
+      <ORIGINAL_TEXT>TOP SECRET//SI/TK//RELIDO</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>TOP SECRET//SI/TK//RELIDO</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CLASSIFICATION" Text="TOP SECRET" Offset="0" OffsetLength="0" TextSize="10" TextLength="10"/>
+        <COMPONENT Name="SCI_CONTROL_SYSTEM" Text="SI/TK" Offset="12" OffsetLength="12" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="DISSEMINATION" Text="RELIDO" Offset="19" OffsetLength="19" TextSize="6" TextLength="6"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/us_dod/portion_marking/nocontext/us" Offset="642" OffsetLength="641" Score="1" NormalizedTextSize="37" NormalizedTextLength="37" OriginalTextSize="37" OriginalTextLength="37">
+      <ORIGINAL_TEXT>(S//REL TO USA, GBR/DISPLAY ONLY AFG)</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>(S//REL TO USA, GBR/DISPLAY ONLY AFG)</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CLASSIFICATION" Text="S" Offset="1" OffsetLength="1" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="DISSEMINATION" Text="REL TO USA, GBR/DISPLAY ONLY AFG" Offset="4" OffsetLength="4" TextSize="32" TextLength="32"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/us_dod/classification_authority_block/declassify/nocontext/us" Offset="680" OffsetLength="679" Score="1" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="27" OriginalTextLength="27">
+      <ORIGINAL_TEXT>Declassify On: 25X 20320109</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>25X 20320109</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/us_dod/classification_authority_block/downgrade/nocontext/us" Offset="708" OffsetLength="707" Score="1" NormalizedTextSize="24" NormalizedTextLength="24" OriginalTextSize="38" OriginalTextLength="38">
+      <ORIGINAL_TEXT>Downgrade To: CONFIDENTIAL on 20121231</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>CONFIDENTIAL on 20121231</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/us_dod/classification_authority_block/reason/nocontext/us" Offset="747" OffsetLength="746" Score="1" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="20" OriginalTextLength="20">
+      <ORIGINAL_TEXT>Reason: 1.4(a)(b)(c)</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>1.4(a)(b)(c)</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/us_dod/classification_authority_block/classified_by_header/nocontext/us" Offset="768" OffsetLength="767" Score="1" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
+      <ORIGINAL_TEXT>Classified By:</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>Classified By:</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/us_dod/classification_authority_block/derived_from_header/nocontext/us" Offset="783" OffsetLength="782" Score="1" NormalizedTextSize="13" NormalizedTextLength="13" OriginalTextSize="13" OriginalTextLength="13">
+      <ORIGINAL_TEXT>Derived From:</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>Derived From:</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/us_cui/basic/nocontext/us" Offset="898" OffsetLength="897" Score="0.5" NormalizedTextSize="24" NormalizedTextLength="24" OriginalTextSize="24" OriginalTextLength="24">
+      <ORIGINAL_TEXT>CONTROLLED//TSCA//NOFORN</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>CONTROLLED//TSCA//NOFORN</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CUI_CATEGORY" Text="TSCA" Offset="12" OffsetLength="12" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="CUI_DISSEMINATION" Text="NOFORN" Offset="18" OffsetLength="18" TextSize="6" TextLength="6"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/us_cui/specified/nocontext/us" Offset="923" OffsetLength="922" Score="1" NormalizedTextSize="52" NormalizedTextLength="52" OriginalTextSize="52" OriginalTextLength="52">
+      <ORIGINAL_TEXT>CUI//SP-INTEL/SP-CTI/IFNC/AG//FEDCON/REL TO USA, GBR</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>CUI//SP-INTEL/SP-CTI/IFNC/AG//FEDCON/REL TO USA, GBR</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CUI_CATEGORY" Text="SP-INTEL" Offset="5" OffsetLength="5" TextSize="8" TextLength="8"/>
+        <COMPONENT Name="CUI_CATEGORY" Text="SP-CTI" Offset="14" OffsetLength="14" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="CUI_CATEGORY" Text="IFNC" Offset="21" OffsetLength="21" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="CUI_CATEGORY" Text="AG" Offset="26" OffsetLength="26" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="CUI_DISSEMINATION" Text="FEDCON" Offset="30" OffsetLength="30" TextSize="6" TextLength="6"/>
+        <COMPONENT Name="CUI_DISSEMINATION" Text="REL TO USA, GBR" Offset="37" OffsetLength="37" TextSize="15" TextLength="15"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/us_cui/dissemination_list/nocontext/us" Offset="976" OffsetLength="975" Score="1" NormalizedTextSize="128" NormalizedTextLength="128" OriginalTextSize="148" OriginalTextLength="148">
+      <ORIGINAL_TEXT>Dissemination List: Office of Intelligence and Analysis, Department of Homeland Security Counterterrorism Division, Federal Bureau of Investigation.</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>Office of Intelligence and Analysis, Department of Homeland Security Counterterrorism Division, Federal Bureau of Investigation.</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/document_markings/us_cui/controlled_by/nocontext/us" Offset="1125" OffsetLength="1124" Score="1" NormalizedTextSize="71" NormalizedTextLength="71" OriginalTextSize="86" OriginalTextLength="86">
+      <ORIGINAL_TEXT>Controlled by: Department of Good Works, Security and Inspection Division, 2025554567.</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>Department of Good Works, Security and Inspection Division, 2025554567.</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/number/export/ccl/context/us" Offset="1271" OffsetLength="1270" Score="1" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>ECCN: 5A002.a.1</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5A002.a.1</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/number/export/eccn/context/us" Offset="1271" OffsetLength="1270" Score="1" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>ECCN: 5A002.a.1</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>5A002.a.1</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/number/export/ccl/context/us" Offset="1287" OffsetLength="1286" Score="1" NormalizedTextSize="36" NormalizedTextLength="36" OriginalTextSize="41" OriginalTextLength="41">
+      <ORIGINAL_TEXT>CCL: Annex to Cat 1 List of Explosives 45</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>Annex to Cat 1 List of Explosives 45</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/number/export/ear_exception_enc/context/us" Offset="1329" OffsetLength="1328" Score="1" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="31" OriginalTextLength="31">
+      <ORIGINAL_TEXT>License Exception: 740.17(b)(2)</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>740.17(b)(2)</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/number/export/ccats/context/us" Offset="1361" OffsetLength="1360" Score="1" NormalizedTextSize="7" NormalizedTextLength="7" OriginalTextSize="13" OriginalTextLength="13">
+      <ORIGINAL_TEXT>CCAT: G144401</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>G144401</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/number/export/hts/context/us" Offset="1375" OffsetLength="1374" Score="1" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="36" OriginalTextLength="36">
+      <ORIGINAL_TEXT>Harmonized Tariff (US): 8542.31.0000</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>8542.31.0000</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/number/export/schedule_b/context/us" Offset="1412" OffsetLength="1411" Score="1" NormalizedTextSize="12" NormalizedTextLength="12" OriginalTextSize="29" OriginalTextLength="29">
+      <ORIGINAL_TEXT>U.S. Schedule B: 8542.31.0000</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>8542.31.0000</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="gov/regulation_references/cfr/us" Offset="1513" OffsetLength="1512" Score="1" NormalizedTextSize="24" NormalizedTextLength="24" OriginalTextSize="24" OriginalTextLength="24">
+      <ORIGINAL_TEXT>18 C.F.R. pt. 157 (2020)</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>18 C.F.R. pt. 157 (2020)</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TITLE" Text="18" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="PART" Text="157" Offset="14" OffsetLength="14" TextSize="3" TextLength="3"/>
+        <COMPONENT Name="YEAR" Text="2020" Offset="19" OffsetLength="19" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/regulation_references/fed_court_rule/us" Offset="1538" OffsetLength="1537" Score="1" NormalizedTextSize="32" NormalizedTextLength="32" OriginalTextSize="32" OriginalTextLength="32">
+      <ORIGINAL_TEXT>Fed. R. Civ. P. 23 (C)(4)(A)-(B)</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>Fed. R. Civ. P. 23 (C)(4)(A)-(B)</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="JURISDICTION" Text="Fed" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+        <COMPONENT Name="TYPE" Text="Civ" Offset="8" OffsetLength="8" TextSize="3" TextLength="3"/>
+        <COMPONENT Name="RULE" Text="23" Offset="16" OffsetLength="16" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="PART_RANGE" Text="(C)(4)(A)-(B)" Offset="19" OffsetLength="19" TextSize="13" TextLength="13"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/regulation_references/fed_reg/us" Offset="1571" OffsetLength="1570" Score="1" NormalizedTextSize="34" NormalizedTextLength="34" OriginalTextSize="35" OriginalTextLength="35">
+      <ORIGINAL_TEXT>71 Fed. Reg. 42,928 (July 28, 2006)</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>71 Fed. Reg. 42928 (July 28, 2006)</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="VOLUME" Text="71" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="PAGE" Text="42928" Offset="13" OffsetLength="13" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="ISSUE_DATE" Text="July 28, 2006" Offset="20" OffsetLength="20" TextSize="13" TextLength="13"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/regulation_references/ferc/docket_nbr/context/us" Offset="1607" OffsetLength="1606" Score="1" NormalizedTextSize="22" NormalizedTextLength="22" OriginalTextSize="34" OriginalTextLength="34">
+      <ORIGINAL_TEXT>Docket Nos. RP19-1523-000, RP19-78</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>RP19-1523-000, RP19-78</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="DOCKET_NBR" Text="RP19-1523" Offset="0" OffsetLength="0" TextSize="9" TextLength="9"/>
+        <COMPONENT Name="SUB_DOCKET_NBR" Text="000" Offset="10" OffsetLength="10" TextSize="3" TextLength="3"/>
+        <COMPONENT Name="DOCKET_NBR" Text="RP19-78" Offset="15" OffsetLength="15" TextSize="7" TextLength="7"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/regulation_references/ferc/order/us" Offset="1642" OffsetLength="1641" Score="1" NormalizedTextSize="31" NormalizedTextLength="30" OriginalTextSize="32" OriginalTextLength="31">
+      <ORIGINAL_TEXT>166 FERC ¶ 61,032 at P 1 (2019)</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>166 FERC ¶ 61032 at P 1 (2019)</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="ORDER_NO" Text="166" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+        <COMPONENT Name="PARAGRAPH" Text="61032" Offset="12" OffsetLength="11" TextSize="5" TextLength="5"/>
+        <COMPONENT Name="PAGE" Text="1" Offset="23" OffsetLength="22" TextSize="1" TextLength="1"/>
+        <COMPONENT Name="YEAR" Text="2019" Offset="26" OffsetLength="25" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="gov/regulation_references/usc/us" Offset="1675" OffsetLength="1673" Score="0.9" NormalizedTextSize="27" NormalizedTextLength="27" OriginalTextSize="27" OriginalTextLength="27">
+      <ORIGINAL_TEXT>15 USC 78k(a)(1)-(2) (1970)</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>15 USC 78k(a)(1)-(2) (1970)</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="TITLE" Text="15" Offset="0" OffsetLength="0" TextSize="2" TextLength="2"/>
+        <COMPONENT Name="SECTION_RANGE" Text="78k(a)(1)-(2)" Offset="7" OffsetLength="7" TextSize="13" TextLength="13"/>
+        <COMPONENT Name="YEAR" Text="1970" Offset="22" OffsetLength="22" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>

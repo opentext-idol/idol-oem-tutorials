@@ -11,12 +11,13 @@ Below are links to lessons, which will take you through an introduction to IDOL 
   - [Use the PII Eduction grammars](#use-the-pii-eduction-grammars)
   - [Use the PCI Eduction grammars](#use-the-pci-eduction-grammars)
   - [Use the PHI Eduction grammars](#use-the-phi-eduction-grammars)
+  - [Use the Government Eduction grammars](#use-the-government-eduction-grammars)
   - [Extract Table Oriented Data](#extract-table-oriented-data)
   - [Assessing Performance of Eduction](#assessing-performance-of-eduction)
   - [Create a custom Eduction grammar](#create-a-custom-eduction-grammar)
   - [Create a custom post processing script](#create-a-custom-post-processing-script)
 - [Use IDOL Eduction Server](#use-idol-eduction-server)
-- [Use the Eduction SDK](#use-the-eduction-sdk)
+- [Use the Eduction SDK API](#use-the-eduction-sdk-api)
 
 ---
 
@@ -50,6 +51,12 @@ Explore and use out-of-the-box grammars to match PHI entities.
 
 [Get started](./phi_grammar.md).
 
+### Use the Government Eduction grammars
+
+Explore and use out-of-the-box grammars to match Government markings entities.
+
+[Get started](./gov_grammar.md).
+
 ### Extract Table Oriented Data
 
 Extract entities from files with row / column oriented data.
@@ -80,11 +87,11 @@ Perform Eduction as a service by calling the IDOL Eduction Server using the IDOL
 
 [Get started](./eduction_server.md).
 
-## Use the Eduction SDK
+## Use the Eduction SDK API
 
-IDOL Eduction is designed to be embedded into other services via an SDK.
+IDOL Eduction is designed to be embedded into other services via an API.
 
-[Get started](./eduction_sdk.md).
+[Get started](./eduction_sdk_api.md).
 
 ---
 

@@ -1,4 +1,4 @@
-set VERSION=23.3.0
+set VERSION=23.4.0
 
 set ACI_API_HOME=..\..\..\..\IDOLJavaSDK_%VERSION%
 set MAVEN_HOME=C:\Program Files\Apache\maven\apache-maven-3.8.3
