@@ -78,7 +78,7 @@ As in the pre-built sample programs (`filter` and `tstxtract`), the sample progr
 set KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH=C:\OpenText\licensekey.dat
 ```
 
-In VS Code, you can the augment your run configuration as illustrated below:
+In VS Code, you can augment your run configuration as illustrated below:
  ```json
     ....
     "launch": {
