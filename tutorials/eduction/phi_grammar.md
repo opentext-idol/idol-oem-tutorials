@@ -37,7 +37,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PHI edk_samples](../../resources/eduction/phi/edk_samples) and install to `C:\OpenText\EductionGrammars_23.4.0_COMMON\phi\edk_samples\resources`
+- [PHI edk_samples](../../resources/eduction/phi/edk_samples) and install to `C:\OpenText\EductionGrammars_24.1.0_COMMON\phi\edk_samples\resources`
 
 ## What's in the Box?
 
@@ -45,7 +45,7 @@ The IDOL PHI Package includes IDOL Eduction Grammar files, postprocessing script
 
 ### Available Grammar Files
 
-To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_23.4.0_COMMON\phi`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `phi_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
+To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_24.1.0_COMMON\phi`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `phi_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
 
 There is some apparent overlap with some of the grammars & entities in the PII Package.  The primary difference excluding the net new grammars (e.g. `age.ecr, dea.ecr, device.ecr` and others) and entities available in the PHI Package is that the PHI grammars are focused on the United States.
 
@@ -55,7 +55,7 @@ The PHI grammar files provide entities of the "context", "nocontext" and "landma
 
 For the PHI date entities, like `phi/date/dob/*`, "context", "nocontext" and "landmark" options are available in order to match the recall and precision goals to the use case. Consider that the "nocontext" version might over-match significantly (*i.e.*, we are likely to return values that are similar to the entity patterns, such as a last updated date).
 
-For full details of the entities included in the PHI Grammar Package, please reference the [PHI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionGrammars_23.4_Documentation/PHI/Content/PHI/PHI_GrammarReference.htm).
+For full details of the entities included in the PHI Grammar Package, please reference the [PHI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionGrammars_24.1_Documentation/PHI/Content/PHI/PHI_GrammarReference.htm).
 
 > NOTE: You can configure Eduction to use either versions of an entity, in which case matches located with context are given a higher score in the results.
 
@@ -66,13 +66,13 @@ In the setup, you deployed edk_samples resources.  It contains resources to be u
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionGrammars_23.4.0_COMMON\phi\edk_samples\resources
-> edktool extract -l ..\..\..\..\EductionSDK_23.4.0_WINDOWS_X86_64\licensekey.dat -c phi_all\config\phi_all.cfg -i phi_all\input\input.txt -o out.xml
+> cd C:\OpenText\EductionGrammars_24.1.0_COMMON\phi\edk_samples\resources
+> edktool extract -l ..\..\..\..\EductionSDK_24.1.0_WINDOWS_X86_64\licensekey.dat -c phi_all\config\phi_all.cfg -i phi_all\input\input.txt -o out.xml
 ```
 
 The `phi_all.cfg` configuration and `input.txt` represent all available entity categories in the `PHI Package`, but does intentional select "nocontext" vs "context" for particular entity categories.  In some cases both entity forms are enabled - *e.g.* `Entity21 = phi/inet/ip/*context` using a simple wildcard expression `*`.
 
-The `phi_all.cfg` also enables [AllowOverlaps](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionSDK_23.4_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm). This allows for multiple entities to match part of (or the entirety of) the same input text.  An example of this in the `phi_all\input\input.txt` is:
+The `phi_all.cfg` also enables [AllowOverlaps](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionSDK_24.1_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm). This allows for multiple entities to match part of (or the entirety of) the same input text.  An example of this in the `phi_all\input\input.txt` is:
 ```
 email: jsmith@mailserver.com
 ```
@@ -147,6 +147,6 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [IDOL PHI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionGrammars_23.4_Documentation/PHI/)
-- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionSDK_23.4_Documentation/Guides/html/)
-- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_4/IDOLReleaseNotes_23.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL PHI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionGrammars_24.1_Documentation/PHI/)
+- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionSDK_24.1_Documentation/Guides/html/)
+- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_1/IDOLReleaseNotes_24.1_Documentation/idol/Content/SDKs/Eduction.htm)

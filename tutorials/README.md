@@ -122,7 +122,7 @@ More advanced example usage of the ACI API.
 
 ## Use the SDKs
 
-IDOL Eduction and KeyView Filter are designed to be embedded into other services.  For example, OpenText IDOL embeds the both SDKs into [NiFi processors](https://www.microfocus.com/documentation/idol/IDOL_23_4/NiFiIngest_23.4_Documentation/Help/Content/Walkthrough/BuildBasicPipeline.htm) to be used in data transformation workflows.
+IDOL Eduction and KeyView Filter are designed to be embedded into other services.  For example, OpenText IDOL embeds the both SDKs into [NiFi processors](https://www.microfocus.com/documentation/idol/IDOL_24_1/NiFiIngest_24.1_Documentation/Help/Content/Walkthrough/BuildBasicPipeline.htm) to be used in data transformation workflows.
 
 Many other OpenText products also embed Eduction and KeyView Filter to enhance their capabilities.  ISVs also license Eduction and KeyView Filter, embedding the SDKs into their applications and services for:
 
@@ -162,30 +162,30 @@ IDOL Media Server performs analytics on images, audio and video.  It's for OEMs 
 ### Links
 
 - Full administration guides and release notes are available for all IDOL products [here](https://www.microfocus.com/documentation/idol/).
-- Read more tips on working with IDOL products in [IDOL Expert](https://www.microfocus.com/documentation/idol/IDOL_23_4/IDOLServer_23.4_Documentation/Guides/html/expert/index.html).
-- See the latest release notes for all IDOL products [here](https://www.microfocus.com/documentation/idol/IDOL_23_4/IDOLReleaseNotes_23.4_Documentation/idol/Content/_Introduction.htm).
+- Read more tips on working with IDOL products in [IDOL Expert](https://www.microfocus.com/documentation/idol/IDOL_24_1/IDOLServer_24.1_Documentation/Guides/html/expert/index.html).
+- See the latest release notes for all IDOL products [here](https://www.microfocus.com/documentation/idol/IDOL_24_1/IDOLReleaseNotes_24.1_Documentation/idol/Content/_Introduction.htm).
 
 #### IDOL Eduction
 
-- Eduction SDK [User & Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionSDK_23.4_Documentation/Guides/html/)
-- Eduction Server [Reference Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionServer_23.4_Documentation/Help/Content/_ACI_Welcome.htm)
-- PCI [Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionGrammars_23.4_Documentation/PCI/)
-- PHI [Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionGrammars_23.4_Documentation/PHI/)
-- PII [Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionGrammars_23.4_Documentation/PII/)
-- Government Eduction Package [Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionGrammars_23.4_Documentation/GOV/)
+- Eduction SDK [User & Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionSDK_24.1_Documentation/Guides/html/)
+- Eduction Server [Reference Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionServer_24.1_Documentation/Help/Content/_ACI_Welcome.htm)
+- PCI [Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionGrammars_24.1_Documentation/PCI/)
+- PHI [Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionGrammars_24.1_Documentation/PHI/)
+- PII [Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionGrammars_24.1_Documentation/PII/)
+- Government Eduction Package [Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionGrammars_24.1_Documentation/GOV/)
 
 #### KeyView Filter
 
-- KeyView Filter SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/c-programming/index.html)
-- KeyView Filter SDK [C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/cpp-programming/index.html)
-- KeyView Filter SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/java-programming/index.html)
-- KeyView Filter SDK [.NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/dotnet-programming/index.html)
-- KeyView Filter SDK [Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/python-programming/index.html)
+- KeyView Filter SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/c-programming/index.html)
+- KeyView Filter SDK [C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/cpp-programming/index.html)
+- KeyView Filter SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/java-programming/index.html)
+- KeyView Filter SDK [.NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/dotnet-programming/index.html)
+- KeyView Filter SDK [Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/python-programming/index.html)
 
 #### KeyView Export
 
-- KeyView HTML Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/html-export-c/index.html)
-- KeyView HTML Export SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/html-export-java/index.html)
-- KeyView XML Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/xml-export-c/index.html)
-- KeyView XML Export SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/xml-export-java/)
-- KeyView PDF Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewExportSDK_23.4_Documentation/Guides/html/pdf-export-c/index.html)
+- KeyView HTML Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewExportSDK_24.1_Documentation/Guides/html/html-export-c/index.html)
+- KeyView HTML Export SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewExportSDK_24.1_Documentation/Guides/html/html-export-java/index.html)
+- KeyView XML Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewExportSDK_24.1_Documentation/Guides/html/xml-export-c/index.html)
+- KeyView XML Export SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewExportSDK_24.1_Documentation/Guides/html/xml-export-java/)
+- KeyView PDF Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewExportSDK_24.1_Documentation/Guides/html/pdf-export-c/index.html)

@@ -30,7 +30,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [Government edk_samples](../../resources/eduction/gov/edk_samples) and install to `C:\OpenText\EductionGrammars_23.4.0_COMMON\gov\edk_samples\resources`
+- [Government edk_samples](../../resources/eduction/gov/edk_samples) and install to `C:\OpenText\EductionGrammars_24.1.0_COMMON\gov\edk_samples\resources`
 
 ## What's in the Box?
 
@@ -38,7 +38,7 @@ The IDOL Government Package includes IDOL Eduction Grammar files, postprocessing
 
 ### Available Grammar Files
 
-To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_23.4.0_COMMON\gov`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `gov_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
+To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_24.1.0_COMMON\gov`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `gov_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
 
 The Government Grammar Package covers classified/unclassified markings for the U.S. and Australia, U.S. export controls and a global, legal entity identifier.
 
@@ -46,7 +46,7 @@ The Government Grammar Package covers classified/unclassified markings for the U
 
 The Government grammar files provide entities of the "context", "nocontext" and "landmark" forms like the PII, PHI and PCI packages do.
 
-For full details of the entities included in the Government Grammar Package, please reference the [Government Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionGrammars_23.4_Documentation/GOV/Content/PackGov/PackGov_GrammarReference.htm)
+For full details of the entities included in the Government Grammar Package, please reference the [Government Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionGrammars_24.1_Documentation/GOV/Content/PackGov/PackGov_GrammarReference.htm)
 
 > NOTE: You can configure Eduction to use either versions of an entity, in which case matches located with context are given a higher score in the results.
 
@@ -57,8 +57,8 @@ In the setup, you deployed edk_samples resources.  It contains resources to be u
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionGrammars_23.4.0_COMMON\gov\edk_samples\resources
-> edktool extract -l ..\..\..\..\EductionSDK_23.4.0_WINDOWS_X86_64\licensekey.dat -c gov_all\config\gov_all.cfg -i gov_all\input\input.txt -o out.xml
+> cd C:\OpenText\EductionGrammars_24.1.0_COMMON\gov\edk_samples\resources
+> edktool extract -l ..\..\..\..\EductionSDK_24.1.0_WINDOWS_X86_64\licensekey.dat -c gov_all\config\gov_all.cfg -i gov_all\input\input.txt -o out.xml
 ```
 
 The `gov_all.cfg` configuration and `input.txt` represent all available entity categories in the Government package, but does intentionally select "nocontext" vs "context" for particular entity categories.
@@ -71,6 +71,6 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [IDOL Government Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionGrammars_23.4_Documentation/GOV/)
-- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionSDK_23.4_Documentation/Guides/html/)
-- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_4/IDOLReleaseNotes_23.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL Government Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionGrammars_24.1_Documentation/GOV/)
+- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionSDK_24.1_Documentation/Guides/html/)
+- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_1/IDOLReleaseNotes_24.1_Documentation/idol/Content/SDKs/Eduction.htm)

@@ -2,7 +2,7 @@
 
 Eduction has a mode called `Table mode` that makes Eduction aware of columns and column headings.  Spreadsheet and CSV files are examples of data that represent data in rows and columns, typically with column headings.  With Eduction `Table mode`, matching will be able to differentiate between say a `date of birth` and `last updated date` because of the column heading.
 
-For more details on this topic, reference the [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionSDK_23.4_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) section of the IDOL Eduction User and Programming Guide.
+For more details on this topic, reference the [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionSDK_24.1_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) section of the IDOL Eduction User and Programming Guide.
 
 In this lesson, you will:
 - Perform `table mode` extraction with `edktool`
@@ -21,6 +21,7 @@ In this lesson, you will:
   - [Perform PII `table mode` extraction - Basic](#perform-pii-table-mode-extraction---basic)
 - [PII `table mode` example - Advanced](#pii-table-mode-example---advanced)
   - [Perform PII `table mode` extraction - Advanced](#perform-pii-table-mode-extraction---advanced)
+- [Perform PII `table mode` extraction - Extra Credit](#perform-pii-table-mode-extraction---extra-credit)
 - [Conclusion](#conclusion)
 - [See also](#see-also)
 
@@ -34,7 +35,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PII edk_samples](../../resources/eduction/pii/edk_samples) and install to `C:\OpenText\EductionGrammars_23.4.0_COMMON\pii\edk_samples\resources`
+- [PII edk_samples](../../resources/eduction/pii/edk_samples) and install to `C:\OpenText\EductionGrammars_24.1.0_COMMON\pii\edk_samples\resources`
 
 ## Perform `table mode` extraction
 
@@ -43,7 +44,7 @@ The Eduction SDK contains a working example under `samples\table_extraction`. Si
 Go ahead and perform extract with `edktool` and we'll explore the inputs and output in more detail below.
 
 ```sh
-> cd  C:\OpenText\EductionSDK_23.4.0_WINDOWS_X86_64\samples\table_extraction\resources
+> cd  C:\OpenText\EductionSDK_24.1.0_WINDOWS_X86_64\samples\table_extraction\resources
 > edktool extract -l ..\..\..\licensekey.dat -c test\config\table_config.cfg -i test\input\csv_input.csv -o out.xml
 ```
 
@@ -131,7 +132,7 @@ An additional input file `tsv_input.tsv` is available which illustrates two tabl
 
 ## PII `table mode` example - Basic
 
-In the Eduction SDK documentation section [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionSDK_23.4_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) the PII date.ecr is used in the example.  This lesson builds upon the documentation including PII `national_id.ecr` in the configuration and providing sample `input.csv` file.
+In the Eduction SDK documentation section [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionSDK_24.1_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) the PII date.ecr is used in the example.  This lesson builds upon the documentation including PII `national_id.ecr` in the configuration and providing sample `input.csv` file.
 
 In the [setup](#setup), you downloaded the `pii_table_mode` resources. Two Eduction configuration files are provided: 
 - `pii_table_mode.cfg` - enables entities from date.ecr and national_id.ecr
@@ -144,10 +145,10 @@ The `input.csv` file has two date columns: "Date of Birth" and "Admission Date" 
 Run `edktool extract` using the same `input.csv` file with each of the `config` folder configurations.
 
 ```sh
-> cd  C:\OpenText\EductionGrammars_23.4.0_COMMON\pii\edk_samples\resources
-> edktool extract -l ..\..\..\..\EductionSDK_23.4.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\input.csv -o out_table_mode.xml
+> cd  C:\OpenText\EductionGrammars_24.1.0_COMMON\pii\edk_samples\resources
+> edktool extract -l ..\..\..\..\EductionSDK_24.1.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\input.csv -o out_table_mode.xml
 
-> edktool extract -l ..\..\..\..\EductionSDK_23.4.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\date.cfg -i pii_table_mode\input\input.csv -o out_date.xml
+> edktool extract -l ..\..\..\..\EductionSDK_24.1.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\date.cfg -i pii_table_mode\input\input.csv -o out_date.xml
 ```
 
 You will get the following matches:
@@ -171,23 +172,35 @@ In release 23.3, Eduction improved its smarts when it comes to recognizing table
 
 > NOTE:  Remember Eduction SDK accepts UTF-8 encoded text as its input, so `PII_table.xlsx` must be first processed into a UTF-8 text file.
 
-There are 2 input files in the `pii_table\input` folder which were produced with KeyView Filter SDK 23.4.0 using new settings available in KeyView.
+There are 2 input files in the `pii_table\input` folder which were produced with KeyView Filter SDK 24.1.0 using new settings available in KeyView.
 - `PII_table.xlsx.KV_TEXT_TD+OTD=F.TXT` - output is like previous versions of KeyView with no specific sheet delimiter, nor consistent column delimiters
 - `PII_table.xlsx.KV_TEXT_TD+OTD=T.TXT` - output has the new start / end table delimiters and consistent tabs across empty columns
 
-> NOTE: Refer to the [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionSDK_23.4_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) in the 23.4 Eduction SDK documentation for more details. 
+> NOTE: Refer to the [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionSDK_24.1_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) in the 24.1 Eduction SDK documentation for more details. 
 
 Run `edktool extract` first using `PII_table.xlsx.KV_TEXT_TD+OTD=F.TXT` and then `PII_table.xlsx.KV_TEXT_TD+OTD=T.TXT` with the `pii_table_mode\config\pii_table_mode.cfg`.
 
 ```sh
-> cd  C:\OpenText\EductionGrammars_23.4.0_COMMON\pii\edk_samples\resources
-> edktool extract -l ..\..\..\..\EductionSDK_23.4.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\PII_table.xlsx.KV_TEXT_TD+OTD=F.TXT -o out_table_mode_F.xml
+> cd  C:\OpenText\EductionGrammars_24.1.0_COMMON\pii\edk_samples\resources
+> edktool extract -l ..\..\..\..\EductionSDK_24.1.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\PII_table.xlsx.KV_TEXT_TD+OTD=F.TXT -o out_table_mode_F.xml
 
-> edktool extract -l ..\..\..\..\EductionSDK_23.4.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\PII_table.xlsx.KV_TEXT_TD+OTD=T.TXT -o out_table_mode_T.xml
+> edktool extract -l ..\..\..\..\EductionSDK_24.1.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\PII_table.xlsx.KV_TEXT_TD+OTD=T.TXT -o out_table_mode_T.xml
 ```
-There will be no matches across the 3 sheets in the `table_mode_F.xml` output due lack of a sheet delimiter.  In `table_mode_T.xml`, all 3 sheets will produce matches with 3 SSNs and 4 DOBs, plus the 2 column headers on each of the 3 sheets. 
+There will be a mix of true positive, false positive and false negative matches across the 3 sheets in the table_mode_F.xml output due to the lack of consistent column delimiters and lack of a sheet delimiter.  In `table_mode_T.xml`, all 3 sheets will produce matches with 3 SSNs and 4 DOBs, plus the 2 column headers on each of the 3 sheets. 
 
-As extra credit, user `edktool` to process `PII_table.xlsx.KV_TEXT_TD+OTD+SCF=T.TXT` where it was produced with KeyView Filter SDK's [`Standardize Cell Formats`](https://www.microfocus.com/documentation/idol/IDOL_23_4/KeyviewFilterSDK_23.4_Documentation/Guides/html/c-programming/Content/Shared/_KV_Standardize_Cell_Formats.htm) option enabled.
+As extra credit, user `edktool` to process `PII_table.xlsx.KV_TEXT_TD+OTD+SCF=T.TXT` where it was produced with KeyView Filter SDK's [`Standardize Cell Formats`](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/c-programming/Content/Shared/_KV_Standardize_Cell_Formats.htm) option enabled.
+
+## Perform PII `table mode` extraction - Extra Credit
+
+With some careful thought, there are some additional scenarios to consider if/how to accommodate.  Here's a few examples:
+1. additional text before or after the cell value representing the nocontext entity form match
+2. header values do not match defined landmark entity values
+
+For scenario #1, EductionSDK does the right thing for you.  There is nothing extra to configure and/or consider other than tokenization concerns.
+
+For scenario #2, EductionSDK supports a mixed mode configuration allowing for both header triggered matches and free text matches.  See [Configure Mixed Table and Free Text Entities](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionSDK_24.1_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) for more details.
+
+Feel free to experiment some to convince yourself the behavior is as expected.
 
 ## Conclusion
 
@@ -197,5 +210,5 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionSDK_23.4_Documentation/Guides/html/)
-- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_4/IDOLReleaseNotes_23.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionSDK_24.1_Documentation/Guides/html/)
+- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_1/IDOLReleaseNotes_24.1_Documentation/idol/Content/SDKs/Eduction.htm)

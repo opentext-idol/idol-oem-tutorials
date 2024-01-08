@@ -32,7 +32,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PCI edk_samples](../../resources/eduction/pci/edk_samples) and install to `C:\OpenText\EductionGrammars_23.4.0_COMMON\pci\edk_samples\resources`
+- [PCI edk_samples](../../resources/eduction/pci/edk_samples) and install to `C:\OpenText\EductionGrammars_24.1.0_COMMON\pci\edk_samples\resources`
 
 ## What's in the Box?
 
@@ -40,7 +40,7 @@ The IDOL PCI Package includes IDOL Eduction Grammar files, postprocessing script
 
 ### Available Grammar Files
 
-To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_23.4.0_COMMON\pci`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pci_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
+To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_24.1.0_COMMON\pci`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pci_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
 
 The PCI Grammar Package covers name (for many countries), date and account number variations specific to the PCI use case.
 
@@ -52,7 +52,7 @@ For the PCI date entities, like `pci/date/paymentcard/*`, "context", "nocontext"
 
 The PCI number entities, like `pci/pan/*/pan`, there are also "context", "nocontext" and "landmark" entity forms. However, the "nocontext" form has less risk of false positives due to checksum validation which we will explore below.
 
-For full details of the entities included in the PCI Grammar Package, please reference the [PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionGrammars_23.4_Documentation/PCI/Content/PCI/PCI_GrammarReference.htm).
+For full details of the entities included in the PCI Grammar Package, please reference the [PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionGrammars_24.1_Documentation/PCI/Content/PCI/PCI_GrammarReference.htm).
 
 > NOTE: You can configure Eduction to use either versions of an entity, in which case matches located with context are given a higher score in the results.
 
@@ -65,8 +65,8 @@ In the setup, you deployed PCI edk_samples resources, which can be used with the
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionGrammars_23.4.0_COMMON\pci\edk_samples\resources
-> edktool extract -l ..\..\..\..\EductionSDK_23.4.0_WINDOWS_X86_64\licensekey.dat -c account_nbr\config\account_nbr.cfg -i account_nbr\input\input.txt -o out.xml
+> cd C:\OpenText\EductionGrammars_24.1.0_COMMON\pci\edk_samples\resources
+> edktool extract -l ..\..\..\..\EductionSDK_24.1.0_WINDOWS_X86_64\licensekey.dat -c account_nbr\config\account_nbr.cfg -i account_nbr\input\input.txt -o out.xml
 ```
 
 31 matches are found representing a landmark plus 30 personal account numbers out of 31 potential credit card numbers.
@@ -110,8 +110,8 @@ In the setup, you deployed edk_samples resources.  It contains resources to be u
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionGrammars_23.4.0_COMMON\pci\edk_samples\resources
-> edktool extract -l ..\..\..\..\EductionSDK_23.4.0_WINDOWS_X86_64\licensekey.dat -c pci_all\config\pci_all.cfg -i pci_all\input\input.txt -o out.xml
+> cd C:\OpenText\EductionGrammars_24.1.0_COMMON\pci\edk_samples\resources
+> edktool extract -l ..\..\..\..\EductionSDK_24.1.0_WINDOWS_X86_64\licensekey.dat -c pci_all\config\pci_all.cfg -i pci_all\input\input.txt -o out.xml
 ```
 
 The `pci_all.cfg` configuration and `input.txt` represent all available entity categories in the PCI package, but does intentionally select "nocontext" vs "context" for particular entity categories.
@@ -124,6 +124,6 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [IDOL PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionGrammars_23.4_Documentation/PCI/)
-- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_23_4/EductionSDK_23.4_Documentation/Guides/html/)
-- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_23_4/IDOLReleaseNotes_23.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionGrammars_24.1_Documentation/PCI/)
+- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/EductionSDK_24.1_Documentation/Guides/html/)
+- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_1/IDOLReleaseNotes_24.1_Documentation/idol/Content/SDKs/Eduction.htm)

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=23.4.0
+VERSION=24.1.0
 JAVA_HOME=/opt/OpenLogic/openlogic-openjdk-11.0.17+8-linux-x64
 ACI_API_HOME=../../../../../IDOLJavaSDK_$VERSION
 PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH

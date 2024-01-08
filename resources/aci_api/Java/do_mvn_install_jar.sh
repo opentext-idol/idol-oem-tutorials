@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=23.4.0
+VERSION=24.1.0
 
 ACI_API_HOME=../../../../IDOLJavaSDK_$VERSION
 MAVEN_HOME=/opt/Apache/maven/apache-maven-3.8.3
