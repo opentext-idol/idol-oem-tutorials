@@ -38,9 +38,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- KeyView HTML Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewExportSDK_24.1_Documentation/Guides/html/html-export-c/index.html)
-- KeyView HTML Export SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewExportSDK_24.1_Documentation/Guides/html/html-export-java/index.html)
-- KeyView XML Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewExportSDK_24.1_Documentation/Guides/html/xml-export-c/index.html)
-- KeyView XML Export SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewExportSDK_24.1_Documentation/Guides/html/xml-export-java/)
-- KeyView PDF Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewExportSDK_24.1_Documentation/Guides/html/pdf-export-c/index.html)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_1/IDOLReleaseNotes_24.1_Documentation/oem/Content/_KeyView.htm)
+- KeyView HTML Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewExportSDK_24.2_Documentation/Guides/html/html-export-c/index.html)
+- KeyView HTML Export SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewExportSDK_24.2_Documentation/Guides/html/html-export-java/index.html)
+- KeyView XML Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewExportSDK_24.2_Documentation/Guides/html/xml-export-c/index.html)
+- KeyView XML Export SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewExportSDK_24.2_Documentation/Guides/html/xml-export-java/)
+- KeyView PDF Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewExportSDK_24.2_Documentation/Guides/html/pdf-export-c/index.html)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/oem/Content/_KeyView.htm)

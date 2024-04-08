@@ -17,6 +17,7 @@ Below are links to lessons, which will take you through an introduction to the K
 - [Use the KeyView Filter SDK](#use-the-keyview-filter-sdk)
   - [C API](#c-api)
   - [Python API](#python-api)
+  - [Java API](#java-api)
 - [See also](#see-also)
 
 ---
@@ -85,15 +86,19 @@ The KeyView Filter SDK is designed to be embedded into other services.
 
 [Get started](./programming_python.md).
 
+###  Java API
+
+[Get started](./programming_java.md).
+
 ---
 
 Next, why not try more tutorials to explore some of the other features available in IDOL, linked from the [main](../README.md#capability-showcase-examples) page.
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/dotnet-programming/index.html)
-- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/python-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_1/IDOLReleaseNotes_24.1_Documentation/oem/Content/_KeyView.htm)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/python-programming/)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/oem/Content/_KeyView.htm)

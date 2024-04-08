@@ -43,7 +43,7 @@ Be sure to download the following resources before you continue:
 You may already have the `tstxtract` destination `_extract` from the introduction lesson.  Delete the folder and its contents and re-create the destination folder.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_24.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > rmdir /s _extract
 _extract, Are you sure (Y/N)? y
 > mkdir _extract
@@ -58,7 +58,7 @@ The `KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar` was created with [WinRAR](htt
 > NOTE: Per notes [above](#clean-up-tstxtract-destination-folder), delete the contents of `_extract` folder and recreate before continuing.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_24.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > tstxtract ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar _extract
 WARNING: tstxtract is a sample program only and is not for production use
 File ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar has 1 sub files, charset: 0, format: 485
@@ -80,7 +80,7 @@ The `KeyViewFilterSDK_12.12.0_ReleaseNotes_en_PASSWORD.7z` was created with [7-Z
 > NOTE: Per notes [above](#clean-up-tstxtract-destination-folder), delete the contents of `_extract` folder and recreate before continuing.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_24.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > tstxtract ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf_PASSWORD.7z _extract
 WARNING: tstxtract is a sample program only and is not for production use
 Cannot open file ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf_PASSWORD.7z, returned code is 8
@@ -107,7 +107,7 @@ E-mails commonly contain attachments where the attachment will often contain sub
 > NOTE: Per notes [above](#clean-up-tstxtract-destination-folder), delete the contents of `_extract` folder and recreate before continuing.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_24.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > tstxtract "..\..\..\idol-oem-tutorials\resources\keyview_filter\email with zip attachment.msg" _extract
 WARNING: tstxtract is a sample program only and is not for production use
 File ..\..\..\idol-oem-tutorials\resources\keyview_filter\email with zip attachment.msg has 2 sub files, charset: 51, format: 345
@@ -136,7 +136,7 @@ tstxtract return code: 0
 
 This time the PPTX in the attached zip file is extracted, as well as the sub files within the PPTX.  All of the counts of the extacted files are pretty obvious if you open each file in their native application with the exception of the `_extract\Microsoft_Word_Document.docx`.  The 1 sub file noted in it is a link to the template used to create the DOCX with no additional currently extracted with `tstxtract`.
 
-If you enable image extraction in the formats.ini as explained [here](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/c-programming/Content/Shared/_KV_xtract_Extract_Images.htm) even more sub files will be extracted. The XLSX contains 6 embedded PNG images.
+If you enable image extraction in the formats.ini as explained [here](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/Shared/_KV_xtract_Extract_Images.htm) even more sub files will be extracted. The XLSX contains 6 embedded PNG images.
 
 ```sh
 > tstxtract -r "..\..\..\idol-oem-tutorials\resources\keyview_filter\email with zip attachment.msg" _extract
@@ -159,9 +159,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/dotnet-programming/index.html)
-- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_1/KeyviewFilterSDK_24.1_Documentation/Guides/html/python-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_1/IDOLReleaseNotes_24.1_Documentation/oem/Content/_KeyView.htm)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/python-programming/)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/oem/Content/_KeyView.htm)

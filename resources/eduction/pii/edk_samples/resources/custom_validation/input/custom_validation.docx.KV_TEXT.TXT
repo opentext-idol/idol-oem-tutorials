@@ -1,0 +1,53 @@
+
+Custom Validation Demo
+Has some PII, PCI, PHI
+
+
+
+
+This is a bogus footer, but illustrates a useful point.  My SSN is 658904232.
+
+
+
+
+
+	
+Column A	Column B	Column C
+33.418904325	XYZ	12/21/2020
+1233.4485221211756505	ABC	10/30/2019
+418904325.0	DEF	09/22/2022
+4485221211756505.0	GHI	02/11/2023
+
+	
+
+
+
+
+
+
+	
+Column A	Column B	Column C
+33,418904325	XYZ	12/21/2020
+1233,4485221211756505	ABC	10/30/2019
+418904325,0	DEF	09/22/2022
+4485221211756505,0	GHI	02/11/2023
+
+	
+
+
+
+
+
+
+
+This is some text for the PHI (well technically it’s also PII).  The URL part of browse is valid ICD10CM code, but is part of a URL that is in this case arguably unrelated to a ICD10.
+https://jira.domain.com/browse/A18.39/ABC-12345 
+
+Seeing what happens with space delimiter: 4485 2212 1175 6505. New sentence.
+
+Jeff Blank, 2024-02-20T15:29:00Z
+These are bogus comments, but illustrate a useful point.
+
+My credit card number is 378282246310005, and please don’t share it.
+Jeff Blank, 2024-02-20T15:36:00Z
+I see.  Can I share this almost CC number 418904322.0?

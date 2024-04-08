@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="pii/id/nocontext/us" Offset="118" OffsetLength="118" Score="0.4" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>658904232</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>658904232</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="0" TableRow="1" TableColumn="0" Offset="166" OffsetLength="166" Score="0.4" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>418904325</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>418904325</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" TableNumber="0" TableRow="2" TableColumn="0" Offset="196" OffsetLength="196" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>4485221211756505</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4485221211756505</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="0" TableRow="3" TableColumn="0" Offset="228" OffsetLength="228" Score="0.4" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>418904325</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>418904325</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" TableNumber="0" TableRow="4" TableColumn="0" Offset="255" OffsetLength="255" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>4485221211756505</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4485221211756505</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="1" TableRow="1" TableColumn="0" Offset="330" OffsetLength="330" Score="0.4" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>418904325</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>418904325</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" TableNumber="1" TableRow="2" TableColumn="0" Offset="360" OffsetLength="360" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>4485221211756505</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4485221211756505</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" TableNumber="1" TableRow="3" TableColumn="0" Offset="392" OffsetLength="392" Score="0.4" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>418904325</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>418904325</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" TableNumber="1" TableRow="4" TableColumn="0" Offset="419" OffsetLength="419" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
+      <ORIGINAL_TEXT>4485221211756505</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4485221211756505</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/medical_terms/icd10cm/eng" Offset="680" OffsetLength="678" Score="1" NormalizedTextSize="6" NormalizedTextLength="6" OriginalTextSize="6" OriginalTextLength="6">
+      <ORIGINAL_TEXT>A18.39</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>A18.39</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="CATEGORY" Text="A18" Offset="0" OffsetLength="0" TextSize="3" TextLength="3"/>
+        <COMPONENT Name="ETIOLOGY" Text="39" Offset="4" OffsetLength="4" TextSize="2" TextLength="2"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="741" OffsetLength="739" Score="1" NormalizedTextSize="19" NormalizedTextLength="19" OriginalTextSize="19" OriginalTextLength="19">
+      <ORIGINAL_TEXT>4485 2212 1175 6505</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4485 2212 1175 6505</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="893" OffsetLength="891" Score="1" NormalizedTextSize="15" NormalizedTextLength="15" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>378282246310005</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>378282246310005</NORMALIZED_TEXT>
+    </MATCH>
+    <MATCH EntityName="pii/id/nocontext/us" Offset="1014" OffsetLength="1010" Score="0.4" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>418904322</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>418904322</NORMALIZED_TEXT>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>

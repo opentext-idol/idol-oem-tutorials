@@ -1,0 +1,56 @@
+Custom Validation Demo
+Has some PII, PCI, PHI
+
+Data that could be confused with US SSN or credit card number
+Column A
+Column B
+Column C
+33.418904325
+XYZ
+12/21/2020
+1233.4485221211756505
+ABC
+10/30/2019
+418904325.0
+DEF
+09/22/2022
+4485221211756505.0
+GHI
+02/11/2023
+Column A
+Column B
+Column C
+33,418904325
+XYZ
+12/21/2020
+4485221211756505,123
+ABC
+10/30/2019
+418904325,0
+DEF
+09/22/2022
+4485221211756505,0
+GHI
+02/11/2023
+This is a bogus footer, but illustrates a useful point.  My SSN is 418904325.
+These are bogus speaker notes, but illustrates a useful point.
+
+My credit card number is 4485221211756505, and please don’t share it.
+2
+
+Column A
+33.418904325
+1233.4485221211756505
+418904325.0
+4485221211756505.0
+Column B
+XYZ
+ABC
+DEF
+GHI
+Column C
+12/21/2020
+10/30/2019
+09/22/2022
+02/11/2023
+

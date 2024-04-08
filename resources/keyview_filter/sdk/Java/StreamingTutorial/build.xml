@@ -1,0 +1,25 @@
+<project>
+	<target name="clean">
+		<delete dir="build"/>
+	</target>
+
+	<property environment="env"/>
+
+	<path id="classpath">
+		<fileset dir="KEYVIEW_BIN_FOLDER/../../javaapi/" includes="KeyView.jar" />
+	</path>
+
+	<target name="compile">
+		<mkdir dir="build/classes"/>
+		<javac includeantruntime="false" srcdir="src" destdir="build/classes" classpathref="classpath" />
+	</target>
+
+	<target name="jar" depends="compile">
+		<mkdir dir="build/jar"/>
+		<jar destfile="build/jar/StreamingTutorial.jar" basedir="build/classes">
+			<manifest>
+				<attribute name="Main-Class" value="StreamingTutorial"/>
+			</manifest>
+		</jar>
+	</target>
+</project>

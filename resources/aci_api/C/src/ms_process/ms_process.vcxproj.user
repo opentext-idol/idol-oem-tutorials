@@ -3,11 +3,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LocalDebuggerCommandArguments>localhost 14000 SESSION_CONFIG_NAME FILE_PATH_TO_PROCESS</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_24.1.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_24.2.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LocalDebuggerCommandArguments>localhost 7000 SESSION_CONFIG_NAME FILE_PATH_TO_PROCESS</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_24.1.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_24.2.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>

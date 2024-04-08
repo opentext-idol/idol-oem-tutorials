@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MATCHLIST>
+  <DOCUMENT Type="Plaintext" ID="Unknown">
+    <MATCH EntityName="pii/id/nocontext/us" Offset="118" OffsetLength="118" Score="0.4" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+      <ORIGINAL_TEXT>658904232</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>658904232</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MATCH_CONTEXT" Text="es a useful point.  My SSN is 658904232.
+
+
+
+" Offset="0" OffsetLength="0" TextSize="44" TextLength="44"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="741" OffsetLength="739" Score="1" NormalizedTextSize="19" NormalizedTextLength="19" OriginalTextSize="19" OriginalTextLength="19">
+      <ORIGINAL_TEXT>4485 2212 1175 6505</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>4485 2212 1175 6505</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MATCH_CONTEXT" Text="happens with space delimiter: 4485 2212 1175 6505. New sentence.
+
+Jeff Blank, 2" Offset="0" OffsetLength="0" TextSize="79" TextLength="79"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/pan/nocontext/pan" Offset="893" OffsetLength="891" Score="1" NormalizedTextSize="15" NormalizedTextLength="15" OriginalTextSize="15" OriginalTextLength="15">
+      <ORIGINAL_TEXT>378282246310005</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>378282246310005</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="MATCH_CONTEXT" Text="nt.
+
+My credit card number is 378282246310005, and please don’t share it.
+J" Offset="0" OffsetLength="0" TextSize="77" TextLength="75"/>
+      </COMPONENTS>
+    </MATCH>
+  </DOCUMENT>
+</MATCHLIST>

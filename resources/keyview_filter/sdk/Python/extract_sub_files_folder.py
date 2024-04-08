@@ -5,8 +5,8 @@ import keyview.filter as kv
 platform = "WINDOWS_X86_64"
 #platform = "MACOS_M1"
 #platform = "LINUX_X86_64"
-filterSDK_home = "C:\\OpenText\\KeyViewFilterSDK_24.1.0_" + platform
-exportSDK_home= "C:\\OpenText\\KeyViewExportSDK_24.1.0_" + platform + "\\"
+filterSDK_home = "C:\\OpenText\\KeyViewFilterSDK_24.2.0_" + platform
+exportSDK_home= "C:\\OpenText\\KeyViewExportSDK_24.2.0_" + platform + "\\"
 tutorials_home= "C:\\OpenText\\idol-oem-tutorials\\"
 
 output_root = "C:\\OpenText\\_Work\\output"
@@ -19,13 +19,13 @@ subfile_extract_exclusions = []
 process_recursively = False
 
 if (platform == "MACOS_M1"):
-    filterSDK_home = "/Users/ec2-user/OpenText/KeyviewFilterSDK_24.1.0_" + platform
-    exportSDK_home= "../../../KeyViewExportSDK_24.1.0_" + platform + "/"
+    filterSDK_home = "/Users/ec2-user/OpenText/KeyviewFilterSDK_24.2.0_" + platform
+    exportSDK_home= "../../../KeyViewExportSDK_24.2.0_" + platform + "/"
     tutorials_home= "../../../idol-oem-tutorials/"
     output_root = "/Users/ec2-user/OpenText/_Work/output"
 if (platform == "LINUX_X86_64"):
-    filterSDK_home = "/home/username/OpenText/KeyviewFilterSDK_24.1.0_" + platform
-    exportSDK_home= "../../../KeyViewExportSDK_24.1.0_" + platform + "/"
+    filterSDK_home = "/home/username/OpenText/KeyviewFilterSDK_24.2.0_" + platform
+    exportSDK_home= "../../../KeyViewExportSDK_24.2.0_" + platform + "/"
     tutorials_home= "../../../idol-oem-tutorials/"
     output_root = "/home/username/OpenText/_Work/output"
 filterSDK_bin = os.path.join(filterSDK_home, platform, "bin")

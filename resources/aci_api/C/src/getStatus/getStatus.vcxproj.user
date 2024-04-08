@@ -2,14 +2,14 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LocalDebuggerCommandArguments>localhost 7000</LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_24.1.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_24.2.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerEnvironment>ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY=REPLACE_WITH_MY_LONG_KEY_STRING
 $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LocalDebuggerCommandArguments>localhost 7000</LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_24.1.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_24.2.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerEnvironment>ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY=REPLACE_WITH_MY_LONG_KEY_STRING
 $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>

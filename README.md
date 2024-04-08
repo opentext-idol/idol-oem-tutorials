@@ -24,7 +24,7 @@ You! If you have access to IDOL software and want to analyze files as part of yo
 
 ## Obtaining tutorial materials
 
-Get a local copy of this tutorial to give you all the configuration files and sample media you will need.  You can either clone this repository or download the `.zip` from [GitHub](https://github.houston.softwaregrp.net/christopher-blanks/idol-oem-tutorials).
+Get a local copy of this tutorial to give you all the configuration files and sample media you will need.  You can either clone this repository or download the `.zip` from [GitHub](https://github.com/opentext-idol/idol-oem-tutorials).
 
 ![github-download](./figs/github-download.png)
 

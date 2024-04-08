@@ -8,4 +8,4 @@ The string YOUR_BIN_DIR needs to be changed to the location of the KeyView bin d
 
 #define YOUR_LICENSE_KEY "Your License Here"
 
-#define YOUR_BIN_DIR "C:\\OpenText\\KeyviewFilterSDK_24.1.0\\WINDOWS_x86_64\\bin"
+#define YOUR_BIN_DIR "C:\\OpenText\\KeyviewFilterSDK_24.2.0\\WINDOWS_x86_64\\bin"
