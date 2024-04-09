@@ -115,7 +115,7 @@ Before you continue with this part of the lesson, refer to these documentation l
 
 *Example 3: New Name and Custom Separator* of the [PII Grammar Customization](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PII/Content/GrammarCustomization.htm) provides example on how to extend `given_name`, `surname` and use a custom separate in the `/nocontext/` form.
 
-1. Copy & paste the XML in the documentation into `name_extended.xml` using UTF-8 capable editor.
+1. Copy & paste the XML in the documentation into `name_extended.xml` using UTF-8 capable editor.  Save to folder `C:\OpenText\EductionSDK_24.2.0\samples\compile\resources\name_extended\source`
    
 2. You will likely need to change `path` attribute of `<include ...>` like the following:
     ```diff
@@ -123,9 +123,10 @@ Before you continue with this part of the lesson, refer to these documentation l
     + <include path="C:\OpenText\EductionGrammars_24.2.0_COMMON\PII\name.ecr"/>
     ```
 
-3. Run `edktool compile` on `name_extend.xml`
+3. Run `edktool compile` on `name_extended.xml`
     ```sh
-    > edktool compile -l C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\licensekey.dat -i name_extended.xml 
+    > cd C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\resources\name_extended
+    > edktool compile -l ..\..\..\..\licensekey.dat -i source\name_extended.xml -o name_extended.ecr
 
     Eduction EDKTool Utility v24.2.0
     Compiling:
@@ -161,7 +162,7 @@ Before you continue with this part of the lesson, refer to these documentation l
 
 6.  Run `edktool extract`:
     ```sh
-    > edktool extract -l C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\licensekey.dat -c name_extended.cfg -i input.txt -o out_extended.xml
+    > edktool extract -l ..\..\..\..\licensekey.dat -c name_extended.cfg -i input.txt
 
     Eduction EDKTool Utility v24.2.0
     ...
@@ -210,7 +211,7 @@ Before you continue with this part of the lesson, refer to these documentation l
 
     You should get 4 matches for the `pii/name/gb` entity.
 
-7. Create a `name.cfg` using the OOTB `pii\name.ecr` and run `edktool extract` with `name.cfg` where you'll get 2 matches with `name.txt`
+1. Create a `name.cfg` using the OOTB `pii\name.ecr` and run `edktool extract` with `name.cfg` where you'll get 2 matches with `name.txt`
     ```sh
     > edktool extract -l C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\licensekey.dat -c name.cfg -i name.txt -o out.xml
 
@@ -251,7 +252,7 @@ The 3rd match is due to the additions to `pii/name/given_name/context/gb` and `p
 
 You now understand the mechanics of compiling a grammar, verifying available entities and creating a new grammar either from scratch or extending existing one.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#idol-eduction-showcase).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 

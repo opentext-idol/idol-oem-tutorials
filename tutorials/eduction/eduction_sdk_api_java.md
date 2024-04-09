@@ -28,6 +28,9 @@ The [Eduction User and Programming Guide](https://www.microfocus.com/documentati
   - [`compile`](#compile)
     - [Build](#build-1)
     - [Run](#run-1)
+  - [`redaction`](#redaction)
+    - [Build](#build-2)
+    - [Run](#run-2)
 - [Conclusion](#conclusion)
 - [See also](#see-also)
   
@@ -51,8 +54,9 @@ Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home d
 
 You must download the following resources before you continue:
 - source code and build tools
-  - [eduction_from_config/java](../../resouces/eduction/sdk/samples/eduction_from_config/java)
-  - [compile/java](../../resouces/eduction/sdk/samples/compile/java)
+  - [eduction_from_config/java](../../resources/eduction/sdk/samples/eduction_from_config/java/)
+  - [compile/java](../../resources/eduction/sdk/samples/compile/java)
+  - [run_mvn_install_jar.bat](../../resources/eduction/sdk/samples)
 
 > NOTE: Deploy these resources to the `%EDK_HOME%\samples` folder, adding to and/or replacing what is provided with EductionSDK.
  
@@ -270,13 +274,61 @@ For extra credit, try `compile` on other Eduction grammar XML.
 
 Review the `compile` Java source code to gain more insights into how to incorporate the Eduction SDK Java API into your application.
 
+### `redaction`
+
+In some use cases for Eduction, custom grammars either for net-new entities and/or extending the entities in the licensed grammar packs. 
+
+> NOTE: While the Eduction SDK engine does support XML based resource files, pre-compiling them into ECRs is recommended.
+
+The `compile` sample program accepts a grammar XML and output ECR.
+
+#### Build
+
+Go ahead and build `redaction`.  A Windows batch file `run_mvn_test.bat` is provided.
+
+> NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
+
+```sh
+> cd C:\OpenText\EductionSDK_24.2.0_WINDOWS_x86_64\samples\redaction\java
+> run_mvn_test.bat 
+```
+
+Check the `mvn_test.log` for any errors and `BUILD SUCCESS`.
+
+#### Run
+
+Go ahead and run `redaction`.  A Windows batch file `run_test.bat` is provided.
+
+> NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
+```sh
+> cd C:\OpenText\EductionSDK_24.2.0_WINDOWS_x86_64\samples\redaction\java
+> run_test.bat
+Apr 08, 2024 4:06:48 PM com.autonomy.eduction.samples.Redact redact
+INFO: Parameters valid.
+Apr 08, 2024 4:06:48 PM com.autonomy.eduction.samples.Redact redact
+INFO: Read license.
+Apr 08, 2024 4:06:48 PM com.autonomy.eduction.samples.Redact redact
+INFO: Engine created.
+Apr 08, 2024 4:06:48 PM com.autonomy.eduction.samples.Redact redact
+INFO: Printing result to test_redact_java.txt ...
+Apr 08, 2024 4:06:48 PM com.autonomy.eduction.samples.Redact redact
+INFO: Program completed without error
+```
+
+A `test_redact_java.txt` should be generated and have the same output as in the `..\resources\test\expectations\redaction.txt`.
+
+For extra credit, try `redaction` with the other Eduction configuration file `entity_name.cfg`.
+
+Review the `redaction` Java source code to gain more insights into how to incorporate the Eduction SDK Java API into your application.
+
 ## Conclusion
 
 You now understand the basics of the Eduction SDK Java API.
 
 As extra credit, build and run the other sample programs in `EductionSDK_<VERSION>_<PLATFORM>\samples` and `EductionGrammars_<VERSION>_COMMON\pii\edk_samples`.  Refer to the changes in these resources and leverage the build tools & tips.
 
-If you haven't already done so, try more tutorials that explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#capability-showcase-examples).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
+
 
 ## See also
 
@@ -286,4 +338,4 @@ If you haven't already done so, try more tutorials that explore some of the othe
 - [PII Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PII/)
 - [PHI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PHI/)
 - [Government Eduction Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/GOV/)
-- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)

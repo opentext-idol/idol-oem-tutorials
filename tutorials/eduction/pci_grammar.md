@@ -69,7 +69,7 @@ Run the following commands to see the output:
 > edktool extract -l ..\..\..\..\EductionSDK_24.2.0_WINDOWS_X86_64\licensekey.dat -c account_nbr\config\account_nbr.cfg -i account_nbr\input\input.txt -o out.xml
 ```
 
-31 matches are found representing a landmark plus 30 personal account numbers out of 31 potential credit card numbers.
+32 matches are found representing a landmark plus 31 personal account numbers out of 32 potential credit card numbers.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MATCHLIST>
@@ -91,7 +91,7 @@ Run the following commands to see the output:
 </MATCHLIST>
 ```
 
-You might ask why only 30 out of 31?  Per the sample data in `account_nbr\input\input.txt`, the reason is simple:
+You might ask why only 31 out of 32?  Per the sample data in `account_nbr\input\input.txt`, the reason is simple:
 1. the last example in `input.txt` matches the American Express regex (leading digits and length).  However, it is blocked at the post-processing validation stage, which performs a checksum validation using the Luhn algorithm.  While the PAN does have limiting regex patterns (by length and digit combinations), it is possible to encounter numbers that look like a PAN, but are not. By doing a checksum validation on the matching string of digits, false positive matches are reduced.
 
 As an extra credit exercise, you can edit `account_nbr\config\account_nbr.cfg` commenting out the pci_postprocessing task:
@@ -120,10 +120,10 @@ The `pci_all.cfg` configuration and `input.txt` represent all available entity c
 
 You now understand how to explore and use the IDOL Eduction's PCI grammars and an example of how the post processing stage of Eduction matching is very valuable. Other entity categories like PII national_id & tin, PHI device UDI & DEA # and GOV Legal Entity Identifier (LEI) do checksum based validation to improve match precision.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#idol-eduction-showcase).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
 - [IDOL PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PCI/)
 - [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionSDK_24.2_Documentation/Guides/html/)
-- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)

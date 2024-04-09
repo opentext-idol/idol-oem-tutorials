@@ -54,8 +54,8 @@ Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home d
 
 You must download the following resources before you continue:
 - source code and build tools
-  - [eduction_from_config/dotnet](../../resouces/eduction/sdk/samples/eduction_from_config/dotnet)
-  - [compile/dotnet](../../resouces/eduction/sdk/samples/compile/dotnet)
+  - [eduction_from_config/dotnet](../../resources/eduction/sdk/samples/eduction_from_config/dotnet)
+  - [compile/dotnet](../../resources/eduction/sdk/samples/compile/dotnet)
 
 > NOTE: Deploy these resources to the `%EDK_HOME%\samples` folder, adding to and/or replacing what is provided with EductionSDK.
 
@@ -86,13 +86,13 @@ The `eduction_from_config` sample program accepts a configuration file as you've
 
 #### Sample code
 
-The C# sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\eduction_from_config\dotnet`.
+The C# sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\dotnet`.
 
 Overwrite the two `.cs` and `.csproj` files in that folder with the updated examples shipped with these tutorials in the resources folder [eduction_from_config/dotnet](../../resouces/eduction/sdk/samples/eduction_from_config/dotnet).
 
 These files include an improved method for using the `versionkey.dat` file.
 
-Double-click on the modified `eduction_from_config.csproj` to open the sample code in Visual Studio 2022.
+Double-click on the modified `eduction_from_config.csproj` to open the sample code in Visual Studio.
 
 ##### Shared Library location
 
@@ -108,7 +108,7 @@ You should see that the "Path" property correctly references the location of you
 
 To check you have a correct reference to your license and version keys, in the Solution Explorer pane, select "licensekey.dat" and "versionkey.dat".
 
-You should see the expected locations ("Full Path") to, *e.g.*  your license key `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\licensekey.dat`:
+You should see the expected locations ("Full Path") to, *e.g.*  your license key `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\licensekey.dat`:
 
 ![vs_2022_dotnet_licensekey_path](./figs/vs_2022_dotnet_licensekey_path.png)
 
@@ -133,7 +133,7 @@ Let's provide the required input options and run in debug mode again.
 - Click the debug properties menu option to open the "Launch Profiles" window:
     ![vs_2022_dotnet_debug_props_menu](./figs/vs_2022_dotnet_debug_props_menu.png)
 
-    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\eduction_from_config\resources\test`.
+    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test`.
 
 - In the "Command line arguments" input box, enter the following three paths (separated onto new lines):
     ```
@@ -144,7 +144,7 @@ Let's provide the required input options and run in debug mode again.
 
 - In the "Working directory" input box, enter the following path:
     ```
-    C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\eduction_from_config\dotnet
+    C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\dotnet
     ```
 
     ![vs_2022_dotnet_debug_props_cmd](./figs/vs_2022_dotnet_debug_props_cmd.png)
@@ -155,7 +155,7 @@ Let's provide the required input options and run in debug mode again.
   
     ![vs_2022_dotnet_debug_run2](./figs/vs_2022_dotnet_debug_run2.png)
 
-This time the program should run and produce an output file `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\eduction_from_config\resources\test\test_output_dotnet.json` containing two matches, as follows:
+This time the program should run and produce an output file `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\test_output_dotnet.json` containing two matches, as follows:
 
 ```json
 {
@@ -238,7 +238,7 @@ The `compile` sample program accepts a grammar XML and output ECR.
 
 #### Sample code
 
-The C# sample `compile` application code lives in: `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\compile\dotnet`.
+The C# sample `compile` application code lives in: `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\dotnet`.
 
 Overwrite the two `.cs` and `.csproj` files in that folder with the updated example shipped with these tutorials in the resources folder [compile/dotnet](../../resouces/eduction/sdk/samples/compile/dotnet).
 
@@ -258,7 +258,7 @@ As before, verify the shared library and licensekey/versionkey references are co
 
 - Click the debug properties menu option to open the "Launch Profiles" window:
   
-    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\compile\resources\test`.
+    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\resources\test`.
 
 - In the "Command line arguments" input box, enter the following three paths (separated onto new lines):
     ```
@@ -268,7 +268,7 @@ As before, verify the shared library and licensekey/versionkey references are co
 
 - In the "Working directory" input box, enter the following path:
     ```
-    C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\compile\dotnet
+    C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\dotnet
     ```
 
     ![vs_2022_dotnet_debug_props_cmd2](./figs/vs_2022_dotnet_debug_props_cmd2.png)
@@ -277,7 +277,7 @@ As before, verify the shared library and licensekey/versionkey references are co
   
 - In the top menu bar, click the green play icon to build and run the project in debug mode.
 
-The program should run and produce a compiled grammar file `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\compile\resources\test\test_dotnet.ecr`.
+The program should run and produce a compiled grammar file `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\resources\test\test_dotnet.ecr`.
 
 For extra credit, try `compile` on other Eduction grammar XML.
 
@@ -289,7 +289,7 @@ You now understand the basics of the Eduction SDK .NET API.
 
 As extra credit, build and run the other sample programs in `EductionSDK_<VERSION>_<PLATFORM>\samples` and `EductionGrammars_<VERSION>_COMMON\pii\edk_samples`.  Refer to the changes in these resources and leverage the build tools & tips.
 
-If you haven't already done so, try more tutorials that explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#capability-showcase-examples).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
@@ -299,4 +299,4 @@ If you haven't already done so, try more tutorials that explore some of the othe
 - [PII Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PII/)
 - [PHI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PHI/)
 - [Government Eduction Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/GOV/)
-- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)

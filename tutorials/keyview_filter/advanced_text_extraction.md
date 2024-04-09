@@ -76,15 +76,15 @@ Word processing and some other file formats allow for users to track revision hi
 
 ```sh
 > cd C:\OpenText\KeyviewFilterSDK_24.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filter -rm ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revison_marks.txt
+> filter -rm ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revision_marks.txt
 WARNING: filter is a sample program only and is not for production use
-filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revison_marks.txt
+filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revision_marks.txt
 filter: error code returned is KVERR_Success
 ```
 
 > NOTE: The `KVERR_Success` error code is a positive result where the destination `hidden_text` file contains the output.  Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.  
 
-Compare `text_revison_marks.txt` and `text_no_hf.txt`. You will see that `February` is added to the output because it was tracked as a change when the month name was changed to `febbraio`.
+Compare `text_revision_marks.txt` and `text_no_hf.txt`. You will see that `February` is added to the output because it was tracked as a change when the month name was changed to `febbraio`.
 
 Try `filter` to extract hidden text with your own test files. Good luck!
 
@@ -200,7 +200,7 @@ Leverage `filter` as you've explored in this lesson to extract text from these a
 
 There are multiple types of text that a given file format may contain. KeyView Filter SDK strives to extract as much information as is possible from file formats.
 
-Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-showcase).
+Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from [here](../keyview_filter/README.md#capability-showcase).
 
 ## See also
 

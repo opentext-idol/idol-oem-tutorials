@@ -30,6 +30,10 @@ The [Eduction User and Programming Guide](https://www.microfocus.com/documentati
     - [Sample code](#sample-code-1)
     - [Compile](#compile-2)
     - [Run](#run-1)
+  - [`redaction`](#redaction)
+    - [Sample code](#sample-code-2)
+    - [Compile](#compile-3)
+    - [Run](#run-2)
 - [Conclusion](#conclusion)
 - [See also](#see-also)
 
@@ -53,8 +57,9 @@ Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home d
 
 You must download the following resources before you continue:
 - source code and build tools
-  - [eduction_from_config/c](../../resouces/eduction/sdk/samples/eduction_from_config/c)
-  - [compile/c](../../resouces/eduction/sdk/samples/compile/c)
+  - [eduction_from_config/c](../../resources/eduction/sdk/samples/eduction_from_config/c)
+  - [compile/c](../../resources/eduction/sdk/samples/compile/c)
+  - [redaction/c](../../resources/eduction/sdk/samples/redaction/c)
 
 > NOTE: Deploy these resources to the `%EDK_HOME%\samples` folder, adding to and/or replacing what is provided with EductionSDK.
 
@@ -85,7 +90,7 @@ The `eduction_from_config` sample program accepts a configuration file as you've
 
 #### Sample code
 
-The C sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\eduction_from_config\c`.
+The C sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\c`.
 
 Overwrite the file `CMakeLists.txt` in that folder with the updated example shipped with these tutorials in the resources folder [eduction_from_config/c](../../resouces/eduction/sdk/samples/eduction_from_config/c).
 
@@ -93,16 +98,19 @@ This file include an improved method for using the `versionkey.dat` file.
 
 #### Compile
 
-Open the folder `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\eduction_from_config\c` in Visual Studio 2022.
+Open the folder `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\c` in Visual Studio.
 
-In the "Solution Explorer" view, right-click on the modified "CMakeLists.txt" and click "Build".
+In the "Solution Explorer" view, right-click on the modified "CMakeLists.txt" and click "Build".  You can proceed if you get `Build succeeded.`
 
 #### Run
 
 Run your compiled program from the command prompt:
 
+> NOTE: Be sure your PATH environment variable has the full path to your %EDK_HOME%\bin so that `edk.dll` can be found as shown below:
+
 ```cmd
-> cd C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\eduction_from_config\c
+> set PATH=C:\Opentext\EductionSDK_24.2.0_WINDOWS_X86_64\bin;%PATH%
+> cd C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\c
 > out\build\x64-Debug\eduction_from_config.exe "..\resources\test\config\test.cfg" "..\resources\test\input\input.txt" "..\resources\test\test_output_c.json"
 Program loaded.
 Config Path:  ..\resources\test\config\test.cfg
@@ -117,7 +125,7 @@ Printing results to ..\resources\test\test_output_c.json...
 Found 2 matches in total.
 Extraction complete.
 ```
-Review `test_output_c.json` to see the match information.  The program should run and produce an output file `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\eduction_from_config\resources\test\test_output_c.json` containing two matches, as follows:
+Review `test_output_c.json` to see the match information.  The program should run and produce an output file `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\test_output_c.json` containing two matches, as follows:
 
 ```json
 {
@@ -200,20 +208,23 @@ The `compile` sample program accepts a grammar XML and output ECR.
 
 #### Sample code
 
-The C sample `compile` application code lives in: `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\compile\c`.
+The C sample `compile` application code lives in: `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\c`.
 
 #### Compile
 
-Open the folder `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\compile\c` in Visual Studio 2022.
+Open the folder `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\c` in Visual Studio.
 
-In the "Solution Explorer" view, right-click on the modified "CMakeLists.txt" and click "Build".
+In the "Solution Explorer" view, right-click on the modified "CMakeLists.txt" and click "Build".  You can proceed if you get `Build succeeded.`
 
 #### Run
 
 Run your compiled program from the command prompt:
 
+> NOTE: Be sure your PATH environment variable has the full path to your %EDK_HOME%\bin so that `edk.dll` can be found as shown below:
+
 ```cmd
-> cd C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\compile\c
+> set PATH=C:\Opentext\EductionSDK_24.2.0_WINDOWS_X86_64\bin;%PATH%
+> cd C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\c
 > out\build\x64-Debug\compile.exe "..\resources\test\source\test.xml" "..\resources\test\test_c.ecr"
 Program loaded.
 INFO: Grammar Path:  ..\resources\test\source\test.xml
@@ -225,11 +236,53 @@ Compiled grammar file saved.
 Program completed without an error.
 ```
 
-The program should run and produce a compiled grammar file `C:\OpenText\EductionSDK_24.2.1_WINDOWS_X86_64\samples\compile\resources\test\test_c.ecr`.
+The program should run and produce a compiled grammar file `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\resources\test\test_c.ecr`.
 
 For extra credit, try `compile` on other Eduction grammar XML.
 
 Review the `compile` C source code to gain more insights into how to incorporate the Eduction SDK C API into your application.
+
+### `redaction`
+
+In some use cases for Eduction, producing redacted text that masks the match values can be of value
+
+The `redaction` sample program accepts a grammar XML and output ECR. ?????????????????
+
+#### Sample code
+
+The C sample `redaction` application code lives in: `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\redaction\c`.
+
+#### Compile
+
+Open the folder `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\redaction\c` in Visual Studio.
+
+In the "Solution Explorer" view, right-click on the modified "CMakeLists.txt" and click "Build".  You can proceed if you get `Build succeeded.`
+
+#### Run
+
+Run your compiled program from the command prompt:
+
+> NOTE: Be sure your PATH environment variable has the full path to your %EDK_HOME%\bin so that `edk.dll` can be found as shown below:
+
+```cmd
+> set PATH=C:\Opentext\EductionSDK_24.2.0_WINDOWS_X86_64\bin;%PATH%
+> cd C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\redaction\c
+> out\build\x64-Debug\redaction.exe "..\resources\test\config\basic.cfg" "..\resources\test\input\input.txt" "..\resources\test\test_redact_c.txt"
+Program loaded.
+Config:  ..\resources\test\config\basic.cfg
+Document Path: ..\resources\test\input\input.txt
+Output File: ..\resources\test\test_react_c.txt
+Info: Parameters valid.
+Engine created.
+Results will be printed to ..\resources\test\test_redact_c.txt...
+Program completed without an error.
+```
+
+The program should run and produce a text file `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\resources\test\test_redact_c.txt` with the matches redacted.
+
+For extra credit, try `redaction` with the other configuration file `entity_name.cfg`.
+
+Review the `redaction` C source code to gain more insights into how to incorporate the Eduction SDK C API into your application.
 
 ## Conclusion
 
@@ -237,7 +290,7 @@ You now understand the basics of the Eduction SDK C API.
 
 As extra credit, build and run the other sample programs in `EductionSDK_<VERSION>_<PLATFORM>\samples` and `EductionGrammars_<VERSION>_COMMON\pii\edk_samples`.  Refer to the changes in these resources and leverage the build tools & tips.
 
-If you haven't already done so, try more tutorials that explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#capability-showcase-examples).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
@@ -247,4 +300,4 @@ If you haven't already done so, try more tutorials that explore some of the othe
 - [PII Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PII/)
 - [PHI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PHI/)
 - [Government Eduction Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/GOV/)
-- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)

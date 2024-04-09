@@ -121,7 +121,7 @@ Reference the [Use the Filter API](https://www.microfocus.com/documentation/idol
 Go ahead and run `extract_metadata_text.py`.  Don't forget to set the paths for KeyView and your input files to match your environment.
 ```sh
 > cd C:\OpenText\KeyViewFilterSDK_24.2.0\pythonapi\my_samples
-> python3 extract_metadata_text.py
+> python extract_metadata_text.py
 
 Processing input document: ../../../idol-oem-tutorials/resources/keyview_filter/2022_calendar_HIDDEN_TEXT.docx
 
@@ -138,7 +138,7 @@ The sample program `extract_metadata_text.py` processes input documents and outp
 Go ahead and run `extract_sub_files.py`.  Don't forget to set the paths for KeyView and your input files to match your environment.
 ```sh
 > cd C:\OpenText\KeyViewFilterSDK_24.2.0\pythonapi\my_samples
-> python3 extract_sub_files.py
+> python extract_sub_files.py
 
 Processing /data//OpenText/KeyviewFilterSDK_24.2.0_LINUX_X86_64/javaapi/KeyView.jar
 
@@ -195,7 +195,7 @@ There are two additional resources available that can perform the same types of 
 
 You have now used the KeyView Filter SDK API for Python to automatically detect the file format (and other key properties) and to extract metadata, text and sub-files.
 
-And if you haven't already, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-showcase).
+Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from [here](../keyview_filter/README.md#capability-showcase).
 
 ## See also
 

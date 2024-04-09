@@ -10,4 +10,4 @@ set grammarIn=..\resources\test\source\%grammar%.xml
 set grammarOut=..\resources\test\%grammar%.ecr
 
 del %grammarOut%
-java -cp %EDK_HOME%\bin\edk.jar;%EDK_HOME%\samples\compile\java\target\classes com.autonomy.eduction.samples.Compile "%grammarIn%" "%grammarOut%"
+java -cp %EDK_HOME%\bin\edk.jar;.\target\classes com.autonomy.eduction.samples.Compile "%grammarIn%" "%grammarOut%"

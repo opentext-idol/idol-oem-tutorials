@@ -60,14 +60,10 @@ You need a KeyView license key to proceed with this lesson.  If you skipped the 
 Deploy the downloaded `StreamingTutorial` build tools and source files to the location of your choice.  This tutorial uses `C:\OpenText\KeyViewFilterSDK_24.2.0\javaapi\StreamingTutorial`.
 
 To build `StreamingTutorial` a few modifications of the provided resources are required:
-1. Update build.xml, replacing the `KEYVIEW_BIN_FOLDER` placeholder with the location of your KeyView bin folder so that that path to the `javaapi\KeyView.jar` can be resolved. For example,
-```xml
-	<path id="classpath">
-		<fileset dir="C:\OpenText\KeyViewFilterSDK_24.2.0\WINDOWS_X86_64\bin\..\..\javaapi\" includes="KeyView.jar" />
-	</path>
-```
-2. Update the provided `build.bat` or `build.sh` to set the `JAVA_HOME` and `ANT_HOME` environment variables that match your system.
-3. Update `src\Config.java`, replacing the `KEYVIEW_LICENSEKEY_STRING` with the contents of the `licensekey.dat` file and `KEYVIEW_BIN_FOLDER` with the location of your KeyView bin folder.
+1. Copy `idol-oem-tutorials\resources\keyview_filter\sdk\Java\StreamingTutorial` to `%KEYVIEW_HOME%\javaapi\StreamingTutorial`.
+1. The `build.xml` should properly resolve the relative path to `KeyView.jar`.
+1. Update the provided `build.bat` or `build.sh` to set the `JAVA_HOME` and `ANT_HOME` environment variables that match your system.
+1. Update `src\Config.java`, replacing the `KEYVIEW_LICENSEKEY_STRING` with the contents of the `licensekey.dat` file and `KEYVIEW_BIN_FOLDER` with the location of your KeyView bin folder.
 
 Go ahead and run `build.bat` or `build.sh`.
 ```sh
@@ -128,7 +124,7 @@ Try `StreamingTutorial` with `idol-oem-tutorials\resources\keyview_filter\KeyVie
 
 You have now used the KeyView Filter SDK API for Java to automatically detect the file format (and other key properties) and to extract metadata, text and sub-files.
 
-And if you haven't already, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-showcase).
+Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from [here](../keyview_filter/README.md#capability-showcase).
 
 ## See also
 

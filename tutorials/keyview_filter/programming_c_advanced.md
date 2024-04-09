@@ -18,6 +18,9 @@ In this lesson, you will:
   - [Opening a document from a stream](#opening-a-document-from-a-stream)
   - [Extracting subfiles using streams](#extracting-subfiles-using-streams)
 - [Partial filtering](#partial-filtering)
+- [Build \& Run](#build--run)
+  - [Build](#build)
+  - [Run](#run)
 - [Conclusion](#conclusion)
 - [See also](#see-also)
 
@@ -212,11 +215,30 @@ while(1)
 
 You might find you want to stop processing before you have filtered the entire file - for example, because you have already found a search term, or because you have hit a resource threshhold. You can safely stop processing, as long as you still call [fpFreeFilterOutput()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFreeFilterOutput.htm) and [fpCloseDocument()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpCloseDocument.htm).
 
+## Build & Run
+
+### Build 
+
+1. Copy the `idol-oem-tutorials\resources\keyview_filter\sdk\tutorial` folder to `%KEYVIEW_HOME%\samples\tutorial`.  The provided makefile(s) leverage components of the samples' makefile where relative paths are used.
+2. Use the provided makefile to build `e.g. nmake tutorial_stream_win_x86_64.mak`
+3. The `%KEYVIEW_HOME%\samples\tutorial` folder will have bin folder containing 
+
+### Run
+1. Since `tutorial.h` specified the `YOUR_BIN_DIR` for KeyView, you can run the built exe from the `bin` folder as shown below:
+```cmd
+> set PATH=C:\OpenText\KeyViewFilterSDK_24.2.0_WINDOWS_X86_64\bin;%PATH
+> cd bin
+> tutorial_stream ..\..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.13.0_ReleaseNotes_en.pdf out
+```
+The `out` file will have the text from the input PDF file.
+
+For extra credit, try with your own input file(s) and/or the others provided with this tutorial.
+
 ## Conclusion
 
 You should now have a good understanding of the KeyView Filter SDK API, allowing you to automatically detect the file format and extract metadata, text and sub files.
 
-If you haven't already done so, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-showcase).
+Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from [here](../keyview_filter/README.md#capability-showcase).
 
 ## See also
 

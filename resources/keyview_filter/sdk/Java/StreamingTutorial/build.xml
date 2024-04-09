@@ -6,7 +6,7 @@
 	<property environment="env"/>
 
 	<path id="classpath">
-		<fileset dir="KEYVIEW_BIN_FOLDER/../../javaapi/" includes="KeyView.jar" />
+		<fileset dir="../" includes="KeyView.jar" />
 	</path>
 
 	<target name="compile">

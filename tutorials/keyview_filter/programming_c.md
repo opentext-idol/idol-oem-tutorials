@@ -44,6 +44,9 @@ In this lesson, you will:
   - [Opening a container](#opening-a-container)
   - [Extracting sub files](#extracting-sub-files-1)
   - [Retrieving mail metadata](#retrieving-mail-metadata)
+- [Build \& Run](#build--run)
+  - [Build](#build)
+  - [Run](#run)
 - [Conclusion](#conclusion)
 - [See also](#see-also)
 
@@ -489,11 +492,30 @@ error = extract.fpGetSubfileMetadataList(fileContext, &metaArg, &metadataList);
 metadataList->fpFree(metadataList);
 ```
 
+## Build & Run
+
+### Build 
+
+1. Copy the `idol-oem-tutorials\resources\keyview_filter\sdk\tutorial` folder to `%KEYVIEW_HOME%\samples\tutorial`.  The provided makefile(s) leverage components of the samples' makefile where relative paths are used.
+2. Use the provided makefile to build `e.g. nmake tutorial_file_win_x86_64.mak`
+3. The `%KEYVIEW_HOME%\samples\tutorial` folder will have bin folder containing 
+
+### Run
+1. Since `tutorial.h` specified the `YOUR_BIN_DIR` for KeyView, you can run the built exe from the `bin` folder as shown below:
+```cmd
+> set PATH=C:\OpenText\KeyViewFilterSDK_24.2.0_WINDOWS_X86_64\bin;%PATH
+> cd bin
+> tutorial_file ..\..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.13.0_ReleaseNotes_en.pdf out
+```
+The `out` file will have the text from the input PDF file.
+
+For extra credit, try with your own input file(s) and/or the others provided with this tutorial.
+
 ## Conclusion
 
 You have now built a basic sample program, processing documents using file mode. To learn about more advanced features, such as processing files in stream mode, take a look at the [Advanced Tutorial](./programming_c_advanced.md#keyview-filter-sdk-c-api-advanced-topics)
 
-And if you haven't already, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-showcase).
+Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from [here](../keyview_filter/README.md#capability-showcase).
 
 ## See also
 

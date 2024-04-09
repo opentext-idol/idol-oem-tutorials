@@ -118,7 +118,7 @@ If proper credentials were provided and the Azure decryption service could be re
 
 With KeyView Filter SDK supporting Microsoft RMS classified & protected files more content is available for downstream processing.
 
-Next, why not try more tutorials to explore some of the other features available in KeyView Filter SDK, linked from the [main page](../README.md#keyview-filter-sdk-showcase).
+Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from [here](../keyview_filter/README.md#capability-showcase).
 
 ## See also
 

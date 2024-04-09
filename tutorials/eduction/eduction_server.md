@@ -73,7 +73,12 @@ All IDOL ACI servers include, *e.g.* under the directory: `C:\OpenText\EductionS
 
 An ACI server can be launched by running the executable or by configuring a service on [Windows](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLServer_24.2_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_WindowsServices.htm) or on [Linux](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLServer_24.2_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_LinuxStartup.htm).
 
-Where you have an OEM license key, the ACI server looks on startup for a `licensekey.dat` file in the same directory as the executable.
+Where you have an OEM license key, the ACI server looks on startup for a `licensekey.dat` file in the same directory as the executable.  Edit the `eductionserver.cfg` as follows to use OEM license key:
+```diff
+-[License]
+-LicenseServerHost=localhost
+-LicenseServerACIPort=20000
+```
 
 > NOTE: With a non-OEM license, the primary configuration file must be modified to reference an instance of IDOL License Server, which is contacted to received permission to run.  Use of IDOL License Server is beyond the scope of this lesson.
 
@@ -128,7 +133,7 @@ Note some important additional sections:
 
 For the simplest start, now double-click the `eductionserver.exe`.
 
-Open the `logs/application.log` file to see amount other messages, the following line:
+Open the `logs/application.log` file to see amount other messages and the following line:
 
 ```
 This ACI Server will not accept unencrypted communications from ACI clients.
@@ -140,7 +145,7 @@ This line means that your Eduction Server has successfully picked up up the OEM 
 
 The ACI (Autonomy Content Infrastructure) Client API enables easy communication between custom-built applications and IDOL ACI servers.
 
-You should already be familiar with the Python ACI API wrapper, which is included in this tutorial package under `resources/aci_api/Python`.
+If you are not already familiar with the Python ACI API wrapper, refer to [resources/aci_api/Python](../../resources/aci_api/Python/README.md#python-bindings-for-the-c-aci-api) in this tutorials package.
 
 Now that you're set up with IDOL Eduction Server and the Python ACI API, it's time to run something useful.  The included scripts directory contains a file to do just that: `educe_from_text_oem.py` under the `eduction` directory.
 
@@ -171,13 +176,15 @@ offset,match,score
 64,chris.blanks@opentext.com,1.0
 ```
 
+Two matches are produced reflecting the two email addresses in the input text.
+
 For more details on running the "EduceFromText" action and its optional parameters, please read the [reference guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionServer_24.2_Documentation/Help/Content/Actions/Eduction/EduceFromText.htm).
 
 ## Conclusion
 
 You now understand how to license and run Eduction Server in an OEM deployment to receive ACI-encrypted requests from an ACI client to perform Eduction from sample text.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [showcase](../README.md#idol-eduction-showcase) page.
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 

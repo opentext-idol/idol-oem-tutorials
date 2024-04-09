@@ -14,4 +14,4 @@ set MinScore=0.4
 set PostProcessThreshold=0.4
 set EntityMatchLimit=
 
-java -cp %EDK_HOME%\bin\edk.jar;.\java\target\classes com.autonomy.eduction.samples.FromConfig "%configPath%" "%inputFilePath%" %outputFilePath% %MaxMatchesPerDoc% %MinScore% %PostProcessThreshold% %EntityMatchLimit%
+java -cp %EDK_HOME%\bin\edk.jar;.\target\classes com.autonomy.eduction.samples.FromConfig "%configPath%" "%inputFilePath%" "%outputFilePath%" %MaxMatchesPerDoc% %MinScore% %PostProcessThreshold% %EntityMatchLimit%

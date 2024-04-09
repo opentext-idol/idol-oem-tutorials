@@ -367,7 +367,7 @@ In this lesson, you used Filter SDK to automatically detect the file format, per
 
 You should now be confident in the basics of KeyView Filter SDK.
 
-Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from the [main page](../README.md#keyview-filter-showcase).
+Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from [here](../keyview_filter/README.md#capability-showcase).
 
 ## See also
 

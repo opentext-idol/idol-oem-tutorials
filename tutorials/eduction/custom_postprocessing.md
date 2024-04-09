@@ -36,9 +36,9 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PCI redact_account_nbr sample](../../resources/eduction/pci/edk_samples/resources/redact_account_nbr) and install to `C:\OpenText\EductionGrammars_24.2.0_COMMON\pci\edk_samples\resources\redact_account_nbr`
-- [PII custom post-process threshold](../../resources/eduction/pii/edk_samples/resources/custom_pp_threshold) and install to `C:\OpenText\EductionGrammars_24.2.0_COMMON\pii\edk_samples\resources\custom_pp_threshold`
-- [PII custom validation](../../resources/eduction/pii/edk_samples/resources/custom_validation) and install to `C:\OpenText\EductionGrammars_24.2.0_COMMON\pii\edk_samples\resources\custom_validation`
+- [PCI - redact_account_nbr sample](../../resources/eduction/pci/edk_samples/resources/redact_account_nbr) and install to `C:\OpenText\EductionGrammars_24.2.0_COMMON\pci\edk_samples\resources\redact_account_nbr`
+- [PII - custom post-process threshold](../../resources/eduction/pii/edk_samples/resources/custom_pp_threshold) and install to `C:\OpenText\EductionGrammars_24.2.0_COMMON\pii\edk_samples\resources\custom_pp_threshold`
+- [PII - custom validation](../../resources/eduction/pii/edk_samples/resources/custom_validation) and install to `C:\OpenText\EductionGrammars_24.2.0_COMMON\pii\edk_samples\resources\custom_validation`
 
 ## Lessons
 
@@ -132,18 +132,18 @@ The following matches are produced
       <ORIGINAL_TEXT>241 53 8573</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>241 53 8573</NORMALIZED_TEXT>
     </MATCH>
-    <MATCH EntityName="pii/id/nocontext/al" Offset="94" OffsetLength="94" Score="0.5" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+    <MATCH EntityName="pii/id/nocontext/al" Offset="123" OffsetLength="123" Score="0.5" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
       <ORIGINAL_TEXT>I05101999Q</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>I05101999Q</NORMALIZED_TEXT>
       <COMPONENTS>
         <COMPONENT Name="NID" Text="I05101999Q" Offset="0" OffsetLength="0" TextSize="10" TextLength="10"/>
       </COMPONENTS>
     </MATCH>
-    <MATCH EntityName="pii/id/nocontext/ar" Offset="183" OffsetLength="183" Score="0.475" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="8" OriginalTextLength="8">
+    <MATCH EntityName="pii/id/nocontext/ar" Offset="212" OffsetLength="212" Score="0.475" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="8" OriginalTextLength="8">
       <ORIGINAL_TEXT>22691903</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>22691903</NORMALIZED_TEXT>
     </MATCH>
-    <MATCH EntityName="pii/id/nocontext/au" Offset="223" OffsetLength="223" Score="0.75" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
+    <MATCH EntityName="pii/id/nocontext/au" Offset="252" OffsetLength="252" Score="0.75" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
       <ORIGINAL_TEXT>AMS123456</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>AMS123456</NORMALIZED_TEXT>
       <COMPONENTS>
@@ -205,7 +205,7 @@ Run the following commands to see the output:
 
 ```sh
 > cd C:\OpenText\EductionGrammars_24.2.0_COMMON\pii\edk_samples\resources
-> edktool extract -l ..\..\..\..\EductionSDK_24.2.0_WINDOWS_X86_64\licensekey.dat -c custom_validation\config\custom_validation.cfg -i custom_pp_threshold\input\custom_validation.txt -o custom_validation.xml
+> edktool extract -l ..\..\..\..\EductionSDK_24.2.0_WINDOWS_X86_64\licensekey.dat -c custom_validation\config\custom_validation.cfg -i custom_validation\input\custom_validation.docx.KV_TEXT.TXT -o custom_validation.xml
 ```
 
 > NOTE: The Lua `print()` statements can be uncommented to help you follow along for each match and the entity specific filtering of false positives.
@@ -214,7 +214,7 @@ Re-run the above but with the following change to `custom_validation.cfg`:
 ```diff
 +//PostProcessingTask2 = custom_validation
 ```
-and set the output of `edktool` to `-o out.xml` so you can see the impact of the `custom_validation.lua` task.
+and set the output of `edktool` to `-o no_custom_validation.xml` so you can see the impact of the `custom_validation.lua` task.
 
 There will be less matches in `custom_validation.xml` due to the entity specific patterns aim to reduce false positives in the scenarios in `custom_validation.lua`.
 
@@ -224,11 +224,11 @@ The alternate scenario covered in `custom_validation.lua` is adding the EDK Comp
 
 You are now familiar with more use cases for Eduction post processing: custom match redaction, custom score threshold, custom validation.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#idol-eduction-showcase).
+Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
 - [IDOL PCI Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PCI/)
 - [IDOL PII Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PII/)
 - [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionSDK_24.2_Documentation/Guides/html/)
-- [IDOL and KeyView OEM Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)
