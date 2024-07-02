@@ -1,40 +1,15 @@
-import sys
+import argparse
 import os
 import pathlib
-import uuid
 import shutil
+import sys
+import uuid
+
 import keyview.filter as kv
-
-platform = "WINDOWS_X86_64"
-#platform = "MACOS_M1"
-#platform = "LINUX_X86_64"
-filterSDK_home = "C:\\OpenText\\KeyViewFilterSDK_24.2.0_" + platform
-exportSDK_home= "C:\\OpenText\\KeyViewExportSDK_24.2.0_" + platform + "\\"
-tutorials_home= "C:\\OpenText\\idol-oem-tutorials\\"
-
-if (platform == "MACOS_M1"):
-    filterSDK_home = "/Users/ec2-user/OpenText/KeyviewFilterSDK_24.2.0_" + platform
-    exportSDK_home= "../../../KeyViewExportSDK_24.2.0_" + platform
-if (platform == "LINUX_X86_64"):
-    filterSDK_home = "/home/username/OpenText/KeyviewFilterSDK_24.2.0_" + platform
-    exportSDK_home= "../../../KeyviewExportSDK_24.2.0_" + platform
-filterSDK_bin = os.path.join(filterSDK_home, platform, "bin")
-
-input_filepath = os.path.join(filterSDK_home, "javaapi", "KeyView.jar")
-#input_filepath = os.path.join(exportSDK_home, "testdocs", "Annual_Report.docx")
-#input_filepath = os.path.join(exportSDK_home, "testdocs", "freezer2.ppt")
-#input_filepath = os.path.join(exportSDK_home, "testdocs", "FreshDinner.doc")
-#input_filepath = os.path.join(exportSDK_home, "testdocs", "frshfrozen.xls")
-#input_filepath = os.path.join(exportSDK_home, "testdocs", "Investment_Portfolio.xlsx")
-#input_filepath = os.path.join(exportSDK_home, "testdocs", "Onboarding.msg")
-#input_filepath = os.path.join(exportSDK_home, "testdocs", "Report_Template.pdf")
-#input_filepath = os.path.join(exportSDK_home, "testdocs", "SquaresTemplate.zip")
 
 # add exclusions for extraction as appropriate for use case
 #subfile_extract_exclusions = [kv.DocFormat.MS_WORD_2007]
 subfile_extract_exclusions = []
-
-output_root = "C:\\OpenText\\_Work\\output"
 
 # process the descendant sub-files for more sub-files or not
 process_recursively = False
@@ -42,13 +17,25 @@ process_recursively = False
 def get_keyview_license():
     try:
         with open(os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"], "r") as lic_file:
+            print("Using KeyView license key: " + os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"])
             lic = lic_file.read()
             return lic
     except KeyError as k:
-        print("Unable to read license file.")
+        print("Unable to read license file." + os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"] + "\n")
+        sys.exit()
+    except IOError as e_io:
+        print("Unable to read license file." + os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"] + "\n")
         sys.exit()
 
-
+def parse_args():
+    p = argparse.ArgumentParser(description="Perform KeyView Filter SDK detection and sub-file extraction.",
+                                formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("filterSDK_bin", help='KeyView Filter SDK bin folder.', type=str)
+    p.add_argument("input_filepath", help='Input file to process.', type=str)
+    p.add_argument("output_root_filepath", help='Output root file path.', type=str)
+    p.add_argument("--recurse", help="Recursively process input file", action='store_true', required=False)
+    return p.parse_args()
+    
 def get_safe_extract_path(extract_dir, subfile_name):
     abs_extract_dir = pathlib.Path(extract_dir).resolve()
     abs_extract_path = (abs_extract_dir / subfile_name).resolve()
@@ -60,12 +47,13 @@ def get_safe_extract_path(extract_dir, subfile_name):
     # TODO logging
     return abs_extract_dir / f"kv_escape_{uuid.uuid4().hex}_{abs_extract_path.name}"
 
-def extract_sub_file(subfile, out_dir):
+def extract_sub_file(session, subfile, out_dir, process_recursively):
     try:
         extract_path = get_safe_extract_path(out_dir, subfile.name)
 
-        print("\nFound other SubFileTypes to extract. Extracting to " + str(extract_path) + "\n")
+        print("\nFound other SubFileTypes to extract.")
         print("Extracting " + subfile.name)
+        print("to " + str(extract_path))
         print("\tType: " + subfile.type.name.capitalize())
         print("\tIndex: " + str(subfile.index))
         print("\tParent: " + str(subfile.parent))
@@ -76,16 +64,16 @@ def extract_sub_file(subfile, out_dir):
         subfile.extract(extract_path)            
         
         if process_recursively:
-            process_file(extract_path, str(extract_path) + ".KV_EXTRACT", process_recursively)
+            keyview_file(str(extract_path), session, str(extract_path) + ".KV_EXTRACT", process_recursively)
     except OSError as o:
         # this should maybe be a fatal error
-        print("Unable to create extract to folder " + str(extract_path) + ". Error: " + o.strerror)
+        print("Unable to create extract to folder " + str(extract_path) + ". Error: " + o.strerror + "\n")
         return False
     except kv.ExternalSubfileError as e: 
-        #print("Ignoring external sub-file extraction exception.")
+        print("Skipping external sub-file extraction.")
         return True     
     except kv.KeyViewError as e:
-        print("KeyView error: " + str(e))
+        print("KeyView error: " + str(e) + "\n")
         print(e.error_code)
         return False
 
@@ -111,31 +99,37 @@ def keyview_file(input_filepath, session, out_dir, process_recursively):
                     print("\tIndex: " + str(subfile.index))
                     print("\tChildren: " + str(subfile.children))
                     continue
-                extract_sub_file(subfile, out_dir)
+                extract_sub_file(session, subfile, out_dir, process_recursively)
         except kv.KeyViewError as e:
             print("Unable extract sub file(s). KeyView error: " + str(e) + "\n")
             return
 
+
+# read bin path and input / output file paths from command line
+program_args = parse_args()
+if program_args.recurse:
+    process_recursively = program_args.recurse
+
 # Remove prior sub-file extract folder and create new one
 # Removal of old is done out of a convenience
 try:
-    shutil.rmtree(output_root)
+    shutil.rmtree(program_args.output_root_filepath)
 except OSError as o:
-    print("ignoring error")
+    #print("ignoring error")
+    pass
 
 try:
-    os.mkdir(output_root)
+    os.mkdir(program_args.output_root_filepath)
 except OSError as o:
-    print(f"Unable to create output folder {output_root}. Error: {o.strerror}")
+    print(f"Unable to create output folder {program_args.output_root_filepath}. Error: {o.strerror}" + "\n")
     sys.exit()
 
 try:
-    session = kv.FilterSession(filterSDK_bin, get_keyview_license())
+    session = kv.FilterSession(program_args.filterSDK_bin, get_keyview_license())
     session.config.extract_images(False)
     session.config.extraction_timeout(300)      # here to illustrate relevant config option
 except kv.KeyViewError as e:
     print("Unable to create filter session. KeyView error: " + str(e) + "\n")
-    #print(e.error_code())
     sys.exit()
 
-keyview_file(input_filepath, session, output_root, process_recursively)
+keyview_file(program_args.input_filepath, session, program_args.output_root_filepath, process_recursively)

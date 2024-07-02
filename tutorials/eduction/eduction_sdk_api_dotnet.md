@@ -2,13 +2,13 @@
 
 The Eduction SDK is designed to be embedded into other services.
 
-To facilitate embedding, the Eduction SDK has APIs for C, Java and .NET.  In addition, the Eduction SDK runs natively on the following platforms: Windows (x86_64), Linux (x86_64 and ARM_64), MacOS (x86_64 and Apple M*). 
+To facilitate embedding, the Eduction SDK has APIs for C, Java and .NET.  In addition, the Eduction SDK runs natively on the following platforms: Windows (x86_64, x86_32 and ARM_64), Linux (x86_64 and ARM_64), MacOS (x86_64 and Apple M*). 
 
 In this lesson, you will:
 - use the Eduction SDK .NET API to perform extraction using a configuration file
 - use the Eduction SDK .NET API to compile a grammar XML into an ECR
 
-The [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionSDK_24.2_Documentation/Guides/html/Content/EductionSDK/APIReference/DotNet_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
+The [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/Content/EductionSDK/APIReference/DotNet_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
 
 > NOTE: This lesson only covers the Eduction SDK APIs and does not cover Eduction Server. See [here](./README.md#use-idol-eduction-server) for a lesson on Eduction Server.
 
@@ -40,13 +40,13 @@ The [Eduction User and Programming Guide](https://www.microfocus.com/documentati
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Refer to `README.md` in the `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
+Refer to `README.md` in the `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
 
 > NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#eduction-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
 
 ### License and Version key dat files
 
-Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home directory (e.g. `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64`).
+Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home directory (*e.g.* `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64`).
 
 > NOTE: An improved method to incorporate `versionkey.dat` is implemented as part of the provided resources, where you must ignore the release notes recommendation to pre-concatenate the `licensekey.dat` and `versionkey.dat`, delimited by a `;`. 
 
@@ -61,9 +61,9 @@ You must download the following resources before you continue:
 
 ### Environment and Compilers
 
-- Refer to the `System Requirements` section of the [IDOL Getting Started Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLServer_24.2_Documentation/Guides/html/gettingstarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
-- Refer to [Eduction User & Programming Guide - Deploy Eduction SDK - .NET API Component](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionSDK_24.2_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/DotNet_API.htm) for API and platform specific software dependencies.
-- The `README.md` in `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
+- Refer to the `System Requirements` section of the [IDOL Getting Started Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLServer_24.3_Documentation/Guides/html/gettingstarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
+- Refer to [Eduction User & Programming Guide - Deploy Eduction SDK - .NET API Component](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/DotNet_API.htm) for API and platform specific software dependencies.
+- The `README.md` in `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
 
 > HINT: For example, if you use Visual Studio Community 2022 in Windows 11, installed from https://visualstudio.microsoft.com/downloads/, run the Visual Studio Installer and ensure you have the ".NET Core 2.1 Runtime" component installed:
 > 
@@ -71,7 +71,7 @@ You must download the following resources before you continue:
 
 ## API Documentation
 
-API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\` as noted below:
+API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\` as noted below:
 - .NET - `dotnet_api\help\index.html`
 
 ## Example programs
@@ -86,7 +86,7 @@ The `eduction_from_config` sample program accepts a configuration file as you've
 
 #### Sample code
 
-The C# sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\dotnet`.
+The C# sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples\eduction_from_config\dotnet`.
 
 Overwrite the two `.cs` and `.csproj` files in that folder with the updated examples shipped with these tutorials in the resources folder [eduction_from_config/dotnet](../../resouces/eduction/sdk/samples/eduction_from_config/dotnet).
 
@@ -108,7 +108,7 @@ You should see that the "Path" property correctly references the location of you
 
 To check you have a correct reference to your license and version keys, in the Solution Explorer pane, select "licensekey.dat" and "versionkey.dat".
 
-You should see the expected locations ("Full Path") to, *e.g.*  your license key `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\licensekey.dat`:
+You should see the expected locations ("Full Path") to, *e.g.*  your license key `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\licensekey.dat`:
 
 ![vs_2022_dotnet_licensekey_path](./figs/vs_2022_dotnet_licensekey_path.png)
 
@@ -133,7 +133,7 @@ Let's provide the required input options and run in debug mode again.
 - Click the debug properties menu option to open the "Launch Profiles" window:
     ![vs_2022_dotnet_debug_props_menu](./figs/vs_2022_dotnet_debug_props_menu.png)
 
-    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test`.
+    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test`.
 
 - In the "Command line arguments" input box, enter the following three paths (separated onto new lines):
     ```
@@ -144,7 +144,7 @@ Let's provide the required input options and run in debug mode again.
 
 - In the "Working directory" input box, enter the following path:
     ```
-    C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\dotnet
+    C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples\eduction_from_config\dotnet
     ```
 
     ![vs_2022_dotnet_debug_props_cmd](./figs/vs_2022_dotnet_debug_props_cmd.png)
@@ -155,7 +155,7 @@ Let's provide the required input options and run in debug mode again.
   
     ![vs_2022_dotnet_debug_run2](./figs/vs_2022_dotnet_debug_run2.png)
 
-This time the program should run and produce an output file `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\test_output_dotnet.json` containing two matches, as follows:
+This time the program should run and produce an output file `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\test_output_dotnet.json` containing two matches, as follows:
 
 ```json
 {
@@ -238,7 +238,7 @@ The `compile` sample program accepts a grammar XML and output ECR.
 
 #### Sample code
 
-The C# sample `compile` application code lives in: `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\dotnet`.
+The C# sample `compile` application code lives in: `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples\compile\dotnet`.
 
 Overwrite the two `.cs` and `.csproj` files in that folder with the updated example shipped with these tutorials in the resources folder [compile/dotnet](../../resouces/eduction/sdk/samples/compile/dotnet).
 
@@ -258,7 +258,7 @@ As before, verify the shared library and licensekey/versionkey references are co
 
 - Click the debug properties menu option to open the "Launch Profiles" window:
   
-    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\resources\test`.
+    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples\compile\resources\test`.
 
 - In the "Command line arguments" input box, enter the following three paths (separated onto new lines):
     ```
@@ -268,7 +268,7 @@ As before, verify the shared library and licensekey/versionkey references are co
 
 - In the "Working directory" input box, enter the following path:
     ```
-    C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\dotnet
+    C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples\compile\dotnet
     ```
 
     ![vs_2022_dotnet_debug_props_cmd2](./figs/vs_2022_dotnet_debug_props_cmd2.png)
@@ -277,7 +277,7 @@ As before, verify the shared library and licensekey/versionkey references are co
   
 - In the top menu bar, click the green play icon to build and run the project in debug mode.
 
-The program should run and produce a compiled grammar file `C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\compile\resources\test\test_dotnet.ecr`.
+The program should run and produce a compiled grammar file `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples\compile\resources\test\test_dotnet.ecr`.
 
 For extra credit, try `compile` on other Eduction grammar XML.
 
@@ -293,10 +293,10 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionSDK_24.2_Documentation/Guides/html/)
-- [IDOL Eduction Server User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionServer_24.2_Documentation/Help/Content/_ACI_Welcome.htm)
-- [PCI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PCI/)
-- [PII Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PII/)
-- [PHI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/PHI/)
-- [Government Eduction Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionGrammars_24.2_Documentation/GOV/)
-- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/)
+- [IDOL Eduction Server User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionServer_24.3_Documentation/Help/Content/_ACI_Welcome.htm)
+- [PCI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PCI/)
+- [PII Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PII/)
+- [PHI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PHI/)
+- [Government Eduction Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/GOV/)
+- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLReleaseNotes_24.3_Documentation/idol/Content/SDKs/Eduction.htm)

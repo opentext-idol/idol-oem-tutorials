@@ -1,0 +1,3 @@
+*.EDK.TXT
+target\*
+mvn_test.log

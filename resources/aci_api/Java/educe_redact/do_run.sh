@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=24.2.0
+VERSION=24.3.0
 
 JAVA_HOME=/opt/OpenLogic/openlogic-openjdk-11.0.17+8-linux-x64
 ACI_API_HOME=../../../../../IDOLJavaSDK_$VERSION

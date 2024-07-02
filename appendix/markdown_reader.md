@@ -1,6 +1,6 @@
 # View markdown files locally
 
-If you prefer to follow this guide with the files downloaded from the repository, you need a good way to view the notes, which are in markdown format.  My three favorite ways are:
+If you prefer to follow this guide with the files downloaded from the repository, you need a good way to view the notes, which are in Markdown format.  My three favorite ways are:
 
 1. Download and install [VS Code](https://code.visualstudio.com/download) and use the handy markdown preview button ![markdown-preview-button](./figs/markdown-preview-button.png).
 
@@ -11,7 +11,7 @@ If you prefer to follow this guide with the files downloaded from the repository
     - Enable the option `Allow access to file URLs`.
     - Follow the link to `Extension Options`:
       - Select `Enable HTML content` .
-      - (Optionally) Choose your favorite theme, *e.g.* `GitHub`.
+      - (*Optionally*) Choose your favorite theme, *e.g.* `GitHub`.
 
 1. Download and install the cross-platform markdown editor [Typora](https://typora.io/).
 

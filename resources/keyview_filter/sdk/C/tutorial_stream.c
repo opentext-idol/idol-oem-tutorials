@@ -6,7 +6,7 @@ Edit tutorial.h to modify YOUR_LICENSE_KEY and YOUR_BIN_DIR.
 
 § Linking against KeyView Filter SDK
 
-Example compilation commands. Be sure you set KEYVIEW_HOME environment variable with the installation location (e.g. C:\OpenText\KeyviewFilterSDK_24.2.0_WINDOWS_X86_64):
+Example compilation commands. Be sure you set KEYVIEW_HOME environment variable with the installation location (e.g. C:\OpenText\KeyviewFilterSDK_24.3.0_WINDOWS_X86_64):
 
     gcc -I$KEYVIEW_HOME/include -o tutorial_stream tutorial_stream.c -ldl $KEYVIEW_HOME/LINUX_X86_64/bin/kvfilter.so -Wl,-rpath,'$ORIGIN'
     
@@ -50,7 +50,6 @@ typedef struct
 {
     const char* filename;
     FILE* fp;
-    int openCount;
 } StreamInfo;
 
 BOOL pascal streamOpen(KVInputStream* stream)
@@ -61,7 +60,6 @@ BOOL pascal streamOpen(KVInputStream* stream)
     }
     StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
     
-    //Open may be called more than once, and the subsequent calls should be a no-op
     if (info->fp == NULL)
     {
         info->fp = fopen(info->filename, "rb");
@@ -70,7 +68,6 @@ BOOL pascal streamOpen(KVInputStream* stream)
     if (info->fp)
     {
         fseek(info->fp, 0, SEEK_SET);
-        info->openCount++;
     }
 
     return info->fp != NULL;
@@ -82,7 +79,14 @@ UINT pascal streamRead(KVInputStream* stream, BYTE * buffer, UINT size)
     { 
         return 0;
     }
+    
     StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
+    
+    if(!info->fp)
+    {
+        return 0;
+    }
+    
     return fread(buffer, 1, size, info->fp);
 }
 
@@ -92,7 +96,13 @@ BOOL pascal streamSeek (KVInputStream* stream, long offset, int whence)
     { 
         return FALSE;
     }
+    
     StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
+    
+    if(!info->fp)
+    {
+        return FALSE;
+    }
 
     return fseek(info->fp, offset, whence) == 0;
 }
@@ -103,7 +113,13 @@ long pascal streamTell(KVInputStream* stream)
     { 
         return -1;
     }
+    
     StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
+    
+    if(!info->fp)
+    {
+        return -1;
+    }
 
     return ftell(info->fp);
 }
@@ -115,18 +131,9 @@ BOOL pascal streamClose(KVInputStream* stream)
         return FALSE;
     }
     StreamInfo* info = (StreamInfo*)stream->pInputStreamPrivateData;
-    int retval = 0;
-
-    if (info->openCount > 0)
-    {
-        --info->openCount;
-    }
-
-    if (info->openCount == 0)
-    {
-        retval = fclose(info->fp);
-        info->fp = NULL;
-    }
+    int retval = fclose(info->fp);
+    info->fp = NULL;
+    
     return retval == 0;
 }
 
@@ -609,7 +616,7 @@ KVErrorCode filterTutorial(const char* const pathToInputFile, const char* const 
     printf("Processing input file %s to %s\n", pathToInputFile, pathToOutputFile);
 
     // § Defining a custom stream
-    StreamInfo info = {pathToInputFile, NULL, 0};
+    StreamInfo info = {pathToInputFile, NULL};
     KVInputStream stream;
     stream.pInputStreamPrivateData = &info;
     stream.lcbFilesize = 0;

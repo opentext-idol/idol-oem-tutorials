@@ -2,6 +2,8 @@
 
 A set of guides to get you doing great things with IDOL Eduction and KeyView SDKs.
 
+For details of the latest changes to IDOL and KeyView in version 24.2, please see the [Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/_Introduction.htm).
+
 ---
 
 - [Target audience](#target-audience)
@@ -28,7 +30,7 @@ Get a local copy of this tutorial to give you all the configuration files and sa
 
 ![github-download](./figs/github-download.png)
 
-Throughout the tutorial, we will assume these materials are stored under `C:\OpenText`.  File paths and other resources are currently documented for Windows, but other supported platforms (e.g. Linux, MacOS, etc) will work with appropriate modifications.
+Throughout the tutorial, we will assume these materials are stored under `C:\OpenText`.  File paths and other resources are currently documented for Windows, but other supported platforms (*e.g.* Linux, MacOS, *etc.*  will work with appropriate modifications.
 
 You can stay on GitHub to follow the steps in this and further linked README files in your browser or, if you prefer to work with the downloaded files, see [these steps](./appendix/markdown_reader.md) for some convenient offline reading options.
 
@@ -38,6 +40,6 @@ The tutorials start [here](tutorials/README.md)!
 
 ## License
 
-(c) Copyright 2014-2023 OpenText or one of its affiliates.
+(c) Copyright 2024 OpenText or one of its affiliates.
 
 Licensed under the MIT License (the "License"); you may not use this project except in compliance with the [License](./LICENSE.md).

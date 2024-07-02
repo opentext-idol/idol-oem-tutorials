@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE grammars SYSTEM "../published/edk.dtd">
+<grammars version="4.0">
+    <grammar name="test">
+        <entity name="word" type="private">
+            <pattern>\w+</pattern>
+        </entity>
+
+        <entity name="two_words" type="public">
+            <pattern>(?A=FIRST:(?A:word)) (?A=SECOND:(?A:word))</pattern>
+        </entity>
+    </grammar>
+</grammars>

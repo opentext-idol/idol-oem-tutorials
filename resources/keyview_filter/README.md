@@ -36,7 +36,7 @@
 - filter w/o args extracts body text + comments, no header/footer, no revision marks
 - filter -h adds header/footer
 - filter -nc excludes comments
-- filter -rm add revision marks (e.g. Note in February)
+- filter -rm add revision marks (*e.g.* Note in February)
 
 ### Simple meal planner1.xlsx
 
@@ -56,7 +56,7 @@
 - has custom text in slide master
 
 - filter w/o args extracts body text (includes header/footer)
-- filter -sh adds slide master text (e.g. Secret text in the slide master)
+- filter -sh adds slide master text (*e.g.* Secret text in the slide master)
 
 ### Robin Zupanc Resume_RESTRICTED.docx
 

@@ -1,14 +1,17 @@
-echo off
-set EDK_HOME=C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64
-set MAVEN_HOME=C:\Program Files\Apache\maven\apache-maven-3.8.3
-set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_321
+set VERSION=24.3.0
+set PLATFORM=WINDOWS_X86_64
+
+set EDK_HOME=C:\OpenText\EductionSDK_%VERSION%_%PLATFORM%
+
+set JAVA_HOME=C:\Program Files\OpenLogic\openlogic-openjdk-11.0.16+8-windows-x64
 
 set PATH=%EDK_HOME%\bin;%MAVEN_HOME%\bin;%JAVA_HOME%\bin
 
 set configPath=..\resources\test\config\basic.cfg
 rem set configPath=..\resources\test\config\entity_name.cfg
 set inputFilePath=..\resources\test\input\input.txt
-set outputFilePath=test_redact_java.txt
 
+set outputFilePath=redacted.EDK.TXT
 del %outputFilePath%
+
 java -cp %EDK_HOME%\bin\edk.jar;.\target\classes com.autonomy.eduction.samples.Redact "%configPath%" "%inputFilePath%" "%outputFilePath%"

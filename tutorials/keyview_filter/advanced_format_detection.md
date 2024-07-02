@@ -1,6 +1,6 @@
 # Advanced Format Detection
 
-As we saw in the introduction lesson for KeyView Filter SDK, the format type (and class) and other attributes can be automatically detected for files.  KeyView relies on a format signature to uniquely identify the format code (with >2000 supported as of the 24.2 release).  Relying on a file extension is dangerous and can result in mis-processing with extra downstream processing costs.  Encryption & password protection often limits the visibility inside files.  KeyView does its best to uniquely identify protected files and also set a separate flag indicating encryption status.
+As we saw in the introduction lesson for KeyView Filter SDK, the format type (and class) and other attributes can be automatically detected for files.  KeyView relies on a format signature to uniquely identify the format code (with >2000 supported as of the 24.3 release).  Relying on a file extension is dangerous and can result in mis-processing with extra downstream processing costs.  Encryption & password protection often limits the visibility inside files.  KeyView does its best to uniquely identify protected files and also set a separate flag indicating encryption status.
 
 In this lesson, you will:
 - explore not relying on the file extension 
@@ -41,7 +41,7 @@ The OpenText SmartCipher encrypted file `SmartCipher_Fmt.txt` was a text file or
 ### Perform detection on SmartCipher file
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_24.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -d "..\..\..\idol-oem-tutorials\resources\keyview_filter\SmartCipher_Fmt.txt" detect
 WARNING: filter is a sample program only and is not for production use
 The file ..\..\..\idol-oem-tutorials\resources\keyview_filter\SmartCipher_Fmt.txt
@@ -74,7 +74,7 @@ Many file formats allow for their contents to be password protected and/or encry
 In the above example with `SmartCipher_Fmt.txt`, the attribute for `encrypted` file was returned.  This lesson will explore this further with a 7-zip file.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.2.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_24.3.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -d "..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf_PASSWORD.7z" detect
 WARNING: filter is a sample program only and is not for production use
 The file ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf_PASSWORD.7z
@@ -102,9 +102,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/dotnet-programming/index.html)
-- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/python-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/oem/Content/_KeyView.htm)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/python-programming/)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLReleaseNotes_24.3_Documentation/oem/Content/_KeyView.htm)

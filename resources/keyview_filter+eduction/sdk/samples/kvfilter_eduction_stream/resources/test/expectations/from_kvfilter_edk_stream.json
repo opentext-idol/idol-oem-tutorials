@@ -1,0 +1,37 @@
+{
+"matches": [
+{
+  "name": "test/two_words",
+  "original": "foo bar",
+  "offset": 15,
+  "components": [
+    {
+      "name": "FIRST",
+      "text": "foo",
+      "offset": 0
+    },
+    {
+      "name": "SECOND",
+      "text": "bar",
+      "offset": 4
+    }
+  ]
+},
+{
+  "name": "test/two_words",
+  "original": "baz bah",
+  "offset": 23,
+  "components": [
+    {
+      "name": "FIRST",
+      "text": "baz",
+      "offset": 0
+    },
+    {
+      "name": "SECOND",
+      "text": "bah",
+      "offset": 4
+    }
+  ]
+}
+]}

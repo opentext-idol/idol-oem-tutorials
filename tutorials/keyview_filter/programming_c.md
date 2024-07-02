@@ -68,7 +68,7 @@ You must download the following resources before you continue:
 
 #### Compilers
 
-To create a program that uses KeyView, you need to install a [supported compiler](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/Shared/_KV_Platform_Compilers.htm), and use it to build and link your program.
+To create a program that uses KeyView, you need to install a [supported compiler](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/Shared/_KV_Platform_Compilers.htm), and use it to build and link your program.
 
 > NOTE: When you build with the Visual Studio compiler, you must ensure you have opened the correct command prompt for the installed version. For example, if you have installed the WINDOWS_X86_64 version of KeyView, ensure you use "x64 Native Tools Command Prompt".
 
@@ -92,7 +92,7 @@ Update the `tutorial.h` file with the following information:
 
 To get access to KeyView functionality, you must first link against the kvfilter shared library. You must place the resulting binary in the Filter bin directory (that is, the directory containing kvfilter.so or kvfilter.dll), although you can run the binary from a different working directory. 
 
-> **Security**: Loading shared libraries can expose your application to attacks. The KeyView documentation offers advice on [avoiding DLL preloading attacks](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/kv_security/_KV_DLLPreloading.htm)
+> **Security**: Loading shared libraries can expose your application to attacks. The KeyView documentation offers advice on [avoiding DLL preloading attacks](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_security/_KV_DLLPreloading.htm)
 
 #### Linking using GCC
 
@@ -110,7 +110,7 @@ On Windows, you must link against the import library for kvfilter.dll. This libr
 
 ### Loading the Filter interface
 
-Now that you can access KeyView functionality, you must include the required headers and load the interface functions from the kvfilter library, using [KV_GetFilterInterfaceEx()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/KV_GetFilterInterfaceEx.htm)
+Now that you can access KeyView functionality, you must include the required headers and load the interface functions from the kvfilter library, using [KV_GetFilterInterfaceEx()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/KV_GetFilterInterfaceEx.htm)
 
 ```c
 #include "kvtypes.h"
@@ -154,9 +154,9 @@ error = filter.fpInit(
 filter.fpShutdown(session);
 ```
 
-You initialize by using the function [fpInit()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpInit.htm), which you must provide with the path to the KeyView bin folder, and your license key.
+You initialize by using the function [fpInit()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpInit.htm), which you must provide with the path to the KeyView bin folder, and your license key.
 
-This function also takes a pointer to a KVFilterInitOptions structure, which you must initialize using KVStructInit(). This macro ensures that a struct is correctly set up for use with the KeyView interface, including versioning information for backwards compatibility. Any KeyView struct that contains a [KVStructHead](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_structures/KVStructHead.htm) member must be initialized with the `KVStructInit()` macro.
+This function also takes a pointer to a KVFilterInitOptions structure, which you must initialize using KVStructInit(). This macro ensures that a struct is correctly set up for use with the KeyView interface, including versioning information for backwards compatibility. Any KeyView struct that contains a [KVStructHead](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_structures/KVStructHead.htm) member must be initialized with the `KVStructInit()` macro.
 
 > **Performance**
 >
@@ -166,9 +166,9 @@ This function also takes a pointer to a KVFilterInitOptions structure, which you
 
 > **Security**
 >
-> _Privilege Reduction:_ By default, KeyView performs most of its operations out-of-process, creating a separate process to parse file data. This protects your main application from the effects of rare problems like memory leaks or crashes. You can include additional protection by [running KeyView with reduced privileges](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filter_api/Run_KeyView_Reduced_Privileges.htm).
+> _Privilege Reduction:_ By default, KeyView performs most of its operations out-of-process, creating a separate process to parse file data. This protects your main application from the effects of rare problems like memory leaks or crashes. You can include additional protection by [running KeyView with reduced privileges](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filter_api/Run_KeyView_Reduced_Privileges.htm).
 >
-> _Temp Directory:_ While processing, KeyView might place sensitive data in the temporary directory. You might want to consider [protecting the temporary directory](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/kv_security/_KV_ProtectTempDir.htm)
+> _Temp Directory:_ While processing, KeyView might place sensitive data in the temporary directory. You might want to consider [protecting the temporary directory](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_security/_KV_ProtectTempDir.htm)
 
 Now that you have set up the API, you can perform KeyView Filter functionality on documents.
 
@@ -192,7 +192,7 @@ One of the most important features of KeyView is filtering text from a document.
 
 ### Filtering text
 
-You can filter text to an output file by using the [fpFilterToFile()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFilterToFile.htm) function.
+You can filter text to an output file by using the [fpFilterToFile()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFilterToFile.htm) function.
 
 ```c
 error = filter.fpFilterToFile(document, pathToOutputFile);
@@ -205,7 +205,7 @@ error = filter.fpFilterToFile(document, pathToOutputFile);
 
 ### Filtering hidden information
 
-KeyView provides a number of options that control what text to output, and how to convert or display that text. A common requirement of KeyView is to display as much text as possible, including text that is not normally visible in the document, such as hidden cells or slides, or ancillary text like comments or notes. You can display this text by enabling the hidden text option in [fpSetConfig()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpSetConfig.htm).
+KeyView provides a number of options that control what text to output, and how to convert or display that text. A common requirement of KeyView is to display as much text as possible, including text that is not normally visible in the document, such as hidden cells or slides, or ancillary text like comments or notes. You can display this text by enabling the hidden text option in [fpSetConfig()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpSetConfig.htm).
 
 ```c
 error = filter.fpSetConfig(session, KVFLT_SHOWHIDDENTEXT, TRUE, NULL);
@@ -213,24 +213,24 @@ error = filter.fpSetConfig(session, KVFLT_SHOWHIDDENTEXT, TRUE, NULL);
 
 ## Changing functionality based on format
 
-In many workflows, you might need to change what operations to perform on a file based on its format. For example, you might want KeyView to perform [OCR](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/filter_shared/OCR.htm) only on PDF files, or you might need to provide security credentials for encrypted files. Alternatively, your own application might need to perform certain activities, like generating a user report, for certain file types. 
+In many workflows, you might need to change what operations to perform on a file based on its format. For example, you might want KeyView to perform [OCR](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter_shared/OCR.htm) only on PDF files, or you might need to provide security credentials for encrypted files. Alternatively, your own application might need to perform certain activities, like generating a user report, for certain file types. 
 
 KeyView enables you to reliably determine the file format of a huge range of documents. It does this by analyzing the internal structure and content of the file, rather than relying on file names or extensions. Detection prioritizes both accuracy and speed, only processing as much of the file as necessary to rule out false positives.
 
 ### Detecting the file format
 
-File format detection functionality is exposed through the API function [fpGetDocInfo()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetDocInfo.htm).
+File format detection functionality is exposed through the API function [fpGetDocInfo()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetDocInfo.htm).
 
 ```c
 ADDOCINFO adInfo;
 error = filter.fpGetDocInfo(document, &adInfo);
 ```
 
-> **Source Code Identification:** KeyView can optionally detect source code, attempting to identify the programming language that it is written in. You can learn more in [Source Code Identification](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/Shared/_KV_Code_Identification.htm).
+> **Source Code Identification:** KeyView can optionally detect source code, attempting to identify the programming language that it is written in. You can learn more in [Source Code Identification](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/Shared/_KV_Code_Identification.htm).
 
 ### Using file format information
 
-The [ADDOCINFO class](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_structures/ADDOCINFO.htm) contains the information KeyView was able to determine about the file: its format and version, the class of document it belongs to, and additional attributes such as encryption. Your application can use this information to handle files differently. For example:
+The [ADDOCINFO class](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_structures/ADDOCINFO.htm) contains the information KeyView was able to determine about the file: its format and version, the class of document it belongs to, and additional attributes such as encryption. Your application can use this information to handle files differently. For example:
 
 ```c
 //Only enable OCR for PDFs
@@ -252,7 +252,7 @@ if(adInfo.ulAttributes & kEncrypted)
 
 ### Checking if a file is supported
 
-KeyView provides a convenience function, [fpCanFilter()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpCanFilter.htm) that performs detection and determines if you can pass the file to fpFilterFile().
+KeyView provides a convenience function, [fpCanFilter()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpCanFilter.htm) that performs detection and determines if you can pass the file to fpFilterFile().
 
 ```c
 error = filter.fpCanFilter(document);
@@ -273,7 +273,7 @@ File formats can contains a variety of different metadata, and KeyView makes it 
 
 ### Getting the metadata list
 
-You can retrieve metadata elements by using [fpGetMetadataList()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetMetadataList.htm). This function fills out the [KVMetadataList](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_KVMetadataList.htm) structure, which you must free by using its fpFree function.
+You can retrieve metadata elements by using [fpGetMetadataList()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetMetadataList.htm). This function fills out the [KVMetadataList](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_KVMetadataList.htm) structure, which you must free by using its fpFree function.
 
 ```c
 const KVMetadataList* metadataList = NULL;
@@ -286,7 +286,7 @@ metadataList->fpFree(metadataList);
 
 ### Iterating through the list
 
-You can retrieve individual metadata elements by iterating through the metadata list using KVMetadataList's fpGetNext() function, which fills out the [KVMetadataElement](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_KVMetadataElement.htm) structure. The information that this structure returns is valid only while the session is still alive, and becomes invalid after you call fpFree(). The end of the list is indicated by the retrieved element being NULL.
+You can retrieve individual metadata elements by iterating through the metadata list using KVMetadataList's fpGetNext() function, which fills out the [KVMetadataElement](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_KVMetadataElement.htm) structure. The information that this structure returns is valid only while the session is still alive, and becomes invalid after you call fpFree(). The end of the list is indicated by the retrieved element being NULL.
 
 ```c
 while(1)
@@ -310,7 +310,7 @@ while(1)
 
 ### Interpreting a metadata element
 
-Each metadata element is conceptually represented as a key-value pair, where pKey is the name of the metadata key, and pValue is the value of that piece of metadata. To know the type of the metadata object the pValue points to, you must first consult the eType member. Strings are output in the character set that you requested in the call to [fpInit()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpInit.htm).
+Each metadata element is conceptually represented as a key-value pair, where pKey is the name of the metadata key, and pValue is the value of that piece of metadata. To know the type of the metadata object the pValue points to, you must first consult the eType member. Strings are output in the character set that you requested in the call to [fpInit()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpInit.htm).
 
 ```c
 fprintf(fpOut, "%s: ", element->pName);
@@ -366,7 +366,7 @@ default:
 
 ### Standardized metadata elements
 
-Different file formats can store the same piece of information in different ways. For example, one file format might call the width of the image "width", another "image_width", and another "x_size". This behavior is often unhelpful, because you then need to maintain a list of fields that correspond to a particular piece of information. KeyView solves this problem by [standardizing certain metadata fields](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_What_Is_Metadata.htm). 
+Different file formats can store the same piece of information in different ways. For example, one file format might call the width of the image "width", another "image_width", and another "x_size". This behavior is often unhelpful, because you then need to maintain a list of fields that correspond to a particular piece of information. KeyView solves this problem by [standardizing certain metadata fields](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_What_Is_Metadata.htm). 
 
 ## Extracting sub files
 
@@ -374,7 +374,7 @@ KeyView Filter SDK allows access to sub files of a document, from both pure cont
 
 ### Loading the Extract interface
 
-You can load the Extract interface by including the `kvxtract.h` header, and calling the [fpGetExtractInterface()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetExtractInterface.htm) function in the kvfilter shared library.
+You can load the Extract interface by including the `kvxtract.h` header, and calling the [fpGetExtractInterface()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetExtractInterface.htm) function in the kvfilter shared library.
 
 ```c
 #include "kvxtract.h"
@@ -390,7 +390,7 @@ The interface function takes the filter session you created earlier, as well as 
 
 ### Opening a container
 
-You must open a container file before you can access the sub files. You open the container by using the [fpOpenFileFromFilterSession()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_fpOpenFileFromFilterSession.htm) function. This function creates a file-specific context pointer that you can use with the other functions in the extract interface. You must close this context after use.
+You must open a container file before you can access the sub files. You open the container by using the [fpOpenFileFromFilterSession()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_fpOpenFileFromFilterSession.htm) function. This function creates a file-specific context pointer that you can use with the other functions in the extract interface. You must close this context after use.
 
 ```c
 void* fileContext = NULL;
@@ -405,7 +405,7 @@ error = extract.fpOpenFileFromFilterSession(session, &openArg, &fileContext);
 extract.fpCloseFile(fileContext);
 ```
 
-You can then get information about the container itself by using the function [fpGetMainFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetMainFileInfo.htm). Most importantly, this tells you the number of sub files. You must free this structure after use.
+You can then get information about the container itself by using the function [fpGetMainFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetMainFileInfo.htm). Most importantly, this tells you the number of sub files. You must free this structure after use.
 
 ```c
 KVMainFileInfo          fileInfo = NULL;
@@ -419,7 +419,7 @@ Extract.fpFreeStruct(fileContext, fileInfo);
 
 ### Extracting sub files
 
-Before you extract the sub file itself, you must first get some information about the sub file. You get this information by calling the [fpGetSubFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetSubFileInfo.htm) function, using the index to identify the sub file. You must free this structure after use.
+Before you extract the sub file itself, you must first get some information about the sub file. You get this information by calling the [fpGetSubFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetSubFileInfo.htm) function, using the index to identify the sub file. You must free this structure after use.
 
 ```c
 for(int ii = 0; ii < fileInfo->numSubFiles; ++ii)
@@ -461,13 +461,13 @@ error = extract.fpExtractSubFile(fileContext, &extractArg, &extractInfo);
 extract.fpFreeStruct(fileContext, extractInfo);
 ```
 
-The [fpExtractSubFile()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpExtractSubFile.htm) function fills out the KVSubFileExtractInfo pointer, which tells you more about what the function actually did – for example, the location it extracted the file to.
+The [fpExtractSubFile()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpExtractSubFile.htm) function fills out the KVSubFileExtractInfo pointer, which tells you more about what the function actually did – for example, the location it extracted the file to.
 
 > **Mail Files:** KeyView treats mail files as containers, where the first sub file is the contents of the mail file, and subsequent sub files are the attachments.
 
-> **Security:** KVExtractionFlag_SanitizeAbsolutePaths mitigates against certain path traversal attacks. You can read more in [Sanitize Absolute Paths](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/_KV_xtract_sanitize_paths.htm)
+> **Security:** KVExtractionFlag_SanitizeAbsolutePaths mitigates against certain path traversal attacks. You can read more in [Sanitize Absolute Paths](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/_KV_xtract_sanitize_paths.htm)
 
-By default, KeyView does not extract images when extracting sub files. You can enable image extraction by using the [fpSetConfig()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpSetConfig.htm) function we used earlier. This option is set globally for the session, so you can set it outside of the loop that you use to process files.
+By default, KeyView does not extract images when extracting sub files. You can enable image extraction by using the [fpSetConfig()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpSetConfig.htm) function we used earlier. This option is set globally for the session, so you can set it outside of the loop that you use to process files.
 
 ```c
 error = filter.fpSetConfig(session, KVFLT_EXTRACTIMAGES, TRUE, NULL);
@@ -475,7 +475,7 @@ error = filter.fpSetConfig(session, KVFLT_EXTRACTIMAGES, TRUE, NULL);
 
 ### Retrieving mail metadata
 
-You can retrieve mail metadata for a particular sub file using the function [fpGetSubFileMetaDataList()](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetSubFileMetadataList.htm). This function fills out the same KVMetadataList structure that you used in [Retrieving metadata](#retrieving-metadata), and can be handled in the same way. You must initialize [KVGetSubfileMetadataListArgRec](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/Content/kv_xtract_structures/_KV_XTRACT_struct_KVGetSubFileMetadataListArg.htm) using KVStructInit().
+You can retrieve mail metadata for a particular sub file using the function [fpGetSubFileMetaDataList()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetSubFileMetadataList.htm). This function fills out the same KVMetadataList structure that you used in [Retrieving metadata](#retrieving-metadata), and can be handled in the same way. You must initialize [KVGetSubfileMetadataListArgRec](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_structures/_KV_XTRACT_struct_KVGetSubFileMetadataListArg.htm) using KVStructInit().
 
 ```c
 const KVMetadataList* metadataList = NULL;
@@ -497,13 +497,13 @@ metadataList->fpFree(metadataList);
 ### Build 
 
 1. Copy the `idol-oem-tutorials\resources\keyview_filter\sdk\tutorial` folder to `%KEYVIEW_HOME%\samples\tutorial`.  The provided makefile(s) leverage components of the samples' makefile where relative paths are used.
-2. Use the provided makefile to build `e.g. nmake tutorial_file_win_x86_64.mak`
+2. Use the provided makefile to build `*e.g.* nmake tutorial_file_win_x86_64.mak`
 3. The `%KEYVIEW_HOME%\samples\tutorial` folder will have bin folder containing 
 
 ### Run
 1. Since `tutorial.h` specified the `YOUR_BIN_DIR` for KeyView, you can run the built exe from the `bin` folder as shown below:
 ```cmd
-> set PATH=C:\OpenText\KeyViewFilterSDK_24.2.0_WINDOWS_X86_64\bin;%PATH
+> set PATH=C:\OpenText\KeyViewFilterSDK_24.3.0_WINDOWS_X86_64\bin;%PATH
 > cd bin
 > tutorial_file ..\..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.13.0_ReleaseNotes_en.pdf out
 ```
@@ -519,10 +519,10 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/dotnet-programming/index.html)
-- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/python-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/oem/Content/_KeyView.htm)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/python-programming/)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLReleaseNotes_24.3_Documentation/oem/Content/_KeyView.htm)
 

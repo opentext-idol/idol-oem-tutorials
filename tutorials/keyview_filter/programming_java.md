@@ -14,13 +14,13 @@ In this lesson, you will:
 ---
 
 - [Setup](#setup)
-	- [Resources](#resources)
-	- [Environment and compilers](#environment-and-compilers)
-		- [Compiler](#compiler)
-		- [Other](#other)
-	- [License key](#license-key)
+  - [Resources](#resources)
+  - [Environment and compilers](#environment-and-compilers)
+    - [Compiler](#compiler)
+    - [Other](#other)
+  - [License key](#license-key)
 - [API Setup](#api-setup)
-	- [Building the sample program](#building-the-sample-program)
+  - [Building the sample program](#building-the-sample-program)
 - [Process files](#process-files)
 - [Conclusion](#conclusion)
 - [See also](#see-also)
@@ -43,7 +43,7 @@ You must download the following resources before you continue:
 
 #### Compiler
 
-To create a program that uses KeyView, you need to install a [supported compiler](https://www.microfocus.com/documentation/idol/IDOL_24.2/KeyviewFilterSDK_24.2_Documentation/Guides/html/java-programming/Content/Shared/_KV_Platform_Compilers.htm), and use it to build your program.
+To create a program that uses KeyView, you need to install a [supported compiler](https://www.microfocus.com/documentation/idol/IDOL_24.3/KeyviewFilterSDK_24.3_Documentation/Guides/html/java-programming/Content/Shared/_KV_Platform_Compilers.htm), and use it to build your program.
 
 #### Other
 
@@ -57,7 +57,7 @@ You need a KeyView license key to proceed with this lesson.  If you skipped the 
 
 ### Building the sample program
 
-Deploy the downloaded `StreamingTutorial` build tools and source files to the location of your choice.  This tutorial uses `C:\OpenText\KeyViewFilterSDK_24.2.0\javaapi\StreamingTutorial`.
+Deploy the downloaded `StreamingTutorial` build tools and source files to the location of your choice.  This tutorial uses `C:\OpenText\KeyViewFilterSDK_24.3.0_WINDOWS_X86_64\javaapi\StreamingTutorial`.
 
 To build `StreamingTutorial` a few modifications of the provided resources are required:
 1. Copy `idol-oem-tutorials\resources\keyview_filter\sdk\Java\StreamingTutorial` to `%KEYVIEW_HOME%\javaapi\StreamingTutorial`.
@@ -67,17 +67,17 @@ To build `StreamingTutorial` a few modifications of the provided resources are r
 
 Go ahead and run `build.bat` or `build.sh`.
 ```sh
-> cd C:\OpenText\KeyViewFilterSDK_24.2.0\javaapi\StreamingTutorial
+> cd C:\OpenText\KeyViewFilterSDK_24.3.0_WINDOWS_X86_64\javaapi\StreamingTutorial
 > build.bat
 
-Buildfile: C:\OpenText\KeyViewFilterSDK_24.2.0\javaapi\StreamingTutorial\build.xml
+Buildfile: C:\OpenText\KeyViewFilterSDK_24.3.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build.xml
 
 compile:
-    [javac] Compiling 11 source files to C:\OpenText\KeyViewFilterSDK_24.2.0\javaapi\StreamingTutorial\build\classes
+    [javac] Compiling 11 source files to C:\OpenText\KeyViewFilterSDK_24.3.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build\classes
 
 jar:
-    [mkdir] Created dir: C:\OpenText\KeyViewFilterSDK_24.2.0\javaapi\StreamingTutorial\build\jar
-      [jar] Building jar: C:\OpenText\KeyViewFilterSDK_24.2.0\javaapi\StreamingTutorial\build\jar\StreamingTutorial.jar
+    [mkdir] Created dir: C:\OpenText\KeyViewFilterSDK_24.3.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build\jar
+      [jar] Building jar: C:\OpenText\KeyViewFilterSDK_24.3.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build\jar\StreamingTutorial.jar
 
 BUILD SUCCESSFUL
 Total time: 1 second
@@ -90,7 +90,7 @@ To run `StreamingTutorial` a few modifications of the provided resources are req
 
 Go ahead and run `StreamingTutorial.bat` to see the usage instructions.
 ```sh
-> cd C:\OpenText\KeyViewFilterSDK_24.2.0\javaapi\StreamingTutorial
+> cd C:\OpenText\KeyViewFilterSDK_24.3.0\javaapi\StreamingTutorial
 > StreamingTutorial.bat
 Usage: StreamingTutorial <inputFile> <outputFile>
    Demonstrates usage of the Filter SDK by:
@@ -102,9 +102,9 @@ Usage: StreamingTutorial <inputFile> <outputFile>
 
 Re-run `StreamingTutorial.bat` provide and input file and output file as done below.
 ```sh
-> cd C:\OpenText\KeyViewFilterSDK_24.2.0\javaapi\StreamingTutorial
+> cd C:\OpenText\KeyViewFilterSDK_24.3.0_WINDOWS_X86_64\javaapi\StreamingTutorial
 > StreamingTutorial.bat 
-C:\Opentext\KeyViewFilterSDK_24.2.0\javaapi\tutorial_java>StreamingTutorial.bat ..\KeyView.jar out.txt
+C:\Opentext\KeyViewFilterSDK_24.3.0_WINDOWS_X86_64\javaapi\tutorial_java>StreamingTutorial.bat ..\KeyView.jar out.txt
 Processing input file ..\KeyView.jar to out.txt
 Processing subfile KeyView.jar/META-INF/
 Processing subfile KeyView.jar/META-INF/MANIFEST.MF
@@ -128,9 +128,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/dotnet-programming/index.html)
-- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/KeyviewFilterSDK_24.2_Documentation/Guides/html/python-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/oem/Content/_KeyView.htm)
+- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/index.html)
+- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/cpp-programming/index.html)
+- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/java-programming/index.html)
+- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/dotnet-programming/index.html)
+- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/python-programming/)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLReleaseNotes_24.3_Documentation/oem/Content/_KeyView.htm)

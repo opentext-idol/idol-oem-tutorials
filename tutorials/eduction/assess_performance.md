@@ -29,7 +29,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\resources
+> cd C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 > edktool extract -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt -o out.xml
 ```
 
@@ -54,16 +54,16 @@ For real world applications, it is a best practice to persist the EDKEngine acro
 
 > NOTE: The EDKEngine initialization time is proportional to the number and size of the grammars (or ResourceFiles) that are configured.
 
-> NOTE: The EDKSession or entity search time is influenced by the EDKEngine settings (e.g. resource files (ECRs), entities enabled, other configuration settings), the size of the input file and the number of matches. 
+> NOTE: The EDKSession or entity search time is influenced by the EDKEngine settings (*e.g.* resource files (ECRs), entities enabled, other configuration settings), the size of the input file and the number of matches. 
 
-> NOTE: As of 24.2.0 `edktool` reads the entire file and submits that as text rather than using the EDK streaming input APIs. The edk_samples\eduction_from_config can be instrumented to measure processing speed that reflects use of the streaming input APIs.
+> NOTE: As of 24.3.0 `edktool` reads the entire file and submits that as text rather than using the EDK streaming input APIs. The edk_samples\eduction_from_config can be instrumented to measure processing speed that reflects use of the streaming input APIs.
 
 ## Running edktool benchmark
 
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.2.0_WINDOWS_X86_64\samples\eduction_from_config\resources
+> cd C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 > edktool benchmark -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt -s 3 -n 5
 ```
 
@@ -114,9 +114,9 @@ Session timing summary:
 Besides simplifying your configuration or getting a faster computer, there some settings that can impact performance. 
 
 For processing speed, here's some things to consider:
-- use a pre-filter.  See [here](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionSDK_24.2_Documentation/Guides/html/Content/UseEduction/PreFiltering/PreFiltering.htm) for more details.
-- set EntityMatchLimitN - See [here](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionSDK_24.2_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_EntityMatchLimitN.htm) for more details.  In some applications, the existence of enough matches per each configured entity can be sufficient to take action based on the detected matches.
-- For the PII, PHI, PCI grammars disable output normalization.  The name, address and date entities have output normalization enabled by default. See `scripts\names_stoplist.lua`, `scripts\address_stoplist.lua` and `scripts\normalize_date.lua` for details on how to configure.  Over enough matches (e.g tens vs thousands) the extra time to produce normalized output adds up.  Only some applications (e.g. searching on matches across a set of indexed documents) benefit normalized output.
+- use a pre-filter.  See [here](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/Content/UseEduction/PreFiltering/PreFiltering.htm) for more details.
+- set EntityMatchLimitN - See [here](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_EntityMatchLimitN.htm) for more details.  In some applications, the existence of enough matches per each configured entity can be sufficient to take action based on the detected matches.
+- For the PII, PHI, PCI grammars disable output normalization.  The name, address and date entities have output normalization enabled by default. See `scripts\names_stoplist.lua`, `scripts\address_stoplist.lua` and `scripts\normalize_date.lua` for details on how to configure.  Over enough matches (*e.g* tens vs thousands) the extra time to produce normalized output adds up.  Only some applications (*e.g.* searching on matches across a set of indexed documents) benefit normalized output.
 
 ## Conclusion
 
@@ -126,5 +126,5 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_2/EductionSDK_24.2_Documentation/Guides/html/)
-- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/)
+- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLReleaseNotes_24.3_Documentation/idol/Content/SDKs/Eduction.htm)
