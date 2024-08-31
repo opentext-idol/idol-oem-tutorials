@@ -140,11 +140,11 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
 > NOTE: Do NOT mix & match patch updates across versions. *Only apply a patch update to its intended version*.
 
 See the [KeyView Filter SDK Programming Guide - Introducing Filter SDK](
-https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter_shared/filtersdk_intro/intro_filtersdk.htm) for more details on installation.
+https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter/intro_filtersdk.htm) for more details on installation.
 
 ## Introduction to KeyView Filter SDK
 
-To get oriented with key concepts please read the [Introducing Filter SDK - Features](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter_shared/filtersdk_intro/Overview.htm) of the KeyView Filter SDK * Programming Guide before continuing.
+To get oriented with key concepts please read the [Introducing Filter SDK - Features](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter/Overview.htm) of the KeyView Filter SDK * Programming Guide before continuing.
   
 The following lesson will explore file format detection and metadata / text / sub-file extraction using the sample programs: `filter` and `tstxtract`.  
   
@@ -223,7 +223,7 @@ Try `filter -d` with your own test files. Good luck!
 Documents can contain different flavors of metadata:
   1. There are the document properties like `title`, `author` and others.  Some formats support custom document properties where document author makes up the key for the assigned value.
   1. Some formats support [XMP Metadata](https://en.wikipedia.org/wiki/Extensible_Metadata_Platform).  PDF and image/audio/video file formats are the most common format categories that may contain XMP metadata.
-  1. Some applications, and corresponding file formats, allow users to restrict the ways in which a document can be used. KeyView supports identification of `write restrictions` for some file formats.  See [Document Restrictions](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter_shared/DocumentRestrictions.htm) for more details.
+  1. Some applications, and corresponding file formats, allow users to restrict the ways in which a document can be used. KeyView supports identification of `write restrictions` for some file formats.  See [Document Restrictions](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter/DocumentRestrictions.htm) for more details.
   1. Repositories that store documents can also have metadata associated with documents.
   
   Of the above metadata flavors, KeyView FilterSDK extracts 1, 2, and 3.  IDOL Connectors (or similar) get repository metadata.

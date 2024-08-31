@@ -139,11 +139,11 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
 > NOTE: Do NOT mix & match patch updates across versions. *Only apply a patch update to its intended version*.
 
 See the [KeyView HTML Export SDK Programming Guide - Introducing Export SDK](
-https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewExportSDK_24.3_Documentation/Guides/html/html-export-c/Content/ExportShared/Introduction/Introduction.htm) for more details on installation.
+https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewExportSDK_24.3_Documentation/Guides/html/html-export-c/Content/export/Introduction/Introduction.htm) for more details on installation.
 
 ## Introduction to KeyView Export SDK
 
-To get oriented with key concepts please read the [Introducing Export SDK - Features](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewExportSDK_24.3_Documentation/Guides/html/html-export-c/Content/ExportShared/Introduction/Features.htm) of the KeyView HTML/XML/PDF Export SDK * Programming Guides before continuing.
+To get oriented with key concepts please read the [Introducing Export SDK - Features](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewExportSDK_24.3_Documentation/Guides/html/html-export-c/Content/export/Introduction/Features.htm) of the KeyView HTML/XML/PDF Export SDK * Programming Guides before continuing.
   
 The following lesson will explore converting a document to HTML, XML and PDF using the sample programs: `kvhtmlexport`, `cnv2pdf` and `cnv2pdf`.  
   
@@ -173,7 +173,7 @@ be passed as a license to KeyView. This mechanism exists only to allow this prog
 in testing after the expiry of its trial license, and should not be done in production code.
 ```
 
-See the [KeyView HTML Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewExportSDK_24.3_Documentation/Guides/html/html-export-c/Content/C/SamplePrograms/kvhtmlexport.htm) for more details about `kvhtmlexport`.
+See the [KeyView HTML Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewExportSDK_24.3_Documentation/Guides/html/html-export-c/Content/C/samples_export/kvhtmlexport.htm) for more details about `kvhtmlexport`.
 
 To perform a conversion to HTML provide an input filepath and output filepath as shown below:
 ```sh
@@ -218,7 +218,7 @@ be passed as a license to KeyView. This mechanism exists only to allow this prog
 in testing after the expiry of its trial license, and should not be done in production code.
 ```
 
-See the [KeyView XML Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewExportSDK_24.3_Documentation/Guides/html/xml-export-c/Content/C/SamplePrograms/cnv2xml.htm) for more details about `cnv2xml`.
+See the [KeyView XML Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewExportSDK_24.3_Documentation/Guides/html/xml-export-c/Content/C/samples_export/cnv2xml.htm) for more details about `cnv2xml`.
 
 To perform a conversion to XML provide an input filepath and output filepath as shown below:
 ```sh
@@ -254,7 +254,7 @@ be passed as a license to KeyView. This mechanism exists only to allow this prog
 in testing after the expiry of its trial license, and should not be done in production code.
 ```
 
-See the [KeyView PDF Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewExportSDK_24.3_Documentation/Guides/html/pdf-export-c/Content/C/SamplePrograms/cnv2pdf.htm) for more details about `cnv2pdf`.
+See the [KeyView PDF Export SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewExportSDK_24.3_Documentation/Guides/html/pdf-export-c/Content/C/samples_export/cnv2pdf.htm) for more details about `cnv2pdf`.
 
 To perform a conversion to PDF provide an input filepath and output filepath as shown below:
 ```sh

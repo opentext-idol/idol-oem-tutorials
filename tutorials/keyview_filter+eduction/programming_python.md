@@ -11,15 +11,15 @@ In this lesson, you will:
 > NOTE: This guide assumes you have already completed the introductory KeyView Filter SDK [tutorial](../keyview_filter/introduction.md#keyview-filter-sdk-introduction).
 > NOTE: This guide assumes you have already completed the KeyView Filter SDK Python API [tutorial](../keyview_filter/programming_python.md#keyview-filter-sdk-python-api).
 > NOTE: This guide assumes you have already completed the introductory Eduction SDK [tutorial](../eduction/introduction.md#eduction-sdk-introduction).
-> NOTE: This guide assumes you have already completed the Eduction SDK Python API [tutorial](../eduction/programming_python.md#eduction-sdk-python-api).
+> NOTE: This guide assumes you have already completed the Eduction SDK Python API [tutorial](../eduction/eduction_sdk_api_python.md#eduction-sdk-python-api).
 
 ---
 
 - [Setup](#setup)
-	- [Resources](#resources)
+  - [Resources](#resources)
 - [Example programs](#example-programs)
-	- [`kvfilter_eduction_stream`](#kvfilter_eduction_stream)
-		- [Run](#run)
+  - [`kvfilter_eduction_stream`](#kvfilter_eduction_stream)
+    - [Run](#run)
 - [Conclusion](#conclusion)
 - [See also](#see-also)
 

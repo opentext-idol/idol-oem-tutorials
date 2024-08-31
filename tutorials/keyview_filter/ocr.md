@@ -76,7 +76,7 @@ filtertest finished with RC: 0
 
 The `ocr.txt` output file will contain no text since the `-nocr` flag was added.
 
-Read up on the `languages orientation detectAlphabet` tuning options in the [Optical Character Recognition](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter_shared/OCR.htm) section of the programming guide.
+Read up on the `languages orientation detectAlphabet` tuning options in the [Optical Character Recognition](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter/Optical_Character_Recognition.htm) section of the programming guide.
 
 ## Conclusion
 

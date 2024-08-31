@@ -43,7 +43,7 @@ You must download the following resources before you continue:
 
 #### Compiler
 
-To create a program that uses KeyView, you need to install a [supported compiler](https://www.microfocus.com/documentation/idol/IDOL_24.3/KeyviewFilterSDK_24.3_Documentation/Guides/html/java-programming/Content/Shared/_KV_Platform_Compilers.htm), and use it to build your program.
+To create a program that uses KeyView, you need to install a [supported compiler](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/java-programming/Content/Shared/_KV_Platform_Compilers.htm), and use it to build your program.
 
 #### Other
 

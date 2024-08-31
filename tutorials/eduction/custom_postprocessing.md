@@ -105,7 +105,7 @@ Notice that the `<NORMALIZED_TEXT> has the redacted representation of the matchi
 
 ### Entity specific post-process score threshold
 
-While IDOL Eduction supports entity specific scoring via `EntityMinScore#`, this score is applied after the ECR/EJR processing and before the post-processing stage. The `PostProcessThreshold` applies to all entities. Refer to [Eduction User and Programming Guide - PostProcessThreshold](https://www.microfocus.com/documentation/idol/IDOL_24.3/EductionSDK_24.3_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_PostProcessThreshold.htm) section of the Eduction User and Programming Guide for more information on this topic.  
+While IDOL Eduction supports entity specific scoring via `EntityMinScore#`, this score is applied after the ECR/EJR processing and before the post-processing stage. The `PostProcessThreshold` applies to all entities. Refer to [Eduction User and Programming Guide - PostProcessThreshold](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_PostProcessThreshold.htm) section of the Eduction User and Programming Guide for more information on this topic. 
 
 This part of the lesson will illustrate how to use a post-processing Lua script to implement an entity specific PostProcessThreshold.
 
@@ -177,7 +177,7 @@ The sample document `custom_validation\extras\custom_validation.docx` was crafte
 TabDelimited=TRUE
 OutputTableDelimiters=TRUE
 ```
-as documented in the [Tab Delimited Output for Spreadsheets and Embedded Tables](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter_shared/Tab_Delimited_Output.htm) section of KeyView Programming Guide.
+as documented in the [Tab Delimited Output for Spreadsheets and Embedded Tables](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter/Tab_Delimited_Output.htm) section of KeyView Programming Guide.
 
 The match window as returned by [getMatchContext()](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/Content/Reference/LuaMethods/getMatchContext.htm) is configurable in Eduction Engine [configuration](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_ContextCharsBeforeMatch.htm) via the following settings:
 ```ini

@@ -213,7 +213,7 @@ error = filter.fpSetConfig(session, KVFLT_SHOWHIDDENTEXT, TRUE, NULL);
 
 ## Changing functionality based on format
 
-In many workflows, you might need to change what operations to perform on a file based on its format. For example, you might want KeyView to perform [OCR](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter_shared/OCR.htm) only on PDF files, or you might need to provide security credentials for encrypted files. Alternatively, your own application might need to perform certain activities, like generating a user report, for certain file types. 
+In many workflows, you might need to change what operations to perform on a file based on its format. For example, you might want KeyView to perform [OCR](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter/OCR.htm) only on PDF files, or you might need to provide security credentials for encrypted files. Alternatively, your own application might need to perform certain activities, like generating a user report, for certain file types. 
 
 KeyView enables you to reliably determine the file format of a huge range of documents. It does this by analyzing the internal structure and content of the file, rather than relying on file names or extensions. Detection prioritizes both accuracy and speed, only processing as much of the file as necessary to rule out false positives.
 
@@ -273,7 +273,7 @@ File formats can contains a variety of different metadata, and KeyView makes it 
 
 ### Getting the metadata list
 
-You can retrieve metadata elements by using [fpGetMetadataList()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetMetadataList.htm). This function fills out the [KVMetadataList](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_KVMetadataList.htm) structure, which you must free by using its fpFree function.
+You can retrieve metadata elements by using [fpGetMetadataList()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetMetadataList.htm). This function fills out the [KVMetadataList](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/metadata/KVMetadataList.htm) structure, which you must free by using its fpFree function.
 
 ```c
 const KVMetadataList* metadataList = NULL;
@@ -286,7 +286,7 @@ metadataList->fpFree(metadataList);
 
 ### Iterating through the list
 
-You can retrieve individual metadata elements by iterating through the metadata list using KVMetadataList's fpGetNext() function, which fills out the [KVMetadataElement](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_KVMetadataElement.htm) structure. The information that this structure returns is valid only while the session is still alive, and becomes invalid after you call fpFree(). The end of the list is indicated by the retrieved element being NULL.
+You can retrieve individual metadata elements by iterating through the metadata list using KVMetadataList's fpGetNext() function, which fills out the [KVMetadataElement](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/metadata/KVMetadataElement.htm) structure. The information that this structure returns is valid only while the session is still alive, and becomes invalid after you call fpFree(). The end of the list is indicated by the retrieved element being NULL.
 
 ```c
 while(1)
@@ -366,7 +366,7 @@ default:
 
 ### Standardized metadata elements
 
-Different file formats can store the same piece of information in different ways. For example, one file format might call the width of the image "width", another "image_width", and another "x_size". This behavior is often unhelpful, because you then need to maintain a list of fields that correspond to a particular piece of information. KeyView solves this problem by [standardizing certain metadata fields](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_metadata_api_c/_KV_What_Is_Metadata.htm). 
+Different file formats can store the same piece of information in different ways. For example, one file format might call the width of the image "width", another "image_width", and another "x_size". This behavior is often unhelpful, because you then need to maintain a list of fields that correspond to a particular piece of information. KeyView solves this problem by [standardizing certain metadata fields](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/metadata/_KV_What_Is_Metadata.htm). 
 
 ## Extracting sub files
 
@@ -390,7 +390,7 @@ The interface function takes the filter session you created earlier, as well as 
 
 ### Opening a container
 
-You must open a container file before you can access the sub files. You open the container by using the [fpOpenFileFromFilterSession()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_fpOpenFileFromFilterSession.htm) function. This function creates a file-specific context pointer that you can use with the other functions in the extract interface. You must close this context after use.
+You must open a container file before you can access the sub files. You open the container by using the [fpOpenFileFromFilterSession()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/extract/fpOpenFileFromFilterSession.htm) function. This function creates a file-specific context pointer that you can use with the other functions in the extract interface. You must close this context after use.
 
 ```c
 void* fileContext = NULL;
@@ -405,7 +405,7 @@ error = extract.fpOpenFileFromFilterSession(session, &openArg, &fileContext);
 extract.fpCloseFile(fileContext);
 ```
 
-You can then get information about the container itself by using the function [fpGetMainFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetMainFileInfo.htm). Most importantly, this tells you the number of sub files. You must free this structure after use.
+You can then get information about the container itself by using the function [fpGetMainFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/extract/fpGetMainFileInfo.htm). Most importantly, this tells you the number of sub files. You must free this structure after use.
 
 ```c
 KVMainFileInfo          fileInfo = NULL;
@@ -419,7 +419,7 @@ Extract.fpFreeStruct(fileContext, fileInfo);
 
 ### Extracting sub files
 
-Before you extract the sub file itself, you must first get some information about the sub file. You get this information by calling the [fpGetSubFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetSubFileInfo.htm) function, using the index to identify the sub file. You must free this structure after use.
+Before you extract the sub file itself, you must first get some information about the sub file. You get this information by calling the [fpGetSubFileInfo()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/extract/fpGetSubFileInfo.htm) function, using the index to identify the sub file. You must free this structure after use.
 
 ```c
 for(int ii = 0; ii < fileInfo->numSubFiles; ++ii)
@@ -461,7 +461,7 @@ error = extract.fpExtractSubFile(fileContext, &extractArg, &extractInfo);
 extract.fpFreeStruct(fileContext, extractInfo);
 ```
 
-The [fpExtractSubFile()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpExtractSubFile.htm) function fills out the KVSubFileExtractInfo pointer, which tells you more about what the function actually did – for example, the location it extracted the file to.
+The [fpExtractSubFile()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/extract/fpExtractSubFile.htm) function fills out the KVSubFileExtractInfo pointer, which tells you more about what the function actually did – for example, the location it extracted the file to.
 
 > **Mail Files:** KeyView treats mail files as containers, where the first sub file is the contents of the mail file, and subsequent sub files are the attachments.
 
@@ -475,7 +475,7 @@ error = filter.fpSetConfig(session, KVFLT_EXTRACTIMAGES, TRUE, NULL);
 
 ### Retrieving mail metadata
 
-You can retrieve mail metadata for a particular sub file using the function [fpGetSubFileMetaDataList()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetSubFileMetadataList.htm). This function fills out the same KVMetadataList structure that you used in [Retrieving metadata](#retrieving-metadata), and can be handled in the same way. You must initialize [KVGetSubfileMetadataListArgRec](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_structures/_KV_XTRACT_struct_KVGetSubFileMetadataListArg.htm) using KVStructInit().
+You can retrieve mail metadata for a particular sub file using the function [fpGetSubFileMetaDataList()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/extract/fpGetSubFileMetadataList.htm). This function fills out the same KVMetadataList structure that you used in [Retrieving metadata](#retrieving-metadata), and can be handled in the same way. You must initialize [KVGetSubfileMetadataListArgRec](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/extract/KVGetSubFileMetadataListArg.htm) using KVStructInit().
 
 ```c
 const KVMetadataList* metadataList = NULL;

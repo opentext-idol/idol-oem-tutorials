@@ -163,7 +163,7 @@ Filtering text and extracting subfiles, on the other hand, have a slightly diffe
 
 KeyView also lets you access the subfiles as streams, rather than needing to extract them to disk. Because some KeyView operations do not need to read the entire file, you might get a performance benefit by avoiding the need to extract all the data from the file.
 
-To access a subfile as a stream, use the [fpOpenSubFile()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpOpenSubFile.htm) function, rather than using `fpExtractSubFile()`. The [KVExtractSubFileArgRec](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_structures/_KV_XTRACT_struct_KVExtractSubFileArg.htm) is the same as before.
+To access a subfile as a stream, use the [fpOpenSubFile()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/extract/fpOpenSubFile.htm) function, rather than using `fpExtractSubFile()`. The [KVExtractSubFileArgRec](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/extract/KVExtractSubFileArg.htm) is the same as before.
 
 ```c
 KVInputStream substream = NULL;
@@ -174,7 +174,7 @@ error = extract.fpOpenSubFile(fileContext, &extractArg, &substream);
 extract.fpCloseSubFile(substream);
 ```
 
-You can use the [fpGetExtractInfo](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetExtractInfo.htm) function to retrieve the KVSubFileExtractInfo structure associated with the subfile, and the [fpGetExtractStatus()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/kv_xtract_functions/_KV_XTRACT_funct_fpGetExtractStatus.htm) function to return more information about any errors encountered when using the subfile stream.
+You can use the [fpGetExtractInfo](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/extract/fpGetExtractInfo.htm) function to retrieve the KVSubFileExtractInfo structure associated with the subfile, and the [fpGetExtractStatus()](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/C/extract/fpGetExtractStatus.htm) function to return more information about any errors encountered when using the subfile stream.
 
 When you parse this stream back into the KeyView Filter interface, it must be on a different session to the one that started the Extract session. Because initializing a new session can incur a performance cost, we recommend that you do this once, and then reuse this session for each sub file.
 

@@ -129,7 +129,7 @@ A lot of additional output is included in `text_slidemaster.txt`.  It's the text
 
 With some file formats, for example Microsoft PowerPoint presentations, the order of the text inside the file has no relation to the layout of the text on the page or screen. Recently modified text might appear at the end of a file, even though that text belongs at the beginning of the document.
 
-Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter_shared/Presentation_LogicalOrder.htm) for more details about KeyView's support for preserving logical reading order.
+Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter/Presentation_LogicalOrder.htm) for more details about KeyView's support for preserving logical reading order.
 
 ### Perform logical order preservation
 

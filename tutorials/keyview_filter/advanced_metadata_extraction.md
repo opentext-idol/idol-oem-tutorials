@@ -64,7 +64,7 @@ Some applications, and corresponding file formats, allow users to restrict the w
 
 The document `Robin Zupanc Resume_RESTRICTED.docx` included in this tutorial's resources was created using this [Microsoft.com knowledge article](https://support.microsoft.com/en-us/office/make-a-document-read-only-5c25909c-46d9-4eb0-9d1f-d072a560e340) as guidance. 
 
-Reference the Keyview documentation on [Document Restrictions](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter_shared/DocumentRestrictions.htm) for more details like supported formats.
+Reference the Keyview documentation on [Document Restrictions](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/c-programming/Content/filter/DocumentRestrictions.htm) for more details like supported formats.
 
 The `filtertest` utility will be used for this lesson.  `filtertest` works similarly to `filter` with a few additional options.
 
