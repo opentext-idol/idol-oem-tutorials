@@ -59,4 +59,4 @@ Contains Eduction configuration file, input text and script implementing match-w
 
 ## SDK
 
-Contains helper files to accompany lessons on compiling sample code in C, Java and .NET.
+Contains helper files to accompany lessons on compiling sample code in C, Java, .NET and Python.

@@ -1,4 +1,34 @@
-# Demo files used by the various KeyView lessons.
+# Demo files used by the various KeyView lessons
+
+---
+
+- [Advanced Format Detection](#advanced-format-detection)
+  - [SmartCipher\_Fmt.txt](#smartcipher_fmttxt)
+  - [SmartCipher\_Fmt.txt.BOGUS\_EXTENSION](#smartcipher_fmttxtbogus_extension)
+  - [KeyViewFilterSDK\_12.12.0\_ReleaseNotes\_en.pdf.7z](#keyviewfiltersdk_12120_releasenotes_enpdf7z)
+  - [KeyViewFilterSDK\_12.12.0\_ReleaseNotes\_en.pdf\_PASSWORD.7z](#keyviewfiltersdk_12120_releasenotes_enpdf_password7z)
+  - [Coffee Chain.twbx](#coffee-chaintwbx)
+- [Advanced Text Extraction](#advanced-text-extraction)
+  - [2022\_calendar\_HIDDEN\_TEXT.docx](#2022_calendar_hidden_textdocx)
+  - [Simple meal planner1.xlsx](#simple-meal-planner1xlsx)
+  - [demo\_EMBEDDED\_DOCS+HIDDEN\_TEXT.pptx](#demo_embedded_docshidden_textpptx)
+  - [Robin Zupanc Resume\_RESTRICTED.docx](#robin-zupanc-resume_restricteddocx)
+  - [AmeliorationFertiliteDesSols.pptx](#ameliorationfertilitedessolspptx)
+- [Advanced Metadata Extraction](#advanced-metadata-extraction)
+  - [screenshot\_XMP\_METADATA.png](#screenshot_xmp_metadatapng)
+  - [Robin Zupanc Resume\_RESTRICTED.docx](#robin-zupanc-resume_restricteddocx-1)
+- [Advanced Sub File Extraction](#advanced-sub-file-extraction)
+  - [Simple meal planner1.xlsx](#simple-meal-planner1xlsx-1)
+  - [demo\_EMBEDDED\_DOCS+HIDDEN\_TEXT.pptx](#demo_embedded_docshidden_textpptx-1)
+  - [demo\_HAS\_EMBEDDED\_DOC.zip](#demo_has_embedded_doczip)
+  - [email with zip attachment.msg](#email-with-zip-attachmentmsg)
+  - [KeyViewFilterSDK\_12.12.0\_ReleaseNotes\_en.rar](#keyviewfiltersdk_12120_releasenotes_enrar)
+  - [KeyViewFilterSDK\_12.12.0\_ReleaseNotes\_en.pdf\_PASSWORD.7z](#keyviewfiltersdk_12120_releasenotes_enpdf_password7z-1)
+- [Optical Character Recognition (OCR)](#optical-character-recognition-ocr)
+  - [screenshot\_TO\_OCR.png](#screenshot_to_ocrpng)
+- [RMS](#rms)
+
+---
 
 ## Advanced Format Detection
 
@@ -6,12 +36,13 @@
 
 - OpenText SmartCipher encrypted text file
 
-- filter -d detects as 1255 and identifies it's encrypted
+- `filter -d` detects as 1255 and identifies it's encrypted
 
 ### SmartCipher_Fmt.txt.BOGUS_EXTENSION
+
 - OpenText SmartCipher encrypted text file, but with a bogus file extension
 
-- filter -d detects as 1255 and identifies it's encrypted
+- `filter -d` detects as 1255 and identifies it's encrypted
 
 ### KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf.7z
 
@@ -65,6 +96,7 @@
 - filter -sh extracts link part of hyperlink
 
 ### AmeliorationFertiliteDesSols.pptx
+
 - Download from [http://www.doc-developpement-durable.org/](https://www.doc-developpement-durable.org/file/Culture/Fertilisation-des-Terres-et-des-Sols/AmeliorationFertiliteDesSols.pptx)
 - Slide 1 has text that showcases 
 

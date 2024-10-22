@@ -1,6 +1,6 @@
 # .NET ACI API Sample Code
 
-The .NET ACI API sample code resources build upon the information in the [ACI API Programming Guide - .NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLJavaSDK_24.3_Documentation/Guides/html/Content/NET/NET_part.htm) providing working examples to interact with IDOL ACI services. 
+The .NET ACI API sample code resources build upon the information in the [ACI API Programming Guide - .NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLJavaSDK_24.4_Documentation/Guides/html/Content/NET/NET_part.htm) providing working examples to interact with IDOL ACI services. 
 
 The various examples contain source code and build configuration for Visual Studio on Windows_x86_64.
 
@@ -26,8 +26,9 @@ The various examples contain source code and build configuration for Visual Stud
 ## Setup
 
 Relative paths are used in the provided `do_*` scripts and the Visual Studio project files. They assume the following installation paths:
+
 - `C:\OpenText\idol_oem_tutorials\resources\apis\aci\dotnet`
-- `C:\OpenText\IDOLDotNetSDK_24.3.0_WINDOWS_X86_64`
+- `C:\OpenText\IDOLDotNetSDK_24.4.0_WINDOWS_X86_64`
 
 ### Setup - Build
 
@@ -107,14 +108,14 @@ This sample code is applicable to all IDOL services (*e.g.* Connectors, CFS, Med
 > NOTE: The `do_run_queueInfo_getstatus.bat` script will need to be updated with the token returned by asynchronous actions like `action=fetch` to check the status of a particular token.  If the TOKEN variable is set to empty string then recent tokens status will be returned.
 
 ## ms_process
+
 This sample code is for use with IDOL Media Server issuing the basic settings for `action=process`.
 
 > NOTE: The `do_run_ms_process.bat` script will need to be updated with the `CONFIG_NAME` appropriate for the intended Media Server processing.  
 
 > NOTE: The `do_run_ms_process.bat` script will need to be updated with the `SOURCE_FILE_PATH` of the rich media file to process.
 
-
 ## See also
 
-- ACI API Programming Guide: [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLJavaSDK_24.3_Documentation/Guides/html/Content/NET/NET_part.htm)
-- IDOL Release Notes: [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLReleaseNotes_24.3_Documentation/idol/Content/SDKs/IDOL-NET.htm)
+- ACI API Programming Guide: [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLJavaSDK_24.4_Documentation/Guides/html/Content/NET/NET_part.htm)
+- IDOL Release Notes: [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/SDKs/IDOL-NET.htm)

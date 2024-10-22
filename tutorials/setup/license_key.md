@@ -7,8 +7,8 @@ You can obtain software and licenses from the [Software Licensing and Downloads]
 1. Scroll to the bottom and click `Activate` next to your *IDOL SW license*
 
     ![get-license](./figs/get-license.png)
- 
-1. On the "License Activation" screen, at the bottom, select the check box, choose your preferred version (the latest is 24.3), then fill in the quantity to activate:
+
+1. On the "License Activation" screen, at the bottom, select the check box, choose your preferred version (the latest is 24.4), then fill in the quantity to activate:
 
    ![eSoftware-selectLicense](./figs/eSoftware-selectLicense.png)
 

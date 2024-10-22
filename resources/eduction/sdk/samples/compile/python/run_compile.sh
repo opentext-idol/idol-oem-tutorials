@@ -1,11 +1,14 @@
 #/bin/sh
 
-VERSION=24.3.0
+VERSION=24.4.0
 PLATFORM=LINUX_X86_64
 
 EDK_HOME=/opt/OpenText/EductionSDK_${VERSION}_${PLATFORM}
 
 #PYTHON_HOME=
+
+PATH=${EDK_HOME}\bin:$PATH
+export PATH
 
 EDKLIBPATH=${EDK_HOME}/bin/libedk.so
 export EDKLIBPATH

@@ -11,7 +11,7 @@ For details of the latest changes to IDOL and KeyView in version 24.2, please se
 - [Obtaining tutorial materials](#obtaining-tutorial-materials)
 - [Get started](#get-started)
 - [License](#license)
-   
+
 ---
 
 ## Target audience
@@ -36,7 +36,7 @@ You can stay on GitHub to follow the steps in this and further linked README fil
 
 ## Get started
 
-The tutorials start [here](tutorials/README.md)!
+The tutorials start [here](./tutorials/README.md)!
 
 ## License
 

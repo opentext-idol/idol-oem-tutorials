@@ -1,4 +1,4 @@
-set ACI_API_HOME=..\..\..\..\..\..\IDOLDOTNETSDK_24.3.0_WINDOWS_X86_64
+set ACI_API_HOME=..\..\..\..\..\..\IDOLDOTNETSDK_24.4.0_WINDOWS_X86_64
 set PATH=%ACI_API_HOME%;%PATH%
 
 rem Replace the values for the following parameters for your environment

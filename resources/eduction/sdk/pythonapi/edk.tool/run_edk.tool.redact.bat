@@ -1,7 +1,7 @@
-set VERSION=24.3.0
+set VERSION=24.4.0
 set PLATFORM=WINDOWS_x86_64
 
-set EDK_HOME=C:\Opentext\EductionSDK_%VERSION%_%PLATFORM%
+set EDK_HOME=C:\OpenText\EductionSDK_%VERSION%_%PLATFORM%
 set PYTHON_HOME=%USERPROFILE%\AppData\Local\Programs\Python\Python310
 
 set PATH=%PYTHON_HOME%

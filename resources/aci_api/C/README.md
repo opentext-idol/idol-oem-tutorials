@@ -1,6 +1,6 @@
 # C ACI API Sample Code
 
-The C ACI API sample code resources build upon the information in the [ACI API Programming Guide - C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLJavaSDK_24.3_Documentation/Guides/html/Content/C/c_part.htm) providing working examples to interact with IDOL ACI services. 
+The C ACI API sample code resources build upon the information in the [ACI API Programming Guide - C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLJavaSDK_24.4_Documentation/Guides/html/Content/C/c_part.htm) providing working examples to interact with IDOL ACI services. 
 
 The various examples contain source code and build scripts for Windows and Linux.
 
@@ -30,24 +30,25 @@ The `/src/<example>` folders contains the source code and build tools.
 ## Setup
 
 Relative paths are used in the provided `do_*` scripts and the Visual Studio project files. They assume the following installation paths:
+
 - `C:\OpenText\idol_oem_tutorials\resources\apis\aci\c`
-- `C:\OpenText\IDOLCSDK_24.3.0_WINDOWS_X86_64`
+- `C:\OpenText\IDOLCSDK_24.4.0_WINDOWS_X86_64`
 
 ### Setup - Build
 
 To build and then run each example the constants `USE_IDOL_OEM_ENCYPTION` and `IDOL_OEM_ENCRYPTION_KEY` will need to be updated with same encryption key information provided in the `OEMstring.txt` file.
- 
+
 ### Setup - Run
 
 > NOTE: In the `do_run_*.*` scripts, the `ACI_HOSTNAME`, `ACI_PORT` and other service specific settings noted below may need to be updated for your ACI service instance.
 
 To use the pre-built `/target` classes, the `do_run.*` scripts (`ACI_API_TUTORIAL_PROGRAM_ENCRYPTION_KEY` variable) need to be updated with the encryption key information provided in the `OEMstring.txt` file.  See [here](../../../tutorials/aci_api/introduction.md#obtain-an-oem-license-key) for details on obtaining OEM style license key.
- 
+
 ### Required third-party tools
 
 - C compiler - gcc / Visual Studio
 
-  > TIP: If using Visual Studio Code, you may find these instructions helpful for setting up your C/C++ development environment: https://code.visualstudio.com/docs/cpp/config-mingw
+  > TIP: If using Visual Studio Code, you may find these instructions helpful for setting up your C/C++ development environment: <https://code.visualstudio.com/docs/cpp/config-mingw>
 
 - A (UTF-8 capable) text editor, *e.g.*:
   - [VS Code](https://code.visualstudio.com/download), or
@@ -113,6 +114,7 @@ This sample code is applicable to all IDOL services (*e.g.* Connectors, CFS, Med
 > NOTE: The `do_run_queueInfo_getstatus.` script will need to be updated with the token returned by asynchronous actions like `action=fetch` to check the status of a particular token.  If the TOKEN variable is set to empty string then recent tokens status will be returned.
 
 ## ms_process
+
 This sample code is for use with IDOL Media Server issuing the basic settings for `action=process`.
 
 > NOTE: The `do_run_ms_process.*` script will need to be updated with the `CONFIG_NAME` appropriate for the intended Media Server processing.  
@@ -121,5 +123,5 @@ This sample code is for use with IDOL Media Server issuing the basic settings fo
 
 ## See also
 
-- ACI API Programming Guide: [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLJavaSDK_24.3_Documentation/Guides/html/Content/C/c_part.htm)
-- IDOL Release Notes: [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLReleaseNotes_24.3_Documentation/idol/Content/SDKs/IDOL-C.htm)
+- ACI API Programming Guide: [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLJavaSDK_24.4_Documentation/Guides/html/Content/C/c_part.htm)
+- IDOL Release Notes: [C Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/SDKs/IDOL-C.htm)

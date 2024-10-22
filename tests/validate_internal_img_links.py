@@ -1,8 +1,8 @@
 """
-python validate_internal_links.py 1
+python validate_internal_img_links.py 1
 """
 
-import os, re, requests, sys
+import os, re, sys
 
 try:
   verbose = int(sys.argv[1]) == 1
@@ -10,10 +10,10 @@ except:
   verbose = False
 
 def findDocsLinks(_text):
-  pattern = r'\]\(([^\()]+\.md(#?)[^\)]*)\)'
+  pattern = r'\!\[.*\]\((.*)\)'
   match_list = []
   for match in re.findall(pattern, _text):
-    match_list.append(match[0])
+    match_list.append(match)
 
   return match_list
 
@@ -22,6 +22,7 @@ count = 0
 passed = 0
 
 for dir_path, dir_names, file_names in os.walk(".."):
+  # Ignore hidden folders
   if "\\_" in dir_path: continue
 
   for file_name in file_names:
@@ -32,7 +33,7 @@ for dir_path, dir_names, file_names in os.walk(".."):
     if not file_path in report: 
       report[file_path] = []
 
-    with open(file_path, 'r') as md_file:
+    with open(file_path, 'r', encoding='utf8') as md_file:
       for link in findDocsLinks(md_file.read()):
         if link.startswith("http"): continue
         
@@ -44,11 +45,17 @@ for dir_path, dir_names, file_names in os.walk(".."):
           os.path.join(dir_path, link.split("#")[0])
         )
 
-        if os.path.isfile(link_path):
-          passed += 1
+        if not os.path.isfile(link_path):
+          report[file_path].append(f"ERROR - FILE NOT FOUND: {link}")
 
         else:
-          report[file_path].append(link)
+          if "\\" in link: 
+            report[file_path].append(f"WARNING - WINDOWS STYLE SEPARATOR: {link}")
+          
+          if not (link.startswith("./") or link.startswith("../")): 
+            report[file_path].append(f"WARNING - MISSING RELATIVE PATH AT START: {link}")
+
+          passed += 1
         
 result_line = f'Test complete. {passed} passed out of {count}.'
 print('='*len(result_line))

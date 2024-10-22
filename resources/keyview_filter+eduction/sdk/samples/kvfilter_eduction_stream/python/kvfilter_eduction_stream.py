@@ -83,8 +83,7 @@ try:
                         with edk_engine.session(input=doc.text) as edk_session:
                             match_cnt = 0
                             for match in edk_session:
-                                json_object = json.loads(str(match).replace("'", '"'))
-                                json_formatted_str = json.dumps(json_object, indent=2)
+                                json_formatted_str = json.dumps(match.asdict(full=True), indent=2)
                                 output_file.write(json_formatted_str)
                                 output_file.write(",\n")
                                 match_cnt = match_cnt + 1

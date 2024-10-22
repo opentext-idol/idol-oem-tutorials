@@ -2,17 +2,18 @@
 
 The Eduction SDK is designed to be embedded into other services.
 
-To facilitate embedding, the Eduction SDK has APIs for C, Java and .NET.  In addition, the Eduction SDK runs natively on the following platforms: Windows (x86_64, x86_32 and ARM_64), Linux (x86_64 and ARM_64), MacOS (x86_64 and Apple M*). 
+To facilitate embedding, the Eduction SDK has APIs for C, Java and .NET.  In addition, the Eduction SDK runs natively on the following platforms: Windows (x86_64, x86_32 and ARM_64), Linux (x86_64 and ARM_64), MacOS (x86_64 and Apple M*).
 
 In this lesson, you will:
+
 - use the Eduction SDK Java API to perform extraction using a configuration file
 - use the Eduction SDK Java API to compile a grammar XML into an ECR
 
-The [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/Content/EductionSDK/APIReference/Java_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
+The [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/EductionSDK/APIReference/Java_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
 
 > NOTE: This lesson only covers the Eduction SDK APIs and does not cover Eduction Server. See [here](./README.md#use-idol-eduction-server) for a lesson on Eduction Server.
 
-> NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](../eduction/introduction.md#eduction-sdk-introduction).
+> NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](../eduction/introduction.md#introduction-to-eduction).
 
 ---
 
@@ -23,14 +24,14 @@ The [Eduction User and Programming Guide](https://www.microfocus.com/documentati
 - [API Documentation](#api-documentation)
 - [Example programs](#example-programs)
   - [`eduction_from_config`](#eduction_from_config)
-    - [Build](#build)
-    - [Run](#run)
+    - [Build eduction](#build-eduction)
+    - [Run eduction](#run-eduction)
   - [`compile`](#compile)
-    - [Build](#build-1)
-    - [Run](#run-1)
+    - [Build `compile`](#build-compile)
+    - [Run `compile`](#run-compile)
   - [`redaction`](#redaction)
-    - [Build](#build-2)
-    - [Run](#run-2)
+    - [Build `redaction`](#build-redaction)
+    - [Run `redaction`](#run-redaction)
 - [Conclusion](#conclusion)
 - [See also](#see-also)
   
@@ -40,17 +41,18 @@ The [Eduction User and Programming Guide](https://www.microfocus.com/documentati
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Refer to `README.md` in the `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
+Refer to `README.md` in the `C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
 
-> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#eduction-sdk-introduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
+> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#introduction-to-eduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
 
 ### License and Version key dat files
 
-Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home directory (*e.g.* `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64`).
+Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home directory (*e.g.* `C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64`).
 
 ### Resources
 
 You must download the following resources before you continue:
+
 - source code and build tools
   - [eduction_from_config/java](../../resources/eduction/sdk/samples/eduction_from_config/java/)
   - [eduction_from_config/resources](../../resources/eduction/sdk/samples/eduction_from_config/resources/)
@@ -59,14 +61,15 @@ You must download the following resources before you continue:
   - [run_mvn_install_jar.bat](../../resources/eduction/sdk/samples)
 
 > NOTE: Deploy these resources to the `%EDK_HOME%\samples` folder, adding to and/or replacing what is provided with EductionSDK.
- 
+
 ### Environment and Compilers
 
-- Refer to the `System Requirements` section of the [IDOL Getting Started Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLServer_24.3_Documentation/Guides/html/gettingstarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
-- Refer to [Eduction User & Programming Guide - Deploy Eduction SDK - Java API Component](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/Java_API.htm) for API and platform specific software dependencies.
-- The `README.md` in `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
+- Refer to the `System Requirements` section of the [IDOL Getting Started Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLServer_24.4_Documentation/Guides/html/gettingstarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
+- Refer to [Eduction User & Programming Guide - Deploy Eduction SDK - Java API Component](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/Java_API.htm) for API and platform specific software dependencies.
+- The `README.md` in `C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
 
 > NOTE: For the Java code, the `pom.xml` may need to be modified as the following:
+>
 > ```diff
 > ...
 > <dependencies>
@@ -75,19 +78,19 @@ You must download the following resources before you continue:
 >      <groupId>com.autonomy.eduction</groupId>
 >      <artifactId>edk</artifactId>
 > -    <version>12.11.0</version>
-> +    <version>24.3.0</version>
+> +    <version>24.4.0</version>
 >    </dependency>
 > </dependencies> 
 > ```
 
-Apache Maven and a Java JDK (*e.g.* OpenJDK) are used to build and run the sample programs.  The `edk.jar` for version 24.3 must deployed to your local Maven cache.  A Windows batch file `run_mvn_install_jar.bat` is provided.
+Apache Maven and a Java JDK (*e.g.* OpenJDK) are used to build and run the sample programs.  The `edk.jar` for version 24.4 must deployed to your local Maven cache.  A Windows batch file `run_mvn_install_jar.bat` and Bourne shell script `run_mvn_install_jar` are provided in the `C:\OpenText\idol-oem-tutorials\resources\eduction\sdk\samples`.
 
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_64\samples
+> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_64\samples
 > run_mvn_install_jar.bat
-C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_6\samples>mvn install:install-file -Dfile=C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_6\bin\edk.jar -DgroupId=com.autonomy.eduction -DartifactId=edk -Dversion=24.3.0 -Dpackaging=jar -DgeneratePom=true
+C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_6\samples>mvn install:install-file -Dfile=C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_6\bin\edk.jar -DgroupId=com.autonomy.eduction -DartifactId=edk -Dversion=24.4.0 -Dpackaging=jar -DgeneratePom=true
 [INFO] Scanning for projects...
 [INFO]
 [INFO] ------------------< org.apache.maven:standalone-pom >-------------------
@@ -95,8 +98,8 @@ C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_6\samples>mvn install:install-file -D
 [INFO] --------------------------------[ pom ]---------------------------------
 [INFO]
 [INFO] --- maven-install-plugin:2.4:install-file (default-cli) @ standalone-pom ---
-[INFO] Installing C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_6\bin\edk.jar to C:%HOMEPATH%\.m2\repository\com\autonomy\eduction\edk\24.3.0\edk-24.3.0.jar
-[INFO] Installing C:%HOMEPATH%\AppData\Local\Temp\mvninstall6990321632397672369.pom to C:%HOMEPATH%\.m2\repository\com\autonomy\eduction\edk\24.3.0\edk-24.3.0.pom
+[INFO] Installing C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_6\bin\edk.jar to C:%HOMEPATH%\.m2\repository\com\autonomy\eduction\edk\24.4.0\edk-24.4.0.jar
+[INFO] Installing C:%HOMEPATH%\AppData\Local\Temp\mvninstall6990321632397672369.pom to C:%HOMEPATH%\.m2\repository\com\autonomy\eduction\edk\24.4.0\edk-24.4.0.pom
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
@@ -107,12 +110,13 @@ C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_6\samples>mvn install:install-file -D
 
 ## API Documentation
 
-API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\` as noted below:
+API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\` as noted below:
 - Java - `java_api\help\index.html`
 
 ## Example programs
 
 Example programs (with resources) ship with the `EductionSDK_<VERSION>_<PLATFORM>.zip` and `EductionGrammars_<VERSION>_COMMON.zip`.  The sample programs cover topics:
+
 - performing different types of extraction / redaction.
 - compiling an XML grammar into an ECR file
 
@@ -120,35 +124,38 @@ Example programs (with resources) ship with the `EductionSDK_<VERSION>_<PLATFORM
 
 The `eduction_from_config` sample program accepts a configuration file as you've been using in the other Eduction lessons, an UTF-8 text file, a path to the output JSON file and some optional arguments to override the configuration.
 
-#### Build
+#### Build eduction
 
 Go ahead and build `eduction_from_config`.  A Windows batch file `run_mvn_test.bat` is provided.
 
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_64\samples\eduction_from_config\java
+> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_64\samples\eduction_from_config\java
 > run_mvn_test.bat 
 ```
 
 Check the `mvn_test.log` for any errors and `BUILD SUCCESS`.
 
-#### Run
+#### Run eduction
 
 Go ahead and run `eduction_from_config`.  A Windows batch file `run_test.bat` is provided.
 
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
+
+> NOTE: `eduction_from_config` expects the `idol-oem-tutorials\resources\eduction\sdk\samples\eduction_from_config\resources\test\config\test_session.cfg` to be deployed.
+
 ```sh
-> cd C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_64\samples\eduction_from_config\java
+> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_64\samples\eduction_from_config\java
 > run_test.bat
-Feb 26, 2024.3:04:52 PM com.autonomy.eduction.samples.FromConfig$Args <init>
+Feb 26, 2024.4:04:52 PM com.autonomy.eduction.samples.FromConfig$Args <init>
 INFO: Parameters valid.
 Successfully configured 1 post-processing tasks.
-Feb 26, 2024.3:04:52 PM com.autonomy.eduction.samples.FromConfig extract
+Feb 26, 2024.4:04:52 PM com.autonomy.eduction.samples.FromConfig extract
 INFO: Input data file opened.
-Feb 26, 2024.3:04:52 PM com.autonomy.eduction.samples.FromConfig extract
+Feb 26, 2024.4:04:52 PM com.autonomy.eduction.samples.FromConfig extract
 INFO: Printing results to output.json...
-Feb 26, 2024.3:04:52 PM com.autonomy.eduction.samples.FromConfig getJsonLines
+Feb 26, 2024.4:04:52 PM com.autonomy.eduction.samples.FromConfig getJsonLines
 INFO: Got 2 matches
 ```
 
@@ -227,48 +234,69 @@ Review the `eduction_from_config` Java source code to gain more insights into ho
 
 ### `compile`
 
-In some use cases for Eduction, custom grammars either for net-new entities and/or extending the entities in the licensed grammar packs. 
+In some use cases for Eduction, custom grammars either for net-new entities and/or extending the entities in the licensed grammar packs.
 
 > NOTE: While the Eduction SDK engine does support XML based resource files, pre-compiling them into ECRs is recommended.
 
-The `compile` sample program accepts a grammar XML and output ECR.
-
-#### Build
+#### Build `compile`
 
 Go ahead and build `compile`.  A Windows batch file `run_mvn_test.bat` is provided.
 
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_64\samples\compile\java
+> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_64\samples\compile\java
 > run_mvn_test.bat 
 ```
 
 Check the `mvn_test.log` for any errors and `BUILD SUCCESS`.
 
-#### Run
+#### Run `compile`
 
 Go ahead and run `compile`.  A Windows batch file `run_test.bat` is provided.
 
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
+
 ```sh
-> cd C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_64\samples\compile\java
+> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_64\samples\compile\java
 > run_test.bat
-Feb 26, 2024.3:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2024.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: Parameters valid.
-Feb 26, 2024.3:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2024.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: License read.
-Feb 26, 2024.3:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2024.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: Version key read.
-Feb 26, 2024.3:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2024.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: Engine created.
-Feb 26, 2024.3:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2024.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: Grammar source file loaded and compiled
-Feb 26, 2024.3:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2024.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: Compiled grammar file saved
 ```
 
-A `test.ecr` from the `src/test.xml` source should be generated.
+A `test.ecr` from the `src/test.xml` source should be generated. To verify the compilation and check which entities are declared as public, let's list the ECRs contents.
+
+```sh
+> edktool.exe list -a test.ecr
+
+Eduction EDKTool Utility v24.4.0
+Loading resource file:
+test.ecr
+
+
+Grammar version:        4.0
+
+Compiled using Edktool: 24.4.0
+
+Listing entities:
+test/two_words
+    components: "FIRST" "SECOND"
+
+Listing all necessary requirements for license:
+    (none)
+
+0.018 seconds elapsed
+```
 
 For extra credit, try `compile` on other Eduction grammar XML.
 
@@ -276,32 +304,33 @@ Review the `compile` Java source code to gain more insights into how to incorpor
 
 ### `redaction`
 
-In some use cases for Eduction, custom grammars either for net-new entities and/or extending the entities in the licensed grammar packs. 
+In some use cases for Eduction, custom grammars either for net-new entities and/or extending the entities in the licensed grammar packs.
 
 > NOTE: While the Eduction SDK engine does support XML based resource files, pre-compiling them into ECRs is recommended.
 
 The `redaction` sample program accepts a configuration file as you've been using in the other Eduction lessons, an UTF-8 text file and a path to the redacted TXT file.
 
-#### Build
+#### Build `redaction`
 
 Go ahead and build `redaction`.  A Windows batch file `run_mvn_test.bat` is provided.
 
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_64\samples\redaction\java
+> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_64\samples\redaction\java
 > run_mvn_test.bat 
 ```
 
 Check the `mvn_test.log` for any errors and `BUILD SUCCESS`.
 
-#### Run
+#### Run `redaction`
 
 Go ahead and run `redaction`.  A Windows batch file `run_test.bat` is provided.
 
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
+
 ```sh
-> cd C:\OpenText\EductionSDK_24.3.0_WINDOWS_x86_64\samples\redaction\java
+> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_64\samples\redaction\java
 > run_test.bat
 Apr 08, 2024 4:06:48 PM com.autonomy.eduction.samples.Redact redact
 INFO: Parameters valid.
@@ -329,13 +358,9 @@ As extra credit, build and run the other sample programs in `EductionSDK_<VERSIO
 
 Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
 
-
 ## See also
 
-- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/)
-- [IDOL Eduction Server User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionServer_24.3_Documentation/Help/Content/_ACI_Welcome.htm)
-- [PCI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PCI/)
-- [PII Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PII/)
-- [PHI Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/PHI/)
-- [Government Eduction Package Technical Note](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionGrammars_24.3_Documentation/GOV/)
-- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLReleaseNotes_24.3_Documentation/idol/Content/SDKs/Eduction.htm)
+- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/)
+- [IDOL Eduction Server User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionServer_24.4_Documentation/Help/Content/_ACI_Welcome.htm)
+- [IDOL Eduction Grammars User Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionGrammars_24.4_Documentation/Help/)
+- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/SDKs/Eduction.htm)

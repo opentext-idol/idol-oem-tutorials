@@ -8,10 +8,10 @@ In this lesson, you will:
 
 - Work with a sample program that illustrates how to use the Python APIs of KeyView Filter SDK and Eduction SDK together
 
-> NOTE: This guide assumes you have already completed the introductory KeyView Filter SDK [tutorial](../keyview_filter/introduction.md#keyview-filter-sdk-introduction).
-> NOTE: This guide assumes you have already completed the KeyView Filter SDK Python API [tutorial](../keyview_filter/programming_python.md#keyview-filter-sdk-python-api).
-> NOTE: This guide assumes you have already completed the introductory Eduction SDK [tutorial](../eduction/introduction.md#eduction-sdk-introduction).
-> NOTE: This guide assumes you have already completed the Eduction SDK Python API [tutorial](../eduction/eduction_sdk_api_python.md#eduction-sdk-python-api).
+> NOTE: This guide assumes you have already completed the introductory KeyView Filter SDK [tutorial](../keyview_filter/introduction.md#introduction-to-keyview-filter-sdk).
+> NOTE: This guide assumes you have already completed the KeyView Filter SDK Python API [tutorial](../keyview_filter/programming_python.md).
+> NOTE: This guide assumes you have already completed the introductory Eduction SDK [tutorial](../eduction/introduction.md#introduction-to-eduction).
+> NOTE: This guide assumes you have already completed the Eduction SDK Python API [tutorial](../eduction/eduction_sdk_api_python.md).
 
 ---
 
@@ -29,22 +29,23 @@ In this lesson, you will:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../keyview_filter/introduction.md#keyview-filter-sdk-introduction) and [Eduction SDK introduction]../eduction/introduction.md#eduction-sdk-introduction) lessons covering essential setup steps (for example, required downloads and installation steps) and basic KeyView Filter and Eduction concepts.  Installation of Python wheels, licensekey.dat / versionkey.dat and other required topics are covered. 
+> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../keyview_filter/introduction.md#introduction-to-keyview-filter-sdk) and [Eduction SDK introduction]../eduction/introduction.md#introduction-to-eduction) lessons covering essential setup steps (for example, required downloads and installation steps) and basic KeyView Filter and Eduction concepts.  Installation of Python wheels, licensekey.dat / versionkey.dat and other required topics are covered.
 
 ### Resources
 
 You must download the following resources before you continue:
-- source code for this tutorial:
-  - [kvfilter_eduction_stream.py](../../resources/keyview_filter+eduction/sdk/kv_filter_eduction_stream/python/extract_metadata_text.py)
-  - [run_kvfilter_eduction_stream.* scripts](../../resources/keyview_filter+eduction/sdk/kv_filter_eduction_stream/python/)
-  - [resources](../../resources/keyview_filter+eduction/sdk/samples/kv_filter_eduction_stream)
 
-> NOTE: Deploy the `keyview_filter+eduction` resources to the `C:\OpenText\idol-oem-tutorials\resources` folder.
- 
+- source code for this tutorial:
+  - [kvfilter_eduction_stream.py](../../resources/keyview_filter+eduction/sdk/samples/kvfilter_eduction_stream/python/kvfilter_eduction_stream.py)
+  - [run_kvfilter_eduction_stream.* scripts](../../resources/keyview_filter+eduction/sdk/samples/kvfilter_eduction_stream/python/)
+  - [resources](../../resources/keyview_filter+eduction/sdk/samples/kvfilter_eduction_stream)
+
+> NOTE: Deploy the `keyview_filter+eduction` resources to the `C:\OpenText\idol-oem-tutorials\resources` folder.  This is likely already the downloaded location. 
 
 ## Example programs
 
 An example program (with resources) for using the KeyView Filter SDK Python API and the Eduction SDK Python API are delivered as [resources](../../resources/eduction/sdk) that are part of this tutorial.  The sample programs cover topics:
+
 - passing a binary or similar file that KeyView Filter SDK supports, extracting the text and streaming this text to Eduction
 
 ### `kvfilter_eduction_stream`
@@ -55,19 +56,20 @@ The `kvfilter_eduction_stream` sample program accepts a configuration file as yo
 
 Go ahead and run `kvfilter_eduction_stream`.  A Windows batch file `run_kvfilter_eduction_stream.bat` is provided.  The Eduction related configuration is the same as the `eduction_from_config\resources\test` with a PDF representation of input.txt used as the default input to `run_kvfilter_eduction_stream.bat`.
 
-> NOTE: Before proceeding make sure that `VERSION`, `PLATFORM` and `PYTHON_HOME` in `run_kvfilter_eduction_stream.bat` are correct for your environment.
+> NOTE: Before proceeding make sure that `VERSION`, `PLATFORM`, `PYTHON_HOME` and other paths in `run_kvfilter_eduction_stream.bat` are correct for your environment.
 
 ```sh
 > cd C:\OpenText\idol-oem-tutorials\resources\keyview_filter+eduction\sdk\samples\kvfilter_eduction_stream\python
 Creating KeyView Filter session.
-Using KeyView license key: C:\OpenText\KeyViewFilterSDK_24.3.0_WINDOWS_X86_64\licensekey.dat
+Using KeyView license key: C:\OpenText\KeyViewFilterSDK_24.4.0_WINDOWS_X86_64\licensekey.dat
 Creating EDK Factory.
-Using Eduction license key: C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\licensekey.dat
-Using Eduction version key: C:\OpenText\EductionSDK_24.3.0_WINDOWS_X86_64\versionkey.dat
+Using Eduction license key: C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\licensekey.dat
+Using Eduction version key: C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\versionkey.dat
 Creating EDK Engine from config: test\config\test.cfg
 Successfully configured 1 post-processing tasks.
 Creating EDK Session and processing input stream.
 ```
+
 Review `educed.EDK.JSON` to see the match information. The program should run and produce an output file containing two matches, as follows:
 
 ```json
@@ -122,8 +124,8 @@ Next, why not try more tutorials to explore some of the other lessons in the Fil
 
 ## See also
 
-- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/KeyviewFilterSDK_24.3_Documentation/Guides/html/python-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLReleaseNotes_24.3_Documentation/oem/Content/_KeyView.htm)
-- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_3/EductionSDK_24.3_Documentation/Guides/html/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLReleaseNotes_24.3_Documentation/oem/Content/_KeyView.htm)
-- [Eduction Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_3/IDOLReleaseNotes_24.3_Documentation/idol/Content/SDKs/Eduction.htm)
+- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/python-programming/)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/oem/Content/_KeyView.htm)
+- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/)
+- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/oem/Content/_KeyView.htm)
+- [Eduction Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/SDKs/Eduction.htm)
