@@ -1,8 +1,8 @@
-# IDOL Eduction
+# Eduction
 
-This track of the IDOL OEM tutorials is focussed on IDOL Eduction.  
+This track of the Knowledge Discovery (formerly known as IDOL) OEM tutorials is focussed on Eduction.  
 
-Below are links to lessons, which will take you through an introduction to IDOL Eduction, exploration of advanced features, as well as ways to use IDOL Eduction in your environment.
+Below are links to lessons, which will take you through an introduction to Eduction, exploration of advanced features, as well as ways to use Eduction in your environment.
 
 ---
 
@@ -16,7 +16,7 @@ Below are links to lessons, which will take you through an introduction to IDOL 
   - [Assessing Performance of Eduction](#assessing-performance-of-eduction)
   - [Create a custom Eduction grammar](#create-a-custom-eduction-grammar)
   - [Create a custom post processing script](#create-a-custom-post-processing-script)
-- [Use IDOL Eduction Server](#use-idol-eduction-server)
+- [Use Eduction Server](#use-eduction-server)
 - [Use the Eduction SDK API](#use-the-eduction-sdk-api)
 
 ---
@@ -29,9 +29,9 @@ Make a solid start with Eduction.  Use the out-of-the-box binaries to develop yo
 
 ## Capability showcase
 
-Do more with IDOL Eduction.
+Do more with Eduction.
 
-> NOTE: This guide assumes you have already completed the introductory IDOL Eduction lesson above.
+> NOTE: This guide assumes you have already completed the introductory Eduction lesson above.
 
 ### Use the PII Eduction grammars
 
@@ -81,18 +81,18 @@ Develop your own validation scripts to post-process matched entities.
 
 [Get started](./custom_postprocessing.md).
 
-## Use IDOL Eduction Server
+## Use Eduction Server
 
-Perform Eduction as a service by calling the IDOL Eduction Server using the IDOL ACI API.
+Perform Eduction as a service by calling the Eduction Server using the ACI API.
 
 [Get started](./eduction_server.md).
 
 ## Use the Eduction SDK API
 
-IDOL Eduction is designed to be embedded into other services via an API.
+Eduction is designed to be embedded into other services via an API.
 
 [Get started](./eduction_sdk_api.md).
 
 ---
 
-Next, why not try more tutorials to explore some of the other features available in IDOL, linked from the [main](../README.md#capability-showcase-examples) page.
+Next, why not try more tutorials to explore some of the other features available in Knowledge Discovery, linked from the [main](../README.md#capability-showcase-examples) page.

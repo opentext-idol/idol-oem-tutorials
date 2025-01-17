@@ -1,13 +1,13 @@
 # Advanced Metadata Extraction
 
-As we saw in the introduction lesson for KeyView Filter SDK, files often contain metadata.  In practice there are varying flavors of metadata.
+As we saw in the introduction lesson for OpenText File Content Extraction (formerly known as KeyView) Filter SDK, files often contain metadata.  In practice there are varying flavors of metadata.
 
 In this lesson, you will explore:
 
 - XMP metadata extraction
 - identification of document restrictions
 
-> NOTE: This guide assumes you have already completed the introductory KeyView Filter [tutorial](./introduction.md#introduction-to-keyview-filter-sdk).
+> NOTE: This guide assumes you have already completed the [Filter SDK introduction](./introduction.md#introduction-to-filter-sdk) lesson.
 
 ---
 
@@ -26,7 +26,7 @@ In this lesson, you will explore:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](./introduction.md#introduction-to-keyview-filter-sdk) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Filter SDK concepts.
+> NOTE: This lesson assumes you have already completed the [Filter SDK introduction](./introduction.md#introduction-to-filter-sdk) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Filter SDK concepts.
 
 ### Resources
 
@@ -34,18 +34,18 @@ Be sure to download the following resources before you continue:
 
 - sample documents from [here](../../resources/keyview_filter/) and install to `C:\OpenText\idol-oem-tutorials\resources`
 
-> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../keyview_filter/introduction.md) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic KeyView Filter SDK concepts.
+> NOTE: This lesson assumes you have already completed the [Filter SDK introduction](../keyview_filter/introduction.md) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic  Filter SDK concepts.
 
 ## XMP Metadata
 
 XMP stands for [Extensible Metadata Platform](https://en.wikipedia.org/wiki/Extensible_Metadata_Platform). PDF, image, audio and video files are the typical format categories that may contain XMP metadata.
 
-Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetMetadataList.htm) for more details about KeyView's support for XMP metadata.
+Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetMetadataList.htm) for more details about Filter SDK's support for XMP metadata.
 
 ### Perform XMP metadata extraction
 
 ```sh
-> cd KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -m "..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_HAS_XMP.png" xmp
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_HAS_XMP.png to xmp
@@ -65,14 +65,14 @@ Some applications, and corresponding file formats, allow users to restrict the w
 
 ### Identify Document Restrictions
 
-The document `Robin Zupanc Resume_RESTRICTED.docx` included in this tutorial's resources was created using this [Microsoft.com knowledge article](https://support.microsoft.com/en-us/office/make-a-document-read-only-5c25909c-46d9-4eb0-9d1f-d072a560e340) as guidance.
+The document `Robin Zupanc Resume_RESTRICTED.docx` included in this tutorial's resources was created using this [Microsoft.com knowledge article](https://support.microsoft.com/en-us/office/make-a-document-read-only-in-word-5c25909c-46d9-4eb0-9d1f-d072a560e340) as guidance.
 
-Reference the Keyview documentation on [Document Restrictions](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/Content/filter/DocumentRestrictions.htm) for more details like supported formats.
+Reference the Keyview documentation on [Document Restrictions](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/filter/DocumentRestrictions.htm) for more details like supported formats.
 
 The `filtertest` utility will be used for this lesson.  `filtertest` works similarly to `filter` with a few additional options.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filtertest -restrictions "..\..\..\idol-oem-tutorials\resources\keyview_filter\Robin Zupanc Resume_RESTRICTED.docx" restrictions
 WARNING: filtertest is a sample program only and is not for production use
 Return code is 0
@@ -90,15 +90,15 @@ Try the `filtertest -restrictions` with other tutorial resource PPT, DOCX, XLSX,
 
 ## Conclusion
 
-There are multiple types of metadata that a given file format may contain. KeyView Filter SDK strives to extract as much information as is possible from file formats.
+There are multiple types of metadata that a given file format may contain.  The Filter SDK strives to extract as much information as is possible from file formats.
 
 Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from [here](../keyview_filter/README.md#capability-showcase).
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/dotnet-programming/index.html)
-- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/python-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/)
+- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/Content/_KeyView.htm)

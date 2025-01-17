@@ -1,8 +1,8 @@
-# KeyView Filter
+# Filter SDK
 
-This track of the IDOL OEM tutorials is focused on the IDOL KeyView Filter SDK.  
+This track of the OEM tutorials is focused on the File Content Extraction (formerly known as KeyView) Filter SDK.  
 
-Below are links to lessons, which will take you through an introduction to the KeyView Filter SDK, exploration of advanced features, as well as ways to use he KeyView Filter SDK in your environment.
+Below are links to lessons, which will take you through an introduction to the Filter SDK, exploration of advanced features, as well as ways to use the Filter SDK in your environment.
 
 ---
 
@@ -14,7 +14,8 @@ Below are links to lessons, which will take you through an introduction to the K
   - [Advanced Sub-file Extraction](#advanced-sub-file-extraction)
   - [Microsoft RMS Files](#microsoft-rms-files)
   - [Optical Character Recognition](#optical-character-recognition)
-- [Use the KeyView Filter SDK](#use-the-keyview-filter-sdk)
+  - [Testing API Error Handling](#testing-api-error-handling)
+- [Use the Filter SDK](#use-the-filter-sdk)
   - [C API](#c-api)
   - [Python API](#python-api)
   - [Java API](#java-api)
@@ -24,15 +25,15 @@ Below are links to lessons, which will take you through an introduction to the K
 
 ## Introduction
 
-Build a firm foundation with the KeyView Filter SDK.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for extracting (filtering) text, metadata and sub-files from files.
+Build a firm foundation with the Filter SDK.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for extracting (filtering) text, metadata and sub-files from files.
 
 [Get started](./introduction.md).
 
 ## Capability showcase
 
-Do more with the KeyView Filter SDK.
+Do more with the Filter SDK.
 
-> NOTE: This guide assumes you have already completed the introductory KeyView Filter SDK lesson above.
+> NOTE: This guide assumes you have already completed the introductory the Filter SDK lesson above.
 
 ### Advanced Format Detection
 
@@ -60,7 +61,7 @@ Extract sub-files from various formats.
 
 ### Microsoft RMS Files
 
-Explore metadata and XrML extraction from [Microsoft Azure RMS](https://docs.microsoft.com/en-us/azure/information-protection/what-is-azure-rms) protected content.
+Explore metadata and XrML extraction from [Microsoft Azure RMS](https://learn.microsoft.com/en-us/azure/information-protection/what-is-azure-rms) protected content.
 
 [Get started](./rms.md).
 
@@ -70,13 +71,19 @@ Extract text from images.
 
 [Get started](./ocr.md).
 
-## Use the KeyView Filter SDK
+### Testing API Error Handling
 
-KeyView Filter is designed to be embedded into other services via an SDK.
+Testing API Error Handling.
+
+[Get started](./testing_error_handling.md).
+
+## Use the Filter SDK
+
+The Filter SDK is designed to be embedded into other services via an SDK.
 
 ### C API
 
-The KeyView Filter SDK is designed to be embedded into other services.
+The Filter SDK is designed to be embedded into other services.
 
 [Get started](./programming_c.md).
 
@@ -96,9 +103,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/dotnet-programming/index.html)
-- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/python-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/)
+- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/Content/_KeyView.htm)

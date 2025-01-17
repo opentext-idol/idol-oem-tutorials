@@ -1,0 +1,2 @@
+poisonsr_command_file
+autodet crash

@@ -1,6 +1,6 @@
 # Use PCI Eduction grammars
 
-The IDOL PCI Package contains tools that allow you to locate Payment Card Industry (PCI) in your data, to help you comply with financial regulations.
+The Eduction PCI Package contains tools that allow you to locate Payment Card Industry (PCI) in your data, to help you comply with financial regulations.
 
 In this lesson, you will:
 
@@ -32,15 +32,15 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PCI edk_samples](../../resources/eduction/pci/edk_samples) and install to `C:\OpenText\EductionGrammars_24.4.0_COMMON\pci\edk_samples\resources`
+- [PCI edk_samples](../../resources/eduction/pci/edk_samples) and install to `C:\OpenText\EductionGrammars_25.1.0_COMMON\pci\edk_samples\resources`
 
 ## What's in the Box?
 
-The IDOL PCI Package includes IDOL Eduction Grammar files, post-processing scripts (*e.g.* checksum & additional validation, output & score normalization and filtering) for certain entities.
+The Eduction PCI Package includes Eduction Grammar files, post-processing scripts (*e.g.* checksum & additional validation, output & score normalization and filtering) for certain entities.
 
 ### Available Grammar Files
 
-To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_24.4.0_COMMON\pci`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pci_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
+To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_25.1.0_COMMON\pci`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pci_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
 
 The PCI Grammar Package covers name (for many countries), date and account number variations specific to the PCI use case.
 
@@ -52,7 +52,7 @@ For the PCI date entities, like `pci/date/paymentcard/*`, "context", "nocontext"
 
 The PCI number entities, like `pci/pan/*/pan`, there are also "context", "nocontext" and "landmark" entity forms. However, the "nocontext" form has less risk of false positives due to checksum validation which we will explore below.
 
-For full details of the entities included in the PCI Grammar Package, please reference the [IDOL Eduction Grammars Users Guide - PCI Grammars](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionGrammars_24.4_Documentation/Help/Content/PCI/PCI_Intro.htm).
+For full details of the entities included in the PCI Grammar Package, please reference the [Eduction Grammars Users Guide - PCI Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/Content/PCI/PCI_Intro.htm).
 
 > NOTE: You can configure Eduction to use either versions of an entity, in which case matches located with context are given a higher score in the results.
 
@@ -65,8 +65,8 @@ In the setup, you deployed PCI edk_samples resources, which can be used with the
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionGrammars_24.4.0_COMMON\pci\edk_samples\resources
-> edktool.exe extract -l ..\..\..\..\EductionSDK_24.4.0_WINDOWS_X86_64\licensekey.dat -c account_nbr\config\account_nbr.cfg -i account_nbr\input\input.txt -o out.xml
+> cd C:\OpenText\EductionGrammars_25.1.0_COMMON\pci\edk_samples\resources
+> edktool.exe extract -l ..\..\..\..\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat -c account_nbr\config\account_nbr.cfg -i account_nbr\input\input.txt -o out.xml
 ```
 
 32 matches are found representing a landmark plus 31 personal account numbers out of 32 potential credit card numbers.
@@ -113,20 +113,20 @@ In the setup, you deployed edk_samples resources.  It contains resources to be u
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionGrammars_24.4.0_COMMON\pci\edk_samples\resources
-> edktool.exe extract -l ..\..\..\..\EductionSDK_24.4.0_WINDOWS_X86_64\licensekey.dat -c pci_all\config\pci_all.cfg -i pci_all\input\input.txt -o out.xml
+> cd C:\OpenText\EductionGrammars_25.1.0_COMMON\pci\edk_samples\resources
+> edktool.exe extract -l ..\..\..\..\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat -c pci_all\config\pci_all.cfg -i pci_all\input\input.txt -o out.xml
 ```
 
 The `pci_all.cfg` configuration and `input.txt` represent all available entity categories in the PCI package, but does intentionally select "nocontext" vs "context" for particular entity categories.
 
 ## Conclusion
 
-You now understand how to explore and use the IDOL Eduction's PCI grammars and an example of how the post processing stage of Eduction matching is very valuable. Other entity categories like PII national_id & tin, PHI device UDI & DEA # and GOV Legal Entity Identifier (LEI) do checksum based validation to improve match precision.
+You now understand how to explore and use the Eduction's PCI grammars and an example of how the post processing stage of Eduction matching is very valuable. Other entity categories like PII national_id & tin, PHI device UDI & DEA # and GOV Legal Entity Identifier (LEI) do checksum based validation to improve match precision.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
+Next, why not try more tutorials to explore some of the other features available in Eduction, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
-- [IDOL Eduction Grammars Users Guide - PCI Grammars](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionGrammars_24.4_Documentation/Help/Content/PCI/PCI_Intro.htm)
-- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/)
-- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Eduction Grammars Users Guide - PCI Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/Content/PCI/PCI_Intro.htm)
+- [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/)
+- [Knowledge Discovery Release Notes - Eduction](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/Eduction.htm)

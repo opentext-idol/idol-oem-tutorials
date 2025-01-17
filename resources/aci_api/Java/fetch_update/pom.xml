@@ -16,7 +16,7 @@
 		<dependency>
 			<groupId>com.autonomy.aci</groupId>
 			<artifactId>aci-api-release</artifactId>
-			<version>24.4.0</version>
+			<version>25.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-codec</groupId>

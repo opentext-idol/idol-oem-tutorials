@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.RandomAccessFile;
 import java.lang.AutoCloseable;
 
-/* Implement a SeekableInputStream to provide a source of file data to KeyView.
+/* Implement a SeekableInputStream to provide a source of file data to the Filter SDK.
  * This example uses a RandomAccessFile to read from disk.
  */
 public class SeekableInputStreamImpl implements SeekableInputStream, AutoCloseable

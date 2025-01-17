@@ -1,9 +1,9 @@
-# API-driven file actions with IDOL Dropbox Connector
+# API-driven file actions with Dropbox Connector
 
 Aims:
 
-- Set up a Dropbox account and create a Dropbox developer application to represent the IDOL Dropbox Connector
-- Install and configure IDOL Dropbox Connector on Windows
+- Set up a Dropbox account and create a Dropbox developer application to represent the Dropbox Connector
+- Install and configure Dropbox Connector on Windows
 - Use ACI API to direct the Connector to:
   - list file identifiers,
   - collect a file,
@@ -17,10 +17,10 @@ Aims:
   - [Create a Dropbox application](#create-a-dropbox-application)
   - [Add sample files to Dropbox](#add-sample-files-to-dropbox)
 - [Connector setup](#connector-setup)
-  - [IDOL Dropbox Connector installation](#idol-dropbox-connector-installation)
+  - [Dropbox Connector installation](#dropbox-connector-installation)
   - [Disable scheduled tasks](#disable-scheduled-tasks)
   - [OAuth configuration](#oauth-configuration)
-- [Run IDOL Dropbox Connector](#run-idol-dropbox-connector)
+- [Run Dropbox Connector](#run-dropbox-connector)
 - [Use Connector API](#use-connector-api)
   - [Get status](#get-status)
   - [List file identifiers](#list-file-identifiers)
@@ -39,8 +39,8 @@ To follow this tutorial you will need:
 - A Windows PC
 - A text editor
 - The following installation media:
-  - `dropboxconnector_24.4.0_WINDOWS_X86_64.zip`
-  - `Versionkey_24.4.0_COMMON.zip`
+  - `dropboxconnector_25.1.0_WINDOWS_X86_64.zip`
+  - `Versionkey_25.1.0_COMMON.zip`
 - A web browser with access to the internet
 - Python3 installed
 
@@ -48,7 +48,7 @@ To follow this tutorial you will need:
 
 Create a standard (free) Dropbox account on [dropbox.com](https://www.dropbox.com).
 
-> NOTE: Mapped Security is only available for Dropbox for Business accounts and is out of scope for this tutorial.  Please read the [admin guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/DropboxConnector_24.4_Documentation/Help/Content/Dropbox_MappedSecurity.htm) for details.
+> NOTE: Mapped Security is only available for Dropbox for Business accounts and is out of scope for this tutorial.  Please read the [admin guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/DropboxConnector_25.1_Documentation/Help/Content/Dropbox_MappedSecurity.htm) for details.
 
 ### Create a Dropbox application
 
@@ -66,7 +66,7 @@ Create an app to represent this connector on the [Dropbox developer's page](http
 
     ![dropbox-redirect](./figs/dropbox-redirect.png)
 
-1. Under your app's "Permissions" tab, enable the items as directed in point 6 of the [admin guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/DropboxConnector_24.4_Documentation/Help/Content/ConfigureOAuth.htm) for a standard Dropbox account:
+1. Under your app's "Permissions" tab, enable the items as directed in point 6 of the [admin guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/DropboxConnector_25.1_Documentation/Help/Content/ConfigureOAuth.htm) for a standard Dropbox account:
     ![dropbox-permissions](./figs/dropbox-permissions.png)
 
 1. Click the "Submit" button.
@@ -86,15 +86,15 @@ Place them, for example, in a new sub-directory called "Documents":
 
 ## Connector setup
 
-### IDOL Dropbox Connector installation
+### Dropbox Connector installation
 
-1. Unzip the IDOL Dropbox Connector `dropboxconnector_24.4.0_WINDOWS_X86_64.zip` to give the directory `C:\OpenText\dropboxconnector_24.4.0_WINDOWS_X86_64`.
+1. Unzip the Dropbox Connector `dropboxconnector_25.1.0_WINDOWS_X86_64.zip` to give the directory `C:\OpenText\dropboxconnector_25.1.0_WINDOWS_X86_64`.
 
-1. Copy your OEM license key `.dat` file into `C:\OpenText\dropboxconnector_24.4.0_WINDOWS_X86_64\` and rename it to `licensekey.dat`.
-   
+1. Copy your OEM license key `.dat` file into `C:\OpenText\dropboxconnector_25.1.0_WINDOWS_X86_64\` and rename it to `licensekey.dat`.
+
     > HINT: this key will typically have been named `licensekeyInternal.dat` when you received it.
 
-1. Extract the file `versionkey.dat` from `Versionkey_24.4.0_COMMON.zip`, then copy that file into `C:\OpenText\EductionServer_24.4.0_WINDOWS_X86_64` as described in the [upgrade guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/Upgrade/Licenses.htm).
+1. Extract the file `versionkey.dat` from `Versionkey_25.1.0_COMMON.zip`, then copy that file into `C:\OpenText\EductionServer_25.1.0_WINDOWS_X86_64` as described in the [upgrade guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/Upgrade/Licenses.htm).
 
 1. On Windows, you may need to install the included Visual C++ Redistributable package.  In the same Dropbox Connector folder, right-click on `vcredist.exe` then select 'Run as administrator'.
 
@@ -121,7 +121,7 @@ Save your configuration file.
 
 ### OAuth configuration
 
-From the unzipped IDOL Dropbox Connector folder, open the configuration file `oauth_tool.cfg` for editing.
+From the unzipped Dropbox Connector folder, open the configuration file `oauth_tool.cfg` for editing.
 
 If needed in your environment, update the "default" section with your proxy host and port, *e.g.*:
 
@@ -158,7 +158,7 @@ Save your configuration file.
 From the command line, run the following commands:
 
 ```sh
-> cd dropboxconnector_24.4.0_WINDOWS_X86_64
+> cd dropboxconnector_25.1.0_WINDOWS_X86_64
 > oauth_tool.exe oauth_tool.cfg OAuthTool
 Waiting for code...
 ```
@@ -182,13 +182,13 @@ Oauth2SiteName=Dropbox
 
 Notice that the Oauth tool has now created two new files in the current directory: `oauth.cfg` and `oauth2_sites.bin`.
 
-Later on, we will reference this `oauth.cfg` file in our tasks in enable interaction between the IDOL Dropbox Connector and your Dropbox account.
+Later on, we will reference this `oauth.cfg` file in our tasks in enable interaction between the Dropbox Connector and your Dropbox account.
 
-## Run IDOL Dropbox Connector
+## Run Dropbox Connector
 
 Now, for the simplest start-up, double-click the `dropboxconnector.exe`.
 
-> NOTE: Please read the [documentation](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLServer_24.4_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_WindowsServices.htm) for instructions to run IDOL Dropbox Connector (or any other IDOL ACI server) as a service on Windows.
+> NOTE: Please read the [documentation](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLServer_25.1_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_WindowsServices.htm) for instructions to run Dropbox Connector (or any other ACI server) as a service on Windows.
 
 Open the primary log file `logs/application.log` to see, among other messages, the following line confirming that that connector has started and successfully picked up your OEM license key:
 
@@ -198,9 +198,9 @@ This ACI Server will not accept unencrypted communications from ACI clients.
 
 ## Use Connector API
 
-For the remaining steps, we will use the IDOL ACI Client API to direct the IDOL Dropbox Connector.  
+For the remaining steps, we will use the ACI Client API to direct the Dropbox Connector.  
 
-As you know, ACI requests are the means of interacting with a running IDOL server, in this case the IDOL Dropbox Connector.  The IDOL ACI Client API is available as an SDK for C, Java and .NET.  
+As you know, ACI requests are the means of interacting with a running Knowledge Discovery server, in this case the Dropbox Connector.  The ACI Client API is available as an SDK for C, Java and .NET.  
 
 In this lesson we will make use of a Python wrapper for the C SDK, which has been included in these tutorials.  Navigate to the `resources\apis\aci\Python\scripts` to find the files we will use.
 
@@ -242,7 +242,7 @@ GETSTATUS: SUCCESS
 
 ### List file identifiers
 
-The "Identifiers" fetch action is by default an asynchronous action and is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_24_4/DropboxConnector_24.4_Documentation/Help/Content/Actions/Fetch/Identifiers.htm).
+The "Identifiers" fetch action is by default an asynchronous action and is described in full in the [documentation](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/DropboxConnector_25.1_Documentation/Help/Content/Actions/Fetch/Identifiers.htm).
 
 When running any asynchronous action, an ACI server responds with a token, *e.g.* as seen in a JSON response:
 
@@ -401,7 +401,7 @@ As well as restricting the depth to crawl, you can also specify the starting poi
 
 ### Collect a file
 
-The "Collect" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_24_4/DropboxConnector_24.4_Documentation/Help/Content/Actions/Fetch/_CN_Collect.htm).
+The "Collect" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/DropboxConnector_25.1_Documentation/Help/Content/Actions/Fetch/_CN_Collect.htm).
 
 From the Python `scripts\dropbox` directory, open the file called `collect_files.py`.  This script includes the following API call:
 
@@ -500,7 +500,7 @@ Once complete, look for the downloaded files in the destination directory you sp
 
 ![dropbox-collected-files](./figs/dropbox-collected-files.png)
 
-In that directory, you should see four files.  Two are the `.pdfs` you uploaded, now renamed with a unique identifier prefix to avoid overwriting.  The other two contain their respective metadata, stored in IDOL's `.idx` format, *e.g.*.
+In that directory, you should see four files.  Two are the `.pdfs` you uploaded, now renamed with a unique identifier prefix to avoid overwriting.  The other two contain their respective metadata, stored in the `.idx` format, *e.g.*.
 
 ```idx
 #DREREFERENCE dbid:AAA63bycDrHy4mDEJBHJhjVrkF13LN4EB_w:/documents/dropboxconnector_12.13.0_releasenotes_en.pdf
@@ -519,7 +519,7 @@ In that directory, you should see four files.  Two are the `.pdfs` you uploaded,
 
 ### Delete a file
 
-The "Delete" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_24_4/DropboxConnector_24.4_Documentation/Help/Content/Actions/Fetch/_CN_DeleteRemove.htm).
+The "Delete" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/DropboxConnector_25.1_Documentation/Help/Content/Actions/Fetch/_CN_DeleteRemove.htm).
 
 From the Python `scripts\dropbox` directory, open the file called `delete_files.py`.  This script includes the following API call:
 
@@ -556,7 +556,7 @@ Open your Dropbox (or run the "Identifiers" task again) to confirm deletion:
 
 ### Insert a file
 
-The "Insert" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/IDOL_24_4/DropboxConnector_24.4_Documentation/Help/Content/Insert_Action.htm).
+The "Insert" fetch action is described in full in the [documentation](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/DropboxConnector_25.1_Documentation/Help/Content/Insert_Action.htm).
 
 From the Python `scripts\dropbox` directory, open the file called `insert_file.py`.  This script includes the following API call:
 
@@ -607,19 +607,21 @@ Open your Dropbox (or run the "Identifiers" task again) to confirm insertion:
 
 ![dropbox-inserted-file](./figs/dropbox-inserted-file.png)
 
-Tests are complete, you can now stop the IDOL Docker Connector.
+Tests are complete, you can now stop the Dropbox Connector.
 
 ## Conclusion
 
 You have successfully:
+
 - Created a Dropbox account and associated developer application.
-- Configured OAuth to enable the IDOL Dropbox Connector to access that Dropbox account.
+- Configured OAuth to enable the Dropbox Connector to access that Dropbox account.
 - Used the Connector's Fetch API to list, collect, delete files from and insert files into that Dropbox account.
 
 ---
 
-Next, why not try more tutorials to explore some of the other features available in IDOL, linked from the [main](../README.md#capability-showcase-examples) page.
+Next, why not try more tutorials to explore some of the other features available in Knowledge Discovery, linked from the [main](../README.md#capability-showcase-examples) page.
 
 ## See also
-- [IDOL Connector for DropBox Reference Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/DropboxConnector_24.4_Documentation/Help/)
-- [ACI API Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLJavaSDK_24._Documentation/Guides/html/Content/Intro/intro_part.htm)
+
+- [Connector for DropBox Reference Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/DropboxConnector_25.1_Documentation/Help/)
+- [ACI API Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLJavaSDK_25.1_Documentation/Guides/html/Content/Intro/intro_part.htm)

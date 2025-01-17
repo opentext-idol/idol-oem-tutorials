@@ -1,13 +1,13 @@
 # Advanced Text Extraction
 
-As we saw in the introduction lesson for KeyView Filter SDK, files different flavors of text that is visible and hidden.
+As we saw in the introduction lesson for OpenText File Content Extraction (formerly known as KeyView) Filter SDK, files different flavors of text that is visible and hidden.
 
 In this lesson, you will explore:
 
 - extraction of headers and footers
 - extraction of some flavors of hidden text
 
-> NOTE: This guide assumes you have already completed the introductory KeyView Filter [tutorial](./introduction.md#introduction-to-keyview-filter-sdk).
+> NOTE: This guide assumes you have already completed the [Filter SDK introduction](./introduction.md#introduction-to-filter-sdk) lesson.
 
 ---
 
@@ -31,7 +31,7 @@ In this lesson, you will explore:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](./introduction.md#introduction-to-keyview-filter-sdk) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Filter SDK concepts.
+> NOTE: This lesson assumes you have already completed the [Filter SDK introduction](./introduction.md#introduction-to-filter-sdk) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Filter SDK concepts.
 
 ### Resources
 
@@ -39,7 +39,7 @@ Be sure to download the following resources before you continue:
 
 - sample documents from [here](../../resources/keyview_filter/) and install to (`C:\OpenText\idol-oem-tutorials\resources`)
 
-> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](../keyview_filter/introduction.md) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic KeyView Filter SDK concepts.
+> NOTE: This lesson assumes you have already completed the [Filter SDK introduction](../keyview_filter/introduction.md) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Filter SDK concepts.
 
 ## Headers / Footers
 
@@ -50,7 +50,7 @@ Word processing, spreadsheet, presentation and some other file formats optionall
 Let's run text extraction on the same file `2022_calendar_HIDDEN_TEXT.docx` without and with header/footer mode enabled.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_no_hf.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_hf.txt
@@ -74,10 +74,10 @@ Hidden text may be in the form of comments, revision history, slide master conte
 
 ### Perform extraction with revision marks
 
-Word processing and some other file formats allow for users to track revision history.  This markup is usually hidden, but can of interest for many user cases of KeyView Filter SDK.
+Word processing and some other file formats allow for users to track revision history.  This markup is usually hidden, but can of interest for many user cases of Filter SDK.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -rm ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revision_marks.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revision_marks.txt
@@ -92,10 +92,10 @@ Try `filter` to extract hidden text with your own test files. Good luck!
 
 ### Perform extraction excluding comments
 
-Your use case for KeyView FilterSDK may not benefit from including comments.
+Your use case for Filter SDK may not benefit from including comments.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -nc ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_no_comments.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_comments.txt
@@ -111,12 +111,12 @@ Compare `text_no_comments.txt` and `text_no_hf.txt`.  You will see that the comm
 Presentation formats like PowerPoint have the concept of slide masters where some slide master content is only visible when you're editing the slider masters.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_no_slidemaster.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_no_slidemaster.txt
 filter: error code returned is KVERR_Success
-
+0
 > filter -sh ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_slidemaster.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_slidemaster.txt
@@ -131,16 +131,16 @@ A lot of additional output is included in `text_slidemaster.txt`.  It's the text
 
 With some file formats, for example Microsoft PowerPoint presentations, the order of the text inside the file has no relation to the layout of the text on the page or screen. Recently modified text might appear at the end of a file, even though that text belongs at the beginning of the document.
 
-Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/Content/filter/Presentation_LogicalOrder.htm) for more details about KeyView's support for preserving logical reading order.
+Refer to the [Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/filter/Presentation_LogicalOrder.htm) for more details about Filter SDK's support for preserving logical reading order.
 
 ### Perform logical order preservation
 
-The KeyView resources README.md references a file [AmeliorationFertiliteDesSols.pptx](../../resources/keyview_filter/README.md#ameliorationfertilitedessolspptx) that exhibits this behavior.  Please download it place it in the `idol-oem-tutorials\resources\keyview_filter` folder.
+This tutorial's resources README.md references a file [AmeliorationFertiliteDesSols.pptx](../../resources/keyview_filter/README.md#ameliorationfertilitedessolspptx) that exhibits this behavior.  Please download it place it in the `idol-oem-tutorials\resources\keyview_filter` folder.
 
 Use `filter` to extract text with `LogicalOrder` disabled.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=F.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=F.txt
@@ -157,7 +157,7 @@ Preservation of logical reading order is disabled by default.  Modify `formats.i
  Use `filter` to extract text with `LogicalOrder` enabled.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=T.txt`
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=T.txt
@@ -202,15 +202,15 @@ Leverage `filter` as you've explored in this lesson to extract text from these a
 
 ## Conclusion
 
-There are multiple types of text that a given file format may contain. KeyView Filter SDK strives to extract as much information as is possible from file formats.
+There are multiple types of text that a given file format may contain. The Filter SDK strives to extract as much information as is possible from file formats.
 
 Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from [here](../keyview_filter/README.md#capability-showcase).
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/dotnet-programming/index.html)
-- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/python-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/)
+- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/Content/_KeyView.htm)

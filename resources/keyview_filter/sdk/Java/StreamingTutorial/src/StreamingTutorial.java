@@ -57,16 +57,16 @@ public class StreamingTutorial
 		// you have finished with.
 		try(FilterPool filterPool = new FilterPool())
 		{
-			// We could just pass the input filename to KeyView, instead of creating
+			// We could just pass the input filename to the Filter SDK, instead of creating
 			// this SeekableInputStreamImpl.  SeekableInputStreamImpl is here to
 			// demonstrate that you could read from any source of file-data that
 			// lets you read and seek.
 			//
-			// You can also pass a non-seekable InputStream to KeyView, and KeyView
+			// You can also pass a non-seekable InputStream to the FIlter SDK, and the Filter SDK
 			// will cache whatever data it requires.
 			try(SeekableInputStreamImpl input = new SeekableInputStreamImpl(inputFile))
 			{
-				// KeyView can write to any OutputStream.  In this case we just
+				// The Filter SDK can write to any OutputStream.  In this case we just
 				// send the text output to a file.
 				try(OutputWriter output = new OutputWriter(outputFile))
 				{

@@ -1,6 +1,6 @@
 # .NET ACI API Sample Code
 
-The .NET ACI API sample code resources build upon the information in the [ACI API Programming Guide - .NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLJavaSDK_24.4_Documentation/Guides/html/Content/NET/NET_part.htm) providing working examples to interact with IDOL ACI services. 
+The .NET ACI API sample code resources build upon the information in the [ACI API Programming Guide - .NET Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLJavaSDK_25.1_Documentation/Guides/html/Content/NET/NET_part.htm) providing working examples to interact with IDOL ACI services.
 
 The various examples contain source code and build configuration for Visual Studio on Windows_x86_64.
 
@@ -28,7 +28,7 @@ The various examples contain source code and build configuration for Visual Stud
 Relative paths are used in the provided `do_*` scripts and the Visual Studio project files. They assume the following installation paths:
 
 - `C:\OpenText\idol_oem_tutorials\resources\apis\aci\dotnet`
-- `C:\OpenText\IDOLDotNetSDK_24.4.0_WINDOWS_X86_64`
+- `C:\OpenText\IDOLDotNetSDK_25.1.0_WINDOWS_X86_64`
 
 ### Setup - Build
 
@@ -46,7 +46,7 @@ To use the `/bin/netcoreapp3.1` exe as is the `do_run.*` scripts need to be upda
 
 - A (UTF-8 capable) text editor, *e.g.*:
   - [VS Code](https://code.visualstudio.com/download), or
-  - [Notepad++](https://notepad-plus-plus.org/download)
+  - [Notepad++](https://notepad-plus-plus.org/downloads/)
 
 - A Markdown viewer
   - Plugins to VS Code, Notepad++ and some web browsers are good options
@@ -117,5 +117,5 @@ This sample code is for use with IDOL Media Server issuing the basic settings fo
 
 ## See also
 
-- ACI API Programming Guide: [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLJavaSDK_24.4_Documentation/Guides/html/Content/NET/NET_part.htm)
-- IDOL Release Notes: [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/SDKs/IDOL-NET.htm)
+- ACI API Programming Guide: [.NET Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLJavaSDK_25.1_Documentation/Guides/html/Content/NET/NET_part.htm)
+- IDOL Release Notes: [.NET Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/IDOL-NET.htm)

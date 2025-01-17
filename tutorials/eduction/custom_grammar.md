@@ -39,10 +39,10 @@ Before you continue with this lesson, refer to the documentation links [below](#
 Let's start with the mechanics of compiling grammar XML source into an ECR.
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\samples\compile\resources\test
+> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\compile\resources\test
 > edktool.exe compile -l ..\..\..\..\licensekey.dat -i source\test.xml -o test.ecr
 
-Eduction EDKTool Utility v24.4.0
+Eduction EDKTool Utility v25.1.0
 Compiling:
   source\test.xml
 into:
@@ -60,14 +60,14 @@ To verify the compilation and check which entities are declared as public, let's
 ```sh
 > edktool.exe list -a test.ecr
 
-Eduction EDKTool Utility v24.4.0
+Eduction EDKTool Utility v25.1.0
 Loading resource file:
 test.ecr
 
 
 Grammar version:        4.0
 
-Compiled using Edktool: 24.4.0
+Compiled using Edktool: 25.1.0
 
 Listing entities:
 test/two_words
@@ -85,15 +85,15 @@ This looks like the source to test.ecr used in [Eduction introduction](./introdu
 > edktool.exe extract -l ..\..\..\..\licensekey.dat -g test.ecr -i ..\..\..\eduction_from_config\resources\test\input\input.txt
 ```
 
-> NOTE: `EductionSDK_24.4.0_WINDOWS_X86_64\samples\compile` also has sample code illustrating how to use APIs to compile a grammar. 
+> NOTE: `EductionSDK_25.1.0_WINDOWS_X86_64\samples\compile` also has sample code illustrating how to use APIs to compile a grammar. 
  
 ### Complex example
 
-The Eduction User and Programming Guide has excellent sections on this [topic](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/UseEduction/Grammars/GrammarFormat.htm), which will be relied upon heavily in this section of the lesson.
+The Eduction User and Programming Guide has excellent sections on this [topic](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/Grammars/GrammarFormat.htm), which will be relied upon heavily in this section of the lesson.
 
 ### `grammar.xml` and `grammar_include.xml`
 
-The [grammar.xml](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/UseEduction/Grammars/grammar_xml.htm) and [grammar_include.xml](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/UseEduction/Grammars/grammar_include_xml.htm) example illustrates many interesting Eduction concepts:
+The [grammar.xml](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/Grammars/grammar_xml.htm) and [grammar_include.xml](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/Grammars/grammar_include_xml.htm) example illustrates many interesting Eduction concepts:
 - including another grammar file
 - public and private entity scope
 - headword / synonym and pattern for entity definition
@@ -102,42 +102,42 @@ The [grammar.xml](https://www.microfocus.com/documentation/idol/IDOL_24_4/Educti
 
 As extra credit, copy and paste from the documentation into your own grammar.xml and grammar_include.xml files and compile, verify and test.
 
-> HINT: Use UTF-8 capable editor, save the grammar XML to `C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\samples\compile\resources\docs_example` and run `edktool compile -l <PATH_TO_LICENSEKEY.DAT> -i grammar.xml` produces 3 public entities.
+> HINT: Use UTF-8 capable editor, save the grammar XML to `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\compile\resources\docs_example` and run `edktool compile -l <PATH_TO_LICENSEKEY.DAT> -i grammar.xml` produces 3 public entities.
 
 ## Extending an existing grammar
 
-Grammars and entities contained within are kind of programming objects in that they can be inherited and extended. This allows for you to make net-new entities more quickly leveraging say `EductionGrammars_24.4.0_COMMON\general\grammars\date_spa.ecr` to make your own `datetime_advanced_spa.ecr` or improve the behavior of existing grammars by say adding to `PII pii/name/surname/nocontext/CC` to improve matching / scoring of PII name.
+Grammars and entities contained within are kind of programming objects in that they can be inherited and extended. This allows for you to make net-new entities more quickly leveraging say `EductionGrammars_25.1.0_COMMON\general\grammars\date_spa.ecr` to make your own `datetime_advanced_spa.ecr` or improve the behavior of existing grammars by say adding to `PII pii/name/surname/nocontext/CC` to improve matching / scoring of PII name.
 
 Before you continue with this part of the lesson, refer to these documentation links:
 
-- [Extend Grammars](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/UseEduction/Grammars/Extend_Grammars.htm) section of the Eduction User and Programming Guide.
-- [PII Grammar Customization](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionGrammars_24.4_Documentation/Help/Content/PII/PII_GrammarCustomization.htm)
+- [Extend Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/Grammars/Extend_Grammars.htm) section of the Eduction User and Programming Guide.
+- [PII Grammar Customization](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/Content/PII/PII_GrammarCustomization.htm)
 
 ### Extend PII Name
 
-*Example 3: New Name and Custom Separator* of the [PII Grammar Customization](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionGrammars_24.4_Documentation/Help/Content/PII/PII_GrammarCustomization.htm#Example-3--New-N) provides example on how to extend `given_name`, `surname` and use a custom separate in the `/nocontext/` form.
+*Example 3: New Name and Custom Separator* of the [PII Grammar Customization](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/Content/PII/PII_GrammarCustomization.htm#Example-3--New-N) provides example on how to extend `given_name`, `surname` and use a custom separate in the `/nocontext/` form.
 
-1. Copy & paste the XML in the documentation into `name_extended.xml` using UTF-8 capable editor.  Save to folder `C:\OpenText\EductionSDK_24.4.0\samples\compile\resources\name_extended`
+1. Copy & paste the XML in the documentation into `name_extended.xml` using UTF-8 capable editor.  Save to folder `C:\OpenText\EductionSDK_25.1.0\samples\compile\resources\name_extended`
    
 2. You will likely need to change `path` attribute of `<include ...>` like the following:
     ```diff
     - <include path="name.ecr"/>
-    + <include path="C:\OpenText\EductionGrammars_24.4.0_COMMON\PII\name.ecr"/>
+    + <include path="C:\OpenText\EductionGrammars_25.1.0_COMMON\PII\name.ecr"/>
     ```
 
 1. Run `edktool compile` on `name_extended.xml`
 
     ```sh
-    > cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\samples\compile\resources\name_extended
+    > cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\compile\resources\name_extended
     > edktool.exe compile -l ..\..\..\..\licensekey.dat -i name_extended.xml -o name_extended.ecr
 
-    Eduction EDKTool Utility v24.4.0
+    Eduction EDKTool Utility v25.1.0
     Compiling:
       name_extended.xml
     into:
       name_extended.ecr
     using the license:
-      C:\OpenText\IDOLServer-24.4.0\EductionSDK_24.4.0_WINDOWS_X86_64\licensekey.dat
+      C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat
 
     Compilation successful.
 
@@ -154,14 +154,14 @@ Before you continue with this part of the lesson, refer to these documentation l
     and for fun Fobo Jobo, plus Jobo@@Fobo
     ```
 
-1. Create `name_extended.cfg` from `EductionGrammars_24.4.0_COMMON\pii\config\edktool.cfg`
+1. Create `name_extended.cfg` from `EductionGrammars_25.1.0_COMMON\pii\config\edktool.cfg`
     ```diff
     -ResourceFiles = combined_address.ecr,combined_banking.ecr,combined_date.ecr,combined_driving.ecr,combined_health.ecr,combined_medical_terms.ecr,combined_name.ecr,combined_national_id.ecr,combined_nationality.ecr,combined_passport.ecr,combined_postcode.ecr,combined_tin.ecr,combined_travel.ecr
     +ResourceFiles=name_extended.ecr
     - Entity0 = pii/address/all,pii/banking/context/all,pii/banking/iban/context/all,pii/banking/swiftcode/context/all,pii/date/dob/context/all,pii/driving/context/all,pii/health/ehic/context/all,pii/health/id/context/all,pii/medical_terms/all,pii/name/all,pii/id/context/all,pii/nationality/any/context/all,pii/passport/context/all,pii/postcode/context/all,pii/tin/context/all,pii/tin/vatin/context/all,pii/travel/context/all
     +Entity0 = pii/name/gb
     -Script = scripts/pii_postprocessing.lua
-    +Script = C:\OpenText\EductionGrammars_24.4.0_COMMON\pii\scripts\pii_postprocessing.lua
+    +Script = C:\OpenText\EductionGrammars_25.1.0_COMMON\pii\scripts\pii_postprocessing.lua
     ```
 
 1. Run `edktool extract`:
@@ -169,7 +169,7 @@ Before you continue with this part of the lesson, refer to these documentation l
     ```sh
     > edktool.exe extract -l ..\..\..\..\licensekey.dat -c name_extended.cfg -i input.txt
 
-    Eduction EDKTool Utility v24.4.0
+    Eduction EDKTool Utility v25.1.0
     ...
     Entity search completed (T+2.623 seconds)
 
@@ -222,7 +222,7 @@ Before you continue with this part of the lesson, refer to these documentation l
     ```sh
     > edktool.exe extract -l ..\..\..\..\licensekey.dat -c name.cfg -i input.txt -o out.xml
 
-    Eduction EDKTool Utility v24.4.0
+    Eduction EDKTool Utility v25.1.0
     ...
     Entity search completed (T+2.623 seconds)
 
@@ -259,11 +259,11 @@ The 3rd match is due to the additions to `pii/name/given_name/context/gb` and `p
 
 You now understand the mechanics of compiling a grammar, verifying available entities and creating a new grammar either from scratch or extending existing one.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
+Next, why not try more tutorials to explore some of the other features available in Eduction, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
-- [Create and Modify Eduction Grammars](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/UseEduction/Grammars/GrammarFormat.htm)
-- [Compile and Test Grammars](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/UseEduction/CompileTest/CompileTest.htm)
-- [Grammar Format Reference](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/Reference/GrammarReference/grammarReference.htm)
-- [edktool Options - Compile](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/Reference/edktool/Compile.htm)
+- [Create and Modify Eduction Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/Grammars/GrammarFormat.htm)
+- [Compile and Test Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/CompileTest/CompileTest.htm)
+- [Grammar Format Reference](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/Reference/GrammarReference/grammarReference.htm)
+- [edktool Options - Compile](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/Reference/edktool/Compile.htm)

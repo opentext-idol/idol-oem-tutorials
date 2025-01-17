@@ -13,7 +13,7 @@ text_extract_exclusions = []
 def get_keyview_license():
     try:
         with open(os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"], "r") as lic_file:
-            print("Using KeyView license key: " + os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"])
+            print("Using the license key: " + os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"])
             lic = lic_file.read()
             return lic
     except KeyError as k:
@@ -24,9 +24,9 @@ def get_keyview_license():
         sys.exit()
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Perform KeyView Filter SDK detection and metadata/text extraction.",
+    p = argparse.ArgumentParser(description="Perform Filter SDK detection and metadata/text extraction.",
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("filterSDK_bin", help='KeyView Filter SDK bin folder.', type=str)
+    p.add_argument("filterSDK_bin", help='Filter SDK bin folder.', type=str)
     p.add_argument("input_filepath", help='Input file to process.', type=str)
     p.add_argument("metadata_output_filepath", help='Metadata output file path.', type=str)
     p.add_argument("text_output_filepath", help='Text output file path.', type=str)
@@ -39,7 +39,7 @@ program_args = parse_args()
 try:
     session = kv.FilterSession(program_args.filterSDK_bin, get_keyview_license())
 except kv.KeyViewError as e:
-    print("Unable to create filter session. KeyView error: " + str(e) + "\n")
+    print("Unable to create filter session. Filter SDK error: " + str(e) + "\n")
     sys.exit()
 
 session.config.hidden_text(True)
@@ -53,7 +53,7 @@ try:
     doc = session.open(input_filepath)
     print("\n" + str(doc.info) + "\n")
 except kv.KeyViewError as e:
-    print("Unable to open session. KeyView error: " + str(e) + "\n")
+    print("Unable to open session. Filter SDK error: " + str(e) + "\n")
     sys.exit()
 
 # Get metadata separately from text, since sometimes this is what's supported
@@ -66,8 +66,8 @@ try:
             file_metadata.write(m.key + ": " + str(m.value) + "\n")
 
 except kv.KeyViewError as e_kv:
-    print("Unable to complete processing of file. KeyView error: " + str(e_kv) + "\n")
-    # could delete the likely empty file, since it was a KeyView error
+    print("Unable to complete processing of file. Filter SDK error: " + str(e_kv) + "\n")
+    # could delete the likely empty file, since it was a Filter SDK error
 except IOError as e_io:
     print("IO error writing metadata / text. " + str(e_io) + "\n")
     sys.exit()
@@ -85,8 +85,8 @@ try:
             doc.filter_to_file(file_text)
 
 except kv.KeyViewError as e_kv:
-    print("Unable to complete processing of file. KeyView error: " + str(e_kv) + "\n")
-    # could delete the likely empty file, since it was a KeyView error
+    print("Unable to complete processing of file. Filter SDK error: " + str(e_kv) + "\n")
+    # could delete the likely empty file, since it was a Filter SDK error
 except IOError as e_io:
     print("IO error writing metadata / text. " + str(e_io) + "\n")
     sys.exit()

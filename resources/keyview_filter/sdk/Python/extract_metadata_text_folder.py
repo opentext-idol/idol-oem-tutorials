@@ -12,7 +12,7 @@ text_extract_exclusions = []
 def get_keyview_license():
     try:
         with open(os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"], "r") as lic_file:
-            print("Using KeyView license key: " + os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"])
+            print("Using the license key: " + os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"])
             lic = lic_file.read()
             return lic
     except KeyError as k:
@@ -23,9 +23,9 @@ def get_keyview_license():
         sys.exit()
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Perform KeyView Filter SDK detection and metadata/text extraction on a folder.",
+    p = argparse.ArgumentParser(description="Perform Filter SDK detection and metadata/text extraction on a folder.",
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("filterSDK_bin", help='KeyView Filter SDK bin folder.', type=str)
+    p.add_argument("filterSDK_bin", help='Filter SDK bin folder.', type=str)
     p.add_argument("input_folderpath", help='Input folder path to process.', type=str)
     p.add_argument("output_root_filepath", help='Output root file path.', type=str)
     
@@ -42,13 +42,13 @@ def get_output_path(output_root, input_root, input_file):
     return os.path.join(output_path, os.path.basename(input_file))
 
 def keyview_file(input_filepath, input_root, session, out_dir):
-    print("\nKeyViewing file: " + input_filepath)
+    print("\nProcessing the file: " + input_filepath)
 
     try:
         doc = session.open(input_filepath)
         print(str(doc.info))
     except kv.KeyViewError as e:
-        print("Unable to open session. KeyView error: " + str(e) + "\n")
+        print("Unable to open session. Filter SDK error: " + str(e) + "\n")
         return
 
     output_path = get_output_path(out_dir, input_root, input_filepath)
@@ -63,8 +63,8 @@ def keyview_file(input_filepath, input_root, session, out_dir):
                 file_metadata.write(m.key + ": " + str(m.value) + "\n")
 
     except kv.KeyViewError as e_kv:
-        print("Unable to complete processing of file. KeyView error: " + str(e_kv) + "\n")
-        # could delete the likely empty file, since it was a KeyView error
+        print("Unable to complete processing of file. Filter SDK error: " + str(e_kv) + "\n")
+        # could delete the likely empty file, since it was a Filter SDK error
     except IOError as e_io:
         print("IO error writing metadata / text. " + str(e_io) + "\n")
 
@@ -81,8 +81,8 @@ def keyview_file(input_filepath, input_root, session, out_dir):
                 doc.filter_to_file(file_text)
 
     except kv.KeyViewError as e_kv:
-        print("Unable to complete processing of file. KeyView error: " + str(e_kv) + "\n")
-        # could delete the likely empty file, since it was a KeyView error
+        print("Unable to complete processing of file. Filter SDK error: " + str(e_kv) + "\n")
+        # could delete the likely empty file, since it was a Filter SDK error
     except IOError as e_io:
         print("IO error writing metadata / text. " + str(e_io) + "\n")
 
@@ -108,7 +108,7 @@ try:
     session.config.custom_pdf_metadata(True)
     session.config.ocr(False)
 except kv.KeyViewError as e:
-    print("Unable to create filter session. KeyView error: " + str(e))
+    print("Unable to create filter session. Filter SDK error: " + str(e))
     sys.exit()
 
 listdirs(program_args.input_folderpath, program_args.input_folderpath, session, program_args.output_root_filepath)

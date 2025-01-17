@@ -4,9 +4,9 @@
 
 Edit tutorial.h to modify YOUR_LICENSE_KEY and YOUR_BIN_DIR.
 
-§ Linking against KeyView Filter SDK
+§ Linking against the Filter SDK
 
-Example compilation commands. Be sure you set KEYVIEW_HOME environment variable with the installation location (e.g. C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64):
+Example compilation commands. Be sure you set KEYVIEW_HOME environment variable with the installation location (e.g. C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64):
 
     gcc -I$KEYVIEW_HOME/include -o tutorial_stream tutorial_stream.c -ldl $KEYVIEW_HOME/LINUX_X86_64/bin/kvfilter.so -Wl,-rpath,'$ORIGIN'
     
@@ -538,7 +538,7 @@ KVErrorCode recursivelyFilterStream(KVFltInterfaceEx* filter, KVExtractInterface
     
     filter->fpCloseDocument(document);
     
-    //For simplicity in the tutorial, we return success if any KeyView functionality succeeded.
+    //For simplicity in the tutorial, we return success if any the Filter SDK functionality succeeded.
     //You may wish to handle errors differently in your application.
     if(filterError == KVError_Success || metadataError == KVError_Success || extractError == KVError_Success)
     {
@@ -658,7 +658,7 @@ int main (int argc, char *argv[])
     if(argc != 3 || !argv[1] || !argv[2])
     {
         printf("Usage: tutorial_stream pathToInput pathToOutput\n");
-        printf("Must be run from the KeyView Filter bin directory\n");
+        printf("Must be run from the Filter SDK bin directory\n");
         return KVERR_General;
     }
     

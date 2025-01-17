@@ -12,7 +12,7 @@ from edk.error import EdkException
 def get_keyview_license():
     try:
         with open(os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"], "r") as lic_file:
-            print("Using KeyView license key: " + os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"])
+            print("Using the license key: " + os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"])
             lic = lic_file.read()
             return lic
     except KeyError as k:
@@ -43,9 +43,9 @@ def get_eduction_versionKey():
         sys.exit()
         
 def parse_args():
-    p = argparse.ArgumentParser(description="Perform Eduction on any file type supported by KeyView Filter SDK",
+    p = argparse.ArgumentParser(description="Perform Eduction on any file type supported by the Filter SDK",
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("filterSDK_bin", help='KeyView Filter SDK bin folder.', type=str)
+    p.add_argument("filterSDK_bin", help='Filter SDK bin folder.', type=str)
     p.add_argument("configpath", help='Eduction engine configuration file path.', type=str)
     p.add_argument("input_filepath", help='Input file to process.', type=str)
     p.add_argument("outputfile", help='Output file path.', type=str)
@@ -57,10 +57,10 @@ def parse_args():
 program_args = parse_args()
    
 try:
-    print("Creating KeyView Filter session.")
+    print("Creating the Filter SDK session.")
     kv_session = kv.FilterSession(program_args.filterSDK_bin, get_keyview_license())
 except kv.KeyViewError as e:
-    print("Unable to create filter session. KeyView error: " + str(e))
+    print("Unable to create filter session. Filter SDK error: " + str(e))
     sys.exit()
 
 kv_session.config.hidden_text(True)
@@ -96,7 +96,7 @@ try:
                     sys.stderr.write("EDK problem during extraction. Edk error: " + str(e_edk) + "\n")
                     sys.exit()
                 except kv.KeyViewError as e:
-                    print("Unable to open KeyView session. KeyView error: " + str(e))
+                    print("Unable to open Filter SDK session. Filter SDK error: " + str(e))
                     sys.exit()
         except EdkException as e_edk:   
             sys.stderr.write("Unable to create EdkEngine. Edk error: " + str(e_edk) + "\n")

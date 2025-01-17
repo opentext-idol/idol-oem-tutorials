@@ -18,12 +18,12 @@ class Config
 	public static String getLicense()
 	{
 		// Replace this with your license string:
-		return "KEYVIEW_LICENSEKEY_STRING";
+		return "FILTER_SDK_LICENSEKEY_STRING";
 	}
 
 	public static String getFilterBinFolder()
 	{
-		// Replace this with the location of your KeyView bin folder.
-		return "KEYVIEW_BIN_FOLDER";
+		// Replace this with the location of your Filter SDK bin folder.
+		return "FILTER_SDK_BIN_FOLDER";
 	}
 }

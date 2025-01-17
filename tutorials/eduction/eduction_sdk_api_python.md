@@ -9,9 +9,9 @@ In this lesson, you will:
 - use the Eduction SDK Python API to perform extraction using a configuration file
 - use the Eduction SDK Python API to compile a grammar XML into an ECR
 
-The [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/EductionSDK/APIReference/Python_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
+The [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/EductionSDK/APIReference/Python_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
 
-> NOTE: This lesson only covers the Eduction SDK APIs and does not cover Eduction Server. See [here](./README.md#use-idol-eduction-server) for a lesson on Eduction Server.
+> NOTE: This lesson only covers the Eduction SDK APIs and does not cover Eduction Server. See [here](./README.md#use-eduction-server) for a lesson on Eduction Server.
 
 > NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](../eduction/introduction.md#introduction-to-eduction).
 
@@ -38,13 +38,13 @@ The [Eduction User and Programming Guide](https://www.microfocus.com/documentati
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Refer to `README.md` in the `C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
+Refer to `README.md` in the `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
 
 > NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#introduction-to-eduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
 
 ### License and Version key dat files
 
-Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home directory (e.g. `C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64`).
+Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home directory (e.g. `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64`).
 
 > NOTE: An improved method to incorporate `versionkey.dat` is implemented as part of the provided resources, where you must ignore the release notes recommendation to pre-concatenate the `licensekey.dat` and `versionkey.dat`, delimited by a `;`.
 
@@ -61,15 +61,16 @@ You must download the following resources before you continue:
 
 ### Environment and Compilers
 
-- Refer to the `System Requirements` section of the [IDOL Getting Started Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLServer_24.4_Documentation/Guides/html/gettingstarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
-- Refer to [Eduction User & Programming Guide - Deploy Eduction SDK - Java API Component](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/Java_API.htm) for API and platform specific software dependencies.
-- The `README.md` in `C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
+- Refer to the `System Requirements` section of the [Getting Started Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLServer_25.1_Documentation/Guides/html/gettingstarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
+- Refer to [Eduction User & Programming Guide - Deploy Eduction SDK - Java API Component](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/Java_API.htm) for API and platform specific software dependencies.
+- The `README.md` in `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
 
-A Python interpreter (including pip) are used to install the `edk-version-py3-none-any.whl` and run the sample programs.  The `edk-version-py3-none-any.whl` for version 24.4 must deployed to your Python environment.  Refer to [Eduction User & Programming Guide - API Reference - Python API Concepts](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/EductionSDK/APIReference/Python_APIConcepts.htm#Installation) for tips on installing `edk-version-py3-none-any.whl`.
+A Python interpreter (including pip) are used to install the `edk-version-py3-none-any.whl` and run the sample programs.  The `edk-version-py3-none-any.whl` for version 25.1 must deployed to your Python environment.  Refer to [Eduction User & Programming Guide - API Reference - Python API Concepts](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/EductionSDK/APIReference/Python_APIConcepts.htm#Installation) for tips on installing `edk-version-py3-none-any.whl`.
 
 ## API Documentation
 
-API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\` as noted below:
+API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\` as noted below:
+
 - Python - `python_api\help\index.html`
 
 ## Example programs
@@ -90,11 +91,11 @@ Go ahead and run `eduction_from_config`.  A Windows batch file `run_eduction_fro
 > NOTE: Before proceeding make sure the `VERSION`, `PLATFORM` and `PYTHON_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_64\samples\eduction_from_config\python
+> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_64\samples\eduction_from_config\python
 > run_eduction_from_config.bat
 Creating EDK Factory.
-Using Eduction license key: C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\licensekey.dat
-Using Eduction version key: C:\OpenText\\EductionSDK_24.4.0_WINDOWS_X86_64\versionkey.dat
+Using Eduction license key: C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat
+Using Eduction version key: C:\OpenText\\EductionSDK_25.1.0_WINDOWS_X86_64\versionkey.dat
 Creating EDK Engine from config: test\config\test.cfg
 Successfully configured 1 post-processing tasks.
 ```
@@ -160,16 +161,17 @@ Go ahead and run `compile`.  A Windows batch file `run_compile.bat` is provided.
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_64\samples\compile\Python
+> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_64\samples\compile\Python
 > run_compile.bat
 Creating EDK Factory.
-Using Eduction license key: C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\licensekey\licensekey.dat
-Using Eduction version key: C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\versionkey.dat
+Using Eduction license key: C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey\licensekey.dat
+Using Eduction version key: C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\versionkey.dat
 Creating EDK Engine
 Compiling grammar: test\source\test.xml
 ```
 
 A `test.ecr` from the `src/test.xml` source should be generated.
+
 ```sh
 > edktool.exe list test.ecr`
 ```
@@ -193,11 +195,11 @@ Go ahead and run `redaction`.  A Windows batch file `run_test.bat` is provided.
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_x86_64\samples\redaction\java
+> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_64\samples\redaction\java
 > run_redaction.bat
 Creating EDK Factory.
-Using Eduction license key: C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\licensekey.dat
-Using Eduction version key: C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\versionkey.dat
+Using Eduction license key: C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat
+Using Eduction version key: C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\versionkey.dat
 Creating EDK Engine from config: test\config\basic.cfg
 Redacting input: test\input\input.txt
 ```
@@ -214,11 +216,11 @@ You now understand the basics of the Eduction SDK Java API.
 
 As extra credit, build and run the other sample programs in `EductionSDK_<VERSION>_<PLATFORM>\samples` and `EductionGrammars_<VERSION>_COMMON\pii\edk_samples`.  Refer to the changes in these resources and leverage the build tools & tips.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
+Next, why not try more tutorials to explore some of the other features available in Eduction, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
-- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/)
-- [IDOL Eduction Server User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionServer_24.4_Documentation/Help/Content/_ACI_Welcome.htm)
-- [IDOL Eduction Grammars User Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionGrammars_24.4_Documentation/Help/)
-- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/)
+- [Eduction Server User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionServer_25.1_Documentation/Help/Content/_ACI_Welcome.htm)
+- [Eduction Grammars User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/)
+- [Knowledge Discovery Release Notes - Eduction](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/Eduction.htm)

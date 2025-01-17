@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=24.4.0
+VERSION=25.1.0
 PLATFORM=LINUX_X86_64
 
 EDK_HOME=/opt/OpenText/EductionSDK_${VERSION}_${PLATFORM}
@@ -23,6 +23,6 @@ outputFilePath=educed.EDK.JSON
 rm ${outputFilePath}
 
 sessionConfigPath=../resources/test/config/test_session.cfg
-EntityMatchLimit='--limit pii/name/au=3'
+EntityMatchLimit=''
 
 java -cp ${EDK_HOME}/bin/edk.jar:./target/classes com.autonomy.eduction.samples.FromConfig $configPath ${inputFilePath} ${outputFilePath} ${sessionConfigPath} ${EntityMatchLimit}

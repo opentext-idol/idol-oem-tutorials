@@ -1,15 +1,15 @@
-# KeyView Filter SDK Python API
+# Filter SDK Python API
 
-The KeyView Filter SDK allows you to embed KeyView functionality into other services.
+The Filter SDK allows you to embed file content extraction functionality into other services.
 
-To facilitate embedding, the KeyView Filter SDK has APIs for C, C++, Java, .NET and Python.  In addition, the KeyView Filter SDK runs natively on the following platforms: Windows (x86_32, x86_64, ARM_64), Linux (x86_32, x86_64 and ARM_64), MacOS (x86_64 and Apple M*).
+To facilitate embedding, the Filter SDK has APIs for C, C++, Java, .NET and Python.  In addition, the Filter SDK runs natively on the following platforms: Windows (x86_32, x86_64, ARM_64), Linux (x86_32, x86_64 and ARM_64), MacOS (x86_64 and Apple M*).
 
 In this lesson, you will:
 
 - Familiarize yourself with the Filter SDK's Python API
 - Create a sample program that replicates a common use case of the Filter SDK
 
-> NOTE: This guide assumes you have already completed the introductory KeyView Filter SDK [tutorial](./introduction.md).
+> NOTE: This guide assumes you have already completed the [Filter SDK introduction](./introduction.md#introduction-to-filter-sdk) lesson.
 
 ---
 
@@ -32,7 +32,7 @@ In this lesson, you will:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-> NOTE: This lesson assumes you have already completed the [KeyView Filter SDK introduction](./introduction.md#introduction-to-keyview-filter-sdk) lesson covering essential setup steps (for example, required downloads and installation steps) and basic KeyView Filter concepts.
+> NOTE: This lesson assumes you have already completed the [Filter SDK introduction](./introduction.md#introduction-to-filter-sdk) lesson covering essential setup steps (for example, required downloads and installation steps) and basic Filter concepts.
 
 ### Resources
 
@@ -47,13 +47,13 @@ You must download the following resources before you continue:
 
 #### Interpreters
 
-To create a program that uses the KeyView Filter SDK for Python, you need to install a supported Python 3 interpreter.  The `%KEYVIEW_HOME%\pythonapi\keyview\*.whl` has encoded in the filename the Python version number (*e.g.* `*-cp310-*` for v3.10) supported.  Reference the documentation section [Install the KeyView Filter Python Module](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/python-programming/Content/Python/InstallModule.htm) for installation tips.
+To create a program that uses the Filter SDK for Python, you need to install a supported Python 3 interpreter.  The `%KEYVIEW_HOME%\pythonapi\keyview\*.whl` has encoded in the filename the Python version number (*e.g.* `*-cp310-*` for v3.10) supported.  Reference the documentation section [Install the Filter Python Module](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/Content/Python/InstallModule.htm) for installation tips.
 
 ### License key
 
-You need a KeyView license key to proceed with this lesson.  If you skipped the introduction setup step to acquire a license key, see [here](./introduction.md#activate-a-license-key).
+You need a Filter SDK license key to proceed with this lesson.  If you skipped the introduction setup step to acquire a license key, see [here](./introduction.md#activate-a-license-key).
 
-> NOTE: The Python sample programs use the environment variable `KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH` to pass the `licensekey.dat` to the KeyView APIs.  The `run_extract_*.*` scripts set `KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH` and assume you deploy the `licensekey.dat` to `%KEYVIEW_HOME%`.
+> NOTE: The Python sample programs use the environment variable `KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH` to pass the `licensekey.dat` to the Filter SDK APIs.  The `run_extract_*.*` scripts set `KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH` and assume you deploy the `licensekey.dat` to `%KEYVIEW_HOME%`.
 
 ## API Setup
 
@@ -72,12 +72,12 @@ extract_metadata_text.py: error: the following arguments are required: filterSDK
 
 ### Set environment variable
 
-As in the pre-built sample programs (`filter` and `tstxtract`), the sample programs use `KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH` to pass the KeyView license key (`licensekey.dat`) to `keyview.FilterSession().  Set this variable appropriately for your environment and platform such that it's available to your Python interpreter.
+As in the pre-built sample programs (`filter` and `tstxtract`), the sample programs use `KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH` to pass the Filter SDK license key (`licensekey.dat`) to `keyview.FilterSession().  Set this variable appropriately for your environment and platform such that it's available to your Python interpreter.
 
 > NOTE: The `run_extract_*.bat` (and `run_extract_*.sh`) scripts set `KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH` and assume you deploy the `licensekey.dat` to `%KEYVIEW_HOME%`.
 
 ```sh
-set KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH=C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\licensekey.dat
+set KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH=C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\licensekey.dat
 ```
 
 In VS Code, you can the augment your run configuration as illustrated below:
@@ -92,7 +92,7 @@ In VS Code, you can the augment your run configuration as illustrated below:
             "request": "launch",
             "program": "${file}",
             "env": {
-                "KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH": "C:\\OpenText\\KeyViewFilterSDK_24.4.0_WINDOWS_X86_64\\licensekey.dat"
+                "KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH": "C:\\OpenText\\KeyViewFilterSDK_25.1.0_WINDOWS_X86_64\\licensekey.dat"
             }
         }
         ]
@@ -119,15 +119,15 @@ SanitizeAbsoluteExtractPaths=False
 +LogicalOrder=1
 ```
 
-Reference the [Use the Filter API](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/cpp-programming/Content/Chapter_UseFilterAPI.htm) section of the KeyView Filter SDK Programming Guide.
+Reference the [Use the Filter API](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/Content/Chapter_UseFilterAPI.htm) section of the Filter SDK Programming Guide.
 
-Go ahead and run `extract_metadata_text.py`.  Don't forget to set the paths for KeyView and your input files to match your environment.
+Go ahead and run `extract_metadata_text.py`.  Don't forget to set the paths for the Filter SDK and your input files to match your environment.
 
 ```sh
 > cd C:\OpenText\idol-oem-tutorials\resources\keyview_filter\sdk\Python
 > run_extract_metadata_text.bat
 ...
-Using KeyView license key: C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\licensekey.dat
+Using the license key: C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\licensekey.dat
 Processing input document: ../../../idol-oem-tutorials/resources/keyview_filter/2022_calendar_HIDDEN_TEXT.docx
 
 DocInfo(doc_class=<DocClass.adWORDPROCESSOR: 1>, doc_format=<DocFormat.MS_Word_2007_Fmt: 360>, version=16000, encrypted=False, mac_binary_encoded=False, apple_double_encoded=False, wang_gdl_encoded=False, window_rms_encrypted=False)
@@ -140,20 +140,20 @@ Extracting text to: ../../../idol-oem-tutorials/resources/keyview_filter/2022_ca
 
 The sample program `extract_metadata_text.py` processes an input document and outputs the extracted sub_files to folder defined by `out_dir`.  Set this variable appropriately for your environment.  Otherwise, it will be located in `%KEYVIEW_HOME%\pythonapi\my_samples`.
 
-Go ahead and run `extract_sub_files.py`.  Don't forget to set the paths for KeyView and your input files to match your environment.
+Go ahead and run `extract_sub_files.py`.  Don't forget to set the paths for the Filter SDK and your input files to match your environment.
 
 ```sh
 > cd C:\OpenText\idol-oem-tutorials\resources\keyview_filter\sdk\Python
 > run_extract_sub_files.bat
 ...
-Using KeyView license key: C:\OpenText\KeyviewFilterSDK_24.4.0\licensekey.dat
+Using the license key: C:\OpenText\KeyviewFilterSDK_25.1.0\licensekey.dat
 ---------------
 ```
 
 A file called `extract_sub_files.LOG` will be generated containing output as below:
 
 ```txt
-KeyViewing file: C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\javaapi\KeyView.jar
+Processing the file: C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\javaapi\KeyView.jar
 DocInfo(doc_class=<DocClass.adENCAPSULATION: 8>, doc_format=<DocFormat.Executable_JAR_Fmt: 999>, version=0, encrypted=False, mac_binary_encoded=False, apple_double_encoded=False, wang_gdl_encoded=False, window_rms_encrypted=False)
 Found a folder: META-INF/
  Index: 0
@@ -169,7 +169,7 @@ to C:\OpenText\idol-oem-tutorials\_WORK\output\META-INF\MANIFEST.MF
 	Time: 2024-03-19 15:38:00+00:00
 ---------------
 
-KeyViewing file: C:\OpenText\idol-oem-tutorials\_WORK\output\META-INF\MANIFEST.MF
+Processing the file: C:\OpenText\idol-oem-tutorials\_WORK\output\META-INF\MANIFEST.MF
 DocInfo(doc_class=<DocClass.adWORDPROCESSOR: 1>, doc_format=<DocFormat.ASCII_Text_Fmt: 2>, version=0, encrypted=False, mac_binary_encoded=False, apple_double_encoded=False, wang_gdl_encoded=False, window_rms_encrypted=False)
 Found a folder: com/
  Index: 2
@@ -209,15 +209,15 @@ There is an additional resource available that can perform the same types of det
 
 ## Conclusion
 
-You have now used the KeyView Filter SDK API for Python to automatically detect the file format (and other key properties) and to extract metadata, text and sub-files.
+You have now used the Filter SDK API for Python to automatically detect the file format (and other key properties) and to extract metadata, text and sub-files.
 
 Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from [here](../keyview_filter/README.md#capability-showcase).
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/dotnet-programming/index.html)
-- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/python-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/)
+- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/Content/_KeyView.htm)

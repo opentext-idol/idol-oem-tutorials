@@ -40,6 +40,8 @@ for dir_path, dir_names, file_names in os.walk(".."):
         if "swinfra.net" in link: continue
         if "autonomy.com" in link: continue
         if "oauth2" in link: continue
+        if "dropbox.com" in link: continue
+        if "sld.microfocus.com" in link: continue
         
         count += 1
 

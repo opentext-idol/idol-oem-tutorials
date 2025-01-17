@@ -1,14 +1,14 @@
-# Obtain an KeyView license
+# Obtain a File Content Extraction SDK license
 
 You can obtain software and licenses from the [Software Licensing and Downloads](https://sld.microfocus.com/mysoftware/index) portal.
 
 1. Under the *Entitlements* tab, search for *keyview*
 1. Select from your available environment types:
-1. Scroll to the bottom and click `Activate` next to your *KeyView SW license*
+1. Scroll to the bottom and click `Activate` next to your *SW license*
 
     ![get-license](./figs/get-license-keyview.png)
 
-1. On the "License Activation" screen, at the bottom, select the check box, choose your preferred version (the latest is 24.4), then fill in the quantity to activate:
+1. On the "License Activation" screen, at the bottom, select the check box, choose your preferred version (the latest is 25.1), then fill in the quantity to activate:
 
    ![eSoftware-selectLicense](./figs/eSoftware-selectLicense-keyview.png)
 

@@ -1,6 +1,6 @@
 # Java ACI API Sample Code
 
-The Java ACI API sample code resources build upon the information in the [ACI API Programming Guide - Java Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLJavaSDK_24.4_Documentation/Guides/html/Content/Java/java_part.htm) providing working examples to interact with IDOL ACI services. 
+The Java ACI API sample code resources build upon the information in the [ACI API Programming Guide - Java Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLJavaSDK_25.1_Documentation/Guides/html/Content/Java/java_part.htm) providing working examples to interact with IDOL ACI services.
 
 The various examples contain source code and build scripts for Windows and Linux.
 
@@ -30,15 +30,16 @@ The `/<example>/src` folder contains the source code and build tools.
 ## Setup
 
 Relative paths are used in the provided `do_*` scripts and Maven build files. They assume the following installation paths:
+
 - `C:\OpenText\idol_oem_tutorials\resources\apis\aci\java`
-- `C:\OpenText\IDOLJavaSDK_24.4.0\`
+- `C:\OpenText\IDOLJavaSDK_25.1.0\`
 
 ### Setup - Build
 
 Before you can build any of the example code, you will need to run the provided  `do_mvn_install_jar.*` script once in order to make the IDOL Java SDK jar file(s) available to Maven.
 
 To build and then run each example the constants `USE_IDOL_OEM_ENCYPTION` and `IDOL_OEM_ENCRYPTION_KEY` will need to be updated with same encryption key information provided in the `OEMstring.txt` file.
- 
+
 ### Setup - Run
 
 In the `do_run_*.*` scripts, the hostname, port and other service specific settings may need to be updated for your ACI service instance.
@@ -54,7 +55,7 @@ To use the pre-built `/target` classes, the `do_run.*` scripts (`ACI_API_TUTORIA
 
 - A (UTF-8 capable) text editor, *e.g.*:
   - [VS Code](https://code.visualstudio.com/download), or
-  - [Notepad++](https://notepad-plus-plus.org/download)
+  - [Notepad++](https://notepad-plus-plus.org/downloads/)
 
 - A Markdown viewer
   - Plugins to VS Code, Notepad++ and some web browsers are good options
@@ -116,6 +117,7 @@ This sample code is applicable to all IDOL services (*e.g.* Connectors, CFS, Med
 > NOTE: The `do_run.*` script will need to be updated with the token returned by asynchronous actions like `action=fetch` to check the status of a particular token.  If the TOKEN variable is set to empty string then recent tokens status will be returned.
 
 ## ms_process
+
 This sample code is for use with IDOL Media Server issuing the basic settings for `action=process`.
 
 > NOTE: The `do_run.*` script will need to be updated with the `CONFIG_NAME` appropriate for the intended Media Server processing.  
@@ -124,5 +126,5 @@ This sample code is for use with IDOL Media Server issuing the basic settings fo
 
 ## See also
 
-- ACI API Programming Guide: [Java Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLJavaSDK_24.4_Documentation/Guides/html/Content/Java/java_part.htm)
-- IDOL Release Notes: [.NET Language Interface](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/SDKs/IDOL-Java.htm)
+- ACI API Programming Guide: [Java Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLJavaSDK_25.1_Documentation/Guides/html/Content/Java/java_part.htm)
+- IDOL Release Notes: [.NET Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/IDOL-Java.htm)

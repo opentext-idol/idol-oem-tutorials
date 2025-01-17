@@ -1,8 +1,8 @@
-# KeyView Filter SDK Introduction
+# Filter SDK Introduction
 
 In this lesson, you will:
 
-- Use the out-of-the-box command line tools `filter` and `tstxtract` to develop your understanding of the basic capabilities and key features of the KeyView Filter SDK.
+- Use the out-of-the-box command line tools `filter` and `tstxtract` to develop your understanding of the basic capabilities and key features of the Filter SDK.
 - Familiarize yourself with Filter SDK output of the out-of-the-box command line tools.
 - Familiarize yourself with Filter SDK configuration files.
 
@@ -12,11 +12,11 @@ In this lesson, you will:
   - [Minimum requirements](#minimum-requirements)
   - [Resources](#resources)
   - [Useful third-party tools](#useful-third-party-tools)
-  - [KeyView Filter SDK components](#keyview-filter-sdk-components)
+  - [Filter SDK components](#filter-sdk-components)
     - [Activate a License Key](#activate-a-license-key)
-    - [Download KeyView Filter SDK components](#download-keyview-filter-sdk-components)
-    - [Install KeyView Filter SDK components](#install-keyview-filter-sdk-components)
-- [Introduction to KeyView Filter SDK](#introduction-to-keyview-filter-sdk)
+    - [Download Filter SDK components](#download-filter-sdk-components)
+    - [Install Filter SDK components](#install-filter-sdk-components)
+- [Introduction to Filter SDK](#introduction-to-filter-sdk)
   - [Run `filter`](#run-filter)
   - [Format Detection](#format-detection)
   - [Metadata Extraction](#metadata-extraction)
@@ -40,7 +40,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 
 - 1 core, 1 GB RAM, 5GB free disk space
 - Windows x86_64, Windows x86_32, Linux_x86_64, Linux_ARM, MacOS_x86_64, MacOS_M1, ....
-- KeyView license (optional, not required until using Filter SDK APIs)
+- Filter SDK license (optional, not required until using Filter SDK APIs)
 - useful third party tools noted below.
 
 > NOTE: Disk space includes room for zips, unzipped version and generous working space.
@@ -60,7 +60,7 @@ Be sure to download the following resources before you continue:
 - A (UTF-8 capable) text editor, *e.g.*:
 
   - [VS Code](https://code.visualstudio.com/download), or
-  - [Notepad++](https://notepad-plus-plus.org/download), or
+  - [Notepad++](https://notepad-plus-plus.org/downloads/), or
   - your favorite equivalent.
 
 - A Markdown viewer
@@ -77,15 +77,15 @@ Be sure to download the following resources before you continue:
 - Microsoft Excel, PowerPoint, Word or other "Office" file capable reader
   
 - Image Viewer, *e.g*:
-  - [Microsoft Paint](https://apps.microsoft.com/store/detail/paint/9PCFS5B6T72H?hl=en-us&gl=US), or
+  - [Microsoft Paint](https://apps.microsoft.com/detail/9pcfs5b6t72h?hl=en-US&gl=US), or
   - [ImageMagick](https://imagemagick.org/index.php), or
   - your favorite equivalent.
 
 > NOTE: the PDF, "zip", "office" and image viewers are helpful tools to have, but not necessarily required.
 
-### KeyView Filter SDK components
+### Filter SDK components
 
-The KeyView SDKs consist of the Filter SDK, Export SDK, Viewing SDK and Panopticon.  This lesson is focused on the Filter SDK, which offers the following capabilities:
+The OpenText File Content Extraction SDKs consist of the Filter SDK, Export SDK, Viewing SDK and Panopticon.  This lesson is focused on the Filter SDK, which offers the following capabilities:
 
 - automatic format detection
 - standard, custom and XMP metadata extraction
@@ -97,56 +97,56 @@ The KeyView SDKs consist of the Filter SDK, Export SDK, Viewing SDK and Panoptic
 
 #### Activate a License Key
 
-The KeyView SDKs require a license key, which is unique to your project.
+The Filter SDK requires a license key, which is unique to your project.
 
-To obtain an KeyView license key, follow these [steps](../setup/license_key_keyview.md), then return here to continue.
+To obtain a license key, follow these [steps](../setup/license_key_keyview.md), then return here to continue.
 
 ![get-software](../../figs/get-software-keyview.png)
 
 > NOTE: For the lessons that use `filter` and `tstxtract`, a built-in (but expiring) license key is embedded in these executables. This means you can activate a license key later.
 
-#### Download KeyView Filter SDK components
+#### Download Filter SDK components
 
 Download software from the [Software Licensing and Downloads](https://sld.microfocus.com/mysoftware/index) portal.
 
 1. Under the *Downloads* tab, select your product, product name and version from the dropdowns:
 
 2. From the list of available files, select and download the following (depending on your platform):
-   - `KeyviewFilterSDK_24.4.0_{PLATFORM}`, *e.g.* `KeyviewFilterSDK_24.4.0_WINDOWS_X86_64.zip` or `KeyviewFilterSDK_24.4.0_LINUX_X86_64.exe` or similar for other supported platforms
-   - `KeyviewFilterSDK_24.4.0_Documentation.zip`
+   - `KeyviewFilterSDK_25.1.0_{PLATFORM}`, *e.g.* `KeyviewFilterSDK_25.1.0_WINDOWS_X86_64.zip` or `KeyviewFilterSDK_25.1.0_LINUX_X86_64.exe` or similar for other supported platforms
+   - `KeyviewFilterSDK_25.1.0_Documentation.zip`
 
   > NOTE: The installer `.exe` is only available for some available platforms: Linux_x86_32, Linux_x86_64, Windows_x86_32 and Windows_x86_64. This lesson will use the `.zip` package installation method.
 
 3. From the list of available files, select and download any available patches for 
-  - *e.g.* `KeyviewFilterSDK 24.4 Patch 24.4.x`
+  - *e.g.* `KeyviewFilterSDK 25.1 Patch 25.1.x`
  
   > NOTE: Be sure to click on the `Reference Material` link under the `Description` column to access the link to the patch documentation which includes the release notes.
 
   > NOTE: All platforms are contained in the zip package for Keyview patches.
 
-#### Install KeyView Filter SDK components
+#### Install Filter SDK components
 
 1. Copy your downloaded files into a new working folder.  The following guide assumes this is `C:\OpenText` on Windows.
 2. Extract `KeyviewFilterSDK_<VERSION>_<PLATFORM>.zip` file to:
-   - `C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64`
+   - `C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64`
 3. On Windows, you may need to install the included Visual C++ Redistributable packages. In the same FilterSDK's `vcredist` folder, right-click on `vcredist_2019.exe` then select 'Run as administrator'.
 
   > HINT: If you see a version conflict error here, you may need to first uninstall any existing version.
 
-4. This lesson will refer to `C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64` as `%KEYVIEW_HOME%`.
-5. If a patch is available for version being used, then extract *e.g.* `KeyviewFilterSDK_24.4.x.yyyy.zip` to:
-   - `C:\OpenText\KeyviewFilterSDK_24.4.x.yyyy`
+4. This lesson will refer to `C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64` as `%KEYVIEW_HOME%`.
+5. If a patch is available for version being used, then extract *e.g.* `KeyviewFilterSDK_25.1.x.yyyy.zip` to:
+   - `C:\OpenText\KeyviewFilterSDK_25.1.x.yyyy`
 6. Backup existing files and copy new ones from appropriate `KeyviewFilterSDK_<VERSION>\<PLATFORM>` folder. It is most likely that patch files will be updates to those in `%KEYVIEW_HOME%\<PLATFORM>\bin` folder and sub-folders:
-   - `C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin`
+   - `C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin`
 
 > NOTE: Do NOT mix & match patch updates across versions. *Only apply a patch update to its intended version*.
 
-See the [KeyView Filter SDK Programming Guide - Introducing Filter SDK](
-https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/Content/filter/intro_filtersdk.htm) for more details on installation.
+See the [Filter SDK Programming Guide - Introducing Filter SDK](
+https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/filter/intro_filtersdk.htm) for more details on installation.
 
-## Introduction to KeyView Filter SDK
+## Introduction to Filter SDK
 
-To get oriented with key concepts please read the [Introducing Filter SDK - Features](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/Content/filter/Overview.htm) of the KeyView Filter SDK * Programming Guide before continuing.
+To get oriented with key concepts please read the [Introducing Filter SDK - Features](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/filter/Overview.htm) of the Filter SDK * Programming Guide before continuing.
   
 The following lesson will explore file format detection and metadata / text / sub-file extraction using the sample programs: `filter` and `tstxtract`.  
   
@@ -158,7 +158,7 @@ The sample program `filter` is a command line tool that demonstrates Filter API 
 
   
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\test
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\test
 > copy *.exe ..\bin
 > cd ..\bin
 > filter
@@ -193,16 +193,16 @@ be passed as a license to KeyView. This mechanism exists only to allow this prog
 in testing after the expiry of its trial license, and should not be done in production code.
 ```
 
-See the [KeyView Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/Content/C/samples/filter.htm) for more details about `filter`.
+See the [Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/samples/filter.htm) for more details about `filter`.
   
 ### Format Detection
 
-The KeyView Filter SDK automatically recognizes the file type being filtered. Your application does not need to rely on the file extension to determine the file types.  Other general file attributes like format version and encryption status are also provided as part of automatic format detection.
+The Filter SDK automatically recognizes the file type being filtered. Your application does not need to rely on the file extension to determine the file types.  Other general file attributes like format version and encryption status are also provided as part of automatic format detection.
 
 From the command line, enter the following:
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -d "..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.13.0_ReleaseNotes_en.pdf" detect
 WARNING: filter is a sample program only and is not for production use
 The file ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.13.0_ReleaseNotes_en.pdf
@@ -218,11 +218,11 @@ KWAD: error code returned is KVERR_Success
 
 > NOTE: The `KVERR_Success` error code is a positive result.
 
-KeyView correctly identified this file as a PDF.  `Class ID: 1` refers to the `adWORDPROCESSOR` category.  See the [KeyView Filter SDK Programming Guide - Supported Formats](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/Content/kv_formats/_KV_FMT__AllDetected.htm) for more details about format class/category and format id/number.
+The Filter SDK correctly identified this file as a PDF.  `Class ID: 1` refers to the `adWORDPROCESSOR` category.  See the [Filter SDK Programming Guide - Supported Formats](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/kv_formats/_KV_FMT__AllDetected.htm) for more details about format class/category and format id/number.
 
 For the PDF file format, the `Major Version: 1400` refers `PDF1.4`.  And there are zero attributes applied to `KeyViewFilterSDK_12.13.0_ReleaseNotes_en.pdf`.
 
-> NOTE: The class and format ID assignment scheme was created for KeyView and does not relate to any standard. When applicable the [Appendixes - Supported Formats](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/Content/kv_formats/_KV_FMT__Detected_Key.htm) documentation notes the MIME type, but not all file formats have MIME types.
+> NOTE: The class and format ID assignment scheme was created for Filter SDK and does not relate to any standard. When applicable the [Appendixes - Supported Formats](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/kv_formats/_KV_FMT__Detected_Key.htm) documentation notes the MIME type, but not all file formats have MIME types.
 
 Try `filter -d` with your own test files. Good luck!
 
@@ -232,15 +232,15 @@ Documents can contain different flavors of metadata:
 
   1. There are the document properties like `title`, `author` and others.  Some formats support custom document properties where document author makes up the key for the assigned value.
   1. Some formats support [XMP Metadata](https://en.wikipedia.org/wiki/Extensible_Metadata_Platform).  PDF and image/audio/video file formats are the most common format categories that may contain XMP metadata.
-  1. Some applications, and corresponding file formats, allow users to restrict the ways in which a document can be used. KeyView supports identification of `write restrictions` for some file formats.  See [Document Restrictions](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/Content/filter/DocumentRestrictions.htm) for more details.
+  1. Some applications, and corresponding file formats, allow users to restrict the ways in which a document can be used. The Filter SDK supports identification of `write restrictions` for some file formats.  See [Document Restrictions](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/filter/DocumentRestrictions.htm) for more details.
   1. Repositories that store documents can also have metadata associated with documents.
   
-  Of the above metadata flavors, KeyView FilterSDK extracts 1, 2, and 3.  IDOL Connectors (or similar) get repository metadata.
+  Of the above metadata flavors, the FilterSDK extracts 1, 2, and 3.  IDOL Connectors (or similar) get repository metadata.
 
 #### Perform metadata extraction
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter -m "..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.13.0_ReleaseNotes_en.pdf" metadata
 WARNING: filter is a sample program only and is not for production use
 filter:..\..\..\idol-oem-tutorials\resources\KeyViewFilterSDK_12.13.0_ReleaseNotes_en.pdf to metadata
@@ -309,7 +309,7 @@ Let's perform sub-file extraction on the Filter SDK Java API KeyView.jar.
 The sample program `tstxtract` is a command line tool that demonstrates Extract API capabilities.  The source code for it ships in the `%KEYVIEW_HOME%\samples\tstxtract` folder.  A pre-built binary is located in `%KEYVIEW_HOME%\<PLATFORM>\bin`.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > tstxtract
 Usage: [options] <source file> <output directory> <keyview directory - optional>
 Example: tstxtract inputfile outputdir
@@ -341,7 +341,7 @@ in testing after the expiry of its trial license, and should not be done in prod
 Before we run `tstxtract`, we'll create an output folder `_extract`. Any location and name for the extraction destination directory will suffice where `_extract` and its location was chosen for convenience.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_24.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > mkdir _extract
 > tstxtract ..\..\javaapi\KeyView.jar _extract
 File ..\..\javaapi\KeyView.jar has 122 sub-files, charset: 0, format: 999
@@ -355,7 +355,7 @@ tstxtract return code: 0
 Volume in drive D is DDrive
  Volume Serial Number is 66F6-7BE6
 
- Directory of C:\OpenText\KeyviewFilterSDK_24.4.0\WINDOWS_X86_64\bin\_extract
+ Directory of C:\OpenText\KeyviewFilterSDK_25.1.0\WINDOWS_X86_64\bin\_extract
 
 07/01/2022  09:16 AM    <DIR>          .
 07/01/2022  09:16 AM    <DIR>          ..
@@ -371,7 +371,7 @@ Volume in drive D is DDrive
   
 > NOTE: In some cases Filter SDK will auto-generate a filename for extract files.
   
-> NOTE: Image extraction is not enabled by default. See [KeyView Filter SDK Programming Guide - Extract Images](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/Content/Shared/_KV_xtract_Extract_Images.htm) for details on how to enable. You'll learn a little bit about the `filter\formats.ini` file.
+> NOTE: Image extraction is not enabled by default. See the [Filter SDK Programming Guide - Extract Images](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/Shared/_KV_xtract_Extract_Images.htm) for details on how to enable. You'll learn a little bit about the `filter\formats.ini` file.
   
 > NOTE: Remember to delete the extracted contents of the `_extract` folder between each iteration.  
 
@@ -383,15 +383,15 @@ In this lesson, you used Filter SDK to automatically detect the file format, per
   
 ## Conclusion
 
-You should now be confident in the basics of KeyView Filter SDK.
+You should now be confident in the basics of the Filter SDK.
 
 Next, why not try more tutorials to explore some of the other features available in Filter SDK, linked from [here](../keyview_filter/README.md#capability-showcase).
 
 ## See also
 
-- [KeyView Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/index.html)
-- [KeyView Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/cpp-programming/index.html)
-- [KeyView Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/java-programming/index.html)
-- [KeyView Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/dotnet-programming/index.html)
-- [KeyView Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/python-programming/)
-- [KeyView Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/)
+- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/Content/_KeyView.htm)

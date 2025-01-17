@@ -1,6 +1,6 @@
-# IDOL OEM Tutorials
+# Knowledge Discovery and File Content Extraction OEM Tutorials
 
-A set of guides to introduce you to IDOL Eduction and KeyView and associated integration options.
+A set of guides to introduce you to OpenText Knowledge Discovery (formerly known as IDOL) and OpenText File Content Extraction (formerly known as KeyView) and associated integration options.
 
 ---
 
@@ -8,33 +8,33 @@ A set of guides to introduce you to IDOL Eduction and KeyView and associated int
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
   - [Eduction](#eduction)
-  - [KeyView Filter](#keyview-filter)
-  - [KeyView Export](#keyview-export)
-  - [IDOL ACI API](#idol-aci-api)
+  - [Filter](#filter)
+  - [Export](#export)
+  - [ACI API](#aci-api)
 - [Capability showcase examples](#capability-showcase-examples)
   - [Eduction showcase](#eduction-showcase)
-  - [KeyView Filter showcase](#keyview-filter-showcase)
-  - [KeyView Export showcase](#keyview-export-showcase)
-  - [IDOL ACI API showcase](#idol-aci-api-showcase)
+  - [Filter SDK showcase](#filter-sdk-showcase)
+  - [Export SDK showcase](#export-sdk-showcase)
+  - [ACI API showcase](#aci-api-showcase)
 - [Use the SDKs](#use-the-sdks)
   - [Eduction SDK](#eduction-sdk)
-  - [KeyView Filter SDK](#keyview-filter-sdk)
-  - [KeyView Export SDK](#keyview-export-sdk)
-  - [KeyView Filter + Eduction](#keyview-filter--eduction)
+  - [Filter SDK](#filter-sdk)
+  - [Export SDK](#export-sdk)
+  - [Filter + Eduction](#filter--eduction)
 - [See also](#see-also)
-  - [IDOL Media Server tutorials](#idol-media-server-tutorials)
+  - [Media Server tutorials](#media-server-tutorials)
   - [Links](#links)
-    - [IDOL Eduction references](#idol-eduction-references)
-    - [KeyView Filter SDK references](#keyview-filter-sdk-references)
-    - [KeyView Export SDK references](#keyview-export-sdk-references)
+    - [Eduction references](#eduction-references)
+    - [Filter SDK references](#filter-sdk-references)
+    - [Export SDK references](#export-sdk-references)
 
 ---
 
 ## Taster
 
-Take a quick first look at IDOL Eduction and KeyView.  
+Take a quick first look at OpenText Knowledge Discovery and File Content Extraction.  
 
-1. Watch a video introducing KeyView's comprehensive handling of file formats, from identification to filtering and viewing:
+1. Watch a video introducing File Content Extraction's comprehensive handling of file formats, from identification to filtering and viewing:
 
       - [Watch 1](https://www.youtube.com/watch?v=66niyCTNtLM&list=PLlUdEXI83_Xoq5Fe2iUnY8fjV9PuX61FA).
       - [Watch 2](https://www.youtube.com/watch?v=QYEFlziEdTo&list=PLlUdEXI83_Xoq5Fe2iUnY8fjV9PuX61FA).
@@ -48,9 +48,9 @@ Take a quick first look at IDOL Eduction and KeyView.
 These OEM tutorials consist of four branches:
 
 - Eduction,
-- KeyView Filter,
-- KeyView Export, and
-- IDOL ACI API (including IDOL Connectors)
+- Filter,
+- Export, and
+- ACI API (including Connectors)
 
 Once you've mastered the basics of one or all components in the following section, look further down this page for many examples of more advanced usage.  
 
@@ -66,19 +66,19 @@ Make a solid start with Eduction.  Use the out-of-the-box binaries to develop yo
 
 [Get started](./eduction/introduction.md).
 
-### KeyView Filter
+### Filter
 
-Build a firm foundation with KeyView Filter.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for extracting (filtering) text, metadata and sub-files from files.
+Build a firm foundation with the Filter SDK.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for extracting (filtering) text, metadata and sub-files from files.
 
 [Get started](./keyview_filter/introduction.md).
 
-### KeyView Export
+### Export
 
-Build a firm foundation with KeyView Export.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for producing HTML, XML and PDF renditions.
+Build a firm foundation with the Export SDK.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for producing HTML, XML and PDF renditions.
 
 [Get started](./keyview_export/introduction.md).
 
-### IDOL ACI API
+### ACI API
 
 Learn how to communicate with any ACI server using the ACI API.  Use sample code in C, Java, .NET and/or Python to build your understanding.
 
@@ -86,9 +86,9 @@ Learn how to communicate with any ACI server using the ACI API.  Use sample code
 
 ## Capability showcase examples
 
-> NOTE: The following assume familiarity with IDOL Eduction and/or KeyView Filter concepts and are best started after completing the respective getting started lesson above.
+> NOTE: The following assume familiarity with Eduction and/or Filter SDK concepts and are best started after completing the respective getting started lesson above.
 
-Choose an IDOL OEM product below and dip into any of the linked showcase lessons to try more features and expand your knowledge.
+Choose an OEM product below and dip into any of the linked showcase lessons to try more features and expand your knowledge.
 
 ### Eduction showcase
 
@@ -96,19 +96,19 @@ Explore more Eduction features.
 
 [Get started](./eduction/README.md#capability-showcase).
 
-### KeyView Filter showcase
+### Filter SDK showcase
 
-Do more with KeyView Filter.
+Do more with the Filter SDK.
 
 [Get started](./keyview_filter/README.md#capability-showcase).
 
-### KeyView Export showcase
+### Export SDK showcase
 
-Do more with KeyView Export.
+Do more with the Export SDK.
 
 [Get started](./keyview_export/README.md#capability-showcase)
 
-### IDOL ACI API showcase
+### ACI API showcase
 
 More advanced example usage of the ACI API.
 
@@ -116,9 +116,9 @@ More advanced example usage of the ACI API.
 
 ## Use the SDKs
 
-IDOL Eduction and KeyView Filter are designed to be embedded into other services.  For example, OpenText IDOL embeds the both SDKs into [NiFi processors](https://www.microfocus.com/documentation/idol/IDOL_24_4/NiFiIngest_24.4_Documentation/Help/Content/Walkthrough/BuildBasicPipeline.htm) to be used in data transformation workflows.
+The Eduction SDK and the Filter SDK are designed to be embedded into other services.  For example, OpenText embeds both SDKs into [NiFi processors](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/NiFiIngest_25.1_Documentation/Help/Content/Walkthrough/BuildBasicPipeline.htm) to be used in data transformation workflows.
 
-Many other OpenText products also embed Eduction and KeyView Filter to enhance their capabilities.  ISVs also license Eduction and KeyView Filter, embedding the SDKs into their applications and services for:
+Many other OpenText products also embed the Eduction SDK and the Filter SDK to enhance their capabilities.  Other ISVs also license Knowledge Discovery and File Content Extraction, embedding these SDKs into their applications and services for:
 
 - data loss prevention (DLP) and other security and information governance needs,
 - document / content management,
@@ -131,58 +131,58 @@ Use the SDK to perform extraction and more.
 
 [Get started](./eduction/README.md#use-the-eduction-sdk-api).
 
-### KeyView Filter SDK
+### Filter SDK
 
 Use the SDK to work with your files.
 
-[Get started](./keyview_filter/README.md#use-the-keyview-filter-sdk).
+[Get started](./keyview_filter/README.md#use-the-filter-sdk).
 
-### KeyView Export SDK
+### Export SDK
 
 Use the SDK to work with your files.
 
-[Get started](./keyview_export/README.md#use-the-keyview-export-sdk).
+[Get started](./keyview_export/README.md#use-the-export-sdk).
 
-### KeyView Filter + Eduction
+### Filter + Eduction
 
-Use the KeyView Filter and Eduction SDKs into a combined solution.
+Use the Filter and Eduction SDKs into a combined solution.
 
-[Get started](./keyview_filter+eduction/README.md#use-the-keyview-filter-sdk-and-eduction-sdk)
+[Get started](./keyview_filter+eduction/README.md#use-the-filter-sdk-and-eduction-sdk)
 
 ---
 
 ## See also
 
-### IDOL Media Server tutorials
+### Media Server tutorials
 
-IDOL Media Server performs analytics on images, audio and video.  It's for OEMs too, via the ACI API.
+Media Server performs analytics on images, audio and video.  It's for OEMs too, via the ACI API.
 
 [Get started](https://github.com/opentext-idol/idol-rich-media-tutorials).
 
 ### Links
 
-- Full administration guides and release notes are available for all IDOL products [here](https://www.microfocus.com/documentation/idol/).
-- Read more tips on working with IDOL products in [IDOL Expert](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLServer_24.4_Documentation/Guides/html/expert/index.html).
-- See the latest release notes for all IDOL products [here](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/_Introduction.htm).
+- Full administration guides and release notes are available for all Knowledge Discovery and File Content Extraction products [here](https://www.microfocus.com/documentation/idol/).
+- Read more tips on working with Knowledge Discovery products in [Expert](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLServer_25.1_Documentation/Guides/html/expert/index.html).
+- See the latest release notes for all Knowledge Discovery products [here](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/_Introduction.htm).
 
-#### IDOL Eduction references
+#### Eduction references
 
-- Eduction SDK [User & Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/)
-- Eduction Server [Reference Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionServer_24.4_Documentation/Help/Content/_ACI_Welcome.htm)
-- Eduction Grammars [User Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionGrammars_24.4_Documentation/Help/)
+- Eduction SDK [User & Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/)
+- Eduction Server [Reference Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionServer_25.1_Documentation/Help/Content/_ACI_Welcome.htm)
+- Eduction Grammars [User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/)
 
-#### KeyView Filter SDK references
+#### Filter SDK references
 
-- KeyView Filter SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/index.html)
-- KeyView Filter SDK [C++ Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/cpp-programming/index.html)
-- KeyView Filter SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/java-programming/index.html)
-- KeyView Filter SDK [.NET Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/dotnet-programming/index.html)
-- KeyView Filter SDK [Python Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/python-programming/index.html)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/index.html)
 
-#### KeyView Export SDK references
+#### Export SDK references
 
-- KeyView HTML Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewExportSDK_24.4_Documentation/Guides/html/html-export-c/index.html)
-- KeyView HTML Export SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewExportSDK_24.4_Documentation/Guides/html/html-export-java/index.html)
-- KeyView XML Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewExportSDK_24.4_Documentation/Guides/html/xml-export-c/index.html)
-- KeyView XML Export SDK [Java Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewExportSDK_24.4_Documentation/Guides/html/xml-export-java/)
-- KeyView PDF Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewExportSDK_24.4_Documentation/Guides/html/pdf-export-c/index.html)
+- [HTML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewExportSDK_25.1_Documentation/Guides/html/html-export-c/index.html)
+- [HTML Export SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewExportSDK_25.1_Documentation/Guides/html/html-export-java/index.html)
+- [XML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewExportSDK_25.1_Documentation/Guides/html/xml-export-c/index.html)
+- [XML Export SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewExportSDK_25.1_Documentation/Guides/html/xml-export-java/)
+- [PDF Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewExportSDK_25.1_Documentation/Guides/html/pdf-export-c/index.html)

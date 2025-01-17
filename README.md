@@ -1,8 +1,8 @@
-# IDOL OEM Tutorials
+# Knowledge Discovery and File Content Extraction OEM Tutorials
 
-A set of guides to get you doing great things with IDOL Eduction and KeyView SDKs.
+A set of guides to get you doing great things with Knowledge Discovery Eduction and File Content Extraction SDKs.
 
-For details of the latest changes to IDOL and KeyView in version 24.2, please see the [Release Notes](https://www.microfocus.com/documentation/idol/IDOL_24_2/IDOLReleaseNotes_24.2_Documentation/idol/Content/_Introduction.htm).
+For details of the latest changes to Knowledge Discovery and File Content Extraction in version 25.1, please see the [Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/index.html).
 
 ---
 
@@ -16,13 +16,13 @@ For details of the latest changes to IDOL and KeyView in version 24.2, please se
 
 ## Target audience
 
-You! If you have access to IDOL software and want to analyze files as part of your product or solution.
+You! If you have access to Knowledge Discovery and File Content Extraction software and want to analyze files as part of your product or solution.
 
 ## Aims
 
-- Get hands on with IDOL KeyView and Eduction sample programs.  Familiarize yourself with key concepts.
-- Select from walkthroughs showcasing different capabilities of IDOL KeyView and Eduction, from file type identification to text extraction and PII entity discovery.
-- Compile sample code to see how IDOL Eduction and KeyView SDKs can be embedded in your products.
+- Get hands on with the Knowledge Discovery and File Content Extraction sample programs.  Familiarize yourself with key concepts.
+- Select from walkthroughs showcasing different capabilities of Eduction and File Content Extraction, from file type identification to text extraction and PII entity discovery.
+- Compile sample code to see how Knowledge Discovery Eduction and File Content Extraction SDKs can be embedded in your products.
 
 ## Obtaining tutorial materials
 

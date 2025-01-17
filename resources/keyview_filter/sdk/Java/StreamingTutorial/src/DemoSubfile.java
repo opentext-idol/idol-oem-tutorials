@@ -99,7 +99,7 @@ class DemoSubfile
 					return null;
 				}
 				
-				// If you pass in a filename containing invalid characters KeyView
+				// If you pass in a filename containing invalid characters the Filter SDK
 				// can extract to a different file path to the one you passed in.
 				// This is highly unlikely to happen the way we are using the API
 				// here.

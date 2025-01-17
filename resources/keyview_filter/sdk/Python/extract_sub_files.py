@@ -17,7 +17,7 @@ process_recursively = False
 def get_keyview_license():
     try:
         with open(os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"], "r") as lic_file:
-            print("Using KeyView license key: " + os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"])
+            print("Using the license key: " + os.environ["KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH"])
             lic = lic_file.read()
             return lic
     except KeyError as k:
@@ -28,9 +28,9 @@ def get_keyview_license():
         sys.exit()
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Perform KeyView Filter SDK detection and sub-file extraction.",
+    p = argparse.ArgumentParser(description="Perform Filter SDK detection and sub-file extraction.",
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("filterSDK_bin", help='KeyView Filter SDK bin folder.', type=str)
+    p.add_argument("filterSDK_bin", help='Filter SDK bin folder.', type=str)
     p.add_argument("input_filepath", help='Input file to process.', type=str)
     p.add_argument("output_root_filepath", help='Output root file path.', type=str)
     p.add_argument("--recurse", help="Recursively process input file", action='store_true', required=False)
@@ -73,19 +73,19 @@ def extract_sub_file(session, subfile, out_dir, process_recursively):
         print("Skipping external sub-file extraction.")
         return True     
     except kv.KeyViewError as e:
-        print("KeyView error: " + str(e) + "\n")
+        print("Filter SDK error: " + str(e) + "\n")
         print(e.error_code)
         return False
 
 def keyview_file(input_filepath, session, out_dir, process_recursively):
     print("---------------\n")
-    print("KeyViewing file: " + input_filepath)
+    print("Processing the file: " + input_filepath)
 
     try:
         doc = session.open(input_filepath)
         print(str(doc.info))
     except kv.KeyViewError as e:
-        print("Unable to open session. KeyView error: " + str(e) + "\n")
+        print("Unable to open session. Filter SDK error: " + str(e) + "\n")
         return
 
     # decide based on doc.info whether application wants to extract sub-files or not
@@ -101,7 +101,7 @@ def keyview_file(input_filepath, session, out_dir, process_recursively):
                     continue
                 extract_sub_file(session, subfile, out_dir, process_recursively)
         except kv.KeyViewError as e:
-            print("Unable extract sub file(s). KeyView error: " + str(e) + "\n")
+            print("Unable extract sub file(s). Filter SDK error: " + str(e) + "\n")
             return
 
 
@@ -129,7 +129,7 @@ try:
     session.config.extract_images(False)
     session.config.extraction_timeout(300)      # here to illustrate relevant config option
 except kv.KeyViewError as e:
-    print("Unable to create filter session. KeyView error: " + str(e) + "\n")
+    print("Unable to create filter session. Filter SDK error: " + str(e) + "\n")
     sys.exit()
 
 keyview_file(program_args.input_filepath, session, program_args.output_root_filepath, process_recursively)

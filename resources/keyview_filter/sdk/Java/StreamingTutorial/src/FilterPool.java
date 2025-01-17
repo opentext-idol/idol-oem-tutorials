@@ -60,7 +60,7 @@ class FilterPool implements AutoCloseable
 	private static Filter createFilter() throws IOException, FilterException
 	{
 		Filter filter = new Filter(Config.getLicense(), Filter.CHARSET_UTF8, 0);
-		// The Java API needs to know where the KeyView libraries
+		// The Java API needs to know where the Filter SDK libraries live
 		// (like kvfilter.dll / kvfilter.so) are.
 		filter.setFilterDirectory(Config.getFilterBinFolder());
 

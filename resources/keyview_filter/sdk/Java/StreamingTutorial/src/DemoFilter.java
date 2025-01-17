@@ -36,7 +36,7 @@ class DemoFilter
 		this.output = output;
 	}
 
-	// Gets KeyView to identify the format of your file
+	// Gets the Filter SDK to identify the format of your file
 	public void printFormatInformation() throws IOException
 	{
 		try

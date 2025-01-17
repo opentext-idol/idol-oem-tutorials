@@ -11,7 +11,7 @@ In this lesson, you will:
 - [Setup](#setup)
   - [Minimum requirements](#minimum-requirements)
   - [Useful third-party tools](#useful-third-party-tools)
-  - [IDOL components](#idol-components)
+  - [Knowledge Discovery components](#knowledge-discovery-components)
     - [Download Eduction components](#download-eduction-components)
     - [Install Eduction SDK \& Grammars](#install-eduction-sdk--grammars)
     - [Environment variables](#environment-variables)
@@ -38,29 +38,29 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 
 - 1 core, 1 GB RAM, 5GB free disk space.
 - Windows_x86_64, Windows_x86_32, Windows_ARM64 Linux_x86_64, Linux_ARM64, MacOS_x86_64 or MacOS_M*.
-- An IDOL license key and software access.
+- A Knowledge Discovery license key and software access.
 - useful third-party tools noted below.
 
-> Disk space includes zips, unzipped and generous working space.
+> NOTE: Disk space includes zips, unzipped and generous working space.
 
-> The following guide details steps for Windows. Steps will be similar for other supported platforms.
+> NOTE: The following guide details steps for Windows. Steps will be similar for other supported platforms.
 
-> Sizing for your own production tasks depends greatly on your use case, as discussed later in these tutorials.
+> NOTE: Sizing for your own production tasks depends greatly on your use case, as discussed later in these tutorials.
 
 ### Useful third-party tools
 
 - A (UTF-8 capable) text editor, *e.g.*:
   - [VS Code](https://code.visualstudio.com/download), or
-  - [Notepad++](https://notepad-plus-plus.org/download)
+  - [Notepad++](https://notepad-plus-plus.org/downloads/)
 
 - A Markdown viewer
   - Plugins to VS Code, Notepad++ and some web browsers are good options
 
-### IDOL components
+### Knowledge Discovery components
 
-IDOL SDKs must embed an IDOL license key, which is unique to your project.
+Knowledge Discovery SDKs must embed a license key, which is unique to your project.
 
-To obtain an IDOL license key, follow these [steps](../setup/license_key.md), then return here to continue.
+To obtain a license key, follow these [steps](../setup/license_key.md), then return here to continue.
 
 #### Download Eduction components
 
@@ -71,22 +71,22 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
     ![get-software](../../figs/get-software.png)
 
 1. From the list of available files, select and download the following (depending on your platform):
-   -  `EductionSDK_24.4.0_{PLATFORM}`, *e.g.* `EductionSDK_24.4.0_WINDOWS_X86_64.zip`,
-   -  `EductionGrammars_24.4.0_COMMON.zip`, and
-   -  `Versionkey_24.4.0_COMMON.zip`.
+   - `EductionSDK_25.1.0_{PLATFORM}`, *e.g.* `EductionSDK_25.1.0_WINDOWS_X86_64.zip`,
+   - `EductionGrammars_25.1.0_COMMON.zip`, and
+   - `Versionkey_25.1.0_COMMON.zip`.
 
 #### Install Eduction SDK & Grammars
 
 1. Copy your downloaded files into a new working folder.  The follow guide assumes this is `C:\OpenText` on Windows.
 2. Extract both of the `.zip` files to give you:
-   - `C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64`, and
-   - `C:\OpenText\EductionGrammars_24.4.0_COMMON`
-3. Copy your license key `.dat` file into `C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64` and rename it to `licensekey.dat`
-4. Extract the `versionkey.dat` from the `Versionkey_24.4.0_COMMON.zip` and deploy it alongside your license key `.dat` file.
+   - `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64`, and
+   - `C:\OpenText\EductionGrammars_25.1.0_COMMON`
+3. Copy your license key `.dat` file into `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64` and rename it to `licensekey.dat`
+4. Extract the `versionkey.dat` from the `Versionkey_25.1.0_COMMON.zip` and deploy it alongside your license key `.dat` file.
 
 > NOTE: On Windows, you may need to install the included Visual C++ Redistributable package.  In the same EductionSDK folder, right-click on `vcredist.exe` then select 'Run as administrator'. If you see a version conflict error here, you may need to first uninstall any existing version.
 
-See the [Eduction User & Programming Guide - Install Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/GettingStarted/Install/Install.htm) for more details.
+See the [Eduction User & Programming Guide - Install Eduction](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/GettingStarted/Install/Install.htm) for more details.
 
 #### Environment variables
 
@@ -95,7 +95,7 @@ For ease of use, update your environment variables to reference your new Eductio
 For Windows, open a command prompt window and enter:
 
 ```sh
-set PATH=C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\bin;%PATH%
+set PATH=C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\bin;%PATH%
 ```
 
 A batch file or shell script can be created to make this easier.
@@ -108,7 +108,7 @@ Or, from System Properties, add this path to your "PATH" System variable:
 
 ## Introduction to Eduction
 
-To get oriented with key concepts please read the "Getting Started" section of the [Eduction User & Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/part_intro.htm) before continuing.
+To get oriented with key concepts please read the "Getting Started" section of the [Eduction User & Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/part_intro.htm) before continuing.
 
 The following lesson will show you to perform entity extraction.
 
@@ -119,9 +119,9 @@ As our first step, let's run the included binary file `edktool`, then learn how 
 Run the `edktool` command line program to yield usage instructions:
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\bin
+> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\bin
 > edktool.exe
-Eduction EDKTool Utility v24.4.0
+Eduction EDKTool Utility v25.1.0
 (c) Copyright 2006-2023 Micro Focus International PLC
 
 Usage: edktool  {
@@ -235,7 +235,7 @@ Options:
         option           More detailed help on the edktool options
 ```
 
-See the [Eduction User & Programming Guide - edktool Command-Line Options](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/Reference/edktool/edktoolOptions_intro.htm) for more details.
+See the [Eduction User & Programming Guide - edktool Command-Line Options](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/Reference/edktool/edktoolOptions_intro.htm) for more details.
 
 ### Explore contents of grammar ECR file
 
@@ -246,10 +246,10 @@ Let's use `edktool`'s `list` function to look at one of these samples.
 From the command line, enter the following:
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\grammar
+> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\grammar
 > edktool.exe list test.ecr
 
-Eduction EDKTool Utility v24.4.0
+Eduction EDKTool Utility v25.1.0
 Loading resource file:
 test.ecr
 
@@ -292,17 +292,17 @@ This gives more details of the construction of the entities, as well as specific
 To see an example of a real grammar file, explore the Eduction Grammars package, *e.g.*
 
 ```sh
-> cd C:\OpenText\EductionGrammars_24.4.0_COMMON\pii
+> cd C:\OpenText\EductionGrammars_25.1.0_COMMON\pii
 > edktool.exe list address.ecr          
 
-Eduction EDKTool Utility v24.4.0
+Eduction EDKTool Utility v25.1.0
 Loading resource file:
 address.ecr
 
 
 Grammar version:        4.0
 
-Compiled using Edktool: 24.4.0
+Compiled using Edktool: 25.1.0
 
 Listing entities:
 gdpr/address/at
@@ -318,17 +318,17 @@ pii/address/za
 
 Many of these grammar files contain hundreds of entities, which are typically selectively applied for extraction. Some entities in a given ECR like `address.ecr` are specialized like `pii/address/city/context/CC` or similar where as `pii/address/CC` are general purpose in terms of their typical use.
 
-> NOTE: The IDOL PII Package is backwards-compatible with the IDOL GDPR package. You can continue to use, *e.g.* the entity named `gdpr/address/at` in existing configurations, which is similar to the latest `pii/address/at` entity.
+> NOTE: The Eduction PII grammars are backwards-compatible with the GDPR grammars. You can continue to use, *e.g.* the entity named `gdpr/address/at` in existing configurations, which is similar to the latest `pii/address/at` entity.
 
 ### Perform a first extraction
 
 From the command line, enter the following:
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources
+> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 > edktool.exe extract -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt
 
-Eduction EDKTool Utility v24.4.0
+Eduction EDKTool Utility v25.1.0
 Extracting entities from:
   test\input\input.txt
 using the config file:
@@ -422,11 +422,11 @@ How were these configuration options applied?  Note the `-c test\config\test.cfg
 Open it on the command line by typing:
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources
+> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 > type test\config\test.cfg 
 ```
 
-The format of this configuration file may already be familiar to you if you have used other IDOL products.
+The format of this configuration file may already be familiar to you if you have used other Knowledge Discovery products.
 
 First, in the `Eduction` section we reference our test `.ecr` grammar file(s) and then specify exactly which entities we want to use.  In this example, all of them, as specified by the `*` are enabled:
 
@@ -438,7 +438,7 @@ Entity0 = test/*
 EntityField0 = TEST
 ```
 
-We also provide an output name for any matches to these entities, here called "TEST".  IDOL components such as [CFS](https://www.microfocus.com/documentation/idol/IDOL_24_4/CFS_24.4_Documentation/Help/) make use of EntityField# value.
+We also provide an output name for any matches to these entities, here called "TEST".  Knowledge Discovery components such as [CFS](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/CFS_25.1_Documentation/Help/) make use of EntityField# value.
 
 Further down, in the same `[Eduction]` section, we specify a section of runtime options for the EDKEngine:
 
@@ -459,7 +459,7 @@ MinScore = 0.5
 LanguageDirectory = langfiles
 ```
 
-For full details on these and other options, please reference [Eduction User & Programming Guide - Eduction Parameter Reference](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/Reference/EductionParameters.htm).
+For full details on these and other options, please reference [Eduction User & Programming Guide - Eduction Parameter Reference](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/Reference/EductionParameters.htm).
 
 Lastly, an optional post-processing task is configured by referencing a `.lua` script:
 
@@ -473,7 +473,7 @@ Entities = *
 
 > NOTE: More than one post processing task can be configured.
 
-For an introduction to the Lua language, look no further than [lua.org](https://www.lua.org/).  With IDOL Eduction, we use Lua to apply custom logic that can inspect and manipulate matches. Score and output normalization and algorithmic validation of matches (*e.g.* validating checksums) are some example use cases for this feature. The example script referenced above, for example, checks that matches contain fewer than eight characters:
+For an introduction to the Lua language, look no further than [lua.org](https://www.lua.org/).  With Eduction, we use Lua to apply custom logic that can inspect and manipulate matches. Score and output normalization and algorithmic validation of matches (*e.g.* validating checksums) are some example use cases for this feature. The example script referenced above, for example, checks that matches contain fewer than eight characters:
 
 ```lua
 function processmatch (edkmatch)
@@ -487,9 +487,9 @@ function processmatch (edkmatch)
 end
 ```
 
-This example Lua post-processing function receives an object of class [`edkMatch`](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/Reference/LuaMethods/edkmatch.htm). This class provides useful getter and setter methods for access and manipulation of the Educed match (see below).
+This example Lua post-processing function receives an object of class [`edkMatch`](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/Reference/LuaMethods/edkmatch.htm). This class provides useful getter and setter methods for access and manipulation of the Educed match (see below).
 
-For more details on Lua post-processing, please reference [Eduction User & Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm).
+For more details on Lua post-processing, please reference [Eduction User & Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm).
 
 #### The match section
 
@@ -528,10 +528,10 @@ Each Educed match provides the following key information:
 Next, we will modify our command line options to send the match results to an `.xml` file:
 
 ```sh
-> cd C:\OpenText\EductionSDK_24.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources
+> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 > edktool.exe extract -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt -o out.xml
 
-Eduction EDKTool Utility v24.4.0
+Eduction EDKTool Utility v25.1.0
 Extracting entities from:
   test\input\input.txt
 using the config file:
@@ -595,9 +595,9 @@ Many of grammars in the `EductionGrammars_<VERSION>_COMMON` make use of componen
 
 Reference the following for more details:
 
-- [Create and Modify Eduction Grammars](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/UseEduction/Grammars/GrammarFormat.htm) 
-- [Grammar Format Reference](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/Reference/GrammarReference/grammarReference.htm) 
-- [Eduction Concepts - Components](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/GettingStarted/Introduction/Components2.htm)
+- [Create and Modify Eduction Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/Grammars/GrammarFormat.htm)
+- [Grammar Format Reference](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/Reference/GrammarReference/grammarReference.htm)
+- [Eduction Concepts - Components](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/GettingStarted/Introduction/Components2.htm)
 
 And see the [Create a custom Eduction grammar](./README.md#create-a-custom-eduction-grammar) lesson for a more in-depth discussion on creating grammars.
 
@@ -703,17 +703,17 @@ To change this behavior to include overlapping matches and return all five possi
 
 Now re-run the above command to see all five matches in your output.
 
-For full details on this property, please reference [Eduction User & Programming Guide - AllowOverlaps](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm).
+For full details on this property, please reference [Eduction User & Programming Guide - AllowOverlaps](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm).
 
 ## Conclusion
 
-You should now be confident in the basics of IDOL Eduction.  
+You should now be confident in the basics of Knowledge Discovery Eduction.  
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from the [main page](../README.md#eduction-showcase).
+Next, why not try more tutorials to explore some of the other features available in Eduction, linked from the [main page](../README.md#eduction-showcase).
 
 ## See also
 
-- [IDOL Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/)
-- [IDOL Eduction Server User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionServer_24.4_Documentation/Help/Content/_ACI_Welcome.htm)
-- [IDOL Eduction Grammars User Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionGrammars_24.4_Documentation/Help/)
-- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/)
+- [Eduction Server User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionServer_25.1_Documentation/Help/Content/_ACI_Welcome.htm)
+- [Eduction Grammars User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/)
+- [Knowledge Discovery Release Notes - Eduction](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/Eduction.htm)

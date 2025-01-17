@@ -1,6 +1,6 @@
 @echo off
 
-set VERSION=24.4.0
+set VERSION=25.1.0
 set PLATFORM=WINDOWS_X86_64
 
 set KEYVIEW_BIN_FOLDER=C:\Opentext\KeyviewFilterSDK_%VERSION%_%PLATFORM%\%PLATFORM%\bin

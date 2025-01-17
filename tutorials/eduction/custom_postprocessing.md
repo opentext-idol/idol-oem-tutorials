@@ -2,7 +2,7 @@
 
 In other Eduction lessons the OOTB `*_postprocessing.lua` scripts are used as is required with these grammars. Various functions are performed within these scripts like checksum and other value validation, score normalization and output normalization.  But there are other valuable use cases for Eduction post-processing.
 
-Refer to the [Eduction User and Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm) section for more information on this topic.
+Refer to the [Eduction User and Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm) section for more information on this topic.
 
 In this lesson, other uses for post processing will be explored:
 
@@ -37,15 +37,15 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PCI - redact_account_nbr sample](../../resources/eduction/pci/edk_samples/resources/redact_account_nbr) and install to `C:\OpenText\EductionGrammars_24.4.0_COMMON\pci\edk_samples\resources\redact_account_nbr`
-- [PII - custom post-process threshold](../../resources/eduction/pii/edk_samples/resources/custom_pp_threshold) and install to `C:\OpenText\EductionGrammars_24.4.0_COMMON\pii\edk_samples\resources\custom_pp_threshold`
-- [PII - custom validation](../../resources/eduction/pii/edk_samples/resources/custom_validation) and install to `C:\OpenText\EductionGrammars_24.4.0_COMMON\pii\edk_samples\resources\custom_validation`
+- [PCI - redact_account_nbr sample](../../resources/eduction/pci/edk_samples/resources/redact_account_nbr) and install to `C:\OpenText\EductionGrammars_25.1.0_COMMON\pci\edk_samples\resources\redact_account_nbr`
+- [PII - custom post-process threshold](../../resources/eduction/pii/edk_samples/resources/custom_pp_threshold) and install to `C:\OpenText\EductionGrammars_25.1.0_COMMON\pii\edk_samples\resources\custom_pp_threshold`
+- [PII - custom validation](../../resources/eduction/pii/edk_samples/resources/custom_validation) and install to `C:\OpenText\EductionGrammars_25.1.0_COMMON\pii\edk_samples\resources\custom_validation`
 
 ## Lessons
 
 ### Custom redaction of credit card numbers
 
-While IDOL Eduction supports redaction of match values in the output text, there are some use cases where special redaction can be valuable. For credit card #'s, the first few digits are generic and related to the issuer with the last few digits also generally preserved.  By removing the middle digits, the credit card # effectively becomes unusable. An example of the redaction looks like the following:
+While Eduction supports redaction of match values in the output text, there are some use cases where special redaction can be valuable. For credit card #'s, the first few digits are generic and related to the issuer with the last few digits also generally preserved.  By removing the middle digits, the credit card # effectively becomes unusable. An example of the redaction looks like the following:
 
 ```txt
 4012 8888 8888 1881
@@ -73,14 +73,14 @@ function processmatch (edkmatch)
 end
 ```
 
-> NOTE: The IDOL provided Lua functions - [regex_match()](https://www.microfocus.com/documentation/idol/IDOL_24_4/NiFiIngest_24.4_Documentation/Help/Content/Lua/General/_LUA_regex_match.htm) and  [regex_replace_all()](https://www.microfocus.com/documentation/idol/IDOL_24_4/NiFiIngest_24.4_Documentation/Help/Content/Lua/General/_LUA_regex_replace_all.htm) are the keys to implementing the custom redaction. 
+> NOTE: The Eduction provided Lua functions - [regex_match()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/NiFiIngest_25.1_Documentation/Help/Content/Lua/General/_LUA_regex_match.htm) and  [regex_replace_all()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/NiFiIngest_25.1_Documentation/Help/Content/Lua/General/_LUA_regex_replace_all.htm) are the keys to implementing the custom redaction. 
 
 
 Run the provided example
 
 ```sh
-> cd C:\OpenText\EductionGrammars_24.4.0_COMMON\pci\edk_samples\resources
-> edktool.exe extract -l ..\..\..\..\EductionSDK_24.4.0_WINDOWS_X86_64\licensekey.dat -c redact_account_nbr\config\redact_account_nbr.cfg -i redact_account_nbr\input\input.txt
+> cd C:\OpenText\EductionGrammars_25.1.0_COMMON\pci\edk_samples\resources
+> edktool.exe extract -l ..\..\..\..\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat -c redact_account_nbr\config\redact_account_nbr.cfg -i redact_account_nbr\input\input.txt
 ```
 
 Two matches are produced:
@@ -109,7 +109,7 @@ Notice that the `<NORMALIZED_TEXT> has the redacted representation of the matchi
 
 ### Entity specific post-process score threshold
 
-While IDOL Eduction supports entity specific scoring via `EntityMinScore#`, this score is applied after the ECR/EJR processing and before the post-processing stage. The `PostProcessThreshold` applies to all entities. Refer to [Eduction User and Programming Guide - PostProcessThreshold](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_PostProcessThreshold.htm) section of the Eduction User and Programming Guide for more information on this topic. 
+While Eduction supports entity specific scoring via `EntityMinScore#`, this score is applied after the ECR/EJR processing and before the post-processing stage. The `PostProcessThreshold` applies to all entities. Refer to [Eduction User and Programming Guide - PostProcessThreshold](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_PostProcessThreshold.htm) section of the Eduction User and Programming Guide for more information on this topic. 
 
 This part of the lesson will illustrate how to use a post-processing Lua script to implement an entity specific PostProcessThreshold.
 
@@ -118,8 +118,8 @@ Different `PostProcessThreshold` values per entity allows for use cases like dif
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionGrammars_24.4.0_COMMON\pii\edk_samples\resources
-> edktool.exe extract -l ..\..\..\..\EductionSDK_24.4.0_WINDOWS_X86_64\licensekey.dat -c custom_pp_threshold\config\custom_pp_threshold.cfg -i custom_pp_threshold\input\input.txt -o out_custom_pp_threshold.xml
+> cd C:\OpenText\EductionGrammars_25.1.0_COMMON\pii\edk_samples\resources
+> edktool.exe extract -l ..\..\..\..\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat -c custom_pp_threshold\config\custom_pp_threshold.cfg -i custom_pp_threshold\input\input.txt -o out_custom_pp_threshold.xml
 ```
 
 The following matches are produced
@@ -176,7 +176,7 @@ The `custom_pp_threshold/scripts/custom_pp_threshold.lua` provides the framework
 
 Eduction supports validation of matches via the PostProcessing Tasks where the licensed grammar packs include scripts for this purpose. However, there are circumstances where custom validation is helpful to further reduce false positives.
 
-Eduction 24.4 introduced a new feature that allows for a configurable window of text around the match to be available in the PostProcessing task Lua using `edkmatch:getMatchContext()`. The `custom_validation.lua` script explores how the match context data can be used for extra validation and also to optionally return a contextual match window.
+Eduction 25.1 introduced a new feature that allows for a configurable window of text around the match to be available in the PostProcessing task Lua using `edkmatch:getMatchContext()`. The `custom_validation.lua` script explores how the match context data can be used for extra validation and also to optionally return a contextual match window.
 
 The sample document `custom_validation\extras\custom_validation.docx` was crafted for this lesson and has made up PII, PCI and PHI values in various forms of visible text (*e.g.* header, footer, table and body text) and in hidden text (*e.g.* comments). `custom_validation\input\custom_validation.docx.KV_TEXT.TXT` was generated with KeyView Filter SDK `filter -sh -h` with
 
@@ -185,9 +185,9 @@ The sample document `custom_validation\extras\custom_validation.docx` was crafte
 TabDelimited=TRUE
 OutputTableDelimiters=TRUE
 ```
-as documented in the [Tab Delimited Output for Spreadsheets and Embedded Tables](https://www.microfocus.com/documentation/idol/IDOL_24_4/KeyviewFilterSDK_24.4_Documentation/Guides/html/c-programming/Content/filter/Tab_Delimited_Output.htm) section of KeyView Programming Guide.
+as documented in the [Tab Delimited Output for Spreadsheets and Embedded Tables](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/filter/Tab_Delimited_Output.htm) section of KeyView Programming Guide.
 
-The match window as returned by [getMatchContext()](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/Reference/LuaMethods/getMatchContext.htm) is configurable in Eduction Engine [configuration](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_ContextCharsBeforeMatch.htm) via the following settings:
+The match window as returned by [getMatchContext()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/Reference/LuaMethods/getMatchContext.htm) is configurable in Eduction Engine [configuration](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_ContextCharsBeforeMatch.htm) via the following settings:
 ```ini
 [Eduction] 
 ...
@@ -201,7 +201,7 @@ Type = lua
 Script = ./custom_validation/scripts/custom_validation.lua
 Entities = *
 ```
-The `custom_validation\config\custom_validation.cfg` enables these settings and also incorporates `custom_validation.lua`.  Otherwise, the contents of `custom_validation.cfg` should look familiar.  The enabled resourcesFiles and entities are configured for Mixed Mode as described in [Configure Mixed Table and Free Text Entities](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm#Configure-Mixed-).  This allows for matches to occur in the tables, body text and comments.
+The `custom_validation\config\custom_validation.cfg` enables these settings and also incorporates `custom_validation.lua`.  Otherwise, the contents of `custom_validation.cfg` should look familiar.  The enabled resourcesFiles and entities are configured for Mixed Mode as described in [Configure Mixed Table and Free Text Entities](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm#Configure-Mixed-).  This allows for matches to occur in the tables, body text and comments.
 
 The `custom_validation\scripts\custom_validation.lua` employs two validation techniques:
 
@@ -213,8 +213,8 @@ The `custom_validation\scripts\custom_validation.lua` employs two validation tec
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionGrammars_24.4.0_COMMON\pii\edk_samples\resources
-> edktool.exe extract -l ..\..\..\..\EductionSDK_24.4.0_WINDOWS_X86_64\licensekey.dat -c custom_validation\config\custom_validation.cfg -i custom_validation\input\custom_validation.docx.KV_TEXT.TXT -o custom_validation.xml
+> cd C:\OpenText\EductionGrammars_25.1.0_COMMON\pii\edk_samples\resources
+> edktool.exe extract -l ..\..\..\..\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat -c custom_validation\config\custom_validation.cfg -i custom_validation\input\custom_validation.docx.KV_TEXT.TXT -o custom_validation.xml
 ```
 
 > NOTE: The Lua `print()` statements can be uncommented to help you follow along for each match and the entity specific filtering of false positives.
@@ -235,10 +235,10 @@ The alternate scenario covered in `custom_validation.lua` is adding the EDK Comp
 
 You are now familiar with more use cases for Eduction post processing: custom match redaction, custom score threshold, custom validation.
 
-Next, why not try more tutorials to explore some of the other features available in IDOL Eduction, linked from [here](../eduction/README.md#capability-showcase).
+Next, why not try more tutorials to explore some of the other features available in Eduction, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
-- [IDOL Eduction Grammars User Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionGrammars_24.4_Documentation/Help/)
-- [IDOL Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/IDOL_24_4/EductionSDK_24.4_Documentation/Guides/html/)
-- [IDOL and KeyView OEM Release Notes - Eduction](https://www.microfocus.com/documentation/idol/IDOL_24_4/IDOLReleaseNotes_24.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Eduction Grammars User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/)
+- [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/)
+- [Knowledge Discovery Release Notes - Eduction](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/Eduction.htm)
