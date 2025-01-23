@@ -20,9 +20,8 @@ You! If you have access to Knowledge Discovery and File Content Extraction softw
 
 ## Aims
 
-- Get hands on with the Knowledge Discovery and File Content Extraction sample programs.  Familiarize yourself with key concepts.
-- Select from walkthroughs showcasing different capabilities of Eduction and File Content Extraction, from file type identification to text extraction and PII entity discovery.
-- Compile sample code to see how Knowledge Discovery Eduction and File Content Extraction SDKs can be embedded in your products.
+- Get hands on with the Knowledge Discovery (Eduction, ACI API, Connectors) and File Content Extraction sample programs.  Familiarize yourself with key concepts.
+- Select from walkthroughs showcasing different capabilities of Knowledge Discovery and File Content Extraction, from file type identification to text extraction and PII entity discovery and connectors.
 
 ## Obtaining tutorial materials
 
@@ -40,6 +39,6 @@ The tutorials start [here](./tutorials/README.md)!
 
 ## License
 
-(c) Copyright 2024 OpenText or one of its affiliates.
+(c) Copyright 2022-2025 OpenText or one of its affiliates.
 
 Licensed under the MIT License (the "License"); you may not use this project except in compliance with the [License](./LICENSE.md).

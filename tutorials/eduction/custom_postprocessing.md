@@ -1,6 +1,6 @@
 # Custom Post Processing
 
-In other Eduction lessons the OOTB `*_postprocessing.lua` scripts are used as is required with these grammars. Various functions are performed within these scripts like checksum and other value validation, score normalization and output normalization.  But there are other valuable use cases for Eduction post-processing.
+In other Eduction lessons the OOTB `*_postprocessing.lua` scripts are used as is required with these grammars. Various functions are performed within these scripts like checksum and other match value validation, score normalization and output normalization.  There are other valuable use cases for Eduction post-processing.
 
 Refer to the [Eduction User and Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm) section for more information on this topic.
 
@@ -105,7 +105,7 @@ Entity search completed (T+0.157 seconds)
 0.157 seconds elapsed
 ```
 
-Notice that the `<NORMALIZED_TEXT> has the redacted representation of the matching credit card number with only the middle digits affected.  If`edktool redact` was used then the entire credit number would be redacted.
+Notice that the `<NORMALIZED_TEXT>` has the redacted representation of the matching credit card number with only the middle digits affected.  If `edktool redact` was used then the entire credit number would be redacted.
 
 ### Entity specific post-process score threshold
 

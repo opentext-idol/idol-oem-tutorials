@@ -198,6 +198,7 @@ The [keyview_filter resources](../../resources/keyview_filter/README.md#advanced
 
 - [Simple meal planner1.xlsx](../../resources/keyview_filter#simple-meal-planner1xlsx)
 - [Robin Zupanc Resume_RESTRICTED.docx](../../resources/keyview_filter#robin-zupanc-resume_restricteddocx)
+
 Leverage `filter` as you've explored in this lesson to extract text from these additional sample files.
 
 ## Conclusion

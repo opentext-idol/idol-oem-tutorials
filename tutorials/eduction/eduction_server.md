@@ -1,6 +1,6 @@
 # Eduction Server
 
-The Eduction ACI Server is a stand-alone server that uses the ACI infrastructure. It is one of the available options that you have to run Eduction.
+The Eduction ACI Server is a stand-alone server that uses the Knowledge Discovery (formerly known as IDOL) ACI infrastructure. Eduction Server is one of the available options that you have to run Eduction with EductionSDK being another.
 
 In this lesson, you will:
 

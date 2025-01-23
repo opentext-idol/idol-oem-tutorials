@@ -62,7 +62,7 @@ Choose where to start below.
 
 ### Eduction
 
-Make a solid start with Eduction.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for matching entities in free text.
+Get started with Eduction.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for matching entities in unstructured, semi-structured and structured text.
 
 [Get started](./eduction/introduction.md).
 

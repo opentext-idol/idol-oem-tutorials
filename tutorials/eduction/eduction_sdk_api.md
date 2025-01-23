@@ -1,8 +1,6 @@
 # Eduction SDK APIs
 
-The Eduction SDK is designed to be embedded into other services.
-
-To facilitate embedding, the Eduction SDK has APIs for C, Java, Python and .NET.  In addition, the Eduction SDK runs natively on the following platforms: Windows (x86_64, x86_32 and ARM_64), Linux (x86_64 and ARM_64), MacOS (x86_64 and Apple M*).
+The Eduction SDK is designed to be embedded into other services.   To facilitate embedding, the Eduction SDK has APIs for C, Java, Python and .NET.  In addition, the Eduction SDK runs natively on the following platforms: Windows (x86_64, x86_32 and ARM_64), Linux (x86_64 and ARM_64) and MacOS (x86_64 and Apple M*).
 
 In this lesson, you will:
 

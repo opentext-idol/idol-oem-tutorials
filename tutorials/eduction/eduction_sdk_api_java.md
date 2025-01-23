@@ -1,8 +1,6 @@
 # Eduction SDK Java API
 
-The Eduction SDK is designed to be embedded into other services.
-
-To facilitate embedding, the Eduction SDK has APIs for C, Java and .NET.  In addition, the Eduction SDK runs natively on the following platforms: Windows (x86_64, x86_32 and ARM_64), Linux (x86_64 and ARM_64), MacOS (x86_64 and Apple M*).
+The Eduction SDK is designed to be embedded into other services. To facilitate embedding, the Eduction SDK has APIs for C, Java and .NET.  In addition, the Eduction SDK runs natively on the following platforms: Windows (x86_64, x86_32 and ARM_64), Linux (x86_64 and ARM_64) and MacOS (x86_64 and Apple M*).
 
 In this lesson, you will:
 
@@ -24,9 +22,11 @@ The [Eduction User and Programming Guide](https://www.microfocus.com/documentati
 - [API Documentation](#api-documentation)
 - [Example programs](#example-programs)
   - [`eduction_from_config`](#eduction_from_config)
-    - [Build eduction](#build-eduction)
-    - [Run eduction](#run-eduction)
+    - [Sample `eduction_from_config` code](#sample-eduction_from_config-code)
+    - [Build `eduction_from_config`](#build-eduction_from_config)
+    - [Run `eduction_from_config`](#run-eduction_from_config)
   - [`compile`](#compile)
+    - [Sample `compile` code](#sample-compile-code)
     - [Build `compile`](#build-compile)
     - [Run `compile`](#run-compile)
   - [`redaction`](#redaction)
@@ -125,7 +125,11 @@ Example programs (with resources) ship with the `EductionSDK_<VERSION>_<PLATFORM
 
 The `eduction_from_config` sample program accepts a configuration file as you've been using in the other Eduction lessons, an UTF-8 text file, a path to the output JSON file and some optional arguments to override the configuration.
 
-#### Build eduction
+#### Sample `eduction_from_config` code
+
+The Java sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\eduction_from_config\java`.
+
+#### Build `eduction_from_config`
 
 Go ahead and build `eduction_from_config`.  A Windows batch file `run_mvn_test.bat` is provided.
 
@@ -138,7 +142,7 @@ Go ahead and build `eduction_from_config`.  A Windows batch file `run_mvn_test.b
 
 Check the `mvn_test.log` for any errors and `BUILD SUCCESS`.
 
-#### Run eduction
+#### Run `eduction_from_config`
 
 Go ahead and run `eduction_from_config`.  A Windows batch file `run_test.bat` is provided.
 
@@ -238,6 +242,10 @@ Review the `eduction_from_config` Java source code to gain more insights into ho
 In some use cases for Eduction, custom grammars either for net-new entities and/or extending the entities in the licensed grammar packs.
 
 > NOTE: While the Eduction SDK engine does support XML based resource files, pre-compiling them into ECRs is recommended.
+
+#### Sample `compile` code
+
+The C sample `compile` application code lives in: `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\compile\java`.
 
 #### Build `compile`
 

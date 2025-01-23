@@ -1,4 +1,4 @@
-# Eduction SDK introduction
+# Eduction introduction
 
 In this lesson, you will:
 
@@ -37,7 +37,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Minimum requirements
 
 - 1 core, 1 GB RAM, 5GB free disk space.
-- Windows_x86_64, Windows_x86_32, Windows_ARM64 Linux_x86_64, Linux_ARM64, MacOS_x86_64 or MacOS_M*.
+- Windows_x86_64, Windows_x86_32, Windows_ARM64, Linux_x86_32, Linux_x86_64, Linux_ARM64, MacOS_x86_64 or MacOS_M*.
 - A Knowledge Discovery license key and software access.
 - useful third-party tools noted below.
 
@@ -344,7 +344,7 @@ Beginning engine initialization (T+0.041 seconds)
 Allow Duplicates: (None)
 Allow Multiple Results: OnePerEntity
 Allow Overlaps: false
-Can't Have Fields: (None)
+Cant Have Fields: (None)
 Case Normalization: None
 Case Normalization Behaviour: DEFAULT
 Case Sensitive Field Name: false
