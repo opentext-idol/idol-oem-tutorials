@@ -94,7 +94,7 @@ Place them, for example, in a new sub-directory called "Documents":
 
     > HINT: this key will typically have been named `licensekeyInternal.dat` when you received it.
 
-1. Extract the file `versionkey.dat` from `Versionkey_25.1.0_COMMON.zip`, then copy that file into `C:\OpenText\EductionServer_25.1.0_WINDOWS_X86_64` as described in the [upgrade guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/Upgrade/Licenses.htm).
+1. Extract the file `versionkey.dat` from `Versionkey_25.1.0_COMMON.zip`, then copy that file into `C:\OpenText\dropboxconnector_25.1.0_WINDOWS_X86_64` as described in the [upgrade guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/Upgrade/Licenses.htm).
 
 1. On Windows, you may need to install the included Visual C++ Redistributable package.  In the same Dropbox Connector folder, right-click on `vcredist.exe` then select 'Run as administrator'.
 
