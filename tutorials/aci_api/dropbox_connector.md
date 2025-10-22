@@ -94,7 +94,7 @@ Place them, for example, in a new sub-directory called "Documents":
 
     > HINT: this key will typically have been named `licensekeyInternal.dat` when you received it.
 
-1. Extract the file `versionkey.dat` from `Versionkey_25.4.0_COMMON.zip`, then copy that file into `C:\OpenText\EductionServer_25.4.0_WINDOWS_X86_64` as described in the [upgrade guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/Upgrade/Licenses.htm).
+1. Extract the file `versionkey.dat` from `Versionkey_25.4.0_COMMON.zip`, then copy that file into `C:\OpenText\dropboxconnector_25.4.0_WINDOWS_X86_64` as described in the [upgrade guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/Upgrade/Licenses.htm).
 
 1. On Windows, you may need to install the included Visual C++ Redistributable package.  In the same Dropbox Connector folder, right-click on `vcredist.exe` then select 'Run as administrator'.
 
@@ -202,7 +202,7 @@ For the remaining steps, we will use the ACI Client API to direct the Dropbox Co
 
 As you know, ACI requests are the means of interacting with a running Knowledge Discovery server, in this case the Dropbox Connector.  The ACI Client API is available as an SDK for C, Java and .NET.  
 
-In this lesson we will make use of a Python wrapper for the C SDK, which has been included in these tutorials.  Navigate to the `resources\apis\aci\Python\scripts` to find the files we will use.
+In this lesson we will make use of a Python wrapper for the C SDK, which has been included in these tutorials.  Navigate to the `resources\aci_api\Python\scripts` to find the files we will use.
 
 In the following sections, we will use this API to:
 
