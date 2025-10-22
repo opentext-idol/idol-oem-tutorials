@@ -36,7 +36,7 @@ def parse_args():
     
 # for sample program convenience licensekey and version key are read from file. in practice, it's recommended to "embed" into code
 
-# read Eduction configuration and input/output file paths from command line
+# read Named Entity Recognition configuration and input/output file paths from command line
 program_args = parse_args()
 
 try:

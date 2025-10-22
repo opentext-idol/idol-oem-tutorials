@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=25.1.0
+VERSION=25.4.0
 PLATFORM=LINUX_X86_64
 
 EDK_HOME=/opt/OpenText/EductionSDK_${VERSION}_${PLATFORM}
@@ -22,4 +22,4 @@ grammarIn=../resources/test/source/${grammar}.xml
 grammarOut=${grammar}.ecr
 rm ${grammarOut}
 
-java -cp ${EDK_HOME}/bin/edk.jar:./target/classes com.autonomy.eduction.samples.Compile $grammarIn ${grammarOut} 
+java -Djava.library.path=${EDK_HOME}/bin -cp ${EDK_HOME}/bin/edk.jar:./target/classes com.autonomy.eduction.samples.Compile ${grammarIn} ${grammarOut} 

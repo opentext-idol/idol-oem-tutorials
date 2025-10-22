@@ -1,12 +1,13 @@
-set VERSION=25.1.0
+set VERSION=25.4.0
 set PLATFORM=WINDOWS_x86_64
 
-set EDK_HOME=C:\OpenText\EductionSDK_%VERSION%_%PLATFORM%
-set PYTHON_HOME=%USERPROFILE%\AppData\Local\Programs\Python\Python310
+rem set PYTHON_HOME=
+rem set PATH=%PYTHON_HOME%
+set PYTHON_EXE=python
 
-set PATH=%PYTHON_HOME%
+set EDK_HOME=C:\OpenText\EductionSDK_%VERSION%_%PLATFORM%
 set EDKLIBPATH=%EDK_HOME%\bin\edk.dll
 
 set LICENSEKEY=%EDK_HOME%\licensekey.dat
 
-python -m edk.tool.licenseinfo -l "%LICENSEKEY%"
+%PYTHON_EXE% -m edk.tool.licenseinfo -l "%LICENSEKEY%"

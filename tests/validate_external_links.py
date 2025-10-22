@@ -37,15 +37,17 @@ for dir_path, dir_names, file_names in os.walk(".."):
 
     with open(file_path, 'r', encoding='utf8') as md_file:
       for link in findDocsLinks(md_file.read()):
-        if "swinfra.net" in link: continue
         if "autonomy.com" in link: continue
         if "oauth2" in link: continue
         if "dropbox.com" in link: continue
+        if "notepad-plus-plus" in link: continue
+        if "code.visualstudio.com" in link: continue
         if "sld.microfocus.com" in link: continue
         
         count += 1
 
         try:
+          if verbose: print(f'try: {link}')
           x = requests.head(link)
           if verbose: print(f'{x.status_code}: {link}')
           if x.status_code == 200:

@@ -1,8 +1,8 @@
 """
-Capture entity matches from text you submit to an OEM-licensed IDOL Eduction Server:
+Capture entity matches from text you submit to an OEM-licensed Named Entity Recognition Server:
 $ python educe_from_text_oem.py > matches.csv
 
-NOTE: Configure IDOL Eduction Server with 'ResourceFiles=grammars/internet.ecr'.
+NOTE: Configure Named Entity Recognition Server with 'ResourceFiles=grammars/internet.ecr'.
 """
 import context as aci
 import xml.etree.ElementTree as ET

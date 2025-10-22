@@ -1,10 +1,10 @@
 # Java ACI API Sample Code
 
-The Java ACI API sample code resources build upon the information in the [ACI API Programming Guide - Java Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLJavaSDK_25.1_Documentation/Guides/html/Content/Java/java_part.htm) providing working examples to interact with IDOL ACI services.
+The Java ACI API sample code resources build upon the information in the [ACI API Programming Guide - Java Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLJavaSDK_25.4_Documentation/Guides/html/Content/Java/java_part.htm) providing working examples to interact with IDOL ACI services.
 
 The various examples contain source code and build scripts for Windows and Linux.
 
-The `/<example>/target` folder is built with [OpenJDK 11](https://openjdk.org/).  This means you can run the sample programs without building them.  However, since the provided exes are built with `USE_IDOL_OEM_ENCRYPTION = true`, the `do_run.*` scripts need to be updated with your issued OEM style license key.
+The `/<example>/target` folder is built with [OpenJDK 17](https://openjdk.org/).  This means you can run the sample programs without building them.  However, since the provided exes are built with `USE_IDOL_OEM_ENCRYPTION = true`, the `do_run.*` scripts need to be updated with your issued OEM style license key.
 
 The `/<example>/src` folder contains the source code and build tools.
 
@@ -32,13 +32,13 @@ The `/<example>/src` folder contains the source code and build tools.
 Relative paths are used in the provided `do_*` scripts and Maven build files. They assume the following installation paths:
 
 - `C:\OpenText\idol_oem_tutorials\resources\apis\aci\java`
-- `C:\OpenText\IDOLJavaSDK_25.1.0\`
+- `C:\OpenText\IDOLJavaSDK_25.4.0\`
 
 ### Setup - Build
 
 Before you can build any of the example code, you will need to run the provided  `do_mvn_install_jar.*` script once in order to make the IDOL Java SDK jar file(s) available to Maven.
 
-To build and then run each example the constants `USE_IDOL_OEM_ENCYPTION` and `IDOL_OEM_ENCRYPTION_KEY` will need to be updated with same encryption key information provided in the `OEMstring.txt` file.
+To build and then run each example the constants `USE_IDOL_OEM_ENCRYPTION` and `IDOL_OEM_ENCRYPTION_KEY` will need to be updated with same encryption key information provided in the `OEMstring.txt` file.
 
 ### Setup - Run
 
@@ -48,7 +48,7 @@ To use the pre-built `/target` classes, the `do_run.*` scripts (`ACI_API_TUTORIA
 
 ### Required third-party tools
 
-- Java JDK 1.11 or higher, *e.g.*
+- Java JDK 1.17 or higher, *e.g.*
   - [OpenJDK](https://openjdk.org)
 
 - [Apache Maven](https://maven.apache.org/)
@@ -126,5 +126,5 @@ This sample code is for use with IDOL Media Server issuing the basic settings fo
 
 ## See also
 
-- ACI API Programming Guide: [Java Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLJavaSDK_25.1_Documentation/Guides/html/Content/Java/java_part.htm)
-- IDOL Release Notes: [.NET Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/IDOL-Java.htm)
+- ACI API Programming Guide: [Java Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLJavaSDK_25.4_Documentation/Guides/html/Content/Java/java_part.htm)
+- IDOL Release Notes: [.NET Language Interface](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/IDOL-Java.htm)

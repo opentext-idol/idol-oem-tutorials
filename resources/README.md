@@ -6,7 +6,7 @@ The folders and files within resources are used by the various lessons in the sh
 
 ### IDOL Eduction
 
-See [here](./eduction/README.md) for resources used by the Eduction showcase lessons.
+See [here](./eduction/README.md) for resources used by the Named Entity Recognition showcase lessons.
 
 ### KeyView Filter
 

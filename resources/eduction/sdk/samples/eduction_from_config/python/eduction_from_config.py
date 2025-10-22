@@ -37,7 +37,7 @@ def parse_args():
     
 # for sample program convenience licensekey and version key are read from file. in practice, it's recommended to "embed" into code
 
-# read Eduction configuration and input/output file paths from command line
+# read Named Entity Recognition configuration and input/output file paths from command line
 program_args = parse_args()
 
 # open input and output files before doing anything with EductionSDK
@@ -53,7 +53,7 @@ except IOError as e_io:
     sys.stderr.write("IO error writing: " + program_args.outputfile + " " + str(e_io) + "\n")
     sys.exit()
 
-# Use Eduction APIs to process text input file
+# Use Named Entity Recognition APIs to process text input file
 try:
     print("Creating EDK Factory.")
     with EdkFactory.create_with_license_key(licensekey=get_eduction_licenseKey() + ";" + get_eduction_versionKey()) as factory:

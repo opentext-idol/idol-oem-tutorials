@@ -44,7 +44,7 @@ You must download the following resources before you continue:
 
 #### Compiler
 
-To create a program that uses the Filter SDK, you need to install a [supported compiler](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/Content/Shared/_KV_Platform_Compilers.htm), and use it to build your program.
+To create a program that uses the Filter SDK, you need to install a [supported compiler](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/java-programming/Content/Shared/_KV_Platform_Compilers.htm), and use it to build your program.
 
 #### Other
 
@@ -58,29 +58,29 @@ You need a Filter SDK license key to proceed with this lesson.  If you skipped t
 
 ### Building the sample program
 
-Deploy the downloaded `StreamingTutorial` build tools and source files to the location of your choice.  This tutorial uses `C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\javaapi\StreamingTutorial`.
+Deploy the downloaded `StreamingTutorial` build tools and source files to the location of your choice.  This tutorial uses `C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\javaapi\StreamingTutorial`.
 
 To build `StreamingTutorial` a few modifications of the provided resources are required:
 
 1. Copy `idol-oem-tutorials\resources\keyview_filter\sdk\Java\StreamingTutorial` to `%KEYVIEW_HOME%\javaapi\StreamingTutorial`.
 1. The `build.xml` should properly resolve the relative path to `KeyView.jar`.
 1. Update the provided `build.bat` or `build.sh` to set the `JAVA_HOME` and `ANT_HOME` environment variables that match your system.
-1. Update `src\Config.java`, replacing the `KEYVIEW_LICENSEKEY_STRING` with the contents of the `licensekey.dat` file and `KEYVIEW_BIN_FOLDER` with the location of your Filter SDK bin folder.
+1. Update `src\Config.java`, replacing the `KEYVIEW_LICENSEKEY_PATH` and `KEYVIEW_BIN_FOLDER` with the locations for your environment.
 
 Go ahead and run `build.bat` or `build.sh`.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\javaapi\StreamingTutorial
+> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\javaapi\StreamingTutorial
 > build.bat
 
-Buildfile: C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build.xml
+Buildfile: C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build.xml
 
 compile:
-    [javac] Compiling 11 source files to C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build\classes
+    [javac] Compiling 11 source files to C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build\classes
 
 jar:
-    [mkdir] Created dir: C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build\jar
-      [jar] Building jar: C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build\jar\StreamingTutorial.jar
+    [mkdir] Created dir: C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build\jar
+      [jar] Building jar: C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\javaapi\StreamingTutorial\build\jar\StreamingTutorial.jar
 
 BUILD SUCCESSFUL
 Total time: 1 second
@@ -93,9 +93,9 @@ To run `StreamingTutorial` a few modifications of the provided resources are req
 
 Run `StreamingTutorial.bat`.
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\javaapi\StreamingTutorial
+> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\javaapi\StreamingTutorial
 > StreamingTutorial.bat 
-Processing input file C:\OpenText\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar to C:\OpenText\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar.KV_25.1.0_TEXT.TXT
+Processing input file C:\OpenText\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar to C:\OpenText\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar.KV_25.4.0_TEXT.TXT
 Processing subfile KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar/KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf
 ```
 
@@ -109,9 +109,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/index.html)
-- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/index.html)
-- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/index.html)
-- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/dotnet-programming/index.html)
-- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/)
-- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/python-programming/)
+- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/Content/_KeyView.htm)

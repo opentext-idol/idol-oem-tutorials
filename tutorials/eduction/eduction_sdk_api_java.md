@@ -1,17 +1,17 @@
-# Eduction SDK Java API
+# Named Entity Recognition SDK Java API
 
-The Eduction SDK is designed to be embedded into other services. To facilitate embedding, the Eduction SDK has APIs for C, Java and .NET.  In addition, the Eduction SDK runs natively on the following platforms: Windows (x86_64, x86_32 and ARM_64), Linux (x86_64 and ARM_64) and MacOS (x86_64 and Apple M*).
+The Named Entity Recognition SDK is designed to be embedded into other services. To facilitate embedding, the Named Entity Recognition SDK has APIs for C, Java and .NET.  In addition, the Named Entity Recognition SDK runs natively on the following platforms: Windows (x86_64, x86_32 and ARM_64), Linux (x86_64 and ARM_64) and MacOS (x86_64 and Apple M*).
 
 In this lesson, you will:
 
-- use the Eduction SDK Java API to perform extraction using a configuration file
-- use the Eduction SDK Java API to compile a grammar XML into an ECR
+- use the Named Entity Recognition SDK Java API to perform extraction using a configuration file
+- use the Named Entity Recognition SDK Java API to compile a grammar XML into an ECR
 
-The [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/EductionSDK/APIReference/Java_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
+The [Named Entity Recognition User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/EductionSDK/APIReference/Java_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
 
-> NOTE: This lesson only covers the Eduction SDK APIs and does not cover Eduction Server. See [here](./README.md#use-eduction-server) for a lesson on Eduction Server.
+> NOTE: This lesson only covers the Named Entity Recognition SDK APIs and does not cover Named Entity Recognition Server. See [here](./README.md#use-named-entity-recognition-server) for a lesson on Named Entity Recognition Server.
 
-> NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](../eduction/introduction.md#introduction-to-eduction).
+> NOTE: This guide assumes you have already completed the introductory Named Entity Recognition [tutorial](../eduction/introduction.md).
 
 ---
 
@@ -41,13 +41,13 @@ The [Eduction User and Programming Guide](https://www.microfocus.com/documentati
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Refer to `README.md` in the `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
+Refer to `README.md` in the `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
 
-> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#introduction-to-eduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
+> NOTE: This lesson assumes you have already completed the [Named Entity Recognition SDK introduction](../eduction/introduction.md) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Named Entity Recognition concepts.
 
 ### License and Version key dat files
 
-Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home directory (*e.g.* `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64`).
+Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home directory (*e.g.* `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64`).
 
 ### Resources
 
@@ -64,9 +64,9 @@ You must download the following resources before you continue:
 
 ### Environment and Compilers
 
-- Refer to the `System Requirements` section of the [Getting Started Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLServer_25.1_Documentation/Guides/html/gettingstarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
-- Refer to [Eduction User & Programming Guide - Deploy Eduction SDK - Java API Component](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/Java_API.htm) for API and platform specific software dependencies.
-- The `README.md` in `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
+- Refer to the `System Requirements` section of the [Getting Started Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLServer_25.4_Documentation/Guides/html/gettingstarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
+- Refer to [Named Entity Recognition User & Programming Guide - Deploy Named Entity Recognition SDK - Java API Component](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/Java_API.htm) for API and platform specific software dependencies.
+- The `README.md` in `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
 
 > NOTE: For the Java code, the `pom.xml` may need to be modified as the following:
 >
@@ -78,19 +78,19 @@ You must download the following resources before you continue:
 >      <groupId>com.autonomy.eduction</groupId>
 >      <artifactId>edk</artifactId>
 > -    <version>12.11.0</version>
-> +    <version>25.1.0</version>
+> +    <version>25.4.0</version>
 >    </dependency>
 > </dependencies> 
 > ```
 
-Apache Maven and a Java JDK (*e.g.* OpenJDK) are used to build and run the sample programs.  The `edk.jar` for version 25.1 must deployed to your local Maven cache.  A Windows batch file `run_mvn_install_jar.bat` and Bourne shell script `run_mvn_install_jar` are provided in the `C:\OpenText\idol-oem-tutorials\resources\eduction\sdk\samples`.
+Apache Maven and a Java JDK (*e.g.* OpenJDK) are used to build and run the sample programs.  The `edk.jar` for version 25.4 must deployed to your local Maven cache.  A Windows batch file `run_mvn_install_jar.bat` and Bourne shell script `run_mvn_install_jar.sh` are provided in the `C:\OpenText\idol-oem-tutorials\resources\eduction\sdk\samples`.
 
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_64\samples
+> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_x86_64\samples
 > run_mvn_install_jar.bat
-C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_6\samples>mvn install:install-file -Dfile=C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_6\bin\edk.jar -DgroupId=com.autonomy.eduction -DartifactId=edk -Dversion=25.1.0 -Dpackaging=jar -DgeneratePom=true
+C:\OpenText\EductionSDK_25.4.0_WINDOWS_x86_6\samples>mvn install:install-file -Dfile=C:\OpenText\EductionSDK_25.4.0_WINDOWS_x86_6\bin\edk.jar -DgroupId=com.autonomy.eduction -DartifactId=edk -Dversion=25.4.0 -Dpackaging=jar -DgeneratePom=true
 [INFO] Scanning for projects...
 [INFO]
 [INFO] ------------------< org.apache.maven:standalone-pom >-------------------
@@ -98,8 +98,8 @@ C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_6\samples>mvn install:install-file -D
 [INFO] --------------------------------[ pom ]---------------------------------
 [INFO]
 [INFO] --- maven-install-plugin:2.4:install-file (default-cli) @ standalone-pom ---
-[INFO] Installing C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_6\bin\edk.jar to C:%HOMEPATH%\.m2\repository\com\autonomy\eduction\edk\25.1.0\edk-25.1.0.jar
-[INFO] Installing C:%HOMEPATH%\AppData\Local\Temp\mvninstall6990321632397672369.pom to C:%HOMEPATH%\.m2\repository\com\autonomy\eduction\edk\25.1.0\edk-25.1.0.pom
+[INFO] Installing C:\OpenText\EductionSDK_25.4.0_WINDOWS_x86_6\bin\edk.jar to C:%HOMEPATH%\.m2\repository\com\autonomy\eduction\edk\25.4.0\edk-25.4.0.jar
+[INFO] Installing C:%HOMEPATH%\AppData\Local\Temp\mvninstall6990321632397672369.pom to C:%HOMEPATH%\.m2\repository\com\autonomy\eduction\edk\25.4.0\edk-25.4.0.pom
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
@@ -110,7 +110,7 @@ C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_6\samples>mvn install:install-file -D
 
 ## API Documentation
 
-API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\` as noted below:
+API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\` as noted below:
 
 - Java - `java_api\help\index.html`
 
@@ -123,11 +123,11 @@ Example programs (with resources) ship with the `EductionSDK_<VERSION>_<PLATFORM
 
 ### `eduction_from_config`
 
-The `eduction_from_config` sample program accepts a configuration file as you've been using in the other Eduction lessons, an UTF-8 text file, a path to the output JSON file and some optional arguments to override the configuration.
+The `eduction_from_config` sample program accepts a configuration file as you've been using in the other Named Entity Recognition lessons, an UTF-8 text file, a path to the output JSON file and some optional arguments to override the configuration.
 
 #### Sample `eduction_from_config` code
 
-The Java sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\eduction_from_config\java`.
+The Java sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\java`.
 
 #### Build `eduction_from_config`
 
@@ -136,7 +136,7 @@ Go ahead and build `eduction_from_config`.  A Windows batch file `run_mvn_test.b
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_64\samples\eduction_from_config\java
+> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_x86_64\samples\eduction_from_config\java
 > run_mvn_test.bat 
 ```
 
@@ -151,16 +151,16 @@ Go ahead and run `eduction_from_config`.  A Windows batch file `run_test.bat` is
 > NOTE: `eduction_from_config` expects the `idol-oem-tutorials\resources\eduction\sdk\samples\eduction_from_config\resources\test\config\test_session.cfg` to be deployed.
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_64\samples\eduction_from_config\java
+> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_x86_64\samples\eduction_from_config\java
 > run_test.bat
-Feb 26, 2025.1:04:52 PM com.autonomy.eduction.samples.FromConfig$Args <init>
+Feb 26, 2025.4:04:52 PM com.autonomy.eduction.samples.FromConfig$Args <init>
 INFO: Parameters valid.
 Successfully configured 1 post-processing tasks.
-Feb 26, 2025.1:04:52 PM com.autonomy.eduction.samples.FromConfig extract
+Feb 26, 2025.4:04:52 PM com.autonomy.eduction.samples.FromConfig extract
 INFO: Input data file opened.
-Feb 26, 2025.1:04:52 PM com.autonomy.eduction.samples.FromConfig extract
+Feb 26, 2025.4:04:52 PM com.autonomy.eduction.samples.FromConfig extract
 INFO: Printing results to output.json...
-Feb 26, 2025.1:04:52 PM com.autonomy.eduction.samples.FromConfig getJsonLines
+Feb 26, 2025.4:04:52 PM com.autonomy.eduction.samples.FromConfig getJsonLines
 INFO: Got 2 matches
 ```
 
@@ -233,19 +233,19 @@ Review `educed.EDK.JSON` to see the match information. The program should run an
 }
 ```
 
-For extra credit, try `eduction_from_config` on other Eduction configurations, insuring that configuration file paths are correct.
+For extra credit, try `eduction_from_config` on other Named Entity Recognition configurations, insuring that configuration file paths are correct.
 
-Review the `eduction_from_config` Java source code to gain more insights into how to incorporate the Eduction SDK Java API into your application.
+Review the `eduction_from_config` Java source code to gain more insights into how to incorporate the Named Entity Recognition SDK Java API into your application.
 
 ### `compile`
 
-In some use cases for Eduction, custom grammars either for net-new entities and/or extending the entities in the licensed grammar packs.
+In some use cases for Named Entity Recognition, custom grammars either for net-new entities and/or extending the entities in the licensed grammar packs.
 
-> NOTE: While the Eduction SDK engine does support XML based resource files, pre-compiling them into ECRs is recommended.
+> NOTE: While the Named Entity Recognition SDK engine does support XML based resource files, pre-compiling them into ECRs is recommended.
 
 #### Sample `compile` code
 
-The C sample `compile` application code lives in: `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\compile\java`.
+The C sample `compile` application code lives in: `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\compile\java`.
 
 #### Build `compile`
 
@@ -254,7 +254,7 @@ Go ahead and build `compile`.  A Windows batch file `run_mvn_test.bat` is provid
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_64\samples\compile\java
+> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_x86_64\samples\compile\java
 > run_mvn_test.bat 
 ```
 
@@ -267,19 +267,19 @@ Go ahead and run `compile`.  A Windows batch file `run_test.bat` is provided.
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_64\samples\compile\java
+> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_x86_64\samples\compile\java
 > run_test.bat
-Feb 26, 2025.1:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2025.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: Parameters valid.
-Feb 26, 2025.1:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2025.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: License read.
-Feb 26, 2025.1:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2025.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: Version key read.
-Feb 26, 2025.1:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2025.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: Engine created.
-Feb 26, 2025.1:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2025.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: Grammar source file loaded and compiled
-Feb 26, 2025.1:09:53 PM com.autonomy.eduction.samples.Compile save
+Feb 26, 2025.4:09:53 PM com.autonomy.eduction.samples.Compile save
 INFO: Compiled grammar file saved
 ```
 
@@ -288,14 +288,14 @@ A `test.ecr` from the `src/test.xml` source should be generated. To verify the c
 ```sh
 > edktool.exe list -a test.ecr
 
-Eduction EDKTool Utility v25.1.0
+Eduction EDKTool Utility v25.4.0
 Loading resource file:
 test.ecr
 
 
 Grammar version:        4.0
 
-Compiled using Edktool: 25.1.0
+Compiled using Edktool: 25.4.0
 
 Listing entities:
 test/two_words
@@ -307,17 +307,17 @@ Listing all necessary requirements for license:
 0.018 seconds elapsed
 ```
 
-For extra credit, try `compile` on other Eduction grammar XML.
+For extra credit, try `compile` on other Named Entity Recognition grammar XML.
 
-Review the `compile` Java source code to gain more insights into how to incorporate the Eduction SDK Java API into your application.
+Review the `compile` Java source code to gain more insights into how to incorporate the Named Entity Recognition SDK Java API into your application.
 
 ### `redaction`
 
 In some use cases for Eduction, custom grammars either for net-new entities and/or extending the entities in the licensed grammar packs.
 
-> NOTE: While the Eduction SDK engine does support XML based resource files, pre-compiling them into ECRs is recommended.
+> NOTE: While the Named Entity Recognition SDK engine does support XML based resource files, pre-compiling them into ECRs is recommended.
 
-The `redaction` sample program accepts a configuration file as you've been using in the other Eduction lessons, an UTF-8 text file and a path to the redacted TXT file.
+The `redaction` sample program accepts a configuration file as you've been using in the other Named Entity Recognition lessons, an UTF-8 text file and a path to the redacted TXT file.
 
 #### Build `redaction`
 
@@ -326,7 +326,7 @@ Go ahead and build `redaction`.  A Windows batch file `run_mvn_test.bat` is prov
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_64\samples\redaction\java
+> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_x86_64\samples\redaction\java
 > run_mvn_test.bat 
 ```
 
@@ -339,7 +339,7 @@ Go ahead and run `redaction`.  A Windows batch file `run_test.bat` is provided.
 > NOTE: Before proceeding make sure the `EDK_HOME`, `MAVEN_HOME` and `JAVA_HOME` are correct for your environment.
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.1.0_WINDOWS_x86_64\samples\redaction\java
+> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_x86_64\samples\redaction\java
 > run_test.bat
 Apr 08, 2024 4:06:48 PM com.autonomy.eduction.samples.Redact redact
 INFO: Parameters valid.
@@ -355,21 +355,21 @@ INFO: Program completed without error
 
 A `redacted.EDK.TXT` should be generated and have the same output as in the `..\resources\test\expectations\redaction.txt`.
 
-For extra credit, try `redaction` with the other Eduction configuration file `entity_name.cfg`.
+For extra credit, try `redaction` with the other Named Entity Recognition configuration file `entity_name.cfg`.
 
-Review the `redaction` Java source code to gain more insights into how to incorporate the Eduction SDK Java API into your application.
+Review the `redaction` Java source code to gain more insights into how to incorporate the Named Entity Recognition SDK Java API into your application.
 
 ## Conclusion
 
-You now understand the basics of the Eduction SDK Java API.
+You now understand the basics of the Named Entity Recognition SDK Java API.
 
 As extra credit, build and run the other sample programs in `EductionSDK_<VERSION>_<PLATFORM>\samples` and `EductionGrammars_<VERSION>_COMMON\pii\edk_samples`.  Refer to the changes in these resources and leverage the build tools & tips.
 
-Next, why not try more tutorials to explore some of the other features available in Eduction, linked from [here](../eduction/README.md#capability-showcase).
+Next, why not try more tutorials to explore some of the other features available in Named Entity Recognition, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
-- [Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/)
-- [Eduction Server User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionServer_25.1_Documentation/Help/Content/_ACI_Welcome.htm)
-- [Eduction Grammars User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/)
-- [Knowledge Discovery Release Notes - Eduction](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
+- [Named Entity Recognition Server User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionServer_25.4_Documentation/Help/Content/_ACI_Welcome.htm)
+- [Named Entity Recognition Grammars User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/)
+- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/Eduction.htm)

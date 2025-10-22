@@ -12,18 +12,29 @@
 
 package tutorial;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 // Configuration for the demo code.
 class Config
 {
 	public static String getLicense()
 	{
 		// Replace this with your license string:
-		return "FILTER_SDK_LICENSEKEY_STRING";
+		try {
+			String licensekey_filepath = "KEYVIEW_LICENSEKEY_PATH";
+			
+			String longString = new String(Files.readAllBytes(Paths.get(licensekey_filepath)));
+		} catch (IOException e) {
+            System.err.println("An I/O error occurred while reading the license key: " + e.getMessage());
+            e.printStackTrace();
+        }					
 	}
 
 	public static String getFilterBinFolder()
 	{
 		// Replace this with the location of your Filter SDK bin folder.
-		return "FILTER_SDK_BIN_FOLDER";
+		return "KEYVIEW_BIN_FOLDER";
 	}
 }

@@ -43,7 +43,7 @@ Until now, you have been operating exclusively on files on disk. However, there 
 
 ### Defining a custom stream
 
-You can implement a custom stream by filling out a [KVInputStream](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/filtering_structures/KVInputStream.htm) structure with functions that perform the appropriate actions. Each of these are equivalent to the ANSI counterparts (fopen, fread, and so on), except several functions return a BOOL rather than an error code.
+You can implement a custom stream by filling out a [KVInputStream](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/filtering_structures/KVInputStream.htm) structure with functions that perform the appropriate actions. Each of these are equivalent to the ANSI counterparts (fopen, fread, and so on), except several functions return a BOOL rather than an error code.
 
 To illustrate how to use a custom stream, the following example defines a very simple stream that forwards to the file-based operations.
 
@@ -148,7 +148,7 @@ If you do not know the size, you **must** set this member to zero. Failure to se
 
 ### Opening a document from a stream
 
-After you define a stream, you can create a KVDocument using the stream by calling [fpOpenDocumentFromStream](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpOpenDocumentFromStream.htm). This functions in the same way as a document created using fpOpenDocumentFromFile. You must not open a second document from a stream until the first document has been closed.
+After you define a stream, you can create a KVDocument using the stream by calling [fpOpenDocumentFromStream](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpOpenDocumentFromStream.htm). This functions in the same way as a document created using fpOpenDocumentFromFile. You must not open a second document from a stream until the first document has been closed.
 
 ```c
 KVDocument document = NULL;
@@ -166,7 +166,7 @@ Filtering text and extracting subfiles, on the other hand, have a slightly diffe
 
 The Filter SDK also lets you access the subfiles as streams, rather than needing to extract them to disk. Because some Filter SDK operations do not need to read the entire file, you might get a performance benefit by avoiding the need to extract all the data from the file.
 
-To access a subfile as a stream, use the [fpOpenSubFile()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/extract/fpOpenSubFile.htm) function, rather than using `fpExtractSubFile()`. The [KVExtractSubFileArgRec](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/extract/KVExtractSubFileArg.htm) is the same as before.
+To access a subfile as a stream, use the [fpOpenSubFile()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/extract/fpOpenSubFile.htm) function, rather than using `fpExtractSubFile()`. The [KVExtractSubFileArgRec](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/extract/KVExtractSubFileArg.htm) is the same as before.
 
 ```c
 KVInputStream substream = NULL;
@@ -177,13 +177,13 @@ error = extract.fpOpenSubFile(fileContext, &extractArg, &substream);
 extract.fpCloseSubFile(substream);
 ```
 
-You can use the [fpGetExtractInfo](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/extract/fpGetExtractInfo.htm) function to retrieve the KVSubFileExtractInfo structure associated with the subfile, and the [fpGetExtractStatus()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/extract/fpGetExtractStatus.htm) function to return more information about any errors encountered when using the subfile stream.
+You can use the [fpGetExtractInfo](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/extract/fpGetExtractInfo.htm) function to retrieve the KVSubFileExtractInfo structure associated with the subfile, and the [fpGetExtractStatus()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/extract/fpGetExtractStatus.htm) function to return more information about any errors encountered when using the subfile stream.
 
 When you parse this stream back into the Filter SDK interface, it must be on a different session to the one that started the Extract session. Because initializing a new session can incur a performance cost, we recommend that you do this once, and then reuse this session for each sub file.
 
 ## Partial filtering
 
-For some use cases, you may not need all of the text from the file, or want to analyze the text in small pieces. The [fpFilter()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFilter.htm) function outputs the text in chunks, by filling out a [KVFilterOutput](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/filtering_structures/KVFilterOutput.htm) structure. You must also free this structure using [fpFreeFilterOutput](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFreeFilterOutput.htm).
+For some use cases, you may not need all of the text from the file, or want to analyze the text in small pieces. The [fpFilter()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFilter.htm) function outputs the text in chunks, by filling out a [KVFilterOutput](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/filtering_structures/KVFilterOutput.htm) structure. You must also free this structure using [fpFreeFilterOutput](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFreeFilterOutput.htm).
 
 The end of the stream is indicated by an empty KVFilterOutput structure. You do not need to free the empty structure.
 
@@ -216,7 +216,7 @@ while(1)
 }
 ```
 
-You might find you want to stop processing before you have filtered the entire file - for example, because you have already found a search term, or because you have hit a resource threshhold. You can safely stop processing, as long as you still call [fpFreeFilterOutput()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFreeFilterOutput.htm) and [fpCloseDocument()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpCloseDocument.htm).
+You might find you want to stop processing before you have filtered the entire file - for example, because you have already found a search term, or because you have hit a resource threshhold. You can safely stop processing, as long as you still call [fpFreeFilterOutput()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpFreeFilterOutput.htm) and [fpCloseDocument()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpCloseDocument.htm).
 
 ## Build & Run
 
@@ -234,8 +234,8 @@ You might find you want to stop processing before you have filtered the entire f
 
 Since `tutorial.h` specified the `YOUR_BIN_DIR` for the Filter SDK, you can run the built exe from the `bin` folder as shown below:
 ```sh
-> set PATH=C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\bin
-> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\samples\tutorial\bin
+> set PATH=C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\samples\tutorial\bin
 > tutorial_stream ..\..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.13.0_ReleaseNotes_en.pdf out
 ```
 
@@ -251,9 +251,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/index.html)
-- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/index.html)
-- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/index.html)
-- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/dotnet-programming/index.html)
-- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/)
-- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/python-programming/)
+- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/Content/_KeyView.htm)

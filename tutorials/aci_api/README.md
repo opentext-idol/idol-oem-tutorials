@@ -8,14 +8,14 @@ Below are links to lessons, which will take you through an introduction to the A
 
 - [Introduction](#introduction)
 - [Capability showcase](#capability-showcase)
-  - [Use Eduction Server](#use-eduction-server)
+  - [Use Named Entity Recognition Server](#use-named-entity-recognition-server)
   - [Perform file actions using the Dropbox Connector](#perform-file-actions-using-the-dropbox-connector)
 
 ---
 
 ## Introduction
 
-The OpenText Knowledge Discovery platform includes a suite of components (services), which can be used in combination or alone to perform hundreds of useful functions, including the Eduction and File Content Extraction that you have become familiar with across previous lessons.
+The OpenText Knowledge Discovery platform includes a suite of components (services), which can be used in combination or alone to perform hundreds of useful functions, including the Named Entity Recognition and File Content Extraction that you have become familiar with across previous lessons.
 
 Each Knowledge Discovery service supports a REST-style API, called the ACI (Autonomy Content Infrastructure) Client API, which allows client applications to perform the following, but not limited to, types of functions:
 
@@ -37,9 +37,9 @@ Do more with the ACI API.
 
 > NOTE: This guide assumes you have already completed the introductory ACI API lesson above.
 
-### Use Eduction Server
+### Use Named Entity Recognition Server
 
-Perform Eduction as a service by calling the Eduction Server using the ACI API.
+Perform Named Entity Recognition as a service by calling the Named Entity Recognition Server using the ACI API.
 
 [Get started](../eduction/eduction_server.md).
 

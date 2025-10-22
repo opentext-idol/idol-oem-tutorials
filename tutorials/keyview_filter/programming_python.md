@@ -47,7 +47,7 @@ You must download the following resources before you continue:
 
 #### Interpreters
 
-To create a program that uses the Filter SDK for Python, you need to install a supported Python 3 interpreter.  The `%KEYVIEW_HOME%\pythonapi\keyview\*.whl` has encoded in the filename the Python version number (*e.g.* `*-cp310-*` for v3.10) supported.  Reference the documentation section [Install the Filter Python Module](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/Content/Python/InstallModule.htm) for installation tips.
+To create a program that uses the Filter SDK for Python, you need to install a supported Python 3 interpreter.  The `%KEYVIEW_HOME%\pythonapi\keyview\*.whl` has encoded in the filename the Python version number (*e.g.* `*-cp310-*` for v3.10) supported.  Reference the documentation section [Install the Filter Python Module](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/python-programming/Content/Python/InstallModule.htm) for installation tips.
 
 ### License key
 
@@ -77,7 +77,7 @@ As in the pre-built sample programs (`filter` and `tstxtract`), the sample progr
 > NOTE: The `run_extract_*.bat` (and `run_extract_*.sh`) scripts set `KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH` and assume you deploy the `licensekey.dat` to `%KEYVIEW_HOME%`.
 
 ```sh
-set KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH=C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\licensekey.dat
+set KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH=C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\licensekey.dat
 ```
 
 In VS Code, you can the augment your run configuration as illustrated below:
@@ -92,7 +92,7 @@ In VS Code, you can the augment your run configuration as illustrated below:
             "request": "launch",
             "program": "${file}",
             "env": {
-                "KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH": "C:\\OpenText\\KeyViewFilterSDK_25.1.0_WINDOWS_X86_64\\licensekey.dat"
+                "KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH": "C:\\OpenText\\KeyViewFilterSDK_25.4.0_WINDOWS_X86_64\\licensekey.dat"
             }
         }
         ]
@@ -119,7 +119,7 @@ SanitizeAbsoluteExtractPaths=False
 +LogicalOrder=1
 ```
 
-Reference the [Use the Filter API](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/Content/Chapter_UseFilterAPI.htm) section of the Filter SDK Programming Guide.
+Reference the [Use the Filter API](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/cpp-programming/Content/Chapter_UseFilterAPI.htm) section of the Filter SDK Programming Guide.
 
 Go ahead and run `extract_metadata_text.py`.  Don't forget to set the paths for the Filter SDK and your input files to match your environment.
 
@@ -127,7 +127,7 @@ Go ahead and run `extract_metadata_text.py`.  Don't forget to set the paths for 
 > cd C:\OpenText\idol-oem-tutorials\resources\keyview_filter\sdk\Python
 > run_extract_metadata_text.bat
 ...
-Using the license key: C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\licensekey.dat
+Using the license key: C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\licensekey.dat
 Processing input document: ../../../idol-oem-tutorials/resources/keyview_filter/2022_calendar_HIDDEN_TEXT.docx
 
 DocInfo(doc_class=<DocClass.adWORDPROCESSOR: 1>, doc_format=<DocFormat.MS_Word_2007_Fmt: 360>, version=16000, encrypted=False, mac_binary_encoded=False, apple_double_encoded=False, wang_gdl_encoded=False, window_rms_encrypted=False)
@@ -146,14 +146,14 @@ Go ahead and run `extract_sub_files.py`.  Don't forget to set the paths for the 
 > cd C:\OpenText\idol-oem-tutorials\resources\keyview_filter\sdk\Python
 > run_extract_sub_files.bat
 ...
-Using the license key: C:\OpenText\KeyviewFilterSDK_25.1.0\licensekey.dat
+Using the license key: C:\OpenText\KeyviewFilterSDK_25.4.0\licensekey.dat
 ---------------
 ```
 
 A file called `extract_sub_files.LOG` will be generated containing output as below:
 
 ```txt
-Processing the file: C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\javaapi\KeyView.jar
+Processing the file: C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\javaapi\KeyView.jar
 DocInfo(doc_class=<DocClass.adENCAPSULATION: 8>, doc_format=<DocFormat.Executable_JAR_Fmt: 999>, version=0, encrypted=False, mac_binary_encoded=False, apple_double_encoded=False, wang_gdl_encoded=False, window_rms_encrypted=False)
 Found a folder: META-INF/
  Index: 0
@@ -215,9 +215,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/index.html)
-- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/index.html)
-- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/index.html)
-- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/dotnet-programming/index.html)
-- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/)
-- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/python-programming/)
+- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/Content/_KeyView.htm)

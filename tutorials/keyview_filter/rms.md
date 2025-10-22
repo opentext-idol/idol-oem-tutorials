@@ -40,43 +40,46 @@ Be sure to download the following resources before you continue:
 
 ## Perform detection
 
-As you have likely already done in other lessons, let's run `filter -d` to perform automatic format detection.
+As you have likely already done in other lessons, let's run `filtertest -ah` to perform automatic format detection.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filter -d ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx detect
-WARNING: filter is a sample program only and is not for production use
-The file ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx
+> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filtertest -ah ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx detect
+WARNING: filtertest is a sample program only and is not for production use
+autodetect:  ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx to detect
+Return code is 0
+filtertest finished with RC: 0
+
+> type detect
 File Class:             12
-Format Name (Number):   Office_2007_Fmt (370)
+Format Number:          370
 Version:                0
 Attributes:             33 (Encrypted, WindowRMSEncrypted)
 Description:            Office 2007 document that cannot be further classified (often RMS-encrypted)
 MIME Type:              -
 
-KWAD: error code returned is KVERR_Success
 ```
 
-> NOTE: The `KVERR_Success` error code is a positive result.
+> NOTE: A return code of `0` is a positive result.
 
-The input file is a protected Microsoft Word file, so a `Format ID: 370` is correct - indicating that it's an Office document that cannot be further classified.  If the Word document was RMS classified, but not protected then a more precise format classification is possible.  See the [Supported Formats](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/kv_RMS/_KV_RMS_support.htm) documentation for more details.
+The input file is a protected Microsoft Word file, so a `Format ID: 370` is correct - indicating that it's an Office document that cannot be further classified.  If the Word document was RMS classified, but not protected then a more precise format classification is possible.  See the [Supported Formats](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/kv_RMS/_KV_RMS_support.htm) documentation for more details.
 
 Besides the `Format ID`, the `Attributes: 33` data provides extra insights into this file.  The attributes are a bit mask with `1` indicating the file is `encrypted` and `32`  indicating the file is `RMS encrypted`.  Refer to `%KEYVIEW_HOME%\include\adinfo.h` for more details on document attributes.
 
 ## Extract metadata
 
-As you likely have already done in other lessons, let's run `filter -m` to extract the document metadata.
+As you likely have already done in other lessons, let's run `filtertest -m` to extract the document metadata.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filter -m ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx metadata
-WARNING: filter is a sample program only and is not for production use
-filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx to metadata
-
-KWAD: error code returned is KVERR_Success
+> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filtertest -m ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx metadata
+WARNING: filtertest is a sample program only and is not for production use
+filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx to metadata
+Return code is 0
+filtertest finished with RC: 0
 ```
 
-> NOTE: The `KVERR_Success` error code is a positive result where the destination `metadata` file contains the output.  Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
+>> NOTE: A return code of `0` is a positive result.  Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
 
 Even though the file is RMS protected, the document metadata can still be extracted.  Typical office-style document metadata is extracted, but the additionally extracted classification tags should also be of interest to determine what to do with or to simply find this document.
 
@@ -85,7 +88,7 @@ Even though the file is RMS protected, the document metadata can still be extrac
 To facilitate decryption of RMS protected documents, an XrML document is embedded into the file.  The Filter SDK considers the XrML file a sub-file.  So let's use `tstxtract` to extract it.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > rmdir /s _extract
 > mkdir _extract
 > tstxtract ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx _extract
@@ -103,17 +106,17 @@ A single sub-file `_extract\subfile_kv0.tmp` is extracted.  The XrML content con
 Let's see what happens when we try to extract text from a RMS protected file, but without providing any credentials.
 
 ``` sh
-> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx text
-Error filtering file: ..\..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx
-KvErrorCode = 51
-filter: ..\..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx to text
-filter: error code returned is 51
+> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filtertest ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx text
+fpFilterToFile() error: ..\..\..\idol-oem-tutorials\resources\keyview_filter\keyview_confidential_RMS.docx
+filtertest: Target CharSet is 53
+Return code is 51
+filtertest finished with RC: 51
 ```
 
 Per `%KEYVIEW_HOME%\include\kverrorcodes.h` an `51` is `KVError_RMSCredentialsRequired`.  This is the expected response since no credentials where provided to decrypt the RMS protected document.
 
-If proper credentials were provided and the Azure decryption service could be reached, then text would be attempted to be extracted from the temporary decrypted file.  See [Filter SDK Programming Guide- fpConfigureRMS()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/kv_RMS/_KV_RMS_fpConfigureRMS.htm)
+If proper credentials were provided and the Azure decryption service could be reached, then text would be attempted to be extracted from the temporary decrypted file.  See [Filter SDK Programming Guide- fpConfigureRMS()](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/kv_RMS/_KV_RMS_fpConfigureRMS.htm)
 
 ## Conclusion
 
@@ -123,11 +126,11 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/index.html)
-- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/index.html)
-- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/index.html)
-- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/dotnet-programming/index.html)
-- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/)
-- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/python-programming/)
+- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/Content/_KeyView.htm)
 - [Wikipedia - XrML](https://en.wikipedia.org/wiki/XrML)
 - [Microsoft - What is Azure Information Protection](https://learn.microsoft.com/en-us/azure/information-protection/what-is-information-protection)

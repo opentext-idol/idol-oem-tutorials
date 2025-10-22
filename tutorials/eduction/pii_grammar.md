@@ -1,6 +1,6 @@
-# Use PII Eduction grammars
+# Use PII Named Entity Recognition grammars
 
-The Eduction PII Package contains tools that allow you to find personal identifiable information (PII) in your data, to help you comply with regulations such as the General Data Protection Regulation (GDPR) and similar for other countries.
+The Named Entity Recognition PII Package contains tools that allow you to find personal identifiable information (PII) in your data, to help you comply with regulations such as the General Data Protection Regulation (GDPR) and similar for other countries.
 
 In this lesson, you will:
 
@@ -8,7 +8,7 @@ In this lesson, you will:
 - Gain an understanding of "context" vs "nocontext" entity forms.
 - Introduce the concepts of targeted pre-filtering.
 
-> NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](./introduction.md#introduction-to-eduction).
+> NOTE: This guide assumes you have already completed the introductory Named Entity Recognition [tutorial](./introduction.md).
 
 ---
 
@@ -30,22 +30,22 @@ In this lesson, you will:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#introduction-to-eduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
+> NOTE: This lesson assumes you have already completed the [Named Entity Recognition SDK introduction](../eduction/introduction.md) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Named Entity Recognition concepts.
 
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PII address sample](../../resources/eduction/pii/edk_samples/resources/pii_address) and install to `C:\OpenText\EductionGrammars_25.1.0_COMMON\pii\edk_samples\resources\pii_address`
+- [PII address sample](../../resources/eduction/pii/edk_samples/resources/pii_address) and install to `C:\OpenText\EductionGrammars_25.4.0_COMMON\pii\edk_samples\resources\pii_address`
   
 ## What's in the box?
 
-The PII Package includes Eduction Grammar files, pre-filters, post-processing scripts (*e.g.* checksum & additional validation, output & score normalization and filtering) for certain entities.
+The PII Package includes Named Entity Recognition Grammar files, pre-filters, post-processing scripts (*e.g.* checksum & additional validation, output & score normalization and filtering) for certain entities.
 
 ### Available grammar files
 
-To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_25.1.0_COMMON\pii`.  The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pii_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
+To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_25.4.0_COMMON\pii`.  The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pii_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
 
-As of 25.1.0 release, address detection is supported for 47 countries:
+As of 25.4.0 release, address detection is supported for 47 countries:
 
 ![address_grammars](./figs/address_grammars.png)
 
@@ -66,18 +66,18 @@ In the above screenshots, note the multiple rows defining address entity support
 
 The naming structure can be explained with a few examples:
 
-1. `pii/address/*` (where `*` can be replaced by an [ISO 3166-1 alpha-2 country code](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/Content/PII/PII_CountryLanguage.htm) - match full and/or partial postal addresses.
+1. `pii/address/*` (where `*` can be replaced by an [ISO 3166-1 alpha-2 country code](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/Content/GrammarReference/country_address.html) - match full and/or partial postal addresses.
 2. `pii/address/postcode/context/*` - match only a postal code (ZIP code) with context, *e.g.* to find a UK postcode in the text "Postcode: CB4 0WZ".
 3. `pii/address/postcode/nocontext/*` - match a postal code without context, *e.g.* to find an Irish postcode in the text "W1B 5TG".
 4. `pii/address/postcode/landmark/*` - match term or terms used to give context for a postal code, *e.g.* the word "Postcode" itself.
 
-For full details of the entities included in the PII Grammar Package, please reference the [Eduction Grammars Users Guide - PII Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/Content/PII/PII_Intro.htm).
+For full details of the entities included in the PII Grammar Package, please reference the [Named Entity Recognition Grammars Users Guide - PII Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/Content/PII/PII_Intro.htm).
 
 > NOTE: The PII Package is backwards-compatible with the GDPR package. You can continue to use, *e.g.* the entity named `gdpr/address/at` in existing configurations, which is similar to the latest `pii/address/at` entity.
 
 For address component entities, like postal codes, and other entities available with both "context" and "nocontext" options, consider that the "nocontext" version might over-match significantly (*i.e.*, we are likely to return values that are similar to the entity patterns, such a number that is not a postal code). However, not relying on context also reduces the number of false negatives (*i.e.*, we miss fewer matches).
 
-> NOTE: You can configure Eduction to use either versions of an entity, in which case matches located with context are given a higher score in the results.
+> NOTE: You can configure Named Entity Recognition to use either versions of an entity, in which case matches located with context are given a higher score in the results.
 
 ## Address matching
 
@@ -86,8 +86,8 @@ Let's try this out now to see what information is returned from a match postal a
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionGrammars_25.1.0_COMMON\pii\edk_samples\resources
-> edktool.exe extract -l ..\..\..\..\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat -c pii_address\config\address.cfg -i pii_address\input\input.txt
+> cd C:\OpenText\EductionGrammars_25.4.0_COMMON\pii\edk_samples\resources
+> edktool.exe extract -l ..\..\..\..\EductionSDK_25.4.0_WINDOWS_X86_64\licensekey.dat -c pii_address\config\address.cfg -i pii_address\input\input.txt
 ```
 
 The resulting match is found in the line "John Smith lives at 742 Evergreen Terrace, Cambridge CB4 0WZ, United Kingdom.":
@@ -113,9 +113,9 @@ The resulting match is found in the line "John Smith lives at 742 Evergreen Terr
 
 > NOTE: This match is found with a score of `1` (on a scale of `0` to `1`) due to the presence of all expected parts of an address in the United Kingdom. The match also includes sub-fields detailing each component of the address and normalized output.
 
-> NOTE: The overall processing time includes both the Eduction engine initialization time and input file processing time.  It's recommended and typical to persist the Eduction engine across documents so as incur engine initialization time once.
+> NOTE: The overall processing time includes both the Named Entity Recognition engine initialization time and input file processing time.  It's recommended and typical to persist the Named Entity Recognition engine across documents so as incur engine initialization time once.
 
-We could also choose to look only for a post code, as discussed above.  To do so, make the following edit to `pii\edk_samples\resources\test\config\address.cfg`, then re-run.
+We could also choose to look only for a post code, as discussed above.  To do so, make the following edit to `pii_address\config\address.cfg`, then re-run.
 
 ```diff
 [Eduction]
@@ -140,7 +140,7 @@ The resulting match is found in the line "His postcode is CB4 0WZ.":
 </MATCHLIST>
 ```
 
-Finally, we can also look for the post code without context.  To do so, make the following edit to `pii\edk_samples\resources\test\config\address.cfg`, then re-run.
+Finally, we can also look for the post code without context.  To do so, make the following edit to `pii_address\config\address.cfg`, then re-run.
 
 ```diff
 [Eduction]
@@ -185,7 +185,7 @@ You should already be familiar with how to run post-processing tasks with Lua sc
 
 Sticking to our current example of postal addresses, take a look at the included `address_stoplist.lua` script, which includes country-specific logic to update scores and address components.  For reference, `address_stoplist.lua` (and the many other helper PII scripts) are automatically invoked by `pii_postprocessing.lua`.
 
-For more details on Lua post-processing, please reference [Eduction User & Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm).
+For more details on Lua post-processing, please reference [Named Entity Recognition User & Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm).
 
 ### Speed optimizations
 
@@ -193,9 +193,9 @@ The PII package contains more to help you optimize performance.  Disabling outpu
 
 #### Pre-filtering
 
-The `pii\prefilter` folder includes configuration to quickly scan large volumes of text with simpler rules to allow you to target particular sections for full Eduction processing.
+The `pii\prefilter` folder includes configuration to quickly scan large volumes of text with simpler rules to allow you to target particular sections for full Named Entity Recognition processing.
 
-A first attempt to prefilter for addresses, for example, could be to use the `generic_numeric.cfg` file:
+A first attempt to prefilter for addresses, for example, could be to use the `general_numeric.cfg` file:
 
 ```ini
 [Eduction]
@@ -210,7 +210,7 @@ WindowCharsBeforeMatch=100
 WindowCharsAfterMatch=100
 ```
 
-This defines a config snippet that we could incorporate into any run-time Eduction configuration file.
+This defines a config snippet that we could incorporate into any run-time Named Entity Recognition configuration file.
 
 This pre-filter could significantly reduce the amount of text to process by only keeping sections within 100 characters either side of a matched sequence of numbers.  Those numbers are quickly found with the regex expression `\d`.
 
@@ -220,16 +220,16 @@ For addresses, the PII package includes much more sophisticated pre-filtering sc
 - `address_cjkvt_prefilter.cfg`, and
 - `address_fast_prefilter.cfg`.
 
-For more details on pre-filtering, please reference [Eduction User and Programming Guide - Pre-Filter Tasks](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/PreFiltering/PreFiltering.htm).
+For more details on pre-filtering, please reference [Named Entity Recognition User and Programming Guide - Pre-Filter Tasks](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/PreFiltering/PreFiltering.htm).
 
 ## Conclusion
 
-You now understand how to explore, use and optimize Eduction's PII grammar package.  Other grammars and entities within the PII package will look and behave similarly to `address.ecr`.
+You now understand how to explore, use and optimize Named Entity Recognition's PII grammar package.  Other grammars and entities within the PII package will look and behave similarly to `address.ecr`.
 
-Next, why not try more tutorials to explore some of the other features available in Eduction, linked from [here](../eduction/README.md#capability-showcase).
+Next, why not try more tutorials to explore some of the other features available in Named Entity Recognition, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
-- [Eduction Grammars Users Guide - PII Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/Content/PII/PII_Intro.htm)
-- [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/)
-- [Knowledge Discovery Release Notes - Eduction](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Named Entity Recognition Grammars Users Guide - PII Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/Content/PII/PII_Intro.htm)
+- [Named Entity Recognition User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
+- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/Eduction.htm)

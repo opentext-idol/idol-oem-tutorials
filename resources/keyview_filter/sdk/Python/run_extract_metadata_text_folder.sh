@@ -1,6 +1,6 @@
 #/bin/sh
 
-VERSION=25.1.0
+VERSION=25.4.0
 PLATFORM=LINUX_X86_64
 
 KEYVIEW_FILTERSDK_HOME=/opt/OpenText/KeyviewFilterSDK_${VERSION}_${PLATFORM}
@@ -10,6 +10,8 @@ IDOL_OEM_TUTORIALS_HOME=/opt/OpenText/idol-oem-tutorials
 KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH=${KEYVIEW_FILTERSDK_HOME}/licensekey.dat
 export KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH
 
+PYTHON_EXE=python
+
 STARTING_DIR=${IDOL_OEM_TUTORIALS_HOME}/resources/keyview_filter
 
 OUTPUT_ROOT_PATH=${IDOL_OEM_TUTORIALS_HOME}/_WORK/output
@@ -17,4 +19,4 @@ mkdir ${OUTPUT_ROOT_PATH}
 
 LOG=extract_metadata_text_folder.LOG
 
-python3 extract_metadata_text_folder.py "${KEYVIEW_FILTERSDK_HOME}/${PLATFORM}/bin" "${STARTING_DIR}" "${OUTPUT_ROOT_PATH}" > ${LOG}
+${PYTHON_EXE} extract_metadata_text_folder.py "${KEYVIEW_FILTERSDK_HOME}/${PLATFORM}/bin" "${STARTING_DIR}" "${OUTPUT_ROOT_PATH}" > ${LOG}

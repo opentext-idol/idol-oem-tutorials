@@ -3,11 +3,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LocalDebuggerCommandArguments>localhost 7000 REPLACE_WITH_IDENTIFIERS_CSV .\collect</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_25.1.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_25.4.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LocalDebuggerCommandArguments>localhost 7000 REPLACE_WITH_IDENTIFIERS_CSV REPLACE_WITH_DESTINATION_FOLDER</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_25.1.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>..\..\..\..\..\..\IDOLCSDK_25.4.0_WINDOWS_X86_64</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>

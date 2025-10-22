@@ -1,13 +1,13 @@
-# Use PHI Eduction grammars
+# Use PHI Named Entity Recognition grammars
 
-The Eduction PHI Package contains tools that allow you to locate Protected Healthcare Information in your data, to help you comply with regulations in the U.S. Health Insurance Portability and Accountability Act (HIPAA).
+The Named Entity Recognition PHI Package contains tools that allow you to locate Protected Healthcare Information in your data, to help you comply with regulations in the U.S. Health Insurance Portability and Accountability Act (HIPAA).
 
 In this lesson, you will:
 
 - Explore and use the out-of-the-box PHI grammars.
 - Gain deeper understanding of engine configuration file options.
 
-> NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](./introduction.md#introduction-to-eduction).
+> NOTE: This guide assumes you have already completed the introductory Named Entity Recognition [tutorial](./introduction.md).
 
 ---
 
@@ -26,7 +26,7 @@ In this lesson, you will:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#introduction-to-eduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
+> NOTE: This lesson assumes you have already completed the [Named Entity Recognition SDK introduction](../eduction/introduction.md) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Named Entity Recognition concepts.
 
 > NOTE: In the `EductionGrammars_23.2_COMMON.zip`, the `phi\scripts\validation_scripts.lua` needs a correction as noted below:
 
@@ -38,15 +38,15 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PHI edk_samples](../../resources/eduction/phi/edk_samples) and install to `C:\OpenText\EductionGrammars_25.1.0_COMMON\phi\edk_samples\resources`
+- [PHI edk_samples](../../resources/eduction/phi/edk_samples) and install to `C:\OpenText\EductionGrammars_25.4.0_COMMON\phi\edk_samples\resources`
 
 ## What's in the Box?
 
-The Eduction PHI Package includes Eduction Grammar files, post-processing scripts (*e.g.* checksum & additional validation, output & score normalization and filtering) for certain entities.
+The Named Entity Recognition PHI Package includes Named Entity Recognition Grammar files, post-processing scripts (*e.g.* checksum & additional validation, output & score normalization and filtering) for certain entities.
 
 ### Available Grammar Files
 
-To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_25.1.0_COMMON\phi`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `phi_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
+To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_25.4.0_COMMON\phi`. The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `phi_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
 
 There is some apparent overlap with some of the grammars & entities in the PII Package.  The primary difference excluding the net new grammars (*e.g.* * `age.ecr, dea.ecr, device.ecr` and others) and entities available in the PHI Package is that the PHI grammars are focused on the United States.
 
@@ -56,24 +56,24 @@ The PHI grammar files provide entities of the "context", "nocontext" and "landma
 
 For the PHI date entities, like `phi/date/dob/*`, "context", "nocontext" and "landmark" options are available in order to match the recall and precision goals to the use case. Consider that the "nocontext" version might over-match significantly (*i.e.*, we are likely to return values that are similar to the entity patterns, such as a last updated date).
 
-For full details of the entities included in the PHI Grammar Package, please reference the [Eduction Grammars Users Guide - PHI Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/Content/PHI/PHI_Intro.htm).
+For full details of the entities included in the PHI Grammar Package, please reference the [Named Entity Recognition Grammars Users Guide - PHI Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/Content/PHI/PHI_Intro.htm).
 
-> NOTE: You can configure Eduction to use either versions of an entity, in which case matches located with context are given a higher score in the results.
+> NOTE: You can configure Named Entity Recognition to use either versions of an entity, in which case matches located with context are given a higher score in the results.
 
 ## Run PHI All Example Matching
 
-In the setup, you deployed edk_samples resources.  It contains resources to be used with the Eduction APIs and edktool: `phi\edk_samples\resources\phi_all\config\phi_all.cfg`.
+In the setup, you deployed edk_samples resources.  It contains resources to be used with the Named Entity Recognition SDK APIs and edktool: `phi\edk_samples\resources\phi_all\config\phi_all.cfg`.
 
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionGrammars_25.1.0_COMMON\phi\edk_samples\resources
-> edktool.exe extract -l ..\..\..\..\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat -c phi_all\config\phi_all.cfg -i phi_all\input\input.txt -o out.xml
+> cd C:\OpenText\EductionGrammars_25.4.0_COMMON\phi\edk_samples\resources
+> edktool.exe extract -l ..\..\..\..\EductionSDK_25.4.0_WINDOWS_X86_64\licensekey.dat -c phi_all\config\phi_all.cfg -i phi_all\input\input.txt -o out.xml
 ```
 
 The `phi_all.cfg` configuration and `input.txt` represent all available entity categories in the `PHI Package`, but does intentional select "nocontext" vs "context" for particular entity categories.  In some cases both entity forms are enabled - *e.g.* `Entity21 = phi/inet/ip/*context` using a simple wildcard expression `*`.
 
-The `phi_all.cfg` also enables [AllowOverlaps](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm). This allows for multiple entities to match part of (or the entirety of) the same input text.  An example of this in the `phi_all\input\input.txt` is:
+The `phi_all.cfg` also enables [AllowOverlaps](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm). This allows for multiple entities to match part of (or the entirety of) the same input text.  An example of this in the `phi_all\input\input.txt` is:
 ```
 email: jsmith@mailserver.com
 ```
@@ -143,12 +143,12 @@ For `phi/id/nocontext/us`, only the match `534-33-4394` is produced due to the `
 
 ## Conclusion
 
-You now understand how to explore and use the Eduction's PHI grammars, how wildcard expressions can be used in the Eduction engine configuration and also the impact of the `AllowOverlaps` setting.
+You now understand how to explore and use the Named Entity Recognition's PHI grammars, how wildcard expressions can be used in the Named Entity Recognition engine configuration and also the impact of the `AllowOverlaps` setting.
 
-Next, why not try more tutorials to explore some of the other features available in Eduction, linked from [here](../eduction/README.md#capability-showcase).
+Next, why not try more tutorials to explore some of the other features available in Named Entity Recognition, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
-- [Eduction Grammars- Users Guide - PHI Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/Content/PHI/PHI_Intro.htm)
-- [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/)
-- [Knowledge Discovery Release Notes - Eduction](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Named Entity Recognition Grammars- Users Guide - PHI Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/Content/PHI/PHI_Intro.htm)
+- [Named Entity Recognition User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
+- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/Eduction.htm)

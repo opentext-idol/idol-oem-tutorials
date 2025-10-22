@@ -6,7 +6,7 @@ Edit tutorial.h to modify YOUR_LICENSE_KEY and YOUR_BIN_DIR.
 
 § Linking against the Filter SDK
 
-Example compilation commands. Be sure you set KEYVIEW_HOME environment variable with the installation location (e.g. C:\OpenText\KeyviewFilterSDK-25.1.0):
+Example compilation commands. Be sure you set KEYVIEW_HOME environment variable with the installation location (e.g. C:\OpenText\KeyviewFilterSDK-25.4.0):
 
     gcc -I$KEYVIEW_HOME/include -o tutorial_file tutorial_file.c -ldl $KEYVIEW_HOME/LINUX_X86_64/bin/kvfilter.so -Wl,-rpath,'$ORIGIN'
     

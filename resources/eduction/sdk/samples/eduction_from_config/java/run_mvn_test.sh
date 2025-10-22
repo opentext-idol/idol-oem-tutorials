@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=25.1.0
+VERSION=25.4.0
 PLATFORM=LINUX_X86_64
 
 EDK_HOME=/opt/OpenText/EductionSDK_${VERSION}_${PLATFORM}

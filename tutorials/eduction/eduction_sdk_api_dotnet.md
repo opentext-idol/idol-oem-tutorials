@@ -1,17 +1,17 @@
-# Eduction SDK .NET API
+# Named Entity Recognition SDK .NET API
 
-The Eduction SDK is designed to be embedded into other services. To facilitate embedding, the Eduction SDK has APIs for C, Java and .NET.  In addition, the Eduction SDK runs natively on the following platforms: Windows (x86_64, x86_32 and ARM_64), Linux (x86_64 and ARM_64) and MacOS (x86_64 and Apple M*).
+The Named Entity Recognition SDK is designed to be embedded into other services. To facilitate embedding, the Named Entity Recognition SDK has APIs for C, Java and .NET.  In addition, the Named Entity Recognition SDK runs natively on the following platforms: Windows (x86_64, x86_32 and ARM_64), Linux (x86_64 and ARM_64) and MacOS (x86_64 and Apple M*).
 
 In this lesson, you will:
 
-- use the Eduction SDK .NET API to perform extraction using a configuration file
-- use the Eduction SDK .NET API to compile a grammar XML into an ECR
+- use the Named Entity Recognition SDK .NET API to perform extraction using a configuration file
+- use the Named Entity Recognition SDK .NET API to compile a grammar XML into an ECR
 
-The [Eduction User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/EductionSDK/APIReference/DotNet_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
+The [Named Entity Recognition User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/EductionSDK/APIReference/DotNet_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
 
-> NOTE: This lesson only covers the Eduction SDK APIs and does not cover Eduction Server. See [here](./README.md#use-eduction-server) for a lesson on Eduction Server.
+> NOTE: This lesson only covers the Named Entity Recognition SDK APIs and does not cover Named Entity Recognition Server. See [here](./README.md#use-named-entity-recognition-server) for a lesson on Named Entity Recognition Server.
 
-> NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](../eduction/introduction.md#introduction-to-eduction).
+> NOTE: This guide assumes you have already completed the introductory Named Entity Recognition [tutorial](../eduction/introduction.md).
 
 ---
 
@@ -37,13 +37,17 @@ The [Eduction User and Programming Guide](https://www.microfocus.com/documentati
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Refer to `README.md` in the `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
+Refer to `README.md` in the `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
 
-> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#introduction-to-eduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
+> NOTE: This lesson assumes you have already completed the [Named Entity Recognition SDK introduction](../eduction/introduction.md) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Named Entity Recognition concepts.
 
 ### License and Version key dat files
 
-Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home directory (*e.g.* `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64`).
+Deploy the `licensekey.dat` and `versionkey.dat` files to the EductionSDK home directory (*e.g.* `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64`).
+
+![vs_2022_dotnet_licensekey_path](./figs/vs_2022_dotnet_licensekey_path.png)
+
+![vs_2022_dotnet_versionkey_path](./figs/vs_2022_dotnet_versionkey_path.png)
 
 ### Resources
 
@@ -51,9 +55,9 @@ There are no provided resources for this lesson.
 
 ### Environment and Compilers
 
-- Refer to the `System Requirements` section of the [Getting Started Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLServer_25.1_Documentation/Guides/html/gettingstarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
-- Refer to [Eduction User & Programming Guide - Deploy Eduction SDK - .NET API Component](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/DotNet_API.htm) for API and platform specific software dependencies.
-- The `README.md` in `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
+- Refer to the `System Requirements` section of the [Getting Started Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLServer_25.4_Documentation/Guides/html/gettingstarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
+- Refer to [Named Entity Recognition User & Programming Guide - Deploy Named Entity Recognition SDK - .NET API Component](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/DotNet_API.htm) for API and platform specific software dependencies.
+- The `README.md` in `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
 
 > HINT: For example, if you use Visual Studio Community 2022 in Windows 11, installed from <https://visualstudio.microsoft.com/downloads/>, run the Visual Studio Installer and ensure you have the ".NET Core 2.1 Runtime" component installed:
 >
@@ -61,7 +65,7 @@ There are no provided resources for this lesson.
 
 ## API Documentation
 
-API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\` as noted below:
+API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\` as noted below:
 
 - .NET - `dotnet_api\help\index.html`
 
@@ -74,11 +78,11 @@ Example programs (with resources) ship with the `EductionSDK_<VERSION>_<PLATFORM
 
 ### `eduction_from_config`
 
-The `eduction_from_config` sample program accepts a configuration file as you've been using in the other Eduction lessons, an UTF-8 text file, a path to the output JSON file and some optional arguments to override the configuration.
+The `eduction_from_config` sample program accepts a configuration file as you've been using in the other Named Entity Recognition lessons, an UTF-8 text file, a path to the output JSON file and some optional arguments to override the configuration.
 
 #### Sample `eduction_from_config` code
 
-The C# sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\eduction_from_config\dotnet`.
+The C# sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\dotnet`.
 
 Double-click on the `eduction_from_config.csproj` to open the sample code, *e.g.* in Visual Studio 2022.
 
@@ -101,7 +105,7 @@ Let's provide the required input options and run in debug mode again.
 - Click the debug properties menu option to open the "Launch Profiles" window:
     ![vs_2022_dotnet_debug_props_menu](./figs/vs_2022_dotnet_debug_props_menu.png)
 
-    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test`.
+    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test`.
 
 - In the "Command line arguments" input box, enter the following three paths (separated onto new lines):
 
@@ -114,7 +118,7 @@ Let's provide the required input options and run in debug mode again.
 - In the "Working directory" input box, enter the following path:
 
     ```sh
-    C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\eduction_from_config\dotnet
+    C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\dotnet
     ```
 
     ![vs_2022_dotnet_debug_props_cmd](./figs/vs_2022_dotnet_debug_props_cmd.png)
@@ -125,7 +129,7 @@ Let's provide the required input options and run in debug mode again.
   
     ![vs_2022_dotnet_debug_run2](./figs/vs_2022_dotnet_debug_run2.png)
 
-This time the program should run and produce an output file `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\test_output_dotnet.json` containing two matches, as follows:
+This time the program should run and produce an output file `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\test_output_dotnet.json` containing two matches, as follows:
 
 ```json
 {
@@ -194,21 +198,21 @@ This time the program should run and produce an output file `C:\OpenText\Eductio
 }
 ```
 
-For extra credit, try `eduction_from_config` on other Eduction configurations, insuring that configuration file paths are correct.
+For extra credit, try `eduction_from_config` on other Named Entity Recognition configurations, insuring that configuration file paths are correct.
 
-Review the `eduction_from_config` C# source code to gain more insights into how to incorporate the Eduction SDK .NET API into your application.
+Review the `eduction_from_config` C# source code to gain more insights into how to incorporate the Named Entity Recognition SDK .NET API into your application.
 
 ### `compile`
 
-In some use cases for Eduction, custom grammars either for net-new entities and/or extending the entities in the licensed grammar packs.
+In some use cases for Named Entity Recognition, custom grammars either for net-new entities and/or extending the entities in the licensed grammar packs.
 
-> NOTE: While the Eduction SDK engine does support XML based resource files, pre-compiling them into ECRs is recommended.
+> NOTE: While the Named Entity Recognition SDK engine does support XML based resource files, pre-compiling them into ECRs is recommended.
 
 The `compile` sample program accepts a grammar XML and output ECR.
 
 #### Sample `compile` code
 
-The C# sample `compile` application code lives in: `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\compile\dotnet`.
+The C# sample `compile` application code lives in: `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\compile\dotnet`.
 
 Double-click on the `compile.csproj` to open the sample code, *e.g.* in Visual Studio 2022.
 
@@ -220,7 +224,7 @@ Double-click on the `compile.csproj` to open the sample code, *e.g.* in Visual S
 
 - Click the debug properties menu option to open the "Launch Profiles" window:
   
-    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\compile\resources\test`.
+    > NOTE: This sample application comes with a resources folder containing test files, which we will use, located *e.g.* at `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\compile\resources\test`.
 
 - In the "Command line arguments" input box, enter the following three paths (separated onto new lines):
 
@@ -232,7 +236,7 @@ Double-click on the `compile.csproj` to open the sample code, *e.g.* in Visual S
 - In the "Working directory" input box, enter the following path:
 
     ```sh
-    C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\compile\dotnet
+    C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\compile\dotnet
     ```
 
     ![vs_2022_dotnet_debug_props_cmd2](./figs/vs_2022_dotnet_debug_props_cmd2.png)
@@ -241,19 +245,19 @@ Double-click on the `compile.csproj` to open the sample code, *e.g.* in Visual S
   
 - In the top menu bar, click the green play icon to build and run the project in debug mode.
 
-The program should run and produce a compiled grammar file `C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\compile\resources\test\test_dotnet.ecr`.
+The program should run and produce a compiled grammar file `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\compile\resources\test\test_dotnet.ecr`.
 
 ```sh
 > edktool list "..\resources\test\test_dotnet.ecr"
 
-Eduction EDKTool Utility v25.1.0
+Eduction EDKTool Utility v25.4.0
 Loading resource file:
 ..\resources\test\test_dotnet.ecr
 
 
 Grammar version:        4.0
 
-Compiled using Edktool: 25.1.0
+Compiled using Edktool: 25.4.0
 
 Listing entities:
 test/two_words
@@ -261,21 +265,21 @@ test/two_words
 0.289 seconds elapsed
 ```
 
-For extra credit, try `compile` on other Eduction grammar XML.
+For extra credit, try `compile` on other Named Entity Recognition grammar XML.
 
-Review the `compile` C# source code to gain more insights into how to incorporate the Eduction SDK .NET API into your application.
+Review the `compile` C# source code to gain more insights into how to incorporate the Named Entity Recognition SDK .NET API into your application.
 
 ## Conclusion
 
-You now understand the basics of the Eduction SDK .NET API.
+You now understand the basics of the Named Entity Recognition SDK .NET API.
 
 As extra credit, build and run the other sample programs in `EductionSDK_<VERSION>_<PLATFORM>\samples` and `EductionGrammars_<VERSION>_COMMON\pii\edk_samples`.  Refer to the changes in these resources and leverage the build tools & tips.
 
-Next, why not try more tutorials to explore some of the other features available in Eduction, linked from [here](../eduction/README.md#capability-showcase).
+Next, why not try more tutorials to explore some of the other features available in Named Entity Recognition, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
-- [Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/)
-- [Eduction Server User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionServer_25.1_Documentation/Help/Content/_ACI_Welcome.htm)
-- [Eduction Grammars User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionGrammars_25.1_Documentation/Help/)
-- [Knowledge Discovery Release Notes - Eduction](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
+- [Named Entity Recognition Server User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionServer_25.4_Documentation/Help/Content/_ACI_Welcome.htm)
+- [Named Entity Recognition Grammars User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/)
+- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/Eduction.htm)

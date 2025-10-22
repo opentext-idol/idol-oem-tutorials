@@ -8,6 +8,7 @@ Below are links to lessons, which will take you through an introduction to Expor
 
 - [Introduction](#introduction)
 - [Capability showcase](#capability-showcase)
+  - [XML Export](#xml-export)
 - [Use the Export SDK](#use-the-export-sdk)
 - [See also](#see-also)
 
@@ -25,7 +26,11 @@ Do more with the Export SDK.
 
 > NOTE: This guide assumes you have already completed the introductory Export SDK lesson above.
 
-> COMING SOON!
+### XML Export
+
+Advanced use of XML Export.
+
+[Get started](./xml_export.md).
 
 ## Use the Export SDK
 
@@ -37,9 +42,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [HTML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewExportSDK_25.1_Documentation/Guides/html/html-export-c/index.html)
-- [HTML Export SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewExportSDK_25.1_Documentation/Guides/html/html-export-java/index.html)
-- [XML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewExportSDK_25.1_Documentation/Guides/html/xml-export-c/index.html)
-- [XML Export SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewExportSDK_25.1_Documentation/Guides/html/xml-export-java/)
-- [PDF Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewExportSDK_25.1_Documentation/Guides/html/pdf-export-c/index.html)
-- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/Content/_KeyView.htm)
+- [HTML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewExportSDK_25.4_Documentation/Guides/html/html-export-c/index.html)
+- [HTML Export SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewExportSDK_25.4_Documentation/Guides/html/html-export-java/index.html)
+- [XML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewExportSDK_25.4_Documentation/Guides/html/xml-export-c/index.html)
+- [XML Export SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewExportSDK_25.4_Documentation/Guides/html/xml-export-java/)
+- [PDF Export SDK [C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewExportSDK_25.4_Documentation/Guides/html/pdf-export-c/index.html)
+- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/Content/_KeyView.htm)

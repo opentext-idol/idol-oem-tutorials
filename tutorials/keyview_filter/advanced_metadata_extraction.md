@@ -40,24 +40,24 @@ Be sure to download the following resources before you continue:
 
 XMP stands for [Extensible Metadata Platform](https://en.wikipedia.org/wiki/Extensible_Metadata_Platform). PDF, image, audio and video files are the typical format categories that may contain XMP metadata.
 
-Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetMetadataList.htm) for more details about Filter SDK's support for XMP metadata.
+Refer to the [Keyview Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/C/filtering_functions/fpGetMetadataList.htm) for more details about Filter SDK's support for XMP metadata.
 
 ### Perform XMP metadata extraction
 
 ```sh
-> cd KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filter -m "..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_HAS_XMP.png" xmp
-WARNING: filter is a sample program only and is not for production use
-filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_HAS_XMP.png to xmp
+> cd KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filtertest -m "..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_HAS_XMP.png" xmp
+WARNING: filtertest is a sample program only and is not for production use
+filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_HAS_XMP.png to xmp
 Return code is 0
-filter: error code returned is KVERR_Success
+filtertest finished with RC: 0
 ```
 
-> NOTE: The `KVERR_Success` error code is a positive result where the destination `xmp` file contains the output. Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
+> NOTE: A return code of `0` is a positive result. Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
 
-`filter -m` extracts standard, custom and XMP metadata.
+`filtertest -m` extracts standard, custom and XMP metadata.
 
-Try `filter -m` with your own test files. Good luck!
+Try `filtertest -m` with your own test files. Good luck!
 
 ## Document Restrictions
 
@@ -67,19 +67,17 @@ Some applications, and corresponding file formats, allow users to restrict the w
 
 The document `Robin Zupanc Resume_RESTRICTED.docx` included in this tutorial's resources was created using this [Microsoft.com knowledge article](https://support.microsoft.com/en-us/office/make-a-document-read-only-in-word-5c25909c-46d9-4eb0-9d1f-d072a560e340) as guidance.
 
-Reference the Keyview documentation on [Document Restrictions](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/filter/DocumentRestrictions.htm) for more details like supported formats.
-
-The `filtertest` utility will be used for this lesson.  `filtertest` works similarly to `filter` with a few additional options.
+Reference the Keyview documentation on [Document Restrictions](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/filter/DocumentRestrictions.htm) for more details like supported formats.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filtertest -restrictions "..\..\..\idol-oem-tutorials\resources\keyview_filter\Robin Zupanc Resume_RESTRICTED.docx" restrictions
 WARNING: filtertest is a sample program only and is not for production use
 Return code is 0
 filtertest finished with RC: 0
 ```
 
-> NOTE: `RC: 0` is a positive result equivalent to `KVERR_Success` where the destination `restrictions` file contains the output. Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
+> NOTE: A return code of `0` is a positive result. The destination `restrictions` file contains the output.
 
 ```sh
 > type restrictions
@@ -96,9 +94,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/index.html)
-- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/cpp-programming/index.html)
-- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/java-programming/index.html)
-- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/dotnet-programming/index.html)
-- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/python-programming/)
-- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/python-programming/)
+- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/Content/_KeyView.htm)

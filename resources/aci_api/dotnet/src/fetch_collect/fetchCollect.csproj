@@ -12,10 +12,10 @@
 
   <ItemGroup>
     <Reference Include="acinet">
-      <HintPath>..\..\..\..\..\..\IDOLDotNetSDK_25.1.0_WINDOWS_X86_64\acinet.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\IDOLDotNetSDK_25.4.0_WINDOWS_X86_64\acinet.dll</HintPath>
     </Reference>
     <Reference Include="Autonomy">
-      <HintPath>..\..\..\..\..\..\IDOLDotNetSDK_25.1.0_WINDOWS_X86_64\Autonomy.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\IDOLDotNetSDK_25.4.0_WINDOWS_X86_64\Autonomy.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -78,7 +78,7 @@ class FilterPool implements AutoCloseable
 		filter.setPDFLogicalOrder(Filter.PDF_LOGICAL_ORDER_AUTO);
 
 		// These options cause Filter to output tabular data in a format that
-		// Eduction can understand
+		// Named Entity Recognition can understand
 		filter.setOutputTableDelimiters(true);
 		filter.setTabDelimited(true);
 		return filter;

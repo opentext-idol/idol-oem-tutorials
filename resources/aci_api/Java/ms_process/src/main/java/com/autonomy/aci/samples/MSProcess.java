@@ -11,8 +11,9 @@ import com.autonomy.aci.client.transport.InputStreamActionParameter;
 import com.autonomy.aci.client.transport.impl.AciHttpClientImpl;
 import com.autonomy.aci.client.transport.impl.BteaEncryptionCodec;
 import com.autonomy.aci.client.util.ActionParameters;
-import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.w3c.dom.Document;
+\
 import java.io.StringWriter;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -166,9 +167,9 @@ public class MSProcess {
 				aciServerDetails.setEncryptionCodec(encryptionCodec);				
 			}
 
-			AciHttpClientImpl aciHttpClientImpl = new AciHttpClientImpl(HttpClientBuilder.create().build());
-			aciHttpClientImpl.setUsePostMethod(true);
-			aciService = new AciServiceImpl(aciHttpClientImpl, aciServerDetails);			
+			AciHttpClientImpl aciHttpClient = new AciHttpClientImpl(HttpClients.createDefault());
+			aciHttpClient.setUsePostMethod(true);
+			aciService = new AciServiceImpl(aciHttpClient, aciServerDetails);			
 		} catch(Exception e) {
 			LOG.severe("Unable to set up AciService.\n");
 			throw e;

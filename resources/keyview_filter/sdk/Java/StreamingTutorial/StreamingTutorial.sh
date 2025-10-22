@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set VERSION=25.1.0
+set VERSION=25.4.0
 set PLATFORM=LINUX_X86_64
 
 KEYVIEW_BIN_FOLDER=/opt/OpenText/KeyviewFilterSDK_${VERSION}_${PLATFORM}/${PLATFORM}/bin

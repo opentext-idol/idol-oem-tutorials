@@ -1,4 +1,4 @@
-set VERSION=25.1.0
+set VERSION=25.4.0
 set PLATFORM=WINDOWS_X86_64
 
 set KEYVIEW_FILTERSDK_HOME=C:\OpenText\KeyViewFilterSDK_%VERSION%_%PLATFORM%
@@ -6,6 +6,8 @@ set KEYVIEW_EXPORTSDK_HOME=C:\OpenText\KeyViewExportSDK_%VERSION%_%PLATFORM%
 set IDOL_OEM_TUTORIALS_HOME=C:\OpenText\idol-oem-tutorials
 
 set KV_SAMPLE_PROGRAM_LICENSE_FROM_FILEPATH=%KEYVIEW_FILTERSDK_HOME%\licensekey.dat
+
+set PYTHON_EXE=python
 
 set INPUT_FILEPATH=%KEYVIEW_FILTERSDK_HOME%\javaapi\KeyView.jar
 rem set INPUT_FILEPATH=%IDOL_OEM_TUTORIALS_HOME%\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx
@@ -26,4 +28,4 @@ set LOG=extract_sub_files.LOG
 set RECURSE=--recurse
 rem set RECURSE=
 
-python extract_sub_files.py "%KEYVIEW_FILTERSDK_HOME%\%PLATFORM%\bin" "%INPUT_FILEPATH%" "%OUTPUT_ROOT_PATH%" %RECURSE% > %LOG%
+%PYTHON_EXE% extract_sub_files.py "%KEYVIEW_FILTERSDK_HOME%\%PLATFORM%\bin" "%INPUT_FILEPATH%" "%OUTPUT_ROOT_PATH%" %RECURSE% > %LOG%

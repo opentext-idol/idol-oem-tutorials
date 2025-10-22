@@ -1,8 +1,8 @@
 # Extract Table Oriented Data
 
-Eduction has a mode called `Table mode` that makes Eduction aware of columns and column headings.  Spreadsheet and CSV files are examples of data that represent data in rows and columns, typically with column headings.  With Eduction `Table mode`, matching will be able to differentiate between say a `date of birth` and `last updated date` because of the column heading.
+Named Entity Recognition has a mode called `Table mode` that makes Named Entity Recognition aware of columns and column headings.  Spreadsheet and CSV files are examples of data that represent data in rows and columns, typically with column headings.  With Named Entity Recognition `Table mode`, matching will be able to differentiate between say a `date of birth` and `last updated date` because of the column heading.
 
-For more details on this topic, reference the [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) section of the Eduction User and Programming Guide.
+For more details on this topic, reference the [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) section of the Named Entity Recognition User and Programming Guide.
 
 In this lesson, you will:
 
@@ -10,7 +10,7 @@ In this lesson, you will:
 - Explore the input resources and output results for the table extraction sample.
 - Optionally experiment with changes to `input.csv` and see if/how output changes.
 
-> NOTE: This guide assumes you have already completed the introductory Eduction [tutorial](./introduction.md#introduction-to-eduction).
+> NOTE: This guide assumes you have already completed the introductory Named Entity Recognition [tutorial](./introduction.md).
 
 ---
 
@@ -32,21 +32,21 @@ In this lesson, you will:
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-> NOTE: This lesson assumes you have already completed the [Eduction SDK introduction](../eduction/introduction.md#introduction-to-eduction) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Eduction concepts.
+> NOTE: This lesson assumes you have already completed the [Named Entity Recognition SDK introduction](../eduction/introduction.md) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Named Entity Recognition concepts.
 
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PII edk_samples](../../resources/eduction/pii/edk_samples) and install to `C:\OpenText\EductionGrammars_25.1.0_COMMON\pii\edk_samples\resources`
+- [PII edk_samples](../../resources/eduction/pii/edk_samples) and install to `C:\OpenText\EductionGrammars_25.4.0_COMMON\pii\edk_samples\resources`
 
 ## Perform `table mode` extraction
 
-The Eduction SDK contains a working example under `samples\table_extraction`. Since this lesson uses `edktool` to perform the extraction only the `samples\table_extraction\resources` sub-folders are of interest for now.
+The Named Entity Recognition SDK contains a working example under `samples\table_extraction`. Since this lesson uses `edktool` to perform the extraction only the `samples\table_extraction\resources` sub-folders are of interest for now.
 
 Go ahead and perform extract with `edktool` and we'll explore the inputs and output in more detail below.
 
 ```sh
-> cd  C:\OpenText\EductionSDK_25.1.0_WINDOWS_X86_64\samples\table_extraction\resources
+> cd  C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\table_extraction\resources
 > edktool.exe extract -l ..\..\..\licensekey.dat -c test\config\table_config.cfg -i test\input\csv_input.csv -o out.xml
 ```
 
@@ -138,9 +138,9 @@ An additional input file `tsv_input.tsv` is available which illustrates two tabl
 
 ## PII `table mode` example - Basic
 
-In the Eduction SDK documentation section [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) the PII date.ecr is used in the example.  This lesson builds upon the documentation including PII `national_id.ecr` in the configuration and providing sample `input.csv` file.
+In the Named Entity Recognition SDK documentation section [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) the PII date.ecr is used in the example.  This lesson builds upon the documentation including PII `national_id.ecr` in the configuration and providing sample `input.csv` file.
 
-In the [setup](#setup), you downloaded the `pii_table_mode` resources. Two Eduction configuration files are provided:
+In the [setup](#setup), you downloaded the `pii_table_mode` resources. Two Named Entity Recognition configuration files are provided:
 
 - `pii_table_mode.cfg` - enables entities from date.ecr and national_id.ecr
 - `date.cfg` - enables date entities like `pii_table_mode.cfg` but without the `table mode` configuration
@@ -152,10 +152,10 @@ The `input.csv` file has two date columns: "Date of Birth" and "Admission Date" 
 Run `edktool extract` using the same `input.csv` file with each of the `config` folder configurations.
 
 ```sh
-> cd  C:\OpenText\EductionGrammars_25.1.0_COMMON\pii\edk_samples\resources
-> edktool.exe extract -l ..\..\..\..\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\input.csv -o out_table_mode.xml
+> cd  C:\OpenText\EductionGrammars_25.4.0_COMMON\pii\edk_samples\resources
+> edktool.exe extract -l ..\..\..\..\EductionSDK_25.4.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\input.csv -o out_table_mode.xml
 
-> edktool.exe extract -l ..\..\..\..\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\date.cfg -i pii_table_mode\input\input.csv -o out_date.xml
+> edktool.exe extract -l ..\..\..\..\EductionSDK_25.4.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\date.cfg -i pii_table_mode\input\input.csv -o out_date.xml
 ```
 
 You will get the following matches:
@@ -163,43 +163,43 @@ You will get the following matches:
 - `out_date.xml`: 4 total matches with 2 for the dates of birth and 2 for the admission dates.
 - `out_table_mode.xml`: 6 total matches with 2 for the landmarks, 2 for the dates of birth and 2 for the SSNs.
 
-Eduction `table mode` was able to distinguish between the 2 types of dates by keying of the CSV column header. It performed similarly for the U.S. national ID # (SSN).
+Named Entity Recognition `table mode` was able to distinguish between the 2 types of dates by keying of the CSV column header. It performed similarly for the U.S. national ID # (SSN).
 
 ## PII `table mode` example - Advanced
 
-In release 23.3, Eduction improved its smarts when it comes to recognizing table schemas:
+In release 23.3, Named Entity Recognition improved its smarts when it comes to recognizing table schemas:
 
 1. increased tolerance to when the header row begins and configurable with `MaxSearchHeaderRow`
 2. ability to detect a different schema across spreadsheet sheets
 
 ### Perform PII `table mode` extraction - Advanced
 
-`PII_table.xlsx` can be found in the `pii_table_mode\extras` folder and is available for your reference.  This test file has 3 sheets specifically constructed to exploit advanced Eduction `table mode` features:
+`PII_table.xlsx` can be found in the `pii_table_mode\extras` folder and is available for your reference.  This test file has 3 sheets specifically constructed to exploit advanced Named Entity Recognition `table mode` features:
 
 - `1- sensitive data`: empty cells in A4 & B5
 - `2- extra column`: extra column B, shifting sensitive data over
 - `2- extra header`: extra stuff before header row, empty cells in C5 & A6
 
-> NOTE:  Remember Eduction SDK accepts UTF-8 encoded text as its input, so `PII_table.xlsx` must be first processed into a UTF-8 text file.
+> NOTE:  Remember Named Entity Recognition SDK accepts UTF-8 encoded text as its input, so `PII_table.xlsx` must be first processed into a UTF-8 text file.
 
-There are 2 input files in the `pii_table_mode\input` folder which were produced with KeyView Filter SDK 25.1.0 using new settings available in KeyView.
+There are 2 input files in the `pii_table_mode\input` folder which were produced with KeyView Filter SDK 25.4.0 using new settings available in KeyView.
 - `PII_table.xlsx.KV_TEXT_TD+OTD=F.TXT` - output is like previous versions of KeyView with no specific sheet delimiter, nor consistent column delimiters
 - `PII_table.xlsx.KV_TEXT_TD+OTD=T.TXT` - output has the new start / end table delimiters and consistent tabs across empty columns
 
-> NOTE: Refer to the [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) in the 25.1 Eduction SDK documentation for more details. 
+> NOTE: Refer to the [Extract Entities from Tables](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm) in the 25.4 Named Entity Recognition SDK documentation for more details. 
 
 Run `edktool extract` first using `PII_table.xlsx.KV_TEXT_TD+OTD=F.TXT` and then `PII_table.xlsx.KV_TEXT_TD+OTD=T.TXT` with the `pii_table_mode\config\pii_table_mode.cfg`.
 
 ```sh
-> cd  C:\OpenText\EductionGrammars_25.1.0_COMMON\pii\edk_samples\resources
-> edktool.exe extract -l ..\..\..\..\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\PII_table.xlsx.KV_TEXT_TD+OTD=F.TXT -o out_table_mode_F.xml
+> cd  C:\OpenText\EductionGrammars_25.4.0_COMMON\pii\edk_samples\resources
+> edktool.exe extract -l ..\..\..\..\EductionSDK_25.4.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\PII_table.xlsx.KV_TEXT_TD+OTD=F.TXT -o out_table_mode_F.xml
 
-> edktool.exe extract -l ..\..\..\..\EductionSDK_25.1.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\PII_table.xlsx.KV_TEXT_TD+OTD=T.TXT -o out_table_mode_T.xml
+> edktool.exe extract -l ..\..\..\..\EductionSDK_25.4.0_WINDOWS_X86_64\licensekey.dat -c pii_table_mode\config\pii_table_mode.cfg -i pii_table_mode\input\PII_table.xlsx.KV_TEXT_TD+OTD=T.TXT -o out_table_mode_T.xml
 ```
 
 There will be a mix of true positive, false positive and false negative matches across the 3 sheets in the table_mode_F.xml output due to the lack of consistent column delimiters and lack of a sheet delimiter.  In `table_mode_T.xml`, all 3 sheets will produce matches with 3 SSNs and 4 DOBs, plus the 2 column headers on each of the 3 sheets.
 
-As extra credit, user `edktool` to process `PII_table.xlsx.KV_TEXT_TD+OTD+SCF=T.TXT` where it was produced with KeyView Filter SDK's [`Standardize Cell Formats`](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/KeyviewFilterSDK_25.1_Documentation/Guides/html/c-programming/Content/Shared/_KV_Standardize_Cell_Formats.htm) option enabled.
+As extra credit, user `edktool` to process `PII_table.xlsx.KV_TEXT_TD+OTD+SCF=T.TXT` where it was produced with KeyView Filter SDK's [`Standardize Cell Formats`](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/Shared/_KV_Standardize_Cell_Formats.htm) option enabled.
 
 ## Perform PII `table mode` extraction - Extra Credit
 
@@ -208,19 +208,19 @@ With some careful thought, there are some additional scenarios to consider if/ho
 1. additional text before or after the cell value representing the nocontext entity form match
 2. header values do not match defined landmark entity values
 
-For scenario #1, EductionSDK does the right thing for you.  There is nothing extra to configure and/or consider other than tokenization concerns.
+For scenario #1, Named Entity Recognition SDK does the right thing for you.  There is nothing extra to configure and/or consider other than tokenization concerns.
 
-For scenario #2, EductionSDK supports a mixed mode configuration allowing for both header triggered matches and free text matches.  See [Configure Mixed Table and Free Text Entities](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm#Configure-Mixed-) for more details.
+For scenario #2, Named Entity Recognition SDK supports a mixed mode configuration allowing for both header triggered matches and free text matches.  See [Configure Mixed Table and Free Text Entities](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/ImproveMatches/Extract_Table_Data.htm#Configure-Mixed-) for more details.
 
 Feel free to experiment some to convince yourself the behavior is as expected.
 
 ## Conclusion
 
-You now understand the basics and advanced capabilities of Eduction `table mode` and how it can reduce false positives for spreadsheet and CSV type data.  You have also explored a PII/PHI use case for `table mode` with a simple, but still useful configuration.
+You now understand the basics and advanced capabilities of Named Entity Recognition `table mode` and how it can reduce false positives for spreadsheet and CSV type data.  You have also explored a PII/PHI use case for `table mode` with a simple, but still useful configuration.
 
-Next, why not try more tutorials to explore some of the other features available in Eduction, linked from [here](../eduction/README.md#capability-showcase).
+Next, why not try more tutorials to explore some of the other features available in Named Entity Recognition, linked from [here](../eduction/README.md#capability-showcase).
 
 ## See also
 
-- [Eduction SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/EductionSDK_25.1_Documentation/Guides/html/)
-- [Knowledge Discovery Release Notes - Eduction](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.1/IDOLReleaseNotes_25.1_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
+- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/Eduction.htm)

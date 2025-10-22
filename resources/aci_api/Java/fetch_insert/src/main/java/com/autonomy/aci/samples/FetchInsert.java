@@ -11,8 +11,9 @@ import com.autonomy.aci.client.transport.InputStreamActionParameter;
 import com.autonomy.aci.client.transport.impl.AciHttpClientImpl;
 import com.autonomy.aci.client.transport.impl.BteaEncryptionCodec;
 import com.autonomy.aci.client.util.ActionParameters;
-import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.w3c.dom.Document;
+
 import java.io.StringWriter;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -180,7 +181,7 @@ public class FetchInsert {
 				aciServerDetails.setEncryptionCodec(encryptionCodec);				
 			}
 			
-			AciHttpClientImpl aciHttpClient = new AciHttpClientImpl(HttpClientBuilder.create().build());
+			AciHttpClientImpl aciHttpClient = new AciHttpClientImpl(HttpClients.createDefault());
 			aciHttpClient.setUsePostMethod(true);
 			aciService = new AciServiceImpl(aciHttpClient, aciServerDetails);			
 		} catch(Exception e) {
@@ -194,7 +195,6 @@ public class FetchInsert {
 			
 			// Set action parameters
 			parameters = new ActionParameters("FETCH");
-			//parameters = new ActionParameters("INGEST");
 			parameters.add("fetchAction", "insert");
 			parameters.add("configSection", parsedArgs.taskName);
 			parameters.add("insertXML", insertXML);

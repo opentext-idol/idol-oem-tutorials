@@ -1,6 +1,6 @@
-# Eduction Lessons Resources
+# Named Entity Recognition Lessons Resources
 
-Various resource folders & files used by the Eduction lessons.
+Various resource folders & files used by the Named Entity Recognition lessons.
 
 ---
 
@@ -23,39 +23,39 @@ Various resource folders & files used by the Eduction lessons.
 
 ### `account_nbr`
 
-Contains Eduction configuration file and input text to explore PCI PAN (aka `account_nbr`) entity.
+Contains Named Entity Recognition configuration file and input text to explore PCI PAN (aka `account_nbr`) entity.
 
 ### `pci_all`
 
-Contains Eduction configuration file and input text with valid matches for all PCI entity categories.
+Contains Named Entity Recognition configuration file and input text with valid matches for all PCI entity categories.
 
 ### `redact_account_nbr`
 
-Contains Eduction configuration file, input text and Lua script to redact detected PCI PAN (aka `account_nbr`) entities.
+Contains Named Entity Recognition configuration file, input text and Lua script to redact detected PCI PAN (aka `account_nbr`) entities.
 
 ## PHI
 
 ### `phi_all`
 
-Contains Eduction configuration file and input text with valid matches for all PHI entity categories.
+Contains Named Entity Recognition configuration file and input text with valid matches for all PHI entity categories.
 
 ## PII
 
 ### `pii_address`
 
-Contains Eduction configuration file and input text to explore postal address detection (aka `pii_address`) entity.
+Contains Named Entity Recognition configuration file and input text to explore postal address detection (aka `pii_address`) entity.
 
 ### `pii_table_mode`
 
-Contains Eduction configuration file, input text and more to use table structure to help identify PII entities.
+Contains Named Entity Recognition configuration file, input text and more to use table structure to help identify PII entities.
 
 ### `custom_pp_threshold`
 
-Contains Eduction configuration file, input text and script implementing an entity specific post-process threshold. Used with the custom post-processing lesson.
+Contains Named Entity Recognition configuration file, input text and script implementing an entity specific post-process threshold. Used with the custom post-processing lesson.
 
 ### `custom_validation`
 
-Contains Eduction configuration file, input text and script implementing match-window post-process. Used with the custom post-processing lesson.
+Contains Named Entity Recognition configuration file, input text and script implementing match-window post-process. Used with the custom post-processing lesson.
 
 ## SDK
 
