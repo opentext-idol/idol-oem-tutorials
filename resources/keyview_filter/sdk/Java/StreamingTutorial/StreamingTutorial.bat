@@ -1,12 +1,12 @@
 @echo off
 
-set VERSION=25.4.0
+set VERSION=26.1.0
 set PLATFORM=WINDOWS_X86_64
 
 set KEYVIEW_BIN_FOLDER=C:\Opentext\KeyviewFilterSDK_%VERSION%_%PLATFORM%\%PLATFORM%\bin
 set IDOL_OEM_TUTORIALS_HOME=C:\OpenText\idol-oem-tutorials
 
-set JAVA_HOME=C:\Program Files\OpenLogic\openlogic-openjdk-11.0.16%+8-windows-x64
+set JAVA_HOME=C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot
 
 set INPUT_FILEPATH=%IDOL_OEM_TUTORIALS_HOME%\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.rar
 set TEXT_OUTPUT_FILEPATH=%INPUT_FILEPATH%.KV_%VERSION%_TEXT.TXT

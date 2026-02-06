@@ -37,7 +37,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources
+> cd C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 > edktool.exe extract -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt -o out.xml
 ```
 
@@ -64,14 +64,14 @@ For real world applications, it is a best practice to persist the EDKEngine acro
 
 > NOTE: The EDKSession or entity search time is influenced by the EDKEngine settings (*e.g.* resource files (ECRs), entities enabled, other configuration settings), the size of the input file and the number of matches.
 
-> NOTE: As of 25.4.0 `edktool` reads the entire file and submits that as text rather than using the EDK streaming input APIs. The edk_samples\eduction_from_config can be instrumented to measure processing speed that reflects use of the streaming input APIs.
+> NOTE: As of 26.1.0 `edktool` reads the entire file and submits that as text rather than using the EDK streaming input APIs. The edk_samples\eduction_from_config can be instrumented to measure processing speed that reflects use of the streaming input APIs.
 
 ### Running edktool benchmark
 
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources
+> cd C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 > edktool.exe benchmark -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt -s 3 -n 5
 ```
 
@@ -126,7 +126,7 @@ Session timing summary:
 - monitor the accuracy of a grammar during development
 - monitor the accuracy of a grammar as its improved over time
 
-Refer to [Assess and Measure Named Entity Recognition Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/CompileTest/Eduction_Assess_Measure.htm) and [Results Relevance](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/ImproveMatches/ResultsRelevance.htm)for more information on this topic.
+Refer to [Assess and Measure Named Entity Recognition Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/UseEduction/CompileTest/Eduction_Assess_Measure.htm) and [Results Relevance](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/UseEduction/ImproveMatches/ResultsRelevance.htm)for more information on this topic.
 
 ### Running edktool measure
 
@@ -139,10 +139,10 @@ In the [Custom Post Processing](./custom_postprocessing.md) lesson, an [Entity s
 The expected results file was chosen to be `out_no_custom_pp_threshold.xml`, since it's the default behavior.  The actual results file is then the `out_custom_pp_threshold.xml`.  The use case is to compare the extraction results for the same grammar but with a different configuration.
 
 ```sh
-> cd C:\OpenText\EductionGrammars_25.4.0_COMMON\pii\edk_samples\resources\custom_pp_threshold\expectations
+> cd C:\OpenText\EductionGrammars_26.1.0_COMMON\pii\edk_samples\resources\custom_pp_threshold\expectations
 > edktool measure -e out_no_custom_pp_threshold.xml -a out_custom_pp_threshold.xml -o out.EDK_MEASURE.xml
 
-Eduction EDKTool Utility v25.4.0
+Eduction EDKTool Utility v26.1.0
 Comparing the actual results in:
   out_custom_pp_threshold.xml
 with the expected results in:
@@ -176,7 +176,7 @@ The `out.EDK_MEASURE.xml` file below contains the precision & recall summary met
 </XML>
 ```
 
-Since the `custom_pp_threshold.lua` script increased the score threshold from 0.4 to 0.45, the 3 `<EXPECTED_MATCHES_MISSING>` are expected.  Per the definition of [precision and recall](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/ImproveMatches/ResultsRelevance.htm), the computed precision & recall make sense. There are no false positives (FPs) in the actual file `out_no_custom_pp_threshold.xml` - 5 / (5 + 0) yielding a precision=1.0.  There are however 3 false negatives (FNs) as noted in `<EXPECTED_MATCHES_MISSING>` - 5 / (5 + 3) yielding a recall=0.625.
+Since the `custom_pp_threshold.lua` script increased the score threshold from 0.4 to 0.45, the 3 `<EXPECTED_MATCHES_MISSING>` are expected.  Per the definition of [precision and recall](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/UseEduction/ImproveMatches/ResultsRelevance.htm), the computed precision & recall make sense. There are no false positives (FPs) in the actual file `out_no_custom_pp_threshold.xml` - 5 / (5 + 0) yielding a precision=1.0.  There are however 3 false negatives (FNs) as noted in `<EXPECTED_MATCHES_MISSING>` - 5 / (5 + 3) yielding a recall=0.625.
 
 ## Optimizing Performance
 
@@ -186,8 +186,8 @@ Besides simplifying your configuration or getting a faster computer, there some 
 
 For processing speed, here's some things to consider:
 
-- use a pre-filter.  See [here](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/PreFiltering/PreFiltering.htm) for more details.
-- set EntityMatchLimitN - See [here](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_EntityMatchLimitN.htm) for more details.  In some applications, the existence of enough matches per each configured entity can be sufficient to take action based on the detected matches.
+- use a pre-filter.  See [here](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/UseEduction/PreFiltering/PreFiltering.htm) for more details.
+- set EntityMatchLimitN - See [here](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_EntityMatchLimitN.htm) for more details.  In some applications, the existence of enough matches per each configured entity can be sufficient to take action based on the detected matches.
 - For the PII, PHI, PCI grammars disable output normalization.  The name, address and date entities have output normalization enabled by default. See `scripts\names_stoplist.lua`, `scripts\address_stoplist.lua` and `scripts\normalize_date.lua` for details on how to configure.  Over enough matches (*e.g* tens vs thousands) the extra time to produce normalized output adds up.  Only some applications (*e.g.* searching on matches across a set of indexed documents) benefit normalized output.
 
 ## Conclusion
@@ -198,5 +198,5 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
-- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/)
+- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/SDKs/Eduction.htm)

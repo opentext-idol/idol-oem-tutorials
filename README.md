@@ -2,7 +2,7 @@
 
 A set of guides to get you doing great things with Knowledge Discovery Named Entity Recognition and File Content Extraction SDKs.
 
-For details of the latest changes to Knowledge Discovery and File Content Extraction in version 25.4, please see the [Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/index.html).
+For details of the latest changes to Knowledge Discovery and File Content Extraction in version 26.1, please see the [Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/oem/index.html).
 
 ## Target audience
 

@@ -5,7 +5,7 @@ JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 PATH=$JAVA_HOME/bin:$PATH
 export PATH
 
-VERSION=25.4.0
+VERSION=26.1.0
 PLATFORM=LINUX_X86_64
 #PLATFORM=MACOS_M1
 
@@ -21,12 +21,15 @@ INPUT=${XMLEXPORT_HOME}/testdocs/Annual_Report.docx
 
 OUTPUT=${INPUT}.${XMLEXPORT_INI_FILE}.XML
 
+OPTIONS=
+
 echo Input file:  ${INPUT}
 echo Output file:  ${OUTPUT}
 echo Ini file: ${XMLEXPORT_INI_HOME}/${XMLEXPORT_INI_FILE}.ini
+echo Options: ${OPTIONS}
 echo
 
 ORIG_DIR=`pwd`
 cd ${XMLEXPORT_HOME}/${PLATFORM}/bin
-./xmlini ${XMLEXPORT_INI_HOME}/${XMLEXPORT_INI_FILE}.ini ${INPUT} ${OUTPUT}
+./xmlini ${OPTIONS} ${XMLEXPORT_INI_HOME}/${XMLEXPORT_INI_FILE}.ini ${INPUT} ${OUTPUT}
 cd ${ORIG_DIR}

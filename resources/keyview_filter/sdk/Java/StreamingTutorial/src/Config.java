@@ -21,15 +21,18 @@ class Config
 {
 	public static String getLicense()
 	{
+		String longString = null;
 		// Replace this with your license string:
 		try {
 			String licensekey_filepath = "KEYVIEW_LICENSEKEY_PATH";
 			
-			String longString = new String(Files.readAllBytes(Paths.get(licensekey_filepath)));
+			longString = new String(Files.readAllBytes(Paths.get(licensekey_filepath)));
 		} catch (IOException e) {
             System.err.println("An I/O error occurred while reading the license key: " + e.getMessage());
             e.printStackTrace();
-        }					
+        }
+
+		return longString;			
 	}
 
 	public static String getFilterBinFolder()

@@ -17,6 +17,14 @@
         <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
       </COMPONENTS>
     </MATCH>
+    <MATCH EntityName="pci/name/th" Offset="20" OffsetLength="20" Score="1" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
     <MATCH EntityName="pci/name/sg" Offset="20" OffsetLength="20" Score="0.6" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
       <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
@@ -130,6 +138,14 @@
       </COMPONENTS>
     </MATCH>
     <MATCH EntityName="pci/name/pl" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
+    <MATCH EntityName="pci/name/om" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
       <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
       <COMPONENTS>
@@ -377,6 +393,14 @@
         <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
       </COMPONENTS>
     </MATCH>
+    <MATCH EntityName="pci/name/ae" Offset="20" OffsetLength="20" Score="0.8" NormalizedTextSize="10" NormalizedTextLength="10" OriginalTextSize="10" OriginalTextLength="10">
+      <ORIGINAL_TEXT>JOHN SMITH</ORIGINAL_TEXT>
+      <NORMALIZED_TEXT>JOHN SMITH</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORENAME" Text="JOHN" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+        <COMPONENT Name="SURNAME" Text="SMITH" Offset="5" OffsetLength="5" TextSize="5" TextLength="5"/>
+      </COMPONENTS>
+    </MATCH>
     <MATCH EntityName="pci/name/jp" Offset="31" OffsetLength="31" Score="1" NormalizedTextSize="14" NormalizedTextLength="14" OriginalTextSize="14" OriginalTextLength="14">
       <ORIGINAL_TEXT>KEIKO NAKAMURA</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>KEIKO NAKAMURA</NORMALIZED_TEXT>
@@ -445,6 +469,7 @@
       <ORIGINAL_TEXT>%B5641821234567890122^SMITH/JOHN A.             ^2011126000000000000000000000?c</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>%B5641821234567890122^SMITH/JOHN A.             ^2011126000000000000000000000?c</NORMALIZED_TEXT>
       <COMPONENTS>
+        <COMPONENT Name="ISSUER_KNOWN" Text="" Offset="0" OffsetLength="0" TextSize="0" TextLength="0"/>
         <COMPONENT Name="PAN" Text="5641821234567890122" Offset="2" OffsetLength="2" TextSize="19" TextLength="19"/>
         <COMPONENT Name="HOLDER_NAME" Text="SMITH/JOHN A.             " Offset="22" OffsetLength="22" TextSize="26" TextLength="26"/>
         <COMPONENT Name="EXPIRATION_DATE" Text="2011" Offset="49" OffsetLength="49" TextSize="4" TextLength="4"/>
@@ -453,6 +478,9 @@
     <MATCH EntityName="pci/pan/nocontext/pan" Offset="143" OffsetLength="143" Score="1" NormalizedTextSize="16" NormalizedTextLength="16" OriginalTextSize="16" OriginalTextLength="16">
       <ORIGINAL_TEXT>4485221211756505</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>4485221211756505</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="ISSUER_VISA" Text="4485" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
+      </COMPONENTS>
     </MATCH>
     <MATCH EntityName="pci/pin/context" Offset="160" OffsetLength="160" Score="1" NormalizedTextSize="4" NormalizedTextLength="4" OriginalTextSize="9" OriginalTextLength="9">
       <ORIGINAL_TEXT>PIN: 1234</ORIGINAL_TEXT>

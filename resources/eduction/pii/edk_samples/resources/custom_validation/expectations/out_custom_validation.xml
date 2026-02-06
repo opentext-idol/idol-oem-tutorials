@@ -5,6 +5,7 @@
       <ORIGINAL_TEXT>658904232</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>658904232</NORMALIZED_TEXT>
       <COMPONENTS>
+        <COMPONENT Name="FORMAT" Text="US_SSN" Offset="9" OffsetLength="9" TextSize="6" TextLength="6"/>
         <COMPONENT Name="MATCH_CONTEXT" Text="es a useful point.  My SSN is 658904232.
 
 
@@ -16,6 +17,7 @@
       <ORIGINAL_TEXT>4485 2212 1175 6505</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>4485 2212 1175 6505</NORMALIZED_TEXT>
       <COMPONENTS>
+        <COMPONENT Name="ISSUER_VISA" Text="4485" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
         <COMPONENT Name="MATCH_CONTEXT" Text="happens with space delimiter: 4485 2212 1175 6505. New sentence.
 
 Jeff Blank, 2" Offset="0" OffsetLength="0" TextSize="79" TextLength="79"/>
@@ -25,6 +27,7 @@ Jeff Blank, 2" Offset="0" OffsetLength="0" TextSize="79" TextLength="79"/>
       <ORIGINAL_TEXT>378282246310005</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>378282246310005</NORMALIZED_TEXT>
       <COMPONENTS>
+        <COMPONENT Name="ISSUER_AMERICANEXPRESS" Text="3782" Offset="0" OffsetLength="0" TextSize="4" TextLength="4"/>
         <COMPONENT Name="MATCH_CONTEXT" Text="nt.
 
 My credit card number is 378282246310005, and please don’t share it.

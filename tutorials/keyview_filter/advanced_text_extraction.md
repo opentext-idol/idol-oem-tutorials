@@ -50,23 +50,23 @@ Word processing, spreadsheet, presentation and some other file formats optionall
 Let's run text extraction on the same file `2022_calendar_HIDDEN_TEXT.docx` without and with header/footer mode enabled.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_26.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filtertest ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_no_hf.txt
 WARNING: filter is a sample program only and is not for production use
 filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_hf.txt
 filtertest: Target CharSet is 53
 Return code is 0
-filtertest finished with RC: 0
+filtertest finished with RC: 0 (KVError_Success)
 
 > filtertest -hf ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_hf.txt
 WARNING: filtertest is a sample program only and is not for production use
 filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_hf.txt
 filtertest: Target CharSet is 53
 Return code is 0
-filtertest finished with RC: 0
+filtertest finished with RC: 0 (KVError_Success)
 ```
 
-> NOTE: A return code of `0` is a positive result.  Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
+> NOTE: Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
 
 The header '2022 CALENDAR' and footer 'Page` are now extracted.  Even though there are multiple pages in this document, a single instance of the header / footer is output since only a single header / footer format is defined in the document.
 
@@ -81,16 +81,16 @@ Hidden text may be in the form of comments, revision history, slide master conte
 Word processing and some other file formats allow for users to track revision history.  This markup is usually hidden, but can of interest for many user cases of Filter SDK.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_26.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filtertest -tc ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revision_marks.txt
 WARNING: filtertest is a sample program only and is not for production use
 filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_revision_marks.txt
 filtertest: Target CharSet is 53
 Return code is 0
-filtertest finished with RC: 0
+filtertest finished with RC: 0 (KVError_Success)
 ```
 
-> NOTE: A return code of `0` is a positive result.  Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.  
+> NOTE: Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.  
 
 Compare `text_revision_marks.txt` and `text_no_hf.txt`. You will see that `February` is added to the output because it was tracked as a change when the month name was changed to `febbraio`.
 
@@ -101,16 +101,16 @@ Try `filtertest` to extract hidden text with your own test files. Good luck!
 Your use case for Filter SDK may not benefit from including comments.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_26.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filtertest -nc ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx text_no_comments.txt
 WARNING: filtertest is a sample program only and is not for production use
 filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\2022_calendar_HIDDEN_TEXT.docx to text_no_comments.txt
 filtertest: Target CharSet is 53
 Return code is 0
-filtertest finished with RC: 0
+filtertest finished with RC: 0 (KVError_Success)
 ```
 
-> NOTE: A return code of `0` is a positive result.  Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
+> NOTE: Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
 
 Compare `text_no_comments.txt` and `text_no_hf.txt`.  You will see that the comments are no longer output at the bottom.
 
@@ -119,23 +119,23 @@ Compare `text_no_comments.txt` and `text_no_hf.txt`.  You will see that the comm
 Presentation formats like PowerPoint have the concept of slide masters where some slide master content is only visible when you're editing the slider masters.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_26.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filtertest ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_no_slidemaster.txt
 WARNING: filtertest is a sample program only and is not for production use
 filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_no_slidemaster.txt
 filtertest: Target CharSet is 53
 Return code is 0
-filtertest finished with RC: 0
+filtertest finished with RC: 0 (KVError_Success)
 
 > filtertest -sh ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_slidemaster.txt
 WARNING: filtertest is a sample program only and is not for production use
 filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx text_slidemaster.txt
 filtertest: Target CharSet is 53
 Return code is 0
-filtertest finished with RC: 0
+filtertest finished with RC: 0 (KVError_Success)
 ```
 
-> NOTE: A return code of `0` is a positive result. Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
+> NOTE: Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
 
 A lot of additional output is included in `text_slidemaster.txt`.  It's the text `Secret text in the slide master` that was added to the default content.  A user may have illicitly added text in the slide master in the hopes of evading detection.
 
@@ -143,22 +143,22 @@ A lot of additional output is included in `text_slidemaster.txt`.  It's the text
 
 With some file formats, for example Microsoft PowerPoint presentations, the order of the text inside the file has no relation to the layout of the text on the page or screen. Recently modified text might appear at the end of a file, even though that text belongs at the beginning of the document.
 
-Refer to the [Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/filter/Presentation_LogicalOrder.htm) for more details about Filter SDK's support for preserving logical reading order.
+Refer to the [Filter SDK Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/c-programming/Content/filter/Presentation_LogicalOrder.htm) for more details about Filter SDK's support for preserving logical reading order.
 
 ### Perform logical order preservation
 
-This tutorial's resources README.md references a file [AmeliorationFertiliteDesSols.pptx](../../resources/keyview_filter/README.md#ameliorationfertilitedessolspptx) that exhibits this behavior.  Please download it place it in the `idol-oem-tutorials\resources\keyview_filter` folder.
+This tutorial's resources README.md references a file [logical_order.pptx](../../resources/keyview_filter/README.md#atf-with-logical_orderpptx) that exhibits this behavior.
 
 Use `filtertest` to extract text with `LogicalOrder` disabled.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filtertest ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=F.txt
+> cd C:\OpenText\KeyviewFilterSDK_26.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filtertest ..\..\..\idol-oem-tutorials\resources\keyview_filter\logical_order.pptx text_LO=F.txt
 WARNING: filtertest is a sample program only and is not for production use
-filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=F.txt
+filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\logical_order.pptx text_LO=F.txt
 filtertest: Target CharSet is 53
 Return code is 0
-filtertest finished with RC: 0
+filtertest finished with RC: 0 (KVError_Success)
 ```
 
 Preservation of logical reading order is disabled by default.  Modify `formats.ini` as shown below to enable it.
@@ -171,39 +171,34 @@ Preservation of logical reading order is disabled by default.  Modify `formats.i
  Use `filtertest` to extract text with `LogicalOrder` enabled.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
-> filtertest ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=T.txt`
+> cd C:\OpenText\KeyviewFilterSDK_26.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> filtertest ..\..\..\idol-oem-tutorials\resources\keyview_filter\logical_order.pptx text_LO=T.txt`
 WARNING: filtertest is a sample program only and is not for production use
-filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\AmeliorationFertiliteDesSols.pptx text_LO=T.txt
+filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\logical_order.pptx text_LO=T.txt
 filtertest: Target CharSet is 53
 Return code is 0
-filtertest finished with RC: 0```
+filtertest finished with RC: 0 (KVError_Success)
+```
 
 The following is the text from slide 1 with `LogicalOrder=0`:
 
 ```txt
-Amélioration de la fertilité des sols
-        
-                 
-Auteur du document : Benjamin LISAN. Email : benjamin.lisan@free.fr 
-1
-Culture en semis direct. Source : www.la-ferme-du-hourcot.com 
-Par des moyens naturels
-
-Amélioration de la fertilité des sols
+Illustrates logical order
+Text box 1
+Text box 2
+Text box 3
 ```
 
 The following is the text from slide 1 with `LogicalOrder=1`:
 
 ```txt
-Amélioration de la fertilité des sols
-Par des moyens naturels
-Culture en semis direct. Source : www.la-ferme-du-hourcot.com
-Auteur du document : Benjamin LISAN. Email : benjamin.lisan@free.fr
-Amélioration de la fertilité des sols
+Illustrates logical order
+Text box 3
+Text box 2
+Text box 1
 ```
 
-Notice the differences with the location of the sub title text `Par des moyens naturels` and the `Auteur du document` text.
+Notice the differences with the location of the various text.
 
 Preservation of the logical reading order is valuable for any downstream solutions that may rely on the the proximity and/or order of text. This can include text search or text analytics for use cases such as eDiscovery or Data Loss Prevention (DLP).
 
@@ -224,9 +219,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/index.html)
-- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/cpp-programming/index.html)
-- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/java-programming/index.html)
-- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/dotnet-programming/index.html)
-- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/python-programming/)
-- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/python-programming/)
+- [Filter SDK Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/KeyView/FilterSDK.htm)

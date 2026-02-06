@@ -13,7 +13,7 @@
   - [ATF with `Simple meal planner1.xlsx`](#atf-with-simple-meal-planner1xlsx)
   - [ATF with `demo_EMBEDDED_DOCS+HIDDEN_TEXT.pptx`](#atf-with-demo_embedded_docshidden_textpptx)
   - [ATF with `Robin Zupanc Resume_RESTRICTED.docx`](#atf-with-robin-zupanc-resume_restricteddocx)
-  - [ATF with `AmeliorationFertiliteDesSols.pptx`](#atf-with-ameliorationfertilitedessolspptx)
+  - [ATF with `logical_order.pptx`](#atf-with-logical_orderpptx)
 - [Advanced Metadata Extraction](#advanced-metadata-extraction)
   - [AME with `screenshot_XMP_METADATA.png`](#ame-with-screenshot_xmp_metadatapng)
   - [AME with `Robin Zupanc Resume_RESTRICTED.docx`](#ame-with-robin-zupanc-resume_restricteddocx)
@@ -96,10 +96,9 @@
 
 - `filter -sh` extracts link part of hyperlink
 
-### ATF with `AmeliorationFertiliteDesSols.pptx`
+### ATF with `logical_order.pptx`
 
-- Download from [http://www.doc-developpement-durable.org/](https://www.doc-developpement-durable.org/file/Culture/Fertilisation-des-Terres-et-des-Sols/AmeliorationFertiliteDesSols.pptx)
-- Slide 1 has text that showcases
+- Slide 1 has text that showcases preservation of logical order
 
 ## Advanced Metadata Extraction
 

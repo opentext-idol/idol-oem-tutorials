@@ -71,22 +71,22 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
     ![get-software](../../figs/get-software.png)
 
 1. From the list of available files, select and download the following (depending on your platform):
-   - `EductionSDK_25.4.0_{PLATFORM}`, *e.g.* `EductionSDK_25.4.0_WINDOWS_X86_64.zip`,
-   - `EductionGrammars_25.4.0_COMMON.zip`, and
-   - `Versionkey_25.4.0_COMMON.zip`.
+   - `EductionSDK_26.1.0_{PLATFORM}`, *e.g.* `EductionSDK_26.1.0_WINDOWS_X86_64.zip`,
+   - `EductionGrammars_26.1.0_COMMON.zip`, and
+   - `Versionkey_26.1.0_COMMON.zip`.
 
 #### Install Named Entity Recognition & Grammars
 
 1. Copy your downloaded files into a new working folder.  The follow guide assumes this is `C:\OpenText` on Windows.
 2. Extract both of the `.zip` files to give you:
-   - `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64`, and
-   - `C:\OpenText\EductionGrammars_25.4.0_COMMON`
-3. Copy your license key `.dat` file into `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64` and rename it to `licensekey.dat`
-4. Extract the `versionkey.dat` from the `Versionkey_25.4.0_COMMON.zip` and deploy it alongside your license key `.dat` file.
+   - `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64`, and
+   - `C:\OpenText\EductionGrammars_26.1.0_COMMON`
+3. Copy your license key `.dat` file into `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64` and rename it to `licensekey.dat`
+4. Extract the `versionkey.dat` from the `Versionkey_26.1.0_COMMON.zip` and deploy it alongside your license key `.dat` file.
 
 > NOTE: On Windows, you may need to install the included Visual C++ Redistributable package.  In the same EductionSDK folder, right-click on `vcredist.exe` then select 'Run as administrator'. If you see a version conflict error here, you may need to first uninstall any existing version.
 
-See the [Named Entity Recognition User & Programming Guide - Install Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/GettingStarted/Install/Install.htm) for more details.
+See the [Named Entity Recognition User & Programming Guide - Install Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/GettingStarted/Install/Install.htm) for more details.
 
 #### Environment variables
 
@@ -95,7 +95,7 @@ For ease of use, update your environment variables to reference your new Eductio
 For Windows, open a command prompt window and enter:
 
 ```sh
-set PATH=C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\bin;%PATH%
+set PATH=C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\bin;%PATH%
 ```
 
 A batch file or shell script can be created to make this easier.
@@ -108,7 +108,7 @@ Or, from System Properties, add this path to your "PATH" System variable:
 
 ## Introduction to Named Entity Recognition
 
-To get oriented with key concepts please read the "Getting Started" section of the [Named Entity Recognition User & Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/part_intro.htm) before continuing.
+To get oriented with key concepts please read the "Getting Started" section of the [Named Entity Recognition User & Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/part_intro.htm) before continuing.
 
 The following lesson will show you to perform entity extraction.
 
@@ -119,9 +119,9 @@ As our first step, let's run the included binary file `edktool`, then learn how 
 Run the `edktool` command line program to yield usage instructions:
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\bin
+> cd C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\bin
 > edktool.exe
-Eduction EDKTool Utility v25.4.0
+Eduction EDKTool Utility v26.1.0
 (c) Copyright 2006-2023 Micro Focus International PLC
 
 Usage: edktool  {
@@ -235,7 +235,7 @@ Options:
         option           More detailed help on the edktool options
 ```
 
-See the [Named Entity Recognition User & Programming Guide - edktool Command-Line Options](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/Reference/edktool/edktoolOptions_intro.htm) for more details.
+See the [Named Entity Recognition User & Programming Guide - edktool Command-Line Options](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/Reference/edktool/edktoolOptions_intro.htm) for more details.
 
 ### Explore contents of grammar ECR file
 
@@ -246,10 +246,10 @@ Let's use `edktool`'s `list` function to look at one of these samples.
 From the command line, enter the following:
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\grammar
+> cd C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\grammar
 > edktool.exe list test.ecr
 
-Eduction EDKTool Utility v25.4.0
+Eduction EDKTool Utility v26.1.0
 Loading resource file:
 test.ecr
 
@@ -292,17 +292,17 @@ This gives more details of the construction of the entities, as well as specific
 To see an example of a real grammar file, explore the Named Entity Recognition Grammars package, *e.g.*
 
 ```sh
-> cd C:\OpenText\EductionGrammars_25.4.0_COMMON\pii
+> cd C:\OpenText\EductionGrammars_26.1.0_COMMON\pii
 > edktool.exe list address.ecr          
 
-Eduction EDKTool Utility v25.4.0
+Eduction EDKTool Utility v26.1.0
 Loading resource file:
 address.ecr
 
 
 Grammar version:        4.0
 
-Compiled using Edktool: 25.4.0
+Compiled using Edktool: 26.1.0
 
 Listing entities:
 gdpr/address/at
@@ -325,10 +325,10 @@ Many of these grammar files contain hundreds of entities, which are typically se
 From the command line, enter the following:
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources
+> cd C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 > edktool.exe extract -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt
 
-Eduction EDKTool Utility v25.4.0
+Eduction EDKTool Utility v26.1.0
 Extracting entities from:
   test\input\input.txt
 using the config file:
@@ -424,7 +424,7 @@ How were these configuration options applied?  Note the `-c test\config\test.cfg
 Open it on the command line by typing:
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources
+> cd C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 > type test\config\test.cfg 
 ```
 
@@ -440,7 +440,7 @@ Entity0 = test/*
 EntityField0 = TEST
 ```
 
-We also provide an output name for any matches to these entities, here called "TEST".  Knowledge Discovery components such as [CFS](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/CFS_25.4_Documentation/Help/) make use of EntityField# value.
+We also provide an output name for any matches to these entities, here called "TEST".  Knowledge Discovery components such as [CFS](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/CFS_26.1_Documentation/Help/) make use of EntityField# value.
 
 Further down, in the same `[Eduction]` section, we specify a section of runtime options for the EDKEngine:
 
@@ -461,7 +461,7 @@ MinScore = 0.5
 LanguageDirectory = langfiles
 ```
 
-For full details on these and other options, please reference [Named Entity Recognition User & Programming Guide - Named Entity Recognition Parameter Reference](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/Reference/EductionParameters.htm).
+For full details on these and other options, please reference [Named Entity Recognition User & Programming Guide - Named Entity Recognition Parameter Reference](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/Reference/EductionParameters.htm).
 
 Lastly, an optional post-processing task is configured by referencing a `.lua` script:
 
@@ -489,9 +489,9 @@ function processmatch (edkmatch)
 end
 ```
 
-This example Lua post-processing function receives an object of class [`edkMatch`](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/Reference/LuaMethods/edkmatch.htm). This class provides useful getter and setter methods for access and manipulation of the Educed match (see below).
+This example Lua post-processing function receives an object of class [`edkMatch`](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/Reference/LuaMethods/edkmatch.htm). This class provides useful getter and setter methods for access and manipulation of the Educed match (see below).
 
-For more details on Lua post-processing, please reference [Named Entity Recognition User & Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm).
+For more details on Lua post-processing, please reference [Named Entity Recognition User & Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm).
 
 #### The match section
 
@@ -530,10 +530,10 @@ Each Educed match provides the following key information:
 Next, we will modify our command line options to send the match results to an `.xml` file:
 
 ```sh
-> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources
+> cd C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources
 > edktool.exe extract -l ..\..\..\licensekey.dat -c test\config\test.cfg -i test\input\input.txt -o out.xml
 
-Eduction EDKTool Utility v25.4.0
+Eduction EDKTool Utility v26.1.0
 Extracting entities from:
   test\input\input.txt
 using the config file:
@@ -543,7 +543,7 @@ to the output:
 using the license:
   ..\..\..\licensekey.dat
 with version key:
-  ..\EductionSDK_25.4.0_WINDOWS_X86_64\versionkey.dat
+  ..\EductionSDK_26.1.0_WINDOWS_X86_64\versionkey.dat
 
 
 Successfully configured 1 post-processing tasks.
@@ -600,9 +600,9 @@ Many of grammars in the `EductionGrammars_<VERSION>_COMMON` make use of componen
 
 Reference the following for more details:
 
-- [Create and Modify Named Entity Recognition Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/Grammars/GrammarFormat.htm)
-- [Grammar Format Reference](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/Reference/GrammarReference/grammarReference.htm)
-- [Named Entity Recognition Concepts - Components](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/GettingStarted/Introduction/Components2.htm)
+- [Create and Modify Named Entity Recognition Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/UseEduction/Grammars/GrammarFormat.htm)
+- [Grammar Format Reference](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/Reference/GrammarReference/grammarReference.htm)
+- [Named Entity Recognition Concepts - Components](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/GettingStarted/Introduction/Components2.htm)
 
 And see the [Create a custom Named Entity Recognition grammar](./README.md#create-a-custom-named-entity-recognition-grammar) lesson for a more in-depth discussion on creating grammars.
 
@@ -708,7 +708,7 @@ To change this behavior to include overlapping matches and return all five possi
 
 Now re-run the above command to see all five matches in your output.
 
-For full details on this property, please reference [Named Entity Recognition User & Programming Guide - AllowOverlaps](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm).
+For full details on this property, please reference [Named Entity Recognition User & Programming Guide - AllowOverlaps](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/Configuration/Eduction/_EDU_AllowOverlaps.htm).
 
 ## Conclusion
 
@@ -718,7 +718,7 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
-- [Named Entity Recognition Server User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionServer_25.4_Documentation/Help/Content/_ACI_Welcome.htm)
-- [Named Entity Recognition Grammars User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/)
-- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/)
+- [Named Entity Recognition Server User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionServer_26.1_Documentation/Help/Content/_ACI_Welcome.htm)
+- [Named Entity Recognition Grammars User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionGrammars_26.1_Documentation/Help/)
+- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/SDKs/Eduction.htm)

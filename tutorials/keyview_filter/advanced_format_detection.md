@@ -1,6 +1,6 @@
 # Advanced Format Detection
 
-As we saw in the introduction lesson for OpenText File Content Extraction (formerly known as KeyView) Filter SDK, the format type (and class) and other attributes can be automatically detected for files.  The Filter SDK relies on a format signature to uniquely identify the format code (with >2000 supported as of the 25.4 release).  Relying on a file extension is dangerous and can result in mis-processing with extra downstream processing costs.  Encryption & password protection often limits the visibility inside files.  The Filter SDK does its best to uniquely identify protected files and also set a separate flag indicating encryption status.
+As we saw in the introduction lesson for OpenText File Content Extraction (formerly known as KeyView) Filter SDK, the format type (and class) and other attributes can be automatically detected for files.  The Filter SDK relies on a format signature to uniquely identify the format code (with >2000 supported as of the 26.1 release).  Relying on a file extension is dangerous and can result in mis-processing with extra downstream processing costs.  Encryption & password protection often limits the visibility inside files.  The Filter SDK does its best to uniquely identify protected files and also set a separate flag indicating encryption status.
 
 In this lesson, you will:
 
@@ -43,23 +43,21 @@ The OpenText SmartCipher encrypted file `SmartCipher_Fmt.txt` was a text file or
 ### Perform detection on SmartCipher file
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_26.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filtertest -ah "..\..\..\idol-oem-tutorials\resources\keyview_filter\SmartCipher_Fmt.txt" detect
 WARNING: filter is a sample program only and is not for production use
 autodetect: ..\..\..\idol-oem-tutorials\resources\keyview_filter\SmartCipher_Fmt.txt to detect
 Return code is 0
-filtertest finished with RC: 0
+filtertest finished with RC: 0 (KVError_Success)
 
 > type detect
 File Class:             8
 Format Number:          SmartCipher_Fmt (1255)
 Version:                0
-Attributes:             1 (Encrypted)
+Attributes:             1
 Description:            SmartCipher encrypted file
 MIME Type:              -
 ```
-
-> NOTE: A return code of `0` is a positive result. 
 
 The file is correctly detected as format code 1255 and as encrypted per `Attributes: 1`.
 
@@ -78,23 +76,21 @@ Many file formats allow for their contents to be password protected and/or encry
 In the above example with `SmartCipher_Fmt.txt`, the attribute for `encrypted` file was returned.  This lesson will explore this further with a 7-zip file.
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_26.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filtertest -ah "..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf_PASSWORD.7z" detect
 WARNING: filter is a sample program only and is not for production use
 autodetect: ..\..\..\idol-oem-tutorials\resources\keyview_filter\KeyViewFilterSDK_12.12.0_ReleaseNotes_en.pdf_PASSWORD.7z to detect
 Return code is 0
-filtertest finished with RC: 0
+filtertest finished with RC: 0 (KVError_Success)
 
 > type detect
 File Class:             8
 Format Number:          Z7Z_Fmt (387)
 Version:                400
-Attributes:             1 (Encrypted)
+Attributes:             1
 Description:            7-Zip archive (7z)
 MIME Type:              application/7z
 ```
-
-> NOTE: A return code of `0` is a positive result. 
 
 The password protect version returned `Attributes: 1` meaning `encrypted` per `ENdocAttributes` in `%KEYVIEW_HOME%\include\adinfo.h`.
 
@@ -108,9 +104,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/index.html)
-- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/cpp-programming/index.html)
-- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/java-programming/index.html)
-- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/dotnet-programming/index.html)
-- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/python-programming/)
-- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/python-programming/)
+- [Filter SDK Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/KeyView/FilterSDK.htm)

@@ -41,10 +41,10 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
     ![get-software](../../figs/get-software.png)
 
 1. From the list of available files, select and download the following (depending on your platform):
-   - `IDOLCSDK_25.4.0_{PLATFORM}`, *e.g.* `IDOLCSDK_25.4.0_WINDOWS_X86_64.zip`,
-   - `EductionServer_25.4.0_{PLATFORM}`, *e.g.* `EductionServer_25.4.0_WINDOWS_X86_64.zip`,
-   - `EductionGrammars_25.4.0_COMMON.zip` (if you don't already have a copy from the introductory tutorial), and
-   - `Versionkey_25.4.0_COMMON.zip`.
+   - `IDOLCSDK_26.1.0_{PLATFORM}`, *e.g.* `IDOLCSDK_26.1.0_WINDOWS_X86_64.zip`,
+   - `EductionServer_26.1.0_{PLATFORM}`, *e.g.* `EductionServer_26.1.0_WINDOWS_X86_64.zip`,
+   - `EductionGrammars_26.1.0_COMMON.zip` (if you don't already have a copy from the introductory tutorial), and
+   - `Versionkey_26.1.0_COMMON.zip`.
 
     > NOTE: you should have already downloaded the C API package while following the ACI API introductory [tutorial](../aci_api/introduction.md#download-knowledge-discovery-components).
 
@@ -52,26 +52,26 @@ Download software from the [Software Licensing and Downloads](https://sld.microf
 
 1. Copy your downloaded files into a new working folder.  The following guide assumes this is `C:\OpenText` on Windows.
 1. Extract the `.zip` files to give you:
-   - `C:\OpenText\IDOLCSDK_25.4.0_WINDOWS_X86_64`,
-   - `C:\OpenText\EductionServer_25.4.0_WINDOWS_X86_64`, and
-   - `C:\OpenText\EductionGrammars_25.4.0_COMMON`
+   - `C:\OpenText\IDOLCSDK_26.1.0_WINDOWS_X86_64`,
+   - `C:\OpenText\EductionServer_26.1.0_WINDOWS_X86_64`, and
+   - `C:\OpenText\EductionGrammars_26.1.0_COMMON`
   
-1. Copy your OEM license key `.dat` file into `C:\OpenText\EductionServer_25.4.0_WINDOWS_X86_64` and rename it to `licensekey.dat`.
+1. Copy your OEM license key `.dat` file into `C:\OpenText\EductionServer_26.1.0_WINDOWS_X86_64` and rename it to `licensekey.dat`.
 
     > NOTE: obtain this key as described in ACI API introductory [tutorial](../aci_api/introduction.md#obtain-an-oem-license-key).
 
-1. Extract the file `versionkey.dat` from `Versionkey_25.4.0_COMMON.zip`, then copy that file into `C:\OpenText\EductionServer_25.4.0_WINDOWS_X86_64` as described in the [Knowledge Discovery Release Notes - Licensing](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/Upgrade/Licenses.htm).
+1. Extract the file `versionkey.dat` from `Versionkey_26.1.0_COMMON.zip`, then copy that file into `C:\OpenText\EductionServer_26.1.0_WINDOWS_X86_64` as described in the [Knowledge Discovery Release Notes - Licensing](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/Upgrade/Licenses.htm).
 
 > NOTE: On Windows, you may need to install the included Visual C++ Redistributable package.  In the same Named Entity Recognition Server folder, right-click on `vcredist.exe` then select 'Run as administrator'. If you see a version conflict error here, you may need to first uninstall any existing version.
 
 ## ACI Servers
 
-All ACI servers include, *e.g.* under the directory: `C:\OpenText\EductionServer_25.4.0_WINDOWS_X86_64`:
+All ACI servers include, *e.g.* under the directory: `C:\OpenText\EductionServer_26.1.0_WINDOWS_X86_64`:
 
 - an executable, *e.g.* `eductionserver.exe`, and
 - a primary configuration file, *e.g.* `eductionserver.cfg`.
 
-An ACI server can be launched by running the executable or by configuring a service on [Windows](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLServer_25.4_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_WindowsServices.htm) or on [Linux](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLServer_25.4_Documentation/Guides/html/gettingstarted/Content/Shared_Admin/Installation/_ADM_Install_LinuxStartup.htm).
+An ACI server can be launched by running the executable or by configuring a service on [Windows](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/Content_26.1_Documentation/Guides/GettingStarted/Content/Shared_Admin/Installation/_ADM_Install_WindowsServices.htm) or on [Linux](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/Content_26.1_Documentation/Guides/GettingStarted/Content/Shared_Admin/Installation/_ADM_Install_LinuxStartup.htm).
 
 Where you have an OEM license key, the ACI server looks on startup for a `licensekey.dat` file in the same directory as the executable.  Edit the `eductionserver.cfg` as follows to use OEM license key:
 
@@ -85,13 +85,13 @@ Where you have an OEM license key, the ACI server looks on startup for a `licens
 
 ## Configuring Named Entity Recognition Grammars
 
-As will now be familiar, Named Entity Recognition grammars are supplied separately in the `EductionGrammars_25.4.0_COMMON.zip` container.
+As will now be familiar, Named Entity Recognition grammars are supplied separately in the `EductionGrammars_26.1.0_COMMON.zip` container.
 
 Edit the `eductionserver.cfg` as follows:
 
 ```diff
 -ResourceFiles=grammars/internet.ecr
-+ResourceFiles=../EductionGrammars_25.4.0_COMMON/general/grammars/internet.ecr
++ResourceFiles=../EductionGrammars_26.1.0_COMMON/general/grammars/internet.ecr
 ```
 
 The `[Eduction]` section of this configuration file should look familiar to you from the introduction, as the configuration of Resource Files and Entities is the same.
@@ -180,7 +180,7 @@ offset,match,score
 
 Two matches are produced reflecting the two email addresses in the input text.
 
-For more details on running the "EduceFromText" action and its optional parameters, please read the [reference guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionServer_25.4_Documentation/Help/Content/Actions/Eduction/EduceFromText.htm).
+For more details on running the "EduceFromText" action and its optional parameters, please read the [reference guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionServer_26.1_Documentation/Help/Content/Actions/Eduction/EduceFromText.htm).
 
 ## Conclusion
 
@@ -190,7 +190,7 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Named Entity Recognition Server Reference Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionServer_25.4_Documentation/Help/Content/_ACI_Welcome.htm)
-- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
-- [Named Entity Recognition Grammars User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/)
-- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Named Entity Recognition Server Reference Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionServer_26.1_Documentation/Help/Content/_ACI_Welcome.htm)
+- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/)
+- [Named Entity Recognition Grammars User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionGrammars_26.1_Documentation/Help/)
+- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/SDKs/Eduction.htm)

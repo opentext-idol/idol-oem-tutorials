@@ -64,10 +64,13 @@ except kv.KeyViewError as e:
     sys.exit()
 
 kv_session.config.hidden_text(True)
+kv_session.config.header_and_footer(True)
 kv_session.config.revision_marks(True)
 kv_session.config.custom_pdf_metadata(True)
-kv_session.config.ocr(False)  
-
+kv_session.config.logical_order(True) 
+kv_session.config.ocr(False) 
+kv_session.config.tab_delimited(True)
+kv_session.config.output_table_delimiters(True)
 
 try:
     print("Creating EDK Factory.")

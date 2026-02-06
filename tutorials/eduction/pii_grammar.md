@@ -35,7 +35,7 @@ Before you continue with this lesson, refer to the [documentation links](#see-al
 ### Resources
 
 Be sure to download the following resources before you continue:
-- [PII address sample](../../resources/eduction/pii/edk_samples/resources/pii_address) and install to `C:\OpenText\EductionGrammars_25.4.0_COMMON\pii\edk_samples\resources\pii_address`
+- [PII address sample](../../resources/eduction/pii/edk_samples/resources/pii_address) and install to `C:\OpenText\EductionGrammars_26.1.0_COMMON\pii\edk_samples\resources\pii_address`
   
 ## What's in the box?
 
@@ -43,9 +43,9 @@ The PII Package includes Named Entity Recognition Grammar files, pre-filters, po
 
 ### Available grammar files
 
-To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_25.4.0_COMMON\pii`.  The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pii_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
+To review which grammar files are included, list the directory `C:\OpenText\EductionGrammars_26.1.0_COMMON\pii`.  The command `edktool list -a <grammar>.ecr ` can be used to explore the public entities, available components and license requirements. Or open the `pii_entities.html` file in your web browser. This `.html` file conveniently lists available entities by locale as well as grammar file name.
 
-As of 25.4.0 release, address detection is supported for 47 countries:
+As of 26.1.0 release, address detection is supported for 47 countries:
 
 ![address_grammars](./figs/address_grammars.png)
 
@@ -66,12 +66,12 @@ In the above screenshots, note the multiple rows defining address entity support
 
 The naming structure can be explained with a few examples:
 
-1. `pii/address/*` (where `*` can be replaced by an [ISO 3166-1 alpha-2 country code](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/Content/GrammarReference/country_address.html) - match full and/or partial postal addresses.
+1. `pii/address/*` (where `*` can be replaced by an [ISO 3166-1 alpha-2 country code](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionGrammars_26.1_Documentation/Help/Content/GrammarReference/country_address.htm) - match full and/or partial postal addresses.
 2. `pii/address/postcode/context/*` - match only a postal code (ZIP code) with context, *e.g.* to find a UK postcode in the text "Postcode: CB4 0WZ".
 3. `pii/address/postcode/nocontext/*` - match a postal code without context, *e.g.* to find an Irish postcode in the text "W1B 5TG".
 4. `pii/address/postcode/landmark/*` - match term or terms used to give context for a postal code, *e.g.* the word "Postcode" itself.
 
-For full details of the entities included in the PII Grammar Package, please reference the [Named Entity Recognition Grammars Users Guide - PII Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/Content/PII/PII_Intro.htm).
+For full details of the entities included in the PII Grammar Package, please reference the [Named Entity Recognition Grammars Users Guide - PII Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionGrammars_26.1_Documentation/Help/Content/PII/PII_Intro.htm).
 
 > NOTE: The PII Package is backwards-compatible with the GDPR package. You can continue to use, *e.g.* the entity named `gdpr/address/at` in existing configurations, which is similar to the latest `pii/address/at` entity.
 
@@ -86,8 +86,8 @@ Let's try this out now to see what information is returned from a match postal a
 Run the following commands to see the output:
 
 ```sh
-> cd C:\OpenText\EductionGrammars_25.4.0_COMMON\pii\edk_samples\resources
-> edktool.exe extract -l ..\..\..\..\EductionSDK_25.4.0_WINDOWS_X86_64\licensekey.dat -c pii_address\config\address.cfg -i pii_address\input\input.txt
+> cd C:\OpenText\EductionGrammars_26.1.0_COMMON\pii\edk_samples\resources
+> edktool.exe extract -l ..\..\..\..\EductionSDK_26.1.0_WINDOWS_X86_64\licensekey.dat -c pii_address\config\address.cfg -i pii_address\input\input.txt
 ```
 
 The resulting match is found in the line "John Smith lives at 742 Evergreen Terrace, Cambridge CB4 0WZ, United Kingdom.":
@@ -185,7 +185,7 @@ You should already be familiar with how to run post-processing tasks with Lua sc
 
 Sticking to our current example of postal addresses, take a look at the included `address_stoplist.lua` script, which includes country-specific logic to update scores and address components.  For reference, `address_stoplist.lua` (and the many other helper PII scripts) are automatically invoked by `pii_postprocessing.lua`.
 
-For more details on Lua post-processing, please reference [Named Entity Recognition User & Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm).
+For more details on Lua post-processing, please reference [Named Entity Recognition User & Programming Guide - Post-Processing](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/UseEduction/PostProcessing/LuaPostProcessing.htm).
 
 ### Speed optimizations
 
@@ -220,7 +220,7 @@ For addresses, the PII package includes much more sophisticated pre-filtering sc
 - `address_cjkvt_prefilter.cfg`, and
 - `address_fast_prefilter.cfg`.
 
-For more details on pre-filtering, please reference [Named Entity Recognition User and Programming Guide - Pre-Filter Tasks](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/UseEduction/PreFiltering/PreFiltering.htm).
+For more details on pre-filtering, please reference [Named Entity Recognition User and Programming Guide - Pre-Filter Tasks](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/UseEduction/PreFiltering/PreFiltering.htm).
 
 ## Conclusion
 
@@ -230,6 +230,6 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Named Entity Recognition Grammars Users Guide - PII Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/Content/PII/PII_Intro.htm)
-- [Named Entity Recognition User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
-- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Named Entity Recognition Grammars Users Guide - PII Grammars](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionGrammars_26.1_Documentation/Help/Content/PII/PII_Intro.htm)
+- [Named Entity Recognition User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/)
+- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/SDKs/Eduction.htm)

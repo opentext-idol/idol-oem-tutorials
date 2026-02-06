@@ -1,6 +1,6 @@
-@echo off
+@echo on
 
-set VERSION=25.4.0
+set VERSION=26.1.0
 set PLATFORM=WINDOWS_X86_64
 
 set XMLEXPORT_HOME=C:\OpenText\KeyviewExportSDK_%VERSION%_%PLATFORM%
@@ -15,12 +15,15 @@ rem set INPUT=%XMLEXPORT_HOME%\testdocs\freezer2.ppt
 
 set OUTPUT=%INPUT%.%XMLEXPORT_INI_FILE%.XML
 
+set OPTIONS=
+
 echo Input file:  %INPUT%
 echo Output file:  %OUTPUT%
 echo Ini file: %XMLEXPORT_INI_HOME%\%XMLEXPORT_INI_FILE%.ini
+echo Options: %OPTIONS%
 echo.
 
 set ORIG_DIR=%CD%
 cd %XMLEXPORT_HOME%\%PLATFORM%\bin
-xmlini %XMLEXPORT_INI_HOME%\%XMLEXPORT_INI_FILE%.ini %INPUT% %OUTPUT%
+xmlini %OPTIONS% "%XMLEXPORT_INI_HOME%\%XMLEXPORT_INI_FILE%.ini" "%INPUT%" "%OUTPUT%"
 cd %ORIG_DIR%

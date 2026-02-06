@@ -12,6 +12,9 @@
     <MATCH EntityName="pii/id/nocontext/us" TableNumber="1" TableRow="1" TableColumn="1" Offset="73" OffsetLength="73" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
       <ORIGINAL_TEXT>341-34-1593</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>341-34-1593</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORMAT_US_SSN" Text="" Offset="11" OffsetLength="11" TextSize="0" TextLength="0"/>
+      </COMPONENTS>
     </MATCH>
     <MATCH EntityName="pii/date/nocontext/eng" TableNumber="1" TableRow="1" TableColumn="2" Offset="85" OffsetLength="85" Score="0.44" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="8" OriginalTextLength="8">
       <ORIGINAL_TEXT>1/1/1955</ORIGINAL_TEXT>
@@ -25,6 +28,9 @@
     <MATCH EntityName="pii/id/nocontext/us" TableNumber="1" TableRow="2" TableColumn="1" Offset="113" OffsetLength="113" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
       <ORIGINAL_TEXT>454-23-7653</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>454-23-7653</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORMAT_US_SSN" Text="" Offset="11" OffsetLength="11" TextSize="0" TextLength="0"/>
+      </COMPONENTS>
     </MATCH>
     <MATCH EntityName="pii/date/nocontext/eng" TableNumber="1" TableRow="2" TableColumn="2" Offset="125" OffsetLength="125" Score="0.44" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
       <ORIGINAL_TEXT>10/1/1976</ORIGINAL_TEXT>
@@ -38,6 +44,9 @@
     <MATCH EntityName="pii/id/nocontext/us" TableNumber="1" TableRow="3" TableColumn="1" Offset="148" OffsetLength="148" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
       <ORIGINAL_TEXT>223-11-4853</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>223-11-4853</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORMAT_US_SSN" Text="" Offset="11" OffsetLength="11" TextSize="0" TextLength="0"/>
+      </COMPONENTS>
     </MATCH>
     <MATCH EntityName="pii/date/nocontext/eng" TableNumber="1" TableRow="3" TableColumn="2" Offset="160" OffsetLength="160" Score="0.428" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
       <ORIGINAL_TEXT>6/22/1974</ORIGINAL_TEXT>
@@ -68,6 +77,9 @@
     <MATCH EntityName="pii/id/nocontext/us" TableNumber="3" TableRow="1" TableColumn="2" Offset="307" OffsetLength="307" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
       <ORIGINAL_TEXT>341-34-1594</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>341-34-1594</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORMAT_US_SSN" Text="" Offset="11" OffsetLength="11" TextSize="0" TextLength="0"/>
+      </COMPONENTS>
     </MATCH>
     <MATCH EntityName="pii/date/nocontext/eng" TableNumber="3" TableRow="1" TableColumn="3" Offset="319" OffsetLength="319" Score="0.44" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="8" OriginalTextLength="8">
       <ORIGINAL_TEXT>1/1/1951</ORIGINAL_TEXT>
@@ -81,6 +93,9 @@
     <MATCH EntityName="pii/id/nocontext/us" TableNumber="3" TableRow="2" TableColumn="2" Offset="348" OffsetLength="348" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
       <ORIGINAL_TEXT>454-23-7654</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>454-23-7654</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORMAT_US_SSN" Text="" Offset="11" OffsetLength="11" TextSize="0" TextLength="0"/>
+      </COMPONENTS>
     </MATCH>
     <MATCH EntityName="pii/date/nocontext/eng" TableNumber="3" TableRow="2" TableColumn="3" Offset="360" OffsetLength="360" Score="0.44" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
       <ORIGINAL_TEXT>10/1/1971</ORIGINAL_TEXT>
@@ -94,6 +109,9 @@
     <MATCH EntityName="pii/id/nocontext/us" TableNumber="3" TableRow="3" TableColumn="2" Offset="386" OffsetLength="386" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
       <ORIGINAL_TEXT>223-11-4854</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>223-11-4854</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORMAT_US_SSN" Text="" Offset="11" OffsetLength="11" TextSize="0" TextLength="0"/>
+      </COMPONENTS>
     </MATCH>
     <MATCH EntityName="pii/date/nocontext/eng" TableNumber="3" TableRow="3" TableColumn="3" Offset="398" OffsetLength="398" Score="0.428" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
       <ORIGINAL_TEXT>6/22/1971</ORIGINAL_TEXT>
@@ -124,6 +142,9 @@
     <MATCH EntityName="pii/id/nocontext/us" TableNumber="5" TableRow="1" TableColumn="1" Offset="555" OffsetLength="555" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
       <ORIGINAL_TEXT>341-34-1592</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>341-34-1592</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORMAT_US_SSN" Text="" Offset="11" OffsetLength="11" TextSize="0" TextLength="0"/>
+      </COMPONENTS>
     </MATCH>
     <MATCH EntityName="pii/date/nocontext/eng" TableNumber="5" TableRow="1" TableColumn="2" Offset="567" OffsetLength="567" Score="0.44" NormalizedTextSize="8" NormalizedTextLength="8" OriginalTextSize="8" OriginalTextLength="8">
       <ORIGINAL_TEXT>1/1/1954</ORIGINAL_TEXT>
@@ -137,6 +158,9 @@
     <MATCH EntityName="pii/id/nocontext/us" TableNumber="5" TableRow="2" TableColumn="1" Offset="592" OffsetLength="592" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
       <ORIGINAL_TEXT>454-23-7652</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>454-23-7652</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORMAT_US_SSN" Text="" Offset="11" OffsetLength="11" TextSize="0" TextLength="0"/>
+      </COMPONENTS>
     </MATCH>
     <MATCH EntityName="pii/date/nocontext/eng" TableNumber="5" TableRow="2" TableColumn="2" Offset="604" OffsetLength="604" Score="0.44" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
       <ORIGINAL_TEXT>10/1/1975</ORIGINAL_TEXT>
@@ -150,6 +174,9 @@
     <MATCH EntityName="pii/id/nocontext/us" TableNumber="5" TableRow="3" TableColumn="1" Offset="627" OffsetLength="627" Score="0.5" NormalizedTextSize="11" NormalizedTextLength="11" OriginalTextSize="11" OriginalTextLength="11">
       <ORIGINAL_TEXT>223-11-4852</ORIGINAL_TEXT>
       <NORMALIZED_TEXT>223-11-4852</NORMALIZED_TEXT>
+      <COMPONENTS>
+        <COMPONENT Name="FORMAT_US_SSN" Text="" Offset="11" OffsetLength="11" TextSize="0" TextLength="0"/>
+      </COMPONENTS>
     </MATCH>
     <MATCH EntityName="pii/date/nocontext/eng" TableNumber="5" TableRow="3" TableColumn="2" Offset="639" OffsetLength="639" Score="0.428" NormalizedTextSize="9" NormalizedTextLength="9" OriginalTextSize="9" OriginalTextLength="9">
       <ORIGINAL_TEXT>6/22/1973</ORIGINAL_TEXT>

@@ -18,8 +18,8 @@ Sally Smith		3/14/1975	6/30/2022
 	
 Name	Extra Column	SSN	Date of Birth	Admission Date	
 John Smith	xx	341-34-1594	1/1/1951	1/1/2020	
-Jane Doe		454-23-7654	10/1/1971	11/11/2019	
-	xx	223-11-4854	6/22/1971	10/22/2021	
+Jane Doe		454 23 7654	10/1/1971	11/11/2019	
+	xx	223114854	6/22/1971	10/22/2021	
 Sally Smith	xx		3/14/1971	6/30/2022	
 	
 

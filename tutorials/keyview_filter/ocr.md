@@ -2,7 +2,7 @@
 
 Not all documents already contain machine usable text. These types of documents may be scans, screenshots or pictures.
 
-When processing raster image files, the Filter SDK can perform Optical Character Recognition (OCR) to attempt to filter text that might be visible in the image. As of the 25.4.0 release, 46 languages covering Latin, Arabic, Chinese, Cyrillic and a few other alphabets.  See the [OCR Supported Languages](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/Shared/_KV_OCR_Supported_Languages.htm) appendix for more details.
+When processing raster image files, the Filter SDK can perform Optical Character Recognition (OCR) to attempt to filter text that might be visible in the image. As of the 26.1.0 release, 46 languages covering Latin, Arabic, Chinese, Cyrillic and a few other alphabets.  See the [OCR Supported Languages](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/c-programming/Content/Shared/_KV_OCR_Supported_Languages.htm) appendix for more details.
 
 In this lesson, you will:
 
@@ -40,7 +40,7 @@ Be sure to download the following resources before you continue:
 ### Perform OCR with `filter`
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_26.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filter ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_TO_OCR.png ocr.txt
 WARNING: filter is a sample program only and is not for production use
 filter: ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_TO_OCR.png to ocr.txt
@@ -68,20 +68,20 @@ Try `filter` performing OCR with your own image files.  Remember you may need to
 ```
 
 ```sh
-> cd C:\OpenText\KeyviewFilterSDK_25.4.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
+> cd C:\OpenText\KeyviewFilterSDK_26.1.0_WINDOWS_X86_64\WINDOWS_X86_64\bin
 > filtertest -nocr ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_TO_OCR.png ocr.txt
 WARNING: filtertest is a sample program only and is not for production use
 filtertest: ..\..\..\idol-oem-tutorials\resources\keyview_filter\screenshot_TO_OCR.png to ocr.txt
 filtertest: Target CharSet is 53
 Return code is 0
-filtertest finished with RC: 0
+filtertest finished with RC: 0 (KVError_Success)
 ```
 
-> NOTE: `RC: 0` is a positive result equivalent to `KVERR_Success` where the destination `ocr.txt` file contains the output. Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
+> NOTE: The destination `ocr.txt` file contains the output. Use your UTF-8 capable text editor, so you can properly view the output - just in case complex character sets are represented in the test document.
 
 The `ocr.txt` output file will contain no text since the `-nocr` flag was added.
 
-Read up on the `languages orientation detectAlphabet` tuning options in the [Optical Character Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/Content/filter/Optical_Character_Recognition.htm) section of the programming guide.
+Read up on the `languages orientation detectAlphabet` tuning options in the [Optical Character Recognition](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/c-programming/Content/filter/Optical_Character_Recognition.htm) section of the programming guide.
 
 ## Conclusion
 
@@ -91,9 +91,9 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/index.html)
-- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/cpp-programming/index.html)
-- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/java-programming/index.html)
-- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/dotnet-programming/index.html)
-- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/python-programming/)
-- [File Content Extraction Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/Content/_KeyView.htm)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/python-programming/)
+- [Filter SDK Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/KeyView/FilterSDK.htm)

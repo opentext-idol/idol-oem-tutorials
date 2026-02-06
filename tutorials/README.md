@@ -10,8 +10,8 @@ A set of guides to introduce you to OpenText Knowledge Discovery (formerly known
   - [Following this guide offline](#following-this-guide-offline)
 - [Getting Started](#getting-started)
   - [Named Entity Recognition](#named-entity-recognition)
-  - [Filter](#filter)
-  - [Export](#export)
+  - [File Content Extraction - Filter SDK](#file-content-extraction---filter-sdk)
+  - [File Content Extraction - Export SDK](#file-content-extraction---export-sdk)
   - [ACI API](#aci-api)
 - [Capability showcase examples](#capability-showcase-examples)
   - [Named Entity Recognition showcase](#named-entity-recognition-showcase)
@@ -22,7 +22,7 @@ A set of guides to introduce you to OpenText Knowledge Discovery (formerly known
   - [Named Entity Recognition SDK](#named-entity-recognition-sdk)
   - [Filter SDK](#filter-sdk)
   - [Export SDK](#export-sdk)
-  - [Filter + Eduction](#filter--eduction)
+  - [Filter SDK + Eduction SDK](#filter-sdk--eduction-sdk)
 - [See also](#see-also)
   - [Media Server tutorials](#media-server-tutorials)
   - [Links](#links)
@@ -80,13 +80,13 @@ Get started with Named Entity Recognition.  Use the out-of-the-box binaries to d
 
 [Get started](./eduction/introduction.md).
 
-### Filter
+### File Content Extraction - Filter SDK
 
 Build a firm foundation with the Filter SDK.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for extracting (filtering) text, metadata and sub-files from files.
 
 [Get started](./keyview_filter/introduction.md).
 
-### Export
+### File Content Extraction - Export SDK
 
 Build a firm foundation with the Export SDK.  Use the out-of-the-box binaries to develop your understanding of the key features and capabilities for producing HTML, XML and PDF renditions.
 
@@ -130,7 +130,7 @@ More advanced example usage of the ACI API.
 
 ## Use the SDKs
 
-The Named Entity Recognition SDK and the Filter SDK are designed to be embedded into other services.  For example, OpenText embeds both SDKs into [NiFi processors](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/NiFiIngest_25.4_Documentation/Help/Content/Walkthrough/BuildBasicPipeline.htm) to be used in data transformation workflows.
+The Named Entity Recognition SDK and the Filter & Export SDKs are designed to be embedded into other services.  For example, OpenText embeds these SDKs into [NiFi processors](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/NiFiIngest_26.1_Documentation/Help/Content/Walkthrough/Introduction.htm) to be used in data transformation workflows.
 
 Many other OpenText products also embed the Named Entity Recognition SDK and the Filter SDK to enhance their capabilities.  Other ISVs also license Knowledge Discovery and File Content Extraction, embedding these SDKs into their applications and services for:
 
@@ -157,7 +157,7 @@ Use the SDK to work with your files.
 
 [Get started](./keyview_export/README.md#use-the-export-sdk).
 
-### Filter + Eduction
+### Filter SDK + Eduction SDK
 
 Use the Filter and Named Entity Recognition SDKs into a combined solution.
 
@@ -176,27 +176,27 @@ Media Server performs analytics on images, audio and video.  It's for OEMs too, 
 ### Links
 
 - Full administration guides and release notes are available for all Knowledge Discovery and File Content Extraction products [here](https://www.microfocus.com/documentation/idol/).
-- Read more tips on working with Knowledge Discovery products in [Expert](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLServer_25.4_Documentation/Guides/html/expert/index.html).
-- See the latest release notes for all Knowledge Discovery products [here](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/_Introduction.htm).
+- Read more tips on working with Knowledge Discovery products in [Expert](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/Content_26.1_Documentation/Guides/Expert/Content/IDOLExpert_Welcome.htm).
+- See the latest release notes for all Knowledge Discovery products [here](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/_Introduction.htm).
 
 #### Named Entity Recognition references
 
-- Named Entity Recognition SDK [User & Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
-- Named Entity Recognition Server [Reference Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionServer_25.4_Documentation/Help/Content/_ACI_Welcome.htm)
-- Named Entity Recognition Grammars [User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/)
+- Named Entity Recognition SDK [User & Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/)
+- Named Entity Recognition Server [Reference Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionServer_26.1_Documentation/Help/Content/_ACI_Welcome.htm)
+- Named Entity Recognition Grammars [User Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionGrammars_26.1_Documentation/Help/)
 
 #### Filter SDK references
 
-- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/c-programming/index.html)
-- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/cpp-programming/index.html)
-- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/java-programming/index.html)
-- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/dotnet-programming/index.html)
-- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/python-programming/index.html)
+- [Filter SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/c-programming/index.html)
+- [Filter SDK C++ Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/cpp-programming/index.html)
+- [Filter SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/java-programming/index.html)
+- [Filter SDK .NET Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/dotnet-programming/index.html)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/python-programming/index.html)
 
 #### Export SDK references
 
-- [HTML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewExportSDK_25.4_Documentation/Guides/html/html-export-c/index.html)
-- [HTML Export SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewExportSDK_25.4_Documentation/Guides/html/html-export-java/index.html)
-- [XML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewExportSDK_25.4_Documentation/Guides/html/xml-export-c/index.html)
-- [XML Export SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewExportSDK_25.4_Documentation/Guides/html/xml-export-java/)
-- [PDF Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewExportSDK_25.4_Documentation/Guides/html/pdf-export-c/index.html)
+- [HTML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewExportSDK_26.1_Documentation/Guides/html/html-export-c/index.html)
+- [HTML Export SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewExportSDK_26.1_Documentation/Guides/html/html-export-java/index.html)
+- [XML Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewExportSDK_26.1_Documentation/Guides/html/xml-export-c/index.html)
+- [XML Export SDK Java Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewExportSDK_26.1_Documentation/Guides/html/xml-export-java/)
+- [PDF Export SDK C Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewExportSDK_26.1_Documentation/Guides/html/pdf-export-c/index.html)

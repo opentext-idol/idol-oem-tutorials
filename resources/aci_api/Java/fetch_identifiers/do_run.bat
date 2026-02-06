@@ -1,4 +1,4 @@
-set VERSION=25.4.0
+set VERSION=26.1.0
 
 set JAVA_HOME=C:\Program Files\OpenLogic\openlogic-openjdk-17.0.10+7-windows-x64
 set ACI_API_HOME=..\..\..\..\..\IDOLJavaSDK_%VERSION%

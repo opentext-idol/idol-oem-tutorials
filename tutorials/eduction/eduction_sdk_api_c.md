@@ -7,7 +7,7 @@ In this lesson, you will:
 - use the Named Entity Recognition SDK C API to perform extraction using a configuration file
 - use the Named Entity Recognition SDK C API to compile a grammar XML into an ECR
 
-The [Named Entity Recognition User and Programming Guide](https://www.microfocus.com/documentation/idol//knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/EductionSDK/APIReference/C_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
+The [Named Entity Recognition User and Programming Guide](https://www.microfocus.com/documentation/idol//knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/EductionSDK/APIReference/C_APIConcepts.htm) has sections on this topic which will be referenced in this lesson.
 
 > NOTE: This lesson only covers the Named Entity Recognition SDK APIs and does not cover Named Entity Recognition Server. See [here](./README.md#use-named-entity-recognition-server) for a lesson on Named Entity Recognition Server.
 
@@ -42,13 +42,13 @@ The [Named Entity Recognition User and Programming Guide](https://www.microfocus
 
 Before you continue with this lesson, refer to the [documentation links](#see-also) below.
 
-Refer to `README.md` in the `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
+Refer to `README.md` in the `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples` folder for API language and platform specific requirements and instructions to build the sample programs.
 
 > NOTE: This lesson assumes you have already completed the [Named Entity Recognition SDK introduction](../eduction/introduction.md) lesson covering essential setup steps (*e.g.* required downloads and installation steps) and basic Named Entity Recognition concepts.
 
 ### License and Version key dat files
 
-Deploy the `licensekey.dat` and `versionkey.dat` files to the Named Entity Recognition SDK home directory (*e.g.* `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64`).
+Deploy the `licensekey.dat` and `versionkey.dat` files to the Named Entity Recognition SDK home directory (*e.g.* `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64`).
 
 ### Resources
 
@@ -56,9 +56,9 @@ There are no provided resources for this lesson.
 
 ### Environment and Compilers
 
-- Refer to the `System Requirements` section of the [Getting Started Guide](https://www.microfocus.com/documentation/idol//knowledge-discovery-25.4/IDOLServer_25.4_Documentation/Guides/html/gettingstarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
-- Refer to [Named Entity Recognition User & Programming Guide - Deploy EduNamed Entity Recognitionction SDK - C API Component](https://www.microfocus.com/documentation/idol//knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/C_API.htm) for API and platform specific software dependencies.
-- The `README.md` in `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
+- Refer to the `System Requirements` section of the [Getting Started Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/Content_26.1_Documentation/Guides/GettingStarted/Content/Install_Run_IDOL/Install/System_Requirements.htm) for general software dependencies.
+- Refer to [Named Entity Recognition User & Programming Guide - Deploy EduNamed Entity Recognitionction SDK - C API Component](https://www.microfocus.com/documentation/idol//knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/Content/EductionSDK/DeployEductionSDK/C_API.htm) for API and platform specific software dependencies.
+- The `README.md` in `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples` notes more API language and platform specific requirements (*e.g.* compiler information, build tools) and build tips.
 
 > HINT: For example, if you use Visual Studio Community 2022 in Windows 11, installed from <https://visualstudio.microsoft.com/downloads/>, run the Visual Studio Installer and ensure you have the "Windows 10 SDK" and "C++ CMake tools for Windows" components installed:
 >
@@ -66,7 +66,7 @@ There are no provided resources for this lesson.
 
 ## API Documentation
 
-API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\` as noted below:
+API specific documentation is located in sub-folders of `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\` as noted below:
 
 - C - `c_api\help\index.html`
 
@@ -83,11 +83,11 @@ The `eduction_from_config` sample program accepts a configuration file as you've
 
 #### Sample `eduction_from_config` code
 
-The C sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\c`.
+The C sample `eduction_from_config` application code lives in: `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\eduction_from_config\c`.
 
 #### Build `eduction_from_config`
 
-Open the folder `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\c` in Visual Studio.  Visual Studio may take some time interpreting and using the provided `CMakeLists.txt`.
+Open the folder `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\eduction_from_config\c` in Visual Studio.  Visual Studio may take some time interpreting and using the provided `CMakeLists.txt`.
 
 In the "Solution Explorer" view, right-click on the modified "CMakeLists.txt" and click "Build".  You can proceed if you get `Build succeeded.`
 
@@ -98,8 +98,8 @@ Run your compiled program from the command prompt:
 > NOTE: Be sure your PATH environment variable has the full path to your %EDK_HOME%\bin so that `edk.dll` can be found as shown below:
 
 ```sh
-> set PATH=C:\Opentext\EductionSDK_25.4.0_WINDOWS_X86_64\bin;%PATH%
-> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\c
+> set PATH=C:\Opentext\EductionSDK_26.1.0_WINDOWS_X86_64\bin;%PATH%
+> cd C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\eduction_from_config\c
 > out\build\x64-Debug\eduction_from_config.exe "..\resources\test\config\test.cfg" "..\resources\test\input\input.txt" "..\resources\test\educed.EDK.JSON"
 Program loaded.
 Config Path:  ..\resources\test\config\test.cfg
@@ -115,7 +115,7 @@ Found 2 matches in total.
 Extraction complete.
 ```
 
-Review `educed.EDK.JSON` to see the match information.  The program should run and produce an output file `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\educed.EDK.JSON` containing two matches, as follows:
+Review `educed.EDK.JSON` to see the match information.  The program should run and produce an output file `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\eduction_from_config\resources\test\educed.EDK.JSON` containing two matches, as follows:
 
 ```json
 {
@@ -198,11 +198,11 @@ The `compile` sample program accepts a grammar XML and output ECR.
 
 #### Sample `compile` code
 
-The C sample `compile` application code lives in: `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\compile\c`.
+The C sample `compile` application code lives in: `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\compile\c`.
 
 #### Build `compile`
 
-Open the folder `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\compile\c` in Visual Studio.  Visual Studio may take some time interpreting and using the provided `CMakeLists.txt`.
+Open the folder `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\compile\c` in Visual Studio.  Visual Studio may take some time interpreting and using the provided `CMakeLists.txt`.
 
 In the "Solution Explorer" view, right-click on the modified "CMakeLists.txt" and click "Build".  You can proceed if you get `Build succeeded.`
 
@@ -213,8 +213,8 @@ Run your compiled program from the command prompt:
 > NOTE: Be sure your PATH environment variable has the full path to your %EDK_HOME%\bin so that `edk.dll` can be found as shown below:
 
 ```sh
-> set PATH=C:\Opentext\EductionSDK_25.4.0_WINDOWS_X86_64\bin;%PATH%
-> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\compile\c
+> set PATH=C:\Opentext\EductionSDK_26.1.0_WINDOWS_X86_64\bin;%PATH%
+> cd C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\compile\c
 > out\build\x64-Debug\compile.exe "..\resources\test\source\test.xml" "..\resources\test\test_c.ecr"
 Program loaded.
 INFO: Grammar Path:  ..\resources\test\source\test.xml
@@ -226,19 +226,19 @@ Compiled grammar file saved.
 Program completed without an error.
 ```
 
-The program should run and produce a compiled grammar file `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\compile\resources\test\test_c.ecr`.
+The program should run and produce a compiled grammar file `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\compile\resources\test\test_c.ecr`.
 
 ```sh
 > edktool list "..\resources\test\test_c.ecr"
 
-Eduction EDKTool Utility v25.4.0
+Eduction EDKTool Utility v26.1.0
 Loading resource file:
 ..\resources\test\test_c.ecr
 
 
 Grammar version:        4.0
 
-Compiled using Edktool: 25.4.0
+Compiled using Edktool: 26.1.0
 
 Listing entities:
 test/two_words
@@ -258,11 +258,11 @@ The `redaction` sample program accepts a configuration file as you've been using
 
 #### Sample `redaction` code
 
-The C sample `redaction` application code lives in: `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\redaction\c`.
+The C sample `redaction` application code lives in: `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\redaction\c`.
 
 #### Build `redaction`
 
-Open the folder `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\redaction\c` in Visual Studio. Visual Studio may take some time interpreting and using the provided `CMakeLists.txt`.
+Open the folder `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\redaction\c` in Visual Studio. Visual Studio may take some time interpreting and using the provided `CMakeLists.txt`.
 
 In the "Solution Explorer" view, right-click on the modified "CMakeLists.txt" and click "Build".  You can proceed if you get `Build succeeded.`
 
@@ -273,8 +273,8 @@ Run your compiled program from the command prompt:
 > NOTE: Be sure your PATH environment variable has the full path to your %EDK_HOME%\bin so that `edk.dll` can be found as shown below:
 
 ```sh
-> set PATH=C:\Opentext\EductionSDK_25.4.0_WINDOWS_X86_64\bin;%PATH%
-> cd C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\redaction\c
+> set PATH=C:\Opentext\EductionSDK_26.1.0_WINDOWS_X86_64\bin;%PATH%
+> cd C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\redaction\c
 > out\build\x64-Debug\redaction.exe "..\resources\test\config\basic.cfg" "..\resources\test\input\input.txt" "..\resources\test\redacted.EDK.TXT"
 Program loaded.
 Config:  ..\resources\test\config\basic.cfg
@@ -286,7 +286,7 @@ Results will be printed to ..\resources\test\redacted.EDK.TXT...
 Program completed without an error.
 ```
 
-The program should run and produce a text file `C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\samples\compile\resources\test\redacted.EDK.TXT` with the matches redacted.
+The program should run and produce a text file `C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\samples\compile\resources\test\redacted.EDK.TXT` with the matches redacted.
 
 For extra credit, try `redaction` with the other configuration file `entity_name.cfg`.
 
@@ -302,7 +302,7 @@ Next, why not try more tutorials to explore some of the other features available
 
 ## See also
 
-- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol//knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
-- [Named Entity Recognition Server User and Programming Guide](https://www.microfocus.com/documentation/idol//knowledge-discovery-25.4/EductionServer_25.4_Documentation/Help/Content/_ACI_Welcome.htm)
-- [Named Entity Recognition Grammars User Guide](https://www.microfocus.com/documentation/idol//knowledge-discovery-25.4/EductionGrammars_25.4_Documentation/Help/)
-- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol//knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol//knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/)
+- [Named Entity Recognition Server User and Programming Guide](https://www.microfocus.com/documentation/idol//knowledge-discovery-26.1/EductionServer_26.1_Documentation/Help/Content/_ACI_Welcome.htm)
+- [Named Entity Recognition Grammars User Guide](https://www.microfocus.com/documentation/idol//knowledge-discovery-26.1/EductionGrammars_26.1_Documentation/Help/)
+- [Knowledge Discovery Release Notes - Named Entity Recognition](https://www.microfocus.com/documentation/idol//knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/SDKs/Eduction.htm)

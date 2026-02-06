@@ -64,10 +64,10 @@ Go ahead and run `kvfilter_eduction_stream`.  A Windows batch file `run_kvfilter
 > cd C:\OpenText\idol-oem-tutorials\resources\keyview_filter+eduction\sdk\samples\kvfilter_eduction_stream\python
 > run_kvfilter_eduction_stream.bat
 Creating Filter SDK session.
-Using the license key: C:\OpenText\KeyViewFilterSDK_25.4.0_WINDOWS_X86_64\licensekey.dat
+Using the license key: C:\OpenText\KeyViewFilterSDK_26.1.0_WINDOWS_X86_64\licensekey.dat
 Creating EDK Factory.
-Using Eduction license key: C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\licensekey.dat
-Using Eduction version key: C:\OpenText\EductionSDK_25.4.0_WINDOWS_X86_64\versionkey.dat
+Using Eduction license key: C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\licensekey.dat
+Using Eduction version key: C:\OpenText\EductionSDK_26.1.0_WINDOWS_X86_64\versionkey.dat
 Creating EDK Engine from config: test\config\test.cfg
 Successfully configured 1 post-processing tasks.
 Creating EDK Session and processing input stream.
@@ -127,8 +127,7 @@ Next, why not try more tutorials to explore some of the other lessons in the Fil
 
 ## See also
 
-- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/KeyviewFilterSDK_25.4_Documentation/Guides/html/python-programming/)
-- [Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/Content/_KeyView.htm)
-- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/EductionSDK_25.4_Documentation/Guides/html/)
-- [Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/oem/Content/_KeyView.htm)
-- [Named Entity Recognition Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-25.4/IDOLReleaseNotes_25.4_Documentation/idol/Content/SDKs/Eduction.htm)
+- [Filter SDK Python Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/KeyviewFilterSDK_26.1_Documentation/Guides/html/python-programming/)
+- [Filter SDK Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/KeyView/FilterSDK.htm)
+- [Named Entity Recognition SDK User and Programming Guide](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/EductionSDK_26.1_Documentation/Guides/html/)
+- [Named Entity Recognition Release Notes](https://www.microfocus.com/documentation/idol/knowledge-discovery-26.1/IDOLReleaseNotes_26.1_Documentation/idol/Content/SDKs/Eduction.htm)
